@@ -1,0 +1,30 @@
+{block content}
+
+	<header class="article-hero">
+		<div class="container">
+			<div class="article-container">
+				<div class="article-meta">
+                <span class="me-3">
+                    <i class="far fa-calendar-alt me-1"></i> {$article->date|date:'j. n. Y'}
+                </span>
+					<span class="me-3">
+                    <i class="far fa-user me-1"></i> {$article->author}
+                </span>
+				</div>
+
+				<h1 class="article-title" n:block=title>{$article->title}</h1>
+			</div>
+		</div>
+	</header>
+
+	<section class="article-content">
+		<div class="container article-container">
+
+			<div class="article-body-db">
+				{control articleContent}
+			</div>
+
+		</div>
+	</section>
+
+{/block}

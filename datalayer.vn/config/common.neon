@@ -1,0 +1,43 @@
+# see https://doc.nette.org/en/configuring
+
+parameters:
+	templatesDir: %tempDir%
+
+application:
+	errorPresenter:
+		4xx: Error:Error4xx
+		5xx: Error:Error5xx
+	mapping: App\Presentation\*\**Presenter
+
+
+database:
+	dsn: 'mysql:host=mysql.next01.exon.io;dbname=usagjqhc_datalayer'
+	user: usagjqhc_datalayer
+	password: "vCS8NkszLKG7MgA"
+	reflection: Nette\Database\Conventions\DiscoveredConventions
+	options:
+		lazy: yes
+
+latte:
+	strictTypes: yes
+	strictParsing: yes
+	extensions:
+		- App\Presentation\Accessory\LatteExtension
+
+
+assets:
+	mapping:
+		default:
+			path: assets
+			# type: vite  # Uncomment to activate Vite for asset building
+
+
+di:
+	export:
+		parameters: no
+		tags: no
+tracy:
+	# e-mail, na který se posílají notifikace, že došlo k chybě
+	email: mail@vitnovotny.cz           # (string|string[]) výchozí je nenastaveno
+	# odesílatel e-mailu
+	fromEmail: datalayer@uww.cz     # (string) výchozí je nenastaveno

@@ -1,0 +1,16 @@
+services:
+	- App\Core\RouterFactory::createRouter
+	- App\Model\ArticleService # Registrace vaší služby
+# Registrace továrničky na komponentu
+	- implement: App\Components\DbContentControlFactory
+	  arguments:
+	      tempDir: %tempDir%
+	- Nette\Caching\Cache
+
+search:
+	-	in: %appDir%
+		classes:
+			- *Facade
+			- *Factory
+			- *Repository
+			- *Service
