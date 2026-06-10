@@ -46,9 +46,9 @@ Menu (☰) → **APIs & Services** → **Enable APIs and Services**. Vyhledej a
 
 ---
 
-## 4. Naplnění dat (seed) přes Cloud Shell
+## 4. Naplnění dat + první admin přes Cloud Shell
 
-Data (kolekce `articles` a `pages`) naplníme jednoduchým skriptem:
+Data (kolekce `articles`, `pages`) a prvního admin uživatele vytvoříme skripty:
 
 1. Vpravo nahoře klikni na **Activate Cloud Shell** (`>_`).
 2. V terminálu:
@@ -57,11 +57,17 @@ Data (kolekce `articles` a `pages`) naplníme jednoduchým skriptem:
    git clone https://github.com/bandaska/datalayer.git
    cd datalayer/datalayer-web
    npm ci
-   GOOGLE_CLOUD_PROJECT="$(gcloud config get-value project)" npm run db:seed
+   export GOOGLE_CLOUD_PROJECT="$(gcloud config get-value project)"
+
+   # Ukázkové články + landing page (volitelné):
+   npm run db:seed
+
+   # První admin pro přihlášení do /admin (heslo min. 8 znaků):
+   npm run admin:create -- mail@vit.cz HesloMin8znaku "Vít Novotný"
    ```
 
-3. Hláška „Seed hotov (articles + pages)." = data jsou ve Firestore.
-   Ověřit můžeš v Console → **Firestore** → **Data** (kolekce `articles`, `pages`).
+3. Hláška „Seed hotov…" a „Admin vytvořen…" = hotovo. Data uvidíš v Console →
+   **Firestore** → **Data** (kolekce `articles`, `pages`, `users`).
 
 > Obsah můžeš později editovat přímo v Console (Firestore → Data) nebo vlastním
 > adminem — bez redeploye aplikace.
@@ -99,10 +105,13 @@ Menu (☰) → **Cloud Run** → **Deploy container** → **Service**.
 **Karta Container → Variables & Secrets → Environment variables → Add variable:**
 - `NODE_ENV` = `production`
 - `GOOGLE_CLOUD_PROJECT` = `<tvé Project ID>`
-- (volitelně `ENABLE_AUTH` = `1`, `SITE_USER`, `SITE_PASS` pro ochranu heslem)
+- `SESSION_SECRET` = `<náhodný řetězec>` (podpis admin cookie; vygeneruj např.
+  v Cloud Shell `openssl rand -base64 32`)
+- (volitelně `ENABLE_AUTH` = `1`, `SITE_USER`, `SITE_PASS` pro ochranu celého webu heslem)
 
-> Žádný secret ani Cloud SQL connection se nenastavuje — Firestore se
-> autentizuje přes service account služby.
+> Firestore se autentizuje přes service account služby — žádný DB secret ani
+> Cloud SQL connection. `SESSION_SECRET` lze místo env proměnné uložit do Secret
+> Manageru a připojit přes „Reference a secret" (bezpečnější).
 
 **Autoscaling:** Min `0` (scale-to-zero) / Max `5`.
 
@@ -133,7 +142,8 @@ Cloud Run služba běží pod service accountem, který potřebuje přístup k F
    - `URL/` (úvod),
    - `URL/blog` (články z Firestore),
    - `URL/kampan-ga4` (ukázková landing page z kolekce `pages`),
-   - `URL/sluzby/ga4` (služba).
+   - `URL/sluzby/ga4` (služba),
+   - `URL/admin` (přihlas se admin uživatelem z kroku 4).
 3. Když `/blog` hlásí 500: zkontroluj, že existuje Firestore databáze (krok 3),
    že má service account roli **Cloud Datastore User** (krok 6) a že je
    nastavena env `GOOGLE_CLOUD_PROJECT` (krok 5.2). Detail v kartě **Logs**.

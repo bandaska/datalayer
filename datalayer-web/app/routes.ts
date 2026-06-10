@@ -7,5 +7,17 @@ export default [
   route('sluzby', 'routes/services.tsx'), // /sluzby
   route('sluzby/:service', 'routes/services.$service.tsx'), // /sluzby/ga4 atd.
   route('privacy', 'routes/privacy.tsx'), // /privacy
+
+  // --- Admin ---
+  route('admin/login', 'routes/admin.login.tsx'),
+  route('admin/logout', 'routes/admin.logout.tsx'),
+  route('admin', 'routes/admin.tsx', [
+    index('routes/admin._index.tsx'),
+    route('articles', 'routes/admin.articles._index.tsx'),
+    route('articles/new', 'routes/admin.articles.new.tsx'),
+    route('articles/:slug/edit', 'routes/admin.articles.$slug.edit.tsx'),
+    route('users', 'routes/admin.users._index.tsx'),
+  ]),
+
   route('*', 'routes/$.tsx'), // landing pages z Firestore (catch-all)
 ] satisfies RouteConfig;

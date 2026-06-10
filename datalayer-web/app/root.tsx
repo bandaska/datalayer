@@ -79,7 +79,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App({ loaderData }: { loaderData: ReturnType<typeof loader> }) {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isAdmin = location.pathname.startsWith('/admin');
   const hubspot = loaderData.hubspot;
+
+  // Admin běží bez veřejné hlavičky/patičky/kontaktního formuláře.
+  if (isAdmin) {
+    return <Outlet />;
+  }
 
   return (
     <div className={isHome ? 'page-home' : undefined}>

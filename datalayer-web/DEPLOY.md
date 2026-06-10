@@ -42,7 +42,8 @@ gcloud services enable \
   run.googleapis.com \
   cloudbuild.googleapis.com \
   artifactregistry.googleapis.com \
-  firestore.googleapis.com
+  firestore.googleapis.com \
+  secretmanager.googleapis.com
 ```
 
 ---
@@ -86,21 +87,36 @@ export RUN_SA="datalayer-run@${PROJECT_ID}.iam.gserviceaccount.com"
 # Přístup k Firestore (čtení/zápis):
 gcloud projects add-iam-policy-binding "$PROJECT_ID" \
   --member="serviceAccount:${RUN_SA}" --role="roles/datastore.user"
+
+# Přístup ke čtení secretu SESSION_SECRET (podpis admin cookie):
+gcloud projects add-iam-policy-binding "$PROJECT_ID" \
+  --member="serviceAccount:${RUN_SA}" --role="roles/secretmanager.secretAccessor"
 ```
 
-> Žádný Secret Manager není potřeba — Firestore se autentizuje přes runtime SA
-> (Application Default Credentials), bez hesla v env.
+> Firestore se autentizuje přes runtime SA (ADC), bez hesla v env. Jediný secret
+> je `SESSION_SECRET` pro podpis admin session cookie (viz dále).
+
+### 5.1 SESSION_SECRET (podpis admin cookie)
+
+```bash
+openssl rand -base64 32 | gcloud secrets create SESSION_SECRET --data-file=-
+```
 
 ---
 
-## 6. Naplnění dat (seed)
+## 6. Naplnění dat a první admin
 
 Lokálně, proti reálnému Firestore projektu (přes ADC z kroku 0):
 
 ```bash
 cd datalayer-web
 npm ci
-GOOGLE_CLOUD_PROJECT="$PROJECT_ID" npm run db:seed   # ukázkové články + 1 landing page
+
+# Ukázkové články + 1 landing page (volitelné):
+GOOGLE_CLOUD_PROJECT="$PROJECT_ID" npm run db:seed
+
+# První admin uživatel pro přihlášení do /admin:
+GOOGLE_CLOUD_PROJECT="$PROJECT_ID" npm run admin:create -- mail@vit.cz HesloMin8znaku "Vít Novotný"
 cd ..
 ```
 
@@ -121,6 +137,7 @@ gcloud run deploy "$SERVICE" \
   --region "$REGION" \
   --service-account "$RUN_SA" \
   --set-env-vars "NODE_ENV=production,GOOGLE_CLOUD_PROJECT=${PROJECT_ID}" \
+  --set-secrets "SESSION_SECRET=SESSION_SECRET:latest" \
   --port 8080 \
   --allow-unauthenticated \
   --cpu 1 --memory 512Mi --min-instances 0 --max-instances 5
@@ -192,7 +209,10 @@ curl -s -o /dev/null -w "home   %{http_code}\n" "$URL/"
 curl -s -o /dev/null -w "blog   %{http_code}\n" "$URL/blog"
 curl -s -o /dev/null -w "lp     %{http_code}\n" "$URL/kampan-ga4"
 curl -s -o /dev/null -w "404    %{http_code}\n" "$URL/neexistuje"
+curl -s -o /dev/null -w "admin  %{http_code}\n" "$URL/admin"   # 302 → /admin/login
 ```
+
+Admin je na `"$URL/admin"` — přihlas se uživatelem z kroku 6.
 
 Očekávané: `/`, `/blog`, `/kampan-ga4` → 200; neexistující cesta → 404. Pokud
 `/blog` vrací 500, zkontroluj Firestore (existuje databáze? má runtime SA roli
@@ -247,12 +267,16 @@ gcloud run services logs tail "$SERVICE" --region "$REGION"
 ## Rychlý souhrn (TL;DR)
 
 ```bash
-# 1–5: projekt, API, Artifact Registry, Firestore databáze, runtime SA + datastore.user
-# 6: seed dat
-cd datalayer-web && GOOGLE_CLOUD_PROJECT=$PROJECT_ID npm run db:seed
+# 1–5: projekt, API (vč. secretmanager), Artifact Registry, Firestore databáze,
+#      runtime SA + datastore.user + secretAccessor, secret SESSION_SECRET
+# 6: seed dat + první admin
+cd datalayer-web
+GOOGLE_CLOUD_PROJECT=$PROJECT_ID npm run db:seed
+GOOGLE_CLOUD_PROJECT=$PROJECT_ID npm run admin:create -- mail@vit.cz HesloMin8znaku "Vít"
 # 7: deploy
 gcloud run deploy datalayer-web --source . --region "$REGION" \
   --service-account "$RUN_SA" \
   --set-env-vars NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID \
+  --set-secrets SESSION_SECRET=SESSION_SECRET:latest \
   --port 8080 --allow-unauthenticated
 ```

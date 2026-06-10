@@ -3,8 +3,12 @@
 # Aplikace je v podsložce datalayer-web/, build proto běží z kořene repa
 # s build kontextem ./datalayer-web.
 #
-# Data se ukládají do Firestore (Native) – žádná DB instance ani secret
-# s heslem; runtime service account jen potřebuje roli Cloud Datastore User.
+# Data se ukládají do Firestore (Native) – žádná DB instance; runtime service
+# account potřebuje role Cloud Datastore User a (kvůli SESSION_SECRET) Secret
+# Manager Secret Accessor.
+#
+# Předpoklad: secret SESSION_SECRET existuje v Secret Manageru (podpis admin
+# cookie). Vytvoření: openssl rand -base64 32 | gcloud secrets create SESSION_SECRET --data-file=-
 #
 # Substituce nastav v triggeru:
 #   _REGION   (např. europe-west1)
@@ -45,6 +49,7 @@ steps:
       - --allow-unauthenticated
       - --port=8080
       - --set-env-vars=NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID
+      - --set-secrets=SESSION_SECRET=SESSION_SECRET:latest
 
 images:
   - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA

@@ -33,10 +33,31 @@ app/
     pages.server.ts       landing pages – kolekce `pages`
     sanitize.server.ts    sanitizace HTML obsahu
     services.ts, text.ts  služby + helpery (date/stripHtml/truncate)
-  components/             Navbar, Footer, ContactForm, ArticleContent
+    auth.server.ts        cookie session + requireUser (admin)
+    users.server.ts       uživatelé adminu (bcrypt) – kolekce `users`
+  components/             Navbar, Footer, ContactForm, ArticleContent, ArticleFormFields
   routes/                 home, blog._index, blog.$slug, services(.$service),
-                          privacy, $ (catch-all landing pages)
+                          privacy, $ (catch-all landing pages),
+                          admin* (login, dashboard, články CRUD, uživatelé)
+scripts/                  seed.ts, create-admin.ts
 public/                   favicon, dl.png, robots.txt
+```
+
+## Admin
+
+Jednoduchá administrace na `/admin` (SSR formuláře přes React Router actions):
+
+- **Přihlášení** (`/admin/login`) – cookie session podepsaná `SESSION_SECRET`,
+  hesla hashovaná bcryptem, uživatelé v kolekci `users`.
+- **Články** (`/admin/articles`) – výpis, vytvoření, editace, mazání (kolekce
+  `articles`). Obsah je HTML, sanitizuje se při zobrazení.
+- **Uživatelé** (`/admin/users`, jen role `admin`) – výpis, vytvoření, mazání;
+  role `admin` (vše) / `editor` (jen články).
+
+První admin se vytvoří skriptem:
+
+```bash
+GOOGLE_CLOUD_PROJECT=<id> npm run admin:create -- mail@vit.cz HesloMin8znaku "Jméno"
 ```
 
 ## Mapování z původní Nette aplikace
@@ -54,6 +75,7 @@ public/                   favicon, dl.png, robots.txt
 | `Error4xx/5xx` | `ErrorBoundary` v `root.tsx` |
 | Basic auth v `BasePresenter` | `express-basic-auth` v `server.js` (`ENABLE_AUTH=1`) |
 | MySQL + Nette Database | Firestore (Native) |
+| — (nově) | Admin na `/admin`: login, správa článků a uživatelů |
 
 ## Datový model (Firestore)
 
@@ -77,7 +99,8 @@ npx firebase-tools emulators:start --only firestore --project demo-datalayer
 export GOOGLE_CLOUD_PROJECT=demo-datalayer
 export FIRESTORE_EMULATOR_HOST=localhost:8080
 npm run db:seed          # ukázková data
-npm run dev              # http://localhost:3000
+npm run admin:create -- mail@vit.cz Heslo123 "Vít"   # přihlášení do /admin
+npm run dev              # http://localhost:3000  (admin na /admin)
 ```
 
 Bez emulátoru lze pracovat proti reálnému projektu (přihlas se
@@ -113,10 +136,11 @@ Pro deploy z gitu nastav Cloud Build trigger na `datalayer-web/cloudbuild.yaml`.
 
 ## Konfigurace
 
-`.env` (lokálně) / env proměnné Cloud Run: `GOOGLE_CLOUD_PROJECT`, volitelně
-`ENABLE_AUTH` + `SITE_USER`/`SITE_PASS` (basic auth), HubSpot ID. Firestore se
-autentizuje přes service account (ADC) — **žádné DB heslo ani secret**. `.env`
-je v `.gitignore` a necommituje se.
+`.env` (lokálně) / env proměnné Cloud Run: `GOOGLE_CLOUD_PROJECT`,
+`SESSION_SECRET` (podpis admin cookie – v produkci nastav náhodný řetězec a
+ideálně přes Secret Manager), volitelně `ENABLE_AUTH` + `SITE_USER`/`SITE_PASS`
+(basic auth), HubSpot ID. Firestore se autentizuje přes service account (ADC) —
+**žádné DB heslo**. `.env` je v `.gitignore` a necommituje se.
 
 ## Poznámka k obsahu
 
