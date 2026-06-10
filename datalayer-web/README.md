@@ -50,9 +50,15 @@ Jednoduchá administrace na `/admin` (SSR formuláře přes React Router actions
 - **Přihlášení** (`/admin/login`) – cookie session podepsaná `SESSION_SECRET`,
   hesla hashovaná bcryptem, uživatelé v kolekci `users`.
 - **Články** (`/admin/articles`) – výpis, vytvoření, editace, mazání (kolekce
-  `articles`). Obsah je HTML, sanitizuje se při zobrazení.
-- **Uživatelé** (`/admin/users`, jen role `admin`) – výpis, vytvoření, mazání;
-  role `admin` (vše) / `editor` (jen články).
+  `articles`).
+- **Landing pages** (`/admin/pages`) – výpis, vytvoření, editace, mazání
+  (kolekce `pages`); dostupné veřejně na `/{slug}`.
+- **WYSIWYG editor** – vizuální editace obsahu (tučné, nadpisy, seznamy, odkaz,
+  bloky kódu/infobox) s přepínačem na surové HTML; funguje i bez JS (textarea).
+  Obsah se sanitizuje při zobrazení.
+- **Uživatelé** (`/admin/users`, jen role `admin`) – výpis, vytvoření, mazání,
+  **reset hesla**; role `admin` (vše) / `editor` (články + LP).
+- **Můj účet** (`/admin/account`) – změna vlastního hesla (s ověřením stávajícího).
 
 První admin se vytvoří skriptem:
 

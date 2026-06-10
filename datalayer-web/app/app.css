@@ -679,3 +679,33 @@ footer .highlight {
   --bs-table-hover-bg: rgba(0, 255, 255, 0.06);
   --bs-table-border-color: var(--border-color);
 }
+
+/* WYSIWYG editor */
+.rte-toolbar .btn {
+  --bs-btn-color: var(--text-light);
+  --bs-btn-border-color: var(--border-color);
+  --bs-btn-hover-bg: rgba(0, 255, 255, 0.1);
+  --bs-btn-hover-color: var(--brand-cyan);
+  --bs-btn-hover-border-color: var(--brand-cyan);
+}
+.rte-area {
+  min-height: 22rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+.rte-area:focus {
+  outline: none;
+}
+.rte-area h2,
+.rte-area h3 {
+  color: #fff;
+}
+.rte-area .code-container,
+.rte-area .infobox {
+  font-size: 0.9rem;
+}
+.rte-area:empty::before {
+  content: 'Začni psát…';
+  color: var(--text-muted);
+}

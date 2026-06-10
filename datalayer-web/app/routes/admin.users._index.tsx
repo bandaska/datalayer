@@ -1,4 +1,4 @@
-import { Form, redirect, useActionData, useLoaderData } from 'react-router';
+import { Form, Link, redirect, useActionData, useLoaderData } from 'react-router';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { requireUser } from '~/lib/auth.server';
 import { createUser, deleteUser, listUsers, type Role } from '~/lib/users.server';
@@ -82,6 +82,12 @@ export default function AdminUsers() {
                       <span className="badge text-bg-secondary">{u.role}</span>
                     </td>
                     <td className="text-end">
+                      <Link
+                        to={`/admin/users/${u.id}/password`}
+                        className="btn btn-sm btn-outline-custom me-2"
+                      >
+                        Reset hesla
+                      </Link>
                       {u.id === currentId ? (
                         <span className="text-muted small">to jste vy</span>
                       ) : (

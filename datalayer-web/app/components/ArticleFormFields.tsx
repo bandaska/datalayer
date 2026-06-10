@@ -1,3 +1,5 @@
+import { RichTextEditor } from './RichTextEditor';
+
 type Defaults = {
   slug?: string;
   title?: string;
@@ -64,17 +66,11 @@ export function ArticleFormFields({
           />
         </div>
         <div className="col-12">
-          <label className="form-label">Obsah (HTML)</label>
-          <textarea
-            name="content"
-            className="form-control font-monospace"
-            rows={16}
-            defaultValue={defaults.content}
-            required
-          />
+          <label className="form-label">Obsah</label>
+          <RichTextEditor name="content" defaultValue={defaults.content} rows={16} />
           <div className="form-text">
-            HTML obsah článku. Sanitizuje se při zobrazení (povolené tagy včetně
-            code-container, infobox apod.).
+            Vizuální editor (tlačítko „HTML" přepne na surové HTML). Sanitizuje se
+            při zobrazení; povolené jsou i bloky code-container, infobox apod.
           </div>
         </div>
       </div>

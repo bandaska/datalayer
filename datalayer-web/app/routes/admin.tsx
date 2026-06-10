@@ -24,6 +24,9 @@ export default function AdminLayout() {
             <NavLink to="/admin/articles" className="admin-link">
               Články
             </NavLink>
+            <NavLink to="/admin/pages" className="admin-link">
+              Landing pages
+            </NavLink>
             {user.role === 'admin' ? (
               <NavLink to="/admin/users" className="admin-link">
                 Uživatelé
@@ -34,9 +37,9 @@ export default function AdminLayout() {
             </a>
           </div>
           <div className="d-flex align-items-center gap-3">
-            <span className="text-muted small">
+            <NavLink to="/admin/account" className="admin-link small">
               {user.name || user.email} ({user.role})
-            </span>
+            </NavLink>
             <Form method="post" action="/admin/logout">
               <button type="submit" className="btn btn-outline-custom btn-sm">
                 Odhlásit

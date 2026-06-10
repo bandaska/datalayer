@@ -16,7 +16,12 @@ export default [
     route('articles', 'routes/admin.articles._index.tsx'),
     route('articles/new', 'routes/admin.articles.new.tsx'),
     route('articles/:slug/edit', 'routes/admin.articles.$slug.edit.tsx'),
+    route('pages', 'routes/admin.pages._index.tsx'),
+    route('pages/new', 'routes/admin.pages.new.tsx'),
+    route('pages/:slug/edit', 'routes/admin.pages.$slug.edit.tsx'),
     route('users', 'routes/admin.users._index.tsx'),
+    route('users/:id/password', 'routes/admin.users.$id.password.tsx'),
+    route('account', 'routes/admin.account.tsx'),
   ]),
 
   route('*', 'routes/$.tsx'), // landing pages z Firestore (catch-all)

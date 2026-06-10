@@ -75,6 +75,19 @@ export async function deleteUser(id: string): Promise<void> {
   await collection().doc(id).delete();
 }
 
+export async function updatePassword(id: string, newPassword: string): Promise<void> {
+  const passwordHash = await bcrypt.hash(newPassword, 10);
+  await collection().doc(id).set({ passwordHash }, { merge: true });
+}
+
+/** Ověří heslo uživatele podle ID (pro změnu vlastního hesla). */
+export async function verifyPassword(id: string, password: string): Promise<boolean> {
+  const doc = await collection().doc(id).get();
+  if (!doc.exists) return false;
+  const hash = (doc.data() as Record<string, unknown>).passwordHash as string | undefined;
+  return hash ? bcrypt.compare(password, hash) : false;
+}
+
 export async function verifyCredentials(
   email: string,
   password: string,
