@@ -1,0 +1,36 @@
+// Datový model webu datalayer.cz – přepsaný z původní MySQL struktury na PostgreSQL.
+// Tabulky odpovídají původním `articles` a `authors` z Nette aplikace.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Author {
+  id       Int       @id @default(autoincrement())
+  name     String
+  articles Article[]
+
+  @@map("authors")
+}
+
+model Article {
+  id        Int      @id @default(autoincrement())
+  title     String
+  slug      String   @unique
+  date      DateTime @default(now())
+  // HTML obsah článku (původně Latte markup – viz README, kapitola o obsahu).
+  content   String
+  authorId  Int      @map("author_id")
+  author    Author   @relation(fields: [authorId], references: [id])
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([date])
+  @@map("articles")
+}
