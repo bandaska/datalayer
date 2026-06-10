@@ -1,0 +1,50 @@
+# Cloud Build pipeline pro deploy z gitu na Cloud Run.
+# Trigger: připoj GitHub repo v Cloud Build → push do větve spustí tento build.
+#
+# Substituce nastav v triggeru:
+#   _REGION   (např. europe-west1)
+#   _SERVICE  (např. datalayer-web)
+#   _AR_REPO  (Artifact Registry repo, např. datalayer)
+
+substitutions:
+  _REGION: europe-west1
+  _SERVICE: datalayer-web
+  _AR_REPO: datalayer
+
+steps:
+  # 1) Build Docker image.
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA
+      - .
+
+  # 2) Push do Artifact Registry.
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA
+
+  # 3) Deploy na Cloud Run.
+  #    Citlivé hodnoty (DATABASE_URL atd.) drž v Secret Manageru a naváž je
+  #    přes --set-secrets, ostatní přes --set-env-vars.
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --port=8080
+      - --set-secrets=DATABASE_URL=DATABASE_URL:latest
+      - --set-env-vars=NODE_ENV=production
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA
+
+options:
+  logging: CLOUD_LOGGING_ONLY

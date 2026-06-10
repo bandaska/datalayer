@@ -1,0 +1,50 @@
+{
+  "name": "datalayer-web",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "typecheck": "react-router typegen && tsc",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:migrate": "prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "@react-router/express": "^7.1.1",
+    "@react-router/node": "^7.1.1",
+    "compression": "^1.7.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.21.2",
+    "express-basic-auth": "^1.2.1",
+    "highlight.js": "^11.11.1",
+    "isbot": "^5.1.21",
+    "morgan": "^1.10.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.1.1",
+    "sanitize-html": "^2.14.0"
+  },
+  "devDependencies": {
+    "@react-router/dev": "^7.1.1",
+    "@types/compression": "^1.7.5",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.4",
+    "@types/react-dom": "^19.0.2",
+    "@types/sanitize-html": "^2.13.0",
+    "prisma": "^6.2.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
