@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
-import sanitizeHtml from 'sanitize-html';
 import { getBySlug } from '~/lib/articles.server';
+import { cleanHtml } from '~/lib/sanitize.server';
 import { ArticleContent } from '~/components/ArticleContent';
 import { formatDate, perex } from '~/lib/text';
 
@@ -12,29 +12,6 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     { name: 'description', content: perex(data.article.content, 160) },
   ];
 };
-
-// Whitelist tagů a atributů pro obsah článku (původně Latte/HTML v DB).
-function cleanHtml(html: string): string {
-  return sanitizeHtml(html, {
-    allowedTags: sanitizeHtml.defaults.allowedTags.concat([
-      'img',
-      'figure',
-      'figcaption',
-      'span',
-      'button',
-      'i',
-      'h1',
-      'h2',
-    ]),
-    allowedAttributes: {
-      '*': ['class', 'id', 'style'],
-      a: ['href', 'target', 'rel'],
-      img: ['src', 'alt', 'width', 'height'],
-      button: ['type'],
-    },
-    allowedSchemes: ['http', 'https', 'mailto', 'data'],
-  });
-}
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const article = await getBySlug(params.slug!);

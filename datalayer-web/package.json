@@ -10,14 +10,10 @@
     "build": "react-router build",
     "start": "cross-env NODE_ENV=production node server.js",
     "typecheck": "react-router typegen && tsc",
-    "prisma:generate": "prisma generate",
-    "prisma:push": "prisma db push",
-    "prisma:migrate": "prisma migrate deploy",
-    "db:seed": "tsx prisma/seed.ts",
-    "postinstall": "prisma generate"
+    "db:seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^6.2.1",
+    "@google-cloud/firestore": "^7.11.0",
     "@react-router/express": "^7.1.1",
     "@react-router/node": "^7.1.1",
     "compression": "^1.7.5",
@@ -41,7 +37,6 @@
     "@types/react": "^19.0.4",
     "@types/react-dom": "^19.0.2",
     "@types/sanitize-html": "^2.13.0",
-    "prisma": "^6.2.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vite": "^6.0.7",

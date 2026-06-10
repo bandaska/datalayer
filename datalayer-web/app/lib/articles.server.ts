@@ -1,9 +1,11 @@
-import { db } from './db.server';
+import { Timestamp } from '@google-cloud/firestore';
+import { firestore } from './firestore.server';
 
+// Obsah blogu z Firestore kolekce `articles`. Slug = ID dokumentu.
 // Ekvivalent původní App\Model\ArticleService.
 
 export type Article = {
-  id: number;
+  id: string;
   title: string;
   slug: string;
   author: string;
@@ -11,38 +13,31 @@ export type Article = {
   content: string;
 };
 
-type Row = {
-  id: number;
-  title: string;
-  slug: string;
-  date: Date;
-  content: string;
-  author: { name: string } | null;
-};
+const collection = () => firestore.collection('articles');
 
-function toEntity(row: Row): Article {
+function toEntity(
+  doc: FirebaseFirestore.DocumentSnapshot | FirebaseFirestore.QueryDocumentSnapshot,
+): Article {
+  const d = doc.data() as Record<string, unknown>;
+  const raw = d.date;
+  const date =
+    raw instanceof Timestamp ? raw.toDate() : new Date((raw as string) ?? Date.now());
   return {
-    id: row.id,
-    title: row.title,
-    slug: row.slug,
-    author: row.author?.name ?? '',
-    date: row.date.toISOString(),
-    content: row.content,
+    id: doc.id,
+    title: (d.title as string) ?? '',
+    slug: (d.slug as string) ?? doc.id,
+    author: (d.author as string) ?? '',
+    date: date.toISOString(),
+    content: (d.content as string) ?? '',
   };
 }
 
 export async function getAll(): Promise<Article[]> {
-  const rows = await db.article.findMany({
-    orderBy: { date: 'desc' },
-    include: { author: { select: { name: true } } },
-  });
-  return rows.map(toEntity);
+  const snap = await collection().orderBy('date', 'desc').get();
+  return snap.docs.map(toEntity);
 }
 
 export async function getBySlug(slug: string): Promise<Article | null> {
-  const row = await db.article.findUnique({
-    where: { slug },
-    include: { author: { select: { name: true } } },
-  });
-  return row ? toEntity(row) : null;
+  const doc = await collection().doc(slug).get();
+  return doc.exists ? toEntity(doc) : null;
 }

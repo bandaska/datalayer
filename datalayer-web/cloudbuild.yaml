@@ -1,5 +1,10 @@
 # Cloud Build pipeline pro deploy z gitu na Cloud Run.
 # Trigger: připoj GitHub repo v Cloud Build → push do větve spustí tento build.
+# Aplikace je v podsložce datalayer-web/, build proto běží z kořene repa
+# s build kontextem ./datalayer-web.
+#
+# Data se ukládají do Firestore (Native) – žádná DB instance ani secret
+# s heslem; runtime service account jen potřebuje roli Cloud Datastore User.
 #
 # Substituce nastav v triggeru:
 #   _REGION   (např. europe-west1)
@@ -12,13 +17,13 @@ substitutions:
   _AR_REPO: datalayer
 
 steps:
-  # 1) Build Docker image.
+  # 1) Build Docker image (kontext = podsložka datalayer-web).
   - name: gcr.io/cloud-builders/docker
     args:
       - build
       - -t
       - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA
-      - .
+      - datalayer-web
 
   # 2) Push do Artifact Registry.
   - name: gcr.io/cloud-builders/docker
@@ -26,9 +31,8 @@ steps:
       - push
       - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA
 
-  # 3) Deploy na Cloud Run.
-  #    Citlivé hodnoty (DATABASE_URL atd.) drž v Secret Manageru a naváž je
-  #    přes --set-secrets, ostatní přes --set-env-vars.
+  # 3) Deploy na Cloud Run. Firestore se autentizuje přes runtime SA (ADC),
+  #    GOOGLE_CLOUD_PROJECT zajistí správný projekt pro klienta.
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     entrypoint: gcloud
     args:
@@ -40,8 +44,7 @@ steps:
       - --platform=managed
       - --allow-unauthenticated
       - --port=8080
-      - --set-secrets=DATABASE_URL=DATABASE_URL:latest
-      - --set-env-vars=NODE_ENV=production
+      - --set-env-vars=NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID
 
 images:
   - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA
