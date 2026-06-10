@@ -1,24 +1,28 @@
 # Cloud Build pipeline pro deploy z gitu na Cloud Run.
 # Trigger: připoj GitHub repo v Cloud Build → push do větve spustí tento build.
+# Aplikace je v podsložce datalayer-web/, build proto běží z kořene repa
+# s build kontextem ./datalayer-web.
 #
 # Substituce nastav v triggeru:
-#   _REGION   (např. europe-west1)
-#   _SERVICE  (např. datalayer-web)
-#   _AR_REPO  (Artifact Registry repo, např. datalayer)
+#   _REGION    (např. europe-west1)
+#   _SERVICE   (např. datalayer-web)
+#   _AR_REPO   (Artifact Registry repo, např. datalayer)
+#   _CLOUDSQL  (Cloud SQL connection name: PROJECT:REGION:INSTANCE)
 
 substitutions:
   _REGION: europe-west1
   _SERVICE: datalayer-web
   _AR_REPO: datalayer
+  _CLOUDSQL: ''
 
 steps:
-  # 1) Build Docker image.
+  # 1) Build Docker image (kontext = podsložka datalayer-web).
   - name: gcr.io/cloud-builders/docker
     args:
       - build
       - -t
       - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA
-      - .
+      - datalayer-web
 
   # 2) Push do Artifact Registry.
   - name: gcr.io/cloud-builders/docker
@@ -40,6 +44,7 @@ steps:
       - --platform=managed
       - --allow-unauthenticated
       - --port=8080
+      - --add-cloudsql-instances=${_CLOUDSQL}
       - --set-secrets=DATABASE_URL=DATABASE_URL:latest
       - --set-env-vars=NODE_ENV=production
 
