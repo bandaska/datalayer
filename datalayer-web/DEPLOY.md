@@ -1,8 +1,9 @@
-# Deploy `datalayer-web` na Google Cloud Run — step by step
+# Deploy `datalayer-web` na Google Cloud Run — step by step (CLI)
 
 Konkrétní, copy-paste postup pro nasazení této aplikace (Express + React Router
-SSR + Prisma) na **Cloud Run** s databází **Cloud SQL PostgreSQL** a credentials
-v **Secret Manageru**. Aplikace je v podsložce `datalayer-web/` tohoto repa.
+SSR) na **Cloud Run** s úložištěm dat **Firestore (Native)**. Data (články +
+landing pages) jsou ve Firestore — **žádná DB instance, žádné heslo, free tier**.
+Aplikace je v podsložce `datalayer-web/` tohoto repa.
 
 > Příkazy spouštěj z kořene repozitáře (kde je složka `datalayer-web/`), pokud
 > není uvedeno jinak.
@@ -15,9 +16,9 @@ v **Secret Manageru**. Aplikace je v podsložce `datalayer-web/` tohoto repa.
 - Přihlášení:
   ```bash
   gcloud auth login
+  gcloud auth application-default login   # ADC pro lokální seed (kapitola 6)
   ```
-- Lokálně Node.js 20+ (kvůli kroku 7 – aplikace schématu) a Docker (pokud chceš
-  build ověřit lokálně; pro deploy není nutný).
+- Lokálně Node.js 20+.
 
 ---
 
@@ -28,15 +29,8 @@ export PROJECT_ID="datalayer-web"          # uprav dle sebe
 export REGION="europe-west1"               # nebo europe-west3 (Frankfurt)
 export SERVICE="datalayer-web"
 export AR_REPO="datalayer"                 # Artifact Registry repo
-export SQL_INSTANCE="datalayer-pg"
-export DB_NAME="datalayer"
-export DB_USER="app"
-export DB_PASS="$(openssl rand -base64 24 | tr -d '/+=')"   # vygeneruj heslo
 
 gcloud config set project "$PROJECT_ID"
-# Connection name Cloud SQL instance (PROJECT:REGION:INSTANCE):
-export CLOUDSQL="${PROJECT_ID}:${REGION}:${SQL_INSTANCE}"
-echo "DB_PASS=$DB_PASS"   # poznamenej si
 ```
 
 ---
@@ -48,8 +42,7 @@ gcloud services enable \
   run.googleapis.com \
   cloudbuild.googleapis.com \
   artifactregistry.googleapis.com \
-  sqladmin.googleapis.com \
-  secretmanager.googleapis.com
+  firestore.googleapis.com
 ```
 
 ---
@@ -63,42 +56,26 @@ gcloud artifacts repositories create "$AR_REPO" \
   --description="Datalayer web images"
 ```
 
+> Při deployi `--source` (kap. 7) se repo `cloud-run-source-deploy` vytvoří samo;
+> tento krok je nutný hlavně pro CI/CD přes `cloudbuild.yaml`.
+
 ---
 
-## 4. Cloud SQL PostgreSQL
+## 4. Firestore (Native) databáze
+
+Firestore má **always-free** tier (cca 1 GiB úložiště, 50k čtení / 20k zápisů
+denně) a škáluje na nulu.
 
 ```bash
-# Instance (nejmenší tier; pro produkci zvaž větší/HA):
-gcloud sql instances create "$SQL_INSTANCE" \
-  --database-version=POSTGRES_16 \
-  --tier=db-f1-micro \
-  --region="$REGION" \
-  --storage-auto-increase
-
-# Databáze a aplikační uživatel:
-gcloud sql databases create "$DB_NAME" --instance="$SQL_INSTANCE"
-gcloud sql users create "$DB_USER" --instance="$SQL_INSTANCE" --password="$DB_PASS"
+# Vytvoř výchozí databázi v Native módu (jednorázově na projekt):
+gcloud firestore databases create --location="$REGION"
 ```
+
+> Lokace Firestore je trvalá. Zvol stejný region jako Cloud Run kvůli latenci.
 
 ---
 
-## 5. Secret Manager — `DATABASE_URL`
-
-Cloud Run se k Cloud SQL připojuje přes **unix socket** `/cloudsql/<CONNECTION>`.
-Tomu odpovídá tvar `DATABASE_URL` (heslo musí být URL-enkódované, pokud obsahuje
-speciální znaky — generované výše je bezpečné):
-
-```bash
-DATABASE_URL="postgresql://${DB_USER}:${DB_PASS}@localhost/${DB_NAME}?host=/cloudsql/${CLOUDSQL}&schema=public"
-
-printf '%s' "$DATABASE_URL" | gcloud secrets create DATABASE_URL --data-file=-
-# Při změně hodnoty později:
-# printf '%s' "$DATABASE_URL" | gcloud secrets versions add DATABASE_URL --data-file=-
-```
-
----
-
-## 6. Service accounts a IAM
+## 5. Service account a IAM
 
 ```bash
 # Runtime service account pro Cloud Run:
@@ -106,52 +83,35 @@ gcloud iam service-accounts create datalayer-run \
   --display-name="datalayer-web runtime"
 export RUN_SA="datalayer-run@${PROJECT_ID}.iam.gserviceaccount.com"
 
-# Runtime SA: přístup k Cloud SQL a ke čtení secretu:
+# Přístup k Firestore (čtení/zápis):
 gcloud projects add-iam-policy-binding "$PROJECT_ID" \
-  --member="serviceAccount:${RUN_SA}" --role="roles/cloudsql.client"
-gcloud projects add-iam-policy-binding "$PROJECT_ID" \
-  --member="serviceAccount:${RUN_SA}" --role="roles/secretmanager.secretAccessor"
+  --member="serviceAccount:${RUN_SA}" --role="roles/datastore.user"
 ```
 
-> Pro deploy přes Cloud Build (kapitola 9) dostane i Cloud Build SA práva
-> `run.admin` a `iam.serviceAccountUser` — viz tam.
+> Žádný Secret Manager není potřeba — Firestore se autentizuje přes runtime SA
+> (Application Default Credentials), bez hesla v env.
 
 ---
 
-## 7. Aplikace schématu na produkční DB (Prisma)
+## 6. Naplnění dat (seed)
 
-Schéma se na Cloud SQL nahraje z lokálu přes **Cloud SQL Auth Proxy**.
+Lokálně, proti reálnému Firestore projektu (přes ADC z kroku 0):
 
 ```bash
-# Stáhni proxy (Linux x64; jiné platformy viz dokumentace):
-curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.1/cloud-sql-proxy.linux.amd64
-chmod +x cloud-sql-proxy
-
-# Spusť proxy na localhost:5432 (běží v popředí, nech v samostatném terminálu):
-./cloud-sql-proxy "$CLOUDSQL" --port 5432 &
-PROXY_PID=$!
-
 cd datalayer-web
 npm ci
-
-# Schéma + (volitelně) ukázková data přes TCP proxy:
-export DATABASE_URL="postgresql://${DB_USER}:${DB_PASS}@localhost:5432/${DB_NAME}?schema=public"
-npx prisma db push          # nebo: npx prisma migrate deploy (pokud používáš migrace)
-npm run db:seed             # volitelné – ukázkové články
-
+GOOGLE_CLOUD_PROJECT="$PROJECT_ID" npm run db:seed   # ukázkové články + 1 landing page
 cd ..
-kill $PROXY_PID             # vypni proxy
 ```
 
-> Pozn.: tady je `DATABASE_URL` přes TCP (`localhost:5432`), zatímco Cloud Run
-> používá unix socket (kapitola 5). To je v pořádku — jde o dvě různá prostředí.
+> Pro lokální vývoj bez zápisu do produkce použij **Firestore emulátor**:
+> `FIRESTORE_EMULATOR_HOST=localhost:8080 GOOGLE_CLOUD_PROJECT=demo npm run db:seed`.
 
 ---
 
-## 8. Deploy — varianta A: přímo ze zdroje (rychlý start)
+## 7. Deploy — varianta A: přímo ze zdroje (rychlý start)
 
-Nejjednodušší jednorázový/manuální deploy. Cloud Build z `Dockerfile` postaví
-image a nasadí. Spouštěj **ze složky `datalayer-web/`**:
+Spouštěj **ze složky `datalayer-web/`**:
 
 ```bash
 cd datalayer-web
@@ -160,9 +120,7 @@ gcloud run deploy "$SERVICE" \
   --source . \
   --region "$REGION" \
   --service-account "$RUN_SA" \
-  --add-cloudsql-instances "$CLOUDSQL" \
-  --set-secrets "DATABASE_URL=DATABASE_URL:latest" \
-  --set-env-vars "NODE_ENV=production" \
+  --set-env-vars "NODE_ENV=production,GOOGLE_CLOUD_PROJECT=${PROJECT_ID}" \
   --port 8080 \
   --allow-unauthenticated \
   --cpu 1 --memory 512Mi --min-instances 0 --max-instances 5
@@ -170,16 +128,15 @@ gcloud run deploy "$SERVICE" \
 cd ..
 ```
 
-Po doběhnutí vypíše **Service URL** — otevři ji v prohlížeči.
+Po doběhnutí vypíše **Service URL**.
 
 ---
 
-## 9. Deploy — varianta B: automaticky z gitu (doporučeno)
+## 8. Deploy — varianta B: automaticky z gitu (doporučeno)
 
-Trvalé CI/CD: každý push do sledované větve spustí build dle
-`datalayer-web/cloudbuild.yaml` (build z podsložky + deploy).
+Každý push do sledované větve spustí build dle `datalayer-web/cloudbuild.yaml`.
 
-**9.1 Práva pro Cloud Build SA:**
+**8.1 Práva pro Cloud Build SA:**
 
 ```bash
 export PROJECT_NUMBER="$(gcloud projects describe "$PROJECT_ID" --format='value(projectNumber)')"
@@ -193,7 +150,7 @@ gcloud projects add-iam-policy-binding "$PROJECT_ID" \
   --member="serviceAccount:${CB_SA}" --role="roles/artifactregistry.writer"
 ```
 
-**9.2 Propojení GitHub repa** (jednorázově, otevře autorizaci):
+**8.2 Propojení GitHub repa** (jednorázově):
 
 ```bash
 gcloud builds connections create github datalayer-conn --region="$REGION"
@@ -203,7 +160,7 @@ gcloud builds repositories create datalayer-repo \
   --remote-uri="https://github.com/bandaska/datalayer.git"
 ```
 
-**9.3 Vytvoření triggeru** (build dle našeho `cloudbuild.yaml`):
+**8.3 Vytvoření triggeru:**
 
 ```bash
 gcloud builds triggers create github \
@@ -212,120 +169,90 @@ gcloud builds triggers create github \
   --repository="projects/${PROJECT_ID}/locations/${REGION}/connections/datalayer-conn/repositories/datalayer-repo" \
   --branch-pattern="^main$" \
   --build-config="datalayer-web/cloudbuild.yaml" \
-  --substitutions="_REGION=${REGION},_SERVICE=${SERVICE},_AR_REPO=${AR_REPO},_CLOUDSQL=${CLOUDSQL}"
+  --substitutions="_REGION=${REGION},_SERVICE=${SERVICE},_AR_REPO=${AR_REPO}"
 ```
 
-> Alternativně lze trigger nakliknout v Console → Cloud Build → Triggers
-> (Repository: bandaska/datalayer, Config: `datalayer-web/cloudbuild.yaml`,
-> Substitutions jako výše).
-
-**9.4 Spuštění:** push do `main` (nebo ruční `gcloud builds triggers run
+**8.4 Spuštění:** push do `main` (nebo `gcloud builds triggers run
 datalayer-web-deploy --region="$REGION" --branch=main`).
 
-> `cloudbuild.yaml` v deploy kroku **nepoužívá** `--service-account` (běží pod
-> default runtime SA). Chceš-li runtime SA `datalayer-run`, přidej do deploy
-> kroku `--service-account=${RUN_SA}` a do substitucí příslušnou hodnotu.
+> `cloudbuild.yaml` deployuje pod default runtime SA. Chceš-li SA
+> `datalayer-run` (s rolí `datastore.user`), přidej do deploy kroku
+> `--service-account=...`; jinak přiřaď roli `datastore.user` i default
+> compute SA.
 
 ---
 
-## 10. Ověření
+## 9. Ověření
 
 ```bash
 export URL="$(gcloud run services describe "$SERVICE" --region "$REGION" --format='value(status.url)')"
 echo "$URL"
 
-curl -s -o /dev/null -w "home  %{http_code}\n" "$URL/"
-curl -s -o /dev/null -w "blog  %{http_code}\n" "$URL/blog"
-curl -s -o /dev/null -w "404   %{http_code}\n" "$URL/neexistuje"
+curl -s -o /dev/null -w "home   %{http_code}\n" "$URL/"
+curl -s -o /dev/null -w "blog   %{http_code}\n" "$URL/blog"
+curl -s -o /dev/null -w "lp     %{http_code}\n" "$URL/kampan-ga4"
+curl -s -o /dev/null -w "404    %{http_code}\n" "$URL/neexistuje"
 ```
 
-Očekávané: `/` a `/blog` → 200, neexistující cesta → 404. Pokud `/blog` vrací
-500, zkontroluj `DATABASE_URL` secret a připojení Cloud SQL (kapitola 14).
+Očekávané: `/`, `/blog`, `/kampan-ga4` → 200; neexistující cesta → 404. Pokud
+`/blog` vrací 500, zkontroluj Firestore (existuje databáze? má runtime SA roli
+`datastore.user`? je nastaven `GOOGLE_CLOUD_PROJECT`?) — viz kapitola 12.
 
 ---
 
-## 11. Vlastní doména
+## 10. Vlastní doména
 
 ```bash
 gcloud beta run domain-mappings create \
   --service "$SERVICE" --region "$REGION" --domain "www.datalayer.cz"
 ```
 
-Poté nastav DNS záznamy dle výpisu příkazu (Google vydá certifikát automaticky).
+Poté nastav DNS záznamy dle výpisu (Google vydá certifikát automaticky).
 
 ---
 
-## 12. Vývojová ochrana heslem (volitelné)
-
-Aplikace umí HTTP Basic Auth (jako původní Nette web). Zapneš ji při deploy:
+## 11. Vývojová ochrana heslem (volitelné)
 
 ```bash
 gcloud run services update "$SERVICE" --region "$REGION" \
-  --set-env-vars "NODE_ENV=production,ENABLE_AUTH=1,SITE_USER=vn,SITE_PASS=tajne"
+  --set-env-vars "NODE_ENV=production,GOOGLE_CLOUD_PROJECT=${PROJECT_ID},ENABLE_AUTH=1,SITE_USER=vn,SITE_PASS=tajne"
 ```
-
-Vypnutí: `ENABLE_AUTH=0` (nebo proměnnou odebrat).
 
 ---
 
-## 13. Aktualizace a rollback
+## 12. Logy a troubleshooting
 
 ```bash
-# Nová revize (varianta A) – znovu deploy ze zdroje (viz kap. 8),
-# nebo (varianta B) – push do main.
-
-# Seznam revizí:
-gcloud run revisions list --service "$SERVICE" --region "$REGION"
-
-# Rollback na konkrétní revizi (100 % provozu):
-gcloud run services update-traffic "$SERVICE" --region "$REGION" \
-  --to-revisions REVISION_NAME=100
-```
-
-Změny DB schématu nasazuj přes Prisma (kapitola 7) **před** deployem revize,
-která je vyžaduje.
-
----
-
-## 14. Logy a troubleshooting
-
-```bash
-# Živé logy:
 gcloud run services logs tail "$SERVICE" --region "$REGION"
 ```
 
-Časté problémy:
-
 | Symptom | Příčina / řešení |
 |---|---|
-| `/blog` vrací 500 | Špatný `DATABASE_URL` nebo chybí `--add-cloudsql-instances`. Ověř secret a connection name `$CLOUDSQL`. |
-| `Environment variable not found: DATABASE_URL` | Secret nenamapován do služby (`--set-secrets`) nebo runtime SA nemá `secretmanager.secretAccessor`. |
-| `permission denied for ... cloudsql` | Runtime SA chybí `roles/cloudsql.client`. |
-| Kontejner nenastartuje / port | Aplikace poslouchá na `PORT` (Cloud Run = 8080). `server.js` to respektuje; neměň `--port`. |
+| `/blog` vrací 500 | Firestore databáze neexistuje (`gcloud firestore databases create`), nebo runtime SA nemá `roles/datastore.user`. |
+| `Could not load the default credentials` | Chybí runtime SA / ADC. Na Cloud Run nasaď s `--service-account`; lokálně `gcloud auth application-default login`. |
+| `5 NOT_FOUND` / prázdný blog | Nenaplněná data — spusť seed (kapitola 6). |
+| Kontejner nenastartuje / port | Aplikace poslouchá na `PORT` (Cloud Run = 8080). Neměň `--port`. |
 | Build z gitu staví špatnou složku | Trigger musí mít config `datalayer-web/cloudbuild.yaml`; build kontext je `datalayer-web`. |
-| Prisma engine chyba v image | Dockerfile instaluje `openssl` — neodstraňuj. |
 
 ---
 
-## 15. Náklady a škálování
+## 13. Náklady a škálování
 
-- `--min-instances 0` → **scale-to-zero**: při nečinnosti neplatíš za běh
-  kontejneru (cena za první request je vyšší kvůli cold startu).
-- Pro stálou odezvu nastav `--min-instances 1`.
-- Cloud SQL `db-f1-micro` běží nepřetržitě (účtuje se i bez provozu); pro úsporu
-  zvaž zastavování instance nebo menší prostředí pro testy.
+- Cloud Run `--min-instances 0` → **scale-to-zero** (v klidu neplatíš za běh).
+- **Firestore** běží ve free tieru — pro tento web prakticky **0 Kč**.
+- Pro stálou odezvu nastav `--min-instances 1` (drobný stálý náklad za Cloud Run).
 
 ---
 
 ## Rychlý souhrn (TL;DR)
 
 ```bash
-# 1–6: nastav projekt, API, Artifact Registry, Cloud SQL, secret, IAM (viz výše)
-# 7: schéma na DB přes Cloud SQL Auth Proxy + prisma db push (+ seed)
-# 8: deploy
-cd datalayer-web
+# 1–5: projekt, API, Artifact Registry, Firestore databáze, runtime SA + datastore.user
+# 6: seed dat
+cd datalayer-web && GOOGLE_CLOUD_PROJECT=$PROJECT_ID npm run db:seed
+# 7: deploy
 gcloud run deploy datalayer-web --source . --region "$REGION" \
-  --service-account "$RUN_SA" --add-cloudsql-instances "$CLOUDSQL" \
-  --set-secrets DATABASE_URL=DATABASE_URL:latest \
-  --set-env-vars NODE_ENV=production --port 8080 --allow-unauthenticated
+  --service-account "$RUN_SA" \
+  --set-env-vars NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID \
+  --port 8080 --allow-unauthenticated
 ```

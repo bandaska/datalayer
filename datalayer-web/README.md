@@ -1,17 +1,18 @@
 # datalayer-web
 
 Web datalayer.cz přepsaný z PHP/Nette na **Node.js + Express + React + React
-Router 7 + Vite + TypeScript**, s **PostgreSQL** (Prisma) a deployem na
-**Google Cloud Run z gitu**.
+Router 7 + Vite + TypeScript**, s úložištěm dat ve **Firestore (Native)** a
+deployem na **Google Cloud Run z gitu**.
 
 ## Stack
 
 - **Runtime:** Node.js 20+
 - **Server:** Express 4 (SSR handler React Routeru) – `server.js`
 - **Frontend:** React 19 + React Router 7 (framework mode, SSR) + Vite
-- **DB:** PostgreSQL přes Prisma 6
-- **Obsah článků:** HTML z DB, sanitizace (`sanitize-html`) + highlight.js
-- **Credentials:** vše v `.env` (viz `.env.example`)
+- **Data:** Firestore (Native) – kolekce `articles` (blog) a `pages` (landing
+  pages). Free tier, serverless, bez DB instance a bez hesla.
+- **Obsah:** HTML z Firestore, sanitizace (`sanitize-html`) + highlight.js
+- **Konfigurace:** `.env` (viz `.env.example`); na Cloud Run env proměnné
 
 ## Struktura
 
@@ -21,15 +22,20 @@ react-router.config.ts    ssr: true
 vite.config.ts
 Dockerfile                build image pro Cloud Run
 cloudbuild.yaml           CI/CD pipeline (deploy z gitu)
-prisma/schema.prisma      datový model (PostgreSQL)
-prisma/seed.ts            ukázková data
+scripts/seed.ts           naplnění Firestore ukázkovými daty
 app/
   root.tsx                layout (= @layout.latte) + ErrorBoundary
   routes.ts               routování
   app.css                 přenesené styly
-  lib/                    db, articles (= ArticleService), services, text helpery
+  lib/
+    firestore.server.ts   Firestore klient
+    articles.server.ts    blog (= ArticleService) – kolekce `articles`
+    pages.server.ts       landing pages – kolekce `pages`
+    sanitize.server.ts    sanitizace HTML obsahu
+    services.ts, text.ts  služby + helpery (date/stripHtml/truncate)
   components/             Navbar, Footer, ContactForm, ArticleContent
-  routes/                 home, blog._index, blog.$slug, services, privacy
+  routes/                 home, blog._index, blog.$slug, services(.$service),
+                          privacy, $ (catch-all landing pages)
 public/                   favicon, dl.png, robots.txt
 ```
 
@@ -43,90 +49,79 @@ public/                   favicon, dl.png, robots.txt
 | `ServicesPresenter` (+ akce) | `app/routes/services.tsx` + `services.$service.tsx` |
 | `BlogPresenter::default` | `app/routes/blog._index.tsx` |
 | `BlogPresenter::detail` | `app/routes/blog.$slug.tsx` |
-| `ArticleService` | `app/lib/articles.server.ts` |
+| `ArticleService` | `app/lib/articles.server.ts` (Firestore) |
 | `DbContentControl` | `app/components/ArticleContent.tsx` |
 | `Error4xx/5xx` | `ErrorBoundary` v `root.tsx` |
 | Basic auth v `BasePresenter` | `express-basic-auth` v `server.js` (`ENABLE_AUTH=1`) |
-| MySQL + Nette Database | PostgreSQL + Prisma |
+| MySQL + Nette Database | Firestore (Native) |
+
+## Datový model (Firestore)
+
+- **`articles/{slug}`** — `slug`, `title`, `author`, `date` (Timestamp),
+  `content` (HTML). Slug = ID dokumentu.
+- **`pages/{slug}`** — `slug`, `title`, `perex?`, `content` (HTML). Dostupné na
+  cestě `/{slug}` přes catch-all route `routes/$.tsx`.
 
 ## Lokální vývoj
 
+Doporučeno přes **Firestore emulátor** (nezapisuje do produkce):
+
 ```bash
 npm install
-cp .env.example .env          # vyplň DATABASE_URL atd.
+cp .env.example .env
 
-# Postgres (Docker):
-docker run --name datalayer-pg -e POSTGRES_USER=datalayer \
-  -e POSTGRES_PASSWORD=datalayer -e POSTGRES_DB=datalayer \
-  -p 5432:5432 -d postgres:16
+# Emulátor (vyžaduje Javu); v jednom terminálu:
+npx firebase-tools emulators:start --only firestore --project demo-datalayer
 
-npx prisma db push            # vytvoří schéma
-npm run db:seed               # ukázková data (volitelné)
-npm run dev                   # http://localhost:3000
+# V druhém terminálu:
+export GOOGLE_CLOUD_PROJECT=demo-datalayer
+export FIRESTORE_EMULATOR_HOST=localhost:8080
+npm run db:seed          # ukázková data
+npm run dev              # http://localhost:3000
 ```
+
+Bez emulátoru lze pracovat proti reálnému projektu (přihlas se
+`gcloud auth application-default login` a nastav `GOOGLE_CLOUD_PROJECT`).
 
 ## Produkční build (lokálně)
 
 ```bash
 npm run build
-npm start                     # NODE_ENV=production node server.js
+npm start                # NODE_ENV=production node server.js
 ```
 
-## Deploy na Google Cloud Run z gitu
+## Deploy na Cloud Run
 
-Jednorázová příprava GCP:
+Podrobně viz **[`DEPLOY.md`](./DEPLOY.md)** (CLI) nebo
+**[`DEPLOY-GUI.md`](./DEPLOY-GUI.md)** (Cloud Console). Ve zkratce:
 
-```bash
-export PROJECT_ID=...; export REGION=europe-west1
-gcloud config set project $PROJECT_ID
-gcloud services enable run.googleapis.com cloudbuild.googleapis.com \
-  artifactregistry.googleapis.com sqladmin.googleapis.com secretmanager.googleapis.com
-
-# Artifact Registry pro image:
-gcloud artifacts repositories create datalayer --repository-format=docker --location=$REGION
-
-# Cloud SQL Postgres:
-gcloud sql instances create datalayer-pg --database-version=POSTGRES_16 \
-  --tier=db-custom-1-3840 --region=$REGION
-gcloud sql databases create datalayer --instance=datalayer-pg
-gcloud sql users create app --instance=datalayer-pg --password='HESLO'
-
-# DATABASE_URL jako secret (Cloud SQL přes unix socket):
-printf '%s' 'postgresql://app:HESLO@localhost/datalayer?host=/cloudsql/'"$PROJECT_ID:$REGION:datalayer-pg"'&schema=public' \
-  | gcloud secrets create DATABASE_URL --data-file=-
-```
-
-**Deploy z gitu** – dvě varianty:
-
-1. **Cloud Build trigger (doporučeno):** v Cloud Console → Cloud Build → Triggers
-   připoj GitHub repo a nastav build podle `cloudbuild.yaml`. Každý push do
-   sledované větve postaví image a nasadí na Cloud Run. Nastav substituce
-   `_REGION`, `_SERVICE`, `_AR_REPO`.
-
-2. **Přímý deploy ze zdroje:**
+1. Povol API (run, cloudbuild, artifactregistry, firestore).
+2. Vytvoř Firestore databázi: `gcloud firestore databases create --location=$REGION`.
+3. Runtime SA s rolí `roles/datastore.user`.
+4. Seed dat: `GOOGLE_CLOUD_PROJECT=$PROJECT_ID npm run db:seed`.
+5. Deploy:
 
    ```bash
-   gcloud run deploy datalayer-web \
-     --source . \
-     --region $REGION \
-     --allow-unauthenticated \
-     --add-cloudsql-instances $PROJECT_ID:$REGION:datalayer-pg \
-     --set-secrets DATABASE_URL=DATABASE_URL:latest \
-     --set-env-vars NODE_ENV=production
+   cd datalayer-web
+   gcloud run deploy datalayer-web --source . --region $REGION \
+     --service-account "$RUN_SA" \
+     --set-env-vars NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID \
+     --port 8080 --allow-unauthenticated
    ```
 
-Migrace schématu na produkční DB se provede přes `prisma migrate deploy`
-(v build kroku nebo jednorázově s připojením k Cloud SQL).
+Pro deploy z gitu nastav Cloud Build trigger na `datalayer-web/cloudbuild.yaml`.
 
-## Credentials
+## Konfigurace
 
-Veškeré citlivé hodnoty jsou v `.env` (lokálně) / Secret Manageru (produkce):
-`DATABASE_URL`, volitelně `SITE_USER`/`SITE_PASS` (basic auth), HubSpot ID.
-`.env` je v `.gitignore` a **necommituje se**.
+`.env` (lokálně) / env proměnné Cloud Run: `GOOGLE_CLOUD_PROJECT`, volitelně
+`ENABLE_AUTH` + `SITE_USER`/`SITE_PASS` (basic auth), HubSpot ID. Firestore se
+autentizuje přes service account (ADC) — **žádné DB heslo ani secret**. `.env`
+je v `.gitignore` a necommituje se.
 
-## Poznámka k obsahu článků
+## Poznámka k obsahu
 
-Původně sloupec `content` obsahoval Latte markup renderovaný přes
-`DbContentControl`. Zde se očekává **HTML**, které se sanitizuje a vykreslí
-(`ArticleContent`). Při migraci dat z MySQL převeď případnou Latte syntaxi na
-čisté HTML. Pro budoucí psaní lze přejít na Markdown.
+Původně sloupec `content` (MySQL) obsahoval Latte markup renderovaný přes
+`DbContentControl`. Zde se ve Firestore ukládá **HTML**, které se sanitizuje a
+vykreslí (`ArticleContent`). Obsah lze editovat přímo v Cloud Console
+(Firestore → Data) bez redeploye. Při migraci dat ze staré DB převeď případnou
+Latte syntaxi na čisté HTML.
