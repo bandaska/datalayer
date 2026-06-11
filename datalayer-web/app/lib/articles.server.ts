@@ -41,3 +41,47 @@ export async function getBySlug(slug: string): Promise<Article | null> {
   const doc = await collection().doc(slug).get();
   return doc.exists ? toEntity(doc) : null;
 }
+
+export type ArticleInput = {
+  slug: string;
+  title: string;
+  author: string;
+  date: string; // 'YYYY-MM-DD' nebo ISO
+  content: string;
+};
+
+export async function slugExists(slug: string): Promise<boolean> {
+  const doc = await collection().doc(slug).get();
+  return doc.exists;
+}
+
+/** Vytvoří článek. Slug = ID dokumentu (musí být unikátní). */
+export async function createArticle(input: ArticleInput): Promise<void> {
+  await collection().doc(input.slug).create({
+    slug: input.slug,
+    title: input.title,
+    author: input.author,
+    date: Timestamp.fromDate(new Date(input.date)),
+    content: input.content,
+  });
+}
+
+/** Aktualizuje existující článek (slug je neměnný). */
+export async function updateArticle(
+  slug: string,
+  input: Omit<ArticleInput, 'slug'>,
+): Promise<void> {
+  await collection().doc(slug).set(
+    {
+      title: input.title,
+      author: input.author,
+      date: Timestamp.fromDate(new Date(input.date)),
+      content: input.content,
+    },
+    { merge: true },
+  );
+}
+
+export async function deleteArticle(slug: string): Promise<void> {
+  await collection().doc(slug).delete();
+}

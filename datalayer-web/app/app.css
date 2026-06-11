@@ -620,3 +620,92 @@ footer .highlight {
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
+
+/* --- Admin --- */
+.admin-shell {
+  min-height: 100vh;
+  background-color: var(--brand-dark);
+}
+.admin-nav {
+  background-color: #010812;
+  border-bottom: 1px solid var(--border-color);
+}
+.admin-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.admin-link:hover,
+.admin-link.active {
+  color: var(--brand-cyan);
+}
+.admin-card {
+  background-color: #0b1a30;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.admin-card.p-0 {
+  overflow: hidden;
+}
+.admin-auth {
+  min-height: 100vh;
+  background-color: var(--brand-dark);
+}
+/* Formulářové prvky v adminu (tmavé pozadí) */
+.admin-shell .form-control,
+.admin-shell .form-select,
+.admin-auth .form-control {
+  background-color: #020d1e;
+  border-color: var(--border-color);
+  color: var(--text-light);
+}
+.admin-shell .form-control:focus,
+.admin-shell .form-select:focus,
+.admin-auth .form-control:focus {
+  background-color: #020d1e;
+  color: var(--text-light);
+  border-color: var(--brand-cyan);
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.15);
+}
+.admin-shell .form-label,
+.admin-auth .form-label {
+  color: var(--text-light);
+  font-weight: 500;
+}
+.admin-shell .table-dark {
+  --bs-table-bg: #0b1a30;
+  --bs-table-hover-bg: rgba(0, 255, 255, 0.06);
+  --bs-table-border-color: var(--border-color);
+}
+
+/* WYSIWYG editor */
+.rte-toolbar .btn {
+  --bs-btn-color: var(--text-light);
+  --bs-btn-border-color: var(--border-color);
+  --bs-btn-hover-bg: rgba(0, 255, 255, 0.1);
+  --bs-btn-hover-color: var(--brand-cyan);
+  --bs-btn-hover-border-color: var(--brand-cyan);
+}
+.rte-area {
+  min-height: 22rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+.rte-area:focus {
+  outline: none;
+}
+.rte-area h2,
+.rte-area h3 {
+  color: #fff;
+}
+.rte-area .code-container,
+.rte-area .infobox {
+  font-size: 0.9rem;
+}
+.rte-area:empty::before {
+  content: 'Začni psát…';
+  color: var(--text-muted);
+}
