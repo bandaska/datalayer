@@ -10,7 +10,10 @@ import {
 } from 'react-router';
 import type { LinksFunction, MetaFunction } from 'react-router';
 
-import './app.css';
+// app.css přidáváme do links() AŽ ZA Bootstrap (níže), aby vlastní styly
+// (oranžová tlačítka apod.) přebíjely Bootstrap – stejně jako inline <style>
+// v původním Nette layoutu.
+import appStylesHref from './app.css?url';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ContactForm } from './components/ContactForm';
@@ -41,6 +44,8 @@ export const links: LinksFunction = () => [
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap',
   },
+  // Vlastní styly jako poslední → mají přednost před Bootstrapem.
+  { rel: 'stylesheet', href: appStylesHref },
 ];
 
 // HubSpot konfigurace se čte z env na serveru a předá se klientovi přes loader.
