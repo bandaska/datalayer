@@ -1,6 +1,6 @@
 # Plán rešerše: kontinuální správa analytiky – dodávka, pricing, pozicování
 
-Stav: **plán schválen k realizaci, rešerše zatím neproběhla.**
+Stav: **rešerše provedena 2026-09-04 (verze 1); všechny fáze mají výstup v `reserse/`. Shrnutí: [`02-shrnuti-a-zavery.md`](./02-shrnuti-a-zavery.md).**
 Každá fáze níže má vlastní výstupní soubor v `reserse/`; po dokončení fáze se zde zaškrtne checkbox.
 
 ---
@@ -35,7 +35,7 @@ Výstup: `reserse/00-taxonomie-sluzby.md`
 Před hledáním na trhu si definujeme jednotný slovník, aby se výsledky daly srovnávat. Každou nalezenou
 nabídku pak namapujeme na tyto položky (matice „kdo co nabízí“).
 
-- [ ] 1.1 Sepsat kandidátní aktivity správy, rozdělené do vrstev:
+- [x] 1.1 Sepsat kandidátní aktivity správy, rozdělené do vrstev:
   - **Sběr dat (tagging):** kontrola GTM kontejneru, změny tagů, verzování, QA po releasech webu, dataLayer validace, server-side GTM provoz (Cloud Run náklady, certifikáty, aktualizace kontejneru).
   - **Consent a právo:** consent mode v2, CMP změny, monitoring podílu souhlasů, cookie lišta vs. realita měření.
   - **GA4 property hygiena:** konverze, vlastní dimenze, retence dat, filtry, referral exclusions, cross-domain, Google Signals, thresholding, (not set), kvóty.
@@ -45,9 +45,9 @@ nabídku pak namapujeme na tyto položky (matice „kdo co nabízí“).
   - **Alerting a monitoring:** anomálie (propad eventů, purchase = 0, skok v (not set), rozjetí revenue GA4 vs. e-shop), tag monitoring, uptime sGTM.
   - **Změnové řízení a komunikace:** changelog, konzultace s vývojáři, specifikace pro nové featury, onboarding nových lidí klienta, ad-hoc dotazy.
   - **Analytická práce:** ad-hoc analýzy, atribuce, kohorty, LTV, experimenty.
-- [ ] 1.2 U každé aktivity poznamenat: **jde bez BQ exportu? (ano / částečně / ne)** – to je základ pro RQ5.
-- [ ] 1.3 Definovat metriky rozsahu, podle kterých se v praxi cení: počet property/webů, měsíční traffic/eventy, počet ad platforem, počet dashboardů, počet releasů webu za měsíc, počet hodin v ceně, reakční doba.
-- [ ] 1.4 Připravit sloupce `pricing-dataset.csv` a `evidence-log.csv` tak, aby odpovídaly této taxonomii (hotovo v `data/`, upravit podle potřeby).
+- [x] 1.2 U každé aktivity poznamenat: **jde bez BQ exportu? (ano / částečně / ne)** – to je základ pro RQ5.
+- [x] 1.3 Definovat metriky rozsahu, podle kterých se v praxi cení: počet property/webů, měsíční traffic/eventy, počet ad platforem, počet dashboardů, počet releasů webu za měsíc, počet hodin v ceně, reakční doba.
+- [x] 1.4 Připravit sloupce `pricing-dataset.csv` a `evidence-log.csv` tak, aby odpovídaly této taxonomii (hotovo v `data/`, upravit podle potřeby).
 
 ---
 
@@ -55,92 +55,92 @@ nabídku pak namapujeme na tyto položky (matice „kdo co nabízí“).
 
 Výstup: `reserse/01-trh-cz.md` + řádky v `data/`
 
-- [ ] 2.1 **Sestavit seznam hráčů** (cíl 25–40 subjektů) ve třech skupinách:
+- [x] 2.1 **Sestavit seznam hráčů** (cíl 25–40 subjektů) ve třech skupinách:
   - analytické agentury a butiky (např. Optimics, Medio, Dataweps, Digital Visions, Bizztreat, Datamind, MarketUP, Adexpres, Advisio, House of Řezáč, Taste, Fragile, Proficio, Effectix, Sun Marketing, Dobrý web, Ecommerce Bridge – ověřit aktuálnost a doplnit),
   - performance agentury, které mají analytiku jako doplněk správy PPC,
   - freelanceři/konzultanti (LinkedIn, Webtrh, Freelance.cz, Navolnenoze.cz, přednášející na MeasureCamp Praha, Digisemestr, Marketing Festival).
-- [ ] 2.2 U každého projít web a zjistit: nabízí kontinuální správu? jak ji **nazývá** (správa, monitoring, retainer, „analytika jako služba“, care, support)? co vyjmenovává v dodávce? je veřejná cena? → šablona `sablony/profil-konkurenta.md`.
-- [ ] 2.3 **Hodinové sazby** jako proxy ceny: veřejné ceníky, Naceni.cz, poptávkové servery (Poptávej.cz, AAApoptávka), příspěvky na Webtrhu, LinkedIn průzkumy sazeb, platové průzkumy „webový analytik“ (proxy pro in-house alternativu klienta).
-- [ ] 2.4 **Komunitní zdroje**: FB skupiny (Webová analytika CZ/SK, Google Analytics CZ, E-commerce CZ), Slack/Discord komunity, diskuse pod články (Medio blog, Optimics blog, Lupa, Tyinternety), podcasty. Hledat: „správa analytiky cena“, „kolik stojí GA4 měsíčně“, „rozbilo se měření“, „přestaly chodit konverze“.
-- [ ] 2.5 **Inzeráty na pozice webový/marketingový analytik** (Jobs.cz, StartupJobs, LinkedIn): vyjmenované úkoly = seznam toho, co si firma jinak platí interně; nabízená mzda = strop, kolik je ochotná dávat za tuto práci měsíčně.
-- [ ] 2.6 Zaznamenat, jak konkurence komunikuje **kdy ke správě přistoupit** (po implementaci? při obratu X? při N releasech?) – vstup do RQ4.
+- [x] 2.2 U každého projít web a zjistit: nabízí kontinuální správu? jak ji **nazývá** (správa, monitoring, retainer, „analytika jako služba“, care, support)? co vyjmenovává v dodávce? je veřejná cena? → šablona `sablony/profil-konkurenta.md`.
+- [x] 2.3 **Hodinové sazby** jako proxy ceny: veřejné ceníky, Naceni.cz, poptávkové servery (Poptávej.cz, AAApoptávka), příspěvky na Webtrhu, LinkedIn průzkumy sazeb, platové průzkumy „webový analytik“ (proxy pro in-house alternativu klienta).
+- [x] 2.4 **Komunitní zdroje**: FB skupiny (Webová analytika CZ/SK, Google Analytics CZ, E-commerce CZ), Slack/Discord komunity, diskuse pod články (Medio blog, Optimics blog, Lupa, Tyinternety), podcasty. Hledat: „správa analytiky cena“, „kolik stojí GA4 měsíčně“, „rozbilo se měření“, „přestaly chodit konverze“.
+- [x] 2.5 **Inzeráty na pozice webový/marketingový analytik** (Jobs.cz, StartupJobs, LinkedIn): vyjmenované úkoly = seznam toho, co si firma jinak platí interně; nabízená mzda = strop, kolik je ochotná dávat za tuto práci měsíčně.
+- [x] 2.6 Zaznamenat, jak konkurence komunikuje **kdy ke správě přistoupit** (po implementaci? při obratu X? při N releasech?) – vstup do RQ4.
 
 ## 3. Slovenský trh
 
 Výstup: `reserse/02-trh-sk.md`
 
-- [ ] 3.1 Stejný postup jako u ČR, seznam 10–15 subjektů (např. Dexfinity, Basta digital, Visibility, ui42, Effectix SK, Pizza SEO, Truniversity, freelanceři z MeasureCamp Bratislava – ověřit).
-- [ ] 3.2 Zvlášť sledovat, zda se ceny uvádějí v EUR s jinou úrovní než v ČR a zda slovenské agentury prodávají do ČR/AT.
+- [x] 3.1 Stejný postup jako u ČR, seznam 10–15 subjektů (např. Dexfinity, Basta digital, Visibility, ui42, Effectix SK, Pizza SEO, Truniversity, freelanceři z MeasureCamp Bratislava – ověřit).
+- [x] 3.2 Zvlášť sledovat, zda se ceny uvádějí v EUR s jinou úrovní než v ČR a zda slovenské agentury prodávají do ČR/AT.
 
 ## 4. Evropa (DE/AT/CH, PL, UK, Nordics, NL)
 
 Výstup: `reserse/03-trh-eu.md`
 
-- [ ] 4.1 **DACH**: Trakken, e-dialog, mohrstade, Feld M, Analytics Heroes, Lunapark, 121WATT (ceny školení jako kotva), Tracify. Hledané pojmy: „Tracking Retainer“, „Analytics Betreuung“, „Tracking Wartung“, „Monatspauschale Tracking“.
-- [ ] 4.2 **Polsko**: Bluerank, Conversion.pl, Semahead, Ideo Force, freelanceři. Pojmy: „opieka analityczna“, „utrzymanie analityki“, „abonament analityka“.
-- [ ] 4.3 **UK**: Measurelab, Measure Minds, Littledata, Fresh Egg, Evolytics (US/UK), Loves Data (AU – anglofonní benchmark). Pojmy: „analytics retainer“, „GA4 support retainer“, „measurement support“.
-- [ ] 4.4 **Nordics/NL**: Adapt, Precis Digital, Wunderman/Thompson Data, Datatrics, OrangeValley. Zajímavé pro pokročilé BQ-first modely (tam se dá hledat důkaz pro H1).
-- [ ] 4.5 U každého regionu: 5–10 profilů, ceny, název služby, struktura tierů, kde končí retainer a začíná „data engineering“.
+- [x] 4.1 **DACH**: Trakken, e-dialog, mohrstade, Feld M, Analytics Heroes, Lunapark, 121WATT (ceny školení jako kotva), Tracify. Hledané pojmy: „Tracking Retainer“, „Analytics Betreuung“, „Tracking Wartung“, „Monatspauschale Tracking“.
+- [x] 4.2 **Polsko**: Bluerank, Conversion.pl, Semahead, Ideo Force, freelanceři. Pojmy: „opieka analityczna“, „utrzymanie analityki“, „abonament analityka“.
+- [x] 4.3 **UK**: Measurelab, Measure Minds, Littledata, Fresh Egg, Evolytics (US/UK), Loves Data (AU – anglofonní benchmark). Pojmy: „analytics retainer“, „GA4 support retainer“, „measurement support“.
+- [x] 4.4 **Nordics/NL**: Adapt, Precis Digital, Wunderman/Thompson Data, Datatrics, OrangeValley. Zajímavé pro pokročilé BQ-first modely (tam se dá hledat důkaz pro H1).
+- [x] 4.5 U každého regionu: 5–10 profilů, ceny, název služby, struktura tierů, kde končí retainer a začíná „data engineering“.
 
 ## 5. USA (struktura produktu, ne cenová úroveň)
 
 Výstup: `reserse/04-trh-us.md`
 
-- [ ] 5.1 **Agentury**: Bounteous, Adswerve, InfoTrust, Cardinal Path (Merkle), Napkyn, Seer Interactive, Analytics Pros, Evolytics, MeasureSchool, Jeffalytics, Loves Data. Hledat stránky „managed analytics“, „analytics support retainer“, „GA4 health monitoring“, „measurement operations“.
-- [ ] 5.2 **Marketplaces s reálnými cenami**: Upwork, Fiverr, Toptal, Clutch (ceny + recenze + „what was delivered“), MarketerHire, Growth Collective. Vytěžit: měsíční „GA4 maintenance“ nabídky, co obsahují, cena, počet objednávek/recenzí (proxy poptávky).
-- [ ] 5.3 **Reddit**: r/GoogleAnalytics, r/analytics, r/PPC, r/marketing, r/digital_marketing, r/bigquery, r/dataengineering. Dotazy typu „how much to charge for monthly GA4 maintenance“, „analytics retainer pricing“, „what do you include in monthly analytics report“, „tracking broke after release“. Ukládat do `pain-log.csv` a `pricing-dataset.csv`.
-- [ ] 5.4 **Měření komunita**: Measure Slack (#measure) archivy/odkazy, Simo Ahava blog a komentáře, Analytics Mania, Krista Seiden, Charles Farina, Ken Williams (GA4BigQuery), Johan van de Werken – jak popisují „ongoing“ práci a co je za ni fér chtít.
-- [ ] 5.5 **Ukázky dodávky na GitHubu / veřejně**: hledat repozitáře a šablony – GA4 BigQuery monitoring SQL, „ga4 data quality checks“, Dataform/dbt GA4 balíčky, GTM monitoring template (Simo Ahava), Looker Studio šablony „GA4 health dashboard“, „monthly analytics report template“ (PDF, Notion, Google Slides), agenturní case studies s obrázky reportů. Cíl: aspoň 10 konkrétních ukázek toho, co klient dostane do ruky.
+- [x] 5.1 **Agentury**: Bounteous, Adswerve, InfoTrust, Cardinal Path (Merkle), Napkyn, Seer Interactive, Analytics Pros, Evolytics, MeasureSchool, Jeffalytics, Loves Data. Hledat stránky „managed analytics“, „analytics support retainer“, „GA4 health monitoring“, „measurement operations“.
+- [x] 5.2 **Marketplaces s reálnými cenami**: Upwork, Fiverr, Toptal, Clutch (ceny + recenze + „what was delivered“), MarketerHire, Growth Collective. Vytěžit: měsíční „GA4 maintenance“ nabídky, co obsahují, cena, počet objednávek/recenzí (proxy poptávky).
+- [x] 5.3 **Reddit**: r/GoogleAnalytics, r/analytics, r/PPC, r/marketing, r/digital_marketing, r/bigquery, r/dataengineering. Dotazy typu „how much to charge for monthly GA4 maintenance“, „analytics retainer pricing“, „what do you include in monthly analytics report“, „tracking broke after release“. Ukládat do `pain-log.csv` a `pricing-dataset.csv`.
+- [x] 5.4 **Měření komunita**: Measure Slack (#measure) archivy/odkazy, Simo Ahava blog a komentáře, Analytics Mania, Krista Seiden, Charles Farina, Ken Williams (GA4BigQuery), Johan van de Werken – jak popisují „ongoing“ práci a co je za ni fér chtít.
+- [x] 5.5 **Ukázky dodávky na GitHubu / veřejně**: hledat repozitáře a šablony – GA4 BigQuery monitoring SQL, „ga4 data quality checks“, Dataform/dbt GA4 balíčky, GTM monitoring template (Simo Ahava), Looker Studio šablony „GA4 health dashboard“, „monthly analytics report template“ (PDF, Notion, Google Slides), agenturní case studies s obrázky reportů. Cíl: aspoň 10 konkrétních ukázek toho, co klient dostane do ruky.
 
 ## 6. SaaS nástroje jako cenová kotva a definice „monitoringu“
 
 Výstup: `reserse/05-nastroje-monitoring.md` (šablona `sablony/profil-nastroje.md`)
 
-- [ ] 6.1 **Tag/data quality monitoring**: ObservePoint, Tag Inspector, Trackingplan, DataTrue, Elevar (Shopify), Tracify, Littledata, Analytics Debugger/Checker, GA4 Auditor (Analytics Mania), Tagmate, Jentis. Zjistit cenu, co hlídá, jak alertuje, pro jakou velikost klienta.
-- [ ] 6.2 **Konektory/ETL** (alternativa k BQ exportu): Supermetrics, Funnel.io, Windsor.ai, Dataslayer, Adverity, Fivetran, Airbyte, Porter Metrics, Coupler.io. Cena/měs, co se s nimi „spravuje“ (rozbité tokeny, změny API, limity).
-- [ ] 6.3 **Nativní možnosti zdarma**: GA4 Insights/anomálie, GA4 custom alerts (chybí), BigQuery scheduled queries + e-mail, Looker Studio (bez alertů), Google Cloud Monitoring pro sGTM, GTM verze/history.
-- [ ] 6.4 Výsledek: tabulka „co umí nástroj automaticky za X Kč/měs“ vs. „co vyžaduje člověka“. To je hranice, nad kterou se prodává služba (vstup do H5).
+- [x] 6.1 **Tag/data quality monitoring**: ObservePoint, Tag Inspector, Trackingplan, DataTrue, Elevar (Shopify), Tracify, Littledata, Analytics Debugger/Checker, GA4 Auditor (Analytics Mania), Tagmate, Jentis. Zjistit cenu, co hlídá, jak alertuje, pro jakou velikost klienta.
+- [x] 6.2 **Konektory/ETL** (alternativa k BQ exportu): Supermetrics, Funnel.io, Windsor.ai, Dataslayer, Adverity, Fivetran, Airbyte, Porter Metrics, Coupler.io. Cena/měs, co se s nimi „spravuje“ (rozbité tokeny, změny API, limity).
+- [x] 6.3 **Nativní možnosti zdarma**: GA4 Insights/anomálie, GA4 custom alerts (chybí), BigQuery scheduled queries + e-mail, Looker Studio (bez alertů), Google Cloud Monitoring pro sGTM, GTM verze/history.
+- [x] 6.4 Výsledek: tabulka „co umí nástroj automaticky za X Kč/měs“ vs. „co vyžaduje člověka“. To je hranice, nad kterou se prodává služba (vstup do H5).
 
 ## 7. Pain research – konkrétní problémy, které klienti řeší
 
 Výstup: `reserse/06-pain-research.md` + `data/pain-log.csv`
 
-- [ ] 7.1 **Sběr syrových výpovědí** (cíl 100+ záznamů): Reddit, GA4 Help Community, Stack Overflow (gtm/ga4 tagy), LinkedIn posty agentur i klientů, české FB skupiny, recenze na Clutch/G2 (co si chválí a na co si stěžují), issue trackery open-source GA4 nástrojů.
-- [ ] 7.2 **Katalog „co se rozbíjí a proč“** (změny prostředí, které správu ospravedlňují): release webu/redesign, změna CMP/consent mode, změna v GTM od vývojářů, GA4 změny (retence, thresholding, kvóty, nové API), změny ad platforem (Meta CAPI, Google Ads enhanced conversions, Sklik), prohlížeče (ITP, ad-blockery), migrace e-shop platformy, expirace tokenů konektorů, překročení BQ rozpočtu, rozjetí GA4 vs. e-shop revenue. U každé položky: jak často, jak dlouho typicky trvá, než si někdo všimne, a jaký je dopad (ztracená optimalizace kampaní, špatná rozhodnutí, ztracená historie).
-- [ ] 7.3 **Kvantifikace dopadu**, kde jde: příklady „N týdnů slepého spendu“, náklady na zpětnou rekonstrukci dat, cena in-house analytika vs. retainer.
-- [ ] 7.4 Rozřadit painy podle **segmentu klienta**: e-shop malý (do 20 mil. obratu), e-shop střední (20–200 mil.), B2B lead-gen web, marketplace/SaaS, agentura hledající white-label. U každého segmentu top 3 painy s důkazem.
-- [ ] 7.5 Zvlášť ověřit, které painy má **klient bez BQ** (jen GA4 UI + Looker Studio přes nativní konektor) – zásadní pro RQ5.
-- [ ] 7.6 Výstup: 10–15 pojmenovaných painů ve formátu „situace → co se stalo → dopad → co by tomu zabránilo“. Bez marketingových frází.
+- [x] 7.1 **Sběr syrových výpovědí** (cíl 100+ záznamů): Reddit, GA4 Help Community, Stack Overflow (gtm/ga4 tagy), LinkedIn posty agentur i klientů, české FB skupiny, recenze na Clutch/G2 (co si chválí a na co si stěžují), issue trackery open-source GA4 nástrojů.
+- [x] 7.2 **Katalog „co se rozbíjí a proč“** (změny prostředí, které správu ospravedlňují): release webu/redesign, změna CMP/consent mode, změna v GTM od vývojářů, GA4 změny (retence, thresholding, kvóty, nové API), změny ad platforem (Meta CAPI, Google Ads enhanced conversions, Sklik), prohlížeče (ITP, ad-blockery), migrace e-shop platformy, expirace tokenů konektorů, překročení BQ rozpočtu, rozjetí GA4 vs. e-shop revenue. U každé položky: jak často, jak dlouho typicky trvá, než si někdo všimne, a jaký je dopad (ztracená optimalizace kampaní, špatná rozhodnutí, ztracená historie).
+- [x] 7.3 **Kvantifikace dopadu**, kde jde: příklady „N týdnů slepého spendu“, náklady na zpětnou rekonstrukci dat, cena in-house analytika vs. retainer.
+- [x] 7.4 Rozřadit painy podle **segmentu klienta**: e-shop malý (do 20 mil. obratu), e-shop střední (20–200 mil.), B2B lead-gen web, marketplace/SaaS, agentura hledající white-label. U každého segmentu top 3 painy s důkazem.
+- [x] 7.5 Zvlášť ověřit, které painy má **klient bez BQ** (jen GA4 UI + Looker Studio přes nativní konektor) – zásadní pro RQ5.
+- [x] 7.6 Výstup: 10–15 pojmenovaných painů ve formátu „situace → co se stalo → dopad → co by tomu zabránilo“. Bez marketingových frází.
 
 ## 8. Analýza dodávky: co klient reálně dostane
 
 Výstup: `reserse/07-dodavka-a-reporty.md`
 
-- [ ] 8.1 Z profilů (fáze 2–6) sestavit **matici aktivit × konkurenti** podle taxonomie z fáze 1: co je „standard“ (nabízí >70 %), co je „diferenciátor“ (nabízí <30 %), co nikdo.
-- [ ] 8.2 Sestavit **katalog artefaktů dodávky** s odkazy na ukázky: měsíční report (struktura, délka, komentář vs. čísla), health dashboard, alert e-mail/Slack, changelog GTM, měřicí plán jako živý dokument, kvartální review, SLA (reakční doba, hodiny, co je nad rámec).
-- [ ] 8.3 Zjistit **rytmus**: co je denně automaticky, co týdně, co měsíčně, co kvartálně.
-- [ ] 8.4 Rozlišit dodávku pro **BQ-first** klienta vs. **nativní konektory** klienta (tabulka: stejná položka, jiný způsob a hloubka).
+- [x] 8.1 Z profilů (fáze 2–6) sestavit **matici aktivit × konkurenti** podle taxonomie z fáze 1: co je „standard“ (nabízí >70 %), co je „diferenciátor“ (nabízí <30 %), co nikdo.
+- [x] 8.2 Sestavit **katalog artefaktů dodávky** s odkazy na ukázky: měsíční report (struktura, délka, komentář vs. čísla), health dashboard, alert e-mail/Slack, changelog GTM, měřicí plán jako živý dokument, kvartální review, SLA (reakční doba, hodiny, co je nad rámec).
+- [x] 8.3 Zjistit **rytmus**: co je denně automaticky, co týdně, co měsíčně, co kvartálně.
+- [x] 8.4 Rozlišit dodávku pro **BQ-first** klienta vs. **nativní konektory** klienta (tabulka: stejná položka, jiný způsob a hloubka).
 
 ## 9. Syntéza pricingu
 
 Výstup: `reserse/08-pricing-synteza.md`
 
-- [ ] 9.1 Z `pricing-dataset.csv` spočítat rozpětí (min / median / max) po regionech a po modelu (retainer / fixní balíček / SaaS / % spendu), vše normalizované na CZK/měs a doplněné o „co je v ceně“.
-- [ ] 9.2 Identifikovat **cenové kotvy** pro českého klienta: in-house analytik (mzda + odvody / měs), SaaS monitoring (Kč/měs), PPC správa (typicky % ze spendu – klient je zvyklý), hodinová sazba × obvyklé hodiny.
-- [ ] 9.3 Rozebrat **strukturu tierů** u konkurence: podle čeho škálují (počet property, hodiny, reakční doba, počet platforem, BQ ano/ne) a kde je „přirozený“ zlom mezi tiery.
-- [ ] 9.4 Odpovědět na otázku ze zadání explicitně: má měsíční správa stát jednotky tisíc, 5 tis., 10 tis., 15 tis.+ Kč? Pro jaký segment a rozsah? Uvést odvození, ne názor.
-- [ ] 9.5 Rizika: co se stane při podhodnocení (nerentabilní hodiny), co při nadhodnocení (klient si vezme SaaS + ad-hoc).
+- [x] 9.1 Z `pricing-dataset.csv` spočítat rozpětí (min / median / max) po regionech a po modelu (retainer / fixní balíček / SaaS / % spendu), vše normalizované na CZK/měs a doplněné o „co je v ceně“.
+- [x] 9.2 Identifikovat **cenové kotvy** pro českého klienta: in-house analytik (mzda + odvody / měs), SaaS monitoring (Kč/měs), PPC správa (typicky % ze spendu – klient je zvyklý), hodinová sazba × obvyklé hodiny.
+- [x] 9.3 Rozebrat **strukturu tierů** u konkurence: podle čeho škálují (počet property, hodiny, reakční doba, počet platforem, BQ ano/ne) a kde je „přirozený“ zlom mezi tiery.
+- [x] 9.4 Odpovědět na otázku ze zadání explicitně: má měsíční správa stát jednotky tisíc, 5 tis., 10 tis., 15 tis.+ Kč? Pro jaký segment a rozsah? Uvést odvození, ne názor.
+- [x] 9.5 Rizika: co se stane při podhodnocení (nerentabilní hodiny), co při nadhodnocení (klient si vezme SaaS + ad-hoc).
 
 ## 10. Pozicování a návrh nabídky DataLayer.cz
 
 Výstup: `reserse/09-navrh-nabidky.md`
 
-- [ ] 10.1 Vyhodnotit H1–H5 s důkazy; explicitně rozhodnout **BQ-first vs. dvouúrovňová nabídka** (s exportem / bez exportu).
-- [ ] 10.2 Navrhnout **2–3 tiery** s vyjmenovanou dodávkou (z fáze 8), rozsahovými limity (z fáze 1.3) a cenou (z fáze 9). Ke každému tieru: pro koho, jaký pain řeší (z fáze 7), co není v ceně.
-- [ ] 10.3 Formulovat **hlavní sdělení** pro web a nabídky: 1 věta pro každý segment, postavená na pojmenovaném painu, ne na benefitu. Plus 3–5 „důkazních“ argumentů (co se konkrétně hlídá, jak rychle se reaguje).
-- [ ] 10.4 Definovat **vstupní bod**: kdy klientovi správu nabídnout (po implementaci, po auditu, při BQ napojení, při N releasech/měs) a jak vypadá první měsíc (onboarding).
-- [ ] 10.5 Srovnat s aktuální nabídkou v `datalayer-web/app/lib/services.ts` (6 jednorázových služeb) a navrhnout, jak se správa mezi ně zařadí (nová služba vs. „pokračování“ každé z nich).
-- [ ] 10.6 Navrhnout **validaci před spuštěním**: 5–8 rozhovorů s existujícími klienty/prospekty (scénář otázek), případně testovací landing page s cenou a měření zájmu.
+- [x] 10.1 Vyhodnotit H1–H5 s důkazy; explicitně rozhodnout **BQ-first vs. dvouúrovňová nabídka** (s exportem / bez exportu).
+- [x] 10.2 Navrhnout **2–3 tiery** s vyjmenovanou dodávkou (z fáze 8), rozsahovými limity (z fáze 1.3) a cenou (z fáze 9). Ke každému tieru: pro koho, jaký pain řeší (z fáze 7), co není v ceně.
+- [x] 10.3 Formulovat **hlavní sdělení** pro web a nabídky: 1 věta pro každý segment, postavená na pojmenovaném painu, ne na benefitu. Plus 3–5 „důkazních“ argumentů (co se konkrétně hlídá, jak rychle se reaguje).
+- [x] 10.4 Definovat **vstupní bod**: kdy klientovi správu nabídnout (po implementaci, po auditu, při BQ napojení, při N releasech/měs) a jak vypadá první měsíc (onboarding).
+- [x] 10.5 Srovnat s aktuální nabídkou v `datalayer-web/app/lib/services.ts` (6 jednorázových služeb) a navrhnout, jak se správa mezi ně zařadí (nová služba vs. „pokračování“ každé z nich).
+- [x] 10.6 Navrhnout **validaci před spuštěním**: 5–8 rozhovorů s existujícími klienty/prospekty (scénář otázek), případně testovací landing page s cenou a měření zájmu.
 
 ---
 
@@ -166,10 +166,10 @@ Fáze 8–10 čekají na dokončení předchozích.
 
 ## Konečné výstupy (definition of done)
 
-- [ ] `data/pricing-dataset.csv` – min. 60 řádků napříč regiony a modely
-- [ ] `data/evidence-log.csv` – zdroj ke každému tvrzení v `reserse/`
-- [ ] `data/pain-log.csv` – min. 100 syrových záznamů, zredukovaných na 10–15 pojmenovaných painů
-- [ ] `reserse/00`–`09` – po jednom souboru na fázi, každý se sekcemi Fakta / Interpretace / Doporučení
-- [ ] Katalog min. 10 veřejných ukázek dodávky (reporty, dashboardy, alerty, repozitáře) s odkazy
-- [ ] Návrh tierů a cen DataLayer.cz s odvozením a s rozhodnutím o BQ-first vs. dvouúrovňový model
-- [ ] Seznam otázek pro validační rozhovory s klienty
+- [x] `data/pricing-dataset.csv` – 352 řádků (265 s cenou CZK/měs) napříč regiony a modely
+- [x] `data/evidence-log.csv` – zdroj ke každému tvrzení v `reserse/`
+- [x] `data/pain-log.csv` – 313 syrových záznamů, 15 pojmenovaných painů
+- [x] `reserse/00`–`09` – po jednom souboru na fázi, každý se sekcemi Fakta / Interpretace / Doporučení
+- [x] Katalog 31 veřejných ukázek dodávky (`reserse/04-trh-us.md` § 2e, `07-dodavka-a-reporty.md` § 2.2)
+- [x] Návrh tierů a cen DataLayer.cz s odvozením a s rozhodnutím o BQ-first vs. dvouúrovňový model
+- [x] Seznam otázek pro validační rozhovory s klienty
