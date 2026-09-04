@@ -15,6 +15,7 @@ strategických rozhodnutí a rešerší, na kterých se postupně pracuje v dal�
 5. jak má vypadat nejlepší a nejrelevantnější nabídka DataLayer.cz.
 
 Detailní plán: [`01-plan-reserse-kontinualni-sprava-analytiky.md`](./01-plan-reserse-kontinualni-sprava-analytiky.md)
+**Výsledky a odpovědi: [`02-shrnuti-a-zavery.md`](./02-shrnuti-a-zavery.md)** (rešerše provedena 2026-09-04).
 
 ## Struktura složky
 
@@ -22,8 +23,12 @@ Detailní plán: [`01-plan-reserse-kontinualni-sprava-analytiky.md`](./01-plan-r
 strategie/
   README.md                                     tento soubor
   01-plan-reserse-kontinualni-sprava-analytiky.md  plán rešerše krok za krokem (fáze 0–10)
-  reserse/                                      výstupy jednotlivých kroků (1 krok = 1 soubor, číslováno podle fáze)
+  02-shrnuti-a-zavery.md                        odpovědi na původní otázky (cena, pain, BQ, dodávka, doporučení)
+  reserse/                                      výstupy fází: 00 taxonomie, 01 CZ, 02 SK, 03 EU, 04 US, 05 nástroje,
+                                                06 painy, 07 dodávka, 08 pricing, 09 návrh nabídky
   data/
+    analyze-pricing.py, analyze-pains.py        skripty pro souhrnné tabulky nad datasety
+    fragments/                                  CSV fragmenty po fázích + merge.sh
     pricing-dataset.csv                         každá nalezená cena = 1 řádek (normalizace do CZK/měsíc)
     evidence-log.csv                            každý důkaz/citát/zdroj = 1 řádek (URL, datum, doslovný citát)
     pain-log.csv                                každý konkrétní pojmenovaný pain = 1 řádek s důkazem
