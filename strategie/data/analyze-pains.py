@@ -10,7 +10,8 @@ def seg(s):
     for k,rx in SEG_RULES:
         if re.search(rx,s,re.I): return k
     return 'unknown'
-BQ={'ne':'no','no':'no','ano':'yes','yes':'yes','volitelně':'optional','optional':'optional','částečně':'optional'}
+BQ={'ne':'no','no':'no','ano':'yes','yes':'yes','volitelně':'optional','optional':'optional',
+    'částečně':'optional','castecne':'optional','volitelne':'optional','neuvedeno':'unknown','unknown':'unknown','':'unknown'}
 files=sys.argv[1:] or sorted(glob.glob('fragments/*-pain.csv'))
 rows=[]
 for f in files:

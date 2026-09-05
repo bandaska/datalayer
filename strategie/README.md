@@ -15,7 +15,8 @@ strategických rozhodnutí a rešerší, na kterých se postupně pracuje v dal�
 5. jak má vypadat nejlepší a nejrelevantnější nabídka DataLayer.cz.
 
 Detailní plán: [`01-plan-reserse-kontinualni-sprava-analytiky.md`](./01-plan-reserse-kontinualni-sprava-analytiky.md)
-**Výsledky a odpovědi: [`02-shrnuti-a-zavery.md`](./02-shrnuti-a-zavery.md)** (rešerše provedena 2026-09-04).
+**Výsledky a odpovědi: [`02-shrnuti-a-zavery.md`](./02-shrnuti-a-zavery.md)** – verze 2 po druhém kole ověření
+(kolo 1: 2026-09-04, kolo 2: 2026-09-05). Ověření a opravy: [`reserse/10-doplneni-a-overeni-r2.md`](./reserse/10-doplneni-a-overeni-r2.md).
 
 ## Struktura složky
 
@@ -25,8 +26,11 @@ strategie/
   01-plan-reserse-kontinualni-sprava-analytiky.md  plán rešerše krok za krokem (fáze 0–10)
   02-shrnuti-a-zavery.md                        odpovědi na původní otázky (cena, pain, BQ, dodávka, doporučení)
   reserse/                                      výstupy fází: 00 taxonomie, 01 CZ, 02 SK, 03 EU, 04 US, 05 nástroje,
-                                                06 painy, 07 dodávka, 08 pricing, 09 návrh nabídky
+                                                06 painy, 07 dodávka, 08 pricing, 09 návrh nabídky,
+                                                10 ověření a doplnění (kolo 2)
+  reserse/doplneni-r2/                          podklady kola 2: 5 ověřovacích + 13 doplňovacích reportů
   data/
+    clean-dataset.py                            datová hygiena: status + scope_class (spouštět po merge.sh)
     analyze-pricing.py, analyze-pains.py        skripty pro souhrnné tabulky nad datasety
     fragments/                                  CSV fragmenty po fázích + merge.sh
     pricing-dataset.csv                         každá nalezená cena = 1 řádek (normalizace do CZK/měsíc)

@@ -1,6 +1,6 @@
 # Fáze 8 – Analýza dodávky: co klient reálně dostane
 
-Stav: hotovo (verze 1, 2026-09-04). Syntéza z fází 2–6 (`01`–`05`) a katalogu ukázek (`04-trh-us.md` § 2e).
+Stav: verze 1 (2026-09-04); prahy pro srovnání s backendem opraveny po 2. kole na české hodnoty (10 / 30 %). Syntéza z fází 2–6 (`01`–`05`) a katalogu ukázek (`04-trh-us.md` § 2e).
 Odkazy `E2-…`, `E4-…`, `E5-…` vedou do `data/evidence-log.csv`.
 
 ---
@@ -130,7 +130,7 @@ kvartální review + opravy při alertu. To je nejlevnější životaschopná po
 | Položka | Bez BQ (nativní GA4 / konektory) | S BQ exportem |
 |---|---|---|
 | Hlídání propadu eventů (G1) | GA4 Custom Insights (max 50/property, hodinově, e-mail) + denní Data API skript; bez historie nad 14 měs.; thresholding může maskovat | SQL nad denní tabulkou s prahy per event; ARIMA anomálie; historie neomezená |
-| GA4 vs. backend (G2/D5) | ručně měsíčně nebo denně tabulkou s tolerancí 15 %; nerozliší ztrátu od duplicit (N7-157) | denní diff po transaction_id; baseline „normální“ rozdíl per zdroj/zařízení; odhalí duplicity i tichý propad objemu |
+| GA4 vs. backend (G2/D5) | ručně měsíčně nebo denně tabulkou s českými prahy (do 10 % ticho, 10–30 % sledovat, nad 30 % volat); nerozliší ztrátu od duplicit (N7-157) | denní diff po transaction_id; baseline „normální“ rozdíl per zdroj/zařízení; odhalí duplicity i tichý propad objemu |
 | QA po releasu (A1) | stejné (checklist + Checkly) | + kontrola, že eventy po releasu dorazily do exportu se správnými parametry (Dataform test) |
 | Consent (B1/B2) | kontrola chování tagů; consent rate z GA4 UI | + dopad consentu po dnech/zařízeních; modelovaná vs. měřená data |
 | Tag monitoring (G4) | jen přes sGTM logy (3–10 dní) nebo SaaS | GTM Monitor / sGTM log sink do BQ, neomezená historie |

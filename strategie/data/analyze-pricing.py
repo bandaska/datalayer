@@ -1,68 +1,85 @@
 #!/usr/bin/env python3
-"""Syntéza pricing datasetu: rozpětí CZK/měs po regionech, modelech a typech poskytovatelů.
-Spouštět ze složky strategie/data/ (čte fragments/*-pricing.csv nebo pricing-dataset.csv)."""
-import csv, glob, re, statistics as st, sys, os
+"""Souhrnne tabulky nad pricing-dataset.csv PO datove hygiene 2. kola.
+
+Zasady (§ 5.4 v reserse/10-doplneni-a-overeni-r2.md):
+  - pocita se JEN status=active (vyrazeny refuted/superseded/duplicate),
+  - mediany trhu se pocitaji JEN pro scope_class=measurement_only a period=mesic,
+  - hourly_proxy, salary_proxy, saas, bundled_ppc, infra_only, public_tender a stated_opinion
+    se vykazuji ZVLAST a nikdy se nemichaji do trzniho medianu,
+  - "po subjektech" = jeden poskytovatel jedna hodnota (nejnizsi verejny tier),
+    protoze jinak jeden dodavatel s peti tiery prehlusi pet dodavatelu s jednim.
+
+Spoustet ze slozky strategie/data/ po merge.sh a clean-dataset.py.
+"""
+import csv, re, statistics as st, sys, unicodedata, collections
+
+def sa(s):
+    return ''.join(c for c in unicodedata.normalize('NFD', s or '') if unicodedata.category(c) != 'Mn').lower()
 
 def num(x):
-    if x is None: return None
-    s = str(x).replace(' ','').replace(' ','').replace(',','.')
-    m = re.search(r'-?\d+(?:\.\d+)?', s)
+    m = re.search(r'-?\d+(?:\.\d+)?', str(x or '').replace(' ', '').replace(' ', '').replace(',', '.'))
     return float(m.group()) if m else None
 
+def monthly(r):
+    return sa(r['period']).startswith(('mesic', 'month', 'mo'))
+
 def q(vals, p):
-    vals = sorted(vals); 
+    vals = sorted(vals)
     if not vals: return None
-    k = (len(vals)-1)*p; f=int(k); c=min(f+1,len(vals)-1)
-    return vals[f] + (vals[c]-vals[f])*(k-f)
+    k = (len(vals) - 1) * p; f = int(k); c = min(f + 1, len(vals) - 1)
+    return vals[f] + (vals[c] - vals[f]) * (k - f)
 
+def fmt(v):
+    return f"{v:,.0f}".replace(',', ' ') if v is not None else '–'
 
-PT = {'agentura':'analytics_agency','agency':'analytics_agency','agentura/saas':'analytics_agency','agentura/web':'performance_agency',
-      'PPC agentura':'performance_agency','freelancer/dev':'freelancer','freelancer/agentura':'freelancer','saas':'saas_tool',
-      'pruzkum':'job_ad','platovy_portal':'job_ad','inzerat':'job_ad','salary_proxy':'job_ad','školení':'other','blog':'other',
-      'review':'other','case_study':'other','market_reference':'other'}
-PM = {'retainer':'retainer_hours','hourly':'hourly_rate','package':'fixed_package','usage':'saas','free':'saas','one_off':'one_off','impact_example':'other'}
-BQ = {'ne':'no','no':'no','ano':'yes','yes':'yes','ano (destinace)':'yes','ano (vlastní DWH Snowflake)':'yes','optional':'optional',
-      'volitelně':'optional','částečně':'optional','unknown':'unknown','-':'unknown','neuvedeno':'unknown','':'unknown'}
-def normalize(r):
-    r['provider_type']=PT.get((r.get('provider_type') or '').strip(), (r.get('provider_type') or '').strip())
-    r['pricing_model']=PM.get((r.get('pricing_model') or '').strip(), (r.get('pricing_model') or '').strip())
-    r['requires_bq']=BQ.get((r.get('requires_bq') or '').strip(), (r.get('requires_bq') or '').strip())
-    return r
+def base_provider(p):
+    return re.sub(r'[^a-z0-9 ]', '', sa(p).split('(')[0]).strip()
 
-def fmt(v): return f"{v:,.0f}".replace(',', ' ') if v is not None else '–'
-
-def summarize(rows, key, title, minn=3):
-    groups = {}
+def table(rows, key, title, minn=2, per_subject=False):
+    groups = collections.defaultdict(list)
     for r in rows:
-        v = num(r.get('price_czk_month'))
+        v = num(r['price_czk_month'])
         if v is None or v <= 0: continue
-        groups.setdefault(key(r), []).append(v)
+        groups[key(r)].append((v, base_provider(r['provider'])))
     print(f"\n### {title}\n")
     print("| Skupina | n | min | Q1 | median | Q3 | max |")
     print("|---|---|---|---|---|---|---|")
-    for g, vals in sorted(groups.items(), key=lambda kv: -len(kv[1])):
+    for g, items in sorted(groups.items(), key=lambda kv: -len(kv[1])):
+        if per_subject:
+            low = {}
+            for v, prov in items:
+                if prov not in low or v < low[prov]: low[prov] = v
+            vals = sorted(low.values())
+        else:
+            vals = sorted(v for v, _ in items)
         if len(vals) < minn: continue
         print(f"| {g} | {len(vals)} | {fmt(min(vals))} | {fmt(q(vals,.25))} | {fmt(st.median(vals))} | {fmt(q(vals,.75))} | {fmt(max(vals))} |")
 
-files = sys.argv[1:] or sorted(glob.glob('fragments/*-pricing.csv'))
-rows = []
-for f in files:
-    with open(f, encoding='utf-8') as fh:
-        for r in csv.DictReader(fh):
-            r['_file'] = os.path.basename(f); rows.append(normalize(r))
-print(f"Řádků celkem: {len(rows)}; s číselnou cenou CZK/měs: {sum(1 for r in rows if (num(r.get('price_czk_month')) or 0) > 0)}")
-def scope_known(r): return 'unknown' not in (r.get('scope_notes') or '').lower()
-print(f"Z toho scope=unknown: {sum(1 for r in rows if not scope_known(r))}")
+src = sys.argv[1] if len(sys.argv) > 1 else 'pricing-dataset.csv'
+allrows = list(csv.DictReader(open(src, encoding='utf-8')))
+active = [r for r in allrows if r.get('status', 'active') == 'active']
+excluded = collections.Counter(r.get('status') for r in allrows if r.get('status') != 'active')
+print(f"Radku celkem: {len(allrows)} | active: {len(active)} | vyrazeno: {dict(excluded)}")
+byclass = collections.Counter(r['scope_class'] for r in active)
+print(f"scope_class (active): {dict(byclass)}")
 
-summarize(rows, lambda r: r['region'], 'Podle regionu (vše)')
-summarize(rows, lambda r: r['pricing_model'], 'Podle cenového modelu (vše)')
-summarize(rows, lambda r: f"{r['region']} / {r['pricing_model']}", 'Region × model', minn=3)
-summarize(rows, lambda r: f"{r['region']} / {r['provider_type']}", 'Region × typ poskytovatele', minn=3)
-# Kontinuální správa lidmi: retainer/fixed/tiered od agentur a freelancerů, bez SaaS a proxy
-def is_service(r): return r['pricing_model'] in ('retainer_hours','fixed_package','tiered') and r['provider_type'] in ('analytics_agency','performance_agency','freelancer')
-svc = [r for r in rows if is_service(r)]
-summarize(svc, lambda r: r['region'], 'Jen lidská správa (retainer/fixed/tiered od agentur a freelancerů) podle regionu', minn=2)
-summarize(svc, lambda r: f"{r['region']} / BQ={r['requires_bq']}", 'Lidská správa: region × requires_bq', minn=2)
-summarize([r for r in rows if r['pricing_model']=='saas'], lambda r: r['region'], 'SaaS nástroje podle regionu', minn=2)
-summarize([r for r in rows if r['pricing_model']=='hourly_rate'], lambda r: r['region'], 'Hodinové sazby ×10 h (proxy) podle regionu', minn=2)
-summarize([r for r in rows if r['pricing_model']=='salary_proxy'], lambda r: r['region'], 'In-house mzdové proxy podle regionu', minn=1)
+meas = [r for r in active if r['scope_class'] == 'measurement_only' and monthly(r)]
+print(f"\n**Trzni zaklad = measurement_only + mesicni + active: {len(meas)} radku**")
+
+table(meas, lambda r: r['region'].upper(), 'A. Mesicni sprava mereni podle regionu (vsechny tiery)')
+table(meas, lambda r: r['region'].upper(), 'B. Totez PO SUBJEKTECH (1 dodavatel = jeho nejnizsi verejny tier)', per_subject=True)
+table(meas, lambda r: ('EU+UK' if r['region'].upper() in ('EU', 'UK') else r['region'].upper()) + ' / BQ=' + (r['requires_bq'] or 'unknown'),
+      'C. Podle BigQuery (jen mereni, mesicni)')
+
+for cls, title in [('saas', 'D. SaaS nastroje (mesicni)'), ('hourly_proxy', 'E. Hodinove sazby x10 h - PROXY, nemichat do trzniho medianu'),
+                   ('salary_proxy', 'F. Mzdove proxy (in-house kotva)'), ('bundled_ppc', 'G. PPC/full-service pausal s merenim uvnitr'),
+                   ('infra_only', 'H. sGTM hosting a infrastruktura'), ('public_tender', 'I. Verejne zakazky a enterprise kontrakty - NESROVNATELNE s CZ e-shopem'),
+                   ('stated_opinion', 'J. Nazory z fór a cenove pruvodce - nabidkou nejsou')]:
+    sub = [r for r in active if r['scope_class'] == cls and (monthly(r) or cls in ('hourly_proxy', 'salary_proxy'))]
+    if sub: table(sub, lambda r: r['region'].upper(), title)
+
+print("\n### K. Vsechny mesicni body mereni v EU+UK, serazene (zaklad pro pasma)\n")
+eu = sorted(((num(r['price_czk_month']), r['provider'], r['tier_name'], r['requires_bq']) for r in meas
+             if r['region'].upper() in ('EU', 'UK') and num(r['price_czk_month'])))
+for v, p, t, b in eu:
+    print(f"- {fmt(v):>8} Kc | {p[:42]:42} | {t[:24]:24} | BQ={b}")

@@ -1,6 +1,6 @@
 # Fáze 7 – Pain research: co se klientům v analytice reálně rozbíjí
 
-Stav: hotovo (verze 1, 2026-09-04). Data: `data/fragments/07-pain.csv` (185 výpovědí, N7-001…185),
+Stav: verze 1 (2026-09-04), doplněno 2. kolem (2026-09-05) – viz § 0. Data: `data/fragments/07-pain.csv` (185 výpovědí, N7-001…185),
 `data/fragments/07-evidence.csv` (154 zdrojů, E7-001…154), `data/fragments/07-pricing.csv` (19 řádků, P7-001…019).
 Kódy `what_broke` a aktivit A1–I3 podle `00-taxonomie-sluzby.md`.
 
@@ -10,6 +10,37 @@ Shoptet Partneři (poptávky e-shopů), Brave Search snippety (Reddit), Yahoo/Se
 Shopify App Store recenze, jobs.cz/profesia.sk. Reddit citace jsou proto **snippety z vyhledávače** (označeno v `notes`
 evidence), ne celé posty. Sloupec `has_bq`: `yes` = autor explicitně pracuje s BQ exportem; `no` = autor řeší problém
 výhradně v GA4/Ads/Shopify UI a BQ nezmiňuje; `unknown` = blog/agentura bez kontextu.
+
+---
+
+## 0. Doplněk verze 2 (2026-09-05) – co změnilo 2. kolo
+
+Korpus vzrostl z 185 na **536 výpovědí**. Rozložení se nepřevrátilo, ale tři věci je nutné číst jinak:
+
+1. **Podíl klientů bez BigQuery je vyšší, ne nižší:** 409 z 536 (76 %) je bez BQ; mezi výpověďmi, kde je
+   stav BQ známý, je to **88 %**. H1 v silné podobě zůstává vyvrácena.
+2. **Česká a slovenská část je z 69 % z druhé ruky.** CZ+SK má 139 řádků (26 % korpusu), ale prvorukých
+   (fórum, marketplace, support komunita) je jen **43 = 8,0 % korpusu**. Celé slovenské doplnění pochází
+   z blogů a webů dodavatelů → **H2 není na SK doložena ani jednou výpovědí klienta.**
+3. **Český vzorek popisuje jiný pain než globální.** Nejčetnější CZ+SK kódy jsou `consent_change` 20,
+   `gtm_change_dev` 18, `unknown_owner` 18, `release_web` 18 – tedy z velké části **„nikdy to nebylo
+   pořádně nastavené“**, ne „fungovalo to a tiše se to rozbilo“. Pro české publikum je proto přesnější
+   formulace „zkontrolujeme, jestli měříte správně, a pak to hlídáme“ než „vaše měření se tiše rozbilo“.
+
+**Kvantifikace v korunách po 2. kole stále neexistuje.** Čtyři české částky, které se objevily v doplnění,
+jsou po kontrole něco jiného, než jak vypadají: 410 000 Kč je rozpor v reportingu jednoho účtu (nerozlišené
+B2B/B2C v dataLayeru), ne ztráta; 30 000 Kč je typizovaný výrok z marketingového blogu konkurenta;
+Alza 70/18 tis. je provize affiliate partnera mimo předmět služby; Zboží.cz „několik tisíc“ je neplatný provoz.
+**Žádnou z nich nepoužívat v externí komunikaci.** Nejlevnější cesta k doložené české částce vede přes
+vlastní fakturaci a výkazy DataLayer.cz za 12–24 měsíců (kolo 3, C2).
+
+Nově doložené z **primární dokumentace dodavatelů** (nejsilnější materiál 2. kola pro H2): GTM hlásí u tagu
+„Succeeded“ a neodešle jediný request; GTM kontejnery „degraded automatically into a restricted state“ bez
+oznámení; GA4 BigQuery export „will be paused and previous days' exports will not be reprocessed“; Looker
+Studio alert se při rozbitém zdroji **sám vypne**. Google Ads označí tag za neaktivní až po **7 dnech** bez
+konverze – doložená příčina, proč odhalení trvá týdny.
+
+Podrobně: `10-doplneni-a-overeni-r2.md` § 1, § 5.1 (K9) a § 5.3.
 
 ---
 
@@ -301,7 +332,7 @@ zvládnou hrubý alert na purchase=0 (G1 částečně) – Shopify komunita to d
 | Přístupy | „Když odejde agentura nebo člověk s Gmail účtem, historie GA4 je pryč. Kvartálně kontrolujeme, že vše je pod vaším účtem a kontejner je zálohovaný.“ | všechny |
 
 Důkazní argumenty pro nabídku (fáze 10): konkrétní data changelogů (2c), checklist 10 bodů po releasu (E7-101), denní
-srovnání objednávek vs. konverze s tolerancí 15 % (E7-016), kvartální audit přístupů a lišty.
+srovnání objednávek vs. konverze s **českými prahy 10 / 30 %** (viz § 0; 15% práh z E7-016 je anglofonní a v ČR by pálil denně), kvartální audit přístupů a lišty.
 
 ### 4b. Painy reálné, ale špatně prodejné
 
