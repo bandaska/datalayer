@@ -332,7 +332,7 @@ zvládnou hrubý alert na purchase=0 (G1 částečně) – Shopify komunita to d
 | Přístupy | „Když odejde agentura nebo člověk s Gmail účtem, historie GA4 je pryč. Kvartálně kontrolujeme, že vše je pod vaším účtem a kontejner je zálohovaný.“ | všechny |
 
 Důkazní argumenty pro nabídku (fáze 10): konkrétní data changelogů (2c), checklist 10 bodů po releasu (E7-101), denní
-srovnání objednávek vs. konverze s tolerancí 15 % (E7-016), kvartální audit přístupů a lišty.
+srovnání objednávek vs. konverze s **českými prahy 10 / 30 %** (viz § 0; 15% práh z E7-016 je anglofonní a v ČR by pálil denně), kvartální audit přístupů a lišty.
 
 ### 4b. Painy reálné, ale špatně prodejné
 

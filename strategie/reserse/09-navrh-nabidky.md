@@ -70,7 +70,8 @@ Doplňkové položky:
   že agentury jsou lepší kanál než přímý prodej „analytics-only“ SMB.
 
 **Rozhodnutí o cenách** viz `08-pricing-synteza.md` § 3.1: průnik nákladové (3–5 / 8–12 / 15–22 h), tržní (median 8–10 tis.,
-„běžně“ 18 500, BQ 3,7–5,5×) a kotvové (1/8 úvazku, PPC správa, 1/2 in-house) cesty.
+„běžně“ 18 500, BQ ≈ 2×) a kotvové (1/8 úvazku, PPC správa, 1/2 in-house) cesty.
+**Pozor:** nákladová a tržní cesta nejsou nezávislé (verze 1 to tvrdila) – viz `08` § 3.1.
 
 ## 5. Hlavní sdělení – po segmentech, postavené na pojmenovaných painech
 
