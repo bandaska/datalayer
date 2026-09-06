@@ -21,10 +21,32 @@ REFUTED = {
 }
 SUPERSEDED = {
     'P2-003': 'nahrazen PV1-001 (overeno v raw HTML)',
+    # 3. kolo, K07: Amplio opraveno z doslovneho citatu ceniku
+    'P4-035': 'Amplio Maintained opraveno na 16 500 Kc ("From EUR 660 per month") - viz PK7-*',
+    'P4-036': 'Amplio Managed opraveno na 42 425 Kc - viz PK7-*',
+    # 3. kolo, § 8.3 bod 1: period=hodina, ale price_czk_month obsahuje mesicni strop ramce nebo dopocet
+    'PK1-001': 'mesicni strop ramce, ne hodinova sazba; skutecne fakturovane castky jsou v PK1-002 a dalsich',
+    'PK1-009': 'mesicni strop ramce, ne hodinova sazba',
+    'PK1-019': 'dopocet 520 Kc/h x 120 h = kotva "koupit vs. najmout", ne cena sluzby',
+    'PK2-004': 'hodinova sazba zapsana jako mesicni strop',
+    'PK2-005': 'hodinova sazba zapsana jako mesicni strop',
+    'PV3-006': 'duplicita s PV4-010 (tyz Elevar add-on pod jinym jmenem poskytovatele)',
     'P4-010': 'argoberlin 106 EUR/h nahrazen PV2-004 (95 EUR/h z doslovne polozky)',
 }
 for i in range(11, 18):
     SUPERSEDED['P5-%03d' % i] = 'neoverena citace konkurenta (yourgrowthpartner.io), enterprise 5-15k USD nedolozeno'
+
+# 3. kolo, § 8.3 bod 6: neni to cena sluzby
+REFUTED['PK4-052'] = 'celkovy mesicni marketingovy rozpocet firmy, ne cena sluzby'
+REFUTED['PK2-018'] = 'poskytovani redakcnich sluzeb pro portal - neni sprava mereni'
+
+# 3. kolo, § 8.3 bod 5: marketingovy nebo servisni pausal chybne veden jako sprava mereni
+FORCE_CLASS = {
+    'PK1-020': 'bundled_ppc', 'PK1-026': 'bundled_ppc', 'PK1-027': 'bundled_ppc',
+    'PK2-007': 'bundled_ppc', 'PK2-008': 'bundled_ppc', 'PK4-050': 'bundled_ppc',
+}
+# 3. kolo, § 8.3 bod 2: viceleta smlouva s vyplnenou mesicni cenou oznacena jako jednorazova
+FORCE_PERIOD = {'PK2-007': 'mesic', 'PK2-008': 'mesic', 'PK2-010': 'mesic'}
 
 # Vendori, jejichz cena je po overeni neprukazna
 UNVERIFIABLE_VENDORS = {
@@ -62,7 +84,17 @@ CONT_RX = re.compile(r'sprava mereni|udrzba mereni|monitoring mereni|analyticka 
                      r'vedligeholdelse|mantenimiento|opieka|betreuung|maintenance|medicion|'
                      r'mesicni prace na webove analytice|mesacny pausal|analytics (support|retainer)')
 
+# 3. kolo, § 8.3 bod 3: IT podpora, hosting, sprava webu a ucetnictvi z ukolu K04 nejsou SaaS nastroje.
+# Jsou to kotvy ochoty platit ze sousednich oboru a patri do vlastni tridy.
+ADJACENT_RX = re.compile(r'it podpor|sprava it|outsourcing it|helpdesk|servisni smlouva|spravce site|'
+                         r'managed hosting|sprava serveru|webhosting|vps|sprava webu|udrzba webu|wordpress|'
+                         r'ucetnictv|ucetni|mzdov|danov|socialnich siti|seo balicek|graficke prace')
+
 def classify_scope(r):
+    if r['id'].startswith('PK4-'):
+        blob = strip_accents((r['provider'] or '') + ' ' + (r['service_name_verbatim'] or '') + ' ' + (r['scope_notes'] or ''))
+        if ADJACENT_RX.search(blob):
+            return 'adjacent_industry'
     pm = (r['pricing_model'] or '').strip().lower()
     pt = (r['provider_type'] or '').strip().lower()
     prov = strip_accents(r['provider'])
@@ -100,7 +132,7 @@ BQ_MAP = {'ne': 'no', 'no': 'no', 'ano': 'yes', 'yes': 'yes', 'ano (destinace)':
 # --- 3. Nacteni a oznaceni ---------------------------------------------------
 rows = list(csv.DictReader(open(SRC, encoding='utf-8')))
 fields = list(rows[0].keys())
-for extra in ('status', 'scope_class', 'status_reason'):
+for extra in ('status', 'scope_class', 'status_reason', 'evidence_type', 'buyer_sector'):
     if extra not in fields:
         fields.append(extra)
 
@@ -120,7 +152,21 @@ for r in rows:
         if status == 'active' and 'elevar' in prov and (r['price_original'] or '').strip() in ELEVAR_LEGACY_PRICES:
             status, reason = 'superseded', 'Elevar legacy sada (prior to Jan 2023); plati Core/Advanced/Premium/Elite'
     r['status'], r['status_reason'] = status, reason
-    r['scope_class'] = classify_scope(r)
+    r['scope_class'] = FORCE_CLASS.get(rid, classify_scope(r))
+    if rid in FORCE_PERIOD:
+        r['period'] = FORCE_PERIOD[rid]
+    # Nejdulezitejsi rozliseni cele reserse: REALNE ZAPLACENA cena vs. cenikova "od".
+    # PK1-* pochazi z registru smluv, PK2-* z verejnych zakazek - obojí je skutecne zaplacene.
+    if rid.startswith(('PK1-', 'PK2-')):
+        r['evidence_type'], r['buyer_sector'] = 'paid', 'public'
+    elif r['scope_class'] == 'stated_opinion':
+        r['evidence_type'], r['buyer_sector'] = 'opinion', 'unknown'
+    elif r['scope_class'] == 'public_tender':
+        r['evidence_type'], r['buyer_sector'] = 'paid', 'public'
+    elif re.search(r'prehled cen|pricing guide|cenovy pruvodce|trzni reference|odhad', strip_accents(r['provider']) + ' ' + strip_accents(r['scope_notes'])):
+        r['evidence_type'], r['buyer_sector'] = 'estimate', 'unknown'
+    else:
+        r['evidence_type'], r['buyer_sector'] = 'list_price', 'commercial'
     r['requires_bq'] = BQ_MAP.get(strip_accents(r['requires_bq']).strip(), strip_accents(r['requires_bq']).strip() or 'unknown')
 
 # --- 4. Deduplikace ----------------------------------------------------------
@@ -200,4 +246,5 @@ w.writerows(rows)
 
 c = collections.Counter(r['status'] for r in rows)
 print('status:', dict(c), '| duplikaty:', dups, '+ rozpeti:', range_dups)
+print('evidence_type (active):', dict(collections.Counter(r['evidence_type'] for r in rows if r['status'] == 'active')))
 print('scope_class (jen active):', dict(collections.Counter(r['scope_class'] for r in rows if r['status'] == 'active')))
