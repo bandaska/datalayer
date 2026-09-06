@@ -1,10 +1,17 @@
 # Fáze 9 – Syntéza pricingu: kolik má stát měsíční správa měření
 
-Stav: **verze 2 (2026-09-05) – přepočítáno po datové hygieně 2. kola.** Verze 1 (2026-09-04) obsahovala
-čísla, která byla vypočtena z neuklizeného datasetu; co se změnilo a proč, je v § 6 na konci.
+Stav: **verze 3 (2026-09-06) – po třetím kole a druhé datové hygieně.** Třetí kolo přineslo typ důkazu,
+který dvě předchozí kola neměla: **reálně zaplacené české ceny z registru smluv.** Co se mezi verzemi
+změnilo, je v § 6.
 
-Zdroj: `data/pricing-dataset.csv` (749 řádků, z toho **685 `status=active`**; 16 `refuted`, 12 `superseded`,
-36 `duplicate` – viz `data/clean-dataset.py`). Tabulky generuje `data/analyze-pricing.py`.
+Zdroj: `data/pricing-dataset.csv` (900 řádků, z toho **813 `status=active`**; 18 `refuted`, 20 `superseded`,
+49 `duplicate` – viz `data/clean-dataset.py`). Tabulky generuje `data/analyze-pricing.py`.
+
+**Nové rozlišení, které mění čtení všech čísel: `evidence_type`.**
+`paid` = cena skutečně zaplacená podle smlouvy nebo objednávky (66 řádků, všechny české z registru smluv);
+`list_price` = veřejný ceník dodavatele, typicky „od" (640); `estimate` = odhad třetí strany (62);
+`opinion` = výrok z fóra nebo cenového průvodce (45). **Ceníková cena „od" a zaplacená cena nejsou totéž
+a nepatří do jednoho mediánu.**
 
 **Metodika, která ve verzi 1 chyběla a bez které nejsou čísla srovnatelná:**
 - Tržní medián se počítá **jen** z řádků `scope_class=measurement_only` **a** `period=měsíc` **a** `status=active`.
@@ -20,113 +27,145 @@ Kurzy: 1 EUR = 25, 1 USD = 23, 1 GBP = 29, 1 PLN = 5,8, 1 DKK = 3,35, 1 CHF = 26
 **Zahraniční body nejsou korigované na cenovou hladinu (PPP)** – slouží ke struktuře nabídky a k poměrům
 uvnitř jednoho dodavatele, ne k tvrzení „u nás je to levné“.
 
-## 1. Shrnutí – odpověď na otázku „tisíce, 5, 10 nebo 15 tisíc?“
+## 1. Shrnutí – odpověď na otázku „tisíce, 5, 10 nebo 15 tisíc?"
 
-1. **Veřejná měsíční cena za správu měření je vzácná a v ČR ji má prakticky jeden subjekt.** Z 685 platných
-   cenových řádků splňuje „měsíční cena za správu měření od identifikovatelného dodavatele“ jen **46 řádků**:
-   EU 25, US 8, CZ 4, SK 2. **Ze čtyř českých řádků patří tři jednomu subjektu** (RobertNemec.com 9 250 /
-   18 500 / 31 200 Kč) a čtvrtý je údržba reportu (Khoder 2 500 Kč). České pásmo tedy **není tržní nález** –
-   je to rozhodnutí odvozené z evropského vzorku a z domácích kotev (PPC paušál, mzdy, SaaS).
-2. **Evropský vzorek je jediná nezávislá opora.** EU všechny tiery (n = 25): min 3 350, Q1 7 475,
-   **medián 12 250**, Q3 32 475, max 100 000 Kč. Po subjektech, tj. nejnižší veřejný tier každého dodavatele
-   (n = 15): min 3 350, Q1 6 750, **medián 11 250**, Q3 28 750 Kč. SK: DASE 17 500 a Starbomedia 8 750 Kč.
-3. **Násobek za BigQuery je ≈ 2×, ne 4×.** Verze 1 tvrdila 3,5–5×; to byl artefakt porovnání dvou různých
-   populací. Po úklidu: EU+UK bez BQ medián 10 875 Kč (n = 21), s BQ medián 28 125 Kč (n = 2, hodnoty
-   11 250 a 45 000). Uvnitř jednoho dodavatele je násobek doložen třikrát nezávisle: Amplio Maintained→Managed
-   2,6×, Funnel.io 2,0×, EU vzorek 1,5–2,6×. **Odvození tieru 3 z násobku tím padá** (2,6 × 10 875 = 28 275).
-4. **Hodinová sazba je kotva, ne důkaz.** CZ sazby 1 150–2 500 Kč/h jsou potvrzené ze tří nezávislých
-   strukturovaných zdrojů (Shoptet Partneři medián 2 000 Kč/h, AKA 2026 „Data Analyst 1 938 Kč/h“, freelance
-   profily 850–2 500 Kč/h) – ale ×10 h dává 11 500–25 000 Kč, což je interval, do kterého se trefí skoro
-   cokoli. Navíc se dlouhodobá spolupráce v ČR prodává **o ~33 % levněji** než hlavičková sazba
-   (Ráš 2 400 → 1 600 Kč/h), takže proxy retainer nadhodnocuje.
-5. **Odpověď zůstává, ale mění se její status.** Doporučená pásma **vstupní 8–10 tis. / standardní 18–25 tis. /
-   datový 35–45 tis. Kč** obstojí proti evropskému vzorku a domácím kotvám, ale:
-   - **8 900 Kč není „pod nejlevnějším lidským balíčkem na trhu“** – pod ním leží nejméně 8 nezávislých
-     evropských subjektů (3 350–7 800 Kč). Rozdíl musí obhájit obsah, ne cena.
-   - **19 900 Kč je nejlépe podepřený tier** – šest nezávislých subjektů v pásmu 17 500–23 750 Kč.
-   - **39 000 Kč nelze obhájit tržním srovnáním.** Dva veřejné evropské lidské body s BigQuery jsou
-     11 250 a 45 000 Kč (rozptyl 4×). Tier 3 se musí obhájit **obsahem** (denní diff po `transaction_id`,
-     monitoring GA4→BQ exportu, reakce do 4 h), a pokud násobkem, tak přiznaně z tieru 2 (19 900 × 2,0 = 39 800).
-6. **Konkurenční tlak na vstupní tier je vyšší, než verze 1 uváděla.** Detekce je od roku 2026 v ČR komodita:
-   Signals Bar 2 500 Kč/měs (a používá doslova slova „rozbité měření“ a „tiché výpadky“), ga4monitor.com
-   667 Kč/měs, LEMONTEC (AT) slibuje odhalení „innerhalb von 24 Stunden“ za 4 975 Kč. K tomu RDY.cz nabízí
-   10 000 Kč/měs včetně nastavení měření konverzí. **Vstupní tier proto nesmí být prodáván jako „monitoring“.**
+1. **Poprvé máme reálně zaplacené české ceny.** Registr smluv dal **devět měsíčních cen skutečně
+   zaplacených za práci na měření.** Rozdělují se ostře podle BigQuery:
+
+   | | n | hodnoty (Kč/měs bez DPH) | medián |
+   |---|---|---|---|
+   | **bez BigQuery** | 4 | 8 640 / 9 000 / 10 000 / 12 143 | **9 500** |
+   | **s BigQuery** | 5 | 15 300 / 37 200 / 38 000 / 40 946 / 62 500 | **38 000** |
+
+   K tomu šest reálných hodinových sazeb: 1 440 / 1 500 / 1 500 / 1 600 / 1 700 / 1 750 Kč/h.
+
+2. **Slabina verze 2 padla, ale nahradila ji jiná.** Už neplatí „celé české pásmo stojí na jediném ceníku".
+   Ale **všech devět zaplacených cen je z veřejného sektoru** (Český rozhlas, ČT, CzechTourism, destinační
+   agentury, města) a **z cílového segmentu – e-shopu – není doložena ani jedna.**
+
+3. **Slovo „hlídání" v celém desetiletém registru smluv nepadlo ani jednou.** „Správa analytiky" 0 výskytů,
+   „alerting" 0 výskytů. Čeští kupující platí za **„interpretaci dat a analytickou podporu"**, za
+   **„správu Google Analytics"** a za **„rozvoj a údržbu platformy pro analytiku"**. To je třetí nezávislé
+   potvrzení protievidence z 2. kola (0 z 53 poptávek na Shoptet Partnerech, 1 samostatná zakázka za 10 let).
+
+4. **Tier po tieru, proti reálně zaplaceným penězům:**
+
+   | Tier | Cena | Verdikt | Nejbližší zaplacený český bod |
+   |---|---|---|---|
+   | Hlídání | 8 900 | **potvrzen cenou, vyvrácen obsahem** – sedí do zaplaceného pásma bez BQ (8 640–12 143), ale nikdo v něm nekupuje hlídání | Neuschl 8 640 za interpretaci dat |
+   | Správa | 19 900 | **nejslabší tier.** Mezi 15 300 a 37 200 Kč není v českých zaplacených datech nic | CzechTourism 15 300 za 9 h **včetně BQ a sGTM** – tedy víc obsahu za o 30 % nižší cenu |
+   | Datová správa | 39 000 | **poprvé má domácí kotvu** – leží uprostřed zaplaceného shluku s BQ (37 200 / 38 000 / 40 946) | Optimics pro Český rozhlas 40 946 Kč/měs (průměr 39 měsíců) |
+
+5. **Nákladový model verze 2 (700 Kč/h) byl podstřelený.** ISPV 2025: medián systémového analytika
+   91 532 Kč hrubého → 122 470 Kč měsíčních nákladů zaměstnavatele → **816 Kč/h při 150 fakturovaných
+   hodinách, 1 021 Kč/h při 120 h, 1 225 Kč/h při 100 h.** Marže tierů klesají na 31–40 % při realistické
+   utilizaci (§ 3.1 A).
+
+6. **Ústřední napětí, které rozhoduje o životaschopnosti:** implikovaná hodinovka tierů je
+   1 483–2 438 Kč/h. Proti doložené české specialistické sazbě **1 440–1 750 Kč/h** jsou tiery obhajitelné
+   jen v **horní polovině** vlastního odhadu hodin – tedy právě tam, kde marže padá na 31–40 %.
+   **Hodiny, které cenu obhájí před klientem, jsou přesně ty, které zlikvidují marži.**
+
+7. **Po PPP korekci na českou cenovou hladinu se ceník posouvá proti trhu nahoru, ne dolů.** Evropský
+   medián vstupních tierů klesá z 11 062 na **6 990 Kč** – 8 900 Kč je tedy 27 % **nad** ním, ne pod.
+   Argument „jsme pod evropským mediánem" z verze 2 **padá**. (Zahraniční body do klientské komunikace
+   nepatří vůbec – klient platí nominál.)
+
+8. **Ceny za práci na měření nesledují inflaci.** Jediná česká veřejná cena (RobertNemec.com) stojí beze
+   změny od února 2016 a ztratila 38 % reálné hodnoty; Marketing Makers 16 % za 4 roky. Nástrojová vrstva
+   naopak od 2022 zlevňuje o 15–40 % a dno detekce je dnes **nula** (Verified Data free tier).
+   → Do smlouvy patří indexační doložka podle HICP služeb, ne podle celkové inflace.
+
+9. **Za garantovanou reakční dobu si český trh účtuje medián 1,63× za stupeň zkrácení** a 2,61× za celý
+   žebřík (9 přechodů, 5 dodavatelů ze sousedních oborů). Reakce do 4 h stojí v ČR ≈ 6 000 Kč/měs.
+   Náš skok 8 900 → 19 900 (2,24×) je nad zvykem a musí se rozpadnout na SLA (≈1,6× → 14 500 Kč)
+   a obsah (zbytek ≈ 5 400 Kč, který se musí umět vyjmenovat).
+
+10. **Odpověď na původní otázku zůstává „ne tisíce, ale ani ne patnáct plošně":** vstupní úroveň
+    8 900–9 500 Kč je podložena zaplacenými penězi, datová úroveň 38 000–40 000 Kč rovněž.
+    **Prostřední úroveň kolem 20 000 Kč není podložena ničím** – ani zaplaceným bodem, ani ceníkem
+    ve srovnatelném rozsahu. Buď se sníží k 15 900 Kč (kde CzechTourism reálně platí za víc obsahu),
+    nebo musí vyjmenovat, co za těch 4 600 Kč navíc klient dostane.
 
 ---
 
 ## 2. FAKTA
 
-### 2.1 Rozpětí podle regionu a rozsahu (CZK/měs, jen `status=active`)
+### 2.1 Rozpětí podle regionu a typu důkazu (CZK/měs, jen `status=active`)
 
-**A. Tržní základ – měsíční správa měření (`scope_class=measurement_only`), všechny tiery**
+**A. REÁLNĚ ZAPLACENÉ české ceny** (`evidence_type=paid`, registr smluv a veřejné zakázky) — nejsilnější
+důkaz celé rešerše a jediný, kde je jistota, že někdo ty peníze skutečně vydal.
 
-| Region | n | min | Q1 | medián | Q3 | max | Poznámka |
-|---|---|---|---|---|---|---|---|
-| EU | 25 | 3 350 | 7 475 | **12 250** | 32 475 | 100 000 | jediná nezávislá opora; 12 zemí |
-| US | 8 | 29 877 | 46 270 | **59 800** | 74 744 | 229 977 | jen struktura, ne cenová hladina |
-| CZ | 4 | 2 500 | 7 562 | **13 875** | 21 675 | 31 200 | **3 ze 4 řádků = jeden subjekt** |
-| SK | 2 | 8 750 | 10 938 | **13 125** | 15 312 | 17 500 | DASE 17 500, Starbomedia 8 750 |
+| Kč/měs | Dodavatel | Předmět (zkráceně) | BQ | Kupující |
+|---:|---|---|---|---|
+| 8 640 | Martin Neuschl (OSVČ) | interpretace dat a analytická podpora | ne | veřejný |
+| 9 000 | Martin Neuschl (OSVČ) | interpretace dat a analytická podpora | volitelně | veřejný |
+| 10 000 | Michael Pokorný (OSVČ) | správa Google Analytics | ne | veřejný |
+| 12 143 | Michael Pokorný (OSVČ) | správa Google Analytics | ne | veřejný |
+| 15 300 | Tereza Neuschl (OSVČ) | interpretace dat a analytická podpora, 9 h | **ano** | veřejný (CzechTourism) |
+| 37 200 | Optimics s.r.o. | rozvíjení a údržba analytiky návštěvnosti | **ano** | veřejný (ČRo) |
+| 38 000 | Optimics s.r.o. | dtto, dílčí objednávka | **ano** | veřejný (ČRo) |
+| 40 946 | Optimics s.r.o. | dtto, průměr 39 měsíců rámce | **ano** | veřejný (ČRo) |
+| 62 500 | Taste, a.s. | rozvoj a údržba platformy pro analytiku | **ano** | veřejný |
 
-**B. Totéž po subjektech** (jeden dodavatel = jeho nejnižší veřejný tier – měří šíři trhu, ne šíři ceníků)
+Medián bez BQ **9 500 Kč**, s BQ **38 000 Kč**. Reálný násobek za BigQuery v českých zaplacených datech je
+tedy **4,0×** — ale s vážnou výhradou: skupina s BQ je bimodální (jeden bod 15 300, čtyři body 37 200–62 500)
+a ty velké nejsou paušály za správu, ale čerpání hodinových rámců s rozvojem platformy v rozsahu.
+Rozptyl měsíční fakturace u ČRo je 20 000–127 075 Kč.
 
-| Region | n subjektů | min | Q1 | medián | Q3 | max |
+**Mezera 15 300 → 37 200 Kč je prázdná.** Přesně tam leží navrhovaný tier 2.
+
+**B. CENÍKOVÉ ceny** (`evidence_type=list_price`, veřejné ceníky dodavatelů, typicky „od")
+
+| Region | n | min | Q1 | medián | Q3 | max |
 |---|---|---|---|---|---|---|
-| EU | 15 | 3 350 | 6 750 | **11 250** | 28 750 | 69 000 |
-| US | 5 | 29 877 | 40 250 | **50 600** | 69 000 | 69 000 |
+| EU | 30 | 1 000 | 7 306 | **11 750** | 29 919 | 100 000 |
+| CZ | 13 | 2 500 | 9 250 | **15 300** | 37 200 | 62 500 |
+| US | 8 | 29 877 | 46 270 | **59 800** | 74 744 | 229 977 |
 | SK | 2 | 8 750 | 10 938 | **13 125** | 15 312 | 17 500 |
-| CZ | 2 | 2 500 | 4 188 | **5 875** | 7 562 | 9 250 |
 
-Řádek „CZ = 2 subjekty“ je nejdůležitější číslo celé syntézy: **v Česku existují dva veřejné měsíční ceníky
-za práci na měření**, a jeden z nich je údržba reportu. Cokoli dalšího o „českém tržním mediánu“ je dopočet.
+Po subjektech (jeden dodavatel = jeho nejnižší veřejný tier): EU n = 20, medián **9 946 Kč**;
+CZ n = 12, medián **9 625 Kč**.
 
-**C. Podle BigQuery** (jen měření, měsíční)
+**C. Po PPP korekci na českou cenovou hladinu** (Eurostat PLI služeb; ČR ≈ 73,5 % evropského průměru)
 
-| Skupina | n | min | Q1 | medián | Q3 | max |
-|---|---|---|---|---|---|---|
-| EU+UK bez BQ | 21 | 3 350 | 7 250 | **10 875** | 19 975 | 100 000 |
-| EU+UK s BQ | 2 | 11 250 | 19 688 | **28 125** | 36 562 | 45 000 |
-| EU+UK „BQ volitelně“ | 2 | 22 250 | 27 562 | 32 875 | 38 188 | 43 500 |
-| CZ bez BQ | 4 | 2 500 | 7 562 | 13 875 | 21 675 | 31 200 |
-| US bez BQ | 8 | 29 877 | 46 270 | 59 800 | 74 744 | 229 977 |
+| | nominálně | po korekci | dopad na náš ceník |
+|---|---|---|---|
+| Evropský medián vstupních tierů | 11 062 | **6 990** | 8 900 Kč je **27 % nad** ním, ne pod |
+| Evropské body s BigQuery (n = 3) | 11 250 / 33 375 / 42 425 | 8 460 / 22 328 / 34 831 | 39 000 Kč je 12 % nad korigovaným maximem |
+| Pod 39 000 Kč po korekci | – | – | leží **24 z 25** evropských bodů |
 
-Násobek EU s BQ / bez BQ = **2,6×**. Uvnitř jednoho dodavatele: Amplio 2,6×, Funnel.io 2,0×. Dva body s BQ
-jsou 11 250 Kč (Blagoweb IT, BigQuery přímo v dodávce) a 45 000 Kč (Amplio Managed) – **rozptyl 4×, n = 2**.
+**PPP korekce se nikdy nepoužívá v klientské komunikaci** — klient platí nominál. Slouží jen k tomu,
+abychom si sami nenamlouvali, že jsme levní. Na SaaS se neaplikuje vůbec: software se v ČR prodává
+za 100,8 % evropského průměru, ale práce ve službách za 73,5 %, takže **substituce nástrojem je u nás
+relativně dražší než na Západě**.
 
-**D. SaaS nástroje (měsíční)** – cenová podlaha detekce, nikoli konkurence službě
+**D. Kotvy ochoty platit za garantovanou reakční dobu** (sousední CZ obory: IT podpora, managed hosting,
+správa webu, účetnictví — `scope_class=adjacent_industry`, 34 řádků)
 
-| Region | n | min | Q1 | medián | Q3 | max |
-|---|---|---|---|---|---|---|
-| GLOBAL | 83 | 92 | 1 138 | 3 427 | 9 921 | 69 000 |
-| CZ | 27 | 300 | 1 362 | 3 225 | 8 375 | 18 700 |
-| EU | 25 | 437 | 1 225 | 2 475 | 8 947 | 34 500 |
-| US | 24 | 460 | 2 726 | 8 038 | 16 951 | 149 500 |
+| Úroveň reakce | Typická cena Kč/měs | Násobek proti nižší úrovni |
+|---|---|---|
+| další pracovní den | 790–4 400 | – |
+| do 8 hodin | 2 500–8 000 | ≈ 1,6× |
+| do 4 hodin | 3 000–13 000 | ≈ 1,6× |
+| do 1 hodiny | 8 000–18 000 | ≈ 1,6× |
 
-**E. Hodinové sazby × 10 h – PROXY, do tržního mediánu se nemíchá**
+Medián za jeden stupeň zkrácení **1,63×**, za celý žebřík **2,61×** (9 přechodů, 5 dodavatelů).
+Kontext, který bolí: **8 900 Kč je v ČR cena kompletního firemního IT malé firmy** (Externí IT ≈ 9 000,
+ICT-GROUP 12 910) a víc než nejdražší veřejný účetní paušál (7 500 Kč). A ICT-GROUP prodává doslova
+„Problémy vidíme dřív než vaši lidé" za 3 000–13 000 Kč.
 
-| Region | n | min | Q1 | medián | Q3 | max |
-|---|---|---|---|---|---|---|
-| CZ | 38 | 6 000 | 12 125 | 18 750 | 23 250 | 45 920 |
-| SK | 10 | 6 250 | 12 031 | 16 250 | 17 500 | 27 500 |
-| EU | 16 | 7 540 | 21 625 | 29 450 | 34 762 | 46 800 |
-| US | 67 | 1 150 | 13 989 | 23 000 | 31 034 | 69 000 |
+**E. Hodinové sazby — PROXY, do tržního mediánu se nemíchá**
 
-Mezi verzí 1 a 2 vzrostl český medián této proxy z 11 500 na 18 750 Kč **jen tím, že přibyly další sazby** –
-důkaz, že proxy měří sazby, ne retainery.
+| Region | n | medián ×10 h | Poznámka |
+|---|---|---|---|
+| CZ specialistická práce na měření | 6 reálně zaplacených | **15 950** | 1 440–1 750 Kč/h, registr smluv |
+| CZ generalistická správa webu vč. měřicích kódů | 1 vysoutěžená | 9 900 | 990 Kč/h, Brno-střed |
+| CZ ceníkové sazby | 38 | 18 750 | 1 150–2 500 Kč/h |
+| SK / EU / US | 10 / 16 / 67 | 16 250 / 29 450 / 23 000 | |
 
-**F. Kotvy, které klient zná** (in-house, PPC paušál, infrastruktura)
-
-| Kategorie | Region | n | medián | Rozpětí |
-|---|---|---|---|---|
-| Mzdové proxy (mzda × 1,34) | CZ | 32 | 86 185 | 8 000 – 145 050 |
-| Mzdové proxy | SK | 13 | 63 650 | 47 500 – 114 771 |
-| PPC / full-service paušál s měřením uvnitř | CZ | 14 | 13 900 | 3 000 – 100 000 |
-| PPC paušál | SK | 7 | 8 750 | 7 250 – 13 750 |
-| sGTM hosting a infrastruktura | CZ | 3 | 1 500 | 800 – 3 000 |
-| sGTM hosting | EU | 6 | 5 588 | 780 – 23 200 |
-
-**G. Vyřazeno z výpočtů** (bylo by zavádějící je míchat do tržního mediánu): 22 řádků veřejných zakázek
-a enterprise kontraktů (US federální 22 655 – 1 795 194 Kč/měs), 44 řádků názorů z fór a cenových průvodců
-(„I charge $400/month“), 62 mzdových proxy, 238 SaaS, 31 PPC paušálů, 12 infrastrukturních.
+**F. Vyřazeno z výpočtů:** 22 řádků amerických federálních zakázek (22 655 – 1 795 194 Kč/měs),
+45 názorů z fór, 62 mzdových proxy, 251 SaaS, 38 PPC paušálů, 34 sousedních oborů, 13 infrastrukturních.
 
 ### 2.2 Veřejné cenové body relevantní pro českého klienta
 
@@ -184,115 +223,127 @@ počítala s interní sazbou 1 800 Kč/h, což je 93 % tržní agenturní sazby 
 a zhruba 3,3násobek skutečného mzdového nákladu (ISPV medián ≈ 543 Kč/h). Shoda s tržní cestou tedy byla
 tautologická. Opravené odvození odděluje **nákladovou podlahu** od **cílové marže**:
 
-**A) Nákladová podlaha** (skutečný náklad, ne tržní sazba)
+**A) Nákladová podlaha** — verze 2 počítala se 700 Kč/h, což bylo podstřelené
 
-| Tier | Lidský čas / měs | Mzdový náklad (700 Kč/h vč. režie) | Nástroje | Podlaha | Cena | Hrubá marže |
-|---|---|---|---|---|---|---|
-| Vstupní | 4–6 h | 2 800–4 200 | 900 | 3 700–5 100 | 8 900 | **43–58 %** |
-| Standardní | 9–13 h | 6 300–9 100 | 1 200 | 7 500–10 300 | 19 900 | **48–62 %** |
-| Datový | 16–23 h | 11 200–16 100 | 2 500 | 13 700–18 600 | 39 000 | **52–65 %** |
+ISPV 2025: medián systémového analytika **91 532 Kč** hrubého → × 1,338 odvodů = **122 470 Kč** měsíčních
+nákladů zaměstnavatele. Přepočet na fakturovanou hodinu závisí na utilizaci, kterou **neznáme** — proto
+celá matice, ne jedno číslo:
 
-Odhad hodin je oproti verzi 1 posunut nahoru: fáze G12 doložila **≈188 datovaných změn prostředí za 32 měsíců
-(5,9/měs), z toho 57 měnících sběr dat**, což samo na řízení změn (B3/C5) dává 2,5–7 h/měs. Odhad „3–5 h“
-pro vstupní tier byl proto podhodnocený. **Tento odhad stále nebyl ověřen proti reálné dodávce** – je to
-nejrizikovější vstup celého modelu (viz § 5).
+| Fakturovaných h/měs | Náklad Kč/h | Marže tier 1 (4–6 h) | Marže tier 2 (9–13 h) | Marže tier 3 (16–23 h) |
+|---:|---:|---|---|---|
+| 150 (nereálné) | 816 | 63 → 45 % | 63 → 47 % | 67 → 52 % |
+| **120 (realistické)** | **1 021** | **54 → 31 %** | **54 → 33 %** | **58 → 40 %** |
+| 100 (konzervativní) | 1 225 | 45 → 17 % | 45 → 20 % | 50 → 28 % |
 
-**B) Tržní zařazení** (jen evropský vzorek, jediný nezávislý)
+**Dvě nákladové položky, které v modelu chybí úplně:** pojistné za profesní odpovědnost (cena není veřejná)
+a **riziková rezerva na SLA kredity** — maximální měsíční expozice 4 450 / 9 950 / 19 500 Kč,
+**nepojistitelná, platí se z marže**.
 
-| Tier | Cena | Kde leží v EU vzorku | Kolik subjektů je levnějších |
-|---|---|---|---|
-| 8 900 | vstupní | mezi Q1 (7 475) a mediánem (12 250); po subjektech pod mediánem (11 250) | **8 z 15** |
-| 19 900 | standardní | mezi mediánem a Q3 (32 475) | 11 z 15 |
-| 39 000 | datový | nad Q3, pod maximem (100 000) | 13 z 15 |
+**Ústřední napětí:** implikovaná hodinovka tierů je 1 483–2 225 / 1 531–2 211 / 1 696–2 438 Kč/h.
+Proti doložené české specialistické sazbě 1 440–1 750 Kč/h jsou tiery obhajitelné **jen v horní polovině
+vlastního odhadu hodin** — tedy tam, kde marže padá na 31–40 %. Ve spodní polovině implikují
+2 211–2 438 Kč/h, což je 26–39 % nad nejvyšší doloženou českou sazbou. Při subdodávce za tržních
+1 550 Kč/h je **tier 1 při 6 hodinách ztrátový**.
 
-Šest nezávislých subjektů podepírá pásmo tieru 2: RobertNemec 18 500, DASE 17 500, Amplio Maintained 17 500,
-YAG Enterprise 22 250, ADS-Tracking Middle 19 975, Elevar Analyst Tier 2 23 000 Kč.
-Tier 3 podepírají **dva** body s rozptylem 4× (11 250 a 45 000) – to není tržní opora.
+**Odhad hodin (4–6 / 9–13 / 16–23 h) nebyl nikdy ověřen proti reálné dodávce** a G12 mu odporuje:
+samotné řízení změn prostředí vychází na 2,5–7 h/měs. Je to nejrizikovější vstup celého modelu
+a blokuje publikaci ceníku.
+
+**B) Tržní zařazení** — nově proti reálně zaplaceným penězům, ne jen proti ceníkům
+
+| Tier | Cena | Zaplacené české body | Ceníkové EU body | Verdikt |
+|---|---|---|---|---|
+| 8 900 | vstupní | **8 640 / 9 000 / 10 000 / 12 143** – sedí dovnitř | medián po subjektech 9 946; po PPP 6 990 | **podložen zaplacenými penězi**, ale po PPP je 27 % nad EU |
+| 19 900 | standardní | **žádný** – mezera 15 300 → 37 200 je prázdná | shluk 14 975–19 975 (BuI Hinsche, Amplio, Piekarski, DASE, ADS) | **nejslabší**; 15 300 Kč reálně platí za víc obsahu |
+| 39 000 | datový | **37 200 / 38 000 / 40 946** – sedí doprostřed | 11 250 / 33 375 / 42 425, medián 33 375 | **poprvé podložen**, ale veřejným sektorem a rámcem s rozvojem |
+
+Nejbližší skutečný dvojník tieru 2 je německá **BuI Hinsche**, jediná nabídka v korpusu se stejnými
+jednotkami: 599 €/měs (14 975 Kč) za **3 h + reakce 1 pracovní den**, 1 450 €/měs (36 250 Kč) za
+**8 h + reakce 4 h**. Náš tier 2 dává stejné 3 hodiny o 33 % dráž, ale slibuje kratší reakci.
+Ten rozdíl musí obhájit QA po releasu a changelog, ne cenové srovnání.
 
 **C) Kotvy klienta**
 
 | Kotva | Kč/měs | Vztah k tierům |
 |---|---|---|
-| SaaS detekce (CZ medián) | 3 225 | vstupní tier musí být zřetelně jiná kategorie, ne dražší monitoring |
-| Signals Bar / ga4monitor | 667–2 500 | přímý konkurent ve *sdělení*, ne v dodávce |
-| PPC paušál CZ (medián) | 13 900 | správa měření dražší než správa kampaní se vysvětluje těžko → tier 2 na hraně |
-| RDY.cz (měření konverzí v ceně) | 10 000 | přímý tlak na vstupní tier |
-| In-house analytik CZ (medián) | 86 185 | tier 3 = 45 % nákladu na člověka; nad ~43 tis. klient srovnává s úvazkem |
+| SaaS detekce (dno) | **0** (Verified Data free tier) – 667 (ga4monitor) – 3 225 (CZ medián) | vstupní tier nesmí být prodáván jako monitoring |
+| Kompletní firemní IT malé firmy | 8 000–13 000 | **8 900 Kč je tatáž hladina jako celé IT firmy** |
+| Účetní paušál (nejdražší veřejný) | 7 500 | 8 900 Kč je nad ním |
+| Reakce do 4 h v sousedních oborech | ≈ 6 000 | teprve s ní je 8 900 Kč obhajitelné |
+| PPC paušál CZ (medián) | 13 900 | tier 2 je nad ním |
+| Externí analytik na kapacitu (CzechTrade) | 520 Kč/h × 120 h = 62 400 | strop pro tier 3 |
+| In-house analytik CZ (ISPV + odvody) | 122 470 | tier 3 = 32 % nákladu na člověka |
 
-**Průnik:** 8 900 / 19 900 / 39 000 Kč obstojí jako **rozhodnutí** s marží 43–65 %, opřené o evropský vzorek
-a domácí kotvy. Neobstojí jako **tržní nález odvozený z českých dat** – ta pro to nestačí (§ 2.1 B).
+**Průnik:** vstupní 8 900 Kč a datový 39 000 Kč jsou podložené **reálně zaplacenými českými penězi**.
+Standardní 19 900 Kč není podložen ničím a je to jediná cena, kterou doporučuji změnit — buď dolů
+k 15 900 Kč (kde CzechTourism reálně platí za víc obsahu), nebo ji obhájit vyjmenovaným obsahem
+za 4 600 Kč navíc. Marže při realistické utilizaci je 31–40 %, ne 43–65 %, jak tvrdila verze 2.
 
 ### 3.2 Proč ne níž a proč ne výš
 
-- **Pod 7 500 Kč** nejde dodat víc než automat + kvartální kontrola (model LEMONTEC 199 €). Při skutečném
-  nákladu 700 Kč/h a marži, která unese jeden incident, jsou to ~4 h měsíčně včetně komentáře. Zároveň se
-  cena přibližuje SaaS podlaze (CZ medián 3 225 Kč) a produktu Signals Bar (2 500 Kč), takže klient přestane
-  rozlišovat kategorii. **Pozor: 8 900 Kč není nejnižší lidská nabídka na trhu** – 8 z 15 evropských subjektů
-  je levnějších (3 350–7 800 Kč), takže vstupní tier prodává obsah a reakci, ne cenu.
-- **Standardní nad 25 000 Kč bez BQ** klient srovná s PPC paušálem (CZ medián 13 900 Kč), který vnímá jako
-  „hlavní“ službu, a s in-house 1/4 úvazku (21 500 Kč). Doložený veřejný strop správy bez BQ je
-  **31 200 Kč** (RobertNemec, ověřeno v raw HTML) a 32 475 Kč (ADS-Tracking Max) – dva nezávislé subjekty.
-- **Datový tier**: pod 30 000 Kč nepokryje 16–23 h seniorní práce; nad 43 000 Kč se dostává k polovině
-  nákladu na in-house analytika (CZ medián 86 185 Kč) a klient začne zvažovat vlastního člověka.
-  **Tržní opora ale chybí** – dva veřejné evropské body s BQ jsou 11 250 a 45 000 Kč. Tier 3 je proto
-  cenový návrh podložený obsahem a marží, ne tržní medián.
+- **Pod 8 640 Kč** není v českých zaplacených datech nic — a zdola tlačí LEMONTEC (AT), jediný evropský
+  produktizovaný paušál na správu měření s doloženou životností 30 měsíců, který v české cenové hladině
+  vychází na **2 897 Kč**. Vstupní tier prodává obsah a reakci, ne cenu.
+- **Prostřední úroveň nad 15 300 Kč** naráží na to, že za tuto částku už veřejný zadavatel reálně kupuje
+  9 hodin **včetně BigQuery a server-side GTM**. Rozdíl musí být vyjmenovatelný, jinak neobstojí.
+- **Datový tier nad 42 000 Kč** se blíží externímu analytikovi na kapacitu (62 400 Kč) a klient si tu
+  aritmetiku spočítá: 39 000 Kč ≈ 25 hodin seniorní kapacity při doložené sazbě 1 550 Kč/h.
+  Publikovat proto jako **„od 39 000 Kč, cena podle rozsahu"**, ne jako pevnou cenu.
 
 ### 3.3 Rizika
 
 | Riziko | Projev | Ošetření |
 |---|---|---|
-| **Odhad hodin není ověřen** | 4–6 / 9–13 / 16–23 h je odhad; G12 doložil 2,5–7 h jen na řízení změn | změřit zpětně na 3–5 vlastních zakázkách **před** publikací ceníku (kolo 3, A3) |
-| **Souběh incidentů** | jedna změna Googlu = všichni klienti v jeden den; model počítá s nezávislými incidenty | modelovat plošný scénář; do SLA dát pořadí priorit |
-| Podhodnocení vstupního tieru | releasy a ad-hoc dotazy sežerou 8+ h za 8 900 Kč | limit „změny nad 1 h měsíčně z hodinové sazby 1 900 Kč“; QA po releasu max 1×/měs |
-| Tlak zdola na vstupní tier | Signals Bar 2 500 Kč se stejným sdělením, ga4monitor 667 Kč, RDY.cz 10 000 Kč vč. měření konverzí | nesoutěžit v detekci; prodávat triáž, opravu a číslo chybějících konverzí |
-| „Monitoring“ jako název | klient si najde nástroj za 667–2 500 Kč | název „správa měření“; monitoring je vstup, ne produkt |
-| Tier 3 bez tržní opory | dva body s rozptylem 4× | obhájit obsahem; ověřit mystery shoppingem (kolo 3, B2) |
-| Vazba na PPC agenturu | správa zmizí v PPC fee (CZ medián 13 900 Kč) | prodávat samostatně nebo white-label za pevnou cenu |
-| **České pásmo stojí na 2 subjektech** | vzorek je systematicky vychýlený dolů (ceníkují jen malí a produktizovaní hráči) | registr smluv + mystery shopping (kolo 3, B1/B2) |
+| **Odhad hodin neověřen (blokující)** | 4–6 / 9–13 / 16–23 h je odhad; řízení změn samo dá 2,5–7 h | změřit zpětně na 3–5 vlastních zakázkách **včetně plošného scénáře** |
+| **Marže je poloviční proti verzi 2** | 31–40 % místo 43–65 %; tier 1 při 6 h a subdodávce ztrátový | fixovat cenu až po změření hodin; limit na změny vymáhat |
+| **SLA kredity nelze pojistit** | expozice 4 450 / 9 950 / 19 500 Kč měsíčně z marže | strop kreditu 50 % odměny, omezení náhrady škody na 1–6 odměn |
+| **Tier 2 bez opory** | mezera 15 300 → 37 200 Kč v zaplacených datech | snížit na ≈ 15 900 Kč, nebo vyjmenovat obsah za rozdíl |
+| **Nikdo nekupuje „hlídání"** | 0 výskytů v registru za 10 let, 0 z 53 poptávek | prodávat jako kapacitu analytika s hlídáním v ceně |
+| **Denní srovnání nejde u většiny Shoptetů** | REST API až od Premium (12 000 Kč/měs) | jmenný seznam podporovaných platforem v nabídce |
+| **Ceny neindexované ztrácejí hodnotu** | RobertNemec −38 % reálné hodnoty za 10 let | roční indexace podle HICP služeb, „ceny platné od" na ceníku |
+| **Kotvy jsou z veřejného sektoru** | z e-shopu není doložena ani jedna zaplacená cena | mystery shopping u 3–5 e-shopových zakázek |
 
 ## 4. DOPORUČENÍ
 
-1. Zveřejnit **tři ceny** (8 900 / 19 900 / 39 000 Kč bez DPH) a „bez vazby, měsíční výpověď“ u prvních dvou –
-   transparentnost je v ČR diferenciátor (veřejnou měsíční cenu za práci na měření má **jeden** subjekt).
-   Prezentovat je jako **naše rozhodnutí**, ne jako „tržní cenu“ – ta pro ČR neexistuje.
-2. Osy tierů: **kadence + reakční doba + BigQuery hloubka**; hodiny jen jako limit na změny; traffic jen u sGTM.
-3. Vstupní projekt (audit / oprava měření) prodávat zvlášť za 9–25 tis. Kč a **první měsíc správy započítat
-   do onboardingu** – odpovídá poptávce „jednorázová oprava a pak paušál“ (E7-109) i modelu DASE/Amplio.
-4. Argumentovat **poměrem k rozpočtu**, ne absolutní ztrátou: standardní tier ≈ 4 % měsíčního rozpočtu do
-   reklamy při spendu 500 tis. Kč. (Věta „týden bez alertu stojí víc než rok správy“ byla vypuštěna – pro
-   deklarovaný segment je aritmeticky nepravdivá, platila by až od spendu ~2,2 mil. Kč/měs.)
-5. Ceny **v Kč i EUR**; nepoužívat zahraniční body jako argument „u nás je to levné“ (chybí PPP korekce).
-6. Před publikací ceníku ověřit: hodinovou náročnost na vlastních datech (A3), ochotu platit
-   (Van Westendorp, A4) a proveditelnost denní reconciliace na Shoptet/Upgates API (A5).
+1. **Vstupní tier 8 900 Kč ponechat, ale přejmenovat a přeobsadit.** Čeští kupující platí za „interpretaci
+   dat a analytickou podporu", ne za hlídání. Prodávat jako **malý paušál analytika (X hodin) s hlídáním
+   v ceně**, ne jako monitoring.
+2. **Standardní tier snížit na ≈ 15 900 Kč**, nebo explicitně vyjmenovat, co klient dostane za rozdíl proti
+   CzechTourism (15 300 Kč za 9 h včetně BQ a sGTM). Současných 19 900 Kč nemá oporu v žádném zaplaceném bodě.
+3. **Datový tier publikovat jako „od 39 000 Kč, cena podle rozsahu."** Kotva existuje (37 200–40 946 Kč
+   reálně zaplaceno), ale je z rámce s rozvojem v rozsahu a s rozptylem 20 000–127 075 Kč měsíčně.
+4. **Cenu nefixovat, dokud se nezměří hodiny** na vlastních zakázkách. Při realistické utilizaci je marže
+   31–40 % a tier 1 může být při horním odhadu hodin ztrátový.
+5. **Reakční dobu prodávat jako samostatnou osu s doloženou cenou.** Český trh za jeden stupeň zkrácení
+   platí 1,63×; reakce do 4 h stojí ≈ 6 000 Kč/měs. To je jediná osa, kterou žádný SaaS nemá.
+6. **Do smlouvy indexační doložku** podle HICP služeb ČR (2025: 5,0 % vs. celková inflace 2,3 %) a na ceník
+   „Ceny platné od <datum>".
+7. **Zahraniční ceny do klientské komunikace nepatří.** Po PPP korekci nejsme levní, jsme nad evropským
+   mediánem.
 
 ## 5. Mezery
 
-- **České pásmo stojí na 2 subjektech** (RobertNemec 3 hodnoty, Khoder 1). Chybí realizované ceny –
-  cesta: registr smluv.gov.cz (povinné nad 50 tis. Kč, plné texty) a mystery shopping u 6–10 subjektů
-  „na dotaz“, kde leží celá horní polovina trhu.
-- **Tier 3 nemá tržní oporu**: n = 2 s rozptylem 4×; žádný český BQ retainer veřejně neexistuje.
-- **Odhad hodin nebyl ověřen proti reálné dodávce**; ekonomika dodávky (utilizace, klientů na analytika,
-  souběh incidentů) nebyla zkoumána vůbec.
-- **Ochota platit** nebyla testována – celá cena je odvozena z nabídkové strany.
-- **Bez PPP korekce**; zahraniční body nejsou srovnatelné v absolutní výši.
-- Rozpor **Metrics Watch 29 vs. 79 USD** (Capterra vs. ceník dodavatele) nevyřešen.
-- Rozpor **Elevar Analyst Services**: dva ověřovatelé doložili doslovným citátem z ceníku, třetí ho v aktuálním
-  veřejném ceníku nenašel. Do rozhodnutí se kotva neuvádí jako nosná.
+- **Z cílového segmentu (e-shop) není doložena ani jedna zaplacená cena.** Všech devět je z veřejného sektoru.
+- **Mezera 15 300 → 37 200 Kč** v zaplacených datech je prázdná — právě tam leží tier 2.
+- **Utilizace a skutečné hodiny** nejsou známy; marže je proto interval 17–54 %, ne číslo.
+- **Cena pojištění profesní odpovědnosti** není veřejná — nákladová položka slibu reakční doby je neznámá.
+- **Velikost trhu** (kolik českých e-shopů patří do kterého tieru) nebyla otevřena v žádném ze tří kol.
+- **Ochota platit** nebyla testována; celá cena je stále odvozena z nabídkové strany.
+- Rozpory **Metrics Watch 29 vs. 79 USD** a **Elevar Analyst Services** zůstávají nevyřešené.
 
-## 6. Co se změnilo mezi verzí 1 a 2
+## 6. Co se změnilo mezi verzemi
 
-| # | Verze 1 (2026-09-04) | Verze 2 (2026-09-05) | Proč |
+| # | Verze 1 (04. 9.) | Verze 2 (05. 9.) | Verze 3 (06. 9.) |
 |---|---|---|---|
-| 1 | „Medián 8–10 tis. potvrzují nezávisle tři regiony (CZ, SK, EU)“ | Nezávislá je **jen EU** (medián 12 250 / po subjektech 11 250 Kč); CZ = 2 subjekty, SK = 2 | Tři mediány neměřily totéž: CZ vzorek byl z 87 % PPC paušál, sGTM hosting a full-service |
-| 2 | „Správa s BQ je 3,5–5× dražší“ | **≈ 2,0–2,6×** | Porovnávaly se dvě různé populace; uvnitř dodavatele doloženo 3× nezávisle |
-| 3 | „Tři nezávislé odvozovací cesty dávají stejný výsledek“ | Nezávislé jsou **dvě**; nákladová cesta počítala s tržní sazbou 1 800 Kč/h jako s nákladem | Skutečný mzdový náklad je ≈ 700 Kč/h vč. režie; shoda byla tautologická |
-| 4 | „8 900 Kč leží pod nejlevnějším lidským balíčkem na trhu“ | **Faktická chyba** – pod ním je 8 z 15 evropských subjektů (3 350–7 800 Kč) | Přepočet po úklidu datasetu |
-| 5 | Horní kvartil správy bez BQ „16–23 tis.“ | Doložený veřejný **strop 31 200–32 475 Kč** (dva nezávislé subjekty) | RobertNemec 31 200 Kč ověřen v raw HTML (ve verzi 1 označen za nepotvrzený) |
-| 6 | Tier 3 podepřen dvěma EU body (45 000 a 43 500) | Podepřen **dvěma body s rozptylem 4×** (11 250 a 45 000); Measurelab 43 500 vyřazen | Measurelab £1 500 je minimální odběr 10 kreditů = hodinová proxy, ne tier |
-| 7 | Kotva „US federální zakázka 985 USD = 22 655 Kč“ jako důkaz, že nejsme drazí | **Vyřazeno** z argumentace | Srovnává federální zakázku s českým e-shopem bez PPP korekce |
-| 8 | Softmedia sGTM 1 000 / 2 500–4 000 / 6 000–8 000 Kč | **Vyřazeno** (`refuted`) | Článek přepsán 2026-06-10, žádná cena, Wayback bez snapshotu |
-| 9 | Dataset „352 řádků“ bez příznaků | 749 řádků, z toho 685 `active`; 16 `refuted`, 12 `superseded`, 36 `duplicate`, 8 tříd `scope_class` | Bez toho se do mediánu počítaly federální zakázky, názory z fór a PPC paušály |
-| 10 | Konkurenční tlak „ošetřen (SaaS 1 600–5 200 Kč)“ | Přibyly tři přímé tlaky: Signals Bar 2 500 Kč **se stejným sdělením**, ga4monitor 667 Kč, RDY.cz 10 000 Kč | Nález 2. kola |
+| 1 | medián 8–10 tis. potvrzují tři regiony | nezávislá je jen EU; ČR = 2 subjekty | **9 reálně zaplacených českých cen**; bez BQ medián 9 500, s BQ 38 000 |
+| 2 | BigQuery násobek 3,5–5× | ≈ 2× | v českých zaplacených datech **4,0×**, ale skupina s BQ je bimodální (n = 5) |
+| 3 | tři nezávislé odvozovací cesty | dvě | dvě; nákladová podlaha opravena ze 700 na **816–1 225 Kč/h** |
+| 4 | „8 900 pod nejlevnějším balíčkem" | faktická chyba, 8 z 15 je levnějších | po PPP je 8 900 **27 % nad** evropským mediánem |
+| 5 | tier 2 nejlépe podepřený | šest nezávislých subjektů | **vyvráceno v každém bodě**; tier 2 je nejslabší, mezera 15 300 → 37 200 je prázdná |
+| 6 | tier 3 podepřen dvěma body | bez tržní opory, rozptyl 4× | **poprvé domácí kotva** (37 200–40 946 zaplaceno), ale veřejný sektor a rámec s rozvojem |
+| 7 | marže 43–65 % | 43–65 % | **31–40 %** při realistické utilizaci; tier 1 může být ztrátový |
+| 8 | – | detekce je komodita za 667 Kč | dno detekce je **nula**; komoditizovala se i **triáž a report** |
+| 9 | – | – | **„hlídání" v desetiletém registru smluv: 0 výskytů**; kupuje se interpretace dat |
+| 10 | – | – | ceny v oboru **nesledují inflaci** (−38 % reálné hodnoty za 10 let) → indexační doložka |
 
-Ceny se nezměnily. Změnilo se **to, čím se dají obhájit** – a status pásem: z „tržního nálezu“ na
-„rozhodnutí opřené o evropský vzorek, domácí kotvy a marži“.
+**Ceny se poprvé mění**: doporučuji snížit tier 2 a tier 3 publikovat jako „od". Tier 1 zůstává.

@@ -66,12 +66,23 @@ print(f"scope_class (active): {dict(byclass)}")
 meas = [r for r in active if r['scope_class'] == 'measurement_only' and monthly(r)]
 print(f"\n**Trzni zaklad = measurement_only + mesicni + active: {len(meas)} radku**")
 
-table(meas, lambda r: r['region'].upper(), 'A. Mesicni sprava mereni podle regionu (vsechny tiery)')
+paid = [r for r in meas if r.get('evidence_type') == 'paid']
+lst = [r for r in meas if r.get('evidence_type') == 'list_price']
+print(f"z toho REALNE ZAPLACENYCH: {len(paid)} | cenikovych: {len(lst)} | odhadu a nazoru: {len(meas)-len(paid)-len(lst)}")
+
+table(meas, lambda r: r['region'].upper(), 'A. Mesicni sprava mereni podle regionu (vsechny tiery, vsechny typy dukazu)')
+table(paid, lambda r: r['region'].upper() + ' / ' + (r.get('buyer_sector') or '?'), 'A1. REALNE ZAPLACENE ceny (registr smluv a verejne zakazky)', minn=1)
+print()
+for r in sorted(paid, key=lambda r: (r['region'], num(r['price_czk_month']) or 0)):
+    v = num(r['price_czk_month'])
+    if v: print(f"  {r['region']} {fmt(v):>8} Kc | {r['provider'][:34]:34} | {r['service_name_verbatim'][:46]:46} | BQ={r['requires_bq']}")
+table(lst, lambda r: r['region'].upper(), 'A2. CENIKOVE ceny (verejne ceniky dodavatelu)')
 table(meas, lambda r: r['region'].upper(), 'B. Totez PO SUBJEKTECH (1 dodavatel = jeho nejnizsi verejny tier)', per_subject=True)
 table(meas, lambda r: ('EU+UK' if r['region'].upper() in ('EU', 'UK') else r['region'].upper()) + ' / BQ=' + (r['requires_bq'] or 'unknown'),
       'C. Podle BigQuery (jen mereni, mesicni)')
 
-for cls, title in [('saas', 'D. SaaS nastroje (mesicni)'), ('hourly_proxy', 'E. Hodinove sazby x10 h - PROXY, nemichat do trzniho medianu'),
+for cls, title in [('adjacent_industry', 'D0. Sousedni CZ obory - kotvy ochoty platit za SLA (IT podpora, hosting, sprava webu, ucetnictvi)'),
+                   ('saas', 'D. SaaS nastroje (mesicni)'), ('hourly_proxy', 'E. Hodinove sazby x10 h - PROXY, nemichat do trzniho medianu'),
                    ('salary_proxy', 'F. Mzdove proxy (in-house kotva)'), ('bundled_ppc', 'G. PPC/full-service pausal s merenim uvnitr'),
                    ('infra_only', 'H. sGTM hosting a infrastruktura'), ('public_tender', 'I. Verejne zakazky a enterprise kontrakty - NESROVNATELNE s CZ e-shopem'),
                    ('stated_opinion', 'J. Nazory z fór a cenove pruvodce - nabidkou nejsou')]:
