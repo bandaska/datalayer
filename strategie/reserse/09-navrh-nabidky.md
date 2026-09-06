@@ -1,8 +1,16 @@
 # Fáze 10 – Návrh nabídky DataLayer.cz: pozicování, tiery, sdělení, vstupní bod
 
-Stav: **návrh k diskusi, verze 2 (2026-09-05)** – po 2. kole ověření a po datové hygieně.
-Vychází z fází 1–9 a z `10-doplneni-a-overeni-r2.md`. Čísla v Kč bez DPH.
-Změny proti verzi 1 jsou označené v § 5.1 a shrnuté v § 10.
+Stav: **návrh k diskusi, verze 3 (2026-09-06)** – po třetím kole.
+Vychází z fází 1–9 a z `10-doplneni-a-overeni-r2.md` a `11-doplneni-r3.md`. Čísla v Kč bez DPH.
+Změny proti verzi 2 jsou v § 11.
+
+> **Verdikt třetího kola: ANO stavět, NE tu službu, která je tady navržená, a NE s tímto ceníkem.**
+> Kontinuální placená práce na měření v ČR prokazatelně existuje a obnovuje se — devět reálně zaplacených
+> měsíčních cen z registru smluv. Ale *hlídání měření* jako samostatně kupovaná položka nemá ani jeden
+> doklad z poptávkové strany: **0 výskytů v desetiletém registru smluv, 0 z 53 poptávek na Shoptet
+> Partnerech, 1 samostatná zakázka v celém českém korpusu veřejných zakázek za 10 let.**
+> Prodejná je **hodinová kapacita analytika s interpretací dat**, uvnitř které je hlídání a SLA
+> diferenciátor. Podrobně v § 10.
 
 ---
 
@@ -47,12 +55,13 @@ Jádro společné všem tierům (standard trhu, 08 § 2.1): alerty na propad kl�
 konverze v Ads/Meta/Sklik, údržba dashboardů a konektorů, měsíční komentář, ad-hoc dotazy, oprava po alertu, kvartální audit
 přístupů. Tiery se liší **kadencí, reakční dobou, hodinami na změny a hloubkou (BQ)**.
 
-| | **Hlídání** | **Správa** | **Datová správa** |
+| | **Analytik na malý úvazek** (dříve *Hlídání*) | **Správa měření** | **Datová správa** |
 |---|---|---|---|
-| **Cena** | **8 900 Kč/měs** | **19 900 Kč/měs** | **39 000 Kč/měs** |
+| **Cena** | **8 900 Kč/měs** | 19 900 Kč/měs → **doporučeno 15 900 Kč** | **od 39 000 Kč** podle rozsahu |
+| **Opora v reálně zaplacených českých cenách** | 8 640 / 9 000 / 10 000 / 12 143 Kč — sedí dovnitř | **žádná** — mezera 15 300 → 37 200 Kč je prázdná | 37 200 / 38 000 / 40 946 Kč — sedí doprostřed |
 | **Pro koho** | e-shop / lead-gen web do ~20 mil. obratu, 1 web, Ads spend do ~50 tis., bez BQ; agentura jako white-label vrstva | e-shop 20–200 mil., 1–3 weby, 3–4 ad platformy, releasy měsíčně, spend 50–500 tis.; B2B s drahými leady | e-shop 100 mil.+, více značek/zemí, BQ export (nebo ho zapneme), sGTM, reporting nad BQ, spend 500 tis.+ |
 | **Pain, který řeší** | „Přestaly chodit konverze a zjistili jsme to za tři týdny na CPA.“ (painy 1, 2, 5, 8) | „Po každém releasu se něco rozbije a nikdo nevlastní měření; GA4 a e-shop se rozcházejí a nevíme proč.“ (painy 3, 4, 5, 6, 10, 13) | „Potřebujeme čísla, kterým se dá věřit napříč platformami, po transaction_id, a export, který nevypadne.“ (painy 3, 6, 7, 9, 15) |
-| **Denně (automat)** | GA4 Custom Insights (10–15 pravidel) + Data API kontrola purchase/lead vs. včera a před týdnem; **součtové srovnání objednávek v administraci vs. konverzí (prahy 10 / 30 %)**; sGTM 5xx | + Checkly průchod checkoutem / formulářem s kontrolou dataLayer a GA4 requestů; kontrola konverzních akcí Ads/Meta | + kontrola BQ exportu (tabulka, objem ±5 %, zpoždění), Dataform/SQL testy (purchase má transaction_id, revenue > 0), anomálie per event/zdroj, **denní reconciliace GA4 vs. backend po transaction_id**, budget alerty |
+| **Denně (automat)** | GA4 Custom Insights (10–15 pravidel) + Data API kontrola purchase/lead vs. včera a před týdnem; **součtové srovnání objednávek vs. konverzí (prahy 10 / 30 %) — jen na podporovaných platformách, viz § 4.1**; sGTM 5xx | + Checkly průchod checkoutem / formulářem s kontrolou dataLayer a GA4 requestů; kontrola konverzních akcí Ads/Meta | + kontrola BQ exportu (tabulka, objem ±5 %, zpoždění), Dataform/SQL testy (purchase má transaction_id, revenue > 0), anomálie per event/zdroj, **denní reconciliace GA4 vs. backend po transaction_id**, budget alerty |
 | **Kadence člověk** | triáž alertů v pracovní dny; **kvartální** review nastavení, přístupů a lišty; měsíční jednostránkový komentář e-mailem | triáž denně; **měsíční** QA GTM/consent/konverzí + call 30 min + komentář; **QA do 24 h po každém releasu** (checklist 10 bodů); kvartální review měřicího plánu | vše ze Správy + **týdenní digest** (co se hnulo, co se rozbilo, co je nové) + měsíční report s „kolik konverzí chybělo a proč“ + kvartální strategické review |
 | **Reakce na výpadek** | další pracovní den (e-mail) | do 8 pracovních hodin (e-mail / sdílený Slack kanál) | do 4 pracovních hodin (Slack, pojmenovaný analytik) |
 | **Hodiny na změny (A2, F5)** | 1 h/měs, nad to 1 900 Kč/h | 3 h/měs | 6 h/měs |
@@ -72,6 +81,51 @@ Doplňkové položky:
 **Rozhodnutí o cenách** viz `08-pricing-synteza.md` § 3.1: průnik nákladové (3–5 / 8–12 / 15–22 h), tržní (median 8–10 tis.,
 „běžně“ 18 500, BQ ≈ 2×) a kotvové (1/8 úvazku, PPC správa, 1/2 in-house) cesty.
 **Pozor:** nákladová a tržní cesta nejsou nezávislé (verze 1 to tvrdila) – viz `08` § 3.1.
+
+### 4.1 Na kterých platformách denní srovnání s e-shopem funguje (nález 3. kola)
+
+Slib denního srovnání objednávek nelze dát plošně. Ověřeno z veřejné dokumentace:
+
+| Platforma | Denní srovnání | Poznámka |
+|---|---|---|
+| **Upgates** | ano | REST API s objednávkami dostupné |
+| **Shopify** | ano | Admin API, `read_orders`; `read_all_orders` vyžaduje schválení |
+| **WooCommerce** | ano | REST API |
+| **PrestaShop** | ano | webservice API |
+| **Shoptet Premium** | ano | REST API; Premium začíná na 12 000 Kč/měs |
+| **Shoptet Free–Enterprise** | **ne** | Shoptet doslova: *„Zakázková implementace proto není možná pro klienty, kteří využívají tarify Free až Enterprise, tito k REST API přístup nemají"* |
+
+**To je problém právě pro vstupní tier.** Jeho cílový klient (e-shop do ~20 mil., jeden web, bez BigQuery)
+je na Shoptetu skoro jistě na tarifu Business nebo Profi (1 490–2 490 Kč/měs) a k API se nedostane.
+
+**Do vyřešení platí:** v nabídce uvádět **jmenný seznam podporovaných platforem**. Pro Shoptet bez Premium
+buď najít alternativu (plánovaný export objednávek e-mailem, XML feed), nebo slib denního srovnání u tohoto
+segmentu vypustit a nahradit ho měsíční ruční kontrolou. **Ověření alternativy je dvě hodiny práce nad
+veřejnou dokumentací a blokuje publikaci ceníku.**
+
+### 4.2 Co musí být ve smlouvě, aby šel slib reakční doby publikovat (nález 3. kola)
+
+Prodáváme slib reakční doby a argumentujeme promarněným reklamním rozpočtem — tedy přesně tou škodou,
+na kterou se klient zeptá, kdo ji nese. Celý dodavatelský řetězec od Googlu dolů to řeší stejně a
+§ 2898 občanského zákoníku to vůči podnikateli dovoluje:
+
+1. **Reakční doba je lhůta k zahájení práce**, ne k vyřešení. Definovat od nahlášení klientem **nebo od
+   naší vlastní detekce**, s pracovní dobou jako oknem.
+2. **Jedinou sankcí je kredit z vlastní odměny**, číselně a se stropem. Návrh: 10 % měsíční odměny za každý
+   započatý násobek lhůty, strop 50 %. Maximální měsíční expozice: 4 450 / 7 950 / 19 500 Kč — **je to
+   nepojistitelné a platí se z marže**, takže to patří do nákladového modelu.
+3. **Náhrada škody omezena na 1–6 měsíčních odměn s vyloučením ušlého zisku.** Samostatná klauzule
+   k § 2950 (škoda způsobená informací nebo radou).
+4. **V podepsané smlouvě, ne ve VOP.** Omezení odpovědnosti schované ve VOP je vůči podnikateli slabší.
+5. **Zpracovatelská smlouva k objednávkovým datům.** Když čteme objednávky klienta, jsme zpracovatel
+   osobních údajů se vším, co k tomu podle GDPR patří.
+6. **Účty a přístupy vedeny pod klientem**, my jako správci. Řeší to nejčastější pain `access_lost`
+   a zároveň je to prodejní argument.
+
+Pro kontext, kolik takový slib stojí jinde: Český rozhlas má ve smlouvě od roku 2021 odstranění vady
+do 12 hodin s pokutou 2 000 Kč/den a pojištěním na 900 000 Kč; Brno-střed reakci 1 h / odstranění 4 h
+s pokutou 1 000 Kč za každou započatou hodinu. **Reakční doba na výpadek měření v ČR existuje — jen ne
+v ceníku, ale ve smlouvě.**
 
 ## 5. Hlavní sdělení – po segmentech, postavené na pojmenovaných painech
 
@@ -183,29 +237,64 @@ varianta B „od 8 900“. Cíl: 30 dní, min. 200 návštěv na stránku.
 **Kritéria úspěchu validace:** ≥ 5 z 8 respondentů popíše vlastní incident s dobou odhalení > 1 týden; medián „přijatelné ceny“
 pro Správu v pásmu 15–25 tis.; ≥ 1 agentura ochotná pilotovat white-label.
 
-## 9. Co dál (návrh dalších kroků mimo tuto rešerši)
+## 9. Kanál: komu to prodat nejdřív
 
-1. Sepsat **veřejný dokument „Co hlídáme“** (seznam kontrol s prahy, checklist po releasu, formát komentáře, reakční doby) – artefakt
-   pro web a nabídky.
-2. Postavit **interní alert stack** jako šablonu (GA4 Insights, Data API skript, Checkly, sGTM log sink, BQ SQL + Dataform testy,
-   Slack) – náklad do 3 000 Kč/klient/měs.
-3. Provést validační rozhovory (§ 8) a upravit ceny podle Van Westendorp výsledku.
-4. Připravit stránku služby a úpravu `services.ts` (§ 7); publikovat ceny.
-5. Outbound kampaň před nejbližším deadlinem Googlu / změnou Shoptetu s painovým sdělením ze § 5.
+Třetí kolo změnilo odpověď. Verze 2 předpokládala PPC agentury jako hlavní white-label kanál; to je
+**doložený odpor, ne doložený kanál** — PPC agentura si měření drží in-house, protože je to *„soo essential
+part of the PPC service"*.
 
----
-
-## 10. Co se změnilo mezi verzí 1 a 2
-
-| # | Verze 1 | Verze 2 | Proč |
+| Pořadí | Kanál | Proč | Doklad |
 |---|---|---|---|
-| 1 | „Měření se tiše rozbilo“ = volné pole, nikdo z CZ konkurence to nepoužívá | **Vyvráceno.** Signals Bar (2 500 Kč) používá doslova „rozbité měření“ a „tiché výpadky“; LEMONTEC (AT) slibuje 24 h za 4 975 Kč | nález 2. kola, § 5.2 |
-| 2 | „Jeden týden bez alertu stojí víc než rok správy“ | **Vypuštěno** – aritmeticky nepravdivé pro deklarovaný segment | § 5.1 |
-| 3 | Práh reconciliace 15 % | **10 / 30 %** podle tří českých a slovenských zdrojů | v ČR je rozdíl 10–30 % norma; 15% práh by pálil denně |
-| 4 | Násobek za BigQuery 3,7–5,5× | **≈ 2×** | vyvráceno třikrát nezávisle |
-| 5 | Reconciliace slíbena malému e-shopu, ale nebyla v jeho tieru | **Součtové srovnání přesunuto do tieru Hlídání** | slib musí odpovídat dodávce |
-| 6 | Validace: rozhovory → landing page → white-label jako třetí | **White-label pilot je první krok** | existuje protievidence k samotné poptávce |
-| 7 | Poptávka po samostatné správě brána jako daná | **Neověřená hypotéza s protievidencí** (0 z 53 CZ poptávek žádá monitoring; US praktici to nazývají one-off službou) | § 1, řádek „Nová“ |
-| 8 | Tier 3 podepřen tržním srovnáním | **Bez tržní opory** (dva EU body s rozptylem 4×); obhajuje se obsahem a marží | 08 § 3.1 B |
+| 1 | **Kdo klientovi už provozuje sGTM nebo hosting měření** | rozpočtová položka už existuje, jen se rozšíří | MeasureCamp deck: monitoring navěšený na sGTM hosting, 350 €/měs velkoobchodně |
+| 2 | **Dodavatel webu** — měření jako pojmenovaná role v paušálu | vzor Praha: „Obsahový specialista, SEO a webový analytik" | veřejné zakázky |
+| 3 | **Veřejný sektor** — kraje, destinační agentury, univerzity, veřejnoprávní média | nakupují opakovaně, mění dodavatele, zakázka roste (ČRo strop +150 % mezi 2021 a 2026); **všech devět doložených zaplacených cen je odsud** | registr smluv |
+| 4 | Přímý prodej e-shopu | rozpočtová položka neexistuje; nejtěžší kanál | 0 z 53 poptávek |
 
-**Ceny se nezměnily.** Změnilo se, čím se obhajují, jak se o nich mluví a v jakém pořadí se validují.
+**Vstupenkou je vždy předchozí jednorázový projekt.** Ani jeden z nalezených paušálů nevznikl bez něj.
+
+## 10. Rozhodnutí: stavět, ale jinak
+
+**ANO stavět.** Forma je doložená a opakovaně placená; v Evropě existují srovnatelné produkty s veřejnou
+cenou (Junto 33 375 Kč, Piekarski 17 400 Kč, LEMONTEC 30 měsíců na trhu); hotový nástroj na reconciliaci
+neexistuje ani v ČR, ani na Shopify; a **pain je jediné, co tři kola rešerše nikdy nezpochybnila**.
+
+**NE jako samostatný produkt se třemi veřejnými cenami.** Rozpočtová položka na hlídání měření v ČR
+neexistuje, takže musí vzniknout u někoho, kdo už jednu má. Prodávat jako **pojmenovanou položku nebo
+white-label modul navěšený na to, co klient už kupuje.**
+
+**Pět podmínek, které blokují publikaci ceníku** — všechny splnitelné bez další rešerše:
+
+| # | Podmínka | Blokuje | Náklad |
+|---|---|---|---|
+| 1 | Změřit hodiny zpětně na 3–5 vlastních zakázkách **včetně plošného scénáře** (jedna změna Googlu = všichni klienti týž den) | celý ceník; při realistické utilizaci je marže 31–40 % a tier 1 může být ztrátový | 1 den |
+| 2 | Rozhodnout slib denního srovnání pro Shoptet bez Premium | vstupní tier | 2 hodiny |
+| 3 | Smluvní konstrukce reakční doby (§ 4.2) + tři nabídky pojištění profesní odpovědnosti | celý ceník; bez pojištění není znám náklad slibu | 1 týden |
+| 4 | Tier 3 publikovat jako „od", ne jako pevnou cenu | datový tier | – |
+| 5 | Snížit tier 2 na ≈ 15 900 Kč, nebo vyjmenovat obsah za rozdíl | standardní tier | – |
+
+**Dvě rozhodovací podmínky, které nejsou o ceníku:**
+
+6. **Dva podepsaní piloti do 8 týdnů** — jeden white-label, jeden přímý, za jakoukoli cenu. Kritérium je
+   **podpis a první faktura**, ne „vzali bychom to". Kdyby po 8 týdnech nebyl podepsán ani jeden nad
+   8 900 Kč, je to no-go signál pro samostatný produkt a fallback je 2 900–5 000 Kč jako příloha
+   k jiné službě plus fakturované incidenty.
+7. **Druhé cenové rameno testu postavit na 2 900–5 000 Kč**, ne na 8 900 Kč. To je hladina, za kterou se
+   jediná prokazatelně dlouhověká evropská instance přesně tohoto produktu (LEMONTEC, 30 měsíců) prodává
+   v české cenové hladině.
+
+## 11. Co se změnilo mezi verzemi
+
+| # | Verze 2 (05. 9.) | Verze 3 (06. 9.) |
+|---|---|---|
+| 1 | poptávka po samostatné správě = neověřená hypotéza s protievidencí | **třetí nezávislé potvrzení protievidence**: 0 výskytů „hlídání" v desetiletém registru smluv, 1 samostatná zakázka za 10 let |
+| 2 | české pásmo stojí na jednom subjektu | **devět reálně zaplacených cen**; ale všechny z veřejného sektoru, z e-shopu ani jedna |
+| 3 | tier 3 (39 000) bez tržní opory | **poprvé domácí kotva** 37 200–40 946 Kč; publikovat jako „od" |
+| 4 | tier 2 (19 900) nejlépe podepřený | **nejslabší**; mezera 15 300 → 37 200 Kč je prázdná → doporučeno 15 900 Kč |
+| 5 | „8 900 pod evropským mediánem" | po PPP korekci **27 % nad** ním |
+| 6 | marže 43–65 % | **31–40 %**; tier 1 při horním odhadu hodin ztrátový |
+| 7 | denní srovnání slíbeno vstupnímu tieru | **nejde u Shoptetu bez Premium** — právě u cílového klienta tieru 1 |
+| 8 | reakční dobu v ČR nikdo neslibuje | v cenících ne (0 ze 71 evropských subjektů), **ve smlouvách ano od roku 2021** |
+| 9 | changelog a hlídání deadlinů = diferenciátor | **hygiena** — v sousedních oborech je to zdarma („Problémy vidíme dřív než vaši lidé", 3–13 tis. Kč) |
+| 10 | white-label přes PPC agentury | **PPC agentura je doložený odpor**; kanál je provozovatel sGTM, dodavatel webu a veřejný sektor |
+| 11 | tier 1 = „Hlídání" | **„Analytik na malý úvazek"** — čeští kupující platí za interpretaci dat, ne za hlídání |
+| 12 | – | **indexační doložka** podle HICP služeb: ceny v oboru ztrácejí reálnou hodnotu (−38 % za 10 let) |
