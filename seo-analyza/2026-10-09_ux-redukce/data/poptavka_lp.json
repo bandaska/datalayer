@@ -1,0 +1,594 @@
+{
+ "lp-dashboardy": {
+  "vol": 22040,
+  "serv": 870,
+  "top": [
+   [
+    200,
+    "power bi kurz"
+   ],
+   [
+    150,
+    "školení power bi"
+   ],
+   [
+    150,
+    "power bi školení"
+   ],
+   [
+    150,
+    "kurz power bi"
+   ],
+   [
+    60,
+    "power bi kurz pro datovou analytiku"
+   ],
+   [
+    60,
+    "kurz datové analytiky s power bi"
+   ],
+   [
+    30,
+    "power bi kurz zdarma"
+   ],
+   [
+    20,
+    "power bi cena"
+   ],
+   [
+    10,
+    "power bi pro cena"
+   ],
+   [
+    10,
+    "power bi online kurz"
+   ],
+   [
+    10,
+    "power bi kurzy"
+   ],
+   [
+    10,
+    "napojení na google data studio"
+   ]
+  ]
+ },
+ "lp-consent": {
+  "vol": 1550,
+  "serv": 850,
+  "top": [
+   [
+    200,
+    "cookie lišta"
+   ],
+   [
+    150,
+    "cookies lišta"
+   ],
+   [
+    90,
+    "cookie lišta zdarma"
+   ],
+   [
+    80,
+    "google consent mode v2"
+   ],
+   [
+    80,
+    "consent mode v2"
+   ],
+   [
+    40,
+    "shoptet cookie lišta"
+   ],
+   [
+    40,
+    "cookie lišta 2022"
+   ],
+   [
+    30,
+    "google consent mode"
+   ],
+   [
+    30,
+    "consent mode"
+   ],
+   [
+    20,
+    "shoptet consent mode v2"
+   ],
+   [
+    20,
+    "cookies lišta 2022"
+   ],
+   [
+    20,
+    "cookie lišta shoptet"
+   ]
+  ]
+ },
+ "lp-sprava": {
+  "vol": 940,
+  "serv": 780,
+  "top": [
+   [
+    200,
+    "správa webu"
+   ],
+   [
+    100,
+    "správa webových stránek"
+   ],
+   [
+    90,
+    "správa webu ceník"
+   ],
+   [
+    70,
+    "správa webu cena"
+   ],
+   [
+    70,
+    "správa webových stránek cena"
+   ],
+   [
+    60,
+    "tvorba a správa webových stránek"
+   ],
+   [
+    40,
+    "správa webových stránek ceník"
+   ],
+   [
+    30,
+    "správa webových stránek ostrava"
+   ],
+   [
+    30,
+    "správa webových stránek brno"
+   ],
+   [
+    20,
+    "správa webu wix"
+   ],
+   [
+    20,
+    "správa webových stránek praha"
+   ],
+   [
+    20,
+    "správa webových stránek kurz"
+   ]
+  ]
+ },
+ "lp-tech-audit": {
+  "vol": 3700,
+  "serv": 480,
+  "top": [
+   [
+    100,
+    "ux audit checklist"
+   ],
+   [
+    90,
+    "audit webu"
+   ],
+   [
+    70,
+    "audit webu zdarma"
+   ],
+   [
+    60,
+    "ux audit webu"
+   ],
+   [
+    30,
+    "obsahový audit webu"
+   ],
+   [
+    30,
+    "audit rychlosti webu"
+   ],
+   [
+    20,
+    "ux audit"
+   ],
+   [
+    20,
+    "technický audit webu"
+   ],
+   [
+    10,
+    "website ux audit"
+   ],
+   [
+    10,
+    "ux audit pro e-commerce"
+   ],
+   [
+    10,
+    "ux analýza webu cena"
+   ],
+   [
+    10,
+    "technicky audit webu"
+   ]
+  ]
+ },
+ "lp-gtm": {
+  "vol": 4170,
+  "serv": 370,
+  "top": [
+   [
+    250,
+    "návrh google tag manager"
+   ],
+   [
+    60,
+    "nastavení gtm"
+   ],
+   [
+    10,
+    "implementace gtm"
+   ],
+   [
+    10,
+    "gtm audity"
+   ],
+   [
+    10,
+    "gtm audit"
+   ],
+   [
+    10,
+    "google tag manager audit"
+   ],
+   [
+    10,
+    "audit gtm"
+   ],
+   [
+    10,
+    "audit google tag manager"
+   ],
+   [
+    0,
+    "google tag manager specialist"
+   ],
+   [
+    0,
+    "audity gtm"
+   ],
+   [
+    0,
+    "auditoria de google tag manager"
+   ],
+   [
+    0,
+    "agency for gtm audit"
+   ]
+  ]
+ },
+ "lp-ga4": {
+  "vol": 860,
+  "serv": 250,
+  "top": [
+   [
+    100,
+    "nastavení google analytics"
+   ],
+   [
+    50,
+    "nastavení ga4"
+   ],
+   [
+    50,
+    "google analytics nastavení"
+   ],
+   [
+    10,
+    "nastavení google analytics shoptet"
+   ],
+   [
+    10,
+    "nastavení google analytics 4"
+   ],
+   [
+    10,
+    "nastaveni cílů v google analytics"
+   ],
+   [
+    10,
+    "implementace ga4"
+   ],
+   [
+    10,
+    "ga4 nastavení"
+   ],
+   [
+    0,
+    "shopify ga4 setup"
+   ],
+   [
+    0,
+    "setup google analytics on joomla"
+   ],
+   [
+    0,
+    "setup google analytics ecommerce tracking"
+   ],
+   [
+    0,
+    "setup google analytics 4"
+   ]
+  ]
+ },
+ "lp-konverze": {
+  "vol": 1340,
+  "serv": 190,
+  "top": [
+   [
+    150,
+    "měření konverzí"
+   ],
+   [
+    20,
+    "heureka měření konverzí woocommerce"
+   ],
+   [
+    10,
+    "jak nastavit měření konverzí"
+   ],
+   [
+    10,
+    "heureka ověřeno zákazníky implementace"
+   ],
+   [
+    0,
+    "zbozi.cz měření konverzí"
+   ],
+   [
+    0,
+    "sklik nastavení konverze"
+   ],
+   [
+    0,
+    "sklik měření konverzí prestashop"
+   ],
+   [
+    0,
+    "sklik měření konverzí"
+   ],
+   [
+    0,
+    "setup meta pixel"
+   ],
+   [
+    0,
+    "setup facebook pixel"
+   ],
+   [
+    0,
+    "setup facebook conversion api"
+   ],
+   [
+    0,
+    "prestashop měření konverzí"
+   ]
+  ]
+ },
+ "lp-server-side": {
+  "vol": 460,
+  "serv": 90,
+  "top": [
+   [
+    50,
+    "server side tracking"
+   ],
+   [
+    10,
+    "server-side tracking"
+   ],
+   [
+    10,
+    "server side tracking gtm"
+   ],
+   [
+    10,
+    "gtm server side tracking"
+   ],
+   [
+    10,
+    "google tag manager server side tracking"
+   ],
+   [
+    0,
+    "why server side tracking"
+   ],
+   [
+    0,
+    "what is server-side tracking"
+   ],
+   [
+    0,
+    "stape server side tracking"
+   ],
+   [
+    0,
+    "server-side tracking gtm"
+   ],
+   [
+    0,
+    "server-side tracking ga4"
+   ],
+   [
+    0,
+    "server side tracking vs cookies"
+   ],
+   [
+    0,
+    "server side tracking vs client side tracking"
+   ]
+  ]
+ },
+ "lp-audit": {
+  "vol": 90,
+  "serv": 90,
+  "top": [
+   [
+    70,
+    "audit webové analytiky"
+   ],
+   [
+    10,
+    "google analytics audit"
+   ],
+   [
+    10,
+    "audit google analytics"
+   ],
+   [
+    0,
+    "ga4 tracking audit"
+   ],
+   [
+    0,
+    "free google analytics audit"
+   ],
+   [
+    0,
+    "audit google analytics 4"
+   ]
+  ]
+ },
+ "lp-b2b": {
+  "vol": 100,
+  "serv": 50,
+  "top": [
+   [
+    50,
+    "crm integrace"
+   ]
+  ]
+ },
+ "home": {
+  "vol": 670,
+  "serv": 10,
+  "top": [
+   [
+    10,
+    "webová analytika agentura"
+   ]
+  ]
+ },
+ "lp-eshopy": {
+  "vol": 640,
+  "serv": 0,
+  "top": [
+   [
+    0,
+    "setup gtm on shopify"
+   ],
+   [
+    0,
+    "setup enhanced ecommerce google tag manager"
+   ],
+   [
+    0,
+    "implement ecommerce tracking google analytics"
+   ],
+   [
+    0,
+    "audit ux ui magento"
+   ]
+  ]
+ },
+ "lp-bigquery": {
+  "vol": 1880,
+  "serv": 0,
+  "top": [
+   [
+    0,
+    "implementing a data warehouse"
+   ],
+   [
+    0,
+    "implement a data warehouse"
+   ],
+   [
+    0,
+    "experto big query"
+   ],
+   [
+    0,
+    "data warehouse systems design and implementation"
+   ],
+   [
+    0,
+    "data warehouse internal audit"
+   ],
+   [
+    0,
+    "data warehouse implementation methods"
+   ],
+   [
+    0,
+    "data warehouse experte"
+   ],
+   [
+    0,
+    "data warehouse expert"
+   ],
+   [
+    0,
+    "data warehouse audit model"
+   ],
+   [
+    0,
+    "data warehouse audit checklist"
+   ],
+   [
+    0,
+    "cloud data warehouse experts in chicago"
+   ],
+   [
+    0,
+    "bigquery cena"
+   ]
+  ]
+ },
+ "lp-datalayer": {
+  "vol": 90,
+  "serv": 0,
+  "top": [
+   [
+    0,
+    "implementing a data layer"
+   ],
+   [
+    0,
+    "ga4 data layer implementation"
+   ],
+   [
+    0,
+    "datalayer implementation"
+   ],
+   [
+    0,
+    "data layer implementation"
+   ],
+   [
+    0,
+    "data layer for analytics implementation"
+   ],
+   [
+    0,
+    "data layer for adobe analytics implementation"
+   ],
+   [
+    0,
+    "data layer design and implementation"
+   ]
+  ]
+ }
+}

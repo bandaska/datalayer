@@ -1,0 +1,1226 @@
+{
+ "blog": [
+  {
+   "id": "hero",
+   "cls": "article-hero",
+   "h": "Vysvětlujeme, jak měření doopravdy funguje",
+   "words": 36
+  },
+  {
+   "id": "",
+   "cls": "section-padding",
+   "h": "GA4 → BigQuery: vlastní data bez limitů",
+   "words": 77
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact dl-contact--compact",
+   "h": "Napište nám, co řešíte",
+   "words": 71
+  }
+ ],
+ "blog_ga4-bigquery-export": [
+  {
+   "id": "hero",
+   "cls": "article-hero",
+   "h": "GA4 → BigQuery: vlastní data bez limitů",
+   "words": 20
+  },
+  {
+   "id": "",
+   "cls": "article-content",
+   "h": "Co získáte",
+   "words": 68
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact dl-contact--compact",
+   "h": "Napište nám, co řešíte",
+   "words": 71
+  }
+ ],
+ "blog_server-side-gtm-uvod": [
+  {
+   "id": "hero",
+   "cls": "article-hero",
+   "h": "Server-side GTM: proč a jak začít",
+   "words": 18
+  },
+  {
+   "id": "",
+   "cls": "article-content",
+   "h": "Proč server-side",
+   "words": 92
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact dl-contact--compact",
+   "h": "Napište nám, co řešíte",
+   "words": 71
+  }
+ ],
+ "cookies": [
+  {
+   "id": "hero",
+   "cls": "article-hero",
+   "h": "Zásady cookies",
+   "words": 27
+  },
+  {
+   "id": "nastaveni",
+   "cls": "lp-section lp-section--dark",
+   "h": "",
+   "words": 3
+  },
+  {
+   "id": "jak-souhlas-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak souhlas funguje",
+   "words": 64
+  },
+  {
+   "id": "prehled-cookies",
+   "cls": "lp-section lp-section--dark",
+   "h": "Přehled cookies",
+   "words": 115
+  }
+ ],
+ "index": [
+  {
+   "id": "hero",
+   "cls": "hero-section",
+   "h": "Stavíme neprůstřelné datové základy pro váš růst.",
+   "words": 67
+  },
+  {
+   "id": "pro-koho",
+   "cls": "lp-section lp-section--light",
+   "h": "Měření podle toho, jak vyděláváte",
+   "words": 158
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--dark",
+   "h": "Šest situací, se kterými za námi klienti chodí nejčastěji",
+   "words": 286
+  },
+  {
+   "id": "sluzby",
+   "cls": "lp-section lp-section--deep",
+   "h": "Od sběru dat po report, kterému věří vedení",
+   "words": 133
+  },
+  {
+   "id": "jak-pracujeme",
+   "cls": "lp-section lp-section--light",
+   "h": "Pět kroků – po každém dostanete konkrétní výstup",
+   "words": 134
+  },
+  {
+   "id": "nastroje",
+   "cls": "lp-section lp-section--dark",
+   "h": "",
+   "words": 30
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Než se ozvete",
+   "words": 194
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Zjistíme, kde vám utíkají data",
+   "words": 102
+  }
+ ],
+ "jak-pracujeme": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Pět kroků od úvodní konzultace po předané měření",
+   "words": 80
+  },
+  {
+   "id": "principy",
+   "cls": "lp-section lp-section--light",
+   "h": "Pět pravidel, podle kterých pracujeme",
+   "words": 90
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--dark",
+   "h": "Pět kroků od auditu po předané měření",
+   "words": 425
+  },
+  {
+   "id": "podle-typu-firmy",
+   "cls": "lp-section lp-section--light",
+   "h": "Jak se postup liší podle typu firmy",
+   "words": 115
+  },
+  {
+   "id": "ukazky",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak vypadají výstupy, které dostanete",
+   "words": 392
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 427
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 23
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Začněme úvodní konzultací",
+   "words": 94
+  }
+ ],
+ "kontakt": [
+  {
+   "id": "hero",
+   "cls": "article-hero",
+   "h": "Napište nám nebo rovnou zavolejte",
+   "words": 29
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Napište nám, co řešíte",
+   "words": 85
+  },
+  {
+   "id": "priprava",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak se připravit na konzultaci",
+   "words": 69
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 63
+  }
+ ],
+ "o-nas": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Jak pracujeme s daty a pro koho",
+   "words": 75
+  },
+  {
+   "id": "pristup",
+   "cls": "lp-section lp-section--light",
+   "h": "Proč začínáme u datové vrstvy",
+   "words": 89
+  },
+  {
+   "id": "pro-koho",
+   "cls": "lp-section lp-section--dark",
+   "h": "Pro koho pracujeme",
+   "words": 118
+  },
+  {
+   "id": "principy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak zacházíme s daty – vašimi i vašich zákazníků",
+   "words": 133
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 115
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 19
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Napište nám, co řešíte",
+   "words": 97
+  }
+ ],
+ "reseni_b2b-a-lead-generation": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Měření leadů od formuláře až po zakázku v CRM",
+   "words": 125
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 108
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co uděláme a co dostanete",
+   "words": 171
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Od kliknutí na reklamu po zakázku a zpět",
+   "words": 177
+  },
+  {
+   "id": "faze-leadu",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co kam posíláme v jednotlivých fázích poptávky",
+   "words": 205
+  },
+  {
+   "id": "srovnani",
+   "cls": "lp-section lp-section--light",
+   "h": "Běžné měření poptávek vs. měření až do CRM",
+   "words": 136
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak postupujeme",
+   "words": 147
+  },
+  {
+   "id": "jak-poznate",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Jak poznáte, že měření leadů funguje",
+   "words": 65
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 641
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 28
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Zjistíme, kolik vás doopravdy stojí jedna zakázka",
+   "words": 96
+  }
+ ],
+ "reseni_e-shopy": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Měření e-shopu od datové vrstvy po marži v reportu",
+   "words": 96
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 128
+  },
+  {
+   "id": "stack",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Z čeho se skládá kompletní měření e-shopu",
+   "words": 189
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak data tečou z e-shopu do reportu",
+   "words": 165
+  },
+  {
+   "id": "urovne",
+   "cls": "lp-section lp-section--light",
+   "h": "Čtyři úrovně měření podle toho, co už váš e-shop má",
+   "words": 263
+  },
+  {
+   "id": "platformy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co vaše platforma změří sama – a co chybí",
+   "words": 354
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light",
+   "h": "Jak postupujeme",
+   "words": 157
+  },
+  {
+   "id": "jak-poznate",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Jak poznáte, že měření e-shopu funguje",
+   "words": 81
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 572
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 23
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Zjistíme, kde vašemu e-shopu utíkají objednávky",
+   "words": 96
+  }
+ ],
+ "reseni_velke-firmy": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Řízené a auditovatelné měření pro velké firmy, které zůstane vaše",
+   "words": 126
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 101
+  },
+  {
+   "id": "governance",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Pravidla měření, která přežijí změny týmů i agentur",
+   "words": 178
+  },
+  {
+   "id": "architektura",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak vypadá architektura pro více trhů",
+   "words": 224
+  },
+  {
+   "id": "bezpecnost",
+   "cls": "lp-section lp-section--light",
+   "h": "Bezpečnost a soulad pro nákupní oddělení a IT",
+   "words": 113
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak postupujeme u velkého projektu",
+   "words": 210
+  },
+  {
+   "id": "sla",
+   "cls": "lp-section lp-section--light",
+   "h": "SLA a podpora po spuštění",
+   "words": 102
+  },
+  {
+   "id": "jak-poznate",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Jak poznáte, že měření funguje",
+   "words": 73
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 770
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 25
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Probereme měření s vaším marketingem i IT",
+   "words": 104
+  }
+ ],
+ "sluzby": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Služby webové analytiky a měření",
+   "words": 81
+  },
+  {
+   "id": "prehled",
+   "cls": "lp-section lp-section--deep",
+   "h": "Jedenáct služeb ve třech skupinách",
+   "words": 165
+  },
+  {
+   "id": "cim-zacit",
+   "cls": "lp-section lp-section--light",
+   "h": "Nejčastější situace a čím začít",
+   "words": 180
+  },
+  {
+   "id": "navaznost",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak služby navazují",
+   "words": 104
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 166
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 23
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Popište problém, služby vybereme spolu",
+   "words": 90
+  }
+ ],
+ "sluzby_audit-mereni": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Audit měření GA4, GTM, souhlasu a konverzí",
+   "words": 94
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 91
+  },
+  {
+   "id": "co-kontrolujeme",
+   "cls": "lp-section lp-section--dark",
+   "h": "Co v auditu webové analytiky kontrolujeme",
+   "words": 350
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co od nás dostanete",
+   "words": 104
+  },
+  {
+   "id": "rychla-kontrola",
+   "cls": "lp-section lp-section--light",
+   "h": "Kdy stačí rychlá kontrola a kdy celý audit",
+   "words": 136
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak audit probíhá",
+   "words": 165
+  },
+  {
+   "id": "ukazka-reportu",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak vypadá report z auditu",
+   "words": 154
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 611
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 27
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Zjistíme, kde utíkají data",
+   "words": 98
+  }
+ ],
+ "sluzby_bigquery": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "BigQuery a datový sklad pro marketing",
+   "words": 106
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 123
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co uděláme a co dostanete",
+   "words": 180
+  },
+  {
+   "id": "architektura",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak data tečou z webu a firemních systémů do reportu",
+   "words": 201
+  },
+  {
+   "id": "rozhodnuti",
+   "cls": "lp-section lp-section--light",
+   "h": "Co v rozhraní GA4 nejde – a kdy BigQuery zatím nepotřebujete",
+   "words": 184
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak postupujeme",
+   "words": 168
+  },
+  {
+   "id": "overeni",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Jak poznáte, že sklad funguje",
+   "words": 78
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 690
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 34
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Propojíme data do jednoho modelu",
+   "words": 101
+  }
+ ],
+ "sluzby_cookie-lista-consent-mode": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Cookie lišta a Consent Mode v2 nastavené a ověřené",
+   "words": 105
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 125
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co uděláme a co dostanete",
+   "words": 173
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak souhlas putuje od lišty k tagům",
+   "words": 191
+  },
+  {
+   "id": "rozhodnuti",
+   "cls": "lp-section lp-section--light",
+   "h": "Režim basic nebo advanced a výběr lišty",
+   "words": 193
+  },
+  {
+   "id": "pravni-ramec",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Tři věci, které říká zákon, ÚOOÚ a Google",
+   "words": 141
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light",
+   "h": "Jak to probíhá",
+   "words": 145
+  },
+  {
+   "id": "overeni",
+   "cls": "lp-section lp-section--dark",
+   "h": "Co web posílá před souhlasem a po něm",
+   "words": 145
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 634
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 23
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Nastavíme sběr souhlasu podle pravidel – a bez zbytečné ztráty dat",
+   "words": 106
+  }
+ ],
+ "sluzby_dashboardy-a-reporting": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Marketingové dashboardy a reporting na míru",
+   "words": 108
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 123
+  },
+  {
+   "id": "typy-dashboardu",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Čtyři typy dashboardů, které stavíme nejčastěji",
+   "words": 139
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light",
+   "h": "Co uděláme a co dostanete",
+   "words": 159
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Odkud čísla v dashboardu pocházejí",
+   "words": 159
+  },
+  {
+   "id": "rozhodnuti",
+   "cls": "lp-section lp-section--light",
+   "h": "Kdy zvolit Data Studio a kdy Power BI",
+   "words": 149
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak postupujeme a co od vás potřebujeme",
+   "words": 147
+  },
+  {
+   "id": "jak-poznate",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Jak poznáte, že čísla sedí",
+   "words": 126
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 699
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 25
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Propojíme data do jednoho dashboardu",
+   "words": 91
+  }
+ ],
+ "sluzby_datova-vrstva": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Datová vrstva (dataLayer), které rozumí vývojáři",
+   "words": 97
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 83
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Kde datová vrstva v měření sedí",
+   "words": 164
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co uděláme a co dostanete",
+   "words": 124
+  },
+  {
+   "id": "ukazka",
+   "cls": "lp-section lp-section--light",
+   "h": "Jak vypadá specifikace datové vrstvy",
+   "words": 98
+  },
+  {
+   "id": "rozhodnuti",
+   "cls": "lp-section lp-section--dark",
+   "h": "Tři způsoby, jak dostat data do GTM",
+   "words": 143
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak spolupráce probíhá",
+   "words": 230
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 577
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 22
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Připravíme zadání datové vrstvy pro vaše vývojáře",
+   "words": 95
+  }
+ ],
+ "sluzby_google-tag-manager": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Nastavení, audit a správa Google Tag Manageru",
+   "words": 99
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 90
+  },
+  {
+   "id": "spoluprace",
+   "cls": "lp-section lp-section--dark",
+   "h": "Kdy se hodí nastavení, kdy audit a kdy správa",
+   "words": 215
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co uděláme a co dostanete",
+   "words": 176
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Co se děje uvnitř kontejneru",
+   "words": 196
+  },
+  {
+   "id": "rozhodnuti",
+   "cls": "lp-section lp-section--light",
+   "h": "Kam patří měřicí kódy",
+   "words": 114
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak spolupráce probíhá",
+   "words": 199
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 562
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 27
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Uklidíme váš Tag Manager",
+   "words": 92
+  }
+ ],
+ "sluzby_implementace-ga4": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Implementace GA4, která sedí s vašimi tržbami",
+   "words": 92
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 123
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co uděláme a co dostanete",
+   "words": 139
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak data tečou z webu do GA4 a dál",
+   "words": 171
+  },
+  {
+   "id": "rozhodnuti",
+   "cls": "lp-section lp-section--light",
+   "h": "Kdy opravit stávající GA4 a kdy založit novou property",
+   "words": 121
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak implementace probíhá",
+   "words": 144
+  },
+  {
+   "id": "jak-poznate",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Jak poznáte, že GA4 funguje",
+   "words": 70
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 576
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 25
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Nastavíme GA4 tak, aby čísla seděla s tržbami",
+   "words": 94
+  }
+ ],
+ "sluzby_mereni-konverzi": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Měření konverzí pro Google Ads, Metu, Sklik i Heureku",
+   "words": 106
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 120
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co uděláme a co dostanete",
+   "words": 164
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jedna objednávka, jeden zdroj, všechny systémy",
+   "words": 186
+  },
+  {
+   "id": "platformy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co nastavíme v jednotlivých systémech",
+   "words": 329
+  },
+  {
+   "id": "proc-se-lisi",
+   "cls": "lp-section lp-section--light",
+   "h": "Stejné ID, jedna konverze – a proč se čísla přesto liší",
+   "words": 175
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak nastavení probíhá",
+   "words": 154
+  },
+  {
+   "id": "overeni",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Jak poznáte, že měření konverzí funguje",
+   "words": 68
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 529
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 27
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Nastavíme, aby reklamní systémy viděly stejné konverze jako vy",
+   "words": 108
+  }
+ ],
+ "sluzby_server-side-tracking": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Server-side tracking na vaší doméně a ve vašem cloudu",
+   "words": 89
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 104
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co uděláme a co dostanete",
+   "words": 114
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak server-side měření funguje",
+   "words": 108
+  },
+  {
+   "id": "rozhodnuti",
+   "cls": "lp-section lp-section--light",
+   "h": "Kdy se server-side měření vyplatí",
+   "words": 231
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak nasazení probíhá",
+   "words": 147
+  },
+  {
+   "id": "monitoring",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Jak poznáte, že server-side měření funguje",
+   "words": 66
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 484
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 33
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Probereme, jestli se vám server-side měření vyplatí",
+   "words": 102
+  }
+ ],
+ "sluzby_sprava-webu-a-mereni": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Technická správa webu, která hlídá i měření",
+   "words": 117
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 127
+  },
+  {
+   "id": "co-hlidame",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Tři moduly hlídání, které lze kombinovat",
+   "words": 178
+  },
+  {
+   "id": "jak-to-funguje",
+   "cls": "lp-section lp-section--dark",
+   "h": "Jak hlídání funguje od releasu po report",
+   "words": 192
+  },
+  {
+   "id": "srovnani",
+   "cls": "lp-section lp-section--light",
+   "h": "Čím se lišíme od běžné správy webu",
+   "words": 137
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak začínáme",
+   "words": 161
+  },
+  {
+   "id": "release-a-sla",
+   "cls": "lp-section lp-section--light",
+   "h": "Kontrolní seznam pro release a SLA",
+   "words": 182
+  },
+  {
+   "id": "mesicni-report",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Co dostáváte každý měsíc",
+   "words": 123
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 647
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 23
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Ohlídáme, aby měření po dalším releasu nepřestalo fungovat",
+   "words": 104
+  }
+ ],
+ "sluzby_technicky-audit-webu": [
+  {
+   "id": "hero",
+   "cls": "lp-hero",
+   "h": "Technický audit webu – rychlost, tagy a technické SEO",
+   "words": 96
+  },
+  {
+   "id": "symptomy",
+   "cls": "lp-section lp-section--light",
+   "h": "Poznáváte se?",
+   "words": 118
+  },
+  {
+   "id": "oblasti",
+   "cls": "lp-section lp-section--dark",
+   "h": "Šest oblastí, které audit kontroluje",
+   "words": 505
+  },
+  {
+   "id": "vystupy",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Co uděláme a co dostanete",
+   "words": 134
+  },
+  {
+   "id": "rozhodnuti",
+   "cls": "lp-section lp-section--light",
+   "h": "Co technický audit zahrnuje a co ne",
+   "words": 194
+  },
+  {
+   "id": "postup",
+   "cls": "lp-section lp-section--light lp-section--white",
+   "h": "Jak audit probíhá",
+   "words": 173
+  },
+  {
+   "id": "analyza-webu",
+   "cls": "lp-section lp-section--dark lp-section--split",
+   "h": "Analýza webu, kterou zvládnete sami",
+   "words": 103
+  },
+  {
+   "id": "faq",
+   "cls": "lp-section lp-section--light",
+   "h": "Časté otázky",
+   "words": 641
+  },
+  {
+   "id": "navazujici",
+   "cls": "lp-section lp-section--light lp-section--white lp-section--strip",
+   "h": "",
+   "words": 22
+  },
+  {
+   "id": "kontakt",
+   "cls": "dl-contact",
+   "h": "Zjistíme, co brzdí váš web",
+   "words": 97
+  }
+ ],
+ "zpracovani-osobnich-udaju": [
+  {
+   "id": "hero",
+   "cls": "article-hero",
+   "h": "Zpracování osobních údajů",
+   "words": 26
+  },
+  {
+   "id": "zasady",
+   "cls": "lp-section lp-section--dark",
+   "h": "Kdo údaje zpracovává",
+   "words": 398
+  }
+ ]
+}

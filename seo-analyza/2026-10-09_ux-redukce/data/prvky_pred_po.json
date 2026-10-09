@@ -1,0 +1,540 @@
+{
+ "stranky": {
+  "index": {
+   "pred": {
+    "eyebrow": 8,
+    "micro": 1,
+    "trust": 0,
+    "hero_cta": 2,
+    "tags": 28,
+    "topics": 7,
+    "consoles": 6,
+    "tech": 0,
+    "process": 5,
+    "related": 0,
+    "faq": 5,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 1,
+    "cards": 9,
+    "crumbs": 0,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 6,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "sluzby_implementace-ga4": {
+   "pred": {
+    "eyebrow": 10,
+    "micro": 1,
+    "trust": 3,
+    "hero_cta": 2,
+    "tags": 10,
+    "topics": 7,
+    "consoles": 0,
+    "tech": 1,
+    "process": 5,
+    "related": 3,
+    "faq": 6,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 1,
+    "notes": 0,
+    "cards": 12,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 10,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "sluzby_server-side-tracking": {
+   "pred": {
+    "eyebrow": 10,
+    "micro": 1,
+    "trust": 3,
+    "hero_cta": 2,
+    "tags": 10,
+    "topics": 7,
+    "consoles": 0,
+    "tech": 1,
+    "process": 5,
+    "related": 3,
+    "faq": 6,
+    "tables": 2,
+    "tabs": 0,
+    "figures": 4,
+    "notes": 4,
+    "cards": 10,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 1,
+    "notes": 3,
+    "cards": 10,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "sluzby_cookie-lista-consent-mode": {
+   "pred": {
+    "eyebrow": 11,
+    "micro": 1,
+    "trust": 3,
+    "hero_cta": 2,
+    "tags": 17,
+    "topics": 7,
+    "consoles": 3,
+    "tech": 1,
+    "process": 5,
+    "related": 3,
+    "faq": 6,
+    "tables": 1,
+    "tabs": 0,
+    "figures": 2,
+    "notes": 0,
+    "cards": 20,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 10,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "sluzby_mereni-konverzi": {
+   "pred": {
+    "eyebrow": 11,
+    "micro": 1,
+    "trust": 3,
+    "hero_cta": 2,
+    "tags": 10,
+    "topics": 7,
+    "consoles": 0,
+    "tech": 1,
+    "process": 5,
+    "related": 3,
+    "faq": 6,
+    "tables": 1,
+    "tabs": 6,
+    "figures": 2,
+    "notes": 0,
+    "cards": 10,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 10,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "sluzby_bigquery": {
+   "pred": {
+    "eyebrow": 10,
+    "micro": 1,
+    "trust": 3,
+    "hero_cta": 2,
+    "tags": 10,
+    "topics": 7,
+    "consoles": 1,
+    "tech": 1,
+    "process": 5,
+    "related": 4,
+    "faq": 6,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 5,
+    "notes": 4,
+    "cards": 10,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 1,
+    "notes": 3,
+    "cards": 10,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "sluzby_audit-mereni": {
+   "pred": {
+    "eyebrow": 10,
+    "micro": 1,
+    "trust": 3,
+    "hero_cta": 2,
+    "tags": 16,
+    "topics": 7,
+    "consoles": 0,
+    "tech": 1,
+    "process": 5,
+    "related": 3,
+    "faq": 6,
+    "tables": 1,
+    "tabs": 6,
+    "figures": 0,
+    "notes": 1,
+    "cards": 16,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 14,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "reseni_e-shopy": {
+   "pred": {
+    "eyebrow": 11,
+    "micro": 1,
+    "trust": 3,
+    "hero_cta": 2,
+    "tags": 16,
+    "topics": 7,
+    "consoles": 0,
+    "tech": 1,
+    "process": 5,
+    "related": 3,
+    "faq": 6,
+    "tables": 0,
+    "tabs": 6,
+    "figures": 2,
+    "notes": 1,
+    "cards": 16,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 6,
+    "figures": 0,
+    "notes": 0,
+    "cards": 12,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "reseni_b2b-a-lead-generation": {
+   "pred": {
+    "eyebrow": 11,
+    "micro": 1,
+    "trust": 3,
+    "hero_cta": 2,
+    "tags": 16,
+    "topics": 7,
+    "consoles": 0,
+    "tech": 1,
+    "process": 5,
+    "related": 3,
+    "faq": 6,
+    "tables": 2,
+    "tabs": 0,
+    "figures": 4,
+    "notes": 1,
+    "cards": 10,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 10,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "o-nas": {
+   "pred": {
+    "eyebrow": 7,
+    "micro": 1,
+    "trust": 3,
+    "hero_cta": 2,
+    "tags": 0,
+    "topics": 7,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 3,
+    "faq": 4,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 3,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 1,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 0,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 0,
+    "crumbs": 0,
+    "next": 0
+   }
+  },
+  "kontakt": {
+   "pred": {
+    "eyebrow": 4,
+    "micro": 0,
+    "trust": 2,
+    "hero_cta": 0,
+    "tags": 0,
+    "topics": 7,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 3,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 0,
+    "crumbs": 1,
+    "next": 3
+   },
+   "po": {
+    "eyebrow": 0,
+    "micro": 0,
+    "trust": 0,
+    "hero_cta": 0,
+    "tags": 0,
+    "topics": 0,
+    "consoles": 0,
+    "tech": 0,
+    "process": 0,
+    "related": 0,
+    "faq": 0,
+    "tables": 0,
+    "tabs": 0,
+    "figures": 0,
+    "notes": 0,
+    "cards": 0,
+    "crumbs": 0,
+    "next": 0
+   }
+  }
+ },
+ "celkem": {
+  "eyebrow": [
+   103,
+   0
+  ],
+  "micro": [
+   10,
+   0
+  ],
+  "trust": [
+   29,
+   0
+  ],
+  "hero_cta": [
+   20,
+   10
+  ],
+  "tags": [
+   133,
+   0
+  ],
+  "topics": [
+   77,
+   0
+  ],
+  "consoles": [
+   10,
+   0
+  ],
+  "tech": [
+   8,
+   0
+  ],
+  "process": [
+   45,
+   0
+  ],
+  "related": [
+   28,
+   0
+  ],
+  "faq": [
+   60,
+   36
+  ],
+  "tables": [
+   7,
+   0
+  ],
+  "tabs": [
+   18,
+   6
+  ],
+  "figures": [
+   20,
+   2
+  ],
+  "notes": [
+   12,
+   6
+  ],
+  "cards": [
+   116,
+   92
+  ],
+  "crumbs": [
+   10,
+   0
+  ],
+  "next": [
+   33,
+   0
+  ]
+ }
+}

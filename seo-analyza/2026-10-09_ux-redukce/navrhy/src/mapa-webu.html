@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Mapa webu před a po</title>
+<style>
+  :root { --ink:#0b1220; --muted:#5a6473; --line:#e3e8ef; --keep:#0f8a5f; --keep-bg:#e8f6f0; --merge:#1d5fbf; --merge-bg:#eaf1fc; --drop:#c2410c; --drop-bg:#fdf0e9; --hide:#6b7280; --hide-bg:#f1f3f6; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: #fff; }
+  .wrap { width: 1440px; padding: 40px 48px 48px; }
+  h1 { font-size: 30px; margin: 0 0 6px; }
+  .lead { color: var(--muted); font-size: 17px; margin: 0 0 28px; }
+  .legend { display: flex; gap: 22px; font-size: 15px; margin-bottom: 26px; color: var(--muted); }
+  .legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: -1px; background: var(--c); }
+  .grid { display: grid; grid-template-columns: 1.25fr 60px 1fr; align-items: start; }
+  .col h2 { font-size: 20px; margin: 0 0 14px; }
+  .col h2 small { font-weight: 500; color: var(--muted); font-size: 16px; }
+  .grp { margin-bottom: 16px; }
+  .grp p { font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .04em; color: var(--muted); margin: 0 0 6px; text-transform: uppercase; }
+  .it { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; border: 1px solid var(--line); border-left: 4px solid var(--c); background: var(--bg); border-radius: 8px; padding: 7px 12px; margin-bottom: 6px; font-size: 15px; }
+  .it b { font-weight: 600; }
+  .it em { font-style: normal; font-size: 13px; color: var(--c); white-space: nowrap; font-weight: 600; }
+  .it code { font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; color: var(--muted); margin-left: 6px; }
+  .keep { --c: var(--keep); --bg: var(--keep-bg); }
+  .merge { --c: var(--merge); --bg: var(--merge-bg); }
+  .drop { --c: var(--drop); --bg: var(--drop-bg); }
+  .hide { --c: var(--hide); --bg: var(--hide-bg); }
+  .arrow { align-self: center; text-align: center; font-size: 34px; color: #94a3b8; }
+  .new .it { --c: var(--keep); --bg: #fff; display: block; }
+  .new .it small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .sum { margin-top: 18px; display: flex; gap: 14px; }
+  .sum div { border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; font-size: 14px; color: var(--muted); }
+  .sum b { display: block; font-size: 24px; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Mapa webu: dnes 24 stránek → návrh 13</h1>
+  <p class="lead">Stránky bez vlastní poptávky nebo se stejným publikem slučujeme; stránky mimo hlavní nabídku rušíme s přesměrováním 301.</p>
+  <div class="legend">
+    <span style="--c:var(--keep)">zůstává (zkrácená)</span>
+    <span style="--c:var(--merge)">sloučit do jiné stránky</span>
+    <span style="--c:var(--drop)">zrušit, přesměrovat</span>
+    <span style="--c:var(--hide)">skrýt, dokud nebude obsah</span>
+  </div>
+  <div class="grid">
+    <div class="col">
+      <h2>Dnes <small>· 24 stránek, 31 700 slov v obsahu</small></h2>
+      <div class="grp"><p>Úvod</p>
+        <div class="it keep"><b>Úvodní stránka</b><em>zkrátit na 4 bloky</em></div>
+      </div>
+      <div class="grp"><p>Služby (11 + rozcestník)</p>
+        <div class="it keep"><b>Implementace GA4</b><em>→ „GA4 a Google Tag Manager“</em></div>
+        <div class="it merge"><b>Google Tag Manager</b><em>→ GA4 a GTM</em></div>
+        <div class="it merge"><b>Datová vrstva</b><em>→ GA4 a GTM</em></div>
+        <div class="it keep"><b>Server-side tracking</b><em>zůstává</em></div>
+        <div class="it keep"><b>Cookie lišta a Consent Mode</b><em>zůstává</em></div>
+        <div class="it keep"><b>Měření konverzí</b><em>zůstává</em></div>
+        <div class="it keep"><b>BigQuery</b><em>→ „BigQuery a dashboardy“</em></div>
+        <div class="it merge"><b>Dashboardy a reporting</b><em>→ BigQuery a dashboardy</em></div>
+        <div class="it keep"><b>Audit měření</b><em>zůstává</em></div>
+        <div class="it drop"><b>Technický audit webu</b><em>301 → Audit měření</em></div>
+        <div class="it drop"><b>Správa webu a měření</b><em>301 → úvod</em></div>
+        <div class="it drop"><b>Rozcestník Služby</b><em>301 → úvod</em></div>
+      </div>
+      <div class="grp"><p>Řešení</p>
+        <div class="it keep"><b>E-shopy</b><em>zůstává</em></div>
+        <div class="it keep"><b>B2B a lead generation</b><em>zůstává</em></div>
+        <div class="it drop"><b>Velké firmy</b><em>301 → úvod</em></div>
+      </div>
+      <div class="grp"><p>Firma</p>
+        <div class="it drop"><b>Jak pracujeme</b><em>301 → O nás</em></div>
+        <div class="it keep"><b>O nás</b><em>zkrátit</em></div>
+        <div class="it keep"><b>Kontakt</b><em>jen formulář a kontakty</em></div>
+      </div>
+      <div class="grp"><p>Blog</p>
+        <div class="it hide"><b>Blog (rozcestník)</b><em>skrýt</em></div>
+        <div class="it hide"><b>GA4 → BigQuery</b><code>68 slov obsahu</code><em>skrýt</em></div>
+        <div class="it hide"><b>Server-side GTM: proč a jak začít</b><code>92 slov</code><em>skrýt</em></div>
+      </div>
+      <div class="grp"><p>Právní</p>
+        <div class="it keep"><b>Cookies a Zpracování osobních údajů</b><em>beze změny</em></div>
+      </div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="col new">
+      <h2>Návrh <small>· 13 stránek</small></h2>
+      <div class="grp"><p>Úvod</p>
+        <div class="it"><b>Úvodní stránka</b><small>hero se SVG diagramem · 6 situací · 4 otázky · kontakt</small></div>
+      </div>
+      <div class="grp"><p>Služby (6, bez rozcestníku)</p>
+        <div class="it"><b>Audit měření</b><small>přebírá „rychlou kontrolu“ jako nejnižší vstup</small></div>
+        <div class="it"><b>GA4 a Google Tag Manager</b><small>přebírá GTM (úklid kontejneru) a datovou vrstvu (specifikace pro vývojáře)</small></div>
+        <div class="it"><b>Server-side tracking</b><small>jedna ze dvou stránek, kde zůstává schéma toku dat</small></div>
+        <div class="it"><b>Cookie lišta a Consent Mode</b><small>nejvyšší relevantní poptávka (cookie lišta, Consent Mode v2)</small></div>
+        <div class="it"><b>Měření konverzí</b><small>Google Ads, Meta, Sklik, Heureka</small></div>
+        <div class="it"><b>BigQuery a dashboardy</b><small>přebírá dashboardy a reporting; druhé schéma toku dat</small></div>
+      </div>
+      <div class="grp"><p>Pro koho (2)</p>
+        <div class="it"><b>E-shopy</b><small>platformy Shoptet, Upgates, Shopify…</small></div>
+        <div class="it"><b>B2B a lead generation</b><small>CRM a offline konverze</small></div>
+      </div>
+      <div class="grp"><p>Firma (2)</p>
+        <div class="it"><b>O nás</b><small>přístup a pravidla práce s daty</small></div>
+        <div class="it"><b>Kontakt</b><small>formulář, e-mail, telefon</small></div>
+      </div>
+      <div class="grp"><p>Právní (2)</p>
+        <div class="it"><b>Cookies a Zpracování osobních údajů</b></div>
+      </div>
+      <div class="sum">
+        <div><b>−11</b>stránek</div>
+        <div><b>6</b>služeb místo 11</div>
+        <div><b>4</b>pole formuláře místo 5 polí a 7 čipů</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,778 @@
+{
+ "index": {
+  "desktop": {
+   "pred": {
+    "h": 6228,
+    "words": 928,
+    "secs": 8,
+    "links": 43,
+    "toForm": 1,
+    "ctrls": 62,
+    "fields": 12,
+    "formY": 4738,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 3066,
+    "words": 325,
+    "secs": 4,
+    "links": 10,
+    "toForm": 1,
+    "ctrls": 20,
+    "fields": 4,
+    "formY": 1909,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #pro-koho",
+    "sekce pryč: #sluzby",
+    "sekce pryč: #jak-pracujeme",
+    "sekce pryč: #nastroje"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 9851,
+    "words": 806,
+    "secs": 8,
+    "links": 40,
+    "toForm": 1,
+    "ctrls": 60,
+    "fields": 12,
+    "formY": 7239,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 4544,
+    "words": 325,
+    "secs": 4,
+    "links": 10,
+    "toForm": 1,
+    "ctrls": 20,
+    "fields": 4,
+    "formY": 2680,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #pro-koho",
+    "sekce pryč: #sluzby",
+    "sekce pryč: #jak-pracujeme",
+    "sekce pryč: #nastroje"
+   ]
+  }
+ },
+ "sluzby_implementace-ga4": {
+  "desktop": {
+   "pred": {
+    "h": 6670,
+    "words": 1022,
+    "secs": 10,
+    "links": 13,
+    "toForm": 1,
+    "ctrls": 34,
+    "fields": 12,
+    "formY": 5180,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 3366,
+    "words": 383,
+    "secs": 5,
+    "links": 7,
+    "toForm": 1,
+    "ctrls": 17,
+    "fields": 4,
+    "formY": 2209,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #rozhodnuti",
+    "sekce pryč: #postup",
+    "sekce pryč: #jak-poznate",
+    "sekce pryč: #navazujici"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 10624,
+    "words": 1015,
+    "secs": 10,
+    "links": 13,
+    "toForm": 1,
+    "ctrls": 34,
+    "fields": 12,
+    "formY": 8062,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 4888,
+    "words": 383,
+    "secs": 5,
+    "links": 7,
+    "toForm": 1,
+    "ctrls": 17,
+    "fields": 4,
+    "formY": 3074,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #rozhodnuti",
+    "sekce pryč: #postup",
+    "sekce pryč: #jak-poznate",
+    "sekce pryč: #navazujici"
+   ]
+  }
+ },
+ "sluzby_server-side-tracking": {
+  "desktop": {
+   "pred": {
+    "h": 7025,
+    "words": 1051,
+    "secs": 10,
+    "links": 12,
+    "toForm": 1,
+    "ctrls": 33,
+    "fields": 12,
+    "formY": 5535,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 4476,
+    "words": 560,
+    "secs": 7,
+    "links": 6,
+    "toForm": 1,
+    "ctrls": 16,
+    "fields": 4,
+    "formY": 3319,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #postup",
+    "sekce pryč: #monitoring",
+    "sekce pryč: #navazujici"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 11711,
+    "words": 1035,
+    "secs": 10,
+    "links": 12,
+    "toForm": 1,
+    "ctrls": 33,
+    "fields": 12,
+    "formY": 9125,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 6755,
+    "words": 560,
+    "secs": 7,
+    "links": 6,
+    "toForm": 1,
+    "ctrls": 16,
+    "fields": 4,
+    "formY": 4915,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #postup",
+    "sekce pryč: #monitoring",
+    "sekce pryč: #navazujici"
+   ]
+  }
+ },
+ "sluzby_cookie-lista-consent-mode": {
+  "desktop": {
+   "pred": {
+    "h": 8205,
+    "words": 1391,
+    "secs": 11,
+    "links": 11,
+    "toForm": 1,
+    "ctrls": 33,
+    "fields": 12,
+    "formY": 6715,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 3385,
+    "words": 435,
+    "secs": 5,
+    "links": 5,
+    "toForm": 1,
+    "ctrls": 15,
+    "fields": 4,
+    "formY": 2228,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #rozhodnuti",
+    "sekce pryč: #pravni-ramec",
+    "sekce pryč: #postup",
+    "sekce pryč: #overeni",
+    "sekce pryč: #navazujici"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 13172,
+    "words": 1386,
+    "secs": 11,
+    "links": 11,
+    "toForm": 1,
+    "ctrls": 33,
+    "fields": 12,
+    "formY": 10556,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 5006,
+    "words": 435,
+    "secs": 5,
+    "links": 5,
+    "toForm": 1,
+    "ctrls": 15,
+    "fields": 4,
+    "formY": 3137,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #rozhodnuti",
+    "sekce pryč: #pravni-ramec",
+    "sekce pryč: #postup",
+    "sekce pryč: #overeni",
+    "sekce pryč: #navazujici"
+   ]
+  }
+ },
+ "sluzby_mereni-konverzi": {
+  "desktop": {
+   "pred": {
+    "h": 7459,
+    "words": 1261,
+    "secs": 11,
+    "links": 13,
+    "toForm": 1,
+    "ctrls": 40,
+    "fields": 12,
+    "formY": 5969,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 3356,
+    "words": 420,
+    "secs": 5,
+    "links": 6,
+    "toForm": 1,
+    "ctrls": 16,
+    "fields": 4,
+    "formY": 2199,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #platformy",
+    "sekce pryč: #proc-se-lisi",
+    "sekce pryč: #postup",
+    "sekce pryč: #overeni",
+    "sekce pryč: #navazujici"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 11963,
+    "words": 1252,
+    "secs": 11,
+    "links": 13,
+    "toForm": 1,
+    "ctrls": 40,
+    "fields": 12,
+    "formY": 9322,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 5019,
+    "words": 420,
+    "secs": 5,
+    "links": 6,
+    "toForm": 1,
+    "ctrls": 16,
+    "fields": 4,
+    "formY": 3125,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #platformy",
+    "sekce pryč: #proc-se-lisi",
+    "sekce pryč: #postup",
+    "sekce pryč: #overeni",
+    "sekce pryč: #navazujici"
+   ]
+  }
+ },
+ "sluzby_bigquery": {
+  "desktop": {
+   "pred": {
+    "h": 7190,
+    "words": 1225,
+    "secs": 10,
+    "links": 14,
+    "toForm": 1,
+    "ctrls": 36,
+    "fields": 12,
+    "formY": 5700,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 4758,
+    "words": 755,
+    "secs": 7,
+    "links": 6,
+    "toForm": 1,
+    "ctrls": 16,
+    "fields": 4,
+    "formY": 3601,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #postup",
+    "sekce pryč: #overeni",
+    "sekce pryč: #navazujici"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 12037,
+    "words": 1220,
+    "secs": 10,
+    "links": 14,
+    "toForm": 1,
+    "ctrls": 36,
+    "fields": 12,
+    "formY": 9451,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 7797,
+    "words": 755,
+    "secs": 7,
+    "links": 6,
+    "toForm": 1,
+    "ctrls": 16,
+    "fields": 4,
+    "formY": 5957,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #postup",
+    "sekce pryč: #overeni",
+    "sekce pryč: #navazujici"
+   ]
+  }
+ },
+ "sluzby_audit-mereni": {
+  "desktop": {
+   "pred": {
+    "h": 6892,
+    "words": 1019,
+    "secs": 10,
+    "links": 12,
+    "toForm": 3,
+    "ctrls": 39,
+    "fields": 12,
+    "formY": 5402,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 3914,
+    "words": 439,
+    "secs": 6,
+    "links": 4,
+    "toForm": 1,
+    "ctrls": 14,
+    "fields": 4,
+    "formY": 2757,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #co-kontrolujeme",
+    "sekce pryč: #rychla-kontrola",
+    "sekce pryč: #postup",
+    "sekce pryč: #navazujici"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 10852,
+    "words": 1015,
+    "secs": 10,
+    "links": 12,
+    "toForm": 3,
+    "ctrls": 39,
+    "fields": 12,
+    "formY": 8296,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 5530,
+    "words": 439,
+    "secs": 6,
+    "links": 4,
+    "toForm": 1,
+    "ctrls": 14,
+    "fields": 4,
+    "formY": 3696,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #co-kontrolujeme",
+    "sekce pryč: #rychla-kontrola",
+    "sekce pryč: #postup",
+    "sekce pryč: #navazujici"
+   ]
+  }
+ },
+ "reseni_e-shopy": {
+  "desktop": {
+   "pred": {
+    "h": 7965,
+    "words": 1367,
+    "secs": 11,
+    "links": 20,
+    "toForm": 1,
+    "ctrls": 47,
+    "fields": 12,
+    "formY": 6475,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 4087,
+    "words": 548,
+    "secs": 6,
+    "links": 12,
+    "toForm": 1,
+    "ctrls": 28,
+    "fields": 4,
+    "formY": 2930,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #urovne",
+    "sekce pryč: #postup",
+    "sekce pryč: #jak-poznate",
+    "sekce pryč: #navazujici"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 13399,
+    "words": 1363,
+    "secs": 11,
+    "links": 20,
+    "toForm": 1,
+    "ctrls": 47,
+    "fields": 12,
+    "formY": 10813,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 6358,
+    "words": 548,
+    "secs": 6,
+    "links": 12,
+    "toForm": 1,
+    "ctrls": 28,
+    "fields": 4,
+    "formY": 4519,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #urovne",
+    "sekce pryč: #postup",
+    "sekce pryč: #jak-poznate",
+    "sekce pryč: #navazujici"
+   ]
+  }
+ },
+ "reseni_b2b-a-lead-generation": {
+  "desktop": {
+   "pred": {
+    "h": 7795,
+    "words": 1319,
+    "secs": 11,
+    "links": 10,
+    "toForm": 1,
+    "ctrls": 31,
+    "fields": 12,
+    "formY": 6305,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 3413,
+    "words": 434,
+    "secs": 5,
+    "links": 4,
+    "toForm": 1,
+    "ctrls": 14,
+    "fields": 4,
+    "formY": 2256,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #faze-leadu",
+    "sekce pryč: #srovnani",
+    "sekce pryč: #postup",
+    "sekce pryč: #jak-poznate",
+    "sekce pryč: #navazujici"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 13182,
+    "words": 1306,
+    "secs": 11,
+    "links": 10,
+    "toForm": 1,
+    "ctrls": 31,
+    "fields": 12,
+    "formY": 10590,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 4996,
+    "words": 434,
+    "secs": 5,
+    "links": 4,
+    "toForm": 1,
+    "ctrls": 14,
+    "fields": 4,
+    "formY": 3152,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #jak-to-funguje",
+    "sekce pryč: #faze-leadu",
+    "sekce pryč: #srovnani",
+    "sekce pryč: #postup",
+    "sekce pryč: #jak-poznate",
+    "sekce pryč: #navazujici"
+   ]
+  }
+ },
+ "o-nas": {
+  "desktop": {
+   "pred": {
+    "h": 4585,
+    "words": 555,
+    "secs": 7,
+    "links": 13,
+    "toForm": 1,
+    "ctrls": 31,
+    "fields": 12,
+    "formY": 3095,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 2790,
+    "words": 319,
+    "secs": 4,
+    "links": 5,
+    "toForm": 1,
+    "ctrls": 11,
+    "fields": 4,
+    "formY": 1633,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #pro-koho",
+    "sekce pryč: #faq",
+    "sekce pryč: #navazujici"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 6889,
+    "words": 555,
+    "secs": 7,
+    "links": 13,
+    "toForm": 1,
+    "ctrls": 31,
+    "fields": 12,
+    "formY": 4333,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 3905,
+    "words": 319,
+    "secs": 4,
+    "links": 5,
+    "toForm": 1,
+    "ctrls": 11,
+    "fields": 4,
+    "formY": 2095,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #pro-koho",
+    "sekce pryč: #faq",
+    "sekce pryč: #navazujici"
+   ]
+  }
+ },
+ "kontakt": {
+  "desktop": {
+   "pred": {
+    "h": 2802,
+    "words": 200,
+    "secs": 4,
+    "links": 6,
+    "toForm": 0,
+    "ctrls": 23,
+    "fields": 12,
+    "formY": 429,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 1519,
+    "words": 53,
+    "secs": 2,
+    "links": 3,
+    "toForm": 0,
+    "ctrls": 9,
+    "fields": 4,
+    "formY": 362,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #priprava",
+    "sekce pryč: #faq"
+   ]
+  },
+  "mobil": {
+   "pred": {
+    "h": 4140,
+    "words": 200,
+    "secs": 4,
+    "links": 6,
+    "toForm": 0,
+    "ctrls": 23,
+    "fields": 12,
+    "formY": 631,
+    "navItems": 21,
+    "ftLinks": 23
+   },
+   "po": {
+    "h": 2214,
+    "words": 53,
+    "secs": 2,
+    "links": 3,
+    "toForm": 0,
+    "ctrls": 9,
+    "fields": 4,
+    "formY": 533,
+    "navItems": 11,
+    "ftLinks": 15
+   },
+   "log": [
+    "CSS: .btn-cta → .site-menu__cta .btn-cta",
+    "menu: 15 položek → 6 služeb + 2 segmenty + O nás",
+    "sekce pryč: #priprava",
+    "sekce pryč: #faq"
+   ]
+  }
+ }
+}

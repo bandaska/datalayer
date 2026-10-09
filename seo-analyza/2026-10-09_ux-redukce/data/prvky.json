@@ -1,0 +1,2961 @@
+{
+ "/": {
+  "eyebrow": [
+   "Webová analytika a měření pro e-shopy, B2B a velké firmy",
+   "Pro koho",
+   "Poznáváte se?",
+   "Služby",
+   "Jak pracujeme",
+   "S čím pracujeme",
+   "FAQ",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma a nezávazně"
+  ],
+  "hero_trust": [],
+  "hero_ctas": [
+   "Konzultovat projekt",
+   "Jak pracujeme"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat projekt",
+    "#kontakt"
+   ],
+   [
+    "Jak pracujeme",
+    "/jak-pracujeme"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "Shoptet",
+   "Upgates",
+   "WooCommerce",
+   "Shopify",
+   "HubSpot",
+   "Pipedrive",
+   "Raynet",
+   "GTM",
+   "BigQuery",
+   "Google Cloud",
+   "GA4",
+   "Google Tag Manager",
+   "server-side GTM",
+   "Google Cloud Run",
+   "BigQuery",
+   "Data Studio",
+   "Power BI",
+   "Google Ads",
+   "Meta CAPI",
+   "Sklik",
+   "Heureka",
+   "Shoptet",
+   "Upgates",
+   "WooCommerce",
+   "Shopify",
+   "HubSpot",
+   "Pipedrive",
+   "Raynet",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "Shoptet",
+   "Upgates",
+   "WooCommerce",
+   "Shopify",
+   "HubSpot",
+   "Pipedrive",
+   "Raynet",
+   "GTM",
+   "BigQuery",
+   "Google Cloud"
+  ],
+  "consoles": [
+   "GA4 purchase 812 e-shop objednávky 1 046 ⚠ rozdíl −22 %",
+   "consent default 'denied' google_ads konverze −38 % ⚠ od nasazení lišty",
+   "meta Purchase 418 ga4 purchase 633 ⚠ event_id chybí",
+   "GTM tagy 140 aktivní 41 ? verze v212 bez popisu",
+   "form odesláno 94 CRM zakázky ? ⚠ CRM gclid neukládá",
+   "report zdroj Excel aktualizace ručně, po 8:00 GA4 vzorkování ano"
+  ],
+  "code_blocks": 0,
+  "cards": 9,
+  "pictograms": 14,
+  "details": 5,
+  "faq": 5,
+  "tech_details": [],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 0,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [],
+  "crumbs": 0,
+  "notes": [
+   "Čísla v ukázkách jsou ilustrativní."
+  ],
+  "h2": [
+   "Měření podle toho, jak vyděláváte",
+   "Šest situací, se kterými za námi klienti chodí nejčastěji",
+   "Od sběru dat po report, kterému věří vedení",
+   "Pět kroků – po každém dostanete konkrétní výstup",
+   "Než se ozvete",
+   "Zjistíme, kde vám utíkají data"
+  ],
+  "sections": 8,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 102
+  },
+  "words_main": 1104
+ },
+ "/sluzby/implementace-ga4": {
+  "eyebrow": [
+   "GA4 – sběr dat",
+   "symptomy",
+   "výstupy",
+   "diagram",
+   "rozhodnutí",
+   "postup",
+   "kontrola",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma a nezávazně"
+  ],
+  "hero_trust": [
+   "Čísla porovnáme s administrací nebo CRM",
+   "Měřicí plán a dokumentace k předání",
+   "Účty i data zůstávají vaše"
+  ],
+  "hero_ctas": [
+   "Konzultovat nastavení GA4",
+   "Co přesně nastavíme"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat nastavení GA4",
+    "#kontakt"
+   ],
+   [
+    "Co přesně nastavíme",
+    "#vystupy"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "≠ tržby",
+   "purchase ×2",
+   "(not set)",
+   "generate_lead",
+   "measurement-plan.xlsx",
+   "datalayer-spec.md",
+   "ga4-config.pdf",
+   "qa-protocol.pdf",
+   "reconciliation.xlsx",
+   "volitelně",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "≠ tržby",
+   "purchase ×2",
+   "(not set)",
+   "generate_lead",
+   "measurement-plan.xlsx",
+   "datalayer-spec.md",
+   "ga4-config.pdf",
+   "qa-protocol.pdf",
+   "reconciliation.xlsx",
+   "volitelně"
+  ],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 12,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Nastavení property a limity GA4"
+  ],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 1,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Datová vrstva zadání pro vývojáře, které funguje",
+   "Google Tag Manager pořádek v tazích a verzích",
+   "BigQuery a datový sklad surová data bez limitů GA4"
+  ],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Poznáváte se?",
+   "Co uděláme a co dostanete",
+   "Jak data tečou z webu do GA4 a dál",
+   "Kdy opravit stávající GA4 a kdy založit novou property",
+   "Jak implementace probíhá",
+   "Jak poznáte, že GA4 funguje",
+   "Časté otázky",
+   "Nastavíme GA4 tak, aby čísla seděla s tržbami"
+  ],
+  "sections": 9,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 94
+  },
+  "words_main": 1555
+ },
+ "/sluzby/google-tag-manager": {
+  "eyebrow": [
+   "GTM – sběr dat",
+   "symptomy",
+   "služby",
+   "výstupy",
+   "diagram",
+   "rozhodnutí",
+   "postup",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma a nezávazně"
+  ],
+  "hero_trust": [
+   "Každá změna jako verze s popisem",
+   "Kontejner zůstává na vašem účtu",
+   "Consent Mode v2 v každém kontejneru"
+  ],
+  "hero_ctas": [
+   "Konzultovat GTM",
+   "Chci audit kontejneru"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat GTM",
+    "#kontakt"
+   ],
+   [
+    "Chci audit kontejneru",
+    "#audit"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "tagy: 120",
+   "v87 bez popisu",
+   "konverze ×2",
+   "souhlas",
+   "GTM",
+   "seznam tagů",
+   "priority A, B a C",
+   "názvosloví",
+   "rychlost",
+   "Tag Assistant",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "tagy: 120",
+   "v87 bez popisu",
+   "konverze ×2",
+   "souhlas",
+   "GTM",
+   "seznam tagů",
+   "priority A, B a C",
+   "názvosloví",
+   "rychlost",
+   "Tag Assistant"
+  ],
+  "consoles": [
+   "GA4 – Event – purchase CE – purchase DLV – ecommerce.transaction_id"
+  ],
+  "code_blocks": 0,
+  "cards": 10,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Názvosloví, oprávnění a souhlas v GTM"
+  ],
+  "tabs": 3,
+  "tables": 2,
+  "figures": 1,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Datová vrstva zadání pro vývojáře, které funguje",
+   "Server-side tracking měření na vaší doméně",
+   "Cookie lišta a Consent Mode v2 souhlas legálně a bez zbytečn"
+  ],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Poznáváte se?",
+   "Kdy se hodí nastavení, kdy audit a kdy správa",
+   "Co uděláme a co dostanete",
+   "Co se děje uvnitř kontejneru",
+   "Kam patří měřicí kódy",
+   "Jak spolupráce probíhá",
+   "Časté otázky",
+   "Uklidíme váš Tag Manager"
+  ],
+  "sections": 9,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 92
+  },
+  "words_main": 1770
+ },
+ "/sluzby/datova-vrstva": {
+  "eyebrow": [
+   "dataLayer – sběr dat",
+   "symptomy",
+   "diagram",
+   "výstupy",
+   "ukázka",
+   "rozhodnutí",
+   "postup",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace je zdarma a specifikaci píšeme jazykem vývojářů."
+  ],
+  "hero_trust": [
+   "Podle oficiálního schématu GA4",
+   "Testy poběží v průběžné integraci (CI) vašeho projektu",
+   "Specifikace a testy patří vám"
+  ],
+  "hero_ctas": [
+   "Konzultovat datovou vrstvu",
+   "Ukázka specifikace"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat datovou vrstvu",
+    "#kontakt"
+   ],
+   [
+    "Ukázka specifikace",
+    "#ukazka"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "bez specifikace",
+   "querySelector",
+   "release",
+   "value ≠",
+   "measurement-plan.xlsx",
+   "datalayer-spec.md",
+   "schema/*.json",
+   "zadání",
+   "tests/datalayer/",
+   "qa-protocol.pdf",
+   "stránka",
+   "platforma",
+   "specifikace",
+   "Shoptet",
+   "Upgates",
+   "Shopify",
+   "WooCommerce",
+   "PrestaShop",
+   "Magento",
+   "React a Next.js",
+   "Vue a Nuxt",
+   "B2B portály a kalkulačky",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "bez specifikace",
+   "querySelector",
+   "release",
+   "value ≠",
+   "measurement-plan.xlsx",
+   "datalayer-spec.md",
+   "schema/*.json",
+   "zadání",
+   "tests/datalayer/",
+   "qa-protocol.pdf",
+   "stránka",
+   "platforma",
+   "specifikace"
+  ],
+  "consoles": [
+   "window . dataLayer . push ({ ecommerce : null }); // vyčistí předchozí ecommerce"
+  ],
+  "code_blocks": 1,
+  "cards": 15,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Ukázka události purchase a akceptační kritéria"
+  ],
+  "tabs": 0,
+  "tables": 1,
+  "figures": 2,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Google Tag Manager pořádek v tazích a verzích",
+   "Implementace GA4 čísla, která sedí s tržbami",
+   "Server-side tracking měření na vaší doméně"
+  ],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Poznáváte se?",
+   "Kde datová vrstva v měření sedí",
+   "Co uděláme a co dostanete",
+   "Jak vypadá specifikace datové vrstvy",
+   "Tři způsoby, jak dostat data do GTM",
+   "Jak spolupráce probíhá",
+   "Časté otázky",
+   "Připravíme zadání datové vrstvy pro vaše vývojáře"
+  ],
+  "sections": 9,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 95
+  },
+  "words_main": 1633
+ },
+ "/sluzby/server-side-tracking": {
+  "eyebrow": [
+   "sběr dat",
+   "symptomy",
+   "výstupy",
+   "architektura",
+   "rozhodnutí",
+   "postup",
+   "monitoring",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma, provoz serveru platíte přímo Googlu nebo poskytovateli hostingu"
+  ],
+  "hero_trust": [
+   "Server ve vašem Google Cloudu",
+   "Kontejnery a přístupy zůstávají vaše",
+   "Monitoring je součástí nasazení"
+  ],
+  "hero_ctas": [
+   "Konzultovat architekturu",
+   "Jak to funguje"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat architekturu",
+    "#kontakt"
+   ],
+   [
+    "Jak to funguje",
+    "#jak-to-funguje"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "Meta",
+   "Safari",
+   "rychlost",
+   "osobní údaje",
+   "architecture.pdf",
+   "Cloud Run",
+   "gtm-web, gtm-server",
+   "events.csv",
+   "matice-souhlasu",
+   "runbook.md",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "Meta",
+   "Safari",
+   "rychlost",
+   "osobní údaje",
+   "architecture.pdf",
+   "Cloud Run",
+   "gtm-web, gtm-server",
+   "events.csv",
+   "matice-souhlasu",
+   "runbook.md"
+  ],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 10,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Co jde přes server a co zůstává v prohlížeči"
+  ],
+  "tabs": 0,
+  "tables": 2,
+  "figures": 4,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Měření konverzí Google Ads, Meta, Sklik i Heureka vidí totéž",
+   "Cookie lišta a Consent Mode v2 souhlas legálně a bez zbytečn",
+   "Správa webu a měření hlídáme, aby měření nepřestalo fungovat"
+  ],
+  "crumbs": 1,
+  "notes": [
+   "nejdřív audit měření",
+   "nejdřív Consent Mode v2",
+   "často stačí Google Tag Gateway",
+   "Před spuštěním spočítáme odhad pro vaši návštěvnost a nastavíme upozornění na ro"
+  ],
+  "h2": [
+   "Poznáváte se?",
+   "Co uděláme a co dostanete",
+   "Jak server-side měření funguje",
+   "Kdy se server-side měření vyplatí",
+   "Jak nasazení probíhá",
+   "Jak poznáte, že server-side měření funguje",
+   "Časté otázky",
+   "Probereme, jestli se vám server-side měření vyplatí"
+  ],
+  "sections": 9,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 102
+  },
+  "words_main": 1478
+ },
+ "/sluzby/cookie-lista-consent-mode": {
+  "eyebrow": [
+   "souhlas",
+   "symptomy",
+   "výstupy",
+   "tok souhlasu",
+   "rozhodnutí",
+   "právní rámec",
+   "postup",
+   "ověření",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma a nezávazně"
+  ],
+  "hero_trust": [
+   "Nastavení podle zákona a doporučení ÚOOÚ",
+   "Cookiebot, české platformy pro správu souhlasů i vlastní lišta",
+   "Výsledek doložíme záznamem z prohlížeče"
+  ],
+  "hero_ctas": [
+   "Zkontrolovat můj web",
+   "Co web posílá před souhlasem"
+  ],
+  "ctas_all": [
+   [
+    "Zkontrolovat můj web",
+    "#kontakt"
+   ],
+   [
+    "Co web posílá před souhlasem",
+    "#overeni"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "před souhlasem",
+   "unassigned",
+   "konverze",
+   "ÚOOÚ",
+   "inventory.csv",
+   "CMP",
+   "signály souhlasu",
+   "GTM a server-side GTM",
+   "sul.js",
+   "protocol.har",
+   "basic",
+   "advanced",
+   "§ 89 zákona o elektronických komunikacích",
+   "Otázky a odpovědi ÚOOÚ",
+   "Google",
+   "ilustrační ukázka",
+   "ilustrační ukázka",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "před souhlasem",
+   "unassigned",
+   "konverze",
+   "ÚOOÚ",
+   "inventory.csv",
+   "CMP",
+   "signály souhlasu",
+   "GTM a server-side GTM",
+   "sul.js",
+   "protocol.har",
+   "basic",
+   "advanced",
+   "§ 89 zákona o elektronických komunikacích",
+   "Otázky a odpovědi ÚOOÚ",
+   "Google",
+   "ilustrační ukázka",
+   "ilustrační ukázka"
+  ],
+  "consoles": [
+   "✓ googletagmanager.com/gtm.js 200 ◐ …/g/collect?en=page_view&gcs=G100 ping bez c",
+   "✓ …/g/collect?en=page_view&gcs=G111 200 ✓ connect.facebook.net/…/fbevents.js 200",
+   "< script > window . dataLayer = window . dataLayer || []; function gtag ( ){ dat"
+  ],
+  "code_blocks": 1,
+  "cards": 20,
+  "pictograms": 9,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Napojení souhlasu v GTM"
+  ],
+  "tabs": 0,
+  "tables": 1,
+  "figures": 2,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 1,
+  "related": [
+   "Měření konverzí Google Ads, Meta, Sklik i Heureka vidí totéž",
+   "Server-side tracking měření na vaší doméně",
+   "Audit měření zjistíme, kde data utíkají"
+  ],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Poznáváte se?",
+   "Co uděláme a co dostanete",
+   "Jak souhlas putuje od lišty k tagům",
+   "Režim basic nebo advanced a výběr lišty",
+   "Tři věci, které říká zákon, ÚOOÚ a Google",
+   "Jak to probíhá",
+   "Co web posílá před souhlasem a po něm",
+   "Časté otázky",
+   "Nastavíme sběr souhlasu podle pravidel – a bez zbytečné ztráty dat"
+  ],
+  "sections": 10,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 106
+  },
+  "words_main": 1981
+ },
+ "/sluzby/mereni-konverzi": {
+  "eyebrow": [
+   "konverze",
+   "symptomy",
+   "výstupy",
+   "architektura",
+   "reklamní systémy",
+   "deduplikace a rozdíly",
+   "postup",
+   "ověření",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma, účty a data zůstávají vaše"
+  ],
+  "hero_trust": [
+   "Google Ads, Meta, Sklik i Heureka z jedné datové vrstvy",
+   "Stejné ID a hodnota ve všech systémech",
+   "Porovnání s backendem po čtrnácti dnech"
+  ],
+  "hero_ctas": [
+   "Zkontrolovat moje konverze",
+   "Proč se čísla liší"
+  ],
+  "ctas_all": [
+   [
+    "Zkontrolovat moje konverze",
+    "#kontakt"
+   ],
+   [
+    "Proč se čísla liší",
+    "#proc-se-lisi"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "administrace ≠ GA4",
+   "×2",
+   "z rc.js na sul.js",
+   "CRM",
+   "pravidla",
+   "dataLayer.md",
+   "web a server",
+   "zadání API",
+   "testovací objednávky",
+   "role",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "administrace ≠ GA4",
+   "×2",
+   "z rc.js na sul.js",
+   "CRM",
+   "pravidla",
+   "dataLayer.md",
+   "web a server",
+   "zadání API",
+   "testovací objednávky",
+   "role"
+  ],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 10,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Deduplikace a parametry v jednotlivých systémech"
+  ],
+  "tabs": 6,
+  "tables": 1,
+  "figures": 2,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Server-side tracking měření na vaší doméně",
+   "Cookie lišta a Consent Mode v2 souhlas legálně a bez zbytečn",
+   "Datová vrstva zadání pro vývojáře, které funguje"
+  ],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Poznáváte se?",
+   "Co uděláme a co dostanete",
+   "Jedna objednávka, jeden zdroj, všechny systémy",
+   "Co nastavíme v jednotlivých systémech",
+   "Stejné ID, jedna konverze – a proč se čísla přesto liší",
+   "Jak nastavení probíhá",
+   "Jak poznáte, že měření konverzí funguje",
+   "Časté otázky",
+   "Nastavíme, aby reklamní systémy viděly stejné konverze jako vy"
+  ],
+  "sections": 10,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 108
+  },
+  "words_main": 1966
+ },
+ "/sluzby/bigquery": {
+  "eyebrow": [
+   "data a reporting",
+   "symptomy",
+   "výstupy",
+   "architektura",
+   "rozhodnutí",
+   "postup",
+   "kontrola",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma, provoz BigQuery platíte přímo Googlu"
+  ],
+  "hero_trust": [
+   "Data i fakturace ve vlastním Google Cloudu",
+   "Limity a rozpočtová upozornění od prvního dne",
+   "Dokumentace a slovník metrik"
+  ],
+  "hero_ctas": [
+   "Konzultovat BigQuery",
+   "Ukázka datového modelu"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat BigQuery",
+    "#kontakt"
+   ],
+   [
+    "Ukázka datového modelu",
+    "#architektura"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "uchovávání dat",
+   "marže",
+   "Excel",
+   "CRM",
+   "otázky a metriky",
+   "events_*",
+   "Google Ads, Meta, Sklik",
+   "raw, staging a marts",
+   "rozpočet",
+   "metrics.md",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "uchovávání dat",
+   "marže",
+   "Excel",
+   "CRM",
+   "otázky a metriky",
+   "events_*",
+   "Google Ads, Meta, Sklik",
+   "raw, staging a marts",
+   "rozpočet",
+   "metrics.md"
+  ],
+  "consoles": [
+   "-- Relace a tržby podle zdroje za posledních sedm dní (export GA4) SELECT sessio"
+  ],
+  "code_blocks": 1,
+  "cards": 10,
+  "pictograms": 9,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Ukázka SQL a poznámky ke zdrojům"
+  ],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 5,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Dashboardy a reporting Data Studio i Power BI",
+   "Audit měření zjistíme, kde data utíkají",
+   "Měření konverzí Google Ads, Meta, Sklik i Heureka vidí totéž",
+   "Export GA4 do BigQuery: nastavení, limity a cena článek"
+  ],
+  "crumbs": 1,
+  "notes": [
+   "stačí GA4 a dashboard nad přímými konektory",
+   "nejdřív audit měření",
+   "začneme jedním reportem pro vedení",
+   "Ceny podle ceníku Google Cloudu k říjnu 2026, bez DPH. Fakturu dostáváte přímo o"
+  ],
+  "h2": [
+   "Poznáváte se?",
+   "Co uděláme a co dostanete",
+   "Jak data tečou z webu a firemních systémů do reportu",
+   "Co v rozhraní GA4 nejde – a kdy BigQuery zatím nepotřebujete",
+   "Jak postupujeme",
+   "Jak poznáte, že sklad funguje",
+   "Časté otázky",
+   "Propojíme data do jednoho modelu"
+  ],
+  "sections": 9,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 101
+  },
+  "words_main": 1865
+ },
+ "/sluzby/dashboardy-a-reporting": {
+  "eyebrow": [
+   "data a reporting",
+   "symptomy",
+   "typy dashboardů",
+   "výstupy",
+   "tok dat",
+   "srovnání",
+   "postup",
+   "kontrola",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma – reporty i data zůstanou na vašich účtech"
+  ],
+  "hero_trust": [
+   "Tržby sedí s účetnictvím",
+   "Každé číslo má definici a zdroj",
+   "Data Studio i Power BI"
+  ],
+  "hero_ctas": [
+   "Konzultovat dashboard",
+   "Typy dashboardů"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat dashboard",
+    "#kontakt"
+   ],
+   [
+    "Typy dashboardů",
+    "#typy-dashboardu"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "excel",
+   "≠",
+   "marže",
+   "crm",
+   "vedení, týdně",
+   "marketing, denně",
+   "e-commerce, měsíčně",
+   "b2b, týdně",
+   "slovník metrik",
+   "data studio, power bi",
+   "bigquery",
+   "erp",
+   "automatizace",
+   "dokumentace",
+   "google",
+   "microsoft",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "excel",
+   "≠",
+   "marže",
+   "crm",
+   "vedení, týdně",
+   "marketing, denně",
+   "e-commerce, měsíčně",
+   "b2b, týdně",
+   "slovník metrik",
+   "data studio, power bi",
+   "bigquery",
+   "erp",
+   "automatizace",
+   "dokumentace",
+   "google",
+   "microsoft"
+  ],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 16,
+  "pictograms": 12,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Sladění s účetnictvím a srovnání Data Studia s Power BI"
+  ],
+  "tabs": 0,
+  "tables": 1,
+  "figures": 1,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 1,
+  "related": [
+   "BigQuery a datový sklad surová data bez limitů GA4",
+   "Audit měření zjistíme, kde data utíkají",
+   "Správa webu a měření hlídáme, aby měření nepřestalo fungovat"
+  ],
+  "crumbs": 1,
+  "notes": [
+   "Ceny podle webů Googlu a Microsoftu k říjnu 2026, bez DPH."
+  ],
+  "h2": [
+   "Poznáváte se?",
+   "Čtyři typy dashboardů, které stavíme nejčastěji",
+   "Co uděláme a co dostanete",
+   "Odkud čísla v dashboardu pocházejí",
+   "Kdy zvolit Data Studio a kdy Power BI",
+   "Jak postupujeme a co od vás potřebujeme",
+   "Jak poznáte, že čísla sedí",
+   "Časté otázky",
+   "Propojíme data do jednoho dashboardu"
+  ],
+  "sections": 10,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 91
+  },
+  "words_main": 1925
+ },
+ "/sluzby/audit-mereni": {
+  "eyebrow": [
+   "audity a správa",
+   "kdy audit",
+   "rozsah",
+   "výstupy",
+   "rychlá kontrola",
+   "postup",
+   "ukázka – fiktivní data",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Stačí přístupy pro čtení, dohodu o mlčenlivosti (NDA) podepíšeme na požádání"
+  ],
+  "hero_trust": [
+   "Testovací nákupy a formuláře",
+   "Porovnání s administrací nebo CRM",
+   "Nálezy s prioritou A, B a C"
+  ],
+  "hero_ctas": [
+   "Objednat audit měření",
+   "Rychlá kontrola zdarma"
+  ],
+  "ctas_all": [
+   [
+    "Objednat audit měření",
+    "#kontakt"
+   ],
+   [
+    "Rychlá kontrola zdarma",
+    "#rychla-kontrola"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "≠",
+   "souhlas",
+   "předání",
+   "migrace",
+   "audit-report.pdf",
+   "remediation-plan.xlsx",
+   "reconciliation.xlsx",
+   "gtm-inventory.xlsx, qa-protocol.pdf",
+   "schůzka",
+   "bez přístupů",
+   "audit",
+   "A1 – datová vrstva",
+   "A2 – souhlas",
+   "A3 – Google Ads",
+   "B2 – GA4",
+   "C1 – GTM",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "≠",
+   "souhlas",
+   "předání",
+   "migrace",
+   "audit-report.pdf",
+   "remediation-plan.xlsx",
+   "reconciliation.xlsx",
+   "gtm-inventory.xlsx, qa-protocol.pdf",
+   "schůzka",
+   "bez přístupů",
+   "audit",
+   "A1 – datová vrstva",
+   "A2 – souhlas",
+   "A3 – Google Ads",
+   "B2 – GA4",
+   "C1 – GTM"
+  ],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 16,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Struktura reportu, priority a potřebné přístupy"
+  ],
+  "tabs": 6,
+  "tables": 1,
+  "figures": 0,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Implementace GA4 čísla, která sedí s tržbami",
+   "Měření konverzí Google Ads, Meta, Sklik i Heureka vidí totéž",
+   "Správa webu a měření hlídáme, aby měření nepřestalo fungovat"
+  ],
+  "crumbs": 1,
+  "notes": [
+   "Fiktivní data. Priorita A znamená opravit do dvou týdnů, B do jednoho až dvou mě"
+  ],
+  "h2": [
+   "Poznáváte se?",
+   "Co v auditu webové analytiky kontrolujeme",
+   "Co od nás dostanete",
+   "Kdy stačí rychlá kontrola a kdy celý audit",
+   "Jak audit probíhá",
+   "Jak vypadá report z auditu",
+   "Časté otázky",
+   "Zjistíme, kde utíkají data"
+  ],
+  "sections": 9,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 98
+  },
+  "words_main": 1830
+ },
+ "/sluzby/technicky-audit-webu": {
+  "eyebrow": [
+   "audity a správa",
+   "symptomy",
+   "oblasti auditu",
+   "výstupy",
+   "vymezení",
+   "postup",
+   "vlastní kontrola",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma a nezávazně"
+  ],
+  "hero_trust": [
+   "Úkoly pro vývojáře, ne PDF z nástroje",
+   "Data reálných návštěvníků i laboratorní test",
+   "Po opravách ověříme výsledek"
+  ],
+  "hero_ctas": [
+   "Objednat technický audit",
+   "Co audit kontroluje"
+  ],
+  "ctas_all": [
+   [
+    "Objednat technický audit",
+    "#kontakt"
+   ],
+   [
+    "Co audit kontroluje",
+    "#oblasti"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "rychlost",
+   "tagy",
+   "index",
+   "formulář",
+   "report",
+   "úkoly",
+   "inventura tagů",
+   "rozpočet, hlavičky",
+   "retest",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "rychlost",
+   "tagy",
+   "index",
+   "formulář",
+   "report",
+   "úkoly",
+   "inventura tagů",
+   "rozpočet, hlavičky",
+   "retest"
+  ],
+  "consoles": [
+   "[PERF-07] Cookie lišta posouvá obsah na mobilu (CLS) Šablony: produkt, kategorie"
+  ],
+  "code_blocks": 1,
+  "cards": 12,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Ukázka inventury tagů a úkolu pro vývojáře"
+  ],
+  "tabs": 6,
+  "tables": 1,
+  "figures": 1,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Audit měření zjistíme, kde data utíkají",
+   "Správa webu a měření hlídáme, aby měření nepřestalo fungovat",
+   "Server-side tracking měření na vaší doméně"
+  ],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Poznáváte se?",
+   "Šest oblastí, které audit kontroluje",
+   "Co uděláme a co dostanete",
+   "Co technický audit zahrnuje a co ne",
+   "Jak audit probíhá",
+   "Analýza webu, kterou zvládnete sami",
+   "Časté otázky",
+   "Zjistíme, co brzdí váš web"
+  ],
+  "sections": 9,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 97
+  },
+  "words_main": 2083
+ },
+ "/sluzby/sprava-webu-a-mereni": {
+  "eyebrow": [
+   "audity a správa",
+   "symptomy",
+   "moduly",
+   "smyčka",
+   "srovnání",
+   "postup",
+   "release a SLA",
+   "report",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma, online po celé ČR"
+  ],
+  "hero_trust": [
+   "Automatický test měření po každém nasazení",
+   "Reakční doby podle priority ve smlouvě",
+   "Účty, přístupy a data zůstávají vaše"
+  ],
+  "hero_ctas": [
+   "Domluvit správu webu",
+   "Co hlídáme"
+  ],
+  "ctas_all": [
+   [
+    "Domluvit správu webu",
+    "#kontakt"
+   ],
+   [
+    "Co hlídáme",
+    "#co-hlidame"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "GA4",
+   "cookie lišta",
+   "GTM",
+   "vývoj",
+   "modul A – základ",
+   "modul B",
+   "modul C",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "GA4",
+   "cookie lišta",
+   "GTM",
+   "vývoj",
+   "modul A – základ",
+   "modul B",
+   "modul C"
+  ],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 9,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Celý kontrolní seznam pro release a co přesně testy ověřují"
+  ],
+  "tabs": 0,
+  "tables": 1,
+  "figures": 4,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Audit měření zjistíme, kde data utíkají",
+   "Technický audit webu rychlost, tagy a technické SEO",
+   "Google Tag Manager pořádek v tazích a verzích"
+  ],
+  "crumbs": 1,
+  "notes": [
+   "Popisujeme typickou nabídku – konkrétní studia se liší.",
+   "Opravy v kódu webu závisejí na vývojářích – garantujeme diagnostiku, přesné zadá",
+   "Ukázková data z reportu za září 2026."
+  ],
+  "h2": [
+   "Poznáváte se?",
+   "Tři moduly hlídání, které lze kombinovat",
+   "Jak hlídání funguje od releasu po report",
+   "Čím se lišíme od běžné správy webu",
+   "Jak začínáme",
+   "Kontrolní seznam pro release a SLA",
+   "Co dostáváte každý měsíc",
+   "Časté otázky",
+   "Ohlídáme, aby měření po dalším releasu nepřestalo fungovat"
+  ],
+  "sections": 10,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 104
+  },
+  "words_main": 1991
+ },
+ "/sluzby": {
+  "eyebrow": [
+   "sběr dat, data a reporting, audity a správa",
+   "přehled služeb",
+   "nevíte, co potřebujete?",
+   "souvislosti",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma a nezávazně"
+  ],
+  "hero_trust": [
+   "Účty a data zůstávají vám",
+   "Nabídka s pevným rozsahem a výstupy",
+   "Dokumentace, podle které může pokračovat kdokoli"
+  ],
+  "hero_ctas": [
+   "Konzultovat projekt",
+   "Pomozte mi vybrat"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat projekt",
+    "#kontakt"
+   ],
+   [
+    "Pomozte mi vybrat",
+    "#cim-zacit"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 8,
+  "pictograms": 26,
+  "details": 5,
+  "faq": 5,
+  "tech_details": [],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 1,
+  "process_steps": 0,
+  "process_labels": 0,
+  "callouts": 0,
+  "related": [
+   "Jak pracujeme od konzultace po předání měření",
+   "Audit měření zjistíme, kde data utíkají",
+   "O nás jak pracujeme s daty a pro koho"
+  ],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Jedenáct služeb ve třech skupinách",
+   "Nejčastější situace a čím začít",
+   "Jak služby navazují",
+   "Časté otázky",
+   "Popište problém, služby vybereme spolu"
+  ],
+  "sections": 6,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 90
+  },
+  "words_main": 809
+ },
+ "/reseni/e-shopy": {
+  "eyebrow": [
+   "řešení pro e-shopy",
+   "symptomy",
+   "co uděláme",
+   "tok dat",
+   "úrovně",
+   "platformy",
+   "postup",
+   "kontrolní seznam",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma, stačí adresa e-shopu"
+  ],
+  "hero_trust": [
+   "Šest platforem od Shoptetu po vlastní řešení",
+   "Každou implementaci porovnáme s administrací",
+   "Účty, kontejnery i data zůstávají vaše"
+  ],
+  "hero_ctas": [
+   "Konzultovat měření e-shopu",
+   "Co platforma změří sama"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat měření e-shopu",
+    "#kontakt"
+   ],
+   [
+    "Co platforma změří sama",
+    "#platformy"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "GA4",
+   "purchase",
+   "Meta",
+   "POAS",
+   "datalayer-spec.md",
+   "GA4",
+   "souhlas",
+   "gtm-server",
+   "konverze",
+   "marže",
+   "BigQuery",
+   "dashboard",
+   "úroveň 1",
+   "úroveň 2",
+   "úroveň 3",
+   "úroveň 4",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "GA4",
+   "purchase",
+   "Meta",
+   "POAS",
+   "datalayer-spec.md",
+   "GA4",
+   "souhlas",
+   "gtm-server",
+   "konverze",
+   "marže",
+   "BigQuery",
+   "dashboard",
+   "úroveň 1",
+   "úroveň 2",
+   "úroveň 3",
+   "úroveň 4"
+  ],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 16,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Na co si dát pozor u jednotlivých platforem"
+  ],
+  "tabs": 6,
+  "tables": 0,
+  "figures": 2,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 1,
+  "related": [
+   "Server-side tracking měření na vaší doméně",
+   "Měření konverzí Google Ads, Meta, Sklik i Heureka vidí totéž",
+   "Audit měření zjistíme, kde data utíkají"
+  ],
+  "crumbs": 1,
+  "notes": [
+   "Stav podle dokumentace platforem k říjnu 2026; při auditu ověříme, co platí dnes"
+  ],
+  "h2": [
+   "Poznáváte se?",
+   "Z čeho se skládá kompletní měření e-shopu",
+   "Jak data tečou z e-shopu do reportu",
+   "Čtyři úrovně měření podle toho, co už váš e-shop má",
+   "Co vaše platforma změří sama – a co chybí",
+   "Jak postupujeme",
+   "Jak poznáte, že měření e-shopu funguje",
+   "Časté otázky",
+   "Zjistíme, kde vašemu e-shopu utíkají objednávky"
+  ],
+  "sections": 10,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 96
+  },
+  "words_main": 2124
+ },
+ "/reseni/b2b-a-lead-generation": {
+  "eyebrow": [
+   "řešení pro B2B a lead generation",
+   "symptomy",
+   "výstupy",
+   "jak to funguje",
+   "fáze poptávky",
+   "srovnání",
+   "postup",
+   "kontrola",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma a nezávazně"
+  ],
+  "hero_trust": [
+   "Zakázky z CRM zpět v reklamních systémech",
+   "Cena poptávky i zakázky podle kanálů",
+   "Osobní údaje jen jako hash a se souhlasem"
+  ],
+  "hero_ctas": [
+   "Probrat měření leadů",
+   "Ukázat, jak to funguje"
+  ],
+  "ctas_all": [
+   [
+    "Probrat měření leadů",
+    "#kontakt"
+   ],
+   [
+    "Ukázat, jak to funguje",
+    "#jak-to-funguje"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "poptávky",
+   "google ads",
+   "crm",
+   "cyklus",
+   "merici-plan.xlsx",
+   "crm",
+   "mapa-fazi-poptavky.pdf",
+   "offline konverze",
+   "call tracking",
+   "dashboard",
+   "HubSpot",
+   "Salesforce",
+   "Pipedrive",
+   "Raynet",
+   "Microsoft Dynamics 365",
+   "vlastní CRM nebo ERP",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "poptávky",
+   "google ads",
+   "crm",
+   "cyklus",
+   "merici-plan.xlsx",
+   "crm",
+   "mapa-fazi-poptavky.pdf",
+   "offline konverze",
+   "call tracking",
+   "dashboard"
+  ],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 10,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Mapa fází, identifikátory kliknutí a měření telefonátů"
+  ],
+  "tabs": 0,
+  "tables": 2,
+  "figures": 4,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Měření konverzí Google Ads, Meta, Sklik i Heureka vidí totéž",
+   "BigQuery a datový sklad surová data bez limitů GA4",
+   "Dashboardy a reporting Data Studio i Power BI"
+  ],
+  "crumbs": 1,
+  "notes": [
+   "Cena poptávky a cena zakázky v příkladu s fiktivními daty za jedno čtvrtletí. Be"
+  ],
+  "h2": [
+   "Poznáváte se?",
+   "Co uděláme a co dostanete",
+   "Od kliknutí na reklamu po zakázku a zpět",
+   "Co kam posíláme v jednotlivých fázích poptávky",
+   "Běžné měření poptávek vs. měření až do CRM",
+   "Jak postupujeme",
+   "Jak poznáte, že měření leadů funguje",
+   "Časté otázky",
+   "Zjistíme, kolik vás doopravdy stojí jedna zakázka"
+  ],
+  "sections": 10,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 96
+  },
+  "words_main": 1899
+ },
+ "/reseni/velke-firmy": {
+  "eyebrow": [
+   "řešení pro velké firmy",
+   "symptomy",
+   "governance",
+   "architektura",
+   "bezpečnost",
+   "postup",
+   "SLA",
+   "monitoring",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní schůzka je zdarma. Rádi na ni přizveme i IT a pověřence pro ochranu osobních údajů (DPO)."
+  ],
+  "hero_trust": [
+   "Server-side měření a BigQuery ve vašem cloudu",
+   "Data v EU, region volíte vy",
+   "Zpracovatelská smlouva a NDA předem"
+  ],
+  "hero_ctas": [
+   "Domluvit úvodní schůzku",
+   "Bezpečnost a soulad"
+  ],
+  "ctas_all": [
+   [
+    "Domluvit úvodní schůzku",
+    "#kontakt"
+   ],
+   [
+    "Bezpečnost a soulad",
+    "#bezpecnost"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "trhy",
+   "gtm",
+   "vývoj",
+   "GDPR",
+   "tracking-plan.xlsx",
+   "naming-convention.md",
+   "release-process.md",
+   "access-matrix.xlsx",
+   "data-flow-inventory.xlsx",
+   "workshopy",
+   "google cloud",
+   "bigquery",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "trhy",
+   "gtm",
+   "vývoj",
+   "GDPR",
+   "tracking-plan.xlsx",
+   "naming-convention.md",
+   "release-process.md",
+   "access-matrix.xlsx",
+   "data-flow-inventory.xlsx",
+   "workshopy",
+   "google cloud",
+   "bigquery"
+  ],
+  "consoles": [
+   "test ( 'purchase má měnu, hodnotu a položky' , async ({ page }) => { await page."
+  ],
+  "code_blocks": 1,
+  "cards": 12,
+  "pictograms": 8,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Více trhů, GA4 360 a test datové vrstvy"
+  ],
+  "tabs": 0,
+  "tables": 3,
+  "figures": 2,
+  "process_steps": 5,
+  "process_labels": 10,
+  "callouts": 0,
+  "related": [
+   "Server-side tracking měření na vaší doméně",
+   "BigQuery a datový sklad surová data bez limitů GA4",
+   "Správa webu a měření hlídáme, aby měření nepřestalo fungovat"
+  ],
+  "crumbs": 1,
+  "notes": [
+   "Nejsme advokátní kancelář – právní posouzení patří právnímu oddělení nebo DPO."
+  ],
+  "h2": [
+   "Poznáváte se?",
+   "Pravidla měření, která přežijí změny týmů i agentur",
+   "Jak vypadá architektura pro více trhů",
+   "Bezpečnost a soulad pro nákupní oddělení a IT",
+   "Jak postupujeme u velkého projektu",
+   "SLA a podpora po spuštění",
+   "Jak poznáte, že měření funguje",
+   "Časté otázky",
+   "Probereme měření s vaším marketingem i IT"
+  ],
+  "sections": 10,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 104
+  },
+  "words_main": 2026
+ },
+ "/jak-pracujeme": {
+  "eyebrow": [
+   "postup spolupráce",
+   "principy",
+   "postup",
+   "podle typu firmy",
+   "ukázky výstupů",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma a nezávazně"
+  ],
+  "hero_trust": [
+   "Ke každému kroku konkrétní výstup",
+   "Účty, kontejnery i data zůstávají vám",
+   "Validace porovnáním s administrací nebo CRM"
+  ],
+  "hero_ctas": [
+   "Konzultovat projekt",
+   "Pět kroků spolupráce"
+  ],
+  "ctas_all": [
+   [
+    "Konzultovat projekt",
+    "#kontakt"
+   ],
+   [
+    "Pět kroků spolupráce",
+    "#postup"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "01",
+   "02",
+   "03",
+   "04",
+   "05",
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [
+   "01",
+   "02",
+   "03",
+   "04",
+   "05"
+  ],
+  "consoles": [
+   "dataLayer. push ({ ecommerce : null }); dataLayer. push ({ event : 'purchase' , "
+  ],
+  "code_blocks": 1,
+  "cards": 8,
+  "pictograms": 7,
+  "details": 7,
+  "faq": 6,
+  "tech_details": [
+   "Technické detaily Jaké přístupy potřebujeme a kde je udělíte"
+  ],
+  "tabs": 4,
+  "tables": 1,
+  "figures": 1,
+  "process_steps": 0,
+  "process_labels": 0,
+  "callouts": 1,
+  "related": [
+   "Audit měření zjistíme, kde data utíkají",
+   "Datová vrstva zadání pro vývojáře, které funguje",
+   "Správa webu a měření hlídáme, aby měření nepřestalo fungovat"
+  ],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Pět pravidel, podle kterých pracujeme",
+   "Pět kroků od auditu po předané měření",
+   "Jak se postup liší podle typu firmy",
+   "Jak vypadají výstupy, které dostanete",
+   "Časté otázky",
+   "Začněme úvodní konzultací"
+  ],
+  "sections": 7,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 94
+  },
+  "words_main": 1646
+ },
+ "/blog": {
+  "eyebrow": [
+   "Blog",
+   "Kontakt"
+  ],
+  "hero_micro": [],
+  "hero_trust": [],
+  "hero_ctas": [],
+  "ctas_all": [
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [
+   "20. 2. 2025 , datalayer.cz GA4 → BigQuery: vlastní data bez limitů Napojení GA4 na BigQuery: surová data o událostech bez vzorkování, spojení dat napříč zdroji a základ pro reporting. Na co si dát pozor u sandboxu. Číst článek"
+  ],
+  "chips_tags": [
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 0,
+  "pictograms": 0,
+  "details": 0,
+  "faq": 0,
+  "tech_details": [],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 0,
+  "process_steps": 0,
+  "process_labels": 0,
+  "callouts": 0,
+  "related": [],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "GA4 → BigQuery: vlastní data bez limitů",
+   "Server-side GTM: proč a jak začít",
+   "Napište nám, co řešíte"
+  ],
+  "sections": 2,
+  "contact": {
+   "channels": [],
+   "next_steps": [],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 71
+  },
+  "words_main": 184
+ },
+ "/o-nas": {
+  "eyebrow": [
+   "o nás",
+   "přístup",
+   "pro koho",
+   "principy",
+   "FAQ",
+   "pokračujte",
+   "Kontakt"
+  ],
+  "hero_micro": [
+   "Úvodní konzultace zdarma a nezávazně"
+  ],
+  "hero_trust": [
+   "Účty a data zakládáme na vaši firmu",
+   "Validace před každým předáním",
+   "Standardní nástroje, žádné černé skříňky"
+  ],
+  "hero_ctas": [
+   "Napsat nám",
+   "Jak pracujeme"
+  ],
+  "ctas_all": [
+   [
+    "Napsat nám",
+    "#kontakt"
+   ],
+   [
+    "Jak pracujeme",
+    "/jak-pracujeme"
+   ],
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 3,
+  "pictograms": 7,
+  "details": 4,
+  "faq": 4,
+  "tech_details": [],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 0,
+  "process_steps": 0,
+  "process_labels": 0,
+  "callouts": 0,
+  "related": [
+   "Jak pracujeme od konzultace po předání měření",
+   "Audit měření zjistíme, kde data utíkají",
+   "Kontakt e-mail, telefon a formulář"
+  ],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Proč začínáme u datové vrstvy",
+   "Pro koho pracujeme",
+   "Jak zacházíme s daty – vašimi i vašich zákazníků",
+   "Časté otázky",
+   "Napište nám, co řešíte"
+  ],
+  "sections": 6,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 97
+  },
+  "words_main": 646
+ },
+ "/zpracovani-osobnich-udaju": {
+  "eyebrow": [],
+  "hero_micro": [],
+  "hero_trust": [],
+  "hero_ctas": [],
+  "ctas_all": [],
+  "links_arrow": [],
+  "chips_tags": [],
+  "mono_card_tags": [],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 0,
+  "pictograms": 0,
+  "details": 0,
+  "faq": 0,
+  "tech_details": [],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 0,
+  "process_steps": 0,
+  "process_labels": 0,
+  "callouts": 0,
+  "related": [],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Kdo údaje zpracovává",
+   "Kontaktní formulář",
+   "Ochrana proti spamu",
+   "Cookies a měření návštěvnosti",
+   "Jak dlouho údaje uchováváme",
+   "Kdo má k údajům přístup",
+   "Vaše práva"
+  ],
+  "sections": 1,
+  "words_main": 424
+ },
+ "/kontakt": {
+  "eyebrow": [
+   "kontakt",
+   "Kontakt",
+   "příprava",
+   "FAQ"
+  ],
+  "hero_micro": [],
+  "hero_trust": [
+   "Úvodní konzultace zdarma a nezávazně",
+   "Žádný newsletter ani spam"
+  ],
+  "hero_ctas": [],
+  "ctas_all": [
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 0,
+  "pictograms": 0,
+  "details": 3,
+  "faq": 3,
+  "tech_details": [],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 0,
+  "process_steps": 0,
+  "process_labels": 0,
+  "callouts": 0,
+  "related": [],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Napište nám, co řešíte",
+   "Jak se připravit na konzultaci",
+   "Časté otázky"
+  ],
+  "sections": 3,
+  "contact": {
+   "channels": [
+    "E-mail one@datalayer.cz",
+    "Telefon +420 704 664 774"
+   ],
+   "next_steps": [
+    "Domluvíme termín callu",
+    "Projdeme web a cíle",
+    "Připravíme návrh na míru"
+   ],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 85
+  },
+  "words_main": 246
+ },
+ "/cookies": {
+  "eyebrow": [],
+  "hero_micro": [],
+  "hero_trust": [],
+  "hero_ctas": [],
+  "ctas_all": [],
+  "links_arrow": [],
+  "chips_tags": [],
+  "mono_card_tags": [],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 0,
+  "pictograms": 0,
+  "details": 0,
+  "faq": 0,
+  "tech_details": [],
+  "tabs": 0,
+  "tables": 1,
+  "figures": 0,
+  "process_steps": 0,
+  "process_labels": 0,
+  "callouts": 0,
+  "related": [],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Jak souhlas funguje",
+   "Přehled cookies"
+  ],
+  "sections": 3,
+  "words_main": 209
+ },
+ "/blog/ga4-bigquery-export": {
+  "eyebrow": [
+   "Kontakt"
+  ],
+  "hero_micro": [],
+  "hero_trust": [],
+  "hero_ctas": [],
+  "ctas_all": [
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [],
+  "consoles": [],
+  "code_blocks": 0,
+  "cards": 0,
+  "pictograms": 0,
+  "details": 0,
+  "faq": 0,
+  "tech_details": [],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 0,
+  "process_steps": 0,
+  "process_labels": 0,
+  "callouts": 0,
+  "related": [],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Co získáte",
+   "Napište nám, co řešíte"
+  ],
+  "sections": 2,
+  "contact": {
+   "channels": [],
+   "next_steps": [],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 71
+  },
+  "words_main": 159
+ },
+ "/blog/server-side-gtm-uvod": {
+  "eyebrow": [
+   "Kontakt"
+  ],
+  "hero_micro": [],
+  "hero_trust": [],
+  "hero_ctas": [],
+  "ctas_all": [
+   [
+    "Odeslat zprávu",
+    null
+   ]
+  ],
+  "links_arrow": [],
+  "chips_tags": [
+   "GA4 a GTM",
+   "Server-side měření",
+   "Cookie lišta a souhlas",
+   "Konverze a reklamy",
+   "BigQuery a reporting",
+   "Audit",
+   "Jiné"
+  ],
+  "mono_card_tags": [],
+  "consoles": [
+   "dataLayer. push ({ event : 'purchase' , ecommerce : { transaction_id : 'T123' , "
+  ],
+  "code_blocks": 0,
+  "cards": 0,
+  "pictograms": 0,
+  "details": 0,
+  "faq": 0,
+  "tech_details": [],
+  "tabs": 0,
+  "tables": 0,
+  "figures": 0,
+  "process_steps": 0,
+  "process_labels": 0,
+  "callouts": 0,
+  "related": [],
+  "crumbs": 1,
+  "notes": [],
+  "h2": [
+   "Proč server-side",
+   "Napište nám, co řešíte"
+  ],
+  "sections": 2,
+  "contact": {
+   "channels": [],
+   "next_steps": [],
+   "topics": [
+    "GA4 a GTM",
+    "Server-side měření",
+    "Cookie lišta a souhlas",
+    "Konverze a reklamy",
+    "BigQuery a reporting",
+    "Audit",
+    "Jiné"
+   ],
+   "fields": [
+    "website",
+    "jmeno",
+    "email",
+    "telefon",
+    "web",
+    "zprava"
+   ],
+   "legal": "Údaje použijeme jen k odpovědi na zprávu a případné nabídce. Jak s nimi zacházíme . Žádný newsletter, žádný spam.",
+   "note": "",
+   "words": 71
+  },
+  "words_main": 181
+ },
+ "_nav": {
+  "links": [
+   "datalayer .cz",
+   "Implementace GA4 čísla, která sedí s tržbami",
+   "Google Tag Manager pořádek v tazích a verzích",
+   "Datová vrstva zadání pro vývojáře, které funguje",
+   "Server-side tracking měření na vaší doméně",
+   "Cookie lišta a Consent Mode souhlas podle zákona a bez zbytečné ztráty dat",
+   "Měření konverzí Google Ads, Meta, Sklik i Heureka vidí totéž",
+   "BigQuery surová data bez limitů GA4",
+   "Dashboardy a reporting Data Studio i Power BI",
+   "Audit měření zjistíme, kde data utíkají",
+   "Technický audit webu rychlost, tagy a technické SEO",
+   "Správa webu a měření hlídáme, aby měření nepřestalo fungovat",
+   "Všechny služby",
+   "E-shopy tržby, které sedí s administrací",
+   "B2B a lead generation od formuláře po zakázku v CRM",
+   "Velké firmy jednotné měření napříč týmy",
+   "Jak pracujeme",
+   "Blog",
+   "O nás",
+   "Konzultovat projekt"
+  ],
+  "mega_items": 15,
+  "mega_desc": []
+ },
+ "_footer": {
+  "links": [
+   "Implementace GA4",
+   "Google Tag Manager",
+   "Datová vrstva",
+   "Server-side tracking",
+   "Cookie lišta a Consent Mode",
+   "Měření konverzí",
+   "BigQuery",
+   "Dashboardy a reporting",
+   "Audit měření",
+   "Technický audit webu",
+   "Správa webu a měření",
+   "E-shopy",
+   "B2B a lead generation",
+   "Velké firmy",
+   "Jak pracujeme",
+   "Blog",
+   "O nás",
+   "Kontakt",
+   "one@datalayer.cz",
+   "+420 704 664 774",
+   "Zpracování osobních údajů",
+   "Cookies"
+  ],
+  "buttons": [
+   "Nastavení cookies"
+  ],
+  "text": "datalayer .cz Webová analytika a měření pro e-shopy, B2B firmy a velké firmy. Od datové vrstvy po BigQuery, s dokumentací a s daty, která vlastníte vy. Služby Implementace GA4 Google Tag Manager Datová vrstva Server-side tracking Cookie lišta a Consent Mode Měření konverzí BigQuery Dashboardy a reporting Audit měření Technický audit webu Správa webu a měření Řešení E-shopy B2B a lead generation Ve"
+ },
+ "_mobilebar": "Zavolat Napsat"
+}
