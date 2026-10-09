@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="cs"><head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#020d1e"/><title>Server-Side GTM: proč a jak začít | datalayer.cz</title><meta name="description" content="Co je server-side Google Tag Manager, proč přesouvá měření z prohlížeče na server a jak začít. Přesnější data a rychlejší web, vždy se souhlasem návštěvníka."/><link rel="canonical" href="https://datalayer.cz/blog/server-side-gtm-uvod"/><meta property="og:type" content="article"/><meta property="og:site_name" content="datalayer.cz"/><meta property="og:locale" content="cs_CZ"/><meta property="og:title" content="Server-Side GTM: proč a jak začít | datalayer.cz"/><meta property="og:description" content="Co je server-side Google Tag Manager, proč přesouvá měření z prohlížeče na server a jak začít. Přesnější data a rychlejší web, vždy se souhlasem návštěvníka."/><meta property="og:url" content="https://datalayer.cz/blog/server-side-gtm-uvod"/><meta property="og:image" content="https://datalayer.cz/og/default.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Server-Side GTM: proč a jak začít | datalayer.cz"/><meta name="twitter:description" content="Co je server-side Google Tag Manager, proč přesouvá měření z prohlížeče na server a jak začít. Přesnější data a rychlejší web, vždy se souhlasem návštěvníka."/><meta name="twitter:image" content="https://datalayer.cz/og/default.png"/><link rel="icon" href="/favicon.ico"/><link rel="preload" as="font" type="font/woff2" href="/assets/inter-latin-800-normal-BYj_oED-.woff2" crossorigin="anonymous"/><link rel="preload" as="font" type="font/woff2" href="/assets/inter-latin-ext-800-normal-DZJjya6U.woff2" crossorigin="anonymous"/><link rel="preload" as="font" type="font/woff2" href="/assets/inter-latin-400-normal-C38fXH4l.woff2" crossorigin="anonymous"/><link rel="modulepreload" href="/assets/entry.client-rikmk5CD.js"/><link rel="modulepreload" href="/assets/jsx-runtime-UMEHFmvu.js"/><link rel="modulepreload" href="/assets/root-CUwXxFjQ.js"/><link rel="modulepreload" href="/assets/texts-yFalihPv.js"/><link rel="modulepreload" href="/assets/settings-CFtU-WcD.js"/><link rel="modulepreload" href="/assets/textDefaults-DRQGrQMf.js"/><link rel="modulepreload" href="/assets/site-CJ2Ig0in.js"/><link rel="modulepreload" href="/assets/blog._slug-BLcWmMEE.js"/><link rel="modulepreload" href="/assets/seo-CrQ2PsbL.js"/><link rel="modulepreload" href="/assets/text-Cg76epeP.js"/><link rel="modulepreload" href="/assets/contact-DOboIQz7.js"/><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',personalization_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+(function(){try{var m=document.cookie.match(/(?:^|; )dl_consent=([^;]+)/);if(!m)return;var c=JSON.parse(decodeURIComponent(m[1]));
+gtag('consent','update',{analytics_storage:c.analytics?'granted':'denied',ad_storage:c.marketing?'granted':'denied',ad_user_data:c.marketing?'granted':'denied',ad_personalization:c.marketing?'granted':'denied',personalization_storage:c.marketing?'granted':'denied'});
+window.dataLayer.push({event:'cookie_consent_loaded',consent_analytics:!!c.analytics,consent_marketing:!!c.marketing});}catch(e){}})();
+</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Úvod","item":"https://datalayer.cz/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://datalayer.cz/blog"},{"@type":"ListItem","position":3,"name":"Server-Side GTM: proč a jak začít","item":"https://datalayer.cz/blog/server-side-gtm-uvod"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Server-Side GTM: proč a jak začít","description":"Co je server-side Google Tag Manager, proč přesouvá měření z prohlížeče na server a jak začít. Přesnější data a rychlejší web, vždy se souhlasem návštěvníka.","url":"https://datalayer.cz/blog/server-side-gtm-uvod","mainEntityOfPage":"https://datalayer.cz/blog/server-side-gtm-uvod","datePublished":"2025-01-15T00:00:00.000Z","dateModified":"2025-01-15T00:00:00.000Z","inLanguage":"cs-CZ","author":{"@type":"Person","name":"Vít Novotný"},"publisher":{"@id":"https://datalayer.cz/#organization"}}</script><link rel="stylesheet" href="/assets/root-C5fdIuP3.css"/><link rel="stylesheet" href="/assets/bootstrap.min-D89UoqjJ.css"/><link rel="stylesheet" href="/assets/app-BtGsL_vS.css"/></head><body><svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><defs>
+<symbol id="pi-ga4" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="4" width="26" height="20" rx="2.5"/>
+<path d="M3 9h26"/><circle cx="6" cy="6.5" r=".6" fill="currentColor"/><circle cx="8.4" cy="6.5" r=".6" fill="currentColor"/>
+<path d="M6.5 20.5l4.5-5 3.5 2.5 4.5-6 3.5 3 3-2.5"/>
+<path d="M18.5 12v8.5" stroke-dasharray="1.2 1.6" opacity=".6"/>
+<rect x="19" y="26.5" width="10" height="3.5" rx="1" fill="currentColor" fill-opacity=".1"/>
+<path d="M21.5 27.7h5M21.5 28.9h5"/>
+</symbol>
+<symbol id="pi-gtm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="5" y="3.5" width="22" height="25" rx="2" fill="currentColor" fill-opacity=".08"/>
+<path d="M5 11.8h22M5 20.2h22"/>
+<path d="M13 7.6h6M13 16h6M13 24.4h6"/>
+<path d="M8 7.6h.01M8 16h.01M8 24.4h.01" stroke-width="2.4"/>
+<path d="M27 6.5h2.5v3H27" opacity=".7"/>
+</symbol>
+<symbol id="pi-datalayer" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M9.5 5C7 5 6.5 6.5 6.5 8.5v4c0 1.8-1 3.2-2.8 3.5 1.8.3 2.8 1.7 2.8 3.5v4c0 2 .5 3.5 3 3.5"/>
+<path d="M22.5 5c2.5 0 3 1.5 3 3.5v4c0 1.8 1 3.2 2.8 3.5-1.8.3-2.8 1.7-2.8 3.5v4c0 2-.5 3.5-3 3.5"/>
+<rect x="11" y="10" width="10" height="2.4" rx="1" fill="currentColor" fill-opacity=".15"/>
+<rect x="11" y="14.8" width="10" height="2.4" rx="1" fill="currentColor" fill-opacity=".15"/>
+<rect x="11" y="19.6" width="7" height="2.4" rx="1" fill="currentColor" fill-opacity=".15"/>
+</symbol>
+<symbol id="pi-serverside" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="2" y="10" width="9" height="12" rx="1.5"/><path d="M2 13h9"/>
+<path d="M11 16h3.5" stroke-dasharray="1.2 1.6"/>
+<path d="M19 7.5l5 2v5.2c0 3.6-2.2 6.4-5 7.8-2.8-1.4-5-4.2-5-7.8V9.5z" fill="currentColor" fill-opacity=".1"/>
+<path d="M16.8 14.8l1.6 1.6 3-3.2"/>
+<path d="M24 12l5-4M24 15h5.5M24 18l5 4"/>
+<circle cx="29.5" cy="7.6" r=".9" fill="currentColor"/><circle cx="30" cy="15" r=".9" fill="currentColor"/><circle cx="29.5" cy="22.4" r=".9" fill="currentColor"/>
+</symbol>
+<symbol id="pi-consent" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="9" width="18" height="10" rx="5" fill="currentColor" fill-opacity=".1"/>
+<circle cx="16" cy="14" r="3.4" fill="currentColor" fill-opacity=".25"/>
+<path d="M6.8 14l1.6 1.6 2.8-3"/>
+<rect x="23.5" y="12.5" width="6" height="5.5" rx="1"/><path d="M24.8 12.5v-1.6a1.7 1.7 0 0 1 3.4 0v1.6"/>
+<circle cx="6" cy="24.5" r="1.1" fill="currentColor"/><circle cx="11" cy="24.5" r="1.1" fill="currentColor"/>
+<circle cx="16" cy="24.5" r="1.1"/><circle cx="21" cy="24.5" r="1.1" fill="currentColor"/>
+</symbol>
+<symbol id="pi-conversion" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2.5 6h3l2.4 11.5h10.6l2.2-8H7"/>
+<circle cx="9.5" cy="21.5" r="1.5"/><circle cx="17" cy="21.5" r="1.5"/>
+<path d="M21 13.5h3.2"/>
+<path d="M24.2 13.5c1.8 0 1.8-6 4.3-6M24.2 13.5h4.3M24.2 13.5c1.8 0 1.8 6 4.3 6"/>
+<circle cx="29.3" cy="7.5" r="1" fill="currentColor"/><circle cx="29.3" cy="13.5" r="1" fill="currentColor"/><circle cx="29.3" cy="19.5" r="1" fill="currentColor"/>
+<path d="M3 27h26" stroke-dasharray="1.2 1.8" opacity=".5"/>
+</symbol>
+<symbol id="pi-bigquery" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 9l12-5 12 5-12 5z" fill="currentColor" fill-opacity=".1"/>
+<path d="M4 9v9l12 5 12-5V9"/>
+<path d="M16 14v9M10 11.5v9M22 11.5v9" opacity=".7"/>
+<path d="M4 13.5l12 5 12-5" opacity=".7"/>
+<rect x="6" y="25.5" width="20" height="4" rx="1"/>
+<path d="M8.5 27.5h4M14 27.5h2M17.5 27.5h6" />
+</symbol>
+<symbol id="pi-dashboard" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="2.5" y="4" width="27" height="19" rx="2"/>
+<rect x="5.5" y="7" width="8" height="6.5" rx="1" fill="currentColor" fill-opacity=".12"/>
+<path d="M7.5 11.2h4" stroke-width="2"/>
+<path d="M16 13l3-3 2.5 2 4.5-4.5"/>
+<path d="M5.5 17.5h21M5.5 20h14" opacity=".6"/>
+<path d="M12 23l-1.5 5h11L20 23"/>
+<circle cx="27" cy="27" r="2.2"/><path d="M26 27h2M27 26v2"/>
+</symbol>
+<symbol id="pi-audit" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 6.5h9l6 6-7.5 7.5-7.5-7.5z" fill="currentColor" fill-opacity=".08"/>
+<circle cx="9" cy="10" r="1.2"/>
+<circle cx="20" cy="19" r="6"/><path d="M24.4 23.4L29 28"/>
+<path d="M17.6 19.2l1.6 1.6 3.2-3.4"/>
+<path d="M3.5 25l3 3M6.5 25l-3 3" opacity=".8"/>
+</symbol>
+<symbol id="pi-perf" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 20a12 12 0 0 1 24 0"/>
+<path d="M8 20a8 8 0 0 1 16 0" opacity=".45"/>
+<path d="M16 20l5-6"/><circle cx="16" cy="20" r="1.4" fill="currentColor"/>
+<path d="M9.5 26l-3 2 3 2M22.5 26l3 2-3 2M17.5 25.5l-3 5"/>
+</symbol>
+<symbol id="pi-monitor" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="5.5" width="26" height="22" rx="2"/><path d="M3 11h26M9 3.5v4M23 3.5v4"/>
+<path d="M5.5 20h5l2-5 3 9 2.5-6 1.5 2h7"/>
+</symbol>
+<symbol id="pi-eshop" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M7 3h18v26l-3-2-3 2-3-2-3 2-3-2-3 2z" fill="currentColor" fill-opacity=".08"/>
+<path d="M11 8.5h10M11 12.5h6M11 16.5h8" opacity=".75"/>
+<path d="M11 22h10" stroke-width="2"/>
+</symbol>
+<symbol id="pi-lead" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="2.5" y="5" width="9" height="12" rx="1.5"/><path d="M4.5 8.5h5M4.5 11.5h5M4.5 14.5h3"/>
+<path d="M12.5 8h9l-3.5 5v4l-2 1.5V13z" fill="currentColor" fill-opacity=".1"/>
+<path d="M17 20v2.5"/>
+<rect x="11" y="23" width="18" height="6" rx="1.5"/><path d="M13.5 26h7"/><circle cx="25.5" cy="26" r="1.1" fill="currentColor"/>
+</symbol>
+<symbol id="pi-gov" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="12" y="3" width="8" height="6" rx="1.2" fill="currentColor" fill-opacity=".1"/>
+<path d="M16 9v4M7 13h18M7 13v4M25 13v4M16 13v4"/>
+<rect x="3.5" y="17" width="7" height="5" rx="1"/><rect x="12.5" y="17" width="7" height="5" rx="1"/><rect x="21.5" y="17" width="7" height="5" rx="1"/>
+<rect x="12.5" y="25" width="7" height="5" rx="1"/><path d="M14 25v-1.4a2 2 0 0 1 4 0V25"/>
+</symbol>
+<symbol id="pi-warn" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M16 4l13 23H3z"/><path d="M16 12v7M16 23h.01" stroke-width="2.2"/>
+</symbol>
+</defs></svg><div><a class="skip-link" href="#obsah">Přeskočit na obsah</a><header class="site-nav"><div class="container site-nav__bar"><a class="navbar-brand" href="/" data-discover="true">datalayer<span class="highlight">.cz</span></a><button type="button" class="site-nav__toggle" aria-expanded="false" aria-controls="site-menu"><span class="visually-hidden">Otevřít menu</span><span class="site-nav__burger" aria-hidden="true"></span></button><nav id="site-menu" class="site-menu" aria-label="Hlavní menu"><ul class="site-menu__list"><li class="has-mega"><button type="button" class="site-menu__link" aria-expanded="false">Služby<!-- --> <span class="caret" aria-hidden="true"></span></button><div class="mega" hidden=""><div class="mega__grid mega__grid--3" style="--cols:3"><div><p class="mega__group">Sběr dat</p><ul><li><a class="mega__item" href="/sluzby/implementace-ga4" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-ga4"></use></svg><span><strong>Implementace GA4</strong><span>čísla, která sedí s tržbami</span></span></a></li><li><a class="mega__item" href="/sluzby/google-tag-manager" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-gtm"></use></svg><span><strong>Google Tag Manager</strong><span>pořádek v tazích a verzích</span></span></a></li><li><a class="mega__item" href="/sluzby/datova-vrstva" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-datalayer"></use></svg><span><strong>Datová vrstva</strong><span>zadání pro vývojáře, které funguje</span></span></a></li><li><a class="mega__item" href="/sluzby/server-side-tracking" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-serverside"></use></svg><span><strong>Server-side tracking</strong><span>měření na vaší doméně</span></span></a></li><li><a class="mega__item" href="/sluzby/cookie-lista-consent-mode" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-consent"></use></svg><span><strong>Cookie lišta a Consent Mode</strong><span>souhlas legálně a bez zbytečné ztráty dat</span></span></a></li><li><a class="mega__item" href="/sluzby/mereni-konverzi" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-conversion"></use></svg><span><strong>Měření konverzí</strong><span>Ads, Meta, Sklik i Heureka vidí totéž</span></span></a></li></ul></div><div><p class="mega__group">Data a reporting</p><ul><li><a class="mega__item" href="/sluzby/bigquery" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-bigquery"></use></svg><span><strong>BigQuery</strong><span>surová data bez limitů GA4</span></span></a></li><li><a class="mega__item" href="/sluzby/dashboardy-a-reporting" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-dashboard"></use></svg><span><strong>Dashboardy a reporting</strong><span>Data Studio i Power BI</span></span></a></li></ul></div><div><p class="mega__group">Audity a správa</p><ul><li><a class="mega__item" href="/sluzby/audit-mereni" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-audit"></use></svg><span><strong>Audit měření</strong><span>zjistíme, kde data utíkají</span></span></a></li><li><a class="mega__item" href="/sluzby/technicky-audit-webu" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-perf"></use></svg><span><strong>Technický audit webu</strong><span>rychlost, tagy a technické SEO</span></span></a></li><li><a class="mega__item" href="/sluzby/sprava-webu-a-mereni" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-monitor"></use></svg><span><strong>Správa webu a měření</strong><span>hlídáme, aby měření nepřestalo fungovat</span></span></a></li></ul></div></div><a class="mega__all" href="/sluzby" data-discover="true">Všechny služby<!-- --> →</a></div></li><li class="has-mega"><button type="button" class="site-menu__link" aria-expanded="false">Řešení<!-- --> <span class="caret" aria-hidden="true"></span></button><div class="mega mega--narrow" hidden=""><ul><li><a class="mega__item" href="/reseni/e-shopy" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-eshop"></use></svg><span><strong>E-shopy</strong><span>tržby, které sedí s administrací</span></span></a></li><li><a class="mega__item" href="/reseni/b2b-a-lead-generation" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-lead"></use></svg><span><strong>B2B a lead generation</strong><span>od formuláře po zakázku v CRM</span></span></a></li><li><a class="mega__item" href="/reseni/velke-firmy" data-discover="true"><svg class="pi" aria-hidden="true" focusable="false"><use href="#pi-gov"></use></svg><span><strong>Velké firmy</strong><span>jednotné měření napříč týmy</span></span></a></li></ul><div class="mega__sep" role="separator"></div><a class="mega__item mega__item--plain" href="/jak-pracujeme" data-discover="true"><span><strong>Jak pracujeme</strong></span></a></div></li><li><a aria-current="page" class="site-menu__link active" href="/blog" data-discover="true">Blog</a></li><li><a class="site-menu__link" href="/o-nas" data-discover="true">O nás</a></li><li class="site-menu__cta"><a href="#kontakt" class="btn btn-cta">[ <!-- -->Konzultovat projekt<!-- --> ]</a></li></ul></nav></div></header><nav class="mobile-bar" aria-label="Rychlý kontakt"><a href="#kontakt" class="mobile-bar__btn mobile-bar__btn--cta">Napsat</a></nav><main id="obsah"><header class="article-hero"><div class="container"><div class="article-container"><nav class="crumbs" aria-label="Drobečková navigace"><ol><li><a href="/" data-discover="true">Úvod</a></li><li><a href="/blog" data-discover="true">Blog</a></li><li><span aria-current="page">Server-Side GTM: proč a jak začít</span></li></ol></nav><div class="article-meta"><span class="me-3"><time dateTime="2025-01-15T00:00:00.000Z">15. 1. 2025</time></span><span class="me-3">Vít Novotný</span></div><h1 class="article-title">Server-Side GTM: proč a jak začít</h1></div></div></header><section class="article-content"><div class="container article-container"><div class="article-body-db"><div>
+      <p class="article-perex">Server-Side Google Tag Manager posouvá měření z prohlížeče na server.
+      Získáte přesnější data, rychlejší web a odolnější first-party měření, vždy v souladu se souhlasem návštěvníka.</p>
+      <h2>Proč server-side</h2>
+      <p>Klientské měření naráží na limity prohlížečů, blokátory reklam a omezení cookies v Safari a Firefoxu.
+      Přesunem zpracování na server získáte kontrolu nad daty.</p>
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-lang">javascript</span>
+          <button class="btn-copy" type="button">Kopírovat</button>
+        </div>
+        <pre class="code-content" tabindex="0"><code class="language-javascript hljs">dataLayer.<span class="hljs-title function_">push</span>({
+  <span class="hljs-attr">event</span>: <span class="hljs-string">&#x27;purchase&#x27;</span>,
+  <span class="hljs-attr">ecommerce</span>: { <span class="hljs-attr">transaction_id</span>: <span class="hljs-string">&#x27;T123&#x27;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">1290</span> }
+});</code></pre>
+      </div>
+      <h3>Shrnutí</h3>
+      <p>Server-side měření je dnes standard pro datově řízené e-shopy.</p>
+    </div></div></div></section><section id="kontakt" class="dl-contact dl-contact--compact" data-form="blog"><span id="contact-form"></span><div class="dl-contact__grid"><div class="dl-contact__intro"><p class="eyebrow">[ <!-- -->Kontakt<!-- --> ]</p><h2>Řešíte totéž u sebe?</h2><p class="dl-contact__lead">Napište, na čem jste se zasekli. Ozveme se do jednoho pracovního dne a řekneme, kde začít.</p></div><form class="dl-form" noValidate="" data-contact-form="blog" action="/api/kontakt" method="post"><input type="hidden" name="form_id" value="blog"/><input type="hidden" name="lead_type" value="consultation"/><input type="hidden" name="page" value="/blog/server-side-gtm-uvod"/><div class="dl-form__hp" aria-hidden="true"><label>Web firmy<input type="text" tabindex="-1" autoComplete="off" name="website"/></label></div><div class="dl-form__row"><label>Jméno a příjmení<input type="text" autoComplete="name" required="" maxLength="120" name="jmeno"/></label><label>E-mail<input type="email" autoComplete="email" required="" maxLength="200" name="email"/></label></div><fieldset class="dl-topics"><legend>Co řešíte? <span class="opt">(nepovinné)</span></legend><div class="dl-topics__list"><label class="dl-chip"><input type="checkbox" name="tema" value="ga4"/><span>GA4 a Tag Manager</span></label><label class="dl-chip"><input type="checkbox" name="tema" value="server-side"/><span>Server-side</span></label><label class="dl-chip"><input type="checkbox" name="tema" value="consent"/><span>Cookie lišta a consent</span></label><label class="dl-chip"><input type="checkbox" name="tema" value="konverze"/><span>Konverze a reklamy</span></label><label class="dl-chip"><input type="checkbox" name="tema" value="bigquery"/><span>BigQuery a reporting</span></label><label class="dl-chip"><input type="checkbox" name="tema" value="audit"/><span>Audit</span></label><label class="dl-chip"><input type="checkbox" name="tema" value="jine"/><span>Jiné</span></label></div></fieldset><label>S čím vám můžeme pomoci?<textarea name="zprava" required="" maxLength="5000" placeholder="Napište, na čem jste se zasekli…"></textarea></label><details class="dl-form__more"><summary>+ Přidat telefon a web (nepovinné)</summary><div class="dl-form__row"><label>Telefon <span class="opt">(nepovinné)</span><input type="tel" autoComplete="tel" placeholder="+420" maxLength="40" name="telefon"/></label><label>Web <span class="opt">(nepovinné)</span><input type="text" inputMode="url" autoComplete="url" placeholder="www.vas-web.cz" maxLength="200" name="web"/></label></div></details><p class="dl-form__legal">Údaje použijeme jen k odpovědi na zprávu a případné nabídce. <a href="/zpracovani-osobnich-udaju">Jak s nimi zacházíme</a>. Žádný newsletter, žádný spam.</p><button type="submit" class="dl-btn">[ <!-- -->Odeslat zprávu<!-- --> ]</button><p class="dl-form__note" role="status" aria-live="polite">Ozveme se do jednoho pracovního dne.</p></form></div></section></main><footer class="site-footer"><div class="container"><div class="row"><div class="col-lg col-12 mb-4"><p class="site-footer__brand">datalayer<span class="highlight">.cz</span></p><p class="small">Webová analytika a měření pro e-shopy, B2B firmy a velké firmy. Od datové vrstvy po BigQuery, s dokumentací a s daty, která vlastníte vy.</p></div><div class="col-lg col-md-6 col-6 mb-4"><p class="site-footer__title">Služby</p><ul class="list-unstyled small"><li class="mb-1"><a href="/sluzby/implementace-ga4" data-discover="true">Implementace GA4</a></li><li class="mb-1"><a href="/sluzby/google-tag-manager" data-discover="true">Google Tag Manager</a></li><li class="mb-1"><a href="/sluzby/datova-vrstva" data-discover="true">Datová vrstva</a></li><li class="mb-1"><a href="/sluzby/server-side-tracking" data-discover="true">Server-side tracking</a></li><li class="mb-1"><a href="/sluzby/cookie-lista-consent-mode" data-discover="true">Cookie lišta a Consent Mode</a></li><li class="mb-1"><a href="/sluzby/mereni-konverzi" data-discover="true">Měření konverzí</a></li><li class="mb-1"><a href="/sluzby/bigquery" data-discover="true">BigQuery</a></li><li class="mb-1"><a href="/sluzby/dashboardy-a-reporting" data-discover="true">Dashboardy a reporting</a></li><li class="mb-1"><a href="/sluzby/audit-mereni" data-discover="true">Audit měření</a></li><li class="mb-1"><a href="/sluzby/technicky-audit-webu" data-discover="true">Technický audit webu</a></li><li class="mb-1"><a href="/sluzby/sprava-webu-a-mereni" data-discover="true">Správa webu a měření</a></li></ul></div><div class="col-lg col-md-6 col-6 mb-4"><p class="site-footer__title">Řešení</p><ul class="list-unstyled small"><li class="mb-1"><a href="/reseni/e-shopy" data-discover="true">E-shopy</a></li><li class="mb-1"><a href="/reseni/b2b-a-lead-generation" data-discover="true">B2B a lead generation</a></li><li class="mb-1"><a href="/reseni/velke-firmy" data-discover="true">Velké firmy</a></li><li class="mb-1"><a href="/jak-pracujeme" data-discover="true">Jak pracujeme</a></li></ul></div><div class="col-lg col-md-6 col-6 mb-4"><p class="site-footer__title">Obsah a firma</p><ul class="list-unstyled small"><li class="mb-1"><a href="/blog" data-discover="true">Blog</a></li><li class="mb-1"><a href="/o-nas" data-discover="true">O nás</a></li><li class="mb-1"><a href="/kontakt" data-discover="true">Kontakt</a></li></ul></div><div class="col-lg col-md-6 col-6 mb-4"><p class="site-footer__title">Kontakt</p><ul class="list-unstyled small"><li class="mb-2"><a href="mailto:one@datalayer.cz">one@datalayer.cz</a></li></ul></div></div><div class="site-footer__bottom"><a href="/zpracovani-osobnich-udaju" data-discover="true">Zpracování osobních údajů</a><a href="/cookies" data-discover="true">Cookies</a><button type="button" class="link-button">Nastavení cookies</button><span>© <!-- -->2026<!-- --> datalayer.cz</span></div></div></footer></div><script>((storageKey2, restoreKey) => {
+    if (!window.history.state || !window.history.state.key) {
+      let key = Math.random().toString(32).slice(2);
+      window.history.replaceState({ key }, "");
+    }
+    try {
+      let positions = JSON.parse(sessionStorage.getItem(storageKey2) || "{}");
+      let storedY = positions[restoreKey || window.history.state.key];
+      if (typeof storedY === "number") {
+        window.scrollTo(0, storedY);
+      }
+    } catch (error) {
+      console.error(error);
+      sessionStorage.removeItem(storageKey2);
+    }
+  })("react-router-scroll-positions", null)</script><script>window.__reactRouterContext = {"basename":"/","future":{"unstable_optimizeDeps":false,"v8_passThroughRequests":false,"v8_trailingSlashAwareDataRequests":false,"unstable_previewServerPrerendering":false,"v8_middleware":false,"v8_splitRouteModules":false,"v8_viteEnvironmentApi":false},"routeDiscovery":{"mode":"lazy","manifestPath":"/__manifest"},"ssr":true,"isSpaMode":false};window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());</script><script type="module" async="">;
+import * as route0 from "/assets/root-CUwXxFjQ.js";
+import * as route1 from "/assets/blog._slug-BLcWmMEE.js";
+  window.__reactRouterManifest = {
+  "entry": {
+    "module": "/assets/entry.client-rikmk5CD.js",
+    "imports": [
+      "/assets/jsx-runtime-UMEHFmvu.js"
+    ],
+    "css": []
+  },
+  "routes": {
+    "root": {
+      "id": "root",
+      "path": "",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasClientMiddleware": false,
+      "hasDefaultExport": true,
+      "hasErrorBoundary": true,
+      "module": "/assets/root-CUwXxFjQ.js",
+      "imports": [
+        "/assets/jsx-runtime-UMEHFmvu.js",
+        "/assets/texts-yFalihPv.js",
+        "/assets/settings-CFtU-WcD.js",
+        "/assets/textDefaults-DRQGrQMf.js",
+        "/assets/site-CJ2Ig0in.js"
+      ],
+      "css": [
+        "/assets/root-C5fdIuP3.css"
+      ]
+    },
+    "routes/blog.$slug": {
+      "id": "routes/blog.$slug",
+      "parentId": "root",
+      "path": "blog/:slug",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasClientMiddleware": false,
+      "hasDefaultExport": true,
+      "hasErrorBoundary": false,
+      "module": "/assets/blog._slug-BLcWmMEE.js",
+      "imports": [
+        "/assets/jsx-runtime-UMEHFmvu.js",
+        "/assets/texts-yFalihPv.js",
+        "/assets/seo-CrQ2PsbL.js",
+        "/assets/site-CJ2Ig0in.js",
+        "/assets/text-Cg76epeP.js",
+        "/assets/textDefaults-DRQGrQMf.js",
+        "/assets/contact-DOboIQz7.js",
+        "/assets/settings-CFtU-WcD.js"
+      ],
+      "css": []
+    },
+    "routes/home": {
+      "id": "routes/home",
+      "parentId": "root",
+      "index": true,
+      "hasAction": false,
+      "hasLoader": true,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasClientMiddleware": false,
+      "hasDefaultExport": true,
+      "hasErrorBoundary": false,
+      "module": "/assets/home-BvPAnngJ.js",
+      "imports": [
+        "/assets/jsx-runtime-UMEHFmvu.js",
+        "/assets/seo-CrQ2PsbL.js",
+        "/assets/landingLd-fdlC2146.js",
+        "/assets/texts-yFalihPv.js",
+        "/assets/textDefaults-DRQGrQMf.js",
+        "/assets/contact-DOboIQz7.js",
+        "/assets/site-CJ2Ig0in.js",
+        "/assets/settings-CFtU-WcD.js",
+        "/assets/text-Cg76epeP.js"
+      ],
+      "css": []
+    },
+    "routes/blog._index": {
+      "id": "routes/blog._index",
+      "parentId": "root",
+      "path": "blog",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasClientAction": false,
+      "hasClientLoader": false,
+      "hasClientMiddleware": false,
+      "hasDefaultExport": true,
+      "hasErrorBoundary": false,
+      "module": "/assets/blog._index-DUohxYkC.js",
+      "imports": [
+        "/assets/jsx-runtime-UMEHFmvu.js",
+        "/assets/texts-yFalihPv.js",
+        "/assets/seo-CrQ2PsbL.js",
+        "/assets/site-CJ2Ig0in.js",
+        "/assets/text-Cg76epeP.js",
+        "/assets/textDefaults-DRQGrQMf.js",
+        "/assets/contact-DOboIQz7.js",
+        "/assets/settings-CFtU-WcD.js"
+      ],
+      "css": []
+    }
+  },
+  "url": "/assets/manifest-ee4b9684.js",
+  "version": "ee4b9684"
+};
+  window.__reactRouterRouteModules = {"root":route0,"routes/blog.$slug":route1};
+
+import("/assets/entry.client-rikmk5CD.js");</script><!--$--><script>window.__reactRouterContext.streamController.enqueue("[{\"_1\":2,\"_3\":-5,\"_4\":-5},\"loaderData\",{\"_5\":6,\"_7\":8},\"actionData\",\"errors\",\"root\",{\"_29\":30,\"_31\":30,\"_32\":30,\"_33\":34,\"_35\":36,\"_37\":30,\"_38\":39,\"_40\":41},\"routes/blog.$slug\",{\"_9\":10},\"article\",{\"_11\":12,\"_13\":14,\"_15\":12,\"_16\":17,\"_18\":19,\"_20\":21,\"_22\":-7,\"_23\":24,\"_25\":26,\"_27\":28},\"id\",\"server-side-gtm-uvod\",\"title\",\"Server-Side GTM: proč a jak začít\",\"slug\",\"author\",\"Vít Novotný\",\"date\",\"2025-01-15T00:00:00.000Z\",\"updatedAt\",\"2026-10-09T09:20:35.836Z\",\"modifiedDate\",\"noindex\",false,\"description\",\"Co je server-side Google Tag Manager, proč přesouvá měření z prohlížeče na server a jak začít. Přesnější data a rychlejší web, vždy se souhlasem návštěvníka.\",\"content\",\"\\n      \u003cp class=\\\"article-perex\\\"\u003eServer-Side Google Tag Manager posouvá měření z prohlížeče na server.\\n      Získáte přesnější data, rychlejší web a odolnější first-party měření, vždy v souladu se souhlasem návštěvníka.\u003c/p\u003e\\n      \u003ch2\u003eProč server-side\u003c/h2\u003e\\n      \u003cp\u003eKlientské měření naráží na limity prohlížečů, blokátory reklam a omezení cookies v Safari a Firefoxu.\\n      Přesunem zpracování na server získáte kontrolu nad daty.\u003c/p\u003e\\n      \u003cdiv class=\\\"code-container\\\"\u003e\\n        \u003cdiv class=\\\"code-header\\\"\u003e\\n          \u003cspan class=\\\"code-lang\\\"\u003ejavascript\u003c/span\u003e\\n          \u003cbutton class=\\\"btn-copy\\\" type=\\\"button\\\"\u003eKopírovat\u003c/button\u003e\\n        \u003c/div\u003e\\n        \u003cpre class=\\\"code-content\\\" tabindex=\\\"0\\\"\u003e\u003ccode class=\\\"language-javascript hljs\\\"\u003edataLayer.\u003cspan class=\\\"hljs-title function_\\\"\u003epush\u003c/span\u003e({\\n  \u003cspan class=\\\"hljs-attr\\\"\u003eevent\u003c/span\u003e: \u003cspan class=\\\"hljs-string\\\"\u003e\u0026#x27;purchase\u0026#x27;\u003c/span\u003e,\\n  \u003cspan class=\\\"hljs-attr\\\"\u003eecommerce\u003c/span\u003e: { \u003cspan class=\\\"hljs-attr\\\"\u003etransaction_id\u003c/span\u003e: \u003cspan class=\\\"hljs-string\\\"\u003e\u0026#x27;T123\u0026#x27;\u003c/span\u003e, \u003cspan class=\\\"hljs-attr\\\"\u003evalue\u003c/span\u003e: \u003cspan class=\\\"hljs-number\\\"\u003e1290\u003c/span\u003e }\\n});\u003c/code\u003e\u003c/pre\u003e\\n      \u003c/div\u003e\\n      \u003ch3\u003eShrnutí\u003c/h3\u003e\\n      \u003cp\u003eServer-side měření je dnes standard pro datově řízené e-shopy.\u003c/p\u003e\\n    \",\"gtmId\",\"\",\"phone\",\"linkedinUrl\",\"email\",\"one@datalayer.cz\",\"operator\",{\"_324\":30,\"_11\":30,\"_325\":30,\"_326\":30},\"turnstileSiteKey\",\"navigation\",{\"_181\":182,\"_183\":184,\"_185\":186,\"_187\":188},\"texts\",{\"_42\":43,\"_44\":45,\"_46\":47,\"_48\":49,\"_50\":51,\"_52\":53,\"_54\":55,\"_56\":57},\"contact\",{\"_119\":150,\"_151\":152,\"_153\":154,\"_155\":156,\"_157\":158,\"_159\":160,\"_161\":162,\"_163\":164,\"_165\":101,\"_166\":167,\"_168\":169,\"_170\":171,\"_172\":173,\"_174\":175,\"_176\":177},\"cookieBar\",{\"_13\":134,\"_72\":135,\"_136\":137,\"_138\":139,\"_140\":141,\"_142\":143,\"_144\":145,\"_146\":147,\"_148\":149},\"blog\",{\"_115\":116,\"_117\":118,\"_119\":120,\"_13\":121,\"_122\":123,\"_124\":125,\"_126\":127,\"_128\":129,\"_130\":131,\"_132\":133},\"thankYou\",{\"_13\":101,\"_72\":102,\"_103\":104,\"_105\":98,\"_106\":107},\"notFound\",{\"_13\":95,\"_72\":96,\"_97\":98,\"_99\":100},\"organization\",{\"_25\":94},\"process\",{\"_64\":65},\"page\",{\"_58\":59,\"_60\":61,\"_62\":63},\"faqTitle\",\"Časté otázky\",\"faqLead\",\"Nenašli jste odpověď? \u003ca href=\\\"#kontakt\\\"\u003eNapište nám\u003c/a\u003e.\",\"continueLabel\",\"pokračujte\",\"steps\",[66,67,68,69,70],{\"_13\":90,\"_72\":91,\"_74\":92,\"_76\":93},{\"_13\":86,\"_72\":87,\"_74\":88,\"_76\":89},{\"_13\":82,\"_72\":83,\"_74\":84,\"_76\":85},{\"_13\":78,\"_72\":79,\"_74\":80,\"_76\":81},{\"_13\":71,\"_72\":73,\"_74\":75,\"_76\":77},\"Předání a podpora\",\"text\",\"Předáme dokumentaci, proškolíme tým a hlídáme, aby měření nespadlo po dalším releasu.\",\"output\",\"dokumentace a monitoring\",\"fromClient\",\"předávací schůzka\",\"Validace\",\"Projdeme testovací scénáře, zkontrolujeme každou událost a porovnáme čísla s e-shopem nebo CRM.\",\"protokol testů\",\"testovací objednávka a export z administrace\",\"Implementace\",\"Nasadíme GTM na webu i serveru, Consent Mode v2 a konverze do reklamních systémů.\",\"verzované kontejnery\",\"datová vrstva od vývojářů a přístupy pro úpravy\",\"Měřicí plán\",\"Byznys cíle převedeme na události, parametry a pravidla pojmenování.\",\"měřicí plán a specifikace datové vrstvy\",\"hodinová schůzka a schválení plánu\",\"Audit\",\"Projdeme GA4, GTM, consent a reklamní systémy a porovnáme je s administrací.\",\"report s prioritami A/B/C\",\"přístupy pro čtení\",\"Webová analytika a měření pro e-shopy, B2B firmy a velké firmy: implementace GA4, Google Tag Manager, server-side tracking, Consent Mode v2, BigQuery a dashboardy.\",\"Stránka neexistuje\",\"Tuhle stránku jsme nenašli. Možná jsme ji přesunuli.\",\"home\",\"Zpět na úvod\",\"services\",\"Přehled služeb\",\"Díky, zpráva dorazila\",\"Ozveme se vám do jednoho pracovního dne.\",\"errorTitle\",\"Zprávu se nepodařilo odeslat\",\"back\",\"links\",[108,109],{\"_110\":113,\"_111\":114},{\"_110\":100,\"_111\":112},\"label\",\"href\",\"/sluzby\",\"Jak pracujeme\",\"/jak-pracujeme\",\"seoTitle\",\"Blog o měření, GA4 a server-side trackingu | datalayer.cz\",\"seoDescription\",\"Návody k GA4, Google Tag Manageru, Consent Mode v2, server-side trackingu a BigQuery. S diagramy, kódem a odkazy na dokumentaci, bez marketingových zkratek.\",\"eyebrow\",\"Blog\",\"Vysvětlujeme, jak měření doopravdy funguje\",\"perex\",\"Návody k GA4, Google Tag Manageru, Consent Mode v2, server-side trackingu a BigQuery. Píšeme o tom, co sami řešíme na projektech, s diagramy, kódem a odkazy na dokumentaci.\",\"empty\",\"První články právě připravujeme.\",\"readMore\",\"Číst článek\",\"ctaTitle\",\"Řešíte totéž u sebe?\",\"ctaLead\",\"Napište, na čem jste se zasekli. Ozveme se do jednoho pracovního dne a řekneme, kde začít.\",\"ctaPlaceholder\",\"Napište, na čem jste se zasekli…\",\"Cookies na tomto webu\",\"Analytické a marketingové cookies k měření návštěvnosti a kampaní použijeme jen s vaším souhlasem. Volbu změníte kdykoli v patičce, podrobnosti najdete v \u003ca href=\\\"/cookies\\\"\u003ezásadách cookies\u003c/a\u003e.\",\"necessary\",\"\u003cstrong\u003eNezbytné\u003c/strong\u003e – základní chod webu a ochrana formuláře proti spamu. Vždy aktivní.\",\"analytics\",\"\u003cstrong\u003eAnalytické\u003c/strong\u003e – měření návštěvnosti přes Google Analytics 4.\",\"marketing\",\"\u003cstrong\u003eMarketingové\u003c/strong\u003e – měření kampaní a remarketing v Google Ads, Meta a Skliku.\",\"reject\",\"Odmítnout vše\",\"settings\",\"Nastavení\",\"save\",\"Uložit volbu\",\"accept\",\"Přijmout vše\",\"Kontakt\",\"defaultTitle\",\"Napište nám, ozveme se do jednoho pracovního dne\",\"leadWithPhone\",\"Napište nám, zavolejte, nebo vyplňte formulář. Na úvodní třicetiminutové konzultaci projdeme měření a řekneme vám, co opravit jako první – nezávazně a zdarma.\",\"leadWithoutPhone\",\"Napište nám e-mail, nebo vyplňte formulář. Na úvodní třicetiminutové konzultaci projdeme měření a řekneme vám, co opravit jako první – nezávazně a zdarma.\",\"defaultPlaceholder\",\"Krátce napište, co řešíte…\",\"legal\",\"Údaje použijeme jen k odpovědi na zprávu a případné nabídce. \u003ca href=\\\"/zpracovani-osobnich-udaju\\\"\u003eJak s nimi zacházíme\u003c/a\u003e. Žádný newsletter, žádný spam.\",\"note\",\"Ozveme se do jednoho pracovního dne.\",\"submit\",\"Odeslat zprávu\",\"successTitle\",\"successText\",\"Ozveme se vám do jednoho pracovního dne na {email}.\",\"successPhone\",\"Spěchá to? Zavolejte na {phone}.\",\"personName\",\"Odpovídá Vít Novotný\",\"personNote\",\"obvykle do jednoho pracovního dne\",\"nextSteps\",[178,179,180],\"moreFields\",\"+ Přidat telefon a web (nepovinné)\",\"Do jednoho pracovního dne navrhneme termín.\",\"Na třicet minut projdeme web a cíle.\",\"Do dvou pracovních dnů po konzultaci dostanete shrnutí a návrh dalšího kroku.\",\"items\",[228,229,230,231],\"cta\",{\"_110\":227},\"footer\",{\"_25\":193,\"_194\":195,\"_196\":150,\"_197\":198,\"_199\":200},\"mobileBar\",{\"_189\":190,\"_191\":192},\"callLabel\",\"Zavolat\",\"writeLabel\",\"Napsat\",\"Webová analytika a měření pro e-shopy, B2B firmy a velké firmy. Od datové vrstvy po BigQuery, s dokumentací a s daty, která vlastníte vy.\",\"columns\",[207,208,209],\"contactTitle\",\"bottomLinks\",[201,202],\"cookieSettingsLabel\",\"Nastavení cookies\",{\"_110\":205,\"_111\":206},{\"_110\":203,\"_111\":204},\"Cookies\",\"/cookies\",\"Zpracování osobních údajů\",\"/zpracovani-osobnich-udaju\",{\"_13\":224,\"_220\":225,\"_106\":226},{\"_13\":219,\"_220\":221,\"_106\":222},{\"_13\":210,\"_106\":211},\"Obsah a firma\",[212,213,214],{\"_110\":120,\"_111\":218},{\"_110\":216,\"_111\":217},{\"_110\":150,\"_111\":215},\"/kontakt\",\"O nás\",\"/o-nas\",\"/blog\",\"Řešení\",\"fromMenu\",\"reseni\",[223],{\"_110\":113,\"_111\":114},\"Služby\",\"sluzby\",[],\"Konzultovat projekt\",{\"_232\":234,\"_11\":225,\"_110\":224,\"_194\":257,\"_236\":258},{\"_232\":234,\"_11\":221,\"_110\":219,\"_194\":235,\"_236\":237},{\"_232\":233,\"_110\":120,\"_111\":218},{\"_232\":233,\"_110\":216,\"_111\":217},\"type\",\"link\",\"menu\",[238],\"footerLink\",{\"_110\":113,\"_111\":114},{\"_181\":239},[240,241,242],{\"_110\":253,\"_111\":254,\"_245\":255,\"_247\":256},{\"_110\":249,\"_111\":250,\"_245\":251,\"_247\":252},{\"_110\":243,\"_111\":244,\"_245\":246,\"_247\":248},\"Velké firmy\",\"/reseni/velke-firmy\",\"tagline\",\"jednotné měření napříč týmy\",\"pictogram\",\"gov\",\"B2B a lead generation\",\"/reseni/b2b-a-lead-generation\",\"od formuláře po zakázku v CRM\",\"lead\",\"E-shopy\",\"/reseni/e-shopy\",\"tržby, které sedí s administrací\",\"eshop\",[260,261,262],{\"_110\":259,\"_111\":112},\"Všechny služby\",{\"_13\":292,\"_181\":293},{\"_13\":280,\"_181\":281},{\"_13\":263,\"_181\":264},\"Audity a správa\",[265,266,267],{\"_110\":276,\"_111\":277,\"_245\":278,\"_247\":279},{\"_110\":272,\"_111\":273,\"_245\":274,\"_247\":275},{\"_110\":268,\"_111\":269,\"_245\":270,\"_247\":271},\"Správa webu a měření\",\"/sluzby/sprava-webu-a-mereni\",\"hlídáme, aby měření nepřestalo fungovat\",\"monitor\",\"Technický audit webu\",\"/sluzby/technicky-audit-webu\",\"rychlost, tagy a technické SEO\",\"perf\",\"Audit měření\",\"/sluzby/audit-mereni\",\"zjistíme, kde data utíkají\",\"audit\",\"Data a reporting\",[282,283],{\"_110\":288,\"_111\":289,\"_245\":290,\"_247\":291},{\"_110\":284,\"_111\":285,\"_245\":286,\"_247\":287},\"Dashboardy a reporting\",\"/sluzby/dashboardy-a-reporting\",\"Data Studio i Power BI\",\"dashboard\",\"BigQuery\",\"/sluzby/bigquery\",\"surová data bez limitů GA4\",\"bigquery\",\"Sběr dat\",[294,295,296,297,298,299],{\"_110\":320,\"_111\":321,\"_245\":322,\"_247\":323},{\"_110\":316,\"_111\":317,\"_245\":318,\"_247\":319},{\"_110\":312,\"_111\":313,\"_245\":314,\"_247\":315},{\"_110\":308,\"_111\":309,\"_245\":310,\"_247\":311},{\"_110\":304,\"_111\":305,\"_245\":306,\"_247\":307},{\"_110\":300,\"_111\":301,\"_245\":302,\"_247\":303},\"Měření konverzí\",\"/sluzby/mereni-konverzi\",\"Ads, Meta, Sklik i Heureka vidí totéž\",\"conversion\",\"Cookie lišta a Consent Mode\",\"/sluzby/cookie-lista-consent-mode\",\"souhlas legálně a bez zbytečné ztráty dat\",\"consent\",\"Server-side tracking\",\"/sluzby/server-side-tracking\",\"měření na vaší doméně\",\"serverside\",\"Datová vrstva\",\"/sluzby/datova-vrstva\",\"zadání pro vývojáře, které funguje\",\"datalayer\",\"Google Tag Manager\",\"/sluzby/google-tag-manager\",\"pořádek v tazích a verzích\",\"gtm\",\"Implementace GA4\",\"/sluzby/implementace-ga4\",\"čísla, která sedí s tržbami\",\"ga4\",\"name\",\"address\",\"registry\"]\n");</script><!--$--><script>window.__reactRouterContext.streamController.close();</script><!--/$--><!--/$--></body></html>

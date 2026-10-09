@@ -1,0 +1,681 @@
+{
+ "středová tečka „·“": [
+  91,
+  {
+   "/": 4,
+   "/sluzby/audit-mereni": 17,
+   "/sluzby/bigquery": 12,
+   "/sluzby/cookie-lista-consent-mode": 2,
+   "/sluzby/dashboardy-a-reporting": 7,
+   "/sluzby/datova-vrstva": 6,
+   "/sluzby/google-tag-manager": 12,
+   "/sluzby/implementace-ga4": 5,
+   "/sluzby/mereni-konverzi": 3,
+   "/sluzby/server-side-tracking": 2,
+   "/sluzby/sprava-webu-a-mereni": 3,
+   "/sluzby/technicky-audit-webu": 3,
+   "/reseni/b2b-a-lead-generation": 2,
+   "/reseni/e-shopy": 2,
+   "/reseni/velke-firmy": 6,
+   "/jak-pracujeme": 1,
+   "/o-nas": 1,
+   "/sluzby": 3
+  }
+ ],
+ "hranaté závorky „[ … ]“ (tlačítka, nadtitulky)": [
+  225,
+  {
+   "SPOLEČNÉ/header": 1,
+   "/": 8,
+   "SPOLEČNÉ/form": 1,
+   "/sluzby/audit-mereni": 12,
+   "/sluzby/bigquery": 12,
+   "/sluzby/cookie-lista-consent-mode": 13,
+   "/sluzby/dashboardy-a-reporting": 13,
+   "/sluzby/datova-vrstva": 12,
+   "/sluzby/google-tag-manager": 12,
+   "/sluzby/implementace-ga4": 12,
+   "/sluzby/mereni-konverzi": 13,
+   "/sluzby/server-side-tracking": 12,
+   "/sluzby/sprava-webu-a-mereni": 13,
+   "/sluzby/technicky-audit-webu": 12,
+   "/reseni/b2b-a-lead-generation": 13,
+   "/reseni/e-shopy": 13,
+   "/reseni/velke-firmy": 13,
+   "/jak-pracujeme": 10,
+   "/kontakt": 4,
+   "/o-nas": 9,
+   "/sluzby": 9,
+   "/cookies": 1,
+   "/blog": 2,
+   "/blog/ga4-bigquery-export": 1,
+   "/blog/server-side-gtm-uvod": 1,
+   "/dekujeme": 1,
+   "/tato-stranka-neexistuje": 2
+  }
+ ],
+ "šipka „→“": [
+  80,
+  {
+   "SPOLEČNÉ/header": 1,
+   "/": 9,
+   "/sluzby/audit-mereni": 4,
+   "/sluzby/bigquery": 4,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/google-tag-manager": 3,
+   "/sluzby/implementace-ga4": 3,
+   "/sluzby/mereni-konverzi": 1,
+   "/sluzby/server-side-tracking": 3,
+   "/sluzby/sprava-webu-a-mereni": 3,
+   "/sluzby/technicky-audit-webu": 5,
+   "/reseni/b2b-a-lead-generation": 5,
+   "/reseni/e-shopy": 8,
+   "/jak-pracujeme": 11,
+   "/o-nas": 3,
+   "/sluzby": 8,
+   "/blog": 4,
+   "/blog/ga4-bigquery-export": 2,
+   "/dekujeme": 2
+  }
+ ],
+ "„zdarma“": [
+  72,
+  {
+   "/": 3,
+   "/sluzby/audit-mereni": 7,
+   "/sluzby/bigquery": 5,
+   "/sluzby/cookie-lista-consent-mode": 3,
+   "/sluzby/dashboardy-a-reporting": 9,
+   "/sluzby/datova-vrstva": 3,
+   "/sluzby/google-tag-manager": 4,
+   "/sluzby/implementace-ga4": 4,
+   "/sluzby/mereni-konverzi": 3,
+   "/sluzby/server-side-tracking": 3,
+   "/sluzby/sprava-webu-a-mereni": 2,
+   "/sluzby/technicky-audit-webu": 7,
+   "/reseni/b2b-a-lead-generation": 3,
+   "/reseni/e-shopy": 3,
+   "/reseni/velke-firmy": 1,
+   "/jak-pracujeme": 6,
+   "/kontakt": 4,
+   "/sluzby": 2
+  }
+ ],
+ "„do jednoho pracovního dne“ bez výhrady": [
+  22,
+  {
+   "/": 1,
+   "SPOLEČNÉ/form": 1,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/google-tag-manager": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/server-side-tracking": 1,
+   "/reseni/b2b-a-lead-generation": 1,
+   "/reseni/e-shopy": 1,
+   "/jak-pracujeme": 1,
+   "/kontakt": 3,
+   "/o-nas": 3,
+   "/sluzby": 1,
+   "/blog": 1,
+   "/blog/ga4-bigquery-export": 1,
+   "/blog/server-side-gtm-uvod": 1,
+   "/dekujeme": 2,
+   "SPOLEČNÉ/js": 1
+  }
+ ],
+ "„obvykle do jednoho pracovního dne“": [
+  19,
+  {
+   "/": 1,
+   "/sluzby/audit-mereni": 1,
+   "/sluzby/bigquery": 1,
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/sluzby/dashboardy-a-reporting": 1,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/google-tag-manager": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/mereni-konverzi": 1,
+   "/sluzby/server-side-tracking": 1,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/sluzby/technicky-audit-webu": 1,
+   "/reseni/b2b-a-lead-generation": 1,
+   "/reseni/e-shopy": 1,
+   "/reseni/velke-firmy": 1,
+   "/jak-pracujeme": 1,
+   "/kontakt": 1,
+   "/o-nas": 1,
+   "/sluzby": 1
+  }
+ ],
+ "„consent“ jako obecné slovo (mimo „Consent Mode“)": [
+  57,
+  {
+   "/": 3,
+   "SPOLEČNÉ/form": 1,
+   "/sluzby/audit-mereni": 6,
+   "/sluzby/bigquery": 2,
+   "/sluzby/cookie-lista-consent-mode": 7,
+   "/sluzby/dashboardy-a-reporting": 2,
+   "/sluzby/datova-vrstva": 2,
+   "/sluzby/google-tag-manager": 8,
+   "/sluzby/implementace-ga4": 2,
+   "/sluzby/mereni-konverzi": 2,
+   "/sluzby/server-side-tracking": 3,
+   "/sluzby/sprava-webu-a-mereni": 5,
+   "/sluzby/technicky-audit-webu": 2,
+   "/reseni/b2b-a-lead-generation": 2,
+   "/reseni/e-shopy": 6,
+   "/reseni/velke-firmy": 2,
+   "/jak-pracujeme": 1,
+   "/o-nas": 1
+  }
+ ],
+ "„Byznys cíle“": [
+  30,
+  {
+   "/": 2,
+   "/sluzby/audit-mereni": 2,
+   "/sluzby/bigquery": 2,
+   "/sluzby/cookie-lista-consent-mode": 2,
+   "/sluzby/dashboardy-a-reporting": 2,
+   "/sluzby/datova-vrstva": 2,
+   "/sluzby/google-tag-manager": 2,
+   "/sluzby/implementace-ga4": 2,
+   "/sluzby/mereni-konverzi": 2,
+   "/sluzby/server-side-tracking": 2,
+   "/sluzby/sprava-webu-a-mereni": 2,
+   "/sluzby/technicky-audit-webu": 2,
+   "/reseni/b2b-a-lead-generation": 2,
+   "/reseni/e-shopy": 2,
+   "/reseni/velke-firmy": 2
+  }
+ ],
+ "„Na třicet minut projdeme web a cíle.“": [
+  19,
+  {
+   "/": 1,
+   "/sluzby/audit-mereni": 1,
+   "/sluzby/bigquery": 1,
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/sluzby/dashboardy-a-reporting": 1,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/google-tag-manager": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/mereni-konverzi": 1,
+   "/sluzby/server-side-tracking": 1,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/sluzby/technicky-audit-webu": 1,
+   "/reseni/b2b-a-lead-generation": 1,
+   "/reseni/e-shopy": 1,
+   "/reseni/velke-firmy": 1,
+   "/jak-pracujeme": 1,
+   "/kontakt": 1,
+   "/o-nas": 1,
+   "/sluzby": 1
+  }
+ ],
+ "krok 01 „Projdeme GA4, GTM, consent a reklamní systémy“": [
+  30,
+  {
+   "/": 2,
+   "/sluzby/audit-mereni": 2,
+   "/sluzby/bigquery": 2,
+   "/sluzby/cookie-lista-consent-mode": 2,
+   "/sluzby/dashboardy-a-reporting": 2,
+   "/sluzby/datova-vrstva": 2,
+   "/sluzby/google-tag-manager": 2,
+   "/sluzby/implementace-ga4": 2,
+   "/sluzby/mereni-konverzi": 2,
+   "/sluzby/server-side-tracking": 2,
+   "/sluzby/sprava-webu-a-mereni": 2,
+   "/sluzby/technicky-audit-webu": 2,
+   "/reseni/b2b-a-lead-generation": 2,
+   "/reseni/e-shopy": 2,
+   "/reseni/velke-firmy": 2
+  }
+ ],
+ "nadpis „Poznáváte se?“ a varianty („Znáte to?“, „Které z toho znáte?“)": [
+  14,
+  {
+   "/sluzby/audit-mereni": 1,
+   "/sluzby/bigquery": 1,
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/sluzby/dashboardy-a-reporting": 1,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/google-tag-manager": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/mereni-konverzi": 1,
+   "/sluzby/server-side-tracking": 1,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/sluzby/technicky-audit-webu": 1,
+   "/reseni/b2b-a-lead-generation": 1,
+   "/reseni/e-shopy": 1,
+   "/reseni/velke-firmy": 1
+  }
+ ],
+ "nadpisy H1–H3 končící otazníkem": [
+  133,
+  {
+   "/": 5,
+   "/sluzby/audit-mereni": 8,
+   "/sluzby/bigquery": 7,
+   "/sluzby/cookie-lista-consent-mode": 8,
+   "/sluzby/dashboardy-a-reporting": 8,
+   "/sluzby/datova-vrstva": 8,
+   "/sluzby/google-tag-manager": 9,
+   "/sluzby/implementace-ga4": 8,
+   "/sluzby/mereni-konverzi": 7,
+   "/sluzby/server-side-tracking": 8,
+   "/sluzby/sprava-webu-a-mereni": 7,
+   "/sluzby/technicky-audit-webu": 7,
+   "/reseni/b2b-a-lead-generation": 7,
+   "/reseni/e-shopy": 7,
+   "/reseni/velke-firmy": 7,
+   "/jak-pracujeme": 6,
+   "/kontakt": 3,
+   "/o-nas": 5,
+   "/sluzby": 5,
+   "/blog": 1,
+   "/blog/ga4-bigquery-export": 1,
+   "/blog/server-side-gtm-uvod": 1
+  }
+ ],
+ "nadpisy a summary ve tvaru „Téma: podtitul“": [
+  35,
+  {
+   "/sluzby/audit-mereni": 2,
+   "/sluzby/bigquery": 1,
+   "/sluzby/cookie-lista-consent-mode": 3,
+   "/sluzby/dashboardy-a-reporting": 1,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/google-tag-manager": 3,
+   "/sluzby/implementace-ga4": 2,
+   "/sluzby/mereni-konverzi": 1,
+   "/sluzby/server-side-tracking": 1,
+   "/sluzby/sprava-webu-a-mereni": 3,
+   "/sluzby/technicky-audit-webu": 4,
+   "/reseni/b2b-a-lead-generation": 3,
+   "/reseni/e-shopy": 1,
+   "/reseni/velke-firmy": 4,
+   "/jak-pracujeme": 2,
+   "/kontakt": 1,
+   "/blog": 2
+  }
+ ],
+ "„Technické detaily: …“ (rozbalovací blok)": [
+  14,
+  {
+   "/sluzby/audit-mereni": 1,
+   "/sluzby/bigquery": 1,
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/sluzby/dashboardy-a-reporting": 1,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/google-tag-manager": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/mereni-konverzi": 1,
+   "/sluzby/server-side-tracking": 1,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/sluzby/technicky-audit-webu": 1,
+   "/reseni/b2b-a-lead-generation": 1,
+   "/reseni/e-shopy": 1,
+   "/reseni/velke-firmy": 1
+  }
+ ],
+ "„Pojďme …“ / „Domluvme si“": [
+  4,
+  {
+   "/": 1,
+   "/sluzby/bigquery": 1,
+   "/reseni/b2b-a-lead-generation": 1,
+   "/reseni/velke-firmy": 1
+  }
+ ],
+ "„Nenašli jste odpověď? Napište nám.“": [
+  19,
+  {
+   "/": 1,
+   "/sluzby/audit-mereni": 1,
+   "/sluzby/bigquery": 1,
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/sluzby/dashboardy-a-reporting": 1,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/google-tag-manager": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/mereni-konverzi": 1,
+   "/sluzby/server-side-tracking": 1,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/sluzby/technicky-audit-webu": 1,
+   "/reseni/b2b-a-lead-generation": 1,
+   "/reseni/e-shopy": 1,
+   "/reseni/velke-firmy": 1,
+   "/jak-pracujeme": 1,
+   "/kontakt": 1,
+   "/o-nas": 1,
+   "/sluzby": 1
+  }
+ ],
+ "popisek „od vás: …“ malým písmenem": [
+  75,
+  {
+   "/sluzby/audit-mereni": 5,
+   "/sluzby/bigquery": 5,
+   "/sluzby/cookie-lista-consent-mode": 5,
+   "/sluzby/dashboardy-a-reporting": 5,
+   "/sluzby/datova-vrstva": 5,
+   "/sluzby/google-tag-manager": 5,
+   "/sluzby/implementace-ga4": 5,
+   "/sluzby/mereni-konverzi": 5,
+   "/sluzby/server-side-tracking": 5,
+   "/sluzby/sprava-webu-a-mereni": 5,
+   "/sluzby/technicky-audit-webu": 5,
+   "/reseni/b2b-a-lead-generation": 5,
+   "/reseni/e-shopy": 5,
+   "/reseni/velke-firmy": 5,
+   "/jak-pracujeme": 5
+  }
+ ],
+ "„Ads“ bez „Google“": [
+  21,
+  {
+   "SPOLEČNÉ/header": 1,
+   "/": 1,
+   "/sluzby/audit-mereni": 2,
+   "/sluzby/bigquery": 3,
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/sluzby/dashboardy-a-reporting": 3,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/mereni-konverzi": 3,
+   "/sluzby/server-side-tracking": 1,
+   "/reseni/b2b-a-lead-generation": 1,
+   "/reseni/e-shopy": 3,
+   "/sluzby": 1
+  }
+ ],
+ "nesklonná „Meta“ ve výčtu po předložce": [
+  3,
+  {
+   "/sluzby/mereni-konverzi": 2,
+   "SPOLEČNÉ/js": 1
+  }
+ ],
+ "„Data Studio (dříve Looker Studio)“": [
+  5,
+  {
+   "/sluzby/bigquery": 1,
+   "/sluzby/dashboardy-a-reporting": 2,
+   "/sluzby/implementace-ga4": 1,
+   "/reseni/e-shopy": 1
+  }
+ ],
+ "„server-side“ jako samostatné podstatné jméno": [
+  44,
+  {
+   "/": 4,
+   "SPOLEČNÉ/form": 2,
+   "/sluzby/audit-mereni": 1,
+   "/sluzby/google-tag-manager": 1,
+   "/sluzby/server-side-tracking": 11,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/reseni/e-shopy": 10,
+   "/reseni/velke-firmy": 7,
+   "/jak-pracujeme": 3,
+   "/o-nas": 2,
+   "/sluzby": 1,
+   "/blog/server-side-gtm-uvod": 1
+  }
+ ],
+ "„napřímo“": [
+  5,
+  {
+   "/": 1,
+   "/sluzby/google-tag-manager": 1,
+   "/sluzby/server-side-tracking": 2,
+   "/reseni/e-shopy": 1
+  }
+ ],
+ "„dává/dávat smysl“": [
+  8,
+  {
+   "/sluzby/audit-mereni": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/mereni-konverzi": 1,
+   "/sluzby/server-side-tracking": 1,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/sluzby/technicky-audit-webu": 1,
+   "/reseni/b2b-a-lead-generation": 1,
+   "/reseni/velke-firmy": 1
+  }
+ ],
+ "„re-test“": [
+  2,
+  {
+   "/sluzby/technicky-audit-webu": 2
+  }
+ ],
+ "„CAPI“": [
+  12,
+  {
+   "/": 1,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/mereni-konverzi": 3,
+   "/sluzby/server-side-tracking": 5,
+   "/jak-pracujeme": 2
+  }
+ ],
+ "„lead“ (vč. tvarů)": [
+  103,
+  {
+   "SPOLEČNÉ/header": 1,
+   "/": 2,
+   "SPOLEČNÉ/footer": 1,
+   "/sluzby/audit-mereni": 4,
+   "/sluzby/bigquery": 3,
+   "/sluzby/dashboardy-a-reporting": 4,
+   "/sluzby/datova-vrstva": 3,
+   "/sluzby/implementace-ga4": 3,
+   "/sluzby/mereni-konverzi": 4,
+   "/sluzby/server-side-tracking": 1,
+   "/sluzby/sprava-webu-a-mereni": 2,
+   "/sluzby/technicky-audit-webu": 3,
+   "/reseni/b2b-a-lead-generation": 60,
+   "SPOLEČNÉ/form": 1,
+   "/reseni/velke-firmy": 1,
+   "/jak-pracujeme": 7,
+   "/o-nas": 2,
+   "/sluzby": 1
+  }
+ ],
+ "„poptávk-“": [
+  22,
+  {
+   "/": 1,
+   "/sluzby/audit-mereni": 2,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/mereni-konverzi": 3,
+   "/sluzby/server-side-tracking": 1,
+   "/reseni/b2b-a-lead-generation": 6,
+   "/jak-pracujeme": 2,
+   "SPOLEČNÉ/form": 1,
+   "/o-nas": 2,
+   "/zpracovani-osobnich-udaju": 3
+  }
+ ],
+ "„Google Tag Manager“": [
+  46,
+  {
+   "/": 6,
+   "SPOLEČNÉ/header": 1,
+   "SPOLEČNÉ/footer": 1,
+   "/sluzby/audit-mereni": 3,
+   "/sluzby/cookie-lista-consent-mode": 2,
+   "/sluzby/datova-vrstva": 5,
+   "/sluzby/google-tag-manager": 8,
+   "/sluzby/implementace-ga4": 4,
+   "/sluzby/server-side-tracking": 1,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/sluzby/technicky-audit-webu": 1,
+   "/jak-pracujeme": 3,
+   "/sluzby": 2,
+   "/blog": 4,
+   "/blog/server-side-gtm-uvod": 2,
+   "/tato-stranka-neexistuje": 1,
+   "SPOLEČNÉ/js": 1
+  }
+ ],
+ "„Tag Manager“ bez „Google“": [
+  12,
+  {
+   "/": 1,
+   "SPOLEČNÉ/form": 1,
+   "/sluzby/google-tag-manager": 2,
+   "/reseni/e-shopy": 3,
+   "/jak-pracujeme": 1,
+   "/o-nas": 2,
+   "/sluzby": 2
+  }
+ ],
+ "„GTM“": [
+  221,
+  {
+   "/": 6,
+   "/sluzby/audit-mereni": 15,
+   "/sluzby/bigquery": 4,
+   "/sluzby/cookie-lista-consent-mode": 26,
+   "/sluzby/dashboardy-a-reporting": 2,
+   "/sluzby/datova-vrstva": 17,
+   "/sluzby/google-tag-manager": 27,
+   "SPOLEČNÉ/form": 2,
+   "/sluzby/implementace-ga4": 9,
+   "/sluzby/mereni-konverzi": 15,
+   "/sluzby/server-side-tracking": 10,
+   "/sluzby/sprava-webu-a-mereni": 16,
+   "/sluzby/technicky-audit-webu": 13,
+   "/reseni/b2b-a-lead-generation": 4,
+   "/reseni/e-shopy": 23,
+   "/reseni/velke-firmy": 16,
+   "/jak-pracujeme": 9,
+   "/o-nas": 2,
+   "/sluzby": 1,
+   "/blog": 2,
+   "/blog/server-side-gtm-uvod": 2
+  }
+ ],
+ "„alert“": [
+  19,
+  {
+   "/sluzby/bigquery": 7,
+   "/sluzby/server-side-tracking": 4,
+   "/sluzby/sprava-webu-a-mereni": 8
+  }
+ ],
+ "„screenshot“": [
+  4,
+  {
+   "/sluzby/audit-mereni": 2,
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/kontakt": 1
+  }
+ ],
+ "„checklist“": [
+  12,
+  {
+   "/sluzby/sprava-webu-a-mereni": 9,
+   "/sluzby/technicky-audit-webu": 1,
+   "/reseni/e-shopy": 1,
+   "/reseni/velke-firmy": 1
+  }
+ ],
+ "„discovery“": [
+  5,
+  {
+   "/reseni/velke-firmy": 4,
+   "/jak-pracujeme": 1
+  }
+ ],
+ "„workspace(s)“": [
+  9,
+  {
+   "/sluzby/google-tag-manager": 9
+  }
+ ],
+ "„release“": [
+  22,
+  {
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/sprava-webu-a-mereni": 13,
+   "SPOLEČNÉ/form": 1,
+   "/reseni/e-shopy": 1,
+   "/reseni/velke-firmy": 6
+  }
+ ],
+ "„Nejsme advokátní kancelář“": [
+  7,
+  {
+   "/sluzby/cookie-lista-consent-mode": 2,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/server-side-tracking": 1,
+   "/reseni/e-shopy": 1,
+   "/reseni/velke-firmy": 1,
+   "/o-nas": 1
+  }
+ ],
+ "„ať …, nebo“": [
+  6,
+  {
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/mereni-konverzi": 1,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/reseni/velke-firmy": 1
+  }
+ ],
+ "„ne jen“ psané zvlášť": [
+  3,
+  {
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/sluzby/technicky-audit-webu": 1
+  }
+ ],
+ "„A/B/C“": [
+  3,
+  {
+   "/": 1,
+   "/sluzby/audit-mereni": 1,
+   "/sluzby/google-tag-manager": 1
+  }
+ ],
+ "lomítko s mezerami mezi jednoslovnými výrazy": [
+  10,
+  {
+   "/": 4,
+   "/sluzby/datova-vrstva": 1,
+   "/sluzby/implementace-ga4": 1,
+   "/jak-pracujeme": 1,
+   "/sluzby": 3
+  }
+ ],
+ "ampersand „&“ mimo kód": [
+  6,
+  {
+   "/sluzby/cookie-lista-consent-mode": 1,
+   "/reseni/e-shopy": 3,
+   "/o-nas": 2
+  }
+ ],
+ "anglický štítek u karty (handover, migration, meeting, retention, margin, costs, tags, duplicate, naming, perf, inventory, qa, changelog, revenue, optional, lock-in, pii, s2s, itp…)": [
+  28,
+  {
+   "/sluzby/audit-mereni": 4,
+   "/sluzby/bigquery": 3,
+   "/sluzby/cookie-lista-consent-mode": 2,
+   "/sluzby/google-tag-manager": 7,
+   "/sluzby/implementace-ga4": 3,
+   "/sluzby/server-side-tracking": 4,
+   "/sluzby/sprava-webu-a-mereni": 1,
+   "/reseni/e-shopy": 3,
+   "/reseni/velke-firmy": 1
+  }
+ ]
+}
