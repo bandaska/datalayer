@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototyp – štíhlá LP Server-side tracking | datalayer.cz</title>
+<style>
+/*{{FONTS}}*/
+:root{
+  --dark:#020d1e; --deep:#020a17; --section:#051125; --card:#0b1a30; --border:#1f2937;
+  --cyan:#00ffff; --cyan-dim:#00b0b0; --orange:#ff7400; --text:#e6edf3; --muted:#8b949e;
+  --light-bg:#f6f8fa; --white:#ffffff; --light-text:#0b1220; --light-muted:#334155; --light-accent:#007a7a; --light-border:#e3e8ef;
+  --mono:"Roboto Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.55;color:var(--light-text);background:var(--white)}
+a{color:inherit}
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+.sec{padding:72px 0}
+.sec--dark{background:var(--dark);color:var(--text)}
+.sec--light{background:var(--light-bg)}
+.sec--white{background:var(--white)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--light-accent);margin:0 0 10px}
+.sec--dark .eyebrow{color:var(--cyan-dim)}
+h1,h2,h3{margin:0;line-height:1.15}
+h2{font-size:clamp(26px,3vw,36px);font-weight:800;margin-bottom:12px}
+.lead{font-size:18px;color:var(--light-muted);max-width:640px;margin:0 0 32px}
+.sec--dark .lead{color:#c2cad3}
+/* header */
+.hdr{background:var(--dark);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.hdr .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;color:#fff;text-decoration:none;font-size:20px}
+.logo span{color:var(--cyan)}
+.nav{display:flex;gap:28px;align-items:center;color:#fff;font-weight:600;font-size:15px}
+.nav a{text-decoration:none}
+.btn{display:inline-block;font-weight:700;border-radius:6px;padding:12px 22px;text-decoration:none;font-size:16px;border:1px solid transparent;cursor:pointer}
+.btn--cta{background:var(--orange);color:var(--dark)} /* tmavý text = kontrast 7,2 : 1 */
+.btn--ghost{border-color:#3a4658;color:#fff;background:transparent}
+.burger{display:none;width:40px;height:40px;border:1px solid #3a4658;border-radius:8px;background:transparent}
+.burger span{display:block;width:18px;height:2px;background:#fff;margin:4px auto}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 70% 0%,#0b2440 0%,var(--dark) 60%);color:var(--text);padding:40px 0 56px}
+.crumbs{font-size:14px;color:var(--muted);margin-bottom:28px}
+.hero__grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,4.4vw,52px);font-weight:800;margin:0 0 18px;color:#fff}
+.hero p.intro{font-size:19px;color:#c9d1d9;max-width:620px;margin:0 0 28px}
+.hero__ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.micro{font-size:14px;color:var(--muted);margin:0 0 22px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;padding:0;margin:0;font-size:15px;color:#c9d1d9}
+.trust li::before{content:"✓";color:var(--cyan);font-weight:700;margin-right:8px}
+.hero__visual{border:1px solid #17324d;border-radius:16px;background:rgba(11,26,48,.6);aspect-ratio:1/1;max-width:300px;justify-self:end;display:grid;place-items:center;color:var(--cyan);box-shadow:0 0 60px rgba(0,255,255,.08) inset}
+.hero__visual svg{width:120px;height:120px;filter:drop-shadow(0 0 10px rgba(0,255,255,.5))}
+/* cards */
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid var(--light-border);border-radius:12px;padding:20px}
+.sec--light .card{background:#fff}
+.card h3{font-size:17px;font-weight:700;margin:10px 0 6px}
+.card p{margin:0;font-size:15px;color:var(--light-muted)}
+.ico{width:28px;height:28px;color:var(--light-accent)}
+.tag{display:inline-block;width:auto;font-family:var(--mono);font-size:12px;color:var(--light-accent);background:#eef7f7;border:1px solid #cfe7e7;border-radius:4px;padding:1px 7px}
+.card__head{display:flex;align-items:center;gap:10px}
+/* pros/cons */
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pc__col{border-radius:12px;padding:24px;border:1px solid var(--light-border);background:#fff}
+.pc__col h3{font-size:18px;margin-bottom:12px}
+.pc__col ul{margin:0;padding:0;list-style:none}
+.pc__col li{padding:7px 0 7px 28px;position:relative;font-size:16px;border-top:1px solid #eef1f5}
+.pc__col li:first-child{border-top:0}
+.pc--yes li::before{content:"✓";position:absolute;left:4px;color:#0f8a5f;font-weight:800}
+.pc--no li::before{content:"✕";position:absolute;left:4px;color:#c2410c;font-weight:800}
+.pc__col li small{display:block;color:var(--light-muted);font-size:14px}
+.pc__col a{color:var(--light-accent)}
+/* compare table */
+.subhead{font-size:22px;font-weight:800;margin:48px 0 14px}
+.ctable{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--light-border);border-radius:12px;overflow:hidden;font-size:15px}
+.ctable th,.ctable td{padding:12px 16px;text-align:left;vertical-align:top;border-top:1px solid #eef1f5}
+.ctable thead th{border-top:0;background:#f1f5f9;font-weight:700;font-size:14px;color:var(--light-text)}
+.ctable tbody th{font-weight:600;width:28%}
+.costbox{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cost{background:#fff;border:1px solid var(--light-border);border-radius:12px;padding:16px 18px}
+.cost b{display:block;font-size:24px;font-weight:800}
+.cost span{font-size:14px;color:var(--light-muted)}
+.note{font-size:14px;color:var(--light-muted);margin-top:10px}
+.note a{color:var(--light-accent)}
+/* diagram */
+.flow{display:grid;grid-template-columns:1fr auto 1.1fr auto 1fr;gap:14px;align-items:stretch;margin:8px 0 24px}
+.node{background:var(--card);border:1px solid #17324d;border-radius:12px;padding:16px 18px}
+.node--srv{border-color:var(--cyan-dim);box-shadow:0 0 24px rgba(0,255,255,.12)}
+.node__t{font-family:var(--mono);font-size:13px;color:var(--cyan);margin-bottom:8px}
+.node ul{margin:0;padding-left:18px;font-size:15px;color:#c9d1d9}
+.arrow{align-self:center;color:var(--cyan);font-size:24px}
+.bul{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0;padding:0;list-style:none}
+.bul li{border-left:2px solid var(--cyan-dim);padding:2px 0 2px 14px;color:#c9d1d9;font-size:15px}
+.bul b{color:#fff;display:block;font-size:16px}
+.more{display:inline-block;margin-top:22px;color:var(--cyan);font-weight:600;text-decoration:none}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s;list-style:none;padding:0;margin:0}
+.step{position:relative;padding:0 18px 0 0}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);font-size:13px;color:var(--light-accent);display:block;margin-bottom:10px}
+.step::after{content:"";position:absolute;top:28px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--light-accent),#cfe7e7)}
+.step h3{font-size:17px;margin:22px 0 6px}
+.step p{margin:0 0 8px;font-size:15px;color:var(--light-muted)}
+.step .you{font-size:13px;color:#475569;background:#f1f5f9;border-radius:6px;padding:6px 8px;display:block}
+/* proof */
+.proof{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.console{background:#010816;border:1px solid #17324d;border-radius:12px;padding:18px 20px;font-family:var(--mono);font-size:14px;color:#c9d1d9}
+.console div{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #12243a}
+.console div:last-child{border-bottom:0}
+.ok{color:#2ecc71}.warn{color:#ffb020}
+/* details + faq */
+.tech{border:1px dashed #b9c7d6;border-radius:12px;background:#fff;margin:0}
+.tech summary{cursor:pointer;padding:16px 20px;font-weight:700;list-style:none}
+.tech summary::after{content:"+";float:right;color:var(--light-accent);font-weight:800}
+.tech[open] summary::after{content:"–"}
+.tech .in{padding:0 20px 18px;font-size:15px;color:var(--light-muted)}
+.faq details{border-bottom:1px solid var(--light-border)}
+.faq summary{cursor:pointer;list-style:none;padding:16px 36px 16px 0;font-weight:700;position:relative}
+.faq summary::after{content:"+";position:absolute;right:6px;top:14px;color:var(--light-accent);font-size:20px}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:0 0 16px;color:var(--light-muted);font-size:16px;max-width:760px}
+.faqwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+/* related strip */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rel{display:flex;gap:12px;align-items:flex-start;padding:16px;border:1px solid var(--light-border);border-radius:12px;background:#fff;text-decoration:none;min-height:44px}
+.rel b{display:block;font-size:15px}
+.rel span{font-size:14px;color:var(--light-muted)}
+.rel .ico{flex:0 0 24px;width:24px;height:24px}
+.soon{font-size:12px;color:#94a3b8;margin-left:6px}
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.person{display:flex;gap:14px;align-items:center;border:1px solid var(--border);border-radius:12px;padding:14px;background:var(--card);margin-top:18px}
+.avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#0e7c86,#073b4c);display:grid;place-items:center;color:#9be7ea;font-weight:800}
+.cline{margin:8px 0;color:#c9d1d9}
+.cline a{color:#fff;font-weight:700;text-decoration:none}
+.next{list-style:none;padding:0;margin:18px 0 0;font-size:15px;color:#c9d1d9;counter-reset:n}
+.next li{padding:4px 0 4px 30px;position:relative}
+.next li::before{counter-increment:n;content:counter(n);position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:50%;border:1px solid var(--cyan-dim);color:var(--cyan);font-size:12px;display:grid;place-items:center}
+.form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
+.form label{display:block;font-size:14px;font-weight:600;margin-bottom:12px;color:#fff}
+.form input,.form textarea{display:block;width:100%;margin-top:6px;background:#06121f;border:1px solid #233246;border-radius:8px;padding:11px 12px;color:#fff;font:inherit;font-size:15px}
+.form textarea{min-height:96px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
+.chip{border:1px solid #2b3a50;border-radius:999px;padding:6px 12px;font-size:14px;color:#c9d1d9;background:transparent}
+.chip--on{border-color:var(--cyan-dim);color:#fff;background:rgba(0,176,176,.15)}
+.addmore{background:none;border:0;color:var(--cyan);font:inherit;font-size:14px;font-weight:600;padding:0;margin:0 0 14px;cursor:pointer}
+.legal{font-size:13px;color:var(--muted);margin:4px 0 14px}
+.legal a{color:var(--cyan)}
+.form .btn--cta{width:100%;text-align:center}
+.ftr{background:var(--deep);color:var(--muted);font-size:14px;padding:28px 0}
+.proto{position:fixed;left:12px;bottom:12px;z-index:20;background:#fffbeb;color:#713f12;border:1px solid #f59e0b;border-radius:8px;padding:6px 10px;font-size:12px;font-family:var(--mono)}
+/* ===== mobil ===== */
+@media (max-width:900px){
+  .hero__grid{grid-template-columns:1fr}
+  .hero__visual{display:none}
+  .g4,.g3{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg);justify-self:center}
+  .bul{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;gap:0}
+  .step{padding:0 0 18px 28px;border-left:2px solid #cfe7e7;margin-left:6px}
+  .step::after{display:none}
+  .step::before{position:absolute;left:-16px;top:0;background:var(--light-bg);padding:2px 0}
+  .step h3{margin:0 0 4px}
+  .proof,.faqwrap,.contact{grid-template-columns:1fr;gap:24px}
+  .strip{grid-template-columns:1fr}
+  .costbox{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .container{padding:0 16px}
+  .sec{padding:48px 0}
+  .nav{display:none}.burger{display:block}
+  .hero{padding:24px 0 36px}
+  .crumbs{margin-bottom:16px}
+  .hero p.intro{font-size:17px;margin-bottom:20px}
+  .hero__ctas .btn{flex:1 1 100%;text-align:center}
+  .g4,.g3,.g2,.pc{grid-template-columns:1fr}
+  /* symptomy jako kompaktní seznam */
+  .sym .card{display:grid;grid-template-columns:28px 1fr;gap:4px 12px;padding:14px 16px}
+  .sym .card .card__head{grid-row:1/3;align-self:start}
+  .sym .card .tag{display:none}
+  .sym .card h3{margin:0;font-size:16px}
+  /* tabulka -> karty */
+  .ctable,.ctable tbody,.ctable tr,.ctable th,.ctable td{display:block;width:100%}
+  .ctable{border:0;background:transparent}
+  .ctable thead{display:none}
+  .ctable tr{background:#fff;border:1px solid var(--light-border);border-radius:12px;margin-bottom:10px;padding:6px 0}
+  .ctable tbody th{border-top:0;padding:10px 16px 4px;font-size:15px;width:100%}
+  .ctable td{border-top:0;padding:4px 16px 8px}
+  .ctable td::before{content:attr(data-label);display:block;font-size:12px;font-weight:700;color:var(--light-accent);text-transform:uppercase;letter-spacing:.03em}
+  .row2{grid-template-columns:1fr}
+}
+.opt{display:none}
+.opt.is-open{display:grid}
+</style>
+</head>
+<body>
+<!--{{SPRITE}}-->
+<div class="proto">PROTOTYP · štíhlá šablona LP · 9. 10. 2026</div>
+
+<header class="hdr"><div class="container">
+  <a class="logo" href="#">datalayer<span>.cz</span></a>
+  <nav class="nav"><a href="#">Služby ▾</a><a href="#">Řešení ▾</a><a href="#">Blog</a><a href="#">O nás</a><a class="btn btn--cta" href="#kontakt">[ Konzultovat projekt ]</a></nav>
+  <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></header>
+
+<!-- 1 HERO: jeden úvodní odstavec = rychlá odpověď -->
+<section class="hero"><div class="container">
+  <div class="crumbs">Úvod › Služby › Server-side tracking</div>
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow" style="color:var(--cyan-dim)">[ server-side GTM ]</p>
+      <h1>Server-side tracking na vaší doméně a vašem cloudu</h1>
+      <p class="intro">Prohlížeč pošle každou událost jen jednou – na server-side Google Tag Manager na vaší doméně. Ten ji podle souhlasu návštěvníka předá do GA4, Google Ads, Meta Conversions API nebo Skliku. Získáte kontrolu nad tím, co a komu odchází; povinnost souhlasu zůstává stejná.</p>
+      <div class="hero__ctas"><a class="btn btn--cta" href="#kontakt">[ Konzultovat architekturu ]</a><a class="btn btn--ghost" href="#jak">[ Jak to funguje ]</a></div>
+      <p class="micro">Úvodní konzultace zdarma · provoz serveru platíte napřímo Googlu nebo hostingu</p>
+      <ul class="trust"><li>Server ve vašem Google Cloudu</li><li>Kontejnery a přístupy zůstávají vaše</li><li>Monitoring v ceně</li></ul>
+    </div>
+    <div class="hero__visual"><svg><use href="#pi-serverside"/></svg></div>
+  </div>
+</div></section>
+
+<!-- 2 SYMPTOMY: 4 karty, 1 věta -->
+<section class="sec sec--light sym"><div class="container">
+  <p class="eyebrow">[ symptomy ]</p>
+  <h2>Poznáváte se?</h2>
+  <p class="lead">Server-side dává smysl, když měření funguje, ale narazilo na limity prohlížeče, rychlosti nebo kontroly nad daty.</p>
+  <div class="grid g4">
+    <div class="card"><div class="card__head"><svg class="ico"><use href="#pi-conversion"/></svg><span class="tag">meta</span></div><h3>Meta vidí méně nákupů než e-shop</h3><p>Pixel zachytí jen část objednávek a kampaně se učí z neúplných dat.</p></div>
+    <div class="card"><div class="card__head"><svg class="ico"><use href="#pi-warn"/></svg><span class="tag">itp</span></div><h3>Zákazníci ze Safari se „rozpadají“</h3><p>Safari zkracuje cookies z JavaScriptu na 7 dní – vracející se zákazník vypadá jako nový.</p></div>
+    <div class="card"><div class="card__head"><svg class="ico"><use href="#pi-perf"/></svg><span class="tag">perf</span></div><h3>IT tlačí na rychlost a bezpečnost</h3><p>Desítka cizích skriptů zpomaluje web a komplikuje bezpečnostní politiku.</p></div>
+    <div class="card"><div class="card__head"><svg class="ico"><use href="#pi-gov"/></svg><span class="tag">dpo</span></div><h3>DPO chce vědět, co komu odchází</h3><p>Bez prostředníka nemáte jak doložit ani omezit, co skripty posílají.</p></div>
+  </div>
+</div></section>
+
+<!-- 3 CO UDĚLÁME A CO DOSTANETE: sloučeno, 6 karet -->
+<section class="sec sec--white"><div class="container">
+  <p class="eyebrow">[ výstupy ]</p>
+  <h2>Co uděláme a co dostanete</h2>
+  <p class="lead">Ne „zapnutý server“, ale zdokumentovanou architekturu, kterou převezme váš tým nebo kdokoli jiný.</p>
+  <div class="grid g3">
+    <div class="card"><span class="tag">architecture.pdf</span><h3>Návrh architektury</h3><p>Co jde přes server, co zůstává v prohlížeči a kde se rozhoduje o souhlasu.</p></div>
+    <div class="card"><span class="tag">gcp</span><h3>Server ve vašem Google Cloudu</h3><p>Cloud Run s nejméně dvěma servery, doména, certifikát a rozpočtový alert.</p></div>
+    <div class="card"><span class="tag">gtm-web · gtm-server</span><h3>Kontejnery GTM</h3><p>Webový i serverový kontejner s verzemi a jednotnými názvy.</p></div>
+    <div class="card"><span class="tag">events.csv</span><h3>Mapa událostí a deduplikace</h3><p>Stejné ID objednávky pro všechny platformy, žádná konverze dvakrát.</p></div>
+    <div class="card"><span class="tag">consent-matrix</span><h3>Matice souhlasu</h3><p>Který tag smí běžet při jakém souhlasu – podklad pro DPO.</p></div>
+    <div class="card"><span class="tag">runbook.md</span><h3>Monitoring a provozní příručka</h3><p>Alerty na výpadek a pokles událostí, postup při výpadku i exit plán.</p></div>
+  </div>
+</div></section>
+
+<!-- 4 JAK TO FUNGUJE: 1 diagram + 3 body -->
+<section class="sec sec--dark" id="jak"><div class="container">
+  <p class="eyebrow">[ architektura ]</p>
+  <h2>Jak server-side funguje</h2>
+  <p class="lead">Místo pěti skriptů, které posílají data každý zvlášť, odejde z prohlížeče jedna událost na váš server. Ten ji rozdělí dál.</p>
+  <div class="flow" role="img" aria-label="Prohlížeč a backend posílají události na server-side GTM na vaší doméně, server je podle souhlasu předá platformám">
+    <div class="node"><div class="node__t">zdroje</div><ul><li>prohlížeč: dataLayer + souhlas</li><li>backend / CRM: platby, storna, leady</li></ul></div>
+    <div class="arrow">→</div>
+    <div class="node node--srv"><div class="node__t">sgtm.vasweb.cz</div><ul><li>server-side GTM</li><li>Cloud Run ve vašem cloudu</li><li>rozhodnutí podle souhlasu</li></ul></div>
+    <div class="arrow">→</div>
+    <div class="node"><div class="node__t">platformy</div><ul><li>GA4 · Google Ads</li><li>Meta Conversions API</li><li>Sklik · TikTok</li></ul></div>
+  </div>
+  <ul class="bul">
+    <li><b>Kontrola nad daty</b>Osobní údaje před odesláním odstraníte nebo zahashujete.</li>
+    <li><b>Spolehlivější konverze</b>Meta CAPI, rozšířené konverze a platby z backendu.</li>
+    <li><b>Souhlas platí dál</b>Kdo cookies odmítne, toho neměříme ani touto cestou.</li>
+  </ul>
+  <a class="more" href="#">Jak propojit client-side a server-side měření (článek B2) →</a>
+</div></section>
+
+<!-- 5 ROZHODNUTÍ: ✓/✗ + jediná tabulka (karty na mobilu) + náklady -->
+<section class="sec sec--light"><div class="container">
+  <p class="eyebrow">[ rozhodnutí ]</p>
+  <h2>Vyplatí se vám server-side?</h2>
+  <p class="lead">Server-side není první krok. Když se vám nevyplatí, řekneme to rovnou.</p>
+  <div class="pc">
+    <div class="pc__col pc--yes"><h3>Dává smysl, když…</h3><ul>
+      <li>reklama tvoří velkou část objednávek nebo poptávek</li>
+      <li>potřebujete Meta CAPI, Sklik nebo TikTok s deduplikací</li>
+      <li>chcete posílat události z backendu (platby, storna, CRM)</li>
+      <li>IT nebo DPO požaduje kontrolu nad odchozími daty</li>
+      <li>někdo bude server vlastnit a hlídat</li></ul></div>
+    <div class="pc__col pc--no"><h3>Doporučíme počkat, když…</h3><ul>
+      <li>nesedí základní měření <small>→ nejdřív <a href="#">audit měření</a></small></li>
+      <li>chybí funkční cookie lišta <small>→ <a href="#">Consent Mode v2</a></small></li>
+      <li>inzerujete jen v Google Ads <small>→ často stačí Google Tag Gateway</small></li>
+      <li>máte malý rozpočet a návštěvnost</li>
+      <li>čekáte měření bez souhlasu – to server-side nedělá</li></ul></div>
+  </div>
+
+  <h3 class="subhead">Kde server poběží a kolik stojí provoz</h3>
+  <table class="ctable">
+    <thead><tr><th>Kritérium</th><th>Google Cloud ve vašem projektu</th><th>Spravovaný hosting (Stape, DataNostro)</th></tr></thead>
+    <tbody>
+      <tr><th>Kdo vlastní účet</th><td data-label="Google Cloud">vy, faktury od Googlu</td><td data-label="Spravovaný hosting">vy, nebo agentura</td></tr>
+      <tr><th>Provoz a aktualizace</th><td data-label="Google Cloud">škáluje sám, aktualizace my nebo IT</td><td data-label="Spravovaný hosting">řeší poskytovatel</td></tr>
+      <tr><th>Audit a přístupy</th><td data-label="Google Cloud">vlastní IAM a logy</td><td data-label="Spravovaný hosting">v rozhraní poskytovatele</td></tr>
+      <tr><th>Odchod k jinému dodavateli</th><td data-label="Google Cloud">nic nestěhujete</td><td data-label="Spravovaný hosting">export kontejneru a změna DNS</td></tr>
+      <tr><th>Volíme pro</th><td data-label="Google Cloud">velké firmy, regulované obory, víc domén</td><td data-label="Spravovaný hosting">rychlý start, menší e-shopy</td></tr>
+    </tbody>
+  </table>
+  <div class="costbox">
+    <div class="cost"><b>~45 $</b><span>měsíčně za 1 server Cloud Run podle Googlu; do produkce aspoň 2</span></div>
+    <div class="cost"><b>110–150 $</b><span>realistický provoz vč. load balanceru a logů (ceník 10/2026)</span></div>
+    <div class="cost"><b>od 349 Kč</b><span>spravovaný hosting měsíčně (500 tis. požadavků)</span></div>
+  </div>
+  <p class="note">Provoz platíte napřímo poskytovateli. Rozpis položek a modelové výpočty: <a href="#">Kde provozovat server-side GTM (článek B3)</a>.</p>
+</div></section>
+
+<!-- 6 POSTUP: jednotných 5 kroků -->
+<section class="sec sec--white"><div class="container">
+  <p class="eyebrow">[ postup ]</p>
+  <h2>Jak nasazení probíhá</h2>
+  <p class="lead">Stejných pět kroků jako u všech našich služeb. Starý i nový způsob měření běží souběžně, dokud čísla nesedí.</p>
+  <ol class="steps">
+    <li class="step"><h3>Audit a návrh</h3><p>Projdeme měření a souhlas, navrhneme architekturu.</p><span class="you">od vás: přístupy pro čtení</span></li>
+    <li class="step"><h3>Infrastruktura</h3><p>Google Cloud, Cloud Run, doména a alerty.</p><span class="you">od vás: fakturační účet, DNS</span></li>
+    <li class="step"><h3>Napojení webu a platforem</h3><p>GA4, Ads, Meta CAPI, Sklik a deduplikace.</p><span class="you">od vás: role v reklamních účtech</span></li>
+    <li class="step"><h3>Souběžný běh a validace</h3><p>Denně porovnáváme s objednávkami v backendu.</p><span class="you">od vás: export objednávek</span></li>
+    <li class="step"><h3>Předání a monitoring</h3><p>Vypneme duplicity, předáme dokumentaci, zaškolíme tým.</p><span class="you">od vás: předávací schůzka</span></li>
+  </ol>
+</div></section>
+
+<!-- 7 DŮKAZ: monitoring (později případová studie) -->
+<section class="sec sec--dark"><div class="container proof">
+  <div>
+    <p class="eyebrow">[ monitoring ]</p>
+    <h2>Jak poznáte, že server-side funguje</h2>
+    <p class="lead" style="margin-bottom:0">Když server vypadne, nepřestane měřit jedna značka, ale všechny platformy najednou. Proto je monitoring součást každého nasazení, ne příplatek.</p>
+  </div>
+  <div class="console" aria-label="Ukázka denního přehledu monitoringu (ilustrativní)">
+    <div><span>uptime sgtm.vasweb.cz</span><span class="ok">99,98 %</span></div>
+    <div><span>purchase: backend / server / GA4</span><span>412 / 409 / 371</span></div>
+    <div><span>meta dedup (event_id)</span><span class="ok">OK</span></div>
+    <div><span>5xx za 24 h</span><span class="warn">3 ▲</span></div>
+    <div><span>cost vs. rozpočet</span><span class="ok">62 %</span></div>
+  </div>
+</div></section>
+
+<!-- 8 TECHNICKÉ DETAILY (dočasně) + FAQ 6 -->
+<section class="sec sec--light"><div class="container faqwrap">
+  <div>
+    <p class="eyebrow">[ FAQ ]</p>
+    <h2>Časté otázky</h2>
+    <p class="lead">Nenašli jste odpověď? <a href="#kontakt" style="color:var(--light-accent)">Napište nám</a>.</p>
+    <details class="tech"><summary>Technické detaily: co jde přes server a co zůstává v prohlížeči</summary>
+      <div class="in">Dočasný blok, dokud nevyjde článek B2. GA4 – událost přes GA4 klienta v sGTM; Google Ads – konverze a rozšířené konverze, deduplikace přes <code>transaction_id</code>; Meta – Conversions API souběžně s pixelem, stejné <code>event_id</code>; Seznam – Event Measurement, <code>sul.js</code> zůstává v prohlížeči; TikTok a LinkedIn – Events/Conversions API.</div>
+    </details>
+  </div>
+  <div class="faq">
+    <details open><summary>Je server-side legální? Potřebuju pořád cookie lištu?</summary><p>Ano, lištu potřebujete dál. Server-side je jen jiná technická cesta – k ukládání a čtení netechnických údajů potřebujete předchozí souhlas (§ 89 odst. 3 ZEK). Server proto s každou událostí dostane stav souhlasu a podle něj data pošle, nebo ne.</p></details>
+    <details><summary>Pomůže proti adblockům a Safari ITP?</summary><p>Obcházet volbu návštěvníka není cíl. Pomůže tam, kde limity prohlížeče dopadají i na souhlasící návštěvníky – cookies nastavené serverem vaší domény Safari neomezuje stejně jako cookies z JavaScriptu.</p></details>
+    <details><summary>Kolik stojí provoz serveru a kdo ho platí?</summary><p>Platíte ho přímo Googlu nebo hostingu. U Cloud Run realisticky 110–150 dolarů měsíčně, spravovaný hosting od stovek korun. Před spuštěním spočítáme odhad pro vaši návštěvnost a nastavíme rozpočtový alert.</p></details>
+    <details><summary>Jak dlouho trvá nasazení?</summary><p>Délku určuje hlavně souběžný běh s porovnáním dat a u velkých firem bezpečnostní revize. Harmonogram naplánujeme v prvním kroku.</p></details>
+    <details><summary>Google Tag Gateway, nebo server-side GTM?</summary><p>Gateway je jednodušší a levnější, ale jen pro Google značky a bez úprav dat. Pokud potřebujete Metu, Sklik, kontrolu nad osobními údaji nebo události z backendu, potřebujete server-side GTM. Obojí lze kombinovat.</p></details>
+    <details><summary>Komu patří data, účty a kontejnery?</summary><p>Vám. Server běží ve vašem Google Cloudu, kontejnery i reklamní účty jsou vaše, my dostáváme jen role. Po skončení spolupráce měření běží dál beze změny.</p></details>
+  </div>
+</div></section>
+
+<!-- 9 POKRAČUJTE: služby + články v jednom pruhu -->
+<section class="sec sec--white" style="padding:48px 0"><div class="container">
+  <p class="eyebrow">[ pokračujte ]</p>
+  <div class="strip">
+    <a class="rel" href="#"><svg class="ico"><use href="#pi-conversion"/></svg><div><b>Měření konverzí</b><span>Ads, Meta, Sklik i Heureka vidí totéž</span></div></a>
+    <a class="rel" href="#"><svg class="ico"><use href="#pi-consent"/></svg><div><b>Cookie lišta a Consent Mode v2</b><span>nejdřív souhlas, potom server</span></div></a>
+    <a class="rel" href="#"><svg class="ico"><use href="#pi-monitor"/></svg><div><b>Správa webu a měření</b><span>dlouhodobý dohled nad serverem</span></div></a>
+    <a class="rel" href="#"><svg class="ico"><use href="#pi-serverside"/></svg><div><b>Server-side tracking: průvodce</b><span>článek B1<span class="soon">připravujeme</span></span></div></a>
+    <a class="rel" href="#"><svg class="ico"><use href="#pi-datalayer"/></svg><div><b>Propojení client-side a server-side</b><span>článek B2<span class="soon">připravujeme</span></span></div></a>
+    <a class="rel" href="#"><svg class="ico"><use href="#pi-bigquery"/></svg><div><b>Stape, Cloud Run, nebo český hosting?</b><span>článek B3<span class="soon">připravujeme</span></span></div></a>
+  </div>
+</div></section>
+
+<!-- 10 KONTAKT: kompaktní -->
+<section class="sec sec--dark" id="kontakt"><div class="container contact">
+  <div>
+    <p class="eyebrow">[ kontakt ]</p>
+    <h2>Probereme, jestli se vám server-side vyplatí</h2>
+    <p class="lead" style="margin-bottom:12px">Na 30minutové konzultaci zdarma projdeme vaše měření. Odpovídáme do jednoho pracovního dne.</p>
+    <p class="cline">E-mail: <a href="#">one@datalayer.cz</a></p>
+    <p class="cline">Telefon: <a href="#">[doplní klient]</a></p>
+    <div class="person"><div class="avatar">VN</div><div><b style="color:#fff">Odpovídá Vít Novotný</b><br><span style="color:var(--muted);font-size:14px">[fotka a 1 věta praxe – doplní klient]</span></div></div>
+    <ol class="next"><li>Do 1 pracovního dne navrhneme termín.</li><li>Na 30 minut projdeme web a cíle.</li><li>Do 2 dnů dostanete shrnutí a návrh dalšího kroku.</li></ol>
+  </div>
+  <form class="form" onsubmit="return false">
+    <div class="row2"><label>Jméno a příjmení<input autocomplete="name"></label><label>E-mail<input type="email" autocomplete="email"></label></div>
+    <label style="margin-bottom:4px">Co řešíte? <span style="color:var(--muted);font-weight:400">(nepovinné)</span></label>
+    <div class="chips"><span class="chip">GA4 a Tag Manager</span><span class="chip chip--on">Server-side</span><span class="chip">Cookie lišta a consent</span><span class="chip">Konverze a reklamy</span><span class="chip">BigQuery a reporting</span><span class="chip">Audit</span><span class="chip">Jiné</span></div>
+    <label>S čím vám můžeme pomoci?<textarea placeholder="Např. Meta vidí o třetinu méně nákupů než e-shop…"></textarea></label>
+    <button type="button" class="addmore" onclick="this.nextElementSibling.classList.toggle('is-open')">+ Přidat telefon a web (nepovinné)</button>
+    <div class="row2 opt"><label>Telefon<input placeholder="+420"></label><label>Web<input placeholder="www.vas-web.cz"></label></div>
+    <p class="legal">Údaje použijeme jen k odpovědi a případné nabídce. <a href="#">Jak s nimi zacházíme</a>.</p>
+    <button class="btn btn--cta" type="button">[ Odeslat zprávu ]</button>
+  </form>
+</div></section>
+
+<footer class="ftr"><div class="container">© 2026 datalayer.cz · [obchodní firma / jméno, IČO, sídlo – doplní klient] · Zpracování osobních údajů · Cookies · Nastavení cookies</div></footer>
+</body>
+</html>
