@@ -1,4 +1,4 @@
-import { Timestamp } from '@google-cloud/firestore';
+import { FieldValue, Timestamp } from '@google-cloud/firestore';
 import { firestore } from './firestore.server';
 
 // Obsah blogu z Firestore kolekce `articles`. Slug = ID dokumentu.
@@ -10,8 +10,12 @@ export type Article = {
   slug: string;
   author: string;
   date: string; // ISO string – serializovatelné do loaderu
-  /** Datum poslední úpravy (ISO) – `dateModified` ve strukturovaných datech. */
+  /** Technické datum posledního uložení (ISO) – mění ho každé uložení i migrace. */
   updatedAt?: string;
+  /** Datum podstatné aktualizace textu (ISO), které zadá editor. Jen podle něj web ukáže „aktualizováno“ a dateModified. */
+  modifiedDate?: string;
+  /** Článek skrytý před vyhledávači (noindex, mimo sitemapu). */
+  noindex: boolean;
   /** Meta popis (140–160 znaků); prázdný = vezme se začátek textu. */
   description: string;
   content: string;
@@ -27,6 +31,7 @@ function toEntity(
   const date =
     raw instanceof Timestamp ? raw.toDate() : new Date((raw as string) ?? Date.now());
   const updated = d.updatedAt;
+  const modified = d.modifiedDate;
   return {
     id: doc.id,
     title: (d.title as string) ?? '',
@@ -34,6 +39,8 @@ function toEntity(
     author: (d.author as string) ?? '',
     date: date.toISOString(),
     updatedAt: updated instanceof Timestamp ? updated.toDate().toISOString() : undefined,
+    modifiedDate: modified instanceof Timestamp ? modified.toDate().toISOString() : undefined,
+    noindex: d.noindex === true,
     description: (d.description as string) ?? '',
     content: (d.content as string) ?? '',
   };
@@ -56,7 +63,12 @@ export type ArticleInput = {
   date: string; // 'YYYY-MM-DD' nebo ISO
   description: string;
   content: string;
+  /** 'YYYY-MM-DD' nebo prázdné = bez data aktualizace. */
+  modifiedDate?: string;
+  noindex?: boolean;
 };
+
+export { articleModified } from './articleDates';
 
 /** Ze zadaných slugů vrátí ty, které na blogu existují (pro odkazy „Do hloubky“). */
 export async function existingSlugs(slugs: string[]): Promise<string[]> {
@@ -85,6 +97,8 @@ export async function createArticle(input: ArticleInput): Promise<void> {
     date: Timestamp.fromDate(new Date(input.date)),
     description: input.description,
     content: input.content,
+    noindex: Boolean(input.noindex),
+    ...(input.modifiedDate ? { modifiedDate: Timestamp.fromDate(new Date(input.modifiedDate)) } : {}),
     updatedAt: Timestamp.now(),
   });
 }
@@ -101,6 +115,8 @@ export async function updateArticle(
       date: Timestamp.fromDate(new Date(input.date)),
       description: input.description,
       content: input.content,
+      noindex: Boolean(input.noindex),
+      modifiedDate: input.modifiedDate ? Timestamp.fromDate(new Date(input.modifiedDate)) : FieldValue.delete(),
       updatedAt: Timestamp.now(),
     },
     { merge: true },

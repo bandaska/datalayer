@@ -32,7 +32,9 @@ export async function action({ request, params }: ActionFunctionArgs) {
     return { error: 'Vyplňte všechna povinná pole.' };
   }
 
-  await updateArticle(slug, { title, author, date, description, content });
+  const modifiedDate = String(form.get('modifiedDate') ?? '').trim();
+  const noindex = form.get('noindex') === 'on';
+  await updateArticle(slug, { title, author, date, description, content, modifiedDate, noindex });
   return redirect('/admin/articles');
 }
 
@@ -67,6 +69,8 @@ export default function EditArticle() {
               title: article.title,
               author: article.author,
               date: article.date.slice(0, 10),
+              modifiedDate: article.modifiedDate?.slice(0, 10),
+              noindex: article.noindex,
               description: article.description,
               content: article.content,
             }}

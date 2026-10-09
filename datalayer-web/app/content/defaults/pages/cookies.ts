@@ -1,7 +1,10 @@
 import type { PageInput } from '../../schema';
 
 // Zásady cookies – výchozí znění. Tlačítko „Změnit nastavení cookies“ je blok
-// consentSettings, který otevře cookie lištu.
+// consentSettings, který otevře cookie lištu. Věta o Turnstile podle dokumentace
+// Cloudflaru (výchozí je jednorázový token, cookie cf_clearance jen se zapnutou
+// pre-clearance, kterou web nepoužívá). Cookies Seznamu (sid, udid) doplnit, až
+// v GTM poběží Sklik (vyhodnocení webu, kap. 5.15 a 8).
 
 export const page: PageInput = {
   path: 'cookies',
@@ -58,7 +61,7 @@ export const page: PageInput = {
         {
           type: 'paragraphs',
           items: [
-            'Analytické a marketingové cookies vznikají jen tehdy, když jste s nimi souhlasili a když je na webu zapnutý příslušný nástroj. Ochrana formuláře Cloudflare Turnstile cookies neukládá, pracuje jen s technickými údaji o prohlížeči.',
+            'Analytické a marketingové cookies vznikají jen tehdy, když jste s nimi souhlasili a když je na webu zapnutý příslušný nástroj. Ochrana formuláře Cloudflare Turnstile pracuje s technickými údaji o prohlížeči a podle dokumentace Cloudflaru vydává místo cookie jednorázový token.',
           ],
         },
       ],

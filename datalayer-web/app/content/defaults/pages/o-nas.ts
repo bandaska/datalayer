@@ -1,13 +1,17 @@
 import type { PageInput } from '../../schema';
 
 // Zdroj: seo-analyza/03_landing-pages/15_jak-pracujeme-a-podpurne-stranky.md, kap. C
-// (návrh v1, 8. října 2026). Sekce „Pro koho pracujeme“ přebírá texty segmentů
-// z 04_homepage-ux/homepage-audit-a-navrh.md (sekce 2).
-// Do dodání podkladů klientem chybí: fotografie, bio a fakta o Vítu Novotném
-// (praxe, certifikace, přednášky, LinkedIn), citace, příběh založení, tým, firemní
-// údaje (IČO, DIČ, sídlo, rejstřík), telefon. Tvrzení o správě kampaní čeká
-// na rozhodnutí klienta (viz kap. B6), proto na stránce není.
-// Teaser vlastního webu neuvádí server-side GTM ani rozšířené konverze – zatím neběží.
+// (návrh v1, 8. října 2026), úpravy podle vyhodnocení webu (9. října 2026, kap. 5.15
+// a 8). Sekce „Pro koho pracujeme“ přebírá texty segmentů z 04_homepage-ux/
+// homepage-audit-a-navrh.md (sekce 2). Pravidla práce s daty jsme zkrátili na čtyři body,
+// postup a „co od vás budeme potřebovat“ najde návštěvník na /jak-pracujeme.
+// Sekce „Kdo za datalayer.cz stojí“ (blok osoby a provozovatele) se ukáže, až klient
+// dodá fotku nebo text o praxi (Texty webu → Kontakt, blok Osoba) nebo firemní údaje
+// (Nastavení → Provozovatel webu). Do té doby chybí: fotografie, bio a fakta o Vítu
+// Novotném (praxe, certifikace, přednášky, LinkedIn), citace, příběh založení, tým,
+// firemní údaje (IČO, DIČ, sídlo, rejstřík), telefon. Množné číslo („my“) zůstává,
+// dokud klient nerozhodne, jestli web mluví za tým, nebo za jednu osobu. Tvrzení
+// o správě kampaní čeká na rozhodnutí klienta (viz kap. B6), proto na stránce není.
 
 export const page: PageInput = {
   path: 'o-nas',
@@ -26,22 +30,26 @@ export const page: PageInput = {
     eyebrow: 'o nás',
     h1: 'Kdo stojí za datalayer.cz a jak pracujeme s daty',
     subtitle:
-      'Za datalayer.cz stojí Vít Novotný, tracking & data engineer. Věnujeme se měření: datové vrstvě, Tag Manageru, GA4, souhlasům, server-side trackingu a BigQuery.',
-    quickAnswer:
-      'Za datalayer.cz stojí Vít Novotný, tracking & data engineer. Stavíme a ověřujeme měření pro e-shopy, B2B a velké firmy: datovou vrstvu, Google Tag Manager, GA4, Consent Mode, server-side tracking a BigQuery. Pracujeme ve vašich účtech, data patří vám a každou implementaci předáme s dokumentací.',
+      'Za datalayer.cz stojí Vít Novotný, tracking & data engineer. Stavíme a ověřujeme měření pro e-shopy, B2B a velké firmy – od datové vrstvy přes Tag Manager, GA4 a souhlasy po server-side tracking a BigQuery. Pracujeme ve vašich účtech a každou implementaci předáme s dokumentací.',
     primaryCta: { label: 'Napsat Vítovi', href: '#kontakt' },
     secondaryCta: { label: 'Jak pracujeme', href: '/jak-pracujeme' },
     microcopy: 'Odpovídá přímo Vít Novotný · odpověď do jednoho pracovního dne',
   },
 
-  trust: [
-    'Účty a data zakládáme na vaši firmu',
-    'Souhlas podle zákona a doporučení ÚOOÚ',
-    'Validace před každým předáním',
-    'Standardní nástroje, žádné černé skříňky',
-  ],
+  trust: ['Účty a data zakládáme na vaši firmu', 'Validace před každým předáním', 'Standardní nástroje, žádné černé skříňky'],
 
   sections: [
+    {
+      id: 'kdo',
+      eyebrow: 'kdo za webem stojí',
+      title: 'Kdo za datalayer.cz stojí',
+      tone: 'white',
+      // bez fotky, textu o praxi i firemních údajů web sekci nevykreslí
+      blocks: [
+        { type: 'person', name: 'Vít Novotný', role: 'tracking & data engineer' },
+        { type: 'operator', title: 'Provozovatel webu' },
+      ],
+    },
     {
       id: 'pristup',
       eyebrow: 'přístup',
@@ -96,73 +104,23 @@ export const page: PageInput = {
       id: 'principy',
       eyebrow: 'principy',
       title: 'Jak zacházíme s daty – vašimi i vašich zákazníků',
-      lead: 'Šest pravidel, která platí pro každý projekt.',
-      tone: 'light',
+      lead: 'Čtyři pravidla, která platí pro každý projekt.',
+      tone: 'white',
       blocks: [
         {
-          type: 'cards',
-          columns: 3,
+          type: 'list',
+          style: 'check',
           items: [
-            {
-              tag: '01',
-              title: 'Data patří vám',
-              text: 'Účty, kontejnery, projekty v Google Cloudu i data zakládáme na vaši firmu. My máme jen přístup, který můžete kdykoli odebrat.',
-            },
-            {
-              tag: '02',
-              title: 'Souhlas je podmínka, ne překážka',
-              text: 'Měření nastavujeme podle § 89 odst. 3 zákona o elektronických komunikacích a doporučení ÚOOÚ. Analytické a marketingové nástroje smějí ukládat cookies až po souhlasu a odmítnutí musí být stejně snadné jako přijetí.',
-            },
-            {
-              tag: '03',
-              title: 'Jen data, která někdo použije',
-              text: 'Měříme to, co je v měřicím plánu a slouží k rozhodnutí. Méně dat znamená menší riziko i rychlejší web.',
-            },
-            {
-              tag: '04',
-              title: 'Osobní údaje nikdy v čitelné podobě',
-              text: 'Do GA4 neposíláme e-maily ani telefony. Do reklamních systémů je posíláme jen jako hash a jen se souhlasem.',
-            },
-            {
-              tag: '05',
-              title: 'Ověřit před předáním',
-              text: 'Každou implementaci ověříme proti administraci, CRM nebo testovacím scénářům a výsledek vám dáme písemně.',
-            },
-            {
-              tag: '06',
-              title: 'Žádné černé skříňky',
-              text: 'Stavíme na standardních nástrojích jako GTM, server-side GTM, GA4 a BigQuery, ne na proprietárních skriptech. Po nás může pokračovat kdokoli.',
-            },
+            '<strong>Data patří vám.</strong> Účty, kontejnery, projekty v Google Cloudu i data zakládáme na vaši firmu. My máme jen přístup, který můžete kdykoli odebrat.',
+            '<strong>Souhlas je podmínka, ne překážka.</strong> Měření nastavujeme podle § 89 odst. 3 zákona o elektronických komunikacích a doporučení ÚOOÚ. Odmítnutí musí být stejně snadné jako přijetí.',
+            '<strong>Osobní údaje nikdy v čitelné podobě.</strong> Do GA4 neposíláme e-maily ani telefony, do reklamních systémů jen hash a jen se souhlasem.',
+            '<strong>Žádné černé skříňky.</strong> Stavíme na standardních nástrojích jako GTM, GA4 a BigQuery, takže po nás může pokračovat kdokoli.',
           ],
         },
         {
           type: 'paragraphs',
-          items: ['Nejsme advokátní kancelář. Právní posouzení konkrétního zpracování zajišťuje váš právník.'],
-        },
-        {
-          type: 'callout',
-          tone: 'info',
-          title: 'Jak měříme vlastní web',
-          text: 'Část toho, co nastavujeme klientům, si můžete prohlédnout přímo u nás. Na datalayer.cz běží naše vlastní cookie lišta s Consent Mode v2 a výchozím stavem <code>denied</code>. Nativní formulář bez HubSpotu nezapisuje e-mail do <code>dataLayer</code> v čitelné podobě, nanejvýš jako hash SHA-256 a jen se souhlasem. Ověřit si to můžete v nástrojích pro vývojáře přímo v prohlížeči. <a href="/jak-pracujeme#vlastni-web">Jak měříme vlastní web</a>',
-        },
-      ],
-    },
-    {
-      id: 'co-potrebujeme',
-      eyebrow: 'spolupráce',
-      title: 'Co od vás budeme potřebovat',
-      lead: 'Pět věcí, bez kterých se projekt neobejde.',
-      tone: 'dark',
-      blocks: [
-        {
-          type: 'list',
-          style: 'bullet',
           items: [
-            '<strong>Jednoho člověka, který rozhoduje</strong> – schválí měřicí plán a priority.',
-            '<strong>Přístupy do nástrojů</strong> – postup popisuje návod <a href="/jak-pracujeme#pristupy">Jak nám dát přístupy</a>.',
-            '<strong>Vývojáře nebo podporu platformy</strong>, pokud je potřeba upravit web.',
-            '<strong>Data pro ověření</strong> – export objednávek nebo leadů za období, které spolu vybereme.',
-            '<strong>Čas na předání</strong> – hodinu až hodinu a půl lidí, kteří budou měření používat.',
+            'Nejsme advokátní kancelář, právní posouzení konkrétního zpracování zajišťuje váš právník. Postup spolupráce a to, co od vás v jednotlivých krocích budeme potřebovat, popisuje stránka <a href="/jak-pracujeme">Jak pracujeme</a>.',
           ],
         },
       ],

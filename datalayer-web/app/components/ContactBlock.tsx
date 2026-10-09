@@ -11,8 +11,9 @@ import type { RootData } from '~/lib/rootData';
 import { CONTACT_EMAIL } from '~/lib/site';
 import { phoneHref } from '~/lib/settings';
 
-// Nativní kontaktní blok (náhrada HubSpotu) podle vzoru annanovotna.cz:
-// vlevo výzva a kanály (e-mail, telefon, LinkedIn), vpravo formulář.
+// Nativní kontaktní blok (náhrada HubSpotu) podle vzoru annanovotna.cz, kompaktní
+// verze z vyhodnocení webu: vlevo výzva, kanály, osoba a co se stane po odeslání,
+// vpravo formulář se sedmi tématy a rozbalitelným telefonem a webem.
 // Bez JS funguje klasický POST na /api/kontakt (→ /dekujeme), s JS odešle
 // fetch, ukáže stav a pošle do dataLayeru lead_form_start / lead_form_error /
 // generate_lead (s SHA-256 hashi e-mailu a telefonu, nikdy čitelné údaje).
@@ -262,14 +263,25 @@ export function ContactBlock({
                 ) : null}
               </ul>
               <div className="dl-person">
-                <span className="dl-person__photo" aria-hidden="true">
-                  VN
-                </span>
+                {t.personPhoto ? (
+                  <img className="dl-person__photo" src={t.personPhoto} alt="" width={52} height={52} loading="lazy" />
+                ) : (
+                  <span className="dl-person__photo" aria-hidden="true">
+                    {initials(t.personName)}
+                  </span>
+                )}
                 <span>
                   <span className="dl-person__name">{t.personName}</span>
                   <span className="dl-person__role">{t.personNote}</span>
                 </span>
               </div>
+              {t.nextSteps?.length ? (
+                <ol className="dl-next" aria-label="Co se stane po odeslání">
+                  {t.nextSteps.map((step, i) => (
+                    <li key={i}>{step}</li>
+                  ))}
+                </ol>
+              ) : null}
             </>
           )}
         </div>
@@ -314,17 +326,6 @@ export function ContactBlock({
               ) : null}
             </label>
           </div>
-          <div className="dl-form__row">
-            <label>
-              Telefon <span className="opt">(nepovinné)</span>
-              <input type="tel" name="telefon" autoComplete="tel" placeholder="+420" maxLength={40} />
-            </label>
-            <label>
-              Web <span className="opt">(nepovinné)</span>
-              <input type="text" name="web" inputMode="url" autoComplete="url" placeholder="www.vas-web.cz" maxLength={200} />
-            </label>
-          </div>
-
           <fieldset className="dl-topics">
             <legend>
               Co řešíte? <span className="opt">(nepovinné)</span>
@@ -348,6 +349,20 @@ export function ContactBlock({
               </span>
             ) : null}
           </label>
+
+          <details className="dl-form__more">
+            <summary>{t.moreFields ?? '+ Přidat telefon a web (nepovinné)'}</summary>
+            <div className="dl-form__row">
+              <label>
+                Telefon <span className="opt">(nepovinné)</span>
+                <input type="tel" name="telefon" autoComplete="tel" placeholder="+420" maxLength={40} />
+              </label>
+              <label>
+                Web <span className="opt">(nepovinné)</span>
+                <input type="text" name="web" inputMode="url" autoComplete="url" placeholder="www.vas-web.cz" maxLength={200} />
+              </label>
+            </div>
+          </details>
 
           {siteKey ? <div className="dl-form__turnstile" ref={turnstileRef} /> : null}
 
@@ -383,6 +398,15 @@ export function ContactBlock({
       </div>
     </section>
   );
+}
+
+/** Iniciály pro kruh místo fotky („Odpovídá Vít Novotný“ → VN). */
+function initials(name: string): string {
+  const words = name.replace(/^Odpovídá\s+/i, '').split(/\s+/).filter(Boolean);
+  return words
+    .slice(-2)
+    .map((w) => w[0]?.toUpperCase() ?? '')
+    .join('');
 }
 
 function MailIcon() {

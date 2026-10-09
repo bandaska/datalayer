@@ -3,7 +3,7 @@ import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { Card, PageHead, Pill, formatDateTime } from '~/components/admin/ui';
 import { requireRole } from '~/lib/auth.server';
 import { mailEnabled } from '~/lib/mailer.server';
-import { isValidGtmId, isValidLinkedinUrl, normalizeGtmId, parseRecipients } from '~/lib/settings';
+import { isValidGtmId, isValidLinkedinUrl, isValidOperatorId, normalizeGtmId, parseRecipients } from '~/lib/settings';
 import { getSettings, saveSettings } from '~/lib/settings.server';
 import { CONTACT_EMAIL } from '~/lib/site';
 import { turnstileEnabled } from '~/lib/turnstile.server';
@@ -44,8 +44,15 @@ export async function action({ request }: ActionFunctionArgs): Promise<ActionRes
   const linkedinUrl = String(form.get('linkedinUrl') ?? '').trim();
   if (linkedinUrl && !isValidLinkedinUrl(linkedinUrl)) errors.linkedinUrl = 'Odkaz musí začínat https://www.linkedin.com/.';
 
+  const operatorName = String(form.get('operatorName') ?? '').trim().slice(0, 160);
+  const operatorId = String(form.get('operatorId') ?? '').replace(/\s+/g, '');
+  if (operatorId && !isValidOperatorId(operatorId)) errors.operatorId = 'IČO má osm číslic.';
+  const operatorAddress = String(form.get('operatorAddress') ?? '').trim().slice(0, 240);
+  const operatorRegistry = String(form.get('operatorRegistry') ?? '').trim().slice(0, 240);
+  if ((operatorId || operatorAddress) && !operatorName) errors.operatorName = 'Vyplňte jméno nebo obchodní firmu provozovatele.';
+
   if (Object.keys(errors).length) return { errors };
-  await saveSettings({ recipients: valid, gtmId, phone, linkedinUrl }, user.email);
+  await saveSettings({ recipients: valid, gtmId, phone, linkedinUrl, operatorName, operatorId, operatorAddress, operatorRegistry }, user.email);
   return { ok: true };
 }
 
@@ -142,6 +149,39 @@ export default function AdminSettings() {
                 Když pole necháte prázdné, web odkaz nezobrazí.
               </div>
             </div>
+          </div>
+        </Card>
+
+        <Card
+          title="Provozovatel webu"
+          desc="Zákon vyžaduje identifikaci provozovatele: jméno nebo obchodní firmu, IČO a sídlo. Web je ukáže v patičce, na stránce O nás a v zásadách zpracování osobních údajů."
+        >
+          {!settings.operatorName ? (
+            <div className="alert alert-warning">Údaje zatím chybí – před spuštěním webu je doplňte.</div>
+          ) : null}
+          <div className="row g-3">
+            {(
+              [
+                ['operatorName', 'Jméno nebo obchodní firma', settings.operatorName, 'Např. Vít Novotný nebo datalayer s.r.o.'],
+                ['operatorId', 'IČO', settings.operatorId, '12345678'],
+                ['operatorAddress', 'Sídlo nebo místo podnikání', settings.operatorAddress, 'Ulice 1, 110 00 Praha'],
+                ['operatorRegistry', 'Zápis v rejstříku (nepovinné)', settings.operatorRegistry, 'Např. zapsaný v obchodním rejstříku u Městského soudu v Praze, oddíl C, vložka 000000'],
+              ] as const
+            ).map(([name, label, value, placeholder]) => (
+              <div className={name === 'operatorRegistry' ? 'col-12' : 'col-md-6'} key={name}>
+                <label className="form-label" htmlFor={name}>
+                  {label}
+                </label>
+                <input
+                  id={name}
+                  name={name}
+                  className={err[name] ? 'form-control is-invalid' : 'form-control'}
+                  defaultValue={value}
+                  placeholder={placeholder}
+                />
+                {err[name] ? <div className="invalid-feedback d-block">{err[name]}</div> : null}
+              </div>
+            ))}
           </div>
         </Card>
 

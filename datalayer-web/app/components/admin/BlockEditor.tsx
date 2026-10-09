@@ -20,6 +20,11 @@ export const BLOCK_LABELS: Record<BlockType, string> = {
   articles: 'Nejnovější články',
   menuGrid: 'Přehled z menu',
   consentSettings: 'Tlačítko nastavení cookies',
+  proscons: 'Rozhodnutí ✓ / ✕',
+  figures: 'Čísla v boxech',
+  process: 'Postup spolupráce',
+  operator: 'Provozovatel webu',
+  person: 'Osoba za webem',
 };
 
 export const BLOCK_HELP: Record<BlockType, string> = {
@@ -37,6 +42,11 @@ export const BLOCK_HELP: Record<BlockType, string> = {
   articles: 'Automaticky nejnovější články z blogu.',
   menuGrid: 'Odkazy z menu ve sloupcích (např. všechny služby jako na homepage).',
   consentSettings: 'Tlačítko, které otevře nastavení cookies.',
+  proscons: 'Dva sloupce: kdy služba dává smysl (✓) a kdy doporučíme počkat (✕). Pod položku jde dát drobnou poznámku s odkazem.',
+  figures: 'Dvě až čtyři čísla v boxech, např. náklady provozu, a poznámka se zdrojem.',
+  process: 'Jednotný postup spolupráce – pět kroků z Textů webu. U služby jde upravit popis kroku 3 (implementace).',
+  operator: 'Jméno nebo firma, IČO a sídlo z Nastavení. Dokud nejsou vyplněné, blok se nezobrazí.',
+  person: 'Jméno, role, praxe a nástroje tady, fotka z Textů webu (Kontakt), LinkedIn z Nastavení. Bez fotky i bez textu o praxi se blok nezobrazí.',
 };
 
 export function newBlock(type: BlockType): Block {
@@ -69,6 +79,16 @@ export function newBlock(type: BlockType): Block {
       return { type, menuId: 'sluzby' };
     case 'consentSettings':
       return { type, label: 'Změnit nastavení cookies' };
+    case 'proscons':
+      return { type, yes: { title: 'Dává smysl, když…', items: [{ text: '' }] }, no: { title: 'Doporučíme počkat, když…', items: [{ text: '' }] } };
+    case 'figures':
+      return { type, items: [{ value: '', label: '' }] };
+    case 'process':
+      return { type };
+    case 'operator':
+      return { type, title: 'Provozovatel' };
+    case 'person':
+      return { type };
   }
 }
 
@@ -103,6 +123,16 @@ export function blockSummary(b: Block): string {
       return `menu „${b.menuId}“`;
     case 'consentSettings':
       return b.label ?? '';
+    case 'proscons':
+      return `${plural(b.yes.items.length, 'důvod', 'důvody', 'důvodů')} pro, ${plural(b.no.items.length, 'důvod', 'důvody', 'důvodů')} proti`;
+    case 'figures':
+      return short(b.items.map((f) => f.value).join(' · '));
+    case 'process':
+      return b.implementation ? `krok 3: ${short(b.implementation, 50)}` : 'pět kroků z Textů webu';
+    case 'operator':
+      return 'z Nastavení';
+    case 'person':
+      return b.paragraphs?.length ? short(b.paragraphs[0]) : 'čeká na fotku nebo text o praxi';
   }
 }
 
@@ -111,6 +141,8 @@ type CardItem = B<'cards'>['items'][number];
 type StepItem = B<'steps'>['items'][number];
 type FlowColumn = B<'flow'>['columns'][number];
 type TabItem = B<'tabs'>['items'][number];
+type ProsItem = B<'proscons'>['yes']['items'][number];
+type FigureItem = B<'figures'>['items'][number];
 
 export type EditorOptions = {
   menus: { id: string; label: string }[];
@@ -154,7 +186,22 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
     case 'cards':
       return (
         <>
-          <Select label="Počet sloupců" value={String(block.columns ?? 3) as '2' | '3' | '4'} onChange={(v) => onChange({ ...block, columns: Number(v) as 2 | 3 | 4 })} options={[...COLS]} />
+          <div className="row g-2">
+            <div className="col-md-6">
+              <Select label="Počet sloupců" value={String(block.columns ?? 3) as '2' | '3' | '4'} onChange={(v) => onChange({ ...block, columns: Number(v) as 2 | 3 | 4 })} options={[...COLS]} />
+            </div>
+            <div className="col-md-6">
+              <Select
+                label="Vzhled"
+                value={block.variant ?? 'default'}
+                onChange={(variant) => onChange({ ...block, variant: variant === 'default' ? undefined : variant })}
+                options={[
+                  { value: 'default', label: 'Karty' },
+                  { value: 'symptoms', label: 'Symptomy (na mobilu kompaktní seznam)' },
+                ]}
+              />
+            </div>
+          </div>
           <ListEditor<CardItem>
             nested
             items={block.items}
@@ -190,6 +237,16 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
 
     case 'steps':
       return (
+        <>
+          <Select
+            label="Rozložení"
+            value={block.layout ?? 'grid'}
+            onChange={(layout) => onChange({ ...block, layout: layout === 'grid' ? undefined : layout })}
+            options={[
+              { value: 'grid', label: 'Karty vedle sebe' },
+              { value: 'rows', label: 'Kroky pod sebou s podkroky' },
+            ]}
+          />
         <ListEditor<StepItem>
           nested
           items={block.items}
@@ -200,6 +257,7 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
             <>
               <TextInput label="Název kroku" value={s.title} onChange={(title) => set({ ...s, title })} required />
               <TextArea label="Popis" value={s.text} onChange={(text) => set({ ...s, text })} html />
+              <LinesInput label="Podkroky (nepovinné)" value={s.substeps} onChange={(substeps) => set({ ...s, substeps })} rows={3} help="Každý řádek jeden podkrok." />
               <div className="row g-2">
                 <div className="col-md-4">
                   <TextInput label="Výstup" value={s.output} onChange={(v) => set({ ...s, output: v || undefined })} />
@@ -214,6 +272,7 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
             </>
           )}
         />
+        </>
       );
 
     case 'table':
@@ -335,12 +394,23 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
 
     case 'articles':
       return (
-        <TextInput
-          label="Počet článků"
-          value={String(block.count ?? 3)}
-          onChange={(v) => onChange({ ...block, count: Math.min(12, Math.max(1, Number(v.replace(/\D/g, '')) || 3)) })}
-          help="Sekce se skryje, dokud blog nemá žádný článek."
-        />
+        <div className="row g-2">
+          <div className="col-md-6">
+            <TextInput
+              label="Počet článků"
+              value={String(block.count ?? 3)}
+              onChange={(v) => onChange({ ...block, count: Math.min(12, Math.max(1, Number(v.replace(/\D/g, '')) || 3)) })}
+            />
+          </div>
+          <div className="col-md-6">
+            <TextInput
+              label="Zobrazit až od počtu článků"
+              value={String(block.minCount ?? 3)}
+              onChange={(v) => onChange({ ...block, minCount: Math.min(12, Math.max(1, Number(v.replace(/\D/g, '')) || 3)) })}
+              help="Dokud blog nemá tolik článků, sekce se skryje."
+            />
+          </div>
+        </div>
       );
 
     case 'menuGrid':
@@ -371,6 +441,124 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
 
     case 'consentSettings':
       return <TextInput label="Text tlačítka" value={block.label} onChange={(label) => onChange({ ...block, label })} />;
+
+    case 'proscons':
+      return (
+        <div className="row g-3">
+          {(['yes', 'no'] as const).map((k) => (
+            <div className="col-lg-6" key={k}>
+              <TextInput
+                label={k === 'yes' ? 'Nadpis sloupce ✓' : 'Nadpis sloupce ✕'}
+                value={block[k].title}
+                onChange={(title) => onChange({ ...block, [k]: { ...block[k], title } })}
+                required
+              />
+              <ListEditor<ProsItem>
+                nested
+                confirmDelete={false}
+                items={block[k].items}
+                onChange={(items) => onChange({ ...block, [k]: { ...block[k], items: items.length ? items : [{ text: '' }] } })}
+                itemTitle={(it) => short(it.text) || 'Položka'}
+                addOptions={[{ label: 'Položka', create: () => ({ text: '' }) }]}
+                renderItem={(it, set) => (
+                  <>
+                    <TextInput label="Text" value={it.text} onChange={(text) => set({ ...it, text })} required />
+                    <TextInput
+                      label="Poznámka pod textem (nepovinné)"
+                      value={it.note}
+                      onChange={(note) => set({ ...it, note: note || undefined })}
+                      help={'Např. → nejdřív <a href="/sluzby/audit-mereni">audit měření</a>'}
+                    />
+                  </>
+                )}
+              />
+            </div>
+          ))}
+        </div>
+      );
+
+    case 'figures':
+      return (
+        <>
+          <ListEditor<FigureItem>
+            nested
+            confirmDelete={false}
+            items={block.items}
+            onChange={(items) => onChange({ ...block, items: items.length ? items.slice(0, 4) : [{ value: '', label: '' }] })}
+            itemTitle={(f) => f.value || 'Číslo'}
+            addOptions={block.items.length < 4 ? [{ label: 'Číslo', create: () => ({ value: '', label: '' }) }] : []}
+            renderItem={(f, set) => (
+              <div className="row g-2">
+                <div className="col-md-4">
+                  <TextInput label="Číslo" value={f.value} onChange={(value) => set({ ...f, value })} required placeholder="110–150 $" />
+                </div>
+                <div className="col-md-8">
+                  <TextInput label="Popisek" value={f.label} onChange={(label) => set({ ...f, label })} required />
+                </div>
+              </div>
+            )}
+          />
+          <TextArea label="Poznámka pod čísly (nepovinné)" value={block.note} onChange={(note) => onChange({ ...block, note: note || undefined })} html rows={2} />
+        </>
+      );
+
+    case 'process':
+      return (
+        <>
+          <p className="small text-secondary">Kroky upravíte pro celý web v sekci Texty webu → Postup spolupráce.</p>
+          <TextArea
+            label="Popis kroku 3 – implementace pro tuto službu (nepovinné)"
+            value={block.implementation}
+            onChange={(implementation) => onChange({ ...block, implementation: implementation || undefined })}
+            rows={2}
+          />
+          <div className="row g-2">
+            <div className="col-md-6">
+              <TextInput
+                label="Krok 3 – co potřebujeme od vás (nepovinné)"
+                value={block.implementationFromClient}
+                onChange={(v) => onChange({ ...block, implementationFromClient: v || undefined })}
+              />
+            </div>
+            <div className="col-md-6">
+              <Select
+                label="Pod krokem ukázat"
+                value={block.detail ?? 'fromClient'}
+                onChange={(detail) => onChange({ ...block, detail: detail === 'fromClient' ? undefined : detail })}
+                options={[
+                  { value: 'fromClient', label: 'Co potřebujeme od vás' },
+                  { value: 'output', label: 'Výstup kroku' },
+                ]}
+              />
+            </div>
+          </div>
+        </>
+      );
+
+    case 'operator':
+      return (
+        <>
+          <TextInput label="Nadpis (nepovinné)" value={block.title} onChange={(title) => onChange({ ...block, title: title || undefined })} />
+          <p className="small text-secondary mb-0">Údaje se berou z Nastavení → Provozovatel webu.</p>
+        </>
+      );
+
+    case 'person':
+      return (
+        <>
+          <div className="row g-2">
+            <div className="col-md-6">
+              <TextInput label="Jméno" value={block.name} onChange={(name) => onChange({ ...block, name: name || undefined })} help="Prázdné = jméno z Textů webu → Kontakt." />
+            </div>
+            <div className="col-md-6">
+              <TextInput label="Role" value={block.role} onChange={(role) => onChange({ ...block, role: role || undefined })} help="Např. tracking & data engineer." />
+            </div>
+          </div>
+          <ParagraphsInput label="Praxe a zkušenosti" value={block.paragraphs ?? []} onChange={(paragraphs) => onChange({ ...block, paragraphs: paragraphs.length ? paragraphs : undefined })} />
+          <LinesInput label="Nástroje a certifikace (nepovinné)" value={block.facts} onChange={(facts) => onChange({ ...block, facts })} rows={3} help="Každý řádek jeden štítek. Jen ověřené údaje." />
+          <p className="small text-secondary mb-0">Fotka se bere z Textů webu → Kontakt, odkaz na LinkedIn z Nastavení.</p>
+        </>
+      );
   }
 }
 

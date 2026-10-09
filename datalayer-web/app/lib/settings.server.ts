@@ -18,6 +18,10 @@ function fromData(d: Record<string, unknown> | undefined): SiteSettings {
     gtmId: typeof d.gtmId === 'string' ? d.gtmId : '',
     phone: typeof d.phone === 'string' ? d.phone : '',
     linkedinUrl: typeof d.linkedinUrl === 'string' ? d.linkedinUrl : '',
+    operatorName: typeof d.operatorName === 'string' ? d.operatorName : '',
+    operatorId: typeof d.operatorId === 'string' ? d.operatorId : '',
+    operatorAddress: typeof d.operatorAddress === 'string' ? d.operatorAddress : '',
+    operatorRegistry: typeof d.operatorRegistry === 'string' ? d.operatorRegistry : '',
     updatedAt: updated instanceof Timestamp ? updated.toDate().toISOString() : undefined,
     updatedBy: typeof d.updatedBy === 'string' ? d.updatedBy : undefined,
   };
@@ -38,7 +42,7 @@ export async function getSettings(options: { fresh?: boolean } = {}): Promise<Si
 }
 
 export async function saveSettings(
-  input: Pick<SiteSettings, 'recipients' | 'gtmId' | 'phone' | 'linkedinUrl'>,
+  input: Pick<SiteSettings, 'recipients' | 'gtmId' | 'phone' | 'linkedinUrl' | 'operatorName' | 'operatorId' | 'operatorAddress' | 'operatorRegistry'>,
   by: string,
 ): Promise<void> {
   await doc().set(
@@ -47,6 +51,10 @@ export async function saveSettings(
       gtmId: input.gtmId,
       phone: input.phone,
       linkedinUrl: input.linkedinUrl,
+      operatorName: input.operatorName,
+      operatorId: input.operatorId,
+      operatorAddress: input.operatorAddress,
+      operatorRegistry: input.operatorRegistry,
       updatedAt: Timestamp.now(),
       updatedBy: by,
     },

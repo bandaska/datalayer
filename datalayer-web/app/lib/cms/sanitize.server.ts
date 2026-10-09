@@ -16,7 +16,7 @@ function cleanBlock(b: Block): Block {
     case 'cards':
       return { ...b, items: b.items.map((c) => ({ ...c, text: cleanInline(c.text), bullets: inlArr(c.bullets) })) };
     case 'steps':
-      return { ...b, items: b.items.map((s) => ({ ...s, text: cleanInline(s.text) })) };
+      return { ...b, items: b.items.map((s) => ({ ...s, text: cleanInline(s.text), substeps: inlArr(s.substeps) })) };
     case 'table':
       return { ...b, head: b.head.map(cleanInline), rows: b.rows.map((r) => r.map(cleanInline)) };
     case 'flow':
@@ -27,6 +27,16 @@ function cleanBlock(b: Block): Block {
       return { ...b, items: b.items.map((t) => ({ ...t, paragraphs: inlArr(t.paragraphs), bullets: inlArr(t.bullets) })) };
     case 'html':
       return { ...b, html: cleanHtml(b.html) };
+    case 'proscons': {
+      const col = (c: typeof b.yes) => ({ ...c, items: c.items.map((it) => ({ ...it, text: cleanInline(it.text), note: inl(it.note) })) });
+      return { ...b, yes: col(b.yes), no: col(b.no) };
+    }
+    case 'figures':
+      return { ...b, note: inl(b.note) };
+    case 'process':
+      return { ...b, implementation: inl(b.implementation) };
+    case 'person':
+      return { ...b, paragraphs: inlArr(b.paragraphs) };
     default:
       return b;
   }
@@ -38,6 +48,7 @@ export function sanitizePage(page: PageContent): PageContent {
     hero: { ...page.hero, quickAnswer: inl(page.hero.quickAnswer) },
     sections: page.sections.map((s) => ({ ...s, lead: inl(s.lead), blocks: s.blocks.map(cleanBlock) })),
     faq: page.faq.map((f) => ({ ...f, a: cleanInline(f.a) })),
+    ...(page.techDetails ? { techDetails: { ...page.techDetails, blocks: page.techDetails.blocks.map(cleanBlock) } } : {}),
   };
 }
 
@@ -52,5 +63,7 @@ export function sanitizeTexts(t: SiteTexts): SiteTexts {
       analytics: cleanInline(t.cookieBar.analytics),
       marketing: cleanInline(t.cookieBar.marketing),
     },
+    process: { ...t.process, steps: t.process.steps.map((st) => ({ ...st, text: cleanInline(st.text) })) },
+    page: { ...t.page, faqLead: cleanInline(t.page.faqLead) },
   };
 }

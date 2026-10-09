@@ -1,3 +1,4 @@
+import { LEGACY_TOPICS } from '~/content/topics';
 import type { Topic } from '~/content/types';
 
 // Kontaktní formulář – sdílené definice (klient i server).
@@ -5,24 +6,21 @@ import type { Topic } from '~/content/types';
 
 /** Témata ve formuláři (chips) v pořadí zobrazení. */
 export const TOPICS: { value: Topic; label: string }[] = [
-  { value: 'ga4', label: 'GA4' },
-  { value: 'gtm', label: 'Tag Manager' },
-  { value: 'datalayer', label: 'Datová vrstva' },
+  { value: 'ga4', label: 'GA4 a Tag Manager' },
   { value: 'server-side', label: 'Server-side' },
   { value: 'consent', label: 'Cookie lišta a consent' },
-  { value: 'konverze', label: 'Konverze v Ads / Meta / Sklik' },
-  { value: 'bigquery', label: 'BigQuery a dashboardy' },
-  { value: 'audit', label: 'Audit měření' },
-  { value: 'leady-crm', label: 'Leady a CRM' },
-  { value: 'tech-audit', label: 'Technický audit webu' },
-  { value: 'sprava', label: 'Správa webu a měření' },
-  { value: 'governance', label: 'Governance' },
+  { value: 'konverze', label: 'Konverze a reklamy' },
+  { value: 'bigquery', label: 'BigQuery a reporting' },
+  { value: 'audit', label: 'Audit' },
+  { value: 'jine', label: 'Jiné' },
 ];
 
 const TOPIC_VALUES = new Set<string>(TOPICS.map((t) => t.value));
 
+/** Popisek tématu; starší témata ze zpráv před sloučením čipů převede na současná. */
 export function topicLabel(value: string): string {
-  return TOPICS.find((t) => t.value === value)?.label ?? value;
+  const v = LEGACY_TOPICS[value] ?? value;
+  return TOPICS.find((t) => t.value === v)?.label ?? value;
 }
 
 export const LEAD_TYPES = ['consultation', 'audit', 'quick_check'] as const;

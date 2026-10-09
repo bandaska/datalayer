@@ -1,17 +1,15 @@
 import type { PageInput } from '../../schema';
 
 // Zdroj: seo-analyza/03_landing-pages/15_jak-pracujeme-a-podpurne-stranky.md, kap. A
-// (návrh v1, 8. října 2026).
+// (návrh v1, 8. října 2026), úpravy podle vyhodnocení webu (9. října 2026, kap. 3.3
+// a 5.15): stejných pět kroků jako na homepage a v Textech webu (Postup spolupráce),
+// tady s podkroky. Úvodní konzultace stojí před prvním krokem, specifikace datové
+// vrstvy patří k měřicímu plánu a podpora k předání. Tabulka přístupů je ve sbalených
+// Technických detailech. Sekci „Jak měříme vlastní web“ jsme zkrátili na čtyři body
+// a skryli – zapnout v administraci, až na produkci poběží GTM a consent.
 // Do dodání podkladů klientem chybí: délky kroků a typická délka projektu,
 // role v týmu u kroků, započtení ceny auditu, adresa pracovního e-mailu pro přístupy,
 // osobní schůzky, složení týmu, partner pro vývoj, pravidla fakturace.
-// Sekce „Jak měříme vlastní web“ popisuje jen to, co platí podle návrhu nového webu:
-// vlastní lišta, Consent Mode v2 s výchozím denied, GTM až přes nastavení souhlasu,
-// nativní formulář s hashem, Turnstile a honeypot. Texty odpovídají kódu
-// v app/lib/consent.ts, app/components/CookieBar.tsx a ContactBlock.tsx – hash
-// e-mailu a telefonu formulář přidá jen se souhlasem s marketingem. Server-side GTM zatím neběží,
-// proto ho stránka uvádí jen jako další krok. O režimu basic/advanced klient zatím
-// nerozhodl, proto chybí krok s filtrem `collect` v záložce Network.
 // Názvy menu v tabulce přístupů je potřeba před publikací ověřit v rozhraních nástrojů.
 
 export const page: PageInput = {
@@ -24,27 +22,20 @@ export const page: PageInput = {
   seo: {
     title: 'Jak pracujeme: od auditu po předání měření | datalayer.cz',
     description:
-      'Jak probíhá implementace měření: konzultace, audit, měřicí plán, specifikace dataLayer, validace a dokumentace. Co dostanete v každém kroku.',
+      'Implementace měření v pěti krocích: audit, měřicí plán se specifikací dataLayer, implementace, validace a předání s dokumentací. Co dostanete v každém kroku.',
   },
 
   hero: {
     eyebrow: 'postup spolupráce',
     h1: 'Jak pracujeme: od konzultace po předané měření',
     subtitle:
-      'Každý projekt má stejnou kostru. Nejdřív zjistíme, co dnes měříte, pak se dohodneme, co má měření sledovat, a teprve potom píšeme tagy. Na konci dostanete funkční měření, důkaz, že funguje, a dokumentaci, se kterou si poradí kdokoli.',
-    quickAnswer:
-      'Spolupráce má osm kroků: úvodní konzultace, audit současného stavu, měřicí plán, specifikace datové vrstvy, implementace, validace a testy, předání s dokumentací a podpora. Ke každému kroku patří konkrétní výstup. Po konzultaci nebo auditu dostanete nabídku s pevným rozsahem, výstupy a termíny. Účty, kontejnery i data patří vám.',
+      'Každý projekt má stejnou kostru o pěti krocích. Nejdřív zjistíme, co dnes měříte, pak se dohodneme, co má měření sledovat, a teprve potom píšeme tagy. Na konci dostanete funkční měření, důkaz, že funguje, a dokumentaci, se kterou si poradí kdokoli.',
     primaryCta: { label: 'Konzultovat projekt', href: '#kontakt' },
-    secondaryCta: { label: 'Jak měříme vlastní web', href: '#vlastni-web' },
+    secondaryCta: { label: 'Pět kroků spolupráce', href: '#postup' },
     microcopy: 'Úvodní třicetiminutová konzultace zdarma · odpověď do jednoho pracovního dne',
   },
 
-  trust: [
-    'Ke každému kroku konkrétní výstup',
-    'Účty, kontejnery i data zůstávají vám',
-    'Validace proti administraci nebo CRM',
-    'Dokumentace jako výstup projektu',
-  ],
+  trust: ['Ke každému kroku konkrétní výstup', 'Účty, kontejnery i data zůstávají vám', 'Validace proti administraci nebo CRM'],
 
   sections: [
     {
@@ -90,60 +81,73 @@ export const page: PageInput = {
     {
       id: 'postup',
       eyebrow: 'postup',
-      title: 'Osm kroků od prvního hovoru po funkční měření',
-      lead: 'Kostra je u každého projektu stejná. U malých projektů spojíme měřicí plán a specifikaci datové vrstvy do jednoho kroku.',
+      title: 'Pět kroků od auditu po předané měření',
+      lead: 'Stejné kroky uvidíte u všech služeb. Před prvním z nich proběhne úvodní třicetiminutová konzultace zdarma: projdeme web, cíle a největší problém a doporučíme, čím začít.',
       tone: 'dark',
       blocks: [
         {
           type: 'steps',
+          layout: 'rows',
           items: [
             {
-              title: 'Úvodní konzultace',
-              text: 'Na třicetiminutové konzultaci zdarma projdeme web, cíle, nástroje a největší problém. Řekneme, co bychom opravili jako první.',
-              output: 'Shrnutí hovoru e-mailem a doporučení prvního kroku',
-              fromClient: 'Adresa webu a ideálně člověk, který má na starost marketing',
-            },
-            {
-              title: 'Audit současného stavu',
-              text: 'Projdeme GTM, GA4, cookie lištu, reklamní systémy a datovou vrstvu. Čísla porovnáme s administrací nebo CRM.',
+              title: 'Audit',
+              text: 'Zjistíme, co dnes měříte a kde data utíkají. Čísla porovnáme s administrací nebo CRM.',
+              substeps: [
+                'Google Tag Manager a GA4: kontejnery, události a nastavení',
+                'cookie lišta a Consent Mode',
+                'reklamní systémy a datová vrstva',
+                'porovnání čísel s administrací nebo CRM',
+              ],
               output: 'audit-report.pdf – nálezy s prioritou podle dopadu, doporučení a odhad rozsahu oprav',
-              fromClient: 'Přístupy pro čtení, návod najdete níže v části o přístupech',
+              fromClient: 'Přístupy pro čtení – návod najdete v Technických detailech u častých otázek',
             },
             {
               title: 'Měřicí plán',
-              text: 'Byznysové otázky převedeme na KPI, události a parametry. Rozhodneme, která data kam odcházejí.',
-              output: 'merici-plan.xlsx – seznam událostí, parametrů, konverzí a cílových systémů, který schválíte',
-              fromClient: 'Jedna hodinová schůzka a schválení plánu',
-            },
-            {
-              title: 'Specifikace datové vrstvy',
-              text: 'Napíšeme zadání pro vývojáře: události, parametry, příklady JSON a akceptační kritéria. U platforem s vlastním dataLayerem připravíme mapování.',
-              output: 'datalayer-spec.md a testovací scénáře',
-              fromClient: 'Kontakt na vývojáře nebo podporu platformy',
+              text: 'Byznysové otázky převedeme na KPI, události a parametry a rozhodneme, která data kam odcházejí. Z plánu potom napíšeme zadání pro vývojáře.',
+              substeps: [
+                'KPI, události, parametry a cílové systémy',
+                'pravidla pojmenování a souhlas, který událost potřebuje',
+                'specifikace datové vrstvy s příklady JSON a akceptačními kritérii',
+                'u platforem s vlastním dataLayerem mapování místo specifikace',
+              ],
+              output: 'merici-plan.xlsx ke schválení a datalayer-spec.md s testovacími scénáři',
+              fromClient: 'Hodinová schůzka, schválení plánu a kontakt na vývojáře nebo podporu platformy',
             },
             {
               title: 'Implementace',
               text: 'Nastavíme GTM na webu, případně i na serveru, dále GA4, Consent Mode v2, reklamní systémy a BigQuery. Vývojáři mezitím doplní datovou vrstvu.',
+              substeps: [
+                'webový kontejner GTM, případně i serverový',
+                'GA4 a Consent Mode v2',
+                'konverze v reklamních systémech',
+                'BigQuery a další napojení podle měřicího plánu',
+              ],
               output: 'Kontejnery s jasným pojmenováním a historií verzí, funkční nastavení účtů',
               fromClient: 'Datová vrstva od vašich vývojářů, DNS záznam pro server-side a přístupy pro úpravy',
             },
             {
-              title: 'Validace a testy',
-              text: 'Projdeme testovací scénáře v GTM Preview a GA4 DebugView a otestujeme souhlas: přijetí, odmítnutí i stav bez volby. Ověříme testovací objednávky nebo leady. Pak necháme měření běžet a jeho čísla porovnáme s administrací nebo CRM.',
+              title: 'Validace',
+              text: 'Měření ověříme na testovacích scénářích a potom jeho čísla porovnáme s administrací nebo CRM.',
+              substeps: [
+                'testovací scénáře v GTM Preview a GA4 DebugView',
+                'test souhlasu: přijetí, odmítnutí i stav bez volby',
+                'testovací objednávky nebo leady',
+                'souběžný běh a porovnání čísel s administrací nebo CRM',
+              ],
               output: 'validace-protokol.pdf – co jsme testovali, výsledky a vysvětlení rozdílů',
               fromClient: 'Testovací objednávka nebo lead a export z administrace nebo CRM',
             },
             {
-              title: 'Předání a dokumentace',
-              text: 'Uděláme předávací call se záznamem a předáme dokumentaci architektury a datových toků i seznam přístupů a vlastníků.',
+              title: 'Předání a podpora',
+              text: 'Na předávacím callu se záznamem projdeme dokumentaci a přístupy. Prvních třicet dní po spuštění hlídáme měření zdarma, potom podle dohody pokračujeme správou a monitoringem.',
+              substeps: [
+                'dokumentace architektury a datových toků',
+                'seznam přístupů a vlastníků',
+                'předávací call se záznamem',
+                'u správy upozornění při výpadku a měsíční report kvality dat',
+              ],
               output: 'dokumentace.pdf, záznam callu a access-list.xlsx',
-              fromClient: 'Hodina až hodina a půl času lidí, kteří budou měření používat',
-            },
-            {
-              title: 'Podpora',
-              text: 'Prvních třicet dní po spuštění hlídáme měření zdarma. Potom podle dohody pokračujeme správou a monitoringem.',
-              output: 'Upozornění při výpadku, u správy i měsíční report kvality dat',
-              fromClient: 'Kontaktní osoba',
+              fromClient: 'Hodina až hodina a půl času lidí, kteří budou měření používat, a kontaktní osoba',
             },
           ],
         },
@@ -151,7 +155,7 @@ export const page: PageInput = {
           type: 'callout',
           tone: 'info',
           title: 'Kolik to bude stát?',
-          text: 'Cenu stanovíme po úvodní konzultaci, nejpozději po auditu. Dostanete nabídku s pevným rozsahem, výstupy a termíny. Audit si můžete objednat i samostatně jako službu <a href="/sluzby/audit-mereni">Audit měření</a>.',
+          text: 'Cenu stanovíme po úvodní konzultaci, nejpozději po auditu. Dostanete nabídku s pevným rozsahem, výstupy a termíny. Provoz Google Cloudu a licence nástrojů platíte přímo poskytovatelům. Audit si můžete objednat i samostatně jako službu <a href="/sluzby/audit-mereni">Audit měření</a>.',
         },
       ],
     },
@@ -277,170 +281,92 @@ dataLayer.push({
       ],
     },
     {
-      id: 'pristupy',
-      eyebrow: 'přístupy',
-      title: 'Jak nám dát přístupy a jak je po projektu odebrat',
-      lead: 'Nepotřebujeme vaše hesla. Přístupy udělíte na náš pracovní e-mail a po skončení projektu je jedním kliknutím odeberete.',
-      tone: 'light',
-      blocks: [
-        {
-          type: 'paragraphs',
-          items: ['Pro audit stačí čtení, pro implementaci potřebujeme práva k úpravám.'],
-        },
-        {
-          type: 'table',
-          caption: 'Jaké role potřebujeme pro audit a pro implementaci',
-          head: ['Nástroj', 'Audit', 'Implementace', 'Kde přístup udělíte'],
-          rows: [
-            ['Google Tag Manager', 'Čtení v kontejneru', 'Publikace v kontejneru, v účtu role Uživatel', 'Správce → Správa uživatelů'],
-            ['Google Analytics 4', 'Viewer', 'Editor na úrovni property', 'Správce → Správa přístupu k property'],
-            ['Google Ads', 'Jen čtení', 'Standardní', 'Správce → Přístup a zabezpečení'],
-            [
-              'Merchant Center',
-              'Standardní',
-              'Admin, jen pokud řešíme produktový feed nebo data z košíku',
-              'Nastavení → Lidé a přístup',
-            ],
-            [
-              'Meta Business',
-              'Events Manager – zobrazit',
-              'Events Manager – spravovat',
-              'Firemní nastavení → Zdroje dat → Datové sady',
-            ],
-            ['Sklik / Seznam', 'Čtení', 'Úpravy', 'Nastavení účtu → Přístupy'],
-            [
-              'Google Cloud',
-              '<code>roles/viewer</code> na projekt',
-              'Podle úkolu, třeba Cloud Run Admin nebo BigQuery Admin',
-              'IAM a správa → IAM',
-            ],
-            ['Administrace e-shopu nebo CMS', 'Uživatel s nastavením marketingu', 'Totéž', 'Podle platformy'],
-            [
-              'CRM',
-              'Čtení pipeline',
-              'Admin pro pole a automatizace, nebo spolupráce s vaším adminem',
-              'Podle CRM',
-            ],
-          ],
-        },
-        {
-          type: 'paragraphs',
-          items: [
-            'NDA podepíšeme ještě před udělením přístupů, pokud o to stojíte. Zpracovatelskou smlouvu uzavíráme vždy, když pracujeme s osobními údaji, třeba v CRM.',
-          ],
-        },
-      ],
-    },
-    {
       id: 'vlastni-web',
       eyebrow: 'vlastní web',
       title: 'Jak měříme vlastní web – a jak si to můžete ověřit',
-      lead: 'Na datalayer.cz si můžete prohlédnout, jak pracujeme se souhlasem a s daty z formuláře. Stačí k tomu nástroje pro vývojáře v prohlížeči.',
+      lead: 'Na datalayer.cz si můžete prohlédnout, jak pracujeme se souhlasem a s daty z formuláře.',
       tone: 'dark',
+      // zobrazit, až na produkci poběží GTM a consent (vyhodnocení webu, kap. 5.15)
+      hidden: true,
       blocks: [
         {
-          type: 'flow',
-          caption:
-            'Schéma měření na datalayer.cz: cookie lišta a formulář zapisují do dataLayer, Tag Manager startuje až po výchozím stavu souhlasu a server-side GTM je další krok.',
-          columns: [
-            { label: 'Prohlížeč', items: ['cookie lišta', 'kontaktní formulář'] },
-            {
-              label: 'dataLayer',
-              items: [
-                'výchozí stav souhlasu: denied',
-                'gtm.js až za ním',
-                'aktualizace souhlasu po volbě',
-                'generate_lead, hash e-mailu jen se souhlasem',
-              ],
-            },
-            {
-              label: 'Google Tag Manager',
-              items: ['startuje až po výchozím stavu souhlasu', 'tagy Googlu čtou stav souhlasu'],
-            },
-            { label: 'Další krok', items: ['server-side GTM na vlastní subdoméně'], note: 'zatím neběží' },
-          ],
-        },
-        {
-          type: 'cards',
-          columns: 3,
+          type: 'list',
+          style: 'check',
           items: [
-            {
-              tag: 'cmp',
-              title: 'Vlastní cookie lišta',
-              text: 'Lišta je součást webu, ne služba třetí strany. Tlačítka „Odmítnout vše“ a „Přijmout vše“ mají stejnou váhu a volbu kdykoli změníte odkazem Nastavení cookies v patičce.',
-            },
-            {
-              tag: 'consent',
-              title: 'Consent Mode v2',
-              text: 'Analytické i reklamní signály mají výchozí stav <code>denied</code>. Po vaší volbě lišta pošle aktualizaci souhlasu a tagy Googlu se podle ní zařídí.',
-            },
-            {
-              tag: 'gtm',
-              title: 'Tag Manager až po výchozím stavu souhlasu',
-              text: 'Skript pro Consent Mode nejdřív nastaví výchozí stav souhlasu a teprve potom sám načte Tag Manager. Stejný skript použije i volbu, kterou jste uložili při minulé návštěvě.',
-            },
-            {
-              tag: 'form',
-              title: 'Vlastní formulář, žádné cizí skripty',
-              text: 'Kontaktní formulář je součást webu, bez HubSpotu a bez cizích formulářových skriptů. Web nenačítá ani Font Awesome.',
-            },
-            {
-              tag: 'generate_lead',
-              title: 'Poptávka bez čitelných osobních údajů',
-              text: 'Po odeslání formulář zapíše do <code>dataLayer</code> událost <code>generate_lead</code>. Jméno ani e-mail v ní nikdy nejsou v čitelné podobě. Hash SHA-256 e-mailu a telefonu formulář přidá jen se souhlasem s marketingovými cookies.',
-            },
-            {
-              tag: 'turnstile',
-              title: 'Ochrana proti spamu bez CAPTCHA',
-              text: 'Formulář chrání Cloudflare Turnstile a skryté pole, které vyplní jen robot. Nemusíte opisovat písmena z obrázku.',
-            },
+            '<strong>Vlastní cookie lišta</strong> – tlačítka „Odmítnout vše“ a „Přijmout vše“ mají stejnou váhu.',
+            '<strong>Consent Mode v2</strong> – výchozí stav <code>denied</code>, Tag Manager startuje až po něm.',
+            '<strong>Vlastní formulář bez cizích skriptů</strong> – událost <code>generate_lead</code> bez čitelného jména a e-mailu, hash jen se souhlasem s marketingem.',
+            '<strong>Ochrana proti spamu bez CAPTCHA</strong> – Cloudflare Turnstile a skryté pole.',
           ],
         },
         {
           type: 'paragraphs',
           items: [
-            '<strong>Ověřte si to sami ve čtyřech krocích.</strong> Stačí Chrome nebo Firefox a jejich nástroje pro vývojáře.',
+            '<strong>Ověřte si to sami:</strong> otevřete web v anonymním okně, stiskněte F12 a v záložce Console napište <code>dataLayer</code>. Výchozí stav souhlasu najdete před událostí <code>gtm.js</code>.',
           ],
-        },
-        {
-          type: 'steps',
-          items: [
-            {
-              title: 'Otevřete anonymní okno',
-              text: 'Otevřete datalayer.cz v anonymním okně a stiskněte F12. Na cookie liště zatím nic nevolte.',
-            },
-            {
-              title: 'Zkontrolujte cookies',
-              text: 'V Chromu otevřete záložku Application → Cookies, ve Firefoxu Storage → Cookies. Před souhlasem tam nenajdete cookie _ga ani jinou analytickou nebo reklamní cookie.',
-            },
-            {
-              title: 'Podívejte se do dataLayer',
-              text: 'V záložce Console napište dataLayer a stiskněte Enter. Výchozí stav souhlasu stojí v poli před událostí gtm.js, se kterou startuje Tag Manager.',
-            },
-            {
-              title: 'Odešlete testovací zprávu',
-              text: 'Vyplňte kontaktní formulář s testovacím e-mailem a do zprávy napište „test“. Po odeslání najděte v dataLayer událost generate_lead. Jméno ani e-mail v ní v čitelné podobě nenajdete. Pokud jste přijali marketingové cookies, uvidíte e-mail jen jako hash o 64 znacích.',
-            },
-          ],
-        },
-        {
-          type: 'callout',
-          tone: 'info',
-          title: 'Další krok: server-side GTM',
-          text: 'Server-side GTM na vlastní subdoméně je náš další krok. Dokud nepoběží, nepíšeme o něm tady jako o hotové věci.',
         },
       ],
     },
   ],
 
+  techDetails: {
+    summary: 'Přístupy: jaké role potřebujeme a kde je udělíte',
+    blocks: [
+      {
+        type: 'paragraphs',
+        items: [
+          'Nepotřebujeme vaše hesla. Přístupy udělíte na náš pracovní e-mail a po skončení projektu je jedním kliknutím odeberete. Pro audit stačí čtení, pro implementaci potřebujeme práva k úpravám.',
+        ],
+      },
+      {
+        type: 'table',
+        caption: 'Jaké role potřebujeme pro audit a pro implementaci',
+        head: ['Nástroj', 'Audit', 'Implementace', 'Kde přístup udělíte'],
+        rows: [
+          ['Google Tag Manager', 'Čtení v kontejneru', 'Publikace v kontejneru, v účtu role Uživatel', 'Správce → Správa uživatelů'],
+          ['Google Analytics 4', 'Viewer', 'Editor na úrovni property', 'Správce → Správa přístupu k property'],
+          ['Google Ads', 'Jen čtení', 'Standardní', 'Správce → Přístup a zabezpečení'],
+          [
+            'Merchant Center',
+            'Standardní',
+            'Admin, jen pokud řešíme produktový feed nebo data z košíku',
+            'Nastavení → Lidé a přístup',
+          ],
+          [
+            'Meta Business',
+            'Events Manager – zobrazit',
+            'Events Manager – spravovat',
+            'Firemní nastavení → Zdroje dat → Datové sady',
+          ],
+          ['Sklik / Seznam', 'Čtení', 'Úpravy', 'Nastavení účtu → Přístupy'],
+          [
+            'Google Cloud',
+            '<code>roles/viewer</code> na projekt',
+            'Podle úkolu, třeba Cloud Run Admin nebo BigQuery Admin',
+            'IAM a správa → IAM',
+          ],
+          ['Administrace e-shopu nebo CMS', 'Uživatel s nastavením marketingu', 'Totéž', 'Podle platformy'],
+          [
+            'CRM',
+            'Čtení pipeline',
+            'Admin pro pole a automatizace, nebo spolupráce s vaším adminem',
+            'Podle CRM',
+          ],
+        ],
+      },
+      {
+        type: 'paragraphs',
+        items: [
+          'NDA podepíšeme ještě před udělením přístupů, pokud o to stojíte. Zpracovatelskou smlouvu uzavíráme vždy, když pracujeme s osobními údaji, třeba v CRM.',
+        ],
+      },
+    ],
+  },
+
   faq: [
     {
       q: 'Jak dlouho trvá typický projekt?',
       a: 'Záleží hlavně na dvou věcech: jak rychle vývojáři doplní datovou vrstvu a jak dlouho musí měření běžet, abychom ho mohli porovnat s administrací nebo CRM. Samotná naše práce obvykle nezabere nejvíc času. Termíny najdete v nabídce, kterou dostanete po úvodní konzultaci, nejpozději po auditu.',
-    },
-    {
-      q: 'Pracujete na dálku?',
-      a: 'Ano, většina projektů probíhá na dálku: sdílená obrazovka, předávací cally se záznamem a komunikace e-mailem nebo v nástroji, který už používáte, třeba ve Slacku, Teams nebo Jiře.',
     },
     {
       q: 'Kdo bude na projektu pracovat?',
@@ -453,10 +379,6 @@ dataLayer.push({
     {
       q: 'Spolupracujete s naší PPC nebo marketingovou agenturou?',
       a: 'Ano, je to běžné. Agentura dál spravuje kampaně a my zajistíme, aby měla správná data. Domluvíme se, kdo smí v GTM co měnit, a agentura dostane dokumentaci a přístupy podle potřeby.',
-    },
-    {
-      q: 'Jak je to s cenou a provozními náklady?',
-      a: 'Ceny na webu neuvádíme, protože se rozsah projektů výrazně liší. Nabídka má vždy pevný rozsah a výstupy. Provoz Google Cloudu a licence nástrojů platíte přímo poskytovatelům.',
     },
     {
       q: 'Co když se měření po předání rozbije?',
@@ -474,12 +396,7 @@ dataLayer.push({
     { slug: 'co-obsahuje-audit-mereni', title: 'Co má obsahovat audit měření' },
   ],
 
-  relatedPages: [
-    'sluzby/audit-mereni',
-    'sluzby/datova-vrstva',
-    'sluzby/sprava-webu-a-mereni',
-    'sluzby/cookie-lista-consent-mode',
-  ],
+  relatedPages: ['sluzby/audit-mereni', 'sluzby/datova-vrstva', 'sluzby/sprava-webu-a-mereni'],
 
   contact: {
     formId: 'jak-pracujeme',

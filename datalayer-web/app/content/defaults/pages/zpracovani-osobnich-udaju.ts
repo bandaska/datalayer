@@ -1,7 +1,9 @@
 import type { PageInput } from '../../schema';
 
 // Zásady zpracování osobních údajů – výchozí znění (návrh k potvrzení klientem:
-// identifikace správce, doba uchování zpráv, region databáze).
+// doba uchování zpráv, region databáze). Identifikaci správce (jméno nebo firma,
+// IČO, sídlo) doplní blok Provozovatel z Nastavení → Provozovatel webu, jakmile
+// ji klient vyplní (vyhodnocení webu, kap. 8).
 
 export const page: PageInput = {
   path: 'zpracovani-osobnich-udaju',
@@ -29,8 +31,12 @@ export const page: PageInput = {
         {
           type: 'html',
           html: `<h2>Kdo údaje zpracovává</h2>
-<p>Správce osobních údajů je provozovatel webu datalayer.cz. S čímkoli, co se týká osobních údajů, nám napište na <a href="mailto:one@datalayer.cz">one@datalayer.cz</a>.</p>
-<h2>Kontaktní formulář</h2>
+<p>Správce osobních údajů je provozovatel webu datalayer.cz. S čímkoli, co se týká osobních údajů, nám napište na <a href="mailto:one@datalayer.cz">one@datalayer.cz</a>.</p>`,
+        },
+        { type: 'operator' },
+        {
+          type: 'html',
+          html: `<h2>Kontaktní formulář</h2>
 <p>Když nám pošlete zprávu, zpracujeme jméno, e-mail a text zprávy. Pokud je vyplníte, také telefon, adresu webu a vybraná témata. Údaje potřebujeme, abychom mohli odpovědět na poptávku a případně připravit nabídku. Právní základ je jednání o smlouvě na vaši žádost podle čl. 6 odst. 1 písm. b) GDPR, proto ve formuláři nežádáme o souhlas.</p>
 <p>Zprávu uložíme do databáze Google Cloud Firestore a pošleme ji e-mailem lidem, kteří poptávky vyřizují. Do analytiky ani reklamních systémů jméno, e-mail ani telefon v čitelné podobě neposíláme. Při odeslání formuláře web vytvoří jen jednosměrný otisk e-mailu a telefonu (SHA-256), a to jen pokud jste souhlasili s marketingovými cookies.</p>
 <h2>Ochrana proti spamu</h2>

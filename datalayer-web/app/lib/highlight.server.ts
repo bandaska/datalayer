@@ -68,6 +68,8 @@ export function highlightCodeBlocks(html: string): string {
     const lang = classes.find((c) => /^(language|lang)-/.test(c))?.replace(/^(language|lang)-/, '');
     const { html: highlighted, language } = highlightCode(codeText(inner), lang);
     const cls = [...classes.filter((c) => c !== 'hljs'), ...(lang ? [] : [`language-${language}`]), 'hljs'].join(' ');
-    return `<pre${preAttrs}>${before}<code class="${cls}">${highlighted}</code>${after}</pre>`;
+    // posouvatelný blok kódu musí jít ovládat i klávesnicí
+    const pre = /tabindex=/i.test(preAttrs) ? preAttrs : `${preAttrs} tabindex="0"`;
+    return `<pre${pre}>${before}<code class="${cls}">${highlighted}</code>${after}</pre>`;
   });
 }

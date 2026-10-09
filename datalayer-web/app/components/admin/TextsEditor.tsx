@@ -3,13 +3,13 @@ import { useFetcher } from 'react-router';
 import type { SiteTexts } from '~/content/schema';
 import { checkText } from '~/lib/textRules';
 import { humanPath } from './PageEditor';
-import { TextArea, TextInput } from './fields';
+import { LinesInput, LinkInput, ListEditor, TextArea, TextInput } from './fields';
 import { Card, PageHead, Pill, formatDateTime } from './ui';
 
 // Editor textů webu mimo stránky: kontaktní formulář, cookie lišta, blog,
 // děkovací a chybová stránka (dokument content/texts).
 
-type Field = { key: string; label: string; type?: 'text' | 'area' | 'html'; help?: string };
+type Field = { key: string; label: string; type?: 'text' | 'area' | 'html' | 'lines'; help?: string };
 type Group = { id: keyof SiteTexts; title: string; desc: string; fields: Field[] };
 
 const GROUPS: Group[] = [
@@ -31,6 +31,19 @@ const GROUPS: Group[] = [
       { key: 'successPhone', label: 'Dovětek s telefonem', help: '{phone} nahradí telefon z Nastavení. Bez telefonu se nezobrazí.' },
       { key: 'personName', label: 'Kdo odpovídá' },
       { key: 'personNote', label: 'Doplněk ke jménu' },
+      { key: 'personPhoto', label: 'Fotka (cesta nebo https URL)', help: 'Bez fotky web ukáže iniciály.' },
+      { key: 'moreFields', label: 'Odkaz na nepovinná pole', help: 'Rozbalí telefon a web.' },
+      { key: 'nextSteps', label: 'Co se stane po odeslání', type: 'lines', help: 'Každý řádek jeden krok, ideálně tři.' },
+    ],
+  },
+  {
+    id: 'page',
+    title: 'Šablona stránek',
+    desc: 'Společné texty všech stránek: sekce FAQ a pruh „Pokračujte“ s navazujícími stránkami a články.',
+    fields: [
+      { key: 'faqTitle', label: 'Výchozí nadpis FAQ' },
+      { key: 'faqLead', label: 'Text pod nadpisem FAQ', type: 'html' },
+      { key: 'continueLabel', label: 'Štítek pruhu s navazujícími stránkami' },
     ],
   },
   {
@@ -118,13 +131,23 @@ export function TextsEditor({ initial, meta }: { initial: SiteTexts; meta: { upd
     return () => window.removeEventListener('beforeunload', onLeave);
   }, [dirty]);
 
-  const get = (g: keyof SiteTexts, k: string) => String((texts[g] as Record<string, string>)[k] ?? '');
+  const get = (g: keyof SiteTexts, k: string) => {
+    const v = (texts[g] as Record<string, unknown>)[k];
+    return Array.isArray(v) ? v.join('\n') : String(v ?? '');
+  };
+  const getLines = (g: keyof SiteTexts, k: string) => ((texts[g] as Record<string, unknown>)[k] as string[] | undefined) ?? [];
+  const setLines = (g: keyof SiteTexts, k: string, v: string[] | undefined) => setTexts((t) => ({ ...t, [g]: { ...(t[g] as object), [k]: v ?? [] } }));
+  const proc = texts.process;
+  const setProcess = (patch: Partial<SiteTexts['process']>) => setTexts((t) => ({ ...t, process: { ...t.process, ...patch } }));
   const setField = (g: keyof SiteTexts, k: string, v: string) => setTexts((t) => ({ ...t, [g]: { ...(t[g] as object), [k]: v } }));
   const save = () => fetcher.submit({ data: JSON.stringify(texts) }, { method: 'post' });
 
   const issues = useMemo(
     () =>
-      GROUPS.flatMap((g) => g.fields.flatMap((f) => checkText(get(g.id, f.key), `${g.title} › ${f.label}`))).filter((i) => i.level === 'error'),
+      [
+        ...GROUPS.flatMap((g) => g.fields.flatMap((f) => checkText(get(g.id, f.key), `${g.title} › ${f.label}`))),
+        ...proc.steps.flatMap((st, i) => [st.title, st.text, st.output ?? '', st.fromClient ?? ''].flatMap((x) => checkText(x, `Postup › krok ${i + 1}`))),
+      ].filter((i) => i.level === 'error'),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [texts],
   );
@@ -172,7 +195,11 @@ export function TextsEditor({ initial, meta }: { initial: SiteTexts; meta: { upd
         <Card key={g.id} title={g.title} desc={g.desc}>
           <div className="row g-2">
             {g.fields.map((f) =>
-              f.type === 'area' || f.type === 'html' ? (
+              f.type === 'lines' ? (
+                <div className="col-12" key={f.key}>
+                  <LinesInput label={f.label} value={getLines(g.id, f.key)} onChange={(v) => setLines(g.id, f.key, v)} rows={3} help={f.help} />
+                </div>
+              ) : f.type === 'area' || f.type === 'html' ? (
                 <div className="col-12" key={f.key}>
                   <TextArea label={f.label} value={get(g.id, f.key)} onChange={(v) => setField(g.id, f.key, v)} rows={3} html={f.type === 'html'} help={f.help} />
                 </div>
@@ -185,6 +212,51 @@ export function TextsEditor({ initial, meta }: { initial: SiteTexts; meta: { upd
           </div>
         </Card>
       ))}
+
+      <Card title="Postup spolupráce" desc="Pět kroků, které ukazuje blok „Postup spolupráce“ na homepage i u služeb. Nadpis a úvod sekce má každá stránka vlastní, u služby jde upravit i popis kroku 3.">
+        {proc.steps.map((st, i) => (
+          <div className="adm-fieldset" key={i}>
+            <div className="row g-2">
+              <div className="col-md-4">
+                <TextInput
+                  label={`Krok ${i + 1} – název`}
+                  value={st.title}
+                  onChange={(title) => setProcess({ steps: proc.steps.map((x, j) => (j === i ? { ...x, title } : x)) })}
+                />
+              </div>
+              <div className="col-md-8">
+                <TextInput label="Popis" value={st.text} onChange={(text) => setProcess({ steps: proc.steps.map((x, j) => (j === i ? { ...x, text } : x)) })} />
+              </div>
+              <div className="col-md-6">
+                <TextInput
+                  label="Výstup"
+                  value={st.output}
+                  onChange={(output) => setProcess({ steps: proc.steps.map((x, j) => (j === i ? { ...x, output: output || undefined } : x)) })}
+                />
+              </div>
+              <div className="col-md-6">
+                <TextInput
+                  label="Co potřebujeme od vás"
+                  value={st.fromClient}
+                  onChange={(fromClient) => setProcess({ steps: proc.steps.map((x, j) => (j === i ? { ...x, fromClient: fromClient || undefined } : x)) })}
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </Card>
+
+      <Card title="Odkazy na děkovací stránce" desc="Kam může návštěvník pokračovat po odeslání formuláře bez JavaScriptu.">
+        <ListEditor
+          nested
+          confirmDelete={false}
+          items={texts.thankYou.links}
+          onChange={(links) => setTexts((t) => ({ ...t, thankYou: { ...t.thankYou, links } }))}
+          itemTitle={(l) => l.label || 'Odkaz'}
+          addOptions={texts.thankYou.links.length < 4 ? [{ label: 'Odkaz', create: () => ({ label: 'Nový odkaz', href: '/' }) }] : []}
+          renderItem={(l, set) => <LinkInput label="Odkaz" value={l} onChange={(v) => v && set(v)} />}
+        />
+      </Card>
 
       <div className="adm-savebar">
         <span className={dirty ? 'adm-savebar__status is-dirty' : 'adm-savebar__status'}>

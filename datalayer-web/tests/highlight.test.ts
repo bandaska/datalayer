@@ -40,7 +40,7 @@ describe('highlightCodeBlocks (HTML článku)', () => {
 
   it('obarví blok, zachová třídy a entity nepřevede dvakrát', () => {
     const out = highlightCodeBlocks(block('if (a &lt; b &amp;&amp; c) { x = "&gt;"; }'));
-    expect(out).toContain('<pre class="code-content"><code class="language-javascript hljs">');
+    expect(out).toContain('<pre class="code-content" tabindex="0"><code class="language-javascript hljs">');
     expect(out).toContain('<span class="hljs-keyword">if</span>');
     expect(out).toContain('a &lt; b &amp;&amp; c');
     expect(out).not.toContain('&amp;lt;');

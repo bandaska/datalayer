@@ -24,8 +24,9 @@ const KIND_LABELS: Record<PageKind, string> = {
 };
 
 const TONES = [
+  { value: 'light', label: 'Světle šedé pozadí' },
+  { value: 'white', label: 'Bílé pozadí' },
   { value: 'dark', label: 'Tmavé pozadí' },
-  { value: 'light', label: 'Světlé pozadí' },
   { value: 'deep', label: 'Tmavě modré pozadí' },
 ] as const;
 
@@ -141,6 +142,43 @@ export function PageEditor({
   const url = `/${page.path}`;
   const hrefList = 'adm-page-hrefs';
 
+  /** Seznam bloků s přidáním nového – v sekcích i v Technických detailech. */
+  const blocksEditor = (blocks: Block[], change: (blocks: Block[]) => void, emptyText: string) => (
+    <>
+      <ListEditor<Block>
+        nested
+        items={blocks}
+        onChange={change}
+        itemTitle={(b) => (
+          <>
+            {BLOCK_LABELS[b.type]}
+            <small>{blockSummary(b)}</small>
+          </>
+        )}
+        addOptions={[]}
+        emptyText={emptyText}
+        renderItem={(b, setBlock) => (
+          <>
+            <p className="form-text mt-0">{BLOCK_HELP[b.type]}</p>
+            <BlockEditor block={b} onChange={setBlock} options={options} />
+          </>
+        )}
+      />
+      <div className="adm-add">
+        <select className="form-select form-select-sm" style={{ maxWidth: 280 }} value={newType} onChange={(e) => setNewType(e.target.value as BlockType)} aria-label="Typ nového bloku">
+          {BLOCK_TYPES.map((t) => (
+            <option key={t} value={t}>
+              {BLOCK_LABELS[t]}
+            </option>
+          ))}
+        </select>
+        <button type="button" className="btn btn-sm btn-outline-primary" onClick={() => change([...blocks, newBlock(newType)])}>
+          + Přidat blok
+        </button>
+      </div>
+    </>
+  );
+
   return (
     <>
       <datalist id={hrefList}>
@@ -232,15 +270,21 @@ export function PageEditor({
                 {page.hero.variant === 'diagram' ? (
                   <TextInput label="Podtržená část H1" value={page.hero.h1Highlight} onChange={(v) => setHero({ h1Highlight: v || undefined })} help="Musí přesně odpovídat části nadpisu." />
                 ) : null}
-                <TextArea label="Podtitul" value={page.hero.subtitle} onChange={(subtitle) => setHero({ subtitle })} rows={3} />
-                {page.hero.variant !== 'diagram' && page.hero.variant !== 'simple' ? (
+                <TextArea
+                  label="Úvodní odstavec"
+                  value={page.hero.subtitle}
+                  onChange={(subtitle) => setHero({ subtitle })}
+                  rows={3}
+                  help="Dvě až tři věty, které rovnou odpoví, co služba řeší – slouží i jako odpověď pro AI přehledy."
+                />
+                {page.hero.quickAnswer ? (
                   <TextArea
-                    label="Rychlá odpověď"
+                    label="Rychlá odpověď – web ji už nezobrazuje"
                     value={page.hero.quickAnswer}
                     onChange={(v) => setHero({ quickAnswer: v || undefined })}
                     html
-                    rows={4}
-                    help="Shrnutí na 40–60 slov pro čtenáře i AI přehledy."
+                    rows={3}
+                    help="Úvod stránky tvoří jeden odstavec o dvou až třech větách. Sloučte text s podtitulem a pole vymažte."
                   />
                 ) : null}
                 <LinkInput label="Hlavní tlačítko" value={page.hero.primaryCta} onChange={(primaryCta) => setHero({ primaryCta })} optional hrefList={hrefList} help="Hranaté závorky doplní web sám." />
@@ -248,8 +292,8 @@ export function PageEditor({
                 <TextInput label="Mikrotext pod tlačítky" value={page.hero.microcopy} onChange={(v) => setHero({ microcopy: v || undefined })} />
               </Card>
 
-              <Card title="Pruh faktů pod úvodem" desc="Tři až čtyři ověřitelná fakta. Prázdné = pruh se nezobrazí.">
-                <LinesInput label="Fakta" value={page.trust} onChange={(trust) => set('trust', trust)} rows={4} />
+              <Card title="Body důvěry pod tlačítky" desc="Nejvýš tři jasné výhody s fajfkou pod tlačítky v úvodu. Prázdné = nezobrazí se.">
+                <LinesInput label="Body" value={page.trust} onChange={(trust) => set('trust', trust)} rows={3} />
               </Card>
 
               <Card title={`Sekce (${page.sections.length})`} desc="Obsah stránky po sekcích. Každá sekce má nadpis H2 a libovolné bloky.">
@@ -259,7 +303,10 @@ export function PageEditor({
                   itemTitle={(s) => (
                     <>
                       {s.title || <em>bez nadpisu</em>}
-                      <small>#{s.id} · {plural(s.blocks.length, 'blok', 'bloky', 'bloků')}</small>
+                      <small>
+                        #{s.id} · {plural(s.blocks.length, 'blok', 'bloky', 'bloků')}
+                        {s.hidden ? ' · skrytá' : ''}
+                      </small>
                     </>
                   )}
                   addOptions={[
@@ -286,43 +333,50 @@ export function PageEditor({
                           <Select label="Pozadí" value={s.tone ?? 'dark'} onChange={(tone) => update({ ...s, tone })} options={[...TONES]} />
                         </div>
                       </div>
+                      <Select
+                        label="Rozvržení"
+                        value={s.layout ?? 'default'}
+                        onChange={(layout) => update({ ...s, layout: layout === 'default' ? undefined : layout })}
+                        options={[
+                          { value: 'default', label: 'Nadpis nahoře, bloky pod ním' },
+                          { value: 'split', label: 'Nadpis vlevo, bloky vpravo (např. blok Důkaz)' },
+                        ]}
+                      />
                       <TextArea label="Úvodní text" value={s.lead} onChange={(v) => update({ ...s, lead: v || undefined })} html rows={2} />
                       <div className="form-label mt-2">Bloky obsahu</div>
-                      <ListEditor<Block>
-                        nested
-                        items={s.blocks}
-                        onChange={(blocks) => update({ ...s, blocks })}
-                        itemTitle={(b) => (
-                          <>
-                            {BLOCK_LABELS[b.type]}
-                            <small>{blockSummary(b)}</small>
-                          </>
-                        )}
-                        addOptions={[]}
-                        emptyText="Sekce zatím nemá žádný blok."
-                        renderItem={(b, setBlock) => (
-                          <>
-                            <p className="form-text mt-0">{BLOCK_HELP[b.type]}</p>
-                            <BlockEditor block={b} onChange={setBlock} options={options} />
-                          </>
-                        )}
-                      />
-                      <div className="adm-add">
-                        <select className="form-select form-select-sm" style={{ maxWidth: 280 }} value={newType} onChange={(e) => setNewType(e.target.value as BlockType)} aria-label="Typ nového bloku">
-                          {BLOCK_TYPES.map((t) => (
-                            <option key={t} value={t}>
-                              {BLOCK_LABELS[t]}
-                            </option>
-                          ))}
-                        </select>
-                        <button type="button" className="btn btn-sm btn-outline-primary" onClick={() => update({ ...s, blocks: [...s.blocks, newBlock(newType)] })}>
-                          + Přidat blok
-                        </button>
-                      </div>
+                      {blocksEditor(s.blocks, (blocks) => update({ ...s, blocks }), 'Sekce zatím nemá žádný blok.')}
                       <TextInput label="Poznámka pod sekcí" value={s.note} onChange={(v) => update({ ...s, note: v || undefined })} help="Drobný text, např. „Čísla v ukázkách jsou ilustrativní.“" />
+                      <Toggle
+                        label="Skrýt sekci na webu"
+                        checked={Boolean(s.hidden)}
+                        onChange={(hidden) => update({ ...s, hidden: hidden || undefined })}
+                        help="Obsah sekce zůstane v administraci a sekci jde kdykoli znovu zobrazit. Odkazy na její kotvu mezitím nikam nevedou."
+                      />
                     </>
                   )}
                 />
+              </Card>
+
+              <Card
+                title="Technické detaily (sbalené u FAQ)"
+                desc="Nejvýš jeden sbalený blok na stránku: obsah pro technické čtenáře, který jednou poputuje do článku. Na LP pak zůstane jen věta a odkaz."
+              >
+                <Toggle
+                  label="Zobrazit Technické detaily"
+                  checked={Boolean(page.techDetails)}
+                  onChange={(on) => set('techDetails', on ? { summary: 'Technické detaily', blocks: [] } : undefined)}
+                />
+                {page.techDetails ? (
+                  <>
+                    <TextInput
+                      label="Text rozbalovacího odkazu"
+                      value={page.techDetails.summary}
+                      onChange={(summary) => set('techDetails', { ...page.techDetails!, summary })}
+                      required
+                    />
+                    {blocksEditor(page.techDetails.blocks, (blocks) => set('techDetails', { ...page.techDetails!, blocks }), 'Zatím žádný blok.')}
+                  </>
+                ) : null}
               </Card>
             </>
           ) : null}
@@ -351,6 +405,15 @@ export function PageEditor({
                 <Toggle label="Zobrazit kontaktní blok" checked={page.contact.enabled !== false} onChange={(on) => setContact({ enabled: on })} />
                 {page.contact.enabled !== false ? (
                   <>
+                    <Select
+                      label="Umístění formuláře"
+                      value={page.contact.position ?? 'bottom'}
+                      onChange={(position) => setContact({ position: position === 'bottom' ? undefined : position })}
+                      options={[
+                        { value: 'bottom', label: 'Na konci stránky' },
+                        { value: 'top', label: 'Hned pod úvodem (stránka Kontakt)' },
+                      ]}
+                    />
                     <div className="row g-2">
                       <div className="col-md-8">
                         <TextInput label="Nadpis" value={page.contact.title} onChange={(title) => setContact({ title })} />

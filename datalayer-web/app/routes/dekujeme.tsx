@@ -54,6 +54,15 @@ export default function Dekujeme() {
           [ {t.back} ]
         </Link>
       </p>
+      {t.links?.length ? (
+        <ul className="thanks-links">
+          {t.links.map((l) => (
+            <li key={l.href}>
+              <Link to={l.href}>{l.label} →</Link>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </SimplePage>
   );
 }

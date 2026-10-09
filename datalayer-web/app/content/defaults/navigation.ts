@@ -34,7 +34,7 @@ export const DEFAULT_NAVIGATION: Navigation = {
             {
               label: 'Dashboardy a reporting',
               href: '/sluzby/dashboardy-a-reporting',
-              tagline: 'Data Studio (dříve Looker Studio) i Power BI',
+              tagline: 'Data Studio i Power BI',
               pictogram: 'dashboard',
             },
           ],

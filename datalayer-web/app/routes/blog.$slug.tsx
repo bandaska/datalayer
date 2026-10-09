@@ -5,6 +5,7 @@ import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { ArticleContent } from '~/components/ArticleContent';
 import { ContactBlock } from '~/components/ContactBlock';
 import { Breadcrumbs } from '~/components/landing/LandingPage';
+import { articleModified } from '~/lib/articleDates';
 import { getBySlug } from '~/lib/articles.server';
 import { highlightCodeBlocks } from '~/lib/highlight.server';
 import { cleanHtml } from '~/lib/sanitize.server';
@@ -13,6 +14,11 @@ import { absoluteUrl } from '~/lib/site';
 import { formatDate, perex } from '~/lib/text';
 
 export const handle = { hasContact: true };
+
+/** Starší boxy „Tip“ mají nadpis v <h5> – zobrazit ho jako odstavec, ať nadpisy nepřeskakují úrovně. */
+function infoboxTitles(html: string): string {
+  return html.replace(/(<div class="infobox-content">\s*)<h5>([\s\S]*?)<\/h5>/g, '$1<p class="infobox-title"><strong>$2</strong></p>');
+}
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const article = await getBySlug(params.slug!);
@@ -23,8 +29,9 @@ export async function loader({ params }: LoaderFunctionArgs) {
     article: {
       ...article,
       description: article.description || perex(article.content, 160),
-      // kód obarví server, prohlížeč highlight.js nestahuje
-      content: highlightCodeBlocks(cleanHtml(article.content)),
+      // kód obarví server, prohlížeč highlight.js nestahuje; nadpis boxu „Tip“ jako
+      // odstavec (h5 by porušil pořadí nadpisů)
+      content: highlightCodeBlocks(infoboxTitles(cleanHtml(article.content))),
     },
   };
 }
@@ -43,6 +50,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     description: article.description,
     path,
     type: 'article',
+    noindex: article.noindex,
     jsonLd: [
       breadcrumbLd(crumbs),
       {
@@ -53,7 +61,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
         url: absoluteUrl(path),
         mainEntityOfPage: absoluteUrl(path),
         datePublished: article.date,
-        dateModified: article.updatedAt ?? article.date,
+        dateModified: articleModified(article),
         inLanguage: 'cs-CZ',
         author: { '@type': 'Person', name: article.author },
         publisher: { '@id': ORGANIZATION_ID },
@@ -83,9 +91,10 @@ export default function BlogDetail() {
                 <time dateTime={article.date}>{formatDate(article.date)}</time>
               </span>
               <span className="me-3">{article.author}</span>
-              {article.updatedAt && article.updatedAt.slice(0, 10) !== article.date.slice(0, 10) ? (
+              {/* „aktualizováno“ jen po podstatné změně textu, kterou zadá editor – ne po každém uložení */}
+              {articleModified(article) !== article.date && article.modifiedDate ? (
                 <span className="me-3">
-                  aktualizováno <time dateTime={article.updatedAt}>{formatDate(article.updatedAt)}</time>
+                  aktualizováno <time dateTime={article.modifiedDate}>{formatDate(article.modifiedDate)}</time>
                 </span>
               ) : null}
             </div>

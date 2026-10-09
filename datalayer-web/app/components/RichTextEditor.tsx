@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const CODE_BLOCK = `<div class="code-container"><div class="code-header"><span class="code-lang">javascript</span><button class="btn-copy" type="button">Kopírovat</button></div><pre class="code-content"><code class="language-javascript">// kód</code></pre></div><p></p>`;
 
-const INFOBOX = `<div class="infobox"><div class="infobox-icon" aria-hidden="true">i</div><div class="infobox-content"><h5>Tip</h5><p>Text…</p></div></div><p></p>`;
+const INFOBOX = `<div class="infobox"><div class="infobox-icon" aria-hidden="true">i</div><div class="infobox-content"><p class="infobox-title"><strong>Tip</strong></p><p>Text…</p></div></div><p></p>`;
 
 export function RichTextEditor({
   name,
