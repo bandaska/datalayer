@@ -1,5 +1,5 @@
 import { Timestamp } from '@google-cloud/firestore';
-import type { ZodType } from 'zod';
+import type { ZodType, ZodTypeDef } from 'zod';
 import { DEFAULT_NAVIGATION, DEFAULT_TEXTS } from '~/content/defaults';
 import { navigationSchema, textsSchema, type Navigation, type SiteTexts } from '~/content/schema';
 import { firestore } from '../firestore.server';
@@ -18,7 +18,13 @@ type Store<T> = {
 
 const CACHE_MS = 30_000;
 
-function singleton<T extends object>(docId: string, schema: ZodType<T>, fallback: T, clean: (v: T) => T = (v) => v): Store<T> {
+function singleton<T extends object>(
+  docId: string,
+  // vstup může mít pole s výchozí hodnotou (starší dokumenty bez nových polí)
+  schema: ZodType<T, ZodTypeDef, unknown>,
+  fallback: T,
+  clean: (v: T) => T = (v) => v,
+): Store<T> {
   let cache: { value: T & { updatedAt?: string; updatedBy?: string }; at: number } | null = null;
   const ref = () => firestore.collection('content').doc(docId);
 

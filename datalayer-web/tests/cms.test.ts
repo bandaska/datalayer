@@ -60,6 +60,7 @@ const { sanitizePage, sanitizeTexts } = await import('~/lib/cms/sanitize.server'
 const { decodeNested, encodeNested } = await import('~/lib/cms/codec');
 const { navigationStore, textsStore } = await import('~/lib/cms/singletons.server');
 const { migration } = await import('~/migrations/scripts/20261009_cms_content_import');
+const { migration: slimMigration } = await import('~/migrations/scripts/20261009_lp_stihla_sablona');
 const { importPage } = await import('~/migrations/helpers');
 type MigrationContext = import('~/migrations/types').MigrationContext;
 
@@ -265,6 +266,81 @@ describe('migrace 20261009_cms_content_import', () => {
     expect(summary).toContain('pages_backup');
     expect(docs.get('pages_backup/o-nas')).toMatchObject(legacy);
     expect(stored('o-nas')?.hero).toBeDefined();
+  });
+});
+
+describe('migrace 20261009_lp_stihla_sablona', () => {
+  const OLD_COOKIE_TEXT =
+    'Nezbytné cookies drží web v chodu. Analytické a marketingové cookies použijeme jen se souhlasem: pomáhají nám měřit návštěvnost a vyhodnocovat kampaně. Volbu můžete kdykoli změnit odkazem Nastavení cookies v patičce. Podrobnosti najdete v <a href="/cookies">zásadách cookies</a>.';
+  const ssPath = 'sluzby/server-side-tracking';
+
+  /** Stav po importu obsahu z předchozího kola: stránky se starším zněním, původní texty a menu. */
+  async function seedOldContent() {
+    await migration.run(ctx);
+    for (const p of DEFAULT_PAGES) {
+      const doc = stored(p.path)!;
+      docs.set(`pages/${pageIdFromPath(p.path)}`, { ...doc, hero: { ...(doc.hero as object), h1: `Starší znění ${p.path}` } });
+    }
+    const texts = docs.get('content/texts')!;
+    docs.set('content/texts', { ...texts, cookieBar: { ...(texts.cookieBar as object), text: OLD_COOKIE_TEXT } });
+    const nav = decodeNested(docs.get('content/navigation')) as typeof DEFAULT_NAVIGATION;
+    const items = nav.items.map((i) =>
+      i.type === 'menu'
+        ? { ...i, columns: i.columns.map((c) => ({ ...c, items: c.items.map((l) => (l.href === '/sluzby/dashboardy-a-reporting' ? { ...l, tagline: 'Data Studio (dříve Looker Studio) i Power BI' } : l)) })) }
+        : i,
+    );
+    docs.set('content/navigation', encodeNested({ ...nav, items }) as Doc);
+  }
+
+  it('přepíše stránky novým zněním a původní uloží do pages_backup', async () => {
+    await seedOldContent();
+    const summary = await slimMigration.run(ctx);
+    expect(summary).toContain(`stránky: ${DEFAULT_PAGES.length} přepsaných, 0 beze změny`);
+    expect(summary).toContain('pages_backup');
+    for (const p of DEFAULT_PAGES) {
+      const page = await getPageByPath(p.path);
+      expect(page?.page.hero.h1, p.path).toBe(pageSchema.parse(p).hero.h1);
+      expect(stored(p.path)?.updatedBy).toBe('migrace');
+      expect((docs.get(`pages_backup/${pageIdFromPath(p.path)}@20261009_lp_stihla_sablona`)?.hero as { h1: string }).h1).toBe(`Starší znění ${p.path}`);
+    }
+    // nový obsah prošel zápisem bez polí v poli (tabulky)
+    expect(pageSchema.safeParse({ ...(decodeNested(stored(ssPath)) as object), path: ssPath }).success).toBe(true);
+    expect(summary).toContain('cookie lišta: kratší text');
+    expect(((decodeNested(docs.get('content/texts')) as { cookieBar: { text: string } }).cookieBar.text)).toBe(DEFAULT_TEXTS.cookieBar.text);
+    expect(textsSchema.safeParse(decodeNested(docs.get('content/texts'))).success).toBe(true);
+    expect(summary).toContain('menu: popisek Dashboardů bez vysvětlivky');
+    expect(JSON.stringify(docs.get('content/navigation'))).not.toContain('dříve Looker Studio');
+    expect(navigationSchema.safeParse(decodeNested(docs.get('content/navigation'))).success).toBe(true);
+  });
+
+  it('nechá stav zveřejnění, smazanou stránku nezaloží a podruhé nic nemění', async () => {
+    await seedOldContent();
+    const doc = stored(ssPath)!;
+    docs.set(`pages/${pageIdFromPath(ssPath)}`, { ...doc, published: false, noindex: true, updatedBy: 'editor@example.com' });
+    docs.delete(`pages/${pageIdFromPath('kontakt')}`);
+
+    const first = await slimMigration.run(ctx);
+    expect(first).toContain(`stránky: ${DEFAULT_PAGES.length - 1} přepsaných`);
+    expect(first).toContain('1 z nich mělo úpravy z administrace');
+    expect(first).toContain('nezaloženo: kontakt');
+    expect(stored(ssPath)).toMatchObject({ published: false, noindex: true, updatedBy: 'migrace' });
+    expect(stored('kontakt')).toBeUndefined();
+
+    const snapshot = JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')));
+    const second = await slimMigration.run(ctx);
+    expect(second).toContain(`stránky: 0 přepsaných, ${DEFAULT_PAGES.length - 1} beze změny`);
+    expect(second).toContain('cookie lišta: beze změny');
+    expect(second).toContain('menu: beze změny');
+    expect(JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')))).toBe(snapshot);
+  });
+
+  it('vlastní text cookie lišty a vlastní menu z administrace nepřepíše', async () => {
+    await migration.run(ctx);
+    await textsStore.save({ ...DEFAULT_TEXTS, cookieBar: { ...DEFAULT_TEXTS.cookieBar, text: 'Vlastní text lišty.' } }, 'editor@example.com');
+    const summary = await slimMigration.run(ctx);
+    expect(summary).toContain('stránky: 0 přepsaných');
+    expect(summary).toContain('cookie lišta: vlastní znění z administrace, beze změny');
+    expect((docs.get('content/texts') as { cookieBar: { text: string } }).cookieBar.text).toBe('Vlastní text lišty.');
   });
 });
 

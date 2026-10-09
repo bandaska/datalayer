@@ -25,16 +25,18 @@ function FooterLink({ link }: { link: LinkItem }) {
 
 export function Footer() {
   const root = useRouteLoaderData('root') as RootData | undefined;
+  const op = root?.operator;
   const nav = root?.navigation ?? DEFAULT_NAVIGATION;
   const email = root?.email || CONTACT_EMAIL;
   const f = nav.footer;
-  const colClass = 'col-lg col-md-6 mb-4';
+  // na mobilu sloupce odkazů po dvou vedle sebe (patička je jinak delší než obsah stránky)
+  const colClass = 'col-lg col-md-6 col-6 mb-4';
 
   return (
     <footer className="site-footer">
       <div className="container">
         <div className="row">
-          <div className={colClass}>
+          <div className="col-lg col-12 mb-4">
             <p className="site-footer__brand">
               datalayer<span className="highlight">.cz</span>
             </p>
@@ -85,6 +87,12 @@ export function Footer() {
             {f.cookieSettingsLabel}
           </button>
           <span>&copy; {new Date().getFullYear()} datalayer.cz</span>
+          {op?.name ? (
+            // identifikace provozovatele (§ 435 občanského zákoníku) z Nastavení
+            <span className="site-footer__operator">
+              {[op.name, op.id ? `IČO ${op.id}` : '', op.address, op.registry].filter(Boolean).join(' · ')}
+            </span>
+          ) : null}
         </div>
       </div>
     </footer>

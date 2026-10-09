@@ -5,7 +5,7 @@ import { ORGANIZATION_ID, breadcrumbLd, faqLd, organizationLd, websiteLd } from 
 import { CONTACT_EMAIL, absoluteUrl } from './site';
 
 /** JSON-LD stránky ze stejných dat jako obsah: BreadcrumbList, Service, FAQPage (homepage: Organization, WebSite). */
-export function pageJsonLd(page: PageContent, root?: Pick<RootData, 'email' | 'phone' | 'linkedinUrl'> & { texts?: SiteTexts }): object[] {
+export function pageJsonLd(page: PageContent, root?: Pick<RootData, 'email' | 'phone' | 'linkedinUrl'> & { texts?: SiteTexts; operator?: RootData['operator'] }): object[] {
   const ld: object[] = [];
   if (page.kind === 'home') {
     ld.push(
@@ -14,6 +14,9 @@ export function pageJsonLd(page: PageContent, root?: Pick<RootData, 'email' | 'p
         telephone: root?.phone || undefined,
         sameAs: root?.linkedinUrl ? [root.linkedinUrl] : undefined,
         description: root?.texts?.organization.description,
+        legalName: root?.operator?.name || undefined,
+        identifier: root?.operator?.id || undefined,
+        address: root?.operator?.address || undefined,
       }),
       websiteLd(),
     );

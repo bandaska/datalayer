@@ -10,6 +10,14 @@ export type SiteSettings = {
   phone: string;
   /** Odkaz na LinkedIn, prázdný = na webu se nezobrazí. */
   linkedinUrl: string;
+  /** Identifikace provozovatele (§ 435 občanského zákoníku, čl. 13 GDPR): jméno nebo firma. */
+  operatorName: string;
+  /** IČO provozovatele. */
+  operatorId: string;
+  /** Sídlo nebo místo podnikání. */
+  operatorAddress: string;
+  /** Zápis v rejstříku, např. „zapsaný v živnostenském rejstříku“ nebo spisová značka. */
+  operatorRegistry: string;
   updatedAt?: string;
   updatedBy?: string;
 };
@@ -19,6 +27,10 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   gtmId: '',
   phone: '',
   linkedinUrl: '',
+  operatorName: '',
+  operatorId: '',
+  operatorAddress: '',
+  operatorRegistry: '',
 };
 
 const EMAIL_RE = /^[^\s@,;]+@[^\s@,;]+\.[^\s@,;]{2,}$/;
@@ -56,6 +68,11 @@ export function normalizeGtmId(value: string): string {
 export function phoneHref(phone: string): string {
   const digits = phone.replace(/[^\d+]/g, '');
   return `tel:${digits}`;
+}
+
+/** IČO: osm číslic (mezery se ignorují). */
+export function isValidOperatorId(value: string): boolean {
+  return /^\d{8}$/.test(value.replace(/\s+/g, ''));
 }
 
 export function isValidLinkedinUrl(value: string): boolean {

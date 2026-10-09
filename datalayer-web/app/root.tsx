@@ -19,6 +19,9 @@ import '@fontsource/inter/800.css';
 import '@fontsource/roboto-mono/400.css';
 // Bootstrap z balíčku (žádné CDN), vlastní styly až za ním, ať mají přednost.
 import bootstrapHref from 'bootstrap/dist/css/bootstrap.min.css?url';
+import inter400LatinHref from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
+import inter800LatinHref from '@fontsource/inter/files/inter-latin-800-normal.woff2?url';
+import inter800LatinExtHref from '@fontsource/inter/files/inter-latin-ext-800-normal.woff2?url';
 import appStylesHref from './app.css?url';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -43,6 +46,11 @@ export const meta: MetaFunction = () => [
 
 export const links: LinksFunction = () => [
   { rel: 'icon', href: '/favicon.ico' },
+  // písma nadpisu H1 a textu nad ohybem přednačíst – jinak se H1 překreslí až po
+  // načtení písma a LCP se protáhne (vyhodnocení webu, kap. 6.1)
+  { rel: 'preload', as: 'font', type: 'font/woff2', href: inter800LatinHref, crossOrigin: 'anonymous' },
+  { rel: 'preload', as: 'font', type: 'font/woff2', href: inter800LatinExtHref, crossOrigin: 'anonymous' },
+  { rel: 'preload', as: 'font', type: 'font/woff2', href: inter400LatinHref, crossOrigin: 'anonymous' },
   { rel: 'stylesheet', href: bootstrapHref },
   { rel: 'stylesheet', href: appStylesHref },
 ];
@@ -62,6 +70,7 @@ export async function loader({ request }: LoaderFunctionArgs): Promise<RootData>
     phone: settings.phone,
     linkedinUrl: settings.linkedinUrl,
     email: CONTACT_EMAIL,
+    operator: { name: settings.operatorName, id: settings.operatorId, address: settings.operatorAddress, registry: settings.operatorRegistry },
     turnstileSiteKey: turnstileSiteKey(),
     navigation: nav,
     texts: txt,

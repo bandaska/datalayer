@@ -1,4 +1,5 @@
 import type { SiteTexts } from '../schema';
+import { DEFAULT_NEXT_STEPS, DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from '../textDefaults';
 
 // Výchozí texty webu mimo stránky (kontaktní formulář, cookie lišta, blog,
 // děkovací a chybová stránka) – po migraci se editují v administraci (Texty webu).
@@ -21,10 +22,12 @@ export const DEFAULT_TEXTS: SiteTexts = {
     successPhone: 'Spěchá to? Zavolejte na {phone}.',
     personName: 'Odpovídá Vít Novotný',
     personNote: 'obvykle do jednoho pracovního dne',
+    nextSteps: DEFAULT_NEXT_STEPS,
+    moreFields: '+ Přidat telefon a web (nepovinné)',
   },
   cookieBar: {
     title: 'Cookies na tomto webu',
-    text: 'Nezbytné cookies drží web v chodu. Analytické a marketingové cookies použijeme jen se souhlasem: pomáhají nám měřit návštěvnost a vyhodnocovat kampaně. Volbu můžete kdykoli změnit odkazem Nastavení cookies v patičce. Podrobnosti najdete v <a href="/cookies">zásadách cookies</a>.',
+    text: 'Analytické a marketingové cookies k měření návštěvnosti a kampaní použijeme jen s vaším souhlasem. Volbu změníte kdykoli v patičce, podrobnosti najdete v <a href="/cookies">zásadách cookies</a>.',
     necessary: '<strong>Nezbytné</strong> – základní chod webu a ochrana formuláře proti spamu. Vždy aktivní.',
     analytics: '<strong>Analytické</strong> – měření návštěvnosti přes Google Analytics 4.',
     marketing: '<strong>Marketingové</strong> – měření kampaní a remarketing v Google Ads, Meta a Skliku.',
@@ -52,6 +55,7 @@ export const DEFAULT_TEXTS: SiteTexts = {
     text: 'Ozveme se vám do jednoho pracovního dne.',
     errorTitle: 'Zprávu se nepodařilo odeslat',
     back: 'Zpět na úvod',
+    links: DEFAULT_THANK_YOU_LINKS,
   },
   notFound: {
     title: 'Stránka neexistuje',
@@ -63,4 +67,6 @@ export const DEFAULT_TEXTS: SiteTexts = {
     description:
       'Webová analytika a měření pro e-shopy, B2B firmy a velké firmy: implementace GA4, Google Tag Manager, server-side tracking, Consent Mode v2, BigQuery a dashboardy.',
   },
+  process: DEFAULT_PROCESS,
+  page: DEFAULT_PAGE_TEXTS,
 };

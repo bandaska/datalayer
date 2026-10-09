@@ -77,7 +77,7 @@ export function CookieBar() {
               {t.save}
             </button>
           ) : (
-            <button type="button" className="cc__btn" onClick={() => setDetail(true)}>
+            <button type="button" className="cc__btn cc__btn--settings" onClick={() => setDetail(true)}>
               {t.settings}
             </button>
           )}

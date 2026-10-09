@@ -2,7 +2,8 @@ import type { PageInput } from '../../schema';
 
 // Homepage podle seo-analyza/04_homepage-ux/homepage-audit-a-navrh.md.
 // Výchozí obsah – po migraci se edituje v administraci (Stránky → Úvod).
-// Sekce „Ověřte si nás“ čeká, až na webu poběží server-side GTM.
+// Sekce „Ověřte si nás“ čeká, až na webu poběží server-side GTM. Kroky spolupráce
+// bere blok „Postup“ z Textů webu, stejně jako stránky služeb (vyhodnocení webu, kap. 6.1).
 
 export const page: PageInput = {
   path: '',
@@ -93,6 +94,8 @@ export const page: PageInput = {
         {
           type: 'cards',
           columns: 3,
+          // na mobilu tři karty a tlačítko „Zobrazit další“
+          variant: 'symptoms',
           items: [
             {
               console: ['GA4 purchase        812', 'e-shop objednávky  1 046', '⚠ rozdíl −22 %'],
@@ -149,24 +152,8 @@ export const page: PageInput = {
       lead: 'Žádné „nastavíme to“. Každý krok končí dokumentem nebo ověřením, které můžete předat vlastnímu týmu.',
       tone: 'light',
       blocks: [
-        {
-          type: 'steps',
-          items: [
-            { title: 'Audit', text: 'Projdeme GA4, GTM, consent a reklamní systémy a porovnáme je s administrací.', output: 'report s prioritami A/B/C' },
-            { title: 'Měřicí plán', text: 'Byznys cíle převedeme na události, parametry a pravidla pojmenování.', output: 'měřicí plán + specifikace dataLayer' },
-            { title: 'Implementace', text: 'Nasadíme GTM na webu i serveru, Consent Mode v2 a konverze do reklamních systémů.', output: 'verzované kontejnery' },
-            {
-              title: 'Validace',
-              text: 'Projdeme testovací scénáře, zkontrolujeme každou událost a porovnáme čísla s e-shopem nebo CRM.',
-              output: 'protokol testů',
-            },
-            {
-              title: 'Předání a podpora',
-              text: 'Předáme dokumentaci, proškolíme tým a hlídáme, aby měření nespadlo po dalším releasu.',
-              output: 'dokumentace + monitoring',
-            },
-          ],
-        },
+        // kroky a výstupy z Textů webu → Postup spolupráce (stejné na celém webu)
+        { type: 'process', detail: 'output' },
         { type: 'paragraphs', items: ['<a href="/jak-pracujeme">Celý postup a co od vás budeme potřebovat →</a>'] },
       ],
     },
@@ -207,7 +194,8 @@ export const page: PageInput = {
       title: 'Vysvětlujeme, jak měření doopravdy funguje',
       lead: 'Návody s diagramy, kódem a odkazy na dokumentaci. Bez marketingových zkratek.',
       tone: 'dark',
-      blocks: [{ type: 'articles', count: 3 }],
+      // sekce se ukáže, až na blogu budou aspoň tři články
+      blocks: [{ type: 'articles', count: 3, minCount: 3 }],
     },
   ],
 

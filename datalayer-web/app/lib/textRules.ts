@@ -72,7 +72,7 @@ function blockTexts(b: Block, where: string, add: (where: string, text: string |
       });
       break;
     case 'steps':
-      b.items.forEach((s, i) => [s.title, s.text, s.output, s.duration, s.fromClient].forEach((t) => add(`${where} › krok ${i + 1}`, t)));
+      b.items.forEach((s, i) => [s.title, s.text, ...(s.substeps ?? []), s.output, s.duration, s.fromClient].forEach((t) => add(`${where} › krok ${i + 1}`, t)));
       break;
     case 'table':
       add(`${where} › popisek`, b.caption);
@@ -101,6 +101,32 @@ function blockTexts(b: Block, where: string, add: (where: string, text: string |
       break;
     case 'consentSettings':
       add(`${where} › tlačítko`, b.label);
+      break;
+    case 'proscons':
+      for (const k of ['yes', 'no'] as const) {
+        add(`${where} › ${k === 'yes' ? 'sloupec ✓' : 'sloupec ✕'}`, b[k].title);
+        b[k].items.forEach((it, i) => {
+          add(`${where} › ${k === 'yes' ? '✓' : '✕'} ${i + 1}`, it.text);
+          add(`${where} › ${k === 'yes' ? '✓' : '✕'} ${i + 1} › poznámka`, it.note);
+        });
+      }
+      break;
+    case 'figures':
+      b.items.forEach((f, i) => add(`${where} › číslo ${i + 1}`, f.label));
+      add(`${where} › poznámka`, b.note);
+      break;
+    case 'process':
+      add(`${where} › krok 3`, b.implementation);
+      add(`${where} › krok 3 › od vás`, b.implementationFromClient);
+      break;
+    case 'operator':
+      add(`${where} › nadpis`, b.title);
+      break;
+    case 'person':
+      add(`${where} › jméno`, b.name);
+      add(`${where} › role`, b.role);
+      b.paragraphs?.forEach((t, i) => add(`${where} › odstavec ${i + 1}`, t));
+      b.facts?.forEach((t, i) => add(`${where} › štítek ${i + 1}`, t));
       break;
     default:
       break;
@@ -138,6 +164,10 @@ export function pageTexts(page: PageContent): PageText[] {
     add(`${w} › poznámka`, s.note);
     s.blocks.forEach((b, j) => blockTexts(b, `${w} › blok ${j + 1}`, add));
   });
+  if (page.techDetails) {
+    add('Technické detaily › odkaz', page.techDetails.summary);
+    page.techDetails.blocks.forEach((b, j) => blockTexts(b, `Technické detaily › blok ${j + 1}`, add));
+  }
   add('FAQ › nadpis', page.faqTitle);
   page.faq.forEach((f, i) => {
     add(`FAQ ${i + 1} › otázka`, f.q);

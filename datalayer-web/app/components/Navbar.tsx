@@ -116,7 +116,7 @@ export function Navbar() {
                     </button>
                     <div className={item.columns.length > 1 ? 'mega' : 'mega mega--narrow'} hidden={open !== item.id}>
                       {item.columns.length > 1 ? (
-                        <div className="mega__grid mega__grid--3" style={{ gridTemplateColumns: `repeat(${item.columns.length}, 1fr)` }}>
+                        <div className="mega__grid mega__grid--3" style={{ ['--cols' as string]: item.columns.length }}>
                           {item.columns.map((col, ci) => (
                             <div key={ci}>
                               {col.title ? <p className="mega__group">{col.title}</p> : null}
@@ -170,7 +170,7 @@ export function Navbar() {
       </header>
 
       {/* Mobil: spodní lišta se dvěma akcemi */}
-      <div className="mobile-bar">
+      <nav className="mobile-bar" aria-label="Rychlý kontakt">
         {root?.phone ? (
           <a href={phoneHref(root.phone)} className="mobile-bar__btn" onClick={() => pushEvent('contact_click', { channel: 'phone', section: 'mobile_bar' })}>
             {nav.mobileBar.callLabel}
@@ -179,7 +179,7 @@ export function Navbar() {
         <a href={contactHref} className="mobile-bar__btn mobile-bar__btn--cta">
           {nav.mobileBar.writeLabel}
         </a>
-      </div>
+      </nav>
     </>
   );
 }

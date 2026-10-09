@@ -9,6 +9,8 @@ export type RootData = {
   phone: string;
   linkedinUrl: string;
   email: string;
+  /** Identifikace provozovatele z Nastavení (prázdné jméno = zatím nevyplněno). */
+  operator: { name: string; id: string; address: string; registry: string };
   turnstileSiteKey: string;
   navigation: Navigation;
   texts: SiteTexts;

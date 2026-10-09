@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import { DEFAULT_NEXT_STEPS, DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
+import { LEGACY_TOPICS, TOPIC_VALUES } from './topics';
 
 // Schéma veškerého obsahu webu, který se edituje v administraci a ukládá do
 // Firestore: stránky (kolekce `pages`), navigace (`content/navigation`)
@@ -26,20 +28,7 @@ export const PICTOGRAMS = [
   'warn',
 ] as const;
 
-export const TOPIC_VALUES = [
-  'ga4',
-  'gtm',
-  'datalayer',
-  'server-side',
-  'consent',
-  'konverze',
-  'bigquery',
-  'audit',
-  'leady-crm',
-  'tech-audit',
-  'sprava',
-  'governance',
-] as const;
+export { LEGACY_TOPICS, TOPIC_VALUES } from './topics';
 
 export const PAGE_KINDS = ['home', 'service', 'solution', 'page', 'legal'] as const;
 
@@ -73,7 +62,7 @@ export const href = z
 export const linkSchema = z.object({ label: req(80), href });
 
 export const pictogramSchema = z.enum(PICTOGRAMS);
-export const topicSchema = z.enum(TOPIC_VALUES);
+export const topicSchema = z.preprocess((v) => (typeof v === 'string' && v in LEGACY_TOPICS ? LEGACY_TOPICS[v] : v), z.enum(TOPIC_VALUES));
 
 // ---------- bloky obsahu ----------
 
@@ -89,6 +78,12 @@ const cardSchema = z.object({
   link: linkSchema.optional(),
 });
 
+const prosItemSchema = z.object({
+  text: req(400), // HTML
+  /** Drobný doplněk pod položkou, např. „→ nejdřív audit měření“ (HTML). */
+  note: str(300).optional(),
+});
+
 export const blockSchema = z.discriminatedUnion('type', [
   z.object({ type: z.literal('paragraphs'), items: z.array(str(6000)).min(1, 'Aspoň jeden odstavec') }),
   z.object({
@@ -100,15 +95,21 @@ export const blockSchema = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('cards'),
     columns: z.union([z.literal(2), z.literal(3), z.literal(4)]).optional(),
+    /** symptoms = na mobilu kompaktní seznam (piktogram vlevo), u víc než čtyř karet tři a tlačítko „Zobrazit další“. */
+    variant: z.enum(['default', 'symptoms']).optional(),
     items: z.array(cardSchema).min(1, 'Aspoň jedna karta'),
   }),
   z.object({
     type: z.literal('steps'),
+    /** grid = karty vedle sebe (sloupce podle počtu kroků), rows = kroky pod sebou s podkroky (stránka Jak pracujeme). */
+    layout: z.enum(['grid', 'rows']).optional(),
     items: z
       .array(
         z.object({
           title: req(200),
           text: str(2000), // HTML
+          /** Podkroky jako krátký seznam pod popisem (HTML). */
+          substeps: z.array(str(300)).max(8, 'Nejvýš osm podkroků').optional(),
           output: str(300).optional(),
           duration: str(100).optional(),
           fromClient: str(400).optional(),
@@ -159,8 +160,50 @@ export const blockSchema = z.discriminatedUnion('type', [
     type: z.literal('tags'),
     items: z.array(z.object({ label: req(80), href: href.optional() })).min(1, 'Aspoň jeden štítek'),
   }),
-  /** Nejnovější články z blogu. */
-  z.object({ type: z.literal('articles'), count: z.number().int().min(1).max(12).optional() }),
+  /** Nejnovější články z blogu. Blok se ukáže, až má blog aspoň `minCount` článků (výchozí tři). */
+  z.object({
+    type: z.literal('articles'),
+    count: z.number().int().min(1).max(12).optional(),
+    minCount: z.number().int().min(1).max(12).optional(),
+  }),
+  /** Rozhodnutí: dva sloupce „Dává smysl, když…“ (✓) a „Doporučíme počkat, když…“ (✕). */
+  z.object({
+    type: z.literal('proscons'),
+    yes: z.object({ title: req(120), items: z.array(prosItemSchema).min(1, 'Aspoň jedna položka') }),
+    no: z.object({ title: req(120), items: z.array(prosItemSchema).min(1, 'Aspoň jedna položka') }),
+  }),
+  /** Dvě až čtyři čísla v boxech (např. náklady provozu) a poznámka se zdrojem. */
+  z.object({
+    type: z.literal('figures'),
+    items: z
+      .array(z.object({ value: req(40), label: req(300) }))
+      .min(1, 'Aspoň jedno číslo')
+      .max(4, 'Nejvýš čtyři čísla'),
+    note: str(600).optional(), // HTML
+  }),
+  /** Jednotný postup spolupráce (pět kroků z Textů webu); u služby jde upravit krok 3 – implementaci. */
+  z.object({
+    type: z.literal('process'),
+    implementation: str(400).optional(),
+    implementationFromClient: str(200).optional(),
+    /** Co ukázat pod krokem: „od vás“ (výchozí), nebo výstup kroku. */
+    detail: z.enum(['fromClient', 'output']).optional(),
+  }),
+  /** Identifikace provozovatele z Nastavení (jméno nebo firma, IČO, sídlo, e-mail). */
+  z.object({ type: z.literal('operator'), title: str(120).optional() }),
+  /**
+   * Osoba za webem: fotka z Textů webu (kontakt), LinkedIn z Nastavení.
+   * Bez fotky i bez textu o praxi se blok nezobrazí – čeká na podklady.
+   */
+  z.object({
+    type: z.literal('person'),
+    /** Jméno v nadpisu bloku; prázdné = jméno z Textů webu (Kontakt) bez „Odpovídá“. */
+    name: str(120).optional(),
+    role: str(120).optional(),
+    paragraphs: z.array(str(1500)).max(6, 'Nejvýš šest odstavců').optional(), // HTML
+    /** Nástroje a certifikace jako štítky. */
+    facts: z.array(str(80)).max(12, 'Nejvýš dvanáct štítků').optional(),
+  }),
   /** Přehled odkazů z menu (např. všechny služby ve sloupcích jako v mega-menu). */
   z.object({
     type: z.literal('menuGrid'),
@@ -181,9 +224,14 @@ export const sectionSchema = z.object({
   /** H2 – prázdný nadpis se nezobrazí (např. sekce jen s volným textem). */
   title: str(200),
   lead: str(2000).optional(), // HTML
-  tone: z.enum(['light', 'dark', 'deep']).optional(),
+  /** Pozadí: světle šedé, bílé, tmavé, nebo tmavě modré. Na stránce nejvýš tři přechody tmavé ↔ světlé. */
+  tone: z.enum(['light', 'white', 'dark', 'deep']).optional(),
+  /** split = nadpis a úvod vlevo, bloky vpravo (např. blok Důkaz). */
+  layout: z.enum(['default', 'split']).optional(),
   /** Drobná poznámka pod sekcí (např. „Čísla v ukázkách jsou ilustrativní.“). */
   note: str(300).optional(),
+  /** Skrytou sekci web nevykreslí, obsah ale zůstane v databázi (např. čeká na nasazení měření). */
+  hidden: z.boolean().optional(),
   blocks: z.array(blockSchema),
 });
 
@@ -201,13 +249,14 @@ export function templateAnchors(page: {
   faq: unknown[];
   relatedPages?: unknown[];
   relatedArticles?: unknown[];
+  techDetails?: unknown;
 }): string[] {
   return [
     'site-menu',
     ...(page.contact.enabled !== false ? ['kontakt', 'contact-form'] : []),
     ...(page.faq.length ? ['faq'] : []),
-    ...(page.relatedPages?.length ? ['navazujici'] : []),
-    ...(page.relatedArticles?.length ? ['do-hloubky'] : []),
+    ...(page.relatedPages?.length || page.relatedArticles?.length ? ['navazujici'] : []),
+    ...(page.techDetails ? ['technicke-detaily'] : []),
   ];
 }
 
@@ -245,11 +294,15 @@ export const pageSchema = z
     sections: z.array(sectionSchema),
     faq: z.array(faqSchema),
     faqTitle: str(120).optional(),
+    /** Technické detaily: sbalený blok u FAQ pro obsah, který jednou poputuje do článku. Nejvýš jeden na stránku. */
+    techDetails: z.object({ summary: req(200), blocks: z.array(blockSchema) }).optional(),
     relatedArticles: z.array(z.object({ slug, title: str(200) })).optional(),
     relatedPages: z.array(pathSchema).optional(),
     contact: z.object({
       /** Vypnutý kontaktní blok se na stránce nezobrazí (např. zásady). */
       enabled: z.boolean().optional(),
+      /** top = formulář hned pod úvodem stránky (stránka Kontakt), jinak na konci. */
+      position: z.enum(['bottom', 'top']).optional(),
       formId: slug,
       topics: z.array(topicSchema).optional(),
       title: str(200),
@@ -277,6 +330,9 @@ export const pageSchema = z
       else if (ids.has(id)) ctx.addIssue({ code: 'custom', path, message: `Kotva „${id}“ se opakuje` });
       ids.add(id);
     };
+    page.techDetails?.blocks.forEach((b, j) => {
+      if (b.type === 'tabs') b.items.forEach((t, k) => anchor(t.id, ['techDetails', 'blocks', j, 'items', k, 'id']));
+    });
     page.sections.forEach((s, i) => {
       anchor(s.id, ['sections', i, 'id']);
       s.blocks.forEach((b, j) => {
@@ -347,6 +403,12 @@ export type NavItem = z.infer<typeof navItemSchema>;
 export type NavLink = z.infer<typeof navLinkSchema>;
 
 // ---------- texty webu ----------
+// Nová pole mají výchozí hodnotu, aby prošel i dokument content/texts uložený
+// před jejich zavedením.
+
+export { DEFAULT_NEXT_STEPS, DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
+
+const processStepSchema = z.object({ title: req(120), text: req(400), output: str(200).optional(), fromClient: str(200).optional() });
 
 export const textsSchema = z.object({
   contact: z.object({
@@ -365,6 +427,12 @@ export const textsSchema = z.object({
     successPhone: str(200),
     personName: req(120),
     personNote: req(160),
+    /** Fotka osoby u kontaktu (cesta nebo https URL); bez ní web ukáže iniciály. */
+    personPhoto: z.string().trim().max(500).optional(),
+    /** Tři kroky „co se stane po odeslání“ pod formulářem. */
+    nextSteps: z.array(req(200)).max(5).default(DEFAULT_NEXT_STEPS),
+    /** Rozbalovací odkaz na nepovinná pole telefon a web. */
+    moreFields: req(80).default('+ Přidat telefon a web (nepovinné)'),
   }),
   cookieBar: z.object({
     title: req(80),
@@ -389,9 +457,20 @@ export const textsSchema = z.object({
     ctaLead: req(600),
     ctaPlaceholder: req(200),
   }),
-  thankYou: z.object({ title: req(120), text: req(400), errorTitle: req(120), back: req(60) }),
+  thankYou: z.object({
+    title: req(120),
+    text: req(400),
+    errorTitle: req(120),
+    back: req(60),
+    /** Další odkazy pod tlačítkem zpět. */
+    links: z.array(linkSchema).max(4).default(DEFAULT_THANK_YOU_LINKS),
+  }),
   notFound: z.object({ title: req(80), text: req(300), home: req(60), services: req(60) }),
   organization: z.object({ description: req(500) }),
+  /** Jednotný postup spolupráce (blok „Postup“ na stránkách). */
+  process: z.object({ steps: z.array(processStepSchema).length(5, 'Postup má přesně pět kroků') }).default(DEFAULT_PROCESS),
+  /** Společné texty šablony stránek: FAQ a pruh „Pokračujte“. */
+  page: z.object({ faqTitle: req(120), faqLead: str(300), continueLabel: req(60) }).default(DEFAULT_PAGE_TEXTS),
 });
 
 export type SiteTexts = z.infer<typeof textsSchema>;

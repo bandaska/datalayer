@@ -30,7 +30,9 @@ export async function action({ request }: ActionFunctionArgs) {
     return { error: `Článek s URL /blog/${slug} už existuje.` };
   }
 
-  await createArticle({ slug, title, author, date, description, content });
+  const modifiedDate = String(form.get('modifiedDate') ?? '').trim();
+  const noindex = form.get('noindex') === 'on';
+  await createArticle({ slug, title, author, date, description, content, modifiedDate, noindex });
   return redirect('/admin/articles');
 }
 

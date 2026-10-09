@@ -47,7 +47,9 @@ export function seoMeta(input: SeoInput): MetaDescriptor[] {
 /** Odkaz na organizaci – sdílený `@id`, na který se odkazují ostatní schémata. */
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 
-export function organizationLd(extra: { email?: string; telephone?: string; sameAs?: string[]; description?: string } = {}) {
+export function organizationLd(
+  extra: { email?: string; telephone?: string; sameAs?: string[]; description?: string; legalName?: string; identifier?: string; address?: string } = {},
+) {
   return {
     '@context': 'https://schema.org',
     '@type': ['Organization', 'ProfessionalService'],
@@ -72,6 +74,10 @@ export function organizationLd(extra: { email?: string; telephone?: string; same
     ...(extra.email ? { email: extra.email } : {}),
     ...(extra.telephone ? { telephone: extra.telephone } : {}),
     ...(extra.sameAs && extra.sameAs.length ? { sameAs: extra.sameAs } : {}),
+    // identifikace provozovatele z Nastavení (až ji klient doplní)
+    ...(extra.legalName ? { legalName: extra.legalName } : {}),
+    ...(extra.identifier ? { identifier: { '@type': 'PropertyValue', propertyID: 'IČO', value: extra.identifier } } : {}),
+    ...(extra.address ? { address: extra.address } : {}),
   };
 }
 

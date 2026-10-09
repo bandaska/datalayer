@@ -5,9 +5,9 @@ import { highlightCode } from '../highlight.server';
 import { perex } from '../text';
 import { getPageByPath, summarize, type PageSummary } from './pages.server';
 
-// Data jedné stránky webu pro loader: obsah, existující související články,
-// nejnovější články (blok „Články“), shrnutí souvisejících stránek.
-// Koncept (published: false) uvidí jen přihlášený správce.
+// Data jedné stránky webu pro loader: obsah bez skrytých sekcí, existující
+// související články, nejnovější články (blok „Články“), shrnutí souvisejících
+// stránek. Koncept (published: false) uvidí jen přihlášený správce.
 
 export type ArticleTeaser = { slug: string; title: string; date: string; perex: string };
 
@@ -24,7 +24,8 @@ export type PageData = {
 
 function articlesWanted(page: PageContent): number {
   let n = 0;
-  for (const s of page.sections) for (const b of s.blocks) if (b.type === 'articles') n = Math.max(n, b.count ?? 3);
+  // načíst aspoň tolik, kolik blok potřebuje k zobrazení (minCount), jinak by se nikdy neukázal
+  for (const s of page.sections) for (const b of s.blocks) if (b.type === 'articles') n = Math.max(n, b.count ?? 3, b.minCount ?? 3);
   return n;
 }
 
@@ -45,11 +46,12 @@ async function latestArticles(n: number): Promise<ArticleTeaser[]> {
 /** Bloky kódu obarví server – prohlížeč dostane hotové HTML bez highlight.js. */
 function highlightedCode(page: PageContent): Record<string, string> {
   const out: Record<string, string> = {};
-  for (const s of page.sections) {
-    s.blocks.forEach((b, i) => {
-      if (b.type === 'code') out[`${s.id}/${i}`] = highlightCode(b.code, b.lang).html;
+  const add = (sectionId: string, blocks: PageContent['sections'][number]['blocks']) =>
+    blocks.forEach((b, i) => {
+      if (b.type === 'code') out[`${sectionId}/${i}`] = highlightCode(b.code, b.lang).html;
     });
-  }
+  for (const s of page.sections) add(s.id, s.blocks);
+  if (page.techDetails) add('technicke-detaily', page.techDetails.blocks);
   return out;
 }
 
@@ -61,7 +63,8 @@ async function relatedSummaries(paths: string[]): Promise<PageSummary[]> {
 export async function loadPage(request: Request, path: string): Promise<PageData> {
   const res = await getPageByPath(path);
   if (!res) throw new Response('Stránka nenalezena', { status: 404 });
-  const { page } = res;
+  // skrytá sekce (čeká např. na nasazení měření) do prohlížeče vůbec nedorazí – ani v datech pro hydrataci
+  const page: PageContent = { ...res.page, sections: res.page.sections.filter((s) => !s.hidden) };
   const draft = !page.published;
   if (draft && !(await getUserId(request))) throw new Response('Stránka nenalezena', { status: 404 });
 

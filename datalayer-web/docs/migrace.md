@@ -69,6 +69,11 @@ První import obsahu z kódu do administrace dělá migrace `20261009_cms_conten
 všechny výchozí stránky, menu a texty, které v databázi ještě nejsou, a přepne web na obsah jen
 z databáze (`content/meta.initialized`).
 
+Přestavbu existujících stránek ukazuje `20261009_lp_stihla_sablona`: stránku přepíše jen tehdy,
+když se liší od nového znění, původní dokument předtím uloží do `pages_backup/{id}@{id migrace}`
+a stav zveřejnění převezme z databáze. Texty a menu mění jen tam, kde zůstalo původní výchozí
+znění – úpravy z administrace nechá být.
+
 ## Nasazení
 
 Po merge do `main` a nasazení (Cloud Build):

@@ -1,18 +1,21 @@
-import { Link } from 'react-router';
-import type { Faq, PageContent } from '~/content/schema';
+import { Link, useRouteLoaderData } from 'react-router';
+import { DEFAULT_TEXTS } from '~/content/defaults/texts';
+import type { Block, Faq, PageContent, Pictogram, Section, SiteTexts } from '~/content/schema';
 import type { PageSummary } from '~/lib/cms/pages.server';
 import type { ArticleTeaser } from '~/lib/cms/loadPage.server';
 import { pushEvent } from '~/lib/dataLayer';
+import type { RootData } from '~/lib/rootData';
 import type { Crumb } from '~/lib/seo';
 import { ContactBlock } from '../ContactBlock';
 import { HeroDiagram } from '../HeroDiagram';
 import { Pi } from '../Pictograms';
-import { Blocks } from './Blocks';
+import { Blocks, personReady, type BlockContext } from './Blocks';
 import { crumbsFor } from './crumbs';
 
-// Šablona stránky z administrace: hero → trust bar → sekce s bloky → FAQ →
-// do hloubky → navazující stránky → kontakt. Všechen obsah přichází z dat
-// (kolekce `pages` ve Firestore, výchozí obsah v app/content/defaults).
+// Šablona stránky z administrace (štíhlá LP podle vyhodnocení webu, prototyp
+// seo-analyza/prototyp/): hero s jedním úvodem a body důvěry → sekce s bloky →
+// FAQ se sbalenými Technickými detaily → pruh „Pokračujte“ (stránky a články)
+// → kontakt. Všechen obsah přichází z dat (kolekce `pages` ve Firestore).
 
 export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
   if (!crumbs.length) return null;
@@ -29,68 +32,85 @@ export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
   );
 }
 
-export function FaqList({ items, title, tone = 'light' }: { items: Faq[]; title?: string; tone?: 'light' | 'dark' }) {
-  if (!items.length) return null;
+function FaqItems({ items }: { items: Faq[] }) {
   return (
-    <section className={`lp-section lp-section--${tone}`} id="faq">
-      <div className="container lp-container">
-        <p className="eyebrow">[ FAQ ]</p>
-        <h2 className="lp-h2">{title || 'Časté otázky'}</h2>
-        <div className="faq">
-          {items.map((f, i) => (
-            <details
-              key={i}
-              onToggle={(e) => {
-                if ((e.currentTarget as HTMLDetailsElement).open) pushEvent('faq_open', { question: f.q });
-              }}
-            >
-              <summary>{f.q}</summary>
-              <div className="faq__a" dangerouslySetInnerHTML={{ __html: f.a }} />
-            </details>
-          ))}
+    <div className="faq">
+      {items.map((f, i) => (
+        <details
+          key={i}
+          onToggle={(e) => {
+            if ((e.currentTarget as HTMLDetailsElement).open) pushEvent('faq_open', { question: f.q });
+          }}
+        >
+          <summary>{f.q}</summary>
+          <div className="faq__a" dangerouslySetInnerHTML={{ __html: f.a }} />
+        </details>
+      ))}
+    </div>
+  );
+}
+
+/** FAQ ve dvou sloupcích (vlevo nadpis a sbalené Technické detaily, vpravo otázky). */
+function FaqSection({ page, texts, ctx }: { page: PageContent; texts: SiteTexts['page']; ctx: BlockContext }) {
+  const tech = page.techDetails;
+  if (!page.faq.length && !tech) return null;
+  const details = tech ? (
+    <details className="lp-tech" id="technicke-detaily">
+      <summary>{tech.summary}</summary>
+      <div className="lp-tech__in">
+        <Blocks blocks={tech.blocks} sectionId="technicke-detaily" ctx={ctx} />
+      </div>
+    </details>
+  ) : null;
+  if (!page.faq.length) {
+    return (
+      <section className="lp-section lp-section--light">
+        <div className="container lp-container">{details}</div>
+      </section>
+    );
+  }
+  return (
+    <section className="lp-section lp-section--light" id="faq">
+      <div className="container lp-container lp-faqwrap">
+        <div>
+          <p className="eyebrow">[ FAQ ]</p>
+          <h2 className="lp-h2">{page.faqTitle || texts.faqTitle}</h2>
+          {page.contact.enabled !== false && texts.faqLead ? <p className="lp-lead" dangerouslySetInnerHTML={{ __html: texts.faqLead }} /> : null}
+          {details}
         </div>
+        <FaqItems items={page.faq} />
       </div>
     </section>
   );
 }
 
-export function RelatedPages({ items, title }: { items: PageSummary[]; title: string }) {
-  if (!items.length) return null;
+/** Pruh „Pokračujte“: navazující stránky a články k tématu v jednom řádku. */
+function ContinueStrip({ pages, articles, label, pictogram }: { pages: PageSummary[]; articles: { slug: string; title: string }[]; label: string; pictogram: Pictogram }) {
+  if (!pages.length && !articles.length) return null;
   return (
-    <section className="lp-section lp-section--dark" id="navazujici">
+    <section className="lp-section lp-section--light lp-section--white lp-section--strip" id="navazujici">
       <div className="container lp-container">
-        <p className="eyebrow">[ {title} ]</p>
-        <h2 className="lp-h2">{title}</h2>
-        <div className="lp-related">
-          {items.map((i) => (
-            <Link key={i.path} to={`/${i.path}`} className="lp-related__item">
-              <Pi name={i.pictogram} />
+        <p className="eyebrow">[ {label} ]</p>
+        <div className="lp-strip">
+          {pages.map((p) => (
+            <Link key={p.path} to={`/${p.path}`} className="lp-rel" onClick={() => pushEvent('cta_click', { cta_id: `related_${p.path}`, cta_text: p.label, section: 'navazujici' })}>
+              <Pi name={p.pictogram} />
               <span>
-                <strong>{i.label}</strong>
-                {i.tagline ? <span>{i.tagline}</span> : null}
+                <strong>{p.label}</strong>
+                {p.tagline ? <span>{p.tagline}</span> : null}
+              </span>
+            </Link>
+          ))}
+          {articles.map((a) => (
+            <Link key={a.slug} to={`/blog/${a.slug}`} className="lp-rel" onClick={() => pushEvent('cta_click', { cta_id: `article_${a.slug}`, cta_text: a.title, section: 'navazujici' })}>
+              <Pi name={pictogram} />
+              <span>
+                <strong>{a.title}</strong>
+                <span>článek</span>
               </span>
             </Link>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
-
-export function RelatedArticles({ items }: { items: { slug: string; title: string }[] }) {
-  if (!items.length) return null;
-  return (
-    <section className="lp-section lp-section--light" id="do-hloubky">
-      <div className="container lp-container">
-        <p className="eyebrow">[ Do hloubky ]</p>
-        <h2 className="lp-h2">Články k tématu</h2>
-        <ul className="lp-articles">
-          {items.map((a) => (
-            <li key={a.slug}>
-              <Link to={`/blog/${a.slug}`}>{a.title} →</Link>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );
@@ -127,6 +147,13 @@ function Hero({ page }: { page: PageContent }) {
   const { hero } = page;
   const variant = hero.variant ?? 'pictogram';
   const ctaId = page.contact.formId;
+  const trust = page.trust?.length ? (
+    <ul className="lp-hero__trust">
+      {page.trust.slice(0, 3).map((t, i) => (
+        <li key={i}>{t}</li>
+      ))}
+    </ul>
+  ) : null;
   const ctas =
     hero.primaryCta || hero.secondaryCta ? (
       <div className={variant === 'diagram' ? 'hero-ctas' : 'lp-hero__ctas'}>
@@ -168,6 +195,7 @@ function Hero({ page }: { page: PageContent }) {
             <h1 className="article-title">{hero.h1}</h1>
             {hero.subtitle ? <p className="article-perex">{hero.subtitle}</p> : null}
             {ctas}
+            {trust}
           </div>
         </div>
       </header>
@@ -182,26 +210,72 @@ function Hero({ page }: { page: PageContent }) {
           <div>
             {hero.eyebrow ? <p className="eyebrow">[ {hero.eyebrow} ]</p> : null}
             <h1 className="lp-hero__h1">{hero.h1}</h1>
+            {/* jeden úvodní odstavec = rychlá odpověď (box „Rychlá odpověď“ šablona už nemá) */}
             {hero.subtitle ? <p className="lp-hero__sub">{hero.subtitle}</p> : null}
-            {hero.quickAnswer ? (
-              <div className="lp-quick">
-                <span className="lp-quick__label">Rychlá odpověď</span>
-                <p dangerouslySetInnerHTML={{ __html: hero.quickAnswer }} />
-              </div>
-            ) : null}
             {ctas}
             {hero.microcopy ? <p className="lp-hero__micro">{hero.microcopy}</p> : null}
+            {trust}
           </div>
           <div className="lp-hero__visual" aria-hidden="true">
             <div className="lp-hero__frame">
               <Pi name={page.pictogram} />
-              {hero.eyebrow ? <span className="lp-hero__tag">{hero.eyebrow}</span> : null}
             </div>
           </div>
         </div>
       </div>
     </header>
   );
+}
+
+function SectionView({ s, ctx }: { s: Section; ctx: BlockContext }) {
+  const tone = s.tone ?? 'dark';
+  // bílé pozadí přebírá styly světlých sekcí
+  const cls = `lp-section lp-section--${tone === 'white' ? 'light lp-section--white' : tone}${s.layout === 'split' ? ' lp-section--split' : ''}`;
+  const head = (
+    <>
+      {s.eyebrow ? <p className="eyebrow">[ {s.eyebrow} ]</p> : null}
+      {s.title ? <h2 className="lp-h2">{s.title}</h2> : null}
+      {s.lead ? <p className="lp-lead" dangerouslySetInnerHTML={{ __html: s.lead }} /> : null}
+    </>
+  );
+  const blocks = <Blocks blocks={s.blocks} sectionId={s.id} ctx={{ ...ctx, sectionTitle: s.title }} />;
+  const note = s.note ? <p className="lp-note">{s.note}</p> : null;
+  return (
+    <section id={s.id} className={cls}>
+      {s.layout === 'split' ? (
+        <div className="container lp-container lp-split">
+          <div className="lp-split__text">
+            {head}
+            {note}
+          </div>
+          <div className="lp-split__body">{blocks}</div>
+        </div>
+      ) : (
+        <div className="container lp-container">
+          {head}
+          {blocks}
+          {note}
+        </div>
+      )}
+    </section>
+  );
+}
+
+/**
+ * Blok, který by se nevykreslil: články, dokud jich blog nemá dost, provozovatel
+ * bez vyplněného jména v Nastavení, osoba bez fotky i bez textu o praxi.
+ */
+function emptyBlock(b: Block, env: { articles: number; operator: boolean; photo?: string }): boolean {
+  if (b.type === 'articles') return env.articles < (b.minCount ?? 3);
+  if (b.type === 'operator') return !env.operator;
+  if (b.type === 'person') return !personReady(b, env.photo);
+  return false;
+}
+
+/** Skrytá sekce a sekce, ve které by žádný blok nic neukázal, se na webu nevykreslí. */
+function visibleSection(s: Section, env: { articles: number; operator: boolean; photo?: string }): boolean {
+  if (s.hidden) return false;
+  return !(s.blocks.length > 0 && s.blocks.every((b) => emptyBlock(b, env)));
 }
 
 export function LandingPage({
@@ -221,9 +295,25 @@ export function LandingPage({
   /** Obarvené bloky kódu z loaderu (highlight.js na serveru). */
   code?: Record<string, string>;
 }) {
+  const root = useRouteLoaderData('root') as RootData | undefined;
+  const texts = root?.texts.page ?? DEFAULT_TEXTS.page;
   const articles = (page.relatedArticles ?? []).filter((a) => existingArticles.includes(a.slug));
-  // Sekce jen s blokem „Články“ zmizí, dokud blog žádné články nemá.
-  const sections = page.sections.filter((s) => !(s.blocks.length && s.blocks.every((b) => b.type === 'articles') && latest.length === 0));
+  const sections = page.sections.filter((s) =>
+    visibleSection(s, { articles: latest.length, operator: Boolean(root?.operator?.name), photo: (root?.texts.contact ?? DEFAULT_TEXTS.contact).personPhoto }),
+  );
+  const ctx: BlockContext = { latest, code };
+  const contact =
+    page.contact.enabled !== false ? (
+      <ContactBlock
+        formId={page.contact.formId}
+        title={page.contact.title}
+        lead={page.contact.lead}
+        placeholder={page.contact.placeholder}
+        topics={page.contact.topics}
+        leadType={page.contact.leadType}
+      />
+    ) : null;
+  const contactTop = page.contact.position === 'top';
 
   return (
     <>
@@ -234,45 +324,16 @@ export function LandingPage({
       ) : null}
 
       <Hero page={page} />
-
-      {page.trust && page.trust.length ? (
-        <div className="lp-trust">
-          <div className="container lp-container">
-            <ul>
-              {page.trust.map((t, i) => (
-                <li key={i}>{t}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ) : null}
+      {contactTop ? contact : null}
 
       {sections.map((s) => (
-        <section key={s.id} id={s.id} className={`lp-section lp-section--${s.tone ?? 'dark'}`}>
-          <div className="container lp-container">
-            {s.eyebrow ? <p className="eyebrow">[ {s.eyebrow} ]</p> : null}
-            {s.title ? <h2 className="lp-h2">{s.title}</h2> : null}
-            {s.lead ? <p className="lp-lead" dangerouslySetInnerHTML={{ __html: s.lead }} /> : null}
-            <Blocks blocks={s.blocks} sectionId={s.id} ctx={{ latest, code }} />
-            {s.note ? <p className="lp-note">{s.note}</p> : null}
-          </div>
-        </section>
+        <SectionView key={s.id} s={s} ctx={ctx} />
       ))}
 
-      <FaqList items={page.faq} title={page.faqTitle} />
-      <RelatedArticles items={articles} />
-      <RelatedPages items={related} title={page.kind === 'service' ? 'Navazující služby' : 'Související služby'} />
+      <FaqSection page={page} texts={texts} ctx={ctx} />
+      <ContinueStrip pages={related} articles={articles} label={texts.continueLabel} pictogram={page.pictogram} />
 
-      {page.contact.enabled !== false ? (
-        <ContactBlock
-          formId={page.contact.formId}
-          title={page.contact.title}
-          lead={page.contact.lead}
-          placeholder={page.contact.placeholder}
-          topics={page.contact.topics}
-          leadType={page.contact.leadType}
-        />
-      ) : null}
+      {contactTop ? null : contact}
     </>
   );
 }

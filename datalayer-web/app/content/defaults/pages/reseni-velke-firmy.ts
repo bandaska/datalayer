@@ -1,11 +1,15 @@
 import type { PageInput } from '../../schema';
 
-// Zdroj: seo-analyza/03_landing-pages/14_reseni-velke-firmy.md
-// Dokud klient nedodá podklady, stránka neobsahuje: počet a typ enterprise projektů
-// v trust baru, loga a certifikace, PDF „Přehled pro IT a bezpečnost“ (CTA i odkaz pod
-// formulářem), reakční doby SLA, seznam subzpracovatelů a pojištění, podklady pro
-// výběrové řízení, případovou studii (MiniCase), délky fází, Terraform, vztah ke GA4 360
-// a samostatnou nabídku školení (sekci jsme zkrátili na předání a zaškolení týmů).
+// Štíhlá šablona LP podle vyhodnocení webu (9. října 2026, kap. 3.1 a 5.14).
+// Zdroj obsahu: seo-analyza/03_landing-pages/14_reseni-velke-firmy.md.
+// Governance, výstupy a předání tvoří jeden blok šesti karet, server-side a BigQuery
+// v EU dvě karty pod diagramem a tabulku smluv checklist pro nákup a IT. Rozhodnutí
+// pro více trhů, srovnání GA4 a GA4 360 a ukázka testu datové vrstvy zůstávají ve
+// sbalených Technických detailech, dokud nevyjdou články; otázka GA4 360 je ve FAQ
+// a tabulka RACI patří do článku C4. Dokud klient nedodá podklady, stránka neobsahuje
+// reakční doby SLA (zůstává tabulka priorit), bezpečnostní přehled ke stažení, počet
+// a typ enterprise projektů, loga a certifikace, subzpracovatele a pojištění, podklady
+// pro výběrové řízení, případovou studii, délky fází, Terraform ani vztah ke GA4 360.
 
 export const page: PageInput = {
   path: 'reseni/velke-firmy',
@@ -24,60 +28,50 @@ export const page: PageInput = {
     eyebrow: 'řešení pro velké firmy',
     h1: 'Měření pro velké firmy: řízené, auditovatelné, vaše',
     subtitle:
-      'Měření, které projde bezpečnostním review, přežije release webu a dá stejná čísla na všech trzích. Navrhneme pravidla, nasadíme server-side ve vašem Google Cloudu a předáme dokumentaci, se kterou mohou pracovat interní týmy i další agentury.',
-    quickAnswer:
-      'Měření pro velkou firmu stojí na governance: jednotném měřicím plánu a názvosloví, verzování a release procesu Tag Manageru, řízení přístupů a dokumentaci. Technicky stojí na server-side měření a BigQuery ve vašem Google Cloud projektu s daty v EU. Smluvní rámec tvoří zpracovatelská smlouva a podporu po spuštění popisuje SLA, na kterém se dohodneme.',
+      'Měření, které projde bezpečnostním review, přežije release webu a dá stejná čísla na všech trzích. Stojí na governance – jednotném měřicím plánu, názvosloví, release procesu Tag Manageru a řízení přístupů – a na server-side a BigQuery ve vašem Google Cloudu s daty v EU. Smluvní rámec tvoří zpracovatelská smlouva a SLA, na kterém se dohodneme.',
     primaryCta: { label: 'Domluvit úvodní schůzku', href: '#kontakt' },
     secondaryCta: { label: 'Bezpečnost a soulad', href: '#bezpecnost' },
     microcopy: 'Rádi přizveme i IT a DPO · NDA před první schůzkou na požádání',
   },
 
-  trust: [
-    'Server-side a BigQuery ve vašem Google Cloudu, ne u nás',
-    'Data v EU – region BigQuery a Cloud Run volíte vy',
-    'Zpracovatelská smlouva a NDA ještě před přístupem k datům',
-  ],
+  trust: ['Server-side a BigQuery ve vašem cloudu', 'Data v EU, region volíte vy', 'Zpracovatelská smlouva a NDA předem'],
 
   sections: [
     {
       id: 'symptomy',
-      eyebrow: 'problém',
+      eyebrow: 'symptomy',
       title: 'Poznáváte se?',
+      lead: 'Čím víc trhů, týmů a agentur, tím snáz se měření rozpadne.',
       tone: 'light',
       blocks: [
         {
           type: 'cards',
-          columns: 3,
+          columns: 4,
+          variant: 'symptoms',
           items: [
             {
               title: 'Každý trh měří jinak',
-              text: 'Česko posílá <code>purchase</code>, Slovensko <code>nakup</code>, Maďarsko nemá měnu. Čísla za skupinu nejdou sečíst.',
+              text: 'Česko posílá <code>purchase</code>, Slovensko <code>nakup</code> a Maďarsko nemá měnu – čísla za skupinu nejdou sečíst.',
               pictogram: 'datalayer',
+              tag: 'trhy',
             },
             {
               title: 'V GTM má admin přístup kdekdo',
-              text: 'Pět agentur, dva bývalí zaměstnanci a jeden neznámý e-mail. Nikdo neví, kdo co publikoval.',
+              text: 'Pět agentur, dva bývalí zaměstnanci a jeden neznámý e-mail – a nikdo neví, kdo co publikoval.',
               pictogram: 'gtm',
+              tag: 'gtm',
             },
             {
               title: 'Release webu rozbije měření',
-              text: 'Vývoj přejmenuje třídu tlačítka a konverze zmizí. Přijdete na to až při měsíčním reportu.',
-              pictogram: 'ga4',
+              text: 'Vývoj přejmenuje třídu tlačítka, konverze zmizí a přijdete na to až při měsíčním reportu.',
+              pictogram: 'warn',
+              tag: 'release',
             },
             {
               title: 'IT a DPO blokují změny',
-              text: 'Nikdo jim neumí říct, kam data tečou, na jakém serveru a v jakém regionu. Server-side projekt stojí půl roku.',
+              text: 'Nikdo jim neumí říct, kam data tečou a v jakém regionu, a server-side projekt stojí půl roku.',
               pictogram: 'serverside',
-            },
-            {
-              title: 'Report pro vedení podle toho, kdo ho dělal',
-              text: 'GA4, BI tým a mediální agentura mají tři různá čísla tržeb.',
-              pictogram: 'dashboard',
-            },
-            {
-              title: 'Narážíte na limity GA4',
-              text: 'Denní export do BigQuery končí na milionu událostí, explorace nevidí data starší než čtrnáct měsíců a GA4 v nich vzorkuje.',
-              pictogram: 'bigquery',
+              tag: 'dpo',
             },
           ],
         },
@@ -88,8 +82,8 @@ export const page: PageInput = {
       id: 'governance',
       eyebrow: 'governance',
       title: 'Governance měření: pravidla, která přežijí změny týmů i agentur',
-      lead: 'Ve velké firmě měření nerozbije jedna velká chyba, ale stovka drobných změn od různých lidí. Governance jsou jednoduchá pravidla: kdo co smí měnit, jak to pojmenuje, otestuje a zdokumentuje.',
-      tone: 'dark',
+      lead: 'Ve velké firmě měření nerozbije jedna velká chyba, ale stovka drobných změn od různých lidí. Pravidla nastavíme a předáme jako dokumenty, které patří vám.',
+      tone: 'white',
       blocks: [
         {
           type: 'cards',
@@ -98,33 +92,32 @@ export const page: PageInput = {
             {
               tag: 'tracking-plan.xlsx',
               title: 'Měřicí plán',
-              text: 'Jeden verzovaný plán pro všechny domény a trhy: byznysové otázky → KPI → události → parametry → kam která událost odchází. Každá událost má vlastníka a verzi. Nové požadavky marketingu jdou přes plán, ne rovnou do GTM.',
+              text: 'Jeden verzovaný plán pro všechny domény a trhy: každá událost má vlastníka a nové požadavky jdou přes plán, ne rovnou do GTM.',
             },
             {
               tag: 'naming-convention.md',
               title: 'Názvosloví a datový slovník',
-              text: 'Pravidla pro názvy událostí a parametrů – přednostně doporučené události GA4, <code>snake_case</code>, bez diakritiky – i pro tagy, spouštěče a proměnné v GTM, třeba <code>GA4 – event – purchase</code>. Dále pro UTM parametry a tabulky v BigQuery. Slovník <code>data-dictionary.xlsx</code> říká, co který parametr znamená a v jaké jednotce je.',
+              text: 'Jednotné názvy událostí, parametrů, tagů v GTM, UTM i tabulek v BigQuery a slovník, co který parametr znamená.',
             },
             {
               tag: 'release-process.md',
               title: 'Verzování a release proces',
-              text: 'Změny v GTM vznikají v pracovních prostorech a testujeme je na stagingu. Publikovat je smí jen určená role a každá verze má popis a odkaz na požadavek v Jiře nebo ServiceNow. Exporty kontejnerů ukládáme do Gitu, takže dohledáte, kdo co kdy změnil.',
+              text: 'Změny vznikají v pracovních prostorech, testujeme je na stagingu, publikuje je jen určená role a každá verze má odkaz na požadavek.',
             },
             {
               tag: 'access-matrix.xlsx',
               title: 'Přístupová práva',
-              text: 'Princip nejnižších oprávnění: v GA4 role od Viewer po Administrator a pro externí partnery omezení „bez nákladů“ a „bez tržeb“, v GTM publikace jen pro jednoho až dva lidi, v Google Cloudu IAM podle skupin. Agentury dostávají přístup přes skupiny, ne přes osobní e-maily. Jednou za čtvrtletí přístupy zkontrolujeme a neaktivní účty odebereme.',
+              text: 'Princip nejnižších oprávnění v GA4, GTM i Google Cloudu, agentury přes skupiny a jednou za čtvrtletí kontrola přístupů.',
             },
             {
-              tag: 'architecture.pdf',
-              title: 'Dokumentace',
-              text: 'Schéma architektury, inventář datových toků <code>data-flow-inventory.xlsx</code> – co kam odchází, jaké kategorie údajů a s jakou podmínkou souhlasu – a <code>runbook.md</code> s postupy pro incidenty a předání. Dokumentace patří vám a píšeme ji tak, aby v ní mohl pokračovat kdokoliv jiný.',
+              tag: 'data-flow-inventory.xlsx',
+              title: 'Dokumentace pro IT a DPO',
+              text: 'Schéma architektury, inventář datových toků a runbook pro incidenty píšeme tak, aby v nich mohl pokračovat kdokoli jiný.',
             },
             {
-              tag: 'testy + alerty',
-              title: 'Monitoring a kontrola kvality',
-              text: 'Automatický test datové vrstvy při každém releasu. Denní kontroly v BigQuery hlídají počet nákupů, podíl prázdné měny a podíl <code>(not set)</code> a při propadu pošlou upozornění. O problému víte do 24 hodin, ne až z měsíčního reportu.',
-              link: { label: 'Správa webu a měření', href: '/sluzby/sprava-webu-a-mereni' },
+              tag: 'workshopy',
+              title: 'Předání a zaškolení týmů',
+              text: 'Marketing, vývojáře i analytiky zaškolíme na skutečných datech, ne na demo účtu – od reportů GA4 po export v BigQuery.',
             },
           ],
         },
@@ -134,164 +127,41 @@ export const page: PageInput = {
     {
       id: 'architektura',
       eyebrow: 'architektura',
-      title: 'Jak vypadá architektura měření pro více trhů',
-      tone: 'light',
+      title: 'Jak vypadá architektura pro více trhů',
+      lead: 'Všechny domény posílají data ve stejném formátu. Souhlas řešíme pro každou doménu zvlášť a platí i na serveru.',
+      tone: 'dark',
       blocks: [
         {
           type: 'flow',
           caption:
-            'Schéma architektury pro více trhů: domény firma.cz, firma.sk, firma.hu a zákaznický portál posílají data přes jednotnou datovou vrstvu do GTM, CMP předává souhlas každé domény přes Consent Mode v2. Server-side GTM v Google Cloud projektu firmy na subdoméně metrics.firma.cz posílá data do GA4 a reklamních systémů. GA4 exportuje do BigQuery v EU, kam tečou i data z CRM a ERP, a nad nimi stojí Power BI nebo Data Studio (dříve Looker Studio). Governance – měřicí plán, názvosloví, Git, IAM a monitoring – řídí datovou vrstvu, GTM, sGTM i BigQuery.',
+            'Domény a zákaznický portál posílají data přes jednotnou datovou vrstvu do GTM a CMP předává souhlas každé domény přes Consent Mode v2. Server-side GTM v Google Cloud projektu firmy pošle data do GA4 a reklamních systémů, GA4 je exportuje do BigQuery v EU, kam tečou i data z CRM a ERP. Governance – měřicí plán, názvosloví, Git, IAM a monitoring – řídí všechny vrstvy.',
           columns: [
             {
-              label: 'Domény a aplikace',
-              items: ['firma.cz', 'firma.sk', 'firma.hu', 'zákaznický portál'],
-              note: 'CMP: souhlas pro každou doménu',
+              label: 'domény a aplikace',
+              items: ['firma.cz · firma.sk · firma.hu', 'zákaznický portál'],
+              note: 'souhlas z CMP pro každou doménu',
             },
-            {
-              label: 'Jednotná datová vrstva',
-              items: ['specifikace v2.x', 'testy v CI'],
-            },
-            {
-              label: 'GTM web',
-              items: ['prostředí staging a prod', 'Consent Mode v2'],
-            },
-            {
-              label: 'sGTM ve vlastním GCP projektu',
-              items: ['Cloud Run', 'region EU', 'metrics.firma.cz'],
-              note: 'first-party',
-            },
-            {
-              label: 'Cíle',
-              items: ['GA4: property nebo roll-up v GA4 360', 'Google Ads · Meta · LinkedIn'],
-            },
-            {
-              label: 'BigQuery v EU a BI',
-              items: ['export z GA4', 'CRM a ERP', 'Power BI nebo Data Studio (dříve Looker Studio)'],
-            },
-            {
-              label: 'Governance',
-              items: ['měřicí plán', 'názvosloví', 'Git', 'IAM', 'monitoring'],
-              note: 'řídí datovou vrstvu, GTM, sGTM i BigQuery',
-            },
+            { label: 'datová vrstva a GTM', items: ['jednotná specifikace', 'testy v CI', 'staging a produkce'] },
+            { label: 'sGTM ve vlastním projektu', items: ['Cloud Run v EU', 'metrics.firma.cz'], note: 'first-party' },
+            { label: 'cíle', items: ['GA4', 'Google Ads · Meta · LinkedIn'] },
+            { label: 'BigQuery v EU', items: ['export z GA4', 'data z CRM a ERP', 'BI, které už používáte'] },
           ],
         },
         {
-          type: 'paragraphs',
+          type: 'cards',
+          columns: 2,
           items: [
-            'Všechny domény posílají data ve stejném formátu. Souhlas řešíme pro každou doménu zvlášť. Server-side kontejner běží ve vašem Google Cloud projektu na vlastní subdoméně, data končí v BigQuery v EU a nad nimi stojí BI, které už používáte.',
+            {
+              tag: 'gcp',
+              title: 'Server-side ve vašem Google Cloudu',
+              text: 'Billing, IAM, auditní logy i region máte pod kontrolou vy. Když IT provozuje jiný cloud, server-side GTM poběží v jakémkoli prostředí s Dockerem.',
+            },
+            {
+              tag: 'bigquery · eu',
+              title: 'BigQuery a data v EU',
+              text: 'Region datasetu, třeba multiregion EU nebo Frankfurt, volíte hned při propojení s GA4 – pozdější přesun hrozí mezerou v datech.',
+            },
           ],
-        },
-      ],
-    },
-
-    {
-      id: 'vice-domen',
-      eyebrow: 'více trhů',
-      title: 'Více domén a trhů: rozhodnutí, která děláme na začátku',
-      lead: 'Většina problémů skupinových reportů vznikne v prvním týdnu projektu, když tato rozhodnutí nikdo neudělá vědomě.',
-      tone: 'dark',
-      blocks: [
-        {
-          type: 'table',
-          head: ['Rozhodnutí', 'Možnosti', 'Na čem záleží a co doporučujeme'],
-          rows: [
-            [
-              'Kolik GA4 properties',
-              'Jedna pro všechny trhy, jedna na trh, nebo v GA4 360 roll-up a sub-properties',
-              'Jedna property zjednoduší skupinový report, oddělené properties oddělí práva a limity. V GA4 360 obojí spojí roll-up.',
-            ],
-            [
-              'Cross-domain měření',
-              'Zapnout pro domény, mezi kterými lidé přecházejí: e-shop, platební brána, portál',
-              'V GA4 ho nastavíte v datovém streamu v části „Configure your domains“, nejvýš pro sto podmínek. Na všech doménách stejné ID značky.',
-            ],
-            [
-              'Souhlas napříč doménami',
-              'Samostatná lišta na každé doméně, nebo sdílení souhlasu přes CMP',
-              'Souhlas platí pro doménu, kde ho návštěvník udělil. Sdílení řešíme jen tam, kde to CMP a právní posouzení umožní.',
-            ],
-            [
-              'Měna',
-              'Jedna měna property, nebo měna podle trhu',
-              'Každá událost nese <code>currency</code> a GA4 hodnoty přepočte na měnu property. Účetní report počítáme v BigQuery s vlastním kurzem.',
-            ],
-            [
-              'Časové pásmo',
-              'Podle centrály, nebo podle trhu',
-              'Jedno pásmo pro celou skupinu, jinak dny v reportech nebudou sedět.',
-            ],
-            [
-              'Interní provoz a testy',
-              'Filtr IP, cookie pro zaměstnance, testovací prostředí',
-              'Stejná pravidla pro všechny trhy.',
-            ],
-            [
-              'Nežádoucí odkazující zdroje',
-              'Platební brány, SSO, rezervační systémy',
-              'Seznam udržujeme centrálně.',
-            ],
-            [
-              'Kontejnery GTM',
-              'Jeden pro všechny domény, nebo jeden na trh',
-              'Jeden kontejner znamená jednotnost, víc kontejnerů autonomii trhů. Často volíme kombinaci: společný kontejner a pracovní prostory pro jednotlivé trhy.',
-            ],
-          ],
-        },
-      ],
-    },
-
-    {
-      id: 'server-side',
-      eyebrow: 'server-side',
-      title: 'Server-side na vašem Google Cloudu, ne na našem',
-      tone: 'light',
-      blocks: [
-        {
-          type: 'paragraphs',
-          items: [
-            'Server-side Tag Manager nasadíme do Google Cloud projektu, který patří vám. Billing platíte přímo Googlu, přístupy řídí interní IAM, auditní logy vidí bezpečnostní tým a region si vyberete sami. Náš server nepotřebujete a nejste na nás závislí – kontejner i infrastruktura zůstanou, i kdybychom spolupráci ukončili. Pokud IT provozuje jiný cloud, server-side GTM poběží v jakémkoliv prostředí s Dockerem.',
-          ],
-        },
-        {
-          type: 'list',
-          style: 'bullet',
-          title: 'Parametry provozu podle doporučení Googlu',
-          items: [
-            'Cloud Run, nejméně dvě instance kvůli dostupnosti, každý server s 1 vCPU a 0,5 GB paměti.',
-            'Google uvádí orientačně 45 dolarů měsíčně za server. Autoscaling na dva až deset serverů zvládne zhruba 35–350 požadavků za sekundu.',
-            'Samostatný preview server pro ladění.',
-            'Vlastní subdoména, třeba <code>metrics.firma.cz</code>, pro first-party požadavky.',
-            'Pro globální provoz nasazení do více regionů.',
-          ],
-        },
-        {
-          type: 'callout',
-          tone: 'info',
-          title: 'Souhlas platí i na serveru',
-          text: 'Tagy na serveru respektují signály Consent Mode a volby z CMP. Server-side mění, kam a v jaké podobě data odcházejí – ne to, jestli se návštěvníka na souhlas ptáte. Podrobnosti najdete u služby <a href="/sluzby/server-side-tracking">Server-side tracking</a>.',
-        },
-      ],
-    },
-
-    {
-      id: 'bigquery-eu',
-      eyebrow: 'data v EU',
-      title: 'BigQuery a data residency: kde data fyzicky leží',
-      tone: 'dark',
-      blocks: [
-        {
-          type: 'list',
-          style: 'bullet',
-          items: [
-            '<strong>Region volíte při propojení GA4 s BigQuery.</strong> Multiregion <code>EU</code> ukládá data v Belgii nebo Nizozemsku. Zvolit můžete i jeden region, třeba <code>europe-west3</code> ve Frankfurtu nebo <code>europe-central2</code> ve Varšavě. Pozdější změna znamená přesun datasetu a riziko mezery v datech, proto ji řešíme hned na začátku.',
-            '<strong>Limity exportu.</strong> Standardní GA4 omezuje denní export do BigQuery na milion událostí. Průběžný streaming export limit objemu nemá, funguje ale jako „best effort“ bez garance úplnosti a stojí 0,05 dolaru za GB. GA4 360 zvládne denní export v řádu miliard událostí a navíc nabízí export „Fresh Daily“.',
-            '<strong>GA4 a EU.</strong> Google Analytics sbírá data z EU zařízení přes servery v EU a IP adresy uživatelů z EU neukládá. Kde data dál zpracovává, Google v dokumentaci k datům z EU neuvádí. Pro předávání do USA platí rámec EU–US Data Privacy Framework. Tribunál EU ho potvrdil 3. září 2025 a žalobce podal proti rozsudku odvolání k Soudnímu dvoru – vývoj by měl sledovat DPO.',
-            '<strong>Granulární data o lokalitě a zařízení</strong> můžete v GA4 pro vybrané regiony vypnout – za cenu méně přesného modelování konverzí.',
-          ],
-        },
-        {
-          type: 'paragraphs',
-          items: ['Datový sklad nad těmito daty postavíme ve službě <a href="/sluzby/bigquery">BigQuery</a>.'],
         },
       ],
     },
@@ -299,117 +169,47 @@ export const page: PageInput = {
     {
       id: 'bezpecnost',
       eyebrow: 'bezpečnost',
-      title: 'Bezpečnost a soulad: smlouvy a odpovědnosti',
+      title: 'Bezpečnost a soulad: checklist pro nákup a IT',
       lead: 'Ve velkém projektu je víc smluvních vztahů, než se zdá. Pomůžeme je zmapovat, aby DPO a právní oddělení věděli, co schvalují.',
       tone: 'light',
+      note: 'Nejsme advokátní kancelář – právní posouzení patří právnímu oddělení nebo DPO.',
       blocks: [
-        {
-          type: 'table',
-          head: ['Dokument', 'Mezi kým', 'Co řeší'],
-          rows: [
-            [
-              '<strong>Zpracovatelská smlouva (DPA)</strong> podle čl. 28 GDPR',
-              'vy jako správce ↔ datalayer.cz jako zpracovatel',
-              'Předmět a doba zpracování, kategorie údajů, technická a organizační opatření, subzpracovatelé, součinnost, audit, výmaz po skončení',
-            ],
-            [
-              '<strong>NDA</strong>',
-              'vy ↔ datalayer.cz',
-              'Důvěrnost obchodních informací, podle potřeby už před první schůzkou',
-            ],
-            [
-              '<strong>Google Ads Data Processing Terms</strong>',
-              'vy ↔ Google',
-              'Google Analytics, rozšířené konverze a Customer Match – Google jako zpracovatel',
-            ],
-            [
-              '<strong>Google Cloud Data Processing Addendum</strong>',
-              'vy ↔ Google Cloud',
-              'Server-side GTM a BigQuery: Google jako zpracovatel, certifikace ISO 27001 a SOC 2/3, oznámení nového subzpracovatele třicet dní předem',
-            ],
-            [
-              '<strong>Podmínky Mety, LinkedInu a dalších platforem</strong>',
-              'vy ↔ platforma',
-              'Conversions API a pixely',
-            ],
-            [
-              '<strong>Záznamy o činnostech zpracování, případně DPIA</strong>',
-              'vy, konkrétně DPO',
-              'Dodáme technický popis datových toků v <code>data-flow-inventory.xlsx</code>',
-            ],
-          ],
-        },
         {
           type: 'list',
           style: 'check',
-          title: 'Jak přistupujeme k datům',
           items: [
-            'Pracujeme přímo ve vašich systémech, na jmenovitých účtech s dvoufázovým ověřením.',
-            'Kopie dat na vlastní zařízení nestahujeme, pokud to projekt nevyžaduje a nedohodneme se jinak.',
-            'Přístupy odebíráme hned po skončení spolupráce.',
+            '<strong>Zpracovatelská smlouva</strong> podle čl. 28 GDPR ještě před přístupem k datům, NDA i před první schůzkou.',
+            '<strong>IAM:</strong> jmenovité účty s dvoufázovým ověřením, agentury přes skupiny, ne přes osobní e-maily.',
+            '<strong>Logy:</strong> auditní logy Google Cloudu vidí interní bezpečnostní tým.',
+            '<strong>Lokalita dat:</strong> Cloud Run i BigQuery v regionu, který zvolíte, typicky v EU. Kopie dat na vlastní zařízení stahujeme jen po dohodě.',
+            '<strong>Odchod:</strong> po skončení spolupráce odebereme přístupy a měření běží dál beze změny.',
           ],
-        },
-        {
-          type: 'callout',
-          tone: 'warn',
-          text: 'Nejsme advokátní kancelář. Popisujeme technické a smluvní souvislosti, právní posouzení patří vašemu právnímu oddělení nebo DPO.',
         },
       ],
     },
 
     {
-      id: 'spoluprace-s-it',
-      eyebrow: 'spolupráce s IT',
-      title: 'Spolupráce s IT: měření jako součást vývoje, ne záplata po něm',
-      lead: 'Ve velké firmě měření nejčastěji rozbije release, protože datová vrstva chybí v zadání a nikdo ji netestuje. Navrhneme, aby patřila do definice hotového, tedy do „Definition of Done“.',
-      tone: 'dark',
+      id: 'postup',
+      eyebrow: 'postup',
+      title: 'Jak postupujeme u velkého projektu',
+      lead: 'Stejných pět kroků jako u všech našich služeb. Audit u velkého projektu zahrnuje všechny domény, kontejnery a účty i rozhovory s marketingem, IT, DPO a agenturami.',
+      tone: 'white',
       blocks: [
         {
-          type: 'table',
-          caption: 'Kdo co dělá při změně měření: R dělá, A schvaluje, C konzultuje, I dostává informace.',
-          head: ['Činnost', 'Marketing', 'IT / vývoj', 'datalayer.cz', 'DPO / právní', 'Agentury'],
-          rows: [
-            ['Požadavek na nové měření', 'R', 'I', 'C', 'I', 'C'],
-            ['Úprava měřicího plánu', 'A', 'C', 'R', 'C', 'I'],
-            ['Specifikace datové vrstvy', 'I', 'A', 'R', '–', 'I'],
-            ['Implementace datové vrstvy', 'I', 'R', 'C', '–', '–'],
-            ['Změny v GTM', 'C', 'I', 'R/A', '–', 'R v pracovním prostoru'],
-            ['Publikace GTM', 'I', 'C', 'R', '–', '–'],
-            ['Server-side infrastruktura', '–', 'A', 'R', 'I', '–'],
-            ['Consent a CMP', 'C', 'R', 'R', 'A', 'I'],
-            ['Testy a validace', 'I', 'R, tým QA', 'R', '–', 'I'],
-            ['Monitoring a incidenty', 'I', 'C', 'R', 'I', 'I'],
-          ],
+          type: 'process',
+          implementation:
+            'Nejdřív pilot na jednom trhu nebo doméně, celý včetně server-side a testů, potom další trhy a domény podle jeho výsledků.',
+          implementationFromClient: 'vývojový tým, projekt v Google Cloudu a DNS',
         },
         {
-          type: 'steps',
+          type: 'list',
+          style: 'check',
+          title: 'Jak zapadneme do vývoje',
           items: [
-            { title: 'Specifikace', text: 'Změna ve specifikaci a v měřicím plánu.' },
-            { title: 'Staging', text: 'Vývoj změnu implementuje na stagingu.' },
-            { title: 'Test v CI', text: 'Automatický test datové vrstvy.' },
-            { title: 'Úpravy GTM', text: 'Změny v pracovním prostoru a náhled na stagingu.' },
-            { title: 'Schválení', text: 'Určená role změnu schválí.' },
-            { title: 'Publikace', text: 'Verze s popisem a odkazem na požadavek.' },
-            { title: 'Monitoring', text: 'Zvýšený dohled 48 hodin po publikaci.' },
-          ],
-        },
-        {
-          type: 'code',
-          lang: 'js',
-          caption: 'Ukázka testu v Playwrightu, zjednodušeně',
-          code: `test('purchase má měnu, hodnotu a položky', async ({ page }) => {
-  await page.goto(process.env.STAGING_URL + '/test-checkout?order=QA-1');
-  const purchase = await page.evaluate(() =>
-    window.dataLayer.find(e => e.event === 'purchase'));
-  expect(purchase.ecommerce.currency).toMatch(/^(CZK|EUR|HUF)$/);
-  expect(purchase.ecommerce.value).toBeGreaterThan(0);
-  expect(purchase.ecommerce.items.length).toBeGreaterThan(0);
-});`,
-        },
-        {
-          type: 'paragraphs',
-          items: [
-            'Test běží při každém buildu. Když vývojář omylem odstraní měnu, build neprojde a o chybě se nedozvíte až z reportu.',
+            'exporty kontejnerů GTM ukládáme do vašeho repozitáře v Gitu',
+            'každá změna prochází review a publikuje ji jen určená role',
+            'změny testujeme na stagingu a datovou vrstvu automatickým testem v CI',
+            'publikaci navážeme na release webu a 48 hodin po ní zvýšíme dohled',
           ],
         },
       ],
@@ -426,279 +226,141 @@ export const page: PageInput = {
           type: 'table',
           head: ['Priorita', 'Příklad'],
           rows: [
-            ['<strong>P1 – kritická</strong>', 'Výpadek měření nákupů nebo leadů, tagy běží před souhlasem'],
-            ['<strong>P2 – vysoká</strong>', 'V části událostí chybí parametr, vypadl jeden reklamní systém'],
-            ['<strong>P3 – běžná</strong>', 'Nový požadavek na měření, úprava reportu'],
-          ],
-        },
-        {
-          type: 'cards',
-          columns: 3,
-          items: [
-            {
-              title: 'Konzultace',
-              text: 'Pevný počet hodin měsíčně, revize požadavků, účast na plánování.',
-            },
-            {
-              title: 'Provoz',
-              text: 'Monitoring, alerty, řešení incidentů P1–P3 a měsíční report kvality dat.',
-            },
-            {
-              title: 'Provoz + release',
-              text: 'Navíc asistence u každého releasu, správa pracovních prostorů agentur a čtvrtletní audit přístupů.',
-            },
+            ['<strong>P1 – kritická</strong>', 'výpadek měření nákupů či leadů, tagy před souhlasem'],
+            ['<strong>P2 – vysoká</strong>', 'chybí parametr, vypadl jeden reklamní systém'],
+            ['<strong>P3 – běžná</strong>', 'nový požadavek na měření, úprava reportu'],
           ],
         },
         {
           type: 'paragraphs',
           items: [
-            'Jak hlídáme měření v provozu, popisujeme u služby <a href="/sluzby/sprava-webu-a-mereni">Správa webu a měření</a>.',
+            'Podporu nabízíme ve třech úrovních: konzultace s pevným počtem hodin, provoz a provoz s asistencí u každého releasu. Provoz zahrnuje monitoring, řešení incidentů a měsíční report kvality dat. Jak hlídáme měření v provozu, popisujeme u služby <a href="/sluzby/sprava-webu-a-mereni">Správa webu a měření</a>.',
           ],
         },
       ],
     },
 
     {
-      id: 'skoleni',
-      eyebrow: 'předání',
-      title: 'Předání a zaškolení týmů: GA4, Tag Manager a BigQuery',
-      lead: 'Governance funguje, jen když jí rozumějí lidé, kteří s měřením pracují. Při předání školíme na skutečných datech a nastavení, ne na demo účtu.',
+      id: 'jak-poznate',
+      eyebrow: 'monitoring',
+      title: 'Jak poznáte, že měření funguje',
+      lead: 'Monitoring patří ke governance: o problému víte do 24 hodin, ne až z měsíčního reportu.',
       tone: 'dark',
+      layout: 'split',
       blocks: [
-        {
-          type: 'cards',
-          columns: 3,
-          items: [
-            {
-              title: 'Marketing a e-commerce',
-              text: 'Reporty a explorace v GA4, UTM konvence a jak číst rozdíly mezi GA4 a reklamními systémy.',
-              pictogram: 'ga4',
-            },
-            {
-              title: 'Vývojáři a QA',
-              text: 'Datová vrstva, specifikace, testy, release proces a ladění v GTM Preview.',
-              pictogram: 'datalayer',
-            },
-            {
-              title: 'Analytici a BI',
-              text: 'Struktura exportu GA4 v BigQuery, SQL dotazy a datový model pro Power BI nebo Data Studio.',
-              pictogram: 'bigquery',
-            },
-          ],
-        },
-      ],
-    },
-
-    {
-      id: 'ga4-360',
-      eyebrow: 'GA4 360',
-      title: 'Potřebujete Google Analytics 360?',
-      lead: 'GA4 360 je placená verze s vyššími limity a smluvní úrovní služeb. Pro řadu velkých firem je správná volba, pro jiné stačí standardní GA4 s BigQuery. Rozhodujeme podle dat, ne podle velikosti firmy.',
-      tone: 'light',
-      blocks: [
-        {
-          type: 'table',
-          head: ['Limit nebo funkce', 'GA4 standard', 'GA4 360'],
-          rows: [
-            ['Uchování dat v exploracích', 'až 14 měsíců', 'až 50 měsíců'],
-            ['Parametry na událost', '25', '100'],
-            ['Klíčové události', '30', '50'],
-            ['Publika', '100', '400'],
-            ['Vzorkování v exploracích', '10 mil. událostí na dotaz', '1 mld. událostí na dotaz'],
-            ['Nevzorkované explorace', 'ne', 'ano, 20 tis. tokenů denně'],
-            ['Denní export do BigQuery', '1 mil. událostí', 'miliardy událostí a Fresh Daily'],
-            ['Kvóta API', '200 000 tokenů denně', '2 mil. tokenů denně'],
-            ['Import dat', '10 GB na property', '1 TB na property'],
-            ['Roll-up a sub-properties', 'ne', 'ano'],
-            ['SLA', 'ne', 'ano, ve smlouvě GA 360'],
-          ],
-        },
         {
           type: 'list',
           style: 'check',
-          title: 'Dává smysl, když',
           items: [
-            'Denně posíláte víc než milion událostí a potřebujete kompletní denní export.',
-            'Potřebujete skupinový pohled přes více značek nebo trhů a zároveň oddělená práva – tedy roll-up a sub-properties.',
-            'Chcete delší historii v rozhraní nebo nevzorkované explorace.',
-            'IT vyžaduje smluvní SLA.',
+            'všechny trhy posílají stejné události s měnou a čísla za skupinu jdou sečíst',
+            'u každé změny v GTM dohledáte, kdo ji kdy udělal a proč',
+            'test datové vrstvy v CI zastaví build, když chybí měna, hodnota nebo položky',
+            'denní kontroly v BigQuery hlídají nákupy, prázdnou měnu i <code>(not set)</code>',
           ],
-        },
-        {
-          type: 'list',
-          style: 'cross',
-          title: 'Nedává smysl, když',
-          items: [
-            'Většinu analýz stejně děláte v BigQuery a streaming export stačí.',
-            'Limity standardní verze reálně nepřekračujete.',
-          ],
-        },
-        {
-          type: 'paragraphs',
-          items: ['Licenci GA4 360 prodávají Google a jeho certifikovaní partneři. Cenu určuje objem dat.'],
-        },
-      ],
-    },
-
-    {
-      id: 'co-dostanete',
-      eyebrow: 'výstupy',
-      title: 'Co od nás dostanete',
-      tone: 'dark',
-      blocks: [
-        {
-          type: 'table',
-          head: ['Výstup', 'Popis'],
-          rows: [
-            [
-              '<code>discovery-report.pdf</code>',
-              'Stav měření na všech doménách, v kontejnerech a účtech, rozhovory se stakeholdery, rizika a priority',
-            ],
-            ['<code>tracking-plan.xlsx</code>', 'Skupinový měřicí plán s vlastníky a verzemi'],
-            ['<code>naming-convention.md</code> a datový slovník', 'Názvosloví událostí, parametrů, GTM, UTM a BigQuery'],
-            ['<code>access-matrix.xlsx</code>', 'Role a oprávnění v GA4, GTM, Google Cloudu a reklamních účtech'],
-            ['<code>release-process.md</code> a testy', 'Release proces, RACI, automatické testy datové vrstvy'],
-            ['Architektura a infrastruktura', 'sGTM v Google Cloud projektu klienta, dataset BigQuery v EU'],
-            ['<code>data-flow-inventory.xlsx</code>', 'Inventář datových toků pro DPO'],
-            ['Monitoring', 'Denní kontroly a alerty'],
-            ['Školení a předání', 'Workshopy podle rolí, dokumentace, runbook'],
-          ],
-        },
-      ],
-    },
-
-    {
-      id: 'postup',
-      eyebrow: 'postup',
-      title: 'Jak postupujeme u velkého projektu',
-      tone: 'light',
-      blocks: [
-        {
-          type: 'steps',
-          items: [
-            {
-              title: 'Úvodní schůzka a NDA',
-              text: 'Cíle, rozsah, stakeholdeři a omezení.',
-              fromClient: 'Marketing, ideálně i IT',
-            },
-            {
-              title: 'Discovery a audit',
-              text: 'Audit všech domén, kontejnerů a účtů. Rozhovory s marketingem, IT, DPO a agenturami.',
-              fromClient: 'Přístupy pro čtení a čas na rozhovory',
-            },
-            {
-              title: 'Návrh governance',
-              text: 'Měřicí plán, názvosloví, role, release proces a architektura.',
-              fromClient: 'Schvalovací schůzka s vlastníky',
-            },
-            {
-              title: 'Pilot',
-              text: 'Jeden trh nebo doména end-to-end, včetně server-side a testů.',
-              fromClient: 'Vývojový tým, GCP projekt, DNS',
-            },
-            {
-              title: 'Rollout',
-              text: 'Další trhy a domény podle výsledků pilotu.',
-              fromClient: 'Kapacita vývoje',
-            },
-            {
-              title: 'Provoz a SLA',
-              text: 'Monitoring, asistence u releasů, čtvrtletní revize.',
-              fromClient: 'Kontaktní osoba',
-            },
-          ],
-        },
-        {
-          type: 'paragraphs',
-          items: ['Obecný průběh spolupráce popisujeme na stránce <a href="/jak-pracujeme">Jak pracujeme</a>.'],
         },
       ],
     },
   ],
 
+  techDetails: {
+    summary: 'Technické detaily: více trhů, GA4 360 a test datové vrstvy',
+    blocks: [
+      {
+        type: 'table',
+        caption: 'Rozhodnutí pro více trhů, která děláme na začátku',
+        head: ['Rozhodnutí', 'Možnosti', 'Na čem záleží'],
+        rows: [
+          ['Počet GA4 properties', 'jedna pro všechny trhy, jedna na trh, nebo roll-up v GA4 360', 'jedna zjednoduší skupinový report, víc properties oddělí práva a limity'],
+          ['Cross-domain měření', 'pro domény, mezi kterými lidé přecházejí', 'nastavení v datovém streamu, nejvýš sto podmínek, stejné ID značky'],
+          ['Souhlas napříč doménami', 'lišta na každé doméně, nebo sdílení přes CMP', 'sdílet jen tam, kde to CMP a právní posouzení umožní'],
+          ['Měna', 'jedna měna property, nebo podle trhu', 'každá událost nese <code>currency</code>, účetní report počítáme v BigQuery s vlastním kurzem'],
+          ['Časové pásmo', 'podle centrály, nebo podle trhu', 'jedno pro celou skupinu, jinak dny v reportech nesedí'],
+          ['Interní provoz', 'filtr IP, cookie pro zaměstnance, testovací prostředí', 'stejná pravidla pro všechny trhy'],
+          ['Nežádoucí odkazující zdroje', 'platební brány, SSO, rezervační systémy', 'seznam udržujeme centrálně'],
+          ['Kontejnery GTM', 'jeden pro všechny domény, nebo jeden na trh', 'často kombinace: společný kontejner a pracovní prostory trhů'],
+        ],
+      },
+      {
+        type: 'table',
+        caption: 'GA4 standard a GA4 360',
+        head: ['Limit nebo funkce', 'GA4 standard', 'GA4 360'],
+        rows: [
+          ['Uchování dat v exploracích', 'až čtrnáct měsíců', 'až padesát měsíců'],
+          ['Parametry na událost', '25', 'sto'],
+          ['Klíčové události', 'třicet', 'padesát'],
+          ['Publika', 'sto', '400'],
+          ['Vzorkování v exploracích', 'deset milionů událostí na dotaz', 'miliarda událostí na dotaz'],
+          ['Nevzorkované explorace', 'ne', 'ano, dvacet tisíc tokenů denně'],
+          ['Denní export do BigQuery', 'milion událostí', 'miliardy událostí a Fresh Daily'],
+          ['Kvóta API', '200 000 tokenů denně', 'dva miliony tokenů denně'],
+          ['Import dat', 'deset GB na property', 'jeden TB na property'],
+          ['Roll-up a sub-properties', 'ne', 'ano'],
+          ['SLA', 'ne', 'ano, ve smlouvě GA 360'],
+        ],
+      },
+      {
+        type: 'paragraphs',
+        items: [
+          'Licenci GA4 360 prodávají Google a jeho certifikovaní partneři, cenu určuje objem dat. Streaming export do BigQuery limit objemu nemá, funguje ale bez garance úplnosti a stojí 0,05 dolaru za GB.',
+        ],
+      },
+      {
+        type: 'code',
+        lang: 'js',
+        caption: 'Zjednodušená ukázka testu v Playwrightu: běží při každém buildu, a když vývojář omylem odstraní měnu, build neprojde.',
+        code: `test('purchase má měnu, hodnotu a položky', async ({ page }) => {
+  await page.goto(process.env.STAGING_URL + '/test-checkout?order=QA-1');
+  const purchase = await page.evaluate(() =>
+    window.dataLayer.find(e => e.event === 'purchase'));
+  expect(purchase.ecommerce.currency).toMatch(/^(CZK|EUR|HUF)$/);
+  expect(purchase.ecommerce.value).toBeGreaterThan(0);
+  expect(purchase.ecommerce.items.length).toBeGreaterThan(0);
+});`,
+      },
+    ],
+  },
+
   faq: [
     {
-      q: 'Může server-side GTM běžet v našem vlastním cloudu?',
-      a: 'Ano. Preferujeme Google Cloud Run ve vašem Google Cloud projektu, protože ho Google podporuje přímo a snadno ho napojíme na BigQuery. Server-side GTM je ale kontejner Dockeru a poběží v jakémkoliv prostředí, které Docker podporuje, včetně infrastruktury v jiném cloudu. Potřebuje cluster tagovacích serverů a jeden samostatný preview server. Architekturu doladíme s IT tak, aby odpovídala interním bezpečnostním standardům.',
+      q: 'Potřebujeme Google Analytics 360?',
+      a: 'Záleží na objemu dat a na tom, jak je používáte. GA4 360 dává smysl, když denně posíláte víc než milion událostí a potřebujete kompletní denní export do BigQuery, když chcete roll-up přes více značek nebo trhů, delší historii, nevzorkované explorace nebo smluvní SLA. Pokud většinu analýz děláte v BigQuery a limity standardní verze nepřekračujete, často stačí standardní GA4 se streamingem do BigQuery. Během discovery to spočítáme z reálných dat.',
     },
     {
       q: 'Kde budou naše data fyzicky ležet?',
-      a: 'Server-side GTM a BigQuery nasazujeme do regionu, který zvolíte. Typicky jde o multiregion EU, tedy Belgii a Nizozemsko, nebo o konkrétní region jako Frankfurt či Varšava. Region BigQuery volíte při propojení s GA4 a pozdější změna je pracná. Samotné GA4 sbírá data z EU zařízení přes servery v EU a IP adresy neukládá. Další zpracování řídí podmínky Googlu a předání do USA rámec EU–US Data Privacy Framework. Posouzení nechte na DPO.',
+      a: 'Server-side GTM a BigQuery nasadíme do regionu, který zvolíte – typicky do multiregionu EU, tedy Belgie a Nizozemska, nebo do Frankfurtu či Varšavy. Samotné GA4 sbírá data z EU zařízení přes servery v EU a IP adresy neukládá. Další zpracování řídí podmínky Googlu a předání do USA rámec EU–US Data Privacy Framework – posouzení nechte na DPO.',
     },
     {
-      q: 'Podepíšete zpracovatelskou smlouvu a NDA?',
-      a: 'Ano, standardně. NDA můžeme podepsat i před první schůzkou. Zpracovatelskou smlouvu podle čl. 28 GDPR uzavíráme dřív, než získáme přístup k datům, a rádi vyjdeme z vaší šablony. Uvádíme v ní subzpracovatele, technická a organizační opatření a postup po skončení spolupráce. Pracujeme ve vašich účtech na jmenovitých přístupech a po skončení je odebíráme.',
+      q: 'Jak spolupracujete s naším IT a agenturami?',
+      a: 'Přizpůsobíme se nástroji, který používáte, ať je to Jira, Azure DevOps, nebo ServiceNow, i cyklu releasů a datovou vrstvu zařadíme do definice hotového. Agentury dál dělají kampaně: každá dostane vlastní pracovní prostor v GTM a přístup přes skupinu a publikaci schvaluje určená role. Nemusí tak čekat na nás a zároveň nemohou nechtěně rozbít měření ostatním.',
     },
     {
-      q: 'Potřebujeme GA4 360?',
-      a: 'Záleží na objemu a na tom, jak data používáte. GA4 360 dává smysl, když denně posíláte víc než milion událostí a potřebujete kompletní denní export do BigQuery, když chcete roll-up přes více značek nebo trhů, delší historii, nevzorkované explorace nebo smluvní SLA. Pokud většinu analýz děláte v BigQuery a limity standardní verze nepřekračujete, často stačí standardní GA4 se streamingem do BigQuery. Během discovery to spočítáme z reálných dat.',
-    },
-    {
-      q: 'Jak spolupracujete s našimi agenturami?',
-      a: 'Agentury dál dělají kampaně, my hlídáme jednotné měření. Každá agentura dostane vlastní pracovní prostor v GTM a přístup přes skupinu, změny procházejí měřicím plánem a publikaci schvaluje určená role. Agentury tak nemusí čekat na nás a zároveň nemohou nechtěně rozbít měření ostatním. Dokumentace a názvosloví jsou pro všechny stejné.',
-    },
-    {
-      q: 'Jak zapadnete do našeho release procesu?',
-      a: 'Přizpůsobíme se nástroji, který používáte, ať je to Jira, Azure DevOps, nebo ServiceNow, i cyklu releasů. Datová vrstva bude patřit do zadání a do definice hotového, automatický test poběží v CI pipeline a změny v GTM publikujeme v návaznosti na release webu. Exporty kontejnerů ukládáme do vašeho repozitáře, takže každá změna má historii a odkaz na požadavek.',
-    },
-    {
-      q: 'Co když spolupráci ukončíme?',
-      a: 'Měření poběží dál. Účty, kontejnery, Google Cloud projekt i data patří vám. Dokumentaci píšeme pro předání a nepoužíváme žádný vlastní skript ani server, bez kterého by měření nefungovalo. Při ukončení předáme aktuální stav, odebereme svoje přístupy a podle smlouvy smažeme případné pracovní kopie.',
-    },
-    {
-      q: 'Jaké SLA nabízíte?',
-      a: 'Reakční doby a rozsah dohodneme ve smlouvě podle toho, jak kritická jsou data pro byznys. Vždy definujeme priority: P1 je například výpadek měření nákupů či leadů nebo spouštění tagů před souhlasem, P2 částečný výpadek a P3 běžné požadavky. Podpora zahrnuje monitoring a měsíční report kvality dat. Konkrétní parametry navrhneme po discovery.',
+      q: 'Komu patří účty a data a co když spolupráci ukončíme?',
+      a: 'Účty, kontejnery, Google Cloud projekt i data patří vám a měření poběží dál. Dokumentaci píšeme pro předání a nepoužíváme žádný vlastní skript ani server, bez kterého by měření nefungovalo. Při ukončení předáme aktuální stav, odebereme svoje přístupy a podle smlouvy smažeme případné pracovní kopie.',
     },
     {
       q: 'Jak u velkého projektu vzniká cena?',
-      a: 'Discovery a audit nabízíme jako samostatnou fázi s pevným rozsahem. Z jejích výstupů vznikne návrh dalších fází – pilotu, rolloutu a provozu – s rozsahem, výstupy a termíny pro každou z nich. Cenu ovlivňuje hlavně počet domén a trhů, počet agentur a kontejnerů, server-side a BigQuery a požadovaná úroveň SLA. Náklady na Google Cloud a případné licence, třeba GA4 360, platíte přímo poskytovatelům.',
+      a: 'Discovery a audit nabízíme jako samostatnou fázi s pevným rozsahem. Z jejích výstupů navrhneme další fáze – pilot, rollout a provoz – s rozsahem a výstupy pro každou z nich. Cenu ovlivňuje hlavně počet domén a trhů, agentur a kontejnerů, server-side a BigQuery a požadovaná úroveň SLA. Náklady na Google Cloud a případné licence, třeba GA4 360, platíte přímo poskytovatelům.',
     },
     {
-      q: 'Zúčastníte se výběrového řízení?',
-      a: 'Ano. Dodáme harmonogram, rozsah po fázích a návrh SLA. Pokud zadávací dokumentace vyžaduje konkrétní formát nebo kvalifikační předpoklady, napište nám je předem – řekneme, co z toho splňujeme.',
-    },
-    {
-      q: 'Školíte i naše týmy?',
-      a: 'Ano, zaškolení týmů patří k předání. Marketing učíme práci s reporty a exploracemi GA4 a UTM konvencím, vývojáře datové vrstvě a testům, analytiky exportu GA4 v BigQuery a stavbě datového modelu pro Power BI nebo Data Studio. Školíme na vašich datech a nastavení.',
-    },
-    {
-      q: 'Jak zajistíte, že měření nepřestane fungovat po releasu?',
-      a: 'Kombinací tří věcí. Automatický test datové vrstvy v CI zastaví build, když chybí klíčové údaje. V release procesu publikujeme změny v GTM až po ověření na stagingu. A denní kontroly v BigQuery pošlou upozornění při propadu. O problému tak víte do 24 hodin, často dřív, než se dostane na produkci.',
+      q: 'Jak dlouho velký projekt trvá?',
+      a: 'Délku určuje hlavně počet trhů a domén a kapacita vývoje. Po discovery ověříme řešení na pilotu – jednom trhu nebo doméně – a další trhy přidáváme podle jeho výsledků. Termíny jednotlivých fází navrhneme z výstupů discovery.',
     },
   ],
 
   relatedArticles: [
-    { slug: 'merici-plan', title: 'Měřicí plán: jak naplánovat měření dřív, než napíšete první tag' },
-    { slug: 'audit-gtm-kontejneru', title: 'Audit GTM kontejneru: nejčastější chyby a jak udržet pořádek' },
-    {
-      slug: 'hosting-server-side-gtm',
-      title: 'Kde provozovat server-side GTM: Stape, Google Cloud Run, nebo český hosting?',
-    },
-    { slug: 'ga4-bigquery-export', title: 'GA4 → BigQuery export: nastavení, struktura tabulek, limity a cena' },
-    { slug: 'jak-vybrat-dodavatele-mereni', title: 'Jak vybrat dodavatele měření' },
-    {
-      slug: 'zpracovani-dat-v-bigquery',
-      title: 'Zpracování dat v BigQuery: od surových eventů k reportovacím tabulkám',
-    },
+    { slug: 'merici-plan', title: 'Měřicí plán: jak naplánovat měření' },
+    { slug: 'audit-gtm-kontejneru', title: 'Audit GTM kontejneru' },
+    { slug: 'hosting-server-side-gtm', title: 'Kde provozovat server-side GTM' },
   ],
 
-  relatedPages: [
-    'sluzby/server-side-tracking',
-    'sluzby/bigquery',
-    'sluzby/sprava-webu-a-mereni',
-    'sluzby/audit-mereni',
-    'sluzby/datova-vrstva',
-    'sluzby/dashboardy-a-reporting',
-    'reseni/b2b-a-lead-generation',
-  ],
+  relatedPages: ['sluzby/server-side-tracking', 'sluzby/bigquery', 'sluzby/sprava-webu-a-mereni'],
 
   contact: {
     formId: 'lp-velke-firmy',
-    topics: ['server-side', 'bigquery', 'governance'],
+    topics: ['server-side', 'bigquery'],
     title: 'Domluvme si úvodní schůzku s vaším marketingem i IT',
-    lead: 'Napište nám, nebo rovnou vyplňte formulář. Na úvodní hodinové schůzce projdeme domény, trhy, agentury a omezení IT a navrhneme, jak by mohl vypadat discovery. NDA rádi pošleme předem.',
-    placeholder:
-      'Např. máme čtyři trhy, tři agentury v GTM a chceme sjednotit měření a přesunout server-side do našeho Google Cloudu…',
+    lead: 'Na úvodní hodinové schůzce projdeme domény, trhy, agentury a omezení IT a navrhneme, jak by mohl vypadat discovery. NDA rádi pošleme předem.',
+    placeholder: 'Např. máme čtyři trhy, tři agentury v GTM a chceme sjednotit měření…',
     leadType: 'consultation',
   },
 

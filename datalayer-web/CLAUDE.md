@@ -10,10 +10,11 @@
 - **Veškerý obsah webu je v administraci** (`docs/cms.md`): stránky včetně homepage a zásad
   (kolekce `pages`), menu s patičkou a texty webu (`content/*`). Schéma `app/content/schema.ts`,
   vykreslení `app/components/landing/`, čtení a zápis `app/lib/cms/`. Výchozí obsah
-  v `app/content/defaults/` slouží jen jako zdroj migrace `20261009_cms_content_import` a záloha,
-  než ji někdo nasadí – jeho úprava produkční web nezmění. Novou stránku nebo hromadnou změnu
-  obsahu připravit jako migraci (`importPage` v `app/migrations/helpers.ts`), obsah se do šablon
-  natvrdo nepíše. Firestore neumí pole v poli: stránky zapisovat jen přes `pageToDoc` /
+  v `app/content/defaults/` slouží jen jako zdroj migrací (`20261009_cms_content_import`,
+  `20261009_lp_stihla_sablona`) a záloha, než je někdo nasadí – jeho úprava produkční web
+  nezmění. Novou stránku nebo hromadnou změnu obsahu připravit jako migraci (`importPage`
+  v `app/migrations/helpers.ts`, vzor přepisu se zálohou v `20261009_lp_stihla_sablona`), obsah
+  se do šablon natvrdo nepíše. Firestore neumí pole v poli: stránky zapisovat jen přes `pageToDoc` /
   `encodeNested` (`app/lib/cms/codec.ts`).
 - SEO: meta tagy jen přes `seoMeta()` (`app/lib/seo.ts`) – canonical, OG, JSON-LD. Staré URL přesměrovat
   v `app/lib/redirects.ts` (301). Sitemapa bere zveřejněné stránky bez noindex z administrace sama.

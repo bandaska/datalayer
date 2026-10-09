@@ -7,6 +7,8 @@ type Defaults = {
   title?: string;
   author?: string;
   date?: string; // YYYY-MM-DD
+  modifiedDate?: string; // YYYY-MM-DD
+  noindex?: boolean;
   description?: string;
   content?: string;
 };
@@ -71,6 +73,25 @@ export function ArticleFormFields({
           Autor
         </label>
         <input id="article-author" name="author" type="text" className="form-control" defaultValue={defaults.author} required />
+      </div>
+      <div className="col-md-6">
+        <label className="form-label" htmlFor="article-modified">
+          Datum aktualizace (nepovinné)
+        </label>
+        <input id="article-modified" name="modifiedDate" type="date" className="form-control" defaultValue={defaults.modifiedDate} aria-describedby="article-modified-help" />
+        <div id="article-modified-help" className="form-text">
+          Vyplňte jen po podstatné úpravě textu. Web pak u článku ukáže „aktualizováno“ a pošle datum vyhledávačům. Drobné
+          opravy datum nemění.
+        </div>
+      </div>
+      <div className="col-md-6 d-flex align-items-center">
+        <div className="form-check form-switch mt-md-4">
+          <input id="article-noindex" name="noindex" type="checkbox" role="switch" className="form-check-input" defaultChecked={defaults.noindex} />
+          <label className="form-check-label fw-semibold" htmlFor="article-noindex">
+            Skrýt před vyhledávači (noindex)
+          </label>
+          <div className="form-text">Článek zůstane na webu, ale vyhledávače ho nezaindexují a sitemapa ho vynechá.</div>
+        </div>
       </div>
       <div className="col-12">
         <div className="d-flex justify-content-between align-items-baseline gap-2">
