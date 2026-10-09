@@ -9,6 +9,7 @@ import type { PageInput } from '../../schema';
 // Interaktivní pomůcku se čtyřmi otázkami web zatím nemá, její roli přebírá seznam
 // situací (#cim-zacit). Do rozhodnutí klienta (kap. B6) chybí FAQ „Pracujete s malými
 // weby?“ a „Děláte i správu kampaní?“. Stránka neuvádí délky kroků ani délku auditu.
+// Texty prošly jazykovým auditem z 9. října 2026 (kap. 3.3).
 
 export const page: PageInput = {
   path: 'sluzby',
@@ -20,17 +21,17 @@ export const page: PageInput = {
   seo: {
     title: 'Služby webové analytiky: GA4, GTM, BigQuery | datalayer.cz',
     description:
-      'Přehled jedenácti služeb webové analytiky: sběr dat, data a reporting, audity a správa. Nevíte, co potřebujete? Podle vaší situace doporučíme, čím začít.',
+      'Přehled jedenácti služeb webové analytiky: sběr dat, data a reporting, audity a správa. Podle vaší situace doporučíme, čím začít.',
   },
 
   hero: {
-    eyebrow: 'sběr dat · data a reporting · audity a správa',
+    eyebrow: 'sběr dat, data a reporting, audity a správa',
     h1: 'Služby webové analytiky a měření',
     subtitle:
       'Jedenáct služeb ve třech skupinách – od sběru dat na webu přes BigQuery a reporting po audity a dlouhodobou správu. Když nevíte, kde je problém, začněte auditem měření: na webu nic nemění a ukáže chyby s prioritou podle dopadu.',
     primaryCta: { label: 'Konzultovat projekt', href: '#kontakt' },
     secondaryCta: { label: 'Pomozte mi vybrat', href: '#cim-zacit' },
-    microcopy: 'Úvodní třicetiminutová konzultace zdarma · odpověď do jednoho pracovního dne',
+    microcopy: 'Úvodní konzultace zdarma a nezávazně',
   },
 
   trust: ['Účty a data zůstávají vám', 'Nabídka s pevným rozsahem a výstupy', 'Dokumentace, podle které může pokračovat kdokoli'],
@@ -40,7 +41,7 @@ export const page: PageInput = {
       id: 'prehled',
       eyebrow: 'přehled služeb',
       title: 'Jedenáct služeb ve třech skupinách',
-      lead: 'Začít můžete kteroukoli službou. Řešení podle typu firmy skládají služby do celku pro e-shopy, B2B a velké firmy.',
+      lead: 'Začít můžete kteroukoli službou. Na stránkách Řešení skládáme služby do celku podle typu firmy – pro e-shopy, B2B firmy a velké firmy.',
       tone: 'deep',
       blocks: [{ type: 'menuGrid', menuId: 'sluzby', extraMenuId: 'reseni', extraTitle: 'Řešení podle typu firmy' }],
     },
@@ -59,7 +60,7 @@ export const page: PageInput = {
           items: [
             {
               title: 'GA4 ukazuje jiné tržby než e-shop',
-              text: 'Rozdíl má víc příčin a audit je nejdřív oddělí. Na webu přitom nic nemění.',
+              text: 'Rozdíl má víc příčin a audit je nejdřív oddělí.',
               pictogram: 'audit',
               link: { label: 'Audit měření', href: '/sluzby/audit-mereni' },
             },
@@ -71,7 +72,7 @@ export const page: PageInput = {
             },
             {
               title: 'Meta hlásí méně nákupů než e-shop',
-              text: 'Pomůže Conversions API přes server s deduplikací a lepším párováním.',
+              text: 'Pomůže Meta Conversions API přes server s deduplikací a lepším párováním.',
               pictogram: 'serverside',
               link: { label: 'Server-side tracking', href: '/sluzby/server-side-tracking' },
             },
@@ -89,7 +90,7 @@ export const page: PageInput = {
             },
             {
               title: 'Měření skoro nemáme',
-              text: 'Postavíme základ: GA4 přes Tag Manager s cookie lištou.',
+              text: 'Postavíme základ: GA4 přes Google Tag Manager (GTM) s cookie lištou.',
               pictogram: 'ga4',
               link: { label: 'Implementace GA4', href: '/sluzby/implementace-ga4' },
             },
@@ -113,13 +114,13 @@ export const page: PageInput = {
       id: 'navaznost',
       eyebrow: 'souvislosti',
       title: 'Jak služby navazují',
-      lead: 'Data vznikají na webu, BigQuery je ukládá a report z nich ukáže výsledky. Audit na začátku řekne, kde je problém, správa na konci hlídá, aby se nevrátil.',
+      lead: 'Data vznikají na webu, BigQuery je ukládá a report z nich ukáže výsledky. Audit na začátku řekne, kde je problém, průběžná správa hlídá, aby se nevrátil.',
       tone: 'white',
       blocks: [
         {
           type: 'flow',
           caption:
-            'Jak služby navazují: audit na začátku, sběr dat na webu, BigQuery, reporting a průběžná správa a monitoring nad celou cestou.',
+            'Jak služby navazují: audit na začátku, sběr dat na webu, BigQuery, reporting a průběžná správa a monitoring nad všemi kroky.',
           columns: [
             { label: 'Audit', items: ['audit měření'], note: 'na začátku' },
             {
@@ -147,8 +148,8 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Můžu si objednat jen jednu službu?',
-      a: 'Ano. Každá služba má samostatný rozsah a výstupy. Pokud ale zjistíme, že problém je jinde, řekneme vám to dřív, než začneme. Třeba když chcete server-side, ale chyba je v datové vrstvě.',
+      q: 'Mohu si objednat jen jednu službu?',
+      a: 'Ano. Každá služba má samostatný rozsah a výstupy. Pokud ale zjistíme, že problém je jinde, řekneme vám to dřív, než začneme. Třeba když chcete server-side měření, ale chyba je v datové vrstvě.',
     },
     {
       q: 'Čím začít, když nevím, co je špatně?',
@@ -160,7 +161,7 @@ export const page: PageInput = {
     },
     {
       q: 'Komu patří účty a data?',
-      a: 'Vždy vám. GA4, Tag Manager, Google Cloud i reklamní účty běží pod vaší firmou a my dostáváme přístup. Po skončení spolupráce nic nemigrujete a dostanete dokumentaci, podle které může pokračovat kdokoli jiný.',
+      a: 'Vždy vám. GA4, GTM, Google Cloud i reklamní účty běží pod vaší firmou a my dostáváme přístup. Po skončení spolupráce nic nemigrujete a dostanete dokumentaci, podle které může pokračovat kdokoli jiný.',
     },
     {
       q: 'Spolupracujete s naším vývojářem nebo agenturou?',
@@ -173,8 +174,8 @@ export const page: PageInput = {
   contact: {
     formId: 'sluzby',
     title: 'Popište problém, služby vybereme spolu',
-    lead: 'Na úvodní třicetiminutové konzultaci projdeme vaše měření a doporučíme, čím začít – nezávazně a zdarma.',
-    placeholder: 'Např. nevíme, jestli potřebujeme server-side, nebo jen opravit GA4…',
+    lead: 'Na úvodní konzultaci projdeme vaše měření a doporučíme, čím začít.',
+    placeholder: 'Např. nevíme, jestli potřebujeme server-side měření, nebo jen opravit GA4…',
     leadType: 'consultation',
   },
 };

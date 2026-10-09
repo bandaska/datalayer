@@ -37,7 +37,7 @@ sekce zůstane v administraci, web ji ale nevykreslí – hodí se pro obsah, kt
 | Seznam | odrážky s volitelným nadpisem |
 | Karty | mřížka karet s piktogramem, textem, odrážkami, štítky a odkazem; vzhled Symptomy = na mobilu kompaktní seznam, u víc než čtyř karet tři a tlačítko „Zobrazit další“ |
 | Kroky | postup s výstupem, délkou a tím, co dodá klient; karty vedle sebe, nebo pod sebou s podkroky (stránka Jak pracujeme) |
-| Postup spolupráce | jednotných pět kroků z Textů webu, u služby jde upravit popis kroku 3 |
+| Postup spolupráce | jednotných pět kroků z Textů webu; u služby jde upravit popis a „Od vás“ kteréhokoli kroku (krok 3 přes Implementaci, ostatní přes přepisy kroků – prázdné pole = výchozí znění) |
 | Rozhodnutí ✓ / ✕ | dva sloupce: kdy služba dává smysl a kdy doporučíme počkat |
 | Čísla v boxech | dvě až čtyři čísla (např. náklady provozu) s poznámkou a zdrojem |
 | Tabulka | srovnání, zvýrazněný sloupec |
@@ -121,6 +121,17 @@ Hromadnou změnu obsahu proto přináší další migrace. **`20261009_lp_stihla
 stránky novým zněním ze štíhlé šablony (původní uloží do `pages_backup`, stav zveřejnění nechá,
 smazanou stránku nezaloží) a zkrátí text cookie lišty a popisek Dashboardů v menu – jen pokud
 je nikdo neupravil. Nová pole textů webu doplní schéma při čtení výchozími hodnotami.
+
+Jazykové úpravy podle auditu (`seo-analyza/2026-10-09_jazykovy-audit/`) přináší migrace
+**`20261009_jazykovy_audit`**: stránky přepíše stejně (se zálohou v `pages_backup`), texty
+formuláře, cookie lišty, blogu a postupu změní jen tam, kde zůstalo dřívější výchozí znění,
+nastaví telefon 704 664 774 a opraví dva původní články. Na webu nejsou sliby lhůt ani délek
+konzultace – hlídá to test `jazykový audit a texty bez závazků` v `tests/content.test.ts`.
+
+Kontaktní formulář má na tmavém pozadí vždy světlou kartu a ukazuje všechna pole včetně
+nepovinného telefonu a webu. Šablona sama doplní nedělitelné mezery po jednopísmenných
+předložkách a mezi číslem a jednotkou (`app/lib/typo.ts`), hranaté závorky a šipky
+v tlačítkách a odkazech kreslí CSS, do textů je nepište.
 
 ## Pro vývoj
 

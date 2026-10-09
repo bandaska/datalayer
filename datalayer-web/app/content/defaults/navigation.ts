@@ -21,10 +21,10 @@ export const DEFAULT_NAVIGATION: Navigation = {
             {
               label: 'Cookie lišta a Consent Mode',
               href: '/sluzby/cookie-lista-consent-mode',
-              tagline: 'souhlas legálně a bez zbytečné ztráty dat',
+              tagline: 'souhlas podle zákona a bez zbytečné ztráty dat',
               pictogram: 'consent',
             },
-            { label: 'Měření konverzí', href: '/sluzby/mereni-konverzi', tagline: 'Ads, Meta, Sklik i Heureka vidí totéž', pictogram: 'conversion' },
+            { label: 'Měření konverzí', href: '/sluzby/mereni-konverzi', tagline: 'Google Ads, Meta, Sklik i Heureka vidí totéž', pictogram: 'conversion' },
           ],
         },
         {
@@ -81,7 +81,7 @@ export const DEFAULT_NAVIGATION: Navigation = {
       { title: 'Služby', fromMenu: 'sluzby', links: [] },
       { title: 'Řešení', fromMenu: 'reseni', links: [{ label: 'Jak pracujeme', href: '/jak-pracujeme' }] },
       {
-        title: 'Obsah a firma',
+        title: 'O nás',
         links: [
           { label: 'Blog', href: '/blog' },
           { label: 'O nás', href: '/o-nas' },

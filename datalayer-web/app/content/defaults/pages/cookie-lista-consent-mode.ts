@@ -2,9 +2,10 @@ import type { PageInput } from '../../schema';
 
 // Štíhlá šablona LP podle vyhodnocení webu (9. října 2026, kap. 3.1 a 5.5).
 // Zdroj obsahu: seo-analyza/03_landing-pages/05_cookie-lista-consent-mode.md.
-// Námitka „Cookie lištu přece máme“ otevírá symptomy, pět kategorií problémů
-// shrnují čtyři symptomy, režim basic a advanced spolu s výběrem lišty tvoří
-// blok Rozhodnutí a právní rámec tři karty s upozorněním, že nejde o právní radu.
+// Symptomy otevírá věta, že zobrazená lišta ještě neznamená respektovaný souhlas,
+// pět kategorií problémů shrnují čtyři symptomy, režim basic a advanced spolu
+// s výběrem lišty tvoří blok Rozhodnutí a právní rámec tři karty s upozorněním,
+// že nejde o právní radu.
 // Ve sbalených Technických detailech zůstává napojení souhlasu v GTM s ukázkou
 // kódu a mapou signálů, dokud nevyjde článek A1. Tabulky signálů, testovacího
 // protokolu, srovnání CMP a právního rámce, dopad souhlasu na data, Sklik a SEM
@@ -13,6 +14,10 @@ import type { PageInput } from '../../schema';
 // z auditů, případovou studii, délky kroků a prezentace výsledků, partnerskou
 // advokátní kancelář, referenční implementace, partnerství s CMP, sloty na hovor
 // ve formuláři ani nástroj Kontrola consentu.
+// Texty prošly jazykovým auditem z 9. října 2026 (seo-analyza/2026-10-09_jazykovy-audit,
+// kap. 3.8): české „souhlas“ v obecném textu, tagy místo značek, režim basic a advanced,
+// zkratky CMP, TCF a HAR rozepsané při prvním výskytu, věta „Nejsme advokátní
+// kancelář“ jen ve FAQ.
 
 export const page: PageInput = {
   path: 'sluzby/cookie-lista-consent-mode',
@@ -29,23 +34,23 @@ export const page: PageInput = {
   },
 
   hero: {
-    eyebrow: 'consent',
+    eyebrow: 'souhlas',
     h1: 'Cookie lišta a Consent Mode v2 nastavené a ověřené',
     subtitle:
-      'Cookie lišta sbírá souhlas návštěvníka, Consent Mode v2 ho předává značkám Googlu a Google Tag Manager podle něj spouští ostatní tagy, třeba Metu nebo Sklik. Lištu vybereme a nastavíme tak, aby tagy souhlas respektovaly od prvního načtení stránky. Pak ověříme, co web posílá před souhlasem a po něm, a vysvětlíme dopad na data.',
+      'Cookie lišta sbírá souhlas návštěvníka, Consent Mode v2 ho předává tagům Googlu a Google Tag Manager (GTM) podle něj spouští ostatní tagy, třeba Mety nebo Skliku. Lištu vybereme a nastavíme tak, aby tagy souhlas respektovaly od prvního načtení stránky. Pak ověříme, co web posílá před souhlasem a po něm, a vysvětlíme dopad na data.',
     primaryCta: { label: 'Zkontrolovat můj web', href: '#kontakt' },
     secondaryCta: { label: 'Co web posílá před souhlasem', href: '#overeni' },
-    microcopy: 'Úvodní konzultace zdarma · nejsme advokátní kancelář, s právníkem rádi spolupracujeme',
+    microcopy: 'Úvodní konzultace zdarma a nezávazně',
   },
 
-  trust: ['Nastavení podle zákona a doporučení ÚOOÚ', 'Cookiebot, české CMP i vlastní lišta', 'Výsledek doložíme záznamem z prohlížeče'],
+  trust: ['Nastavení podle zákona a doporučení ÚOOÚ', 'Cookiebot, české platformy pro správu souhlasů i vlastní lišta', 'Výsledek doložíme záznamem z prohlížeče'],
 
   sections: [
     {
       id: 'symptomy',
       eyebrow: 'symptomy',
       title: 'Poznáváte se?',
-      lead: '„Cookie lištu přece máme.“ To, že web lištu zobrazí, ale ještě neznamená, že tagy souhlas respektují. Ani certifikovaná CMP podle Googlu sama soulad nezaručí – rozhoduje, jak ji nasadíte.',
+      lead: 'To, že web lištu zobrazí, ještě neznamená, že tagy souhlas respektují. Ani platforma pro správu souhlasů (CMP) s certifikací od Googlu sama soulad nezaručí – rozhoduje, jak ji nasadíte.',
       tone: 'light',
       blocks: [
         {
@@ -67,13 +72,13 @@ export const page: PageInput = {
             },
             {
               title: 'Po nasazení lišty spadly konverze',
-              text: 'Tagy naběhnou až na další stránce nebo basic režim běží bez rozhodnutí a data mizí i u lidí, kteří souhlasili.',
+              text: 'Tagy naběhnou až na další stránce nebo web zbytečně běží v režimu basic bez modelování a data mizí i u lidí, kteří souhlasili.',
               pictogram: 'conversion',
               tag: 'konverze',
             },
             {
               title: 'Lišta neodpovídá doporučení ÚOOÚ',
-              text: 'Chybí „Odmítnout“ v první vrstvě, tlačítka nejsou rovnocenná, nebo lišta jen informuje tlačítkem „Rozumím“.',
+              text: 'Chybí „Odmítnout“ v první vrstvě, tlačítka nejsou rovnocenná nebo lišta jen informuje tlačítkem „Rozumím“.',
               pictogram: 'gov',
               tag: 'ÚOOÚ',
             },
@@ -99,29 +104,29 @@ export const page: PageInput = {
               text: 'Všechny cookies, tagy a skripty včetně kódů mimo GTM – v šabloně, pluginech, chatu nebo videu.',
             },
             {
-              tag: 'cmp',
+              tag: 'CMP',
               title: 'Lišta a podklady pro texty',
-              text: 'Doporučíme CMP nebo navrhneme vlastní lištu a připravíme technické podklady pro texty, které pak schválí právník.',
+              text: 'Doporučíme CMP nebo navrhneme vlastní lištu a připravíme technické podklady, ze kterých právník sestaví texty lišty.',
             },
             {
-              tag: 'consent-mode',
+              tag: 'signály souhlasu',
               title: 'Consent Mode v2',
-              text: 'Výchozí stav před načtením značek, aktualizace po volbě, všechny čtyři signály a režim podle rozhodnutí s právníkem.',
+              text: 'Výchozí stav před načtením tagů, aktualizace po volbě, všechny čtyři reklamní a analytické signály a režim podle rozhodnutí s právníkem.',
             },
             {
-              tag: 'gtm · sgtm',
+              tag: 'GTM a server-side GTM',
               title: 'Napojení všech tagů',
               text: 'Tagy Mety, TikToku nebo LinkedInu naběhnou hned po souhlasu. Stav souhlasu předáme i do <a href="/sluzby/server-side-tracking">server-side GTM</a> a backendu, pokud je máte.',
             },
             {
-              tag: 'sem',
+              tag: 'sul.js',
               title: 'Sklik a Seznam Event Measurement',
-              text: 'Souhlas předáme i novému měření Seznamu – přes IAB TCF, nebo ve formátu Google Consent Mode.',
+              text: 'Souhlas předáme i novému měření Seznamu – přes standard IAB TCF (Transparency and Consent Framework), nebo ve formátu Google Consent Mode.',
             },
             {
               tag: 'protocol.har',
               title: 'Protokol a dokumentace',
-              text: 'Osm testovacích scénářů se záznamem HAR, matice tagů a souhlasů, popis verzí GTM a seznam oprav pro vývojáře.',
+              text: 'Osm testovacích scénářů se záznamem síťového provozu ve formátu HAR, matice tagů a souhlasů, popis verzí GTM a seznam oprav pro vývojáře.',
             },
           ],
         },
@@ -132,13 +137,13 @@ export const page: PageInput = {
       id: 'jak-to-funguje',
       eyebrow: 'tok souhlasu',
       title: 'Jak souhlas putuje od lišty k tagům',
-      lead: 'Pořadí je klíčové. Výchozí stav souhlasu musí platit dřív, než prohlížeč načte jakoukoli značku – jinak se značky Googlu chovají, jako by Consent Mode neexistoval.',
+      lead: 'Na pořadí záleží. Výchozí stav souhlasu musí platit dřív, než prohlížeč načte jakýkoli tag – jinak se tagy Googlu chovají, jako by Consent Mode neexistoval.',
       tone: 'dark',
       blocks: [
         {
           type: 'flow',
           caption:
-            'Tok souhlasu: výchozí stav denied platí ještě před načtením GTM, značky Googlu v advanced režimu posílají jen pingy bez cookies a ostatní tagy čekají. Po volbě v liště přijde aktualizace souhlasu a GTM spustí tagy s udělenou kategorií. Po odmítnutí ostatní tagy nic neposílají.',
+            'Tok souhlasu: výchozí stav denied platí ještě před načtením GTM, tagy Googlu v režimu advanced posílají jen pingy bez cookies a ostatní tagy čekají. Po volbě v liště přijde aktualizace souhlasu a GTM spustí tagy v povolených kategoriích. Po odmítnutí ostatní tagy nic neposílají.',
           columns: [
             {
               label: 'před GTM',
@@ -147,14 +152,14 @@ export const page: PageInput = {
             },
             {
               label: 'načtení GTM',
-              items: ['značky Googlu: v advanced režimu jen ping bez cookies, v basic nic', 'Meta, Sklik, TikTok: čekají na souhlas'],
+              items: ['tagy Googlu: v režimu advanced jen ping bez cookies, v režimu basic nic', 'Meta, Sklik, TikTok: čekají na souhlas'],
             },
             { label: 'volba v liště', items: ['web zobrazí lištu', 'návštěvník přijme, nebo odmítne'] },
             {
               label: 'po volbě',
               items: [
                 '<code>consent update</code> a událost <code>cookie_consent_update</code>',
-                'souhlas: plné měření Googlu a tagy s udělenou kategorií',
+                'souhlas: plné měření Googlu a tagy v povolených kategoriích',
                 'odmítnutí: ostatní tagy dál nic neposílají',
               ],
             },
@@ -166,7 +171,7 @@ export const page: PageInput = {
           items: [
             '<strong>Googlu stačí Consent Mode.</strong> Meta, Sklik nebo TikTok ho nečtou a potřebují podmínku souhlasu v GTM.',
             '<strong>Hned po volbě.</strong> Tagy naběhnou na stránce, kde návštěvník klikl, ne až na další.',
-            '<strong>Méně dat je v pořádku.</strong> Nástroje dřív měřily i lidi bez souhlasu, část konverzí Google dopočítá modelováním.',
+            '<strong>Méně dat je v pořádku.</strong> Nástroje dřív měřily i lidi bez souhlasu. Část konverzí Google dopočítá modelováním.',
           ],
         },
       ],
@@ -175,8 +180,8 @@ export const page: PageInput = {
     {
       id: 'rozhodnuti',
       eyebrow: 'rozhodnutí',
-      title: 'Basic, nebo advanced? A jakou lištu?',
-      lead: 'Režim i typ lišty volíme spolu s vámi a s právníkem nebo DPO. Neprodáváme žádnou CMP, nastavíme kteroukoli a ověříme i lištu e-shopové platformy, třeba Shoptetu.',
+      title: 'Režim basic nebo advanced a výběr lišty',
+      lead: 'Režim i typ lišty volíme spolu s vámi a s právníkem nebo pověřencem pro ochranu osobních údajů. Neprodáváme žádnou CMP – nastavíme kteroukoli a ověříme i lištu e-shopové platformy, třeba Shoptetu.',
       tone: 'light',
       blocks: [
         {
@@ -185,8 +190,8 @@ export const page: PageInput = {
           items: [
             {
               tag: 'basic',
-              title: 'Basic: konzervativní varianta',
-              text: 'Značky Googlu čekají na souhlas a před volbou neodejde nic.',
+              title: 'Basic jako konzervativní varianta',
+              text: 'Tagy Googlu čekají na souhlas a před volbou neodejde nic.',
               bullets: [
                 'Google Ads modeluje konverze jen obecným modelem',
                 'GA4 chování bez souhlasu nemodeluje',
@@ -195,11 +200,11 @@ export const page: PageInput = {
             },
             {
               tag: 'advanced',
-              title: 'Advanced: přesnější modelování',
-              text: 'Prohlížeč načte značky Googlu hned a bez souhlasu odejdou jen pingy bez cookies.',
+              title: 'Advanced pro přesnější modelování',
+              text: 'Prohlížeč načte tagy Googlu hned a bez souhlasu odejdou jen pingy bez cookies.',
               bullets: [
                 'Google Ads modeluje konverze modelem pro váš účet',
-                'GA4 modeluje chování, pokud web splní prahy',
+                'GA4 modeluje chování, pokud web překročí prahy, které stanovil Google',
                 'hodí se pro inzerenty v Google Ads s dostatkem návštěv, když právník souhlasí s přenosem pingů',
               ],
             },
@@ -211,11 +216,11 @@ export const page: PageInput = {
           items: [
             {
               title: 'Mezinárodní CMP',
-              text: 'Cookiebot, CookieYes nebo Usercentrics pro víc zemí a domén a pro vydavatele, kteří potřebují certifikovanou CMP s TCF.',
+              text: 'Cookiebot, CookieYes nebo Usercentrics pro více zemí a domén a pro vydavatele, kteří potřebují certifikovanou CMP s TCF.',
             },
             {
               title: 'Česká CMP',
-              text: 'Cookies správně nebo Consentio s nižší licencí, fakturací v korunách a českou podporou pro malé a střední weby a e-shopy.',
+              text: '„Cookies správně“ nebo Consentio s levnější licencí, fakturací v korunách a českou podporou pro malé a střední weby a e-shopy.',
             },
             {
               title: 'Vlastní lišta',
@@ -230,7 +235,7 @@ export const page: PageInput = {
       id: 'pravni-ramec',
       eyebrow: 'právní rámec',
       title: 'Tři věci, které říká zákon, ÚOOÚ a Google',
-      lead: 'Technické nastavení stavíme na těchto pravidlech. U každého uvádíme zdroj, ať si ho právník může ověřit.',
+      lead: 'Technické nastavení stavíme na těchto pravidlech. U každého uvádíme zdroj, aby si ho právník mohl ověřit.',
       tone: 'white',
       blocks: [
         {
@@ -238,12 +243,12 @@ export const page: PageInput = {
           columns: 3,
           items: [
             {
-              tag: '§ 89 ZEK',
+              tag: '§ 89 zákona o elektronických komunikacích',
               title: 'Souhlas předem',
               text: 'K ukládání a čtení netechnických údajů v zařízení návštěvníka potřebujete předchozí prokazatelný souhlas. Výjimku má jen technicky nezbytné ukládání.',
             },
             {
-              tag: 'Q&A ÚOOÚ',
+              tag: 'Otázky a odpovědi ÚOOÚ',
               title: 'Odmítnout stejně snadno jako přijmout',
               text: '„Odmítnout“ patří do první vrstvy, tlačítka musí být rovnocenná a zavření lišty souhlas není. Odvolat souhlas musí jít stejně snadno jako ho udělit.',
             },
@@ -258,7 +263,7 @@ export const page: PageInput = {
           type: 'callout',
           tone: 'warn',
           title: 'Nejde o právní radu',
-          text: 'Nejsme advokátní kancelář. Texty lišty, zásady cookies a právní titul pro další zpracování patří vašemu právníkovi nebo pověřenci. Rádi s ním spolupracujeme a dodáme mu technické podklady.',
+          text: 'Texty lišty, zásady cookies a právní titul pro další zpracování patří vašemu právníkovi nebo pověřenci. Rádi s ním spolupracujeme a dodáme mu technické podklady.',
         },
       ],
     },
@@ -267,13 +272,19 @@ export const page: PageInput = {
       id: 'postup',
       eyebrow: 'postup',
       title: 'Jak to probíhá',
-      lead: 'Stejných pět kroků jako u všech našich služeb. Nejvíc času obvykle zabere rozhodnutí o režimu a textech s právníkem.',
+      lead: 'Stejných pět kroků jako u všech našich služeb.',
       tone: 'light',
       blocks: [
         {
           type: 'process',
-          implementation: 'Po rozhodnutí s právníkem nastavíme lištu, Consent Mode v2, tagy v GTM, Sklik a SEM, případně server-side GTM.',
-          implementationFromClient: 'kontakt na právníka nebo DPO, přístupy pro úpravy do GTM a CMP, případně vývojář',
+          implementation: 'Po rozhodnutí s právníkem nastavíme lištu, Consent Mode v2, tagy v GTM, Sklik a Seznam Event Measurement, případně server-side GTM.',
+          implementationFromClient: 'kontakt na právníka nebo pověřence, přístupy pro úpravy do GTM a CMP, případně vývojář',
+          stepOverrides: [
+            {},
+            {},
+            {},
+            { text: 'Projdeme testovací scénáře před souhlasem, po přijetí i po odmítnutí a zkontrolujeme, co web v každém z nich posílá.' },
+          ],
         },
       ],
     },
@@ -282,7 +293,7 @@ export const page: PageInput = {
       id: 'overeni',
       eyebrow: 'ověření',
       title: 'Co web posílá před souhlasem a po něm',
-      lead: 'Ověření je jádro naší práce. Výsledek dostanete jako záznam síťových požadavků z vašeho webu a screenshoty – ne jen jako „máte to dobře“.',
+      lead: 'Ověření je jádro naší práce. Místo pouhého „máte to dobře“ dostanete záznam síťových požadavků z webu a snímky obrazovky.',
       tone: 'dark',
       blocks: [
         {
@@ -292,7 +303,7 @@ export const page: PageInput = {
             {
               tag: 'ilustrační ukázka',
               title: 'Před souhlasem',
-              text: 'Odchází jen ping Googlu bez cookies, skripty Mety, Skliku a TikToku čekají na souhlas.',
+              text: 'Odchází jen ping Googlu bez cookies. Skripty Mety, Skliku a TikToku čekají na souhlas.',
               console: [
                 '✓ googletagmanager.com/gtm.js  200',
                 '◐ …/g/collect?en=page_view&gcs=G100  ping bez cookies',
@@ -303,7 +314,7 @@ export const page: PageInput = {
             {
               tag: 'ilustrační ukázka',
               title: 'Po souhlasu',
-              text: 'GTM spustí tagy s udělenou kategorií a Google měří s cookies.',
+              text: 'GTM spustí tagy v povolených kategoriích a Google měří s cookies.',
               console: [
                 '✓ …/g/collect?en=page_view&gcs=G111  200',
                 '✓ connect.facebook.net/…/fbevents.js  200',
@@ -318,10 +329,10 @@ export const page: PageInput = {
           style: 'check',
           title: 'Co ověří testovací protokol',
           items: [
-            'první návštěva bez kliknutí: od Googlu nanejvýš ping bez cookies, od ostatních nic',
-            'po odmítnutí nenaběhne nic ani na další stránce, ani po změně volby v patičce',
-            'po přijetí naběhnou tagy hned, na stejné stránce',
-            'při návratu platí uložená volba od první stránky a zdroj z reklamy nezmizí',
+            'Při první návštěvě bez kliknutí pošle Google nanejvýš ping bez cookies a ostatní nástroje nic.',
+            'Po odmítnutí nenaběhne nic ani na další stránce, ani po otevření nastavení v patičce.',
+            'Po přijetí naběhnou tagy hned, na stejné stránce.',
+            'Při návratu platí uložená volba od první stránky a zdroj z reklamy nezmizí.',
           ],
         },
       ],
@@ -329,22 +340,22 @@ export const page: PageInput = {
   ],
 
   techDetails: {
-    summary: 'Technické detaily: jak napojujeme souhlas v Google Tag Manageru',
+    summary: 'Napojení souhlasu v GTM',
     blocks: [
       {
         type: 'list',
         style: 'check',
         items: [
           'Výchozí stav nastavujeme <strong>před</strong> načtením GTM, nebo spouštěčem <em>Consent Initialization – All Pages</em>, který běží před všemi ostatními tagy.',
-          'Značky Googlu mají vestavěné kontroly souhlasu. Meta, Sklik, TikTok, LinkedIn, Hotjar ani Clarity Consent Mode nečtou – dostanou <em>dodatečný požadavek na souhlas</em> a spouštění na aktualizaci souhlasu.',
-          'Při víc kontejnerech nebo se server-side GTM inicializujeme souhlas v každém z nich.',
+          'Tagy Googlu mají vestavěné kontroly souhlasu. Consent Mode nečtou Meta, Sklik, TikTok, LinkedIn, Hotjar ani Clarity – dostanou <em>dodatečný požadavek na souhlas</em> a spouštěč navázaný na aktualizaci souhlasu.',
+          'Při více kontejnerech nebo při server-side GTM inicializujeme souhlas v každém z nich.',
           `Seznam Event Measurement čte souhlas z IAB TCF, nebo ho dostane přes <code>SEM('updateConsent', …)</code>. Cookies <code>sid</code> a <code>udid</code> vytvoří až po souhlasu s <code>ad_storage</code>.`,
         ],
       },
       {
         type: 'code',
         lang: 'html',
-        caption: 'Výchozí stav souhlasu patří do kódu stránky ještě před GTM',
+        caption: 'Výchozí stav souhlasu patří do kódu stránky ještě před GTM.',
         code: `<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
@@ -366,8 +377,8 @@ export const page: PageInput = {
       {
         type: 'paragraphs',
         items: [
-          '<code>wait_for_update</code> dává liště čas poslat uloženou volbu dřív, než značky odešlou data. <code>ads_data_redaction</code> při odmítnutí reklamních cookies redukuje identifikátory prokliku a <code>url_passthrough</code> přenáší informace o prokliku v URL i bez cookies – i to doporučujeme probrat s právníkem.',
-          'Stav souhlasu najdete v požadavcích Googlu v parametru <code>gcs</code>: <code>G100</code> znamená odmítnuté reklamní i analytické úložiště, <code>G111</code> povolené. Google parametr oficiálně nedokumentuje, proto výsledek vždy potvrzujeme v Tag Assistantu.',
+          '<code>wait_for_update</code> dává liště čas poslat uloženou volbu dřív, než tagy odešlou data. <code>ads_data_redaction</code> při odmítnutí reklamních cookies odstraňuje z požadavků identifikátory prokliku a <code>url_passthrough</code> přenáší informace o prokliku v URL i bez cookies – i to doporučujeme probrat s právníkem.',
+          'Stav souhlasu najdete v požadavcích Googlu v parametru <code>gcs</code>: <code>G100</code> znamená odmítnuté reklamní i analytické cookies (<code>ad_storage</code> a <code>analytics_storage</code>), <code>G111</code> povolené. Google parametr oficiálně nedokumentuje, proto výsledek vždy potvrzujeme v Tag Assistantu.',
         ],
       },
       {
@@ -398,7 +409,7 @@ export const page: PageInput = {
     },
     {
       q: 'Proč po nasazení lišty klesly konverze?',
-      a: 'Část poklesu je očekávaná, protože nástroje dřív měřily i lidi bez souhlasu. Často jde ale o chybu: basic režim bez modelování, tagy, které naběhnou až po znovunačtení stránky, výchozí stav až po GTM nebo nastavení bez signálu <code>ad_user_data</code>, které blokuje rozšířené konverze. Audit proto obsahuje i odhad dopadu na data.',
+      a: 'Část poklesu je očekávaná, protože nástroje dřív měřily i lidi bez souhlasu. Často jde ale o chybu: režim basic bez modelování; tagy, které naběhnou až po znovunačtení stránky; výchozí stav až po GTM; nebo nastavení bez signálu <code>ad_user_data</code>, které blokuje rozšířené konverze. Audit proto obsahuje i odhad dopadu na data.',
     },
     {
       q: 'Kolik to stojí a jak dlouho to trvá?',
@@ -406,11 +417,11 @@ export const page: PageInput = {
     },
     {
       q: 'Jste právníci? Kdo připraví texty lišty?',
-      a: 'Nejsme advokátní kancelář. Odpovídáme za technické nastavení a připravíme podklady: seznam cookies, účely, poskytovatele a dobu uložení. Z nich právník sestaví texty lišty a zásady cookies a vývojáři nebo správce GTM dostanou od nás seznam oprav.',
+      a: 'Nejsme advokátní kancelář. Odpovídáme za technické nastavení a připravíme podklady: seznam cookies, účely, poskytovatele a dobu uložení. Z nich právník sestaví texty lišty a zásady cookies; vývojáři nebo správce GTM dostanou od nás seznam oprav.',
     },
     {
       q: 'Komu patří lišta, účet CMP a přístupy?',
-      a: 'Vám. Účet CMP i kontejner GTM zůstávají vaše a licenci CMP platíte přímo poskytovateli. Pracujeme s přístupy pro čtení, při nastavení pro úpravy, a po předání je můžete kdykoli odebrat.',
+      a: 'Vám. Účet CMP i kontejner GTM zůstávají vaše. Pracujeme s přístupy pro čtení, při nastavení pro úpravy, a po předání je můžete kdykoli odebrat.',
     },
   ],
 
@@ -425,8 +436,8 @@ export const page: PageInput = {
   contact: {
     formId: 'lp-consent',
     topics: ['consent'],
-    title: 'Nastavíme souhlas podle pravidel – a bez zbytečné ztráty dat',
-    lead: 'Na úvodní konzultaci zdarma se podíváme, co web posílá před souhlasem, a řekneme, jestli stačí oprava, nebo je potřeba nové nastavení.',
+    title: 'Nastavíme sběr souhlasu podle pravidel – a bez zbytečné ztráty dat',
+    lead: 'Na úvodní konzultaci se podíváme, co web posílá před souhlasem, a řekneme, jestli stačí oprava, nebo je potřeba nové nastavení.',
     placeholder: 'Např. po nasazení lišty nám spadly konverze v Google Ads…',
     leadType: 'consultation',
   },

@@ -34,7 +34,16 @@ function cleanBlock(b: Block): Block {
     case 'figures':
       return { ...b, note: inl(b.note) };
     case 'process':
-      return { ...b, implementation: inl(b.implementation) };
+      // Prázdný přepis kroku musí zůstat `{}`: objekt jen s undefined by Firestore z pole
+      // vypustil a přepisy dalších kroků by se posunuly o jedno místo.
+      return {
+        ...b,
+        implementation: inl(b.implementation),
+        stepOverrides: b.stepOverrides?.map(({ text, fromClient }) => ({
+          ...(text ? { text: cleanInline(text) } : {}),
+          ...(fromClient ? { fromClient } : {}),
+        })),
+      };
     case 'person':
       return { ...b, paragraphs: inlArr(b.paragraphs) };
     default:

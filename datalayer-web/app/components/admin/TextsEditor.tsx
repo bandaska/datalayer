@@ -32,7 +32,6 @@ const GROUPS: Group[] = [
       { key: 'personName', label: 'Kontaktní osoba (nepovinné)', help: 'Např. „Odpovídá Jana Nováková“. Prázdné = blok bez kontaktní osoby, fotky i iniciál.' },
       { key: 'personNote', label: 'Doplněk ke jménu (nepovinné)' },
       { key: 'personPhoto', label: 'Fotka (cesta nebo https URL)', help: 'Jen s vyplněnou kontaktní osobou. Bez fotky web ukáže iniciály.' },
-      { key: 'moreFields', label: 'Odkaz na nepovinná pole', help: 'Rozbalí telefon a web.' },
       { key: 'nextSteps', label: 'Co se stane po odeslání', type: 'lines', help: 'Každý řádek jeden krok, ideálně tři.' },
     ],
   },

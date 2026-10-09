@@ -181,11 +181,16 @@ export const blockSchema = z.discriminatedUnion('type', [
       .max(4, 'Nejvýš čtyři čísla'),
     note: str(600).optional(), // HTML
   }),
-  /** Jednotný postup spolupráce (pět kroků z Textů webu); u služby jde upravit krok 3 – implementaci. */
+  /** Jednotný postup spolupráce (pět kroků z Textů webu); u služby jde upravit krok 3 – implementaci – i ostatní kroky. */
   z.object({
     type: z.literal('process'),
     implementation: str(400).optional(),
     implementationFromClient: str(200).optional(),
+    /** Vlastní znění kroků pro tuto stránku podle pořadí (prázdné pole = text z Textů webu), např. CRM místo administrace u B2B. */
+    stepOverrides: z
+      .array(z.object({ text: str(400).optional(), fromClient: str(200).optional() }))
+      .max(5, 'Postup má pět kroků')
+      .optional(),
     /** Co ukázat pod krokem: „od vás“ (výchozí), nebo výstup kroku. */
     detail: z.enum(['fromClient', 'output']).optional(),
   }),
@@ -418,7 +423,8 @@ export const textsSchema = z.object({
     leadWithoutPhone: req(600),
     defaultPlaceholder: req(200),
     legal: req(600), // HTML
-    note: req(200),
+    /** Poznámka pod tlačítkem odeslání; prázdná se nezobrazí. */
+    note: str(200).default(''),
     submit: req(60),
     successTitle: req(120),
     /** {email} se nahradí adresou návštěvníka. */
@@ -432,8 +438,6 @@ export const textsSchema = z.object({
     personPhoto: z.string().trim().max(500).optional(),
     /** Tři kroky „co se stane po odeslání“ pod formulářem. */
     nextSteps: z.array(req(200)).max(5).default(DEFAULT_NEXT_STEPS),
-    /** Rozbalovací odkaz na nepovinná pole telefon a web. */
-    moreFields: req(80).default('+ Přidat telefon a web (nepovinné)'),
   }),
   cookieBar: z.object({
     title: req(80),

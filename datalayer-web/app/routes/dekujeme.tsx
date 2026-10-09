@@ -5,6 +5,7 @@ import type { MetaFunction } from 'react-router';
 import { SimplePage } from '~/components/SimplePage';
 import { seoMeta } from '~/lib/seo';
 import { CONTACT_EMAIL } from '~/lib/site';
+import { phoneHref } from '~/lib/settings';
 
 // Děkovací stránka pro odeslání formuláře bez JavaScriptu (noindex).
 
@@ -37,7 +38,7 @@ export default function Dekujeme() {
         </p>
         <p>
           <Link to="/kontakt" className="btn btn-outline-custom">
-            [ Zpět na kontakt ]
+            Zpět na kontakt
           </Link>
         </p>
       </SimplePage>
@@ -47,18 +48,28 @@ export default function Dekujeme() {
   return (
     <SimplePage title={t.title} path="/dekujeme">
       <p>
-        {t.text} Spěchá to? Napište na <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+        {t.text}{' '}
+        {root?.phone ? (
+          <>
+            Pokud to spěchá, zavolejte na <a href={phoneHref(root.phone)}>{root.phone}</a> nebo napište na{' '}
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+          </>
+        ) : (
+          <>
+            Pokud to spěchá, napište na <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+          </>
+        )}
       </p>
       <p>
         <Link to="/" className="btn btn-outline-custom">
-          [ {t.back} ]
+          {t.back}
         </Link>
       </p>
       {t.links?.length ? (
         <ul className="thanks-links">
           {t.links.map((l) => (
             <li key={l.href}>
-              <Link to={l.href}>{l.label} →</Link>
+              <Link to={l.href}>{l.label}</Link>
             </li>
           ))}
         </ul>

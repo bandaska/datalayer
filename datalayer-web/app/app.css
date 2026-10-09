@@ -3149,7 +3149,7 @@ img.lp-person__photo {
   padding-left: 18px;
 }
 
-/* kompaktní kontaktní blok: kroky po odeslání a rozbalitelný telefon a web */
+/* kompaktní kontaktní blok: kroky po odeslání */
 .dl-next {
   list-style: none;
   padding: 0;
@@ -3176,25 +3176,6 @@ img.lp-person__photo {
   font-size: 12px;
   display: grid;
   place-items: center;
-}
-.dl-form__more {
-  margin: 0 0 14px;
-}
-.dl-form__more summary {
-  cursor: pointer;
-  color: var(--brand-cyan);
-  font-weight: 600;
-  font-size: 14px;
-  list-style: none;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-}
-.dl-form__more summary::-webkit-details-marker {
-  display: none;
-}
-.dl-form__more[open] summary {
-  margin-bottom: 6px;
 }
 img.dl-person__photo {
   object-fit: cover;
@@ -3303,4 +3284,117 @@ img.dl-person__photo {
   .lp-card > :last-child {
     margin-bottom: 0;
   }
+}
+
+/* formulář jako světlá karta i v tmavé sekci – na tmavém pozadí působil příliš tmavě */
+.dl-form {
+  background: #fff;
+  border-color: #dfe5ec;
+  color: var(--light-text);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+.dl-form label,
+.dl-topics legend {
+  color: var(--light-text);
+}
+.dl-form .opt {
+  color: #5a6b7d;
+}
+.dl-form input[type='text'],
+.dl-form input[type='email'],
+.dl-form input[type='tel'],
+.dl-form textarea {
+  background: #f6f8fb;
+  color: var(--light-text);
+  border-color: #c9d3de;
+}
+.dl-form input::placeholder,
+.dl-form textarea::placeholder {
+  color: #6b7a8c;
+}
+.dl-form input:focus,
+.dl-form textarea:focus {
+  background: #fff;
+  border-color: var(--light-accent);
+  box-shadow: 0 0 0 3px rgba(0, 122, 122, 0.18);
+}
+.dl-form [aria-invalid='true'] {
+  border-color: #c62828 !important;
+}
+.dl-form .dl-form__fielderr,
+.dl-form .dl-form__note.is-err {
+  color: #c62828;
+}
+.dl-chip span {
+  background: #f6f8fb;
+  border-color: #c9d3de;
+  color: var(--light-text);
+}
+.dl-chip input:checked + span {
+  background: #e6f4f4;
+  border-color: var(--light-accent);
+  color: var(--light-accent);
+}
+.dl-chip input:focus-visible + span {
+  box-shadow: 0 0 0 3px rgba(0, 122, 122, 0.3);
+}
+.dl-form__legal,
+.dl-form__note {
+  color: #5a6b7d;
+}
+.dl-form__legal a {
+  color: var(--light-accent);
+}
+.dl-form__success {
+  background: #fff;
+}
+.dl-form__success h3 {
+  color: var(--light-text);
+}
+.dl-form__success p {
+  color: var(--light-muted);
+}
+.dl-form__again {
+  border-color: #c9d3de;
+  color: var(--light-text);
+}
+.dl-form__again:hover {
+  border-color: var(--light-accent);
+  color: var(--light-accent);
+}
+
+/* hranaté závorky u tlačítek a šipky u odkazů jako grafika značky – v CSS, ne v textu
+   (čtečky je nečtou, text je čistý; jazykový audit S27 a S28) */
+.btn-cta::before,
+.btn-outline-custom::before,
+.dl-btn::before {
+  content: '[ ';
+  content: '[ ' / '';
+}
+.btn-cta::after,
+.btn-outline-custom::after,
+.dl-btn::after {
+  content: ' ]';
+  content: ' ]' / '';
+}
+.lp-card__link::after,
+.btn-link-cyan::after,
+.thanks-links a::after,
+.mega__all::after {
+  content: '\00a0→';
+  content: '\00a0→' / '';
+}
+
+/* štítek „Technické detaily“ nad textem rozbalovacího bloku a popisky kroků */
+.lp-tech__label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--light-accent);
+  margin-bottom: 2px;
+}
+.lp-process__label {
+  font-weight: 600;
 }

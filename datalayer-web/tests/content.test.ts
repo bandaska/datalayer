@@ -189,6 +189,43 @@ describe('web bez kontaktní osoby', () => {
   });
 });
 
+describe('jazykový audit a texty bez závazků', () => {
+  const visible = (p: (typeof DEFAULT_PAGES)[number]) =>
+    pageTexts(pageSchema.parse(p))
+      .filter((t) => !t.where.startsWith('SEO') && !t.where.startsWith('Schema'))
+      .map((t) => t.text);
+
+  it('web neslibuje lhůty ani délku konzultace', () => {
+    const PROMISE = /pracovního dne|pracovních dn|třicetiminut|třicet minut|do 24 hodin|do čtyřiadvaceti hodin|prvních třicet dní/i;
+    for (const p of DEFAULT_PAGES) expect(JSON.stringify(p), `/${p.path}`).not.toMatch(PROMISE);
+    expect(JSON.stringify(DEFAULT_TEXTS)).not.toMatch(PROMISE);
+    expect(DEFAULT_TEXTS.contact.nextSteps).toEqual(['Domluvíme termín callu', 'Projdeme web a cíle', 'Připravíme návrh na míru']);
+  });
+
+  it('bez středových teček a hranatých závorek v textu (šipky jen v cestách menu v tabulkách)', () => {
+    for (const p of DEFAULT_PAGES) {
+      const page = pageSchema.parse(p);
+      for (const { where, text } of pageTexts(page)) {
+        expect(text, `/${p.path} › ${where}`).not.toMatch(/·|\[ /);
+        if (!where.includes('řádek')) expect(plainText(text), `/${p.path} › ${where}`).not.toContain('→');
+      }
+    }
+    expect(JSON.stringify(DEFAULT_TEXTS) + JSON.stringify(DEFAULT_NAVIGATION)).not.toMatch(/·|→/);
+  });
+
+  it('„zdarma“ nejvýš dvakrát na stránku', () => {
+    for (const p of DEFAULT_PAGES) {
+      const n = visible(p).join(' ').match(/zdarma/gi)?.length ?? 0;
+      expect(n, `/${p.path}: „zdarma“ ${n}×`).toBeLessThanOrEqual(2);
+    }
+  });
+
+  it('kontrola textů bere „DOPLNIT“ jako zástupný text, sloveso „doplnit“ ne', () => {
+    expect(checkText('Vývojáři mezitím doplní datovou vrstvu a my umíme doplnit chybějící data.', 'test')).toEqual([]);
+    expect(checkText('[DOPLNIT] počet projektů', 'test').some((i) => i.level === 'error')).toBe(true);
+  });
+});
+
 describe('jednotný postup spolupráce', () => {
   it('kroky na stránce Jak pracujeme odpovídají pěti krokům z Textů webu', () => {
     const page = DEFAULT_PAGES.find((p) => p.path === 'jak-pracujeme')!;

@@ -72,7 +72,8 @@ z databáze (`content/meta.initialized`).
 Přestavbu existujících stránek ukazuje `20261009_lp_stihla_sablona`: stránku přepíše jen tehdy,
 když se liší od nového znění, původní dokument předtím uloží do `pages_backup/{id}@{id migrace}`
 a stav zveřejnění převezme z databáze. Texty a menu mění jen tam, kde zůstalo původní výchozí
-znění – úpravy z administrace nechá být.
+znění – úpravy z administrace nechá být. Stejný postup pro všechny výchozí stránky najednou nabízí
+`syncPagesWithDefaults` v `app/migrations/helpers.ts` (používá ho `20261009_jazykovy_audit`).
 
 ## Nasazení
 

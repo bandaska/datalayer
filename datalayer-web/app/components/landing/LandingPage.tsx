@@ -11,6 +11,7 @@ import { HeroDiagram } from '../HeroDiagram';
 import { Pi } from '../Pictograms';
 import { Blocks, personReady, type BlockContext } from './Blocks';
 import { crumbsFor } from './crumbs';
+import { typo, typoHtml } from '~/lib/typo';
 
 // Šablona stránky z administrace (štíhlá LP podle vyhodnocení webu, prototyp
 // seo-analyza/prototyp/): hero s jedním úvodem a body důvěry → sekce s bloky →
@@ -42,8 +43,8 @@ function FaqItems({ items }: { items: Faq[] }) {
             if ((e.currentTarget as HTMLDetailsElement).open) pushEvent('faq_open', { question: f.q });
           }}
         >
-          <summary>{f.q}</summary>
-          <div className="faq__a" dangerouslySetInnerHTML={{ __html: f.a }} />
+          <summary>{typo(f.q)}</summary>
+          <div className="faq__a" dangerouslySetInnerHTML={{ __html: typoHtml(f.a) }} />
         </details>
       ))}
     </div>
@@ -56,7 +57,11 @@ function FaqSection({ page, texts, ctx }: { page: PageContent; texts: SiteTexts[
   if (!page.faq.length && !tech) return null;
   const details = tech ? (
     <details className="lp-tech" id="technicke-detaily">
-      <summary>{tech.summary}</summary>
+      <summary>
+        <span className="lp-tech__label">Technické detaily</span>
+        {/* štítek dodá šablona – předponu „Technické detaily:“ v textu (starší obsah) vynechá */}
+        {tech.summary.replace(/^Technické detaily\s*[:–-]\s*/i, '')}
+      </summary>
       <div className="lp-tech__in">
         <Blocks blocks={tech.blocks} sectionId="technicke-detaily" ctx={ctx} />
       </div>
@@ -73,7 +78,7 @@ function FaqSection({ page, texts, ctx }: { page: PageContent; texts: SiteTexts[
     <section className="lp-section lp-section--light" id="faq">
       <div className="container lp-container lp-faqwrap">
         <div>
-          <p className="eyebrow">[ FAQ ]</p>
+          <p className="eyebrow">FAQ</p>
           <h2 className="lp-h2">{page.faqTitle || texts.faqTitle}</h2>
           {page.contact.enabled !== false && texts.faqLead ? <p className="lp-lead" dangerouslySetInnerHTML={{ __html: texts.faqLead }} /> : null}
           {details}
@@ -90,7 +95,7 @@ function ContinueStrip({ pages, articles, label, pictogram }: { pages: PageSumma
   return (
     <section className="lp-section lp-section--light lp-section--white lp-section--strip" id="navazujici">
       <div className="container lp-container">
-        <p className="eyebrow">[ {label} ]</p>
+        <p className="eyebrow">{label}</p>
         <div className="lp-strip">
           {pages.map((p) => (
             <Link key={p.path} to={`/${p.path}`} className="lp-rel" onClick={() => pushEvent('cta_click', { cta_id: `related_${p.path}`, cta_text: p.label, section: 'navazujici' })}>
@@ -121,11 +126,11 @@ function Cta({ href, label, primary, id }: { href: string; label: string; primar
   const onClick = () => pushEvent('cta_click', { cta_id: id, cta_text: label, section: 'hero' });
   return href.startsWith('/') ? (
     <Link to={href} className={cls} onClick={onClick}>
-      [ {label} ]
+      {label}
     </Link>
   ) : (
     <a href={href} className={cls} onClick={onClick}>
-      [ {label} ]
+      {label}
     </a>
   );
 }
@@ -191,9 +196,9 @@ function Hero({ page }: { page: PageContent }) {
         <div className="container">
           <div className="article-container">
             <Breadcrumbs crumbs={crumbsFor(page)} />
-            {hero.eyebrow ? <p className="eyebrow">[ {hero.eyebrow} ]</p> : null}
-            <h1 className="article-title">{hero.h1}</h1>
-            {hero.subtitle ? <p className="article-perex">{hero.subtitle}</p> : null}
+            {hero.eyebrow ? <p className="eyebrow">{hero.eyebrow}</p> : null}
+            <h1 className="article-title">{typo(hero.h1)}</h1>
+            {hero.subtitle ? <p className="article-perex">{typo(hero.subtitle)}</p> : null}
             {ctas}
             {trust}
           </div>
@@ -208,10 +213,10 @@ function Hero({ page }: { page: PageContent }) {
         <Breadcrumbs crumbs={crumbsFor(page)} />
         <div className="lp-hero__grid">
           <div>
-            {hero.eyebrow ? <p className="eyebrow">[ {hero.eyebrow} ]</p> : null}
-            <h1 className="lp-hero__h1">{hero.h1}</h1>
+            {hero.eyebrow ? <p className="eyebrow">{hero.eyebrow}</p> : null}
+            <h1 className="lp-hero__h1">{typo(hero.h1)}</h1>
             {/* jeden úvodní odstavec = rychlá odpověď (box „Rychlá odpověď“ šablona už nemá) */}
-            {hero.subtitle ? <p className="lp-hero__sub">{hero.subtitle}</p> : null}
+            {hero.subtitle ? <p className="lp-hero__sub">{typo(hero.subtitle)}</p> : null}
             {ctas}
             {hero.microcopy ? <p className="lp-hero__micro">{hero.microcopy}</p> : null}
             {trust}
@@ -233,9 +238,9 @@ function SectionView({ s, ctx }: { s: Section; ctx: BlockContext }) {
   const cls = `lp-section lp-section--${tone === 'white' ? 'light lp-section--white' : tone}${s.layout === 'split' ? ' lp-section--split' : ''}`;
   const head = (
     <>
-      {s.eyebrow ? <p className="eyebrow">[ {s.eyebrow} ]</p> : null}
-      {s.title ? <h2 className="lp-h2">{s.title}</h2> : null}
-      {s.lead ? <p className="lp-lead" dangerouslySetInnerHTML={{ __html: s.lead }} /> : null}
+      {s.eyebrow ? <p className="eyebrow">{s.eyebrow}</p> : null}
+      {s.title ? <h2 className="lp-h2">{typo(s.title)}</h2> : null}
+      {s.lead ? <p className="lp-lead" dangerouslySetInnerHTML={{ __html: typoHtml(s.lead) }} /> : null}
     </>
   );
   const blocks = <Blocks blocks={s.blocks} sectionId={s.id} ctx={{ ...ctx, sectionTitle: s.title }} />;

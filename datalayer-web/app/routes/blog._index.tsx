@@ -63,7 +63,7 @@ export default function BlogIndex() {
         <div className="container">
           <div className="article-container">
             <Breadcrumbs crumbs={CRUMBS} />
-            {t.eyebrow ? <p className="eyebrow">[ {t.eyebrow} ]</p> : null}
+            {t.eyebrow ? <p className="eyebrow">{t.eyebrow}</p> : null}
             <h1 className="article-title">{t.title}</h1>
             {t.perex ? <p className="article-perex">{t.perex}</p> : null}
           </div>
@@ -80,6 +80,8 @@ export default function BlogIndex() {
                   <div className="card-body p-4 d-flex flex-column flex-grow-1">
                     <div className="article-card-meta mb-3">
                       <span className="text-cyan">{formatDate(post.date)}</span>
+                      {/* oddělovač, aby čtečky a vyhledávače nečetly datum a autora slitě */}
+                      <span className="visually-hidden">, </span>
                       <span className="ms-3 text-muted">{post.author}</span>
                     </div>
                     <h2 className="article-card-title mb-3">{post.title}</h2>
@@ -87,7 +89,7 @@ export default function BlogIndex() {
                   </div>
                   <div className="card-footer p-4 pt-0 border-0 bg-transparent mt-auto">
                     <div className="border-top border-secondary pt-3">
-                      <span className="btn-link-cyan">{t.readMore} →</span>
+                      <span className="btn-link-cyan">{t.readMore}</span>
                     </div>
                   </div>
                 </Link>

@@ -22,7 +22,8 @@ const BANNED = /obcház\w* blokátor|funkcionální ekosystém|100 % dat|GDPR co
 // „neprůstřelné“ smí zůstat jen v claimu – H1 homepage (architektura webu, kap. 6)
 const CLAIM_ONLY = /neprůstřeln/i;
 const COMPARATIVE_JAK = /\b(větší|menší|vyšší|nižší|lepší|horší|více|méně|víc|míň|delší|kratší|rychlejší|pomalejší) jak\b/i;
-const PLACEHOLDER = /\[DOPLNIT|\bDOPLNIT\b|\bTODO\b|lorem ipsum/i;
+// zástupný text jen velkými písmeny – sloveso „doplnit“ v běžné větě není chyba
+const PLACEHOLDER = /\[DOPLNIT|\bDOPLNIT\b|\bTODO\b|[Ll]orem ipsum/;
 // opisný trpný rod: „je nastaven“, „byla odeslána“, „jsou uloženy“…
 const PASSIVE =
   /(?<!\p{L})(je|jsou|byl|byla|bylo|byli|byly|bude|budou|není|nejsou|nebyl|nebyla|nebylo)\s+(?:\p{L}+\s+)?(\p{L}+(?:en|ena|eno|eni|eny|án|ána|áno|áni|ány|nut|nuta|nuto|nuti|nuty))(?!\p{L})/iu;
@@ -118,6 +119,10 @@ function blockTexts(b: Block, where: string, add: (where: string, text: string |
     case 'process':
       add(`${where} › krok 3`, b.implementation);
       add(`${where} › krok 3 › od vás`, b.implementationFromClient);
+      b.stepOverrides?.forEach((o, i) => {
+        add(`${where} › krok ${i + 1}`, o.text);
+        add(`${where} › krok ${i + 1} › od vás`, o.fromClient);
+      });
       break;
     case 'operator':
       add(`${where} › nadpis`, b.title);

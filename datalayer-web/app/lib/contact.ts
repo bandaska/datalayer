@@ -6,9 +6,9 @@ import type { Topic } from '~/content/types';
 
 /** Témata ve formuláři (chips) v pořadí zobrazení. */
 export const TOPICS: { value: Topic; label: string }[] = [
-  { value: 'ga4', label: 'GA4 a Tag Manager' },
-  { value: 'server-side', label: 'Server-side' },
-  { value: 'consent', label: 'Cookie lišta a consent' },
+  { value: 'ga4', label: 'GA4 a GTM' },
+  { value: 'server-side', label: 'Server-side měření' },
+  { value: 'consent', label: 'Cookie lišta a souhlas' },
   { value: 'konverze', label: 'Konverze a reklamy' },
   { value: 'bigquery', label: 'BigQuery a reporting' },
   { value: 'audit', label: 'Audit' },
@@ -41,14 +41,14 @@ export type ContactFields = {
 export type ContactErrors = Partial<Record<'jmeno' | 'email' | 'zprava', string>>;
 
 export const CONTACT_MESSAGES = {
-  jmeno: 'Napište prosím, jak vám máme říkat.',
+  jmeno: 'Vyplňte prosím jméno a příjmení.',
   email: 'Zkontrolujte prosím e-mail – bez něj se vám nemůžeme ozvat.',
   zprava: 'Napište prosím pár slov o tom, co řešíte.',
   invalid: 'Zkontrolujte prosím zvýrazněná pole.',
   spam: 'Ověření proti spamu selhalo. Zkuste to prosím znovu.',
   rate: 'Odeslali jste několik zpráv za sebou. Zkuste to prosím za chvíli.',
   failed: 'Zprávu se teď nepodařilo zpracovat. Zkuste to prosím později, nebo nám napište e-mail.',
-  ok: 'Děkujeme, ozveme se do jednoho pracovního dne.',
+  ok: 'Děkujeme, zpráva dorazila. Ozveme se vám.',
 } as const;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;

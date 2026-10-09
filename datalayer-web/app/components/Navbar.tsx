@@ -142,7 +142,7 @@ export function Navbar() {
                       {item.footerLink ? (
                         item.columns.length > 1 ? (
                           <Link to={item.footerLink.href} className="mega__all">
-                            {item.footerLink.label} →
+                            {item.footerLink.label}
                           </Link>
                         ) : (
                           <>
@@ -161,7 +161,7 @@ export function Navbar() {
                   className="btn btn-cta"
                   onClick={() => pushEvent('cta_click', { cta_id: 'nav_cta', cta_text: nav.cta.label, section: 'nav' })}
                 >
-                  [ {nav.cta.label} ]
+                  {nav.cta.label}
                 </a>
               </li>
             </ul>

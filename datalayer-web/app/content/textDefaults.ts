@@ -7,13 +7,13 @@ export const DEFAULT_PROCESS = {
   steps: [
     {
       title: 'Audit',
-      text: 'Projdeme GA4, GTM, consent a reklamní systémy a porovnáme je s administrací.',
-      output: 'report s prioritami A/B/C',
+      text: 'Projdeme GA4, GTM, souhlas a reklamní systémy a porovnáme je s administrací nebo CRM.',
+      output: 'report s prioritami A, B a C',
       fromClient: 'přístupy pro čtení',
     },
     {
       title: 'Měřicí plán',
-      text: 'Byznys cíle převedeme na události, parametry a pravidla pojmenování.',
+      text: 'Obchodní cíle převedeme na události, parametry a pravidla pojmenování.',
       output: 'měřicí plán a specifikace datové vrstvy',
       fromClient: 'hodinová schůzka a schválení plánu',
     },
@@ -25,13 +25,13 @@ export const DEFAULT_PROCESS = {
     },
     {
       title: 'Validace',
-      text: 'Projdeme testovací scénáře, zkontrolujeme každou událost a porovnáme čísla s e-shopem nebo CRM.',
+      text: 'Projdeme testovací scénáře, zkontrolujeme každou událost a porovnáme čísla s administrací nebo CRM.',
       output: 'protokol testů',
-      fromClient: 'testovací objednávka a export z administrace',
+      fromClient: 'testovací objednávka nebo poptávka a export z administrace nebo CRM',
     },
     {
       title: 'Předání a podpora',
-      text: 'Předáme dokumentaci, proškolíme tým a hlídáme, aby měření nespadlo po dalším releasu.',
+      text: 'Předáme dokumentaci, proškolíme tým a budeme hlídat, aby měření po dalším releasu nepřestalo fungovat.',
       output: 'dokumentace a monitoring',
       fromClient: 'předávací schůzka',
     },
@@ -40,15 +40,13 @@ export const DEFAULT_PROCESS = {
 
 export const DEFAULT_PAGE_TEXTS = {
   faqTitle: 'Časté otázky',
-  faqLead: 'Nenašli jste odpověď? <a href="#kontakt">Napište nám</a>.',
+  // výzvu pod nadpisem FAQ jazykový audit doporučil vypustit (kontaktní blok je hned pod ní)
+  faqLead: '',
   continueLabel: 'pokračujte',
 };
 
-export const DEFAULT_NEXT_STEPS = [
-  'Do jednoho pracovního dne navrhneme termín.',
-  'Na třicet minut projdeme web a cíle.',
-  'Do dvou pracovních dnů po konzultaci dostanete shrnutí a návrh dalšího kroku.',
-];
+// kroky bez slibů lhůt a délek (zadání klienta)
+export const DEFAULT_NEXT_STEPS = ['Domluvíme termín callu', 'Projdeme web a cíle', 'Připravíme návrh na míru'];
 
 export const DEFAULT_THANK_YOU_LINKS = [
   { label: 'Jak pracujeme', href: '/jak-pracujeme' },

@@ -36,8 +36,9 @@ import { getSettings } from './lib/settings.server';
 import { CONTACT_EMAIL } from './lib/site';
 import { turnstileSiteKey } from './lib/turnstile.server';
 
-export const meta: MetaFunction = () => [
-  { title: 'datalayer.cz' },
+export const meta: MetaFunction = ({ error }) => [
+  // chybová stránka má vlastní titulek (jazykový audit, kap. 3.27)
+  { title: error ? 'Stránka neexistuje | datalayer.cz' : 'datalayer.cz' },
   {
     name: 'description',
     content: 'Webová analytika a měření pro e-shopy a firmy: GA4, Google Tag Manager, server-side tracking a Consent Mode v2.',
@@ -154,10 +155,10 @@ export function ErrorBoundary() {
             <h1 className="article-title">{is404 ? t.title : 'Chyba'}</h1>
             <p className="article-perex mx-auto">{is404 ? t.text : 'Omlouváme se, na serveru nastala neočekávaná chyba.'}</p>
             <a href="/" className="btn btn-cta mt-3">
-              [ {t.home} ]
+              {t.home}
             </a>{' '}
             <a href="/sluzby" className="btn btn-outline-custom mt-3">
-              [ {t.services} ]
+              {t.services}
             </a>
           </div>
         </section>

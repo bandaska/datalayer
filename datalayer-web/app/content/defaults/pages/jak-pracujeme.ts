@@ -11,6 +11,7 @@ import type { PageInput } from '../../schema';
 // role v týmu u kroků, započtení ceny auditu, adresa pracovního e-mailu pro přístupy,
 // osobní schůzky, složení týmu, partner pro vývoj, pravidla fakturace.
 // Názvy menu v tabulce přístupů je potřeba před publikací ověřit v rozhraních nástrojů.
+// Texty prošly jazykovým auditem z 9. října 2026 (kap. 3.18), bez slibů lhůt (rozhodnutí klienta).
 
 export const page: PageInput = {
   path: 'jak-pracujeme',
@@ -20,22 +21,22 @@ export const page: PageInput = {
   pictogram: 'audit',
 
   seo: {
-    title: 'Jak pracujeme: od auditu po předání měření | datalayer.cz',
+    title: 'Jak pracujeme – od úvodní konzultace po předané měření | datalayer.cz',
     description:
       'Implementace měření v pěti krocích: audit, měřicí plán se specifikací dataLayer, implementace, validace a předání s dokumentací. Co dostanete v každém kroku.',
   },
 
   hero: {
     eyebrow: 'postup spolupráce',
-    h1: 'Jak pracujeme: od konzultace po předané měření',
+    h1: 'Pět kroků od úvodní konzultace po předané měření',
     subtitle:
-      'Každý projekt má stejnou kostru o pěti krocích. Nejdřív zjistíme, co dnes měříte, pak se dohodneme, co má měření sledovat, a teprve potom píšeme tagy. Na konci dostanete funkční měření, důkaz, že funguje, a dokumentaci, se kterou si poradí kdokoli.',
+      'Každý projekt má stejnou kostru o pěti krocích. Nejdřív zjistíme, co dnes měříte, pak se dohodneme, co má měření sledovat, a teprve potom nastavujeme tagy. Na konci dostanete funkční měření, důkaz, že funguje, a dokumentaci, se kterou si poradí kdokoli.',
     primaryCta: { label: 'Konzultovat projekt', href: '#kontakt' },
     secondaryCta: { label: 'Pět kroků spolupráce', href: '#postup' },
-    microcopy: 'Úvodní třicetiminutová konzultace zdarma · odpověď do jednoho pracovního dne',
+    microcopy: 'Úvodní konzultace zdarma a nezávazně',
   },
 
-  trust: ['Ke každému kroku konkrétní výstup', 'Účty, kontejnery i data zůstávají vám', 'Validace proti administraci nebo CRM'],
+  trust: ['Ke každému kroku konkrétní výstup', 'Účty, kontejnery i data zůstávají vám', 'Validace porovnáním s administrací nebo CRM'],
 
   sections: [
     {
@@ -50,27 +51,27 @@ export const page: PageInput = {
           columns: 3,
           items: [
             {
-              tag: '// plan_first',
+              tag: '01',
               title: 'Nejdřív měřicí plán, pak tagy',
               text: 'Měříme jen to, co někdo použije k rozhodnutí.',
             },
             {
-              tag: '// your_accounts',
+              tag: '02',
               title: 'Pracujeme ve vašich účtech',
-              text: 'GA4, GTM, Google Cloud i data patří vám.',
+              text: 'GA4, Google Tag Manager (GTM), Google Cloud i data patří vám.',
             },
             {
-              tag: '// consent_by_default',
+              tag: '03',
               title: 'Souhlas je vstupní podmínka',
               text: 'Souhlas pro nás není překážka. Bez něj marketingová data neposíláme.',
             },
             {
-              tag: '// verify_before_handover',
+              tag: '04',
               title: 'Nic nepředáme bez validace',
-              text: 'Měření vždy ověříme proti administraci, CRM nebo testovacím scénářům.',
+              text: 'Měření vždy porovnáme s administrací nebo CRM a projdeme testovací scénáře.',
             },
             {
-              tag: '// docs_are_output',
+              tag: '05',
               title: 'Dokumentace je výstup projektu',
               text: 'Není to bonus. Kdokoli po nás musí umět pokračovat.',
             },
@@ -82,7 +83,7 @@ export const page: PageInput = {
       id: 'postup',
       eyebrow: 'postup',
       title: 'Pět kroků od auditu po předané měření',
-      lead: 'Stejné kroky uvidíte u všech služeb. Před prvním z nich proběhne úvodní třicetiminutová konzultace zdarma: projdeme web, cíle a největší problém a doporučíme, čím začít.',
+      lead: 'Stejné kroky uvidíte u všech služeb. Před prvním z nich proběhne úvodní konzultace zdarma: projdeme web, cíle a největší problém a doporučíme, čím začít.',
       tone: 'dark',
       blocks: [
         {
@@ -93,17 +94,17 @@ export const page: PageInput = {
               title: 'Audit',
               text: 'Zjistíme, co dnes měříte a kde data utíkají. Čísla porovnáme s administrací nebo CRM.',
               substeps: [
-                'Google Tag Manager a GA4: kontejnery, události a nastavení',
+                'GTM a GA4: kontejnery, události a nastavení',
                 'cookie lišta a Consent Mode',
                 'reklamní systémy a datová vrstva',
                 'porovnání čísel s administrací nebo CRM',
               ],
               output: 'audit-report.pdf – nálezy s prioritou podle dopadu, doporučení a odhad rozsahu oprav',
-              fromClient: 'Přístupy pro čtení – návod najdete v Technických detailech u častých otázek',
+              fromClient: 'Přístupy pro čtení – jaké role a kde je udělíte, najdete u častých otázek v Technických detailech',
             },
             {
               title: 'Měřicí plán',
-              text: 'Byznysové otázky převedeme na KPI, události a parametry a rozhodneme, která data kam odcházejí. Z plánu potom napíšeme zadání pro vývojáře.',
+              text: 'Obchodní otázky převedeme na ukazatele (KPI), události a parametry a rozhodneme, která data kam odcházejí. Z plánu potom napíšeme zadání pro vývojáře.',
               substeps: [
                 'KPI, události, parametry a cílové systémy',
                 'pravidla pojmenování a souhlas, který událost potřebuje',
@@ -131,22 +132,22 @@ export const page: PageInput = {
               substeps: [
                 'testovací scénáře v GTM Preview a GA4 DebugView',
                 'test souhlasu: přijetí, odmítnutí i stav bez volby',
-                'testovací objednávky nebo leady',
+                'testovací objednávky nebo poptávky',
                 'souběžný běh a porovnání čísel s administrací nebo CRM',
               ],
               output: 'validace-protokol.pdf – co jsme testovali, výsledky a vysvětlení rozdílů',
-              fromClient: 'Testovací objednávka nebo lead a export z administrace nebo CRM',
+              fromClient: 'Testovací objednávka nebo poptávka a export z administrace nebo CRM',
             },
             {
               title: 'Předání a podpora',
-              text: 'Na předávacím callu se záznamem projdeme dokumentaci a přístupy. Prvních třicet dní po spuštění hlídáme měření zdarma, potom podle dohody pokračujeme správou a monitoringem.',
+              text: 'Na předávací schůzce se záznamem projdeme dokumentaci a přístupy. Po spuštění podle dohody pokračujeme správou a monitoringem.',
               substeps: [
                 'dokumentace architektury a datových toků',
                 'seznam přístupů a vlastníků',
-                'předávací call se záznamem',
+                'předávací schůzka se záznamem',
                 'u správy upozornění při výpadku a měsíční report kvality dat',
               ],
-              output: 'dokumentace.pdf, záznam callu a access-list.xlsx',
+              output: 'dokumentace.pdf, záznam schůzky a access-list.xlsx',
               fromClient: 'Hodina až hodina a půl času lidí, kteří budou měření používat, a kontaktní osoba',
             },
           ],
@@ -173,7 +174,7 @@ export const page: PageInput = {
             {
               title: 'E-shopy',
               pictogram: 'eshop',
-              text: 'Měřicí plán stavíme na e-commerce událostech GA4 a čísla porovnáváme s administrací e-shopu. Google Ads, Meta, Sklik i Heureka dostanou stejnou hodnotu objednávky.',
+              text: 'Měřicí plán stavíme na událostech e-commerce v GA4 a čísla porovnáváme s administrací e-shopu. Google Ads, Meta, Sklik i Heureka dostanou stejnou hodnotu objednávky.',
               link: { label: 'Měření pro e-shopy', href: '/reseni/e-shopy' },
             },
             {
@@ -185,7 +186,7 @@ export const page: PageInput = {
             {
               title: 'Velké firmy',
               pictogram: 'gov',
-              text: 'Na začátku přibude discovery s rozhovory a pilot. Měřicí plán, názvosloví a verzování zavedeme jako standard pro všechny weby a týmy.',
+              text: 'Na začátku přibude úvodní analýza (discovery) s rozhovory a pilotní nasazení. Měřicí plán, názvosloví a verzování zavedeme jako standard pro všechny weby a týmy.',
               link: { label: 'Měření pro velké firmy', href: '/reseni/velke-firmy' },
             },
           ],
@@ -207,12 +208,12 @@ export const page: PageInput = {
               id: 'plan',
               label: 'Měřicí plán',
               paragraphs: [
-                'Každý řádek plánu začíná byznysovou otázkou. K ní teprve přiřadíme KPI, událost, parametry, cílové systémy a souhlas, který událost potřebuje.',
+                'Každý řádek plánu začíná obchodní otázkou. K ní teprve přiřadíme KPI, událost, parametry, cílové systémy a souhlas, který událost potřebuje.',
               ],
               bullets: [
-                '<strong>Které kampaně přinášejí ziskové objednávky?</strong> KPI: hrubý zisk z kampaně. Událost <code>purchase</code> s parametry <code>transaction_id</code>, <code>value</code>, <code>currency</code>, <code>items[]</code>, <code>shipping</code> a <code>coupon</code>. Cíl: GA4, Google Ads, Meta CAPI a Sklik. Souhlas: analytický i marketingový.',
+                '<strong>Které kampaně přinášejí ziskové objednávky?</strong> KPI: hrubý zisk z kampaně. Událost <code>purchase</code> s parametry <code>transaction_id</code>, <code>value</code>, <code>currency</code>, <code>items[]</code>, <code>shipping</code> a <code>coupon</code>. Cíl: GA4, Google Ads, Meta Conversions API (CAPI) a Sklik. Souhlas: analytický i marketingový.',
                 '<strong>Kde lidé opouštějí pokladnu?</strong> KPI: míra dokončení pokladny. Události <code>begin_checkout</code>, <code>add_shipping_info</code> a <code>add_payment_info</code>. Cíl: GA4. Souhlas: analytický.',
-                '<strong>Které formuláře přinášejí kvalitní poptávky?</strong> KPI: podíl kvalifikovaných leadů. Událost <code>generate_lead</code> s parametry <code>form_id</code>, <code>lead_id</code> a <code>lead_topics</code>. Cíl: GA4, Google Ads a CRM. Souhlas: analytický i marketingový.',
+                '<strong>Které formuláře přinášejí kvalitní poptávky?</strong> KPI: podíl kvalifikovaných poptávek. Událost <code>generate_lead</code> s parametry <code>form_id</code>, <code>lead_id</code> a <code>lead_topics</code>. Cíl: GA4, Google Ads a CRM. Souhlas: analytický i marketingový.',
               ],
             },
             {
@@ -249,7 +250,7 @@ export const page: PageInput = {
                 'Inventář datových toků',
                 'GTM: konvence a přehled tagů',
                 'GA4: nastavení, vlastní definice a klíčové události',
-                'Consent: konfigurace a testy',
+                'Souhlas a Consent Mode: konfigurace a testy',
                 'Reklamní systémy',
                 'Server-side: infrastruktura a náklady',
                 'Přístupy a vlastníci',
@@ -294,7 +295,7 @@ dataLayer.push({
           style: 'check',
           items: [
             '<strong>Vlastní cookie lišta</strong> – tlačítka „Odmítnout vše“ a „Přijmout vše“ mají stejnou váhu.',
-            '<strong>Consent Mode v2</strong> – výchozí stav <code>denied</code>, Tag Manager startuje až po něm.',
+            '<strong>Consent Mode v2</strong> – výchozí stav <code>denied</code>, GTM startuje až po něm.',
             '<strong>Vlastní formulář bez cizích skriptů</strong> – událost <code>generate_lead</code> bez čitelného jména a e-mailu, hash jen se souhlasem s marketingem.',
             '<strong>Ochrana proti spamu bez CAPTCHA</strong> – Cloudflare Turnstile a skryté pole.',
           ],
@@ -310,7 +311,7 @@ dataLayer.push({
   ],
 
   techDetails: {
-    summary: 'Přístupy: jaké role potřebujeme a kde je udělíte',
+    summary: 'Jaké přístupy potřebujeme a kde je udělíte',
     blocks: [
       {
         type: 'paragraphs',
@@ -324,12 +325,12 @@ dataLayer.push({
         head: ['Nástroj', 'Audit', 'Implementace', 'Kde přístup udělíte'],
         rows: [
           ['Google Tag Manager', 'Čtení v kontejneru', 'Publikace v kontejneru, v účtu role Uživatel', 'Správce → Správa uživatelů'],
-          ['Google Analytics 4', 'Viewer', 'Editor na úrovni property', 'Správce → Správa přístupu k property'],
+          ['Google Analytics 4', 'Čtenář', 'Editor na úrovni property', 'Správce → Správa přístupu k property'],
           ['Google Ads', 'Jen čtení', 'Standardní', 'Správce → Přístup a zabezpečení'],
           [
             'Merchant Center',
             'Standardní',
-            'Admin, jen pokud řešíme produktový feed nebo data z košíku',
+            'Správce, jen pokud řešíme produktový feed nebo data z košíku',
             'Nastavení → Lidé a přístup',
           ],
           [
@@ -338,7 +339,7 @@ dataLayer.push({
             'Events Manager – spravovat',
             'Firemní nastavení → Zdroje dat → Datové sady',
           ],
-          ['Sklik / Seznam', 'Čtení', 'Úpravy', 'Nastavení účtu → Přístupy'],
+          ['Sklik/Seznam', 'Čtení', 'Úpravy', 'Nastavení účtu → Přístupy'],
           [
             'Google Cloud',
             '<code>roles/viewer</code> na projekt',
@@ -348,8 +349,8 @@ dataLayer.push({
           ['Administrace e-shopu nebo CMS', 'Uživatel s nastavením marketingu', 'Totéž', 'Podle platformy'],
           [
             'CRM',
-            'Čtení pipeline',
-            'Admin pro pole a automatizace, nebo spolupráce s vaším adminem',
+            'Čtení obchodních případů (pipeline)',
+            'Správce pro pole a automatizace, nebo spolupráce s vaším správcem CRM',
             'Podle CRM',
           ],
         ],
@@ -366,15 +367,15 @@ dataLayer.push({
   faq: [
     {
       q: 'Jak dlouho trvá typický projekt?',
-      a: 'Záleží hlavně na dvou věcech: jak rychle vývojáři doplní datovou vrstvu a jak dlouho musí měření běžet, abychom ho mohli porovnat s administrací nebo CRM. Samotná naše práce obvykle nezabere nejvíc času. Termíny najdete v nabídce, kterou dostanete po úvodní konzultaci, nejpozději po auditu.',
+      a: 'Záleží hlavně na dvou věcech: jak rychle vývojáři doplní datovou vrstvu a jak dlouho musí měření běžet, abychom ho mohli porovnat s administrací nebo CRM. Naše vlastní práce obvykle není to, co trvá nejdéle. Termíny najdete v nabídce, kterou dostanete po úvodní konzultaci, nejpozději po auditu.',
     },
     {
       q: 'Kdo bude na projektu pracovat?',
-      a: 'Na začátku projektu víte jménem, kdo dělá co a s kým mluvíte. Projekty nepředáváme dalším subdodavatelům bez vašeho souhlasu.',
+      a: 'Na začátku projektu znáte jména lidí, kteří na něm pracují, a víte, s kým mluvíte. Projekty nepředáváme subdodavatelům bez vašeho souhlasu.',
     },
     {
       q: 'Co když nemáme vlastního vývojáře?',
-      a: 'Na Shoptetu, Upgates, Shopify a většině webů na WordPressu zvládneme většinu práce přes administraci a Tag Manager. U vlastních řešení potřebujeme někoho, kdo do webu doplní <a href="/sluzby/datova-vrstva">datovou vrstvu</a>. Dodáme mu přesné zadání a výsledek otestujeme.',
+      a: 'Na Shoptetu, Upgates, Shopify a u většiny webů na WordPressu zvládneme větší část práce přes administraci a GTM. U vlastních řešení potřebujeme někoho, kdo do webu doplní <a href="/sluzby/datova-vrstva">datovou vrstvu</a>. Dodáme mu přesné zadání a výsledek otestujeme.',
     },
     {
       q: 'Spolupracujete s naší PPC nebo marketingovou agenturou?',
@@ -382,7 +383,7 @@ dataLayer.push({
     },
     {
       q: 'Co když se měření po předání rozbije?',
-      a: 'Prvních třicet dní po spuštění měření hlídáme zdarma a chyby, které způsobíme my, opravíme vždy. Pokud se měření rozbije později kvůli změně webu, pomůžeme v rámci <a href="/sluzby/sprava-webu-a-mereni">správy webu a měření</a> nebo jednorázově. Doporučujeme monitoring, který na výpadek upozorní do 24 hodin.',
+      a: 'Chyby, které způsobíme my, opravíme. Pokud se měření rozbije později kvůli změně webu, pomůžeme v rámci <a href="/sluzby/sprava-webu-a-mereni">správy webu a měření</a> nebo jednorázově. Doporučujeme monitoring, který na výpadek upozorní.',
     },
     {
       q: 'Podepíšete NDA a zpracovatelskou smlouvu?',
@@ -400,8 +401,8 @@ dataLayer.push({
 
   contact: {
     formId: 'jak-pracujeme',
-    title: 'Začněme třicetiminutovou konzultací',
-    lead: 'Napište nám e-mail, nebo vyplňte formulář. Na konzultaci projdeme váš web a řekneme, kterým krokem začít – nezávazně a zdarma.',
+    title: 'Začněme úvodní konzultací',
+    lead: 'Napište nám e-mail nebo vyplňte formulář. Na konzultaci projdeme váš web a řekneme, kterým krokem začít.',
     placeholder: 'Např. chceme nově nastavit měření pro web na poptávky a nevíme, jestli začít auditem…',
     leadType: 'consultation',
   },

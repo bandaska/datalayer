@@ -5,42 +5,41 @@ import type { PageInput } from '../../schema';
 // vyhodnocení webu (9. října 2026, kap. 5.15 a 6.4): formulář hned pod nadpisem
 // (contact.position = top), „co se stane po odeslání“ ukazuje kontaktní blok sám
 // (Texty webu → Kontakt), FAQ jen tři otázky, bez pruhu souvisejících stránek.
-// H1 a meta popis ze zadání slibují telefonát („nebo rovnou zavolejte“). Telefon
-// zatím chybí, proto texty stránky na telefonu nestojí – po doplnění čísla
-// v administraci lze H1 ze zadání vrátit.
+// Telefon (704 664 774) web bere z Nastavení – H1 proto vrací výzvu ze zadání „nebo rovnou
+// zavolejte“. Texty prošly jazykovým auditem z 9. října 2026 (kap. 3.20 a 5.4) a neslibují
+// lhůty ani délku konzultace (rozhodnutí klienta).
 // Web zatím nemá kontaktní osobu (rozhodnutí klienta, 9. října 2026), stránka proto
-// neuvádí, kdo odpovídá. Do dodání podkladů klientem chybí: telefon a pracovní doba,
+// neuvádí, kdo odpovídá. Do dodání podkladů klientem chybí: pracovní doba,
 // firemní údaje, osobní schůzky, angličtina.
 
 export const page: PageInput = {
   path: 'kontakt',
   kind: 'page',
   navTitle: 'Kontakt',
-  tagline: 'odpověď do jednoho pracovního dne',
+  tagline: 'e-mail, telefon a formulář',
   pictogram: 'lead',
 
   seo: {
-    title: 'Kontakt: konzultace měření zdarma | datalayer.cz',
+    title: 'Kontakt – konzultace měření zdarma | datalayer.cz',
     description:
-      'Napište nám, nebo vyplňte formulář. Na úvodní třicetiminutové konzultaci projdeme vaše měření a řekneme, co opravit jako první. Odpověď do pracovního dne.',
+      'Napište nám, zavolejte nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první.',
   },
 
   hero: {
     variant: 'simple',
     eyebrow: 'kontakt',
-    h1: 'Kontakt: napište nám, ozveme se do jednoho pracovního dne',
-    subtitle:
-      'Na úvodní třicetiminutové konzultaci projdeme vaše měření a řekneme, co opravit jako první – nezávazně a zdarma.',
+    h1: 'Napište nám nebo rovnou zavolejte',
+    subtitle: 'Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první.',
   },
 
-  trust: ['Odpověď do jednoho pracovního dne', 'Úvodní konzultace zdarma a nezávazně', 'Žádný newsletter ani spam'],
+  trust: ['Úvodní konzultace zdarma a nezávazně', 'Žádný newsletter ani spam'],
 
   sections: [
     {
       id: 'priprava',
       eyebrow: 'příprava',
       title: 'Jak se připravit na konzultaci',
-      lead: 'Nic z toho není povinné. Pomůže nám to ale využít třicet minut naplno.',
+      lead: 'Nic z toho není povinné. Pomůže nám to ale využít konzultaci naplno.',
       tone: 'white',
       blocks: [
         {
@@ -50,8 +49,8 @@ export const page: PageInput = {
             'Adresa webu a platforma, na které běží',
             'Reklamní systémy, které používáte',
             'Hlavní problém jednou větou, třeba „GA4 ukazuje o pětinu méně objednávek než e-shop“',
-            'Kdo má na starost web a vývoj',
-            'Případně screenshot nebo export, který vás znepokojil',
+            'Kdo má na starosti web a vývoj',
+            'Případně snímek obrazovky nebo export, který vás znepokojil',
           ],
         },
         {
@@ -65,7 +64,7 @@ export const page: PageInput = {
   faq: [
     {
       q: 'Je konzultace opravdu zdarma?',
-      a: 'Ano. Trvá třicet minut a k ničemu vás nezavazuje.',
+      a: 'Ano. Úvodní konzultace k ničemu nezavazuje.',
     },
     {
       q: 'Podepíšete NDA ještě před hovorem?',
@@ -82,7 +81,7 @@ export const page: PageInput = {
     position: 'top',
     formId: 'kontakt',
     title: 'Napište nám, co řešíte',
-    lead: 'Ozveme se do jednoho pracovního dne.',
+    lead: 'Napište nám, zavolejte nebo vyplňte formulář.',
     placeholder: 'Krátce napište, co řešíte…',
     leadType: 'consultation',
   },

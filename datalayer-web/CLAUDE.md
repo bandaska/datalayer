@@ -11,9 +11,9 @@
   (kolekce `pages`), menu s patičkou a texty webu (`content/*`). Schéma `app/content/schema.ts`,
   vykreslení `app/components/landing/`, čtení a zápis `app/lib/cms/`. Výchozí obsah
   v `app/content/defaults/` slouží jen jako zdroj migrací (`20261009_cms_content_import`,
-  `20261009_lp_stihla_sablona`) a záloha, než je někdo nasadí – jeho úprava produkční web
+  `20261009_lp_stihla_sablona`, `20261009_jazykovy_audit`) a záloha, než je někdo nasadí – jeho úprava produkční web
   nezmění. Novou stránku nebo hromadnou změnu obsahu připravit jako migraci (`importPage`
-  v `app/migrations/helpers.ts`, vzor přepisu se zálohou v `20261009_lp_stihla_sablona`), obsah
+  v `app/migrations/helpers.ts`, přepis všech výchozích stránek se zálohou `syncPagesWithDefaults`), obsah
   se do šablon natvrdo nepíše. Firestore neumí pole v poli: stránky zapisovat jen přes `pageToDoc` /
   `encodeNested` (`app/lib/cms/codec.ts`).
 - SEO: meta tagy jen přes `seoMeta()` (`app/lib/seo.ts`) – canonical, OG, JSON-LD. Staré URL přesměrovat

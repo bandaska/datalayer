@@ -19,6 +19,14 @@ const { db, docs } = vi.hoisted(() => {
       for (const [k, x] of Object.entries(v)) check(x, path ? `${path}.${k}` : k);
     }
   };
+  // jako Firestore s ignoreUndefinedProperties: pole s undefined vynechá a objekt, kterému
+  // zůstala jen undefined, z pole vypustí úplně (prázdné `{}` naopak uloží)
+  const store = (v: unknown): unknown => {
+    if (Array.isArray(v)) return v.filter((x) => !(isMap(x) && Object.keys(x).length && Object.values(x).every((y) => y === undefined))).map(store);
+    if (isMap(v)) return Object.fromEntries(Object.entries(v).filter(([, x]) => x !== undefined).map(([k, x]) => [k, store(x)]));
+    return v;
+  };
+  const isMap = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && Object.getPrototypeOf(v) === Object.prototype;
   const docRef = (col: string, id: string) => {
     const key = `${col}/${id}`;
     return {
@@ -29,7 +37,8 @@ const { db, docs } = vi.hoisted(() => {
       }),
       set: async (value: Doc, opts?: { merge?: boolean }) => {
         check(value, '');
-        docs.set(key, opts?.merge ? { ...(docs.get(key) ?? {}), ...value } : { ...value });
+        const stored = store(value) as Doc;
+        docs.set(key, opts?.merge ? { ...(docs.get(key) ?? {}), ...stored } : stored);
       },
       delete: async () => {
         docs.delete(key);
@@ -62,6 +71,7 @@ const { navigationStore, textsStore } = await import('~/lib/cms/singletons.serve
 const { migration } = await import('~/migrations/scripts/20261009_cms_content_import');
 const { migration: slimMigration } = await import('~/migrations/scripts/20261009_lp_stihla_sablona');
 const { migration: noPersonMigration } = await import('~/migrations/scripts/20261009_bez_kontaktni_osoby');
+const { migration: auditMigration } = await import('~/migrations/scripts/20261009_jazykovy_audit');
 const { importPage } = await import('~/migrations/helpers');
 type MigrationContext = import('~/migrations/types').MigrationContext;
 
@@ -136,6 +146,19 @@ describe('převod pro Firestore (pole v poli)', () => {
     const loaded = await getPageByPath(withTable.path);
     expect(loaded?.source).toBe('firestore');
     expect(loaded?.page.sections).toEqual(sanitizePage(withTable).sections);
+  });
+
+  it('přepisy kroků postupu drží pořadí i s prázdnými položkami', async () => {
+    const withOverrides = DEFAULT_PAGES.filter((p) => p.sections.some((s) => s.blocks.some((b) => b.type === 'process' && b.stepOverrides?.some((o) => !o.text && !o.fromClient))));
+    expect(withOverrides.length).toBeGreaterThan(0);
+    for (const page of withOverrides) {
+      await savePage(page, 'x');
+      const loaded = await getPageByPath(page.path);
+      const overrides = (sections: typeof page.sections) =>
+        sections.flatMap((s) => s.blocks).flatMap((b) => (b.type === 'process' ? [b.stepOverrides] : []))[0];
+      expect(overrides(loaded!.page.sections), page.path).toHaveLength(overrides(page.sections)!.length);
+      expect(overrides(loaded!.page.sections), page.path).toEqual(overrides(sanitizePage(page).sections));
+    }
   });
 });
 
@@ -388,6 +411,56 @@ describe('migrace 20261009_bez_kontaktni_osoby', () => {
     await migration.run(ctx);
     const summary = await noPersonMigration.run(ctx);
     expect(summary).toBe('texty webu: beze změny; stránky: 0 přepsaných; autor článků změněný: 0; jiné zmínky nezůstaly');
+  });
+});
+
+describe('migrace 20261009_jazykovy_audit', () => {
+  const OLD_NEXT = [
+    'Do jednoho pracovního dne navrhneme termín.',
+    'Na třicet minut projdeme web a cíle.',
+    'Do dvou pracovních dnů po konzultaci dostanete shrnutí a návrh dalšího kroku.',
+  ];
+
+  it('stránky, texty, menu, telefon a články uvede do nového znění, úpravy z administrace nechá', async () => {
+    await migration.run(ctx);
+    // stav z předchozího kola: staré výchozí texty, jeden vlastní text, starý popisek v menu, starší stránka a článek
+    const texts = decodeNested(docs.get('content/texts')) as Record<string, Record<string, unknown>>;
+    texts.contact = { ...texts.contact, note: 'Ozveme se do jednoho pracovního dne.', nextSteps: OLD_NEXT, successTitle: 'Vlastní nadpis z administrace' };
+    texts.page = { ...texts.page, faqLead: 'Nenašli jste odpověď? <a href="#kontakt">Napište nám</a>.' };
+    docs.set('content/texts', encodeNested(texts) as Doc);
+    const nav = JSON.parse(JSON.stringify(docs.get('content/navigation')).replace('Google Ads, Meta, Sklik i Heureka vidí totéž', 'Ads, Meta, Sklik i Heureka vidí totéž'));
+    docs.set('content/navigation', nav);
+    const home = stored('')!;
+    docs.set('pages/home', { ...home, hero: { ...(home.hero as object), microcopy: 'Úvodní třicetiminutová konzultace zdarma · odpověď do jednoho pracovního dne' } });
+    docs.set('settings/site', { recipients: ['a@example.com'], phone: '' });
+    docs.set('articles/server-side-gtm-uvod', { slug: 'server-side-gtm-uvod', title: 'Server-Side GTM: proč a jak začít', author: 'datalayer.cz', content: '<p>Server-Side Google Tag Manager posouvá měření z prohlížeče na server.</p><p>Server-side měření je dnes standard pro datově řízené e-shopy.</p>' });
+
+    const summary = await auditMigration.run(ctx);
+    expect(summary).toContain('stránky: 1 přepsaných');
+    expect(summary).toContain('texty webu: 3 polí');
+    expect(summary).toContain('menu a patička: 1 popisků');
+    expect(summary).toContain('telefon: +420 704 664 774');
+    expect(summary).toContain('server-side-gtm-uvod (3)');
+
+    const after = decodeNested(docs.get('content/texts')) as typeof DEFAULT_TEXTS;
+    expect(after.contact.note).toBe('');
+    expect(after.contact.nextSteps).toEqual(['Domluvíme termín callu', 'Projdeme web a cíle', 'Připravíme návrh na míru']);
+    expect(after.contact.successTitle).toBe('Vlastní nadpis z administrace');
+    expect(after.page.faqLead).toBe('');
+    expect(textsSchema.safeParse(after).success).toBe(true);
+    expect(JSON.stringify(docs.get('content/navigation'))).toContain('Google Ads, Meta, Sklik i Heureka vidí totéž');
+    expect((stored('')?.hero as { microcopy: string }).microcopy).toBe('Úvodní konzultace zdarma a nezávazně');
+    expect((docs.get('pages_backup/home@20261009_jazykovy_audit')?.hero as { microcopy: string }).microcopy).toContain('pracovního dne');
+    expect(docs.get('settings/site')).toMatchObject({ recipients: ['a@example.com'], phone: '+420 704 664 774' });
+    const article = docs.get('articles/server-side-gtm-uvod')!;
+    expect(article.title).toBe('Server-side GTM: proč a jak začít');
+    expect(article.content).toContain('Server-side Google Tag Manager posouvá');
+    expect(article.content).toContain('běžné u e-shopů, které se rozhodují podle dat');
+
+    const snapshot = JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')));
+    const second = await auditMigration.run(ctx);
+    expect(second).toBe('stránky: 0 přepsaných, ' + DEFAULT_PAGES.length + ' beze změny; texty webu: 0 polí; menu a patička: 0 popisků; telefon: beze změny; články: beze změny');
+    expect(JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')))).toBe(snapshot);
   });
 });
 
