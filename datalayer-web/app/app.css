@@ -2547,31 +2547,26 @@ footer .highlight {
 }
 
 @media (max-width: 640px) {
-  /* symptomy jako kompaktní seznam: piktogram vlevo, nadpis a jedna věta */
-  .lp-cards--symptoms .lp-card {
+  /* symptomy jako kompaktní seznam: piktogram vlevo, nadpis a jedna věta. Karta bez
+     piktogramu (např. situace na úvodní stránce) zůstává pod sebou přes celou šířku. */
+  .lp-cards--symptoms .lp-card--pi {
     display: grid;
     grid-template-columns: 28px 1fr;
     gap: 4px 12px;
     padding: 14px 16px;
   }
-  .lp-cards--symptoms .lp-card .lp-card__head {
+  .lp-cards--symptoms .lp-card--pi .lp-card__head {
     grid-row: 1 / 4;
     align-self: start;
     margin: 0;
   }
-  .lp-cards--symptoms .lp-card .lp-card__head .tag {
-    display: none;
-  }
-  .lp-cards--symptoms .lp-card .lp-card__title {
+  .lp-cards--symptoms .lp-card--pi .lp-card__title {
     margin: 0;
     font-size: 16px;
   }
-  .lp-cards--symptoms .lp-card .lp-card__text {
+  .lp-cards--symptoms .lp-card--pi .lp-card__text {
     margin: 0;
   }
-  
-  
-  
 }
 
 /* rozhodnutí ✓ / ✕ */
