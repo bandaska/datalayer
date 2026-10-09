@@ -10,7 +10,7 @@ import { getBySlug } from '~/lib/articles.server';
 import { highlightCodeBlocks } from '~/lib/highlight.server';
 import { cleanHtml } from '~/lib/sanitize.server';
 import { ORGANIZATION_ID, breadcrumbLd, seoMeta } from '~/lib/seo';
-import { absoluteUrl } from '~/lib/site';
+import { SITE_NAME, absoluteUrl } from '~/lib/site';
 import { formatDate, perex } from '~/lib/text';
 
 export const handle = { hasContact: true };
@@ -63,7 +63,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
         datePublished: article.date,
         dateModified: articleModified(article),
         inLanguage: 'cs-CZ',
-        author: { '@type': 'Person', name: article.author },
+        // autor „datalayer.cz“ = organizace (web zatím nemá kontaktní osobu), jinak osoba
+        author: article.author === SITE_NAME ? { '@type': 'Organization', '@id': ORGANIZATION_ID, name: SITE_NAME } : { '@type': 'Person', name: article.author },
         publisher: { '@id': ORGANIZATION_ID },
       },
     ],

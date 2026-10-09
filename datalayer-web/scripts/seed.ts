@@ -14,7 +14,7 @@ async function main() {
   await db.collection('articles').doc('server-side-gtm-uvod').set({
     slug: 'server-side-gtm-uvod',
     title: 'Server-Side GTM: proč a jak začít',
-    author: 'Vít Novotný',
+    author: 'datalayer.cz',
     date: Timestamp.fromDate(new Date('2025-01-15')),
     description:
       'Co je server-side Google Tag Manager, proč přesouvá měření z prohlížeče na server a jak začít. Přesnější data a rychlejší web, vždy se souhlasem návštěvníka.',
@@ -42,7 +42,7 @@ async function main() {
   await db.collection('articles').doc('ga4-bigquery-export').set({
     slug: 'ga4-bigquery-export',
     title: 'GA4 → BigQuery: vlastní data bez limitů',
-    author: 'Vít Novotný',
+    author: 'datalayer.cz',
     date: Timestamp.fromDate(new Date('2025-02-20')),
     description:
       'Napojení GA4 na BigQuery: surová data o událostech bez vzorkování, spojení dat napříč zdroji a základ pro reporting. Na co si dát pozor u sandboxu.',

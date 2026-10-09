@@ -370,7 +370,7 @@ dataLayer.push({
     },
     {
       q: 'Kdo bude na projektu pracovat?',
-      a: 'Úvodní konzultaci vede Vít Novotný. Na začátku projektu víte jménem, kdo dělá co a s kým mluvíte. Projekty nepředáváme dalším subdodavatelům bez vašeho souhlasu.',
+      a: 'Na začátku projektu víte jménem, kdo dělá co a s kým mluvíte. Projekty nepředáváme dalším subdodavatelům bez vašeho souhlasu.',
     },
     {
       q: 'Co když nemáme vlastního vývojáře?',

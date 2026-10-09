@@ -263,17 +263,19 @@ function SectionView({ s, ctx }: { s: Section; ctx: BlockContext }) {
 
 /**
  * Blok, který by se nevykreslil: články, dokud jich blog nemá dost, provozovatel
- * bez vyplněného jména v Nastavení, osoba bez fotky i bez textu o praxi.
+ * bez vyplněného jména v Nastavení, osoba bez jména nebo bez fotky i textu o praxi.
  */
-function emptyBlock(b: Block, env: { articles: number; operator: boolean; photo?: string }): boolean {
+type BlockEnv = { articles: number; operator: boolean; photo?: string; contactName?: string };
+
+function emptyBlock(b: Block, env: BlockEnv): boolean {
   if (b.type === 'articles') return env.articles < (b.minCount ?? 3);
   if (b.type === 'operator') return !env.operator;
-  if (b.type === 'person') return !personReady(b, env.photo);
+  if (b.type === 'person') return !personReady(b, env.photo, env.contactName);
   return false;
 }
 
 /** Skrytá sekce a sekce, ve které by žádný blok nic neukázal, se na webu nevykreslí. */
-function visibleSection(s: Section, env: { articles: number; operator: boolean; photo?: string }): boolean {
+function visibleSection(s: Section, env: BlockEnv): boolean {
   if (s.hidden) return false;
   return !(s.blocks.length > 0 && s.blocks.every((b) => emptyBlock(b, env)));
 }
@@ -298,8 +300,9 @@ export function LandingPage({
   const root = useRouteLoaderData('root') as RootData | undefined;
   const texts = root?.texts.page ?? DEFAULT_TEXTS.page;
   const articles = (page.relatedArticles ?? []).filter((a) => existingArticles.includes(a.slug));
+  const contactTexts = root?.texts.contact ?? DEFAULT_TEXTS.contact;
   const sections = page.sections.filter((s) =>
-    visibleSection(s, { articles: latest.length, operator: Boolean(root?.operator?.name), photo: (root?.texts.contact ?? DEFAULT_TEXTS.contact).personPhoto }),
+    visibleSection(s, { articles: latest.length, operator: Boolean(root?.operator?.name), photo: contactTexts.personPhoto, contactName: contactTexts.personName }),
   );
   const ctx: BlockContext = { latest, code };
   const contact =

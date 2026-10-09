@@ -10,7 +10,7 @@ formuláře, cookie lišty nebo chybové stránky.
 |---|---|
 | **Stránky** (`/admin/pages`) | homepage, služby, řešení, jak pracujeme, o nás, kontakt, zásady a cookies – hero, sekce s bloky, FAQ, kontaktní blok, související stránky a články, SEO, strukturovaná data |
 | **Menu a patička** (`/admin/navigation`) | hlavní menu a rozbalovací sloupce, tlačítko v menu, patička, lišta s tlačítky na mobilu |
-| **Texty webu** (`/admin/texts`) | kontaktní formulář (včetně fotky osoby a kroků „co se stane po odeslání“), cookie lišta, postup spolupráce (pět kroků pro celý web), společné texty stránek (nadpis FAQ, pruh Pokračujte), úvod blogu, děkovací stránka, stránka 404, popis firmy pro vyhledávače |
+| **Texty webu** (`/admin/texts`) | kontaktní formulář (kroky „co se stane po odeslání“, volitelně kontaktní osoba s fotkou – bez jména se karta osoby nezobrazí), cookie lišta, postup spolupráce (pět kroků pro celý web), společné texty stránek (nadpis FAQ, pruh Pokračujte), úvod blogu, děkovací stránka, stránka 404, popis firmy pro vyhledávače |
 | **Články** (`/admin/articles`) | blog |
 | **Nastavení** (`/admin/settings`) | příjemci formuláře, telefon, LinkedIn, ID Google Tag Manageru, provozovatel webu (jméno nebo firma, IČO, sídlo, zápis v rejstříku) |
 
@@ -51,7 +51,7 @@ sekce zůstane v administraci, web ji ale nevykreslí – hodí se pro obsah, kt
 | Přehled z menu | dlaždice služeb nebo řešení podle menu (rozcestník, homepage) |
 | Nastavení cookies | tlačítko, které otevře volbu souhlasu |
 | Provozovatel webu | jméno nebo firma, IČO, sídlo a e-mail z Nastavení; bez vyplněného jména se nezobrazí |
-| Osoba za webem | jméno, role, praxe a nástroje z bloku, fotka z Textů webu (Kontakt), LinkedIn z Nastavení; bez fotky i bez textu o praxi se nezobrazí |
+| Osoba za webem | jméno, role, praxe a nástroje z bloku, fotka z Textů webu (Kontakt), LinkedIn z Nastavení; bez jména, nebo bez fotky i textu o praxi se nezobrazí. Web ho zatím nepoužívá – nemá kontaktní osobu |
 
 Sekci, ve které by žádný blok nic neukázal (osoba bez podkladů, provozovatel bez údajů, články
 pod minimálním počtem), web vynechá celou.

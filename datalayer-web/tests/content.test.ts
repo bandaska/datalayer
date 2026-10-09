@@ -169,6 +169,26 @@ describe('výchozí stránky', () => {
   }
 });
 
+describe('web bez kontaktní osoby', () => {
+  // rozhodnutí klienta 9. října 2026: web zatím nemá obličej ani kontaktní osobu
+  const MENTION = /Novotn|\bVít(?:a|u|ovi|em)?(?=[\s.,;:!?)“"]|$)|Odpovídá přímo/u;
+
+  it('stránky, menu a texty webu nikoho nejmenují', () => {
+    for (const p of DEFAULT_PAGES) expect(JSON.stringify(p), `/${p.path}`).not.toMatch(MENTION);
+    expect(JSON.stringify(DEFAULT_NAVIGATION)).not.toMatch(MENTION);
+    expect(JSON.stringify(DEFAULT_TEXTS)).not.toMatch(MENTION);
+  });
+
+  it('kontaktní blok je bez osoby a fotky', () => {
+    expect(DEFAULT_TEXTS.contact.personName).toBe('');
+    expect(DEFAULT_TEXTS.contact.personPhoto ?? '').toBe('');
+    for (const p of DEFAULT_PAGES) {
+      const blocks = [...p.sections.flatMap((s) => s.blocks), ...(p.techDetails?.blocks ?? [])];
+      expect(blocks.some((b) => b.type === 'person'), `/${p.path}: blok Osoba za webem`).toBe(false);
+    }
+  });
+});
+
 describe('jednotný postup spolupráce', () => {
   it('kroky na stránce Jak pracujeme odpovídají pěti krokům z Textů webu', () => {
     const page = DEFAULT_PAGES.find((p) => p.path === 'jak-pracujeme')!;
