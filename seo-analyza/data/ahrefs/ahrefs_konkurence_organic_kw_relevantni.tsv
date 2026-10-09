@@ -1,0 +1,326 @@
+domain	keyword	volume	kd	cpc_cents	traffic	position	url	intents	language	topic
+advisio.cz	looker google	600	39.0		18.0	8.0		branded+navigational+informational	cs	dashboardy-reporting
+advisio.cz	google consent mode v2	100	34.0				https://www.advisio.cz/blog/google-consent-mode-v2-jak-mu-rozumet-a-proc-byste-ho-uz-davno-meli-mit/	branded+informational	cs	consent
+advisio.cz	consent mode v2	100	33.0				https://www.advisio.cz/blog/google-consent-mode-v2-jak-mu-rozumet-a-proc-byste-ho-uz-davno-meli-mit/	branded+informational	cs	consent
+advisio.cz	looker studio	1400	21.0	56.0			https://www.advisio.cz/blog/google-looker-studio-vase-data-pod-kontrolou/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+advisio.cz	pno	1300	0.0	10.0			https://www.advisio.cz/blog/jak-spravne-stanovit-pno-a-co-vam-napovi-o-uspesnosti-kampani/	informational	cs	konverze-ads
+advisio.cz	consent mode	40	20.0	106.0			https://www.advisio.cz/blog/google-consent-mode-v2-jak-mu-rozumet-a-proc-byste-ho-uz-davno-meli-mit/	branded+informational	cs	consent
+advisio.cz	pno marketing	70	0.0	11.0	2.0	8.0		informational	cs	konverze-ads
+advisio.cz	google consent mode	50	19.0	175.0			https://www.advisio.cz/blog/google-consent-mode-v2-jak-mu-rozumet-a-proc-byste-ho-uz-davno-meli-mit/	branded+informational	cs	consent
+advisio.cz	co je pno	80	0.0		1.0	11.0	https://www.advisio.cz/blog/jak-spravne-stanovit-pno-a-co-vam-napovi-o-uspesnosti-kampani/	informational	cs	konverze-ads
+advisio.cz	konec cookies třetích stran	0	0.0		0.0	5.0	https://www.advisio.cz/blog/co-jsou-cookies-tretich-stran-a-jak-jejich-konec-ovlivni-e-shopy/	informational	cs	consent
+advisio.cz	conversion api	20	20.0				https://www.advisio.cz/blog/conversion-api-jak-se-letos-zmenily-moznosti-reportovani/	branded+informational+commercial	cs	konverze-ads
+advisio.cz	pno meaning	80	0.0				https://www.advisio.cz/blog/jak-spravne-stanovit-pno-a-co-vam-napovi-o-uspesnosti-kampani/	informational	cs	konverze-ads
+advisio.cz	výpočet pno	100	0.0				https://www.advisio.cz/blog/zisk-misto-kliku-jak-spravne-vyhodnocovat-kampane-podle-marze-a-pno/	informational	cs	konverze-ads
+advisio.cz	pno vypocet	30	0.0				https://www.advisio.cz/blog/zisk-misto-kliku-jak-spravne-vyhodnocovat-kampane-podle-marze-a-pno/	informational	cs	konverze-ads
+advisio.cz	audit webu	80	0.0	115.0			https://www.advisio.cz/blog/proc-si-nechat-zpracovat-seo-audit/	informational+commercial	cs	audit-web
+advisio.cz	google data studio	350	26.0	62.0			https://www.advisio.cz/blog/google-looker-studio-vase-data-pod-kontrolou/	branded+navigational+informational	cs	dashboardy-reporting
+advisio.cz	google search console	9600	77.0	100.0			https://www.advisio.cz/blog/co-to-je-google-search-console-a-jak-na-nej-navod/	branded+navigational+informational	cs	analytika-obecne
+advisio.cz	data studio	150	9.0	78.0			https://www.advisio.cz/blog/google-looker-studio-vase-data-pod-kontrolou/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+advisio.cz	datastudio	50	9.0	78.0			https://www.advisio.cz/blog/google-looker-studio-vase-data-pod-kontrolou/	branded+navigational+informational	cs	dashboardy-reporting
+advisio.cz	search console	4500	91.0	84.0			https://www.advisio.cz/blog/co-to-je-google-search-console-a-jak-na-nej-navod/	branded+informational	cs	analytika-obecne
+antee.cz	správa webu	200	0.0	142.0			https://www.antee.cz/sprava-webovych-stranek	local+informational+commercial	cs	sprava-webu
+antee.cz	ga 4	150	69.0	87.0			https://www.antee.cz/nastaveni-ga4	branded+informational	cs	ga4
+antee.cz	konverze význam	150	0.0		2.0	1.0	https://www.antee.cz/blog/co-je-konverze	informational	cs	konverze-ads
+antee.cz	počítadlo návštěvnosti webu	50	0.0				https://www.antee.cz/blog/mereni-navstevnosti-webovych-stranek	informational+commercial	cs	analytika-obecne
+antee.cz	výpočet pno	100	0.0				https://www.antee.cz/blog/pno-v-praxi-vytezte-maximum-z-kazde-koruny-investovane-do-reklamy	informational	cs	konverze-ads
+antee.cz	návštěvnost stránek	30	0.0	59.0			https://www.antee.cz/blog/mereni-navstevnosti-webovych-stranek	informational+commercial	cs	analytika-obecne
+antee.cz	co je to konverze	60	5.0				https://www.antee.cz/blog/co-je-konverze	informational	cs	konverze-ads
+antee.cz	pno vypocet	30	0.0				https://www.antee.cz/blog/pno-v-praxi-vytezte-maximum-z-kazde-koruny-investovane-do-reklamy	informational	cs	konverze-ads
+antee.cz	co je pno	70	0.0				https://www.antee.cz/blog/pno-v-praxi-vytezte-maximum-z-kazde-koruny-investovane-do-reklamy	informational	cs	konverze-ads
+antee.cz	co je konverze měny	40	0.0				https://www.antee.cz/blog/co-je-konverze	informational	cs	konverze-ads
+antee.cz	pno meaning	80	0.0				https://www.antee.cz/blog/pno-v-praxi-vytezte-maximum-z-kazde-koruny-investovane-do-reklamy	informational	cs	konverze-ads
+antee.cz	návštěvnost webu	100	0.0	81.0			https://www.antee.cz/blog/mereni-navstevnosti-webovych-stranek	informational+commercial	cs	analytika-obecne
+antee.cz	jak zjistit návštěvnost webu	70	0.0	58.0			https://www.antee.cz/blog/mereni-navstevnosti-webovych-stranek	informational	cs	analytika-obecne
+antee.cz	utm parametry	150	0.0	13.0			https://www.antee.cz/blog/rucni-vs-automaticke-utm-znackovani-jako-nastroj-efektivniho-marketingu	informational+commercial	cs	atribuce-utm
+antee.cz	ga4	600	90.0	67.0			https://www.antee.cz/nastaveni-ga4	branded+informational+commercial	cs	ga4
+anycoders.cz	mmm	100	0.0	6.0	1.0	8.0		branded+informational	cs	atribuce-utm
+anycoders.cz	meta pixel	30	70.0	21.0	1.0	9.0		branded+informational	cs	konverze-ads
+anycoders.cz	audit webu	80	0.0	115.0			https://www.anycoders.cz/sluzby/komplexni-webove-audity-technicke-obsahove-ux	informational+commercial	cs	audit-web
+cernovsky.cz	webová analytika	80	0.0	112.0	23.0	1.0	https://www.cernovsky.cz/weby-e-shopy/webova-analytika/	informational+commercial	cs	analytika-obecne
+cernovsky.cz	conversion api	20	20.0				https://www.cernovsky.cz/marketing/facebook-conversions-api/	branded+informational+commercial	cs	konverze-ads
+cernovsky.cz	facebook conversion api	10	14.0	110.0			https://www.cernovsky.cz/marketing/facebook-conversions-api/	branded+informational	cs	konverze-ads
+cernovsky.cz	pno vypocet	30	0.0				https://www.cernovsky.cz/en/marketing/facebook-kampan-struktura/	informational	cs	konverze-ads
+cernovsky.cz	cookie banner	40	48.0	110.0			https://www.cernovsky.cz/weby-e-shopy/gdpr-cookie-lista-na-webu/	informational+commercial	cs	consent
+cookies-spravne.cz	cookie lišta zdarma	50	7.0	22.0	8.0	2.0		informational+commercial+transactional	cs	consent
+cookies-spravne.cz	cookies lišta	100	16.0	27.0	4.0	9.0		informational	cs	consent
+cookies-spravne.cz	cookie lišta	100	17.0	27.0	3.0	8.0		informational	cs	consent
+datamind.cz	web analytics	40	81.0	131.0	1.0	9.0		informational+commercial	cs	analytika-obecne
+digitalniarchitekti.cz	keboola	1300	0.0	57.0	172.0	2.0	https://digitalniarchitekti.cz/clanek/keboola/	branded+navigational+informational+commercial	cs	bigquery-data
+digitalniarchitekti.cz	looker studio	1100	0.0	56.0	131.0	2.0	https://digitalniarchitekti.cz/clanek/looker-studio-vizualizacni-nastroj/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+digitalniarchitekti.cz	looker google	600	39.0		36.0	5.0		branded+navigational+informational	cs	dashboardy-reporting
+digitalniarchitekti.cz	utm parametry	100	0.0	13.0	33.0	1.0	https://digitalniarchitekti.cz/clanek/utm-parametry-k-cemu-slouzi/	informational+commercial	cs	atribuce-utm
+digitalniarchitekti.cz	utm	600	53.0	31.0	28.0	4.0	https://digitalniarchitekti.cz/clanek/utm-parametry-k-cemu-slouzi/	informational	cs	atribuce-utm
+digitalniarchitekti.cz	google looker	250	23.0	43.0	19.0	1.0	https://digitalniarchitekti.cz/clanek/looker-studio-vizualizacni-nastroj/	branded+informational+commercial	cs	dashboardy-reporting
+digitalniarchitekti.cz	google tag manager	1900	81.0	42.0	19.0	1.0		branded+navigational+informational+commercial	cs	gtm
+digitalniarchitekti.cz	dbt	200	0.0	17.0			https://digitalniarchitekti.cz/clanek/data-build-tool-dbt/	informational	cs	bigquery-data
+digitalniarchitekti.cz	google looker studio	700	0.0	85.0	16.0	1.0	https://digitalniarchitekti.cz/clanek/looker-studio-vizualizacni-nastroj/	branded+informational+commercial	cs	dashboardy-reporting
+digitalniarchitekti.cz	google analytics 4	300	67.0	101.0			https://digitalniarchitekti.cz/produkty/nastaveni-ga4/	branded+informational	cs	ga4
+digitalniarchitekti.cz	ga 4	100	2.0	87.0	7.0	4.0	https://digitalniarchitekti.cz/clanek/rozdily-mezi-ga4-vs-ga4-360/	branded+informational	cs	ga4
+digitalniarchitekti.cz	tag manager	500	60.0	59.0	5.0	1.0	https://digitalniarchitekti.cz/clanek/google-tag-manager-pro-vas-byznys/	branded+informational+commercial	cs	gtm
+digitalniarchitekti.cz	onetrust	50	11.0	87.0			https://digitalniarchitekti.cz/clanek/onetrust/	branded+navigational+informational+commercial	cs	consent
+digitalniarchitekti.cz	google tag	200	59.0	36.0	2.0	6.0	https://digitalniarchitekti.cz/clanek/google-tag-manager-pro-vas-byznys/	branded+informational	cs	gtm
+digitalniarchitekti.cz	konverzní poměr	150	0.0	16.0	2.0	1.0		informational+commercial	cs	konverze-ads
+digitalniarchitekti.cz	google looker data studio	40	47.0		2.0	7.0		branded+navigational+informational+commercial	cs	dashboardy-reporting
+digitalniarchitekti.cz	big query	90	23.0	163.0			https://digitalniarchitekti.cz/clanek/bigquery-google-cloud-platforma/	branded+informational	cs	bigquery-data
+digitalniarchitekti.cz	google cloud run	10	2.0	154.0	1.0	4.0	https://digitalniarchitekti.cz/clanek/google-cloud-run/	branded+navigational+informational+commercial	cs	bigquery-data
+digitalniarchitekti.cz	bigquery	20	0.0	35.0	1.0	1.0	https://digitalniarchitekti.cz/clanek/bigquery-google-cloud-platforma/	branded+informational+commercial	cs	bigquery-data
+digitalniarchitekti.cz	audit webu	80	0.0	115.0			https://digitalniarchitekti.cz/produkty/analyticky-audit-webu/	informational+commercial	cs	audit-web
+digitalniarchitekti.cz	google tag manager co to je	40	1.0	50.0	1.0	9.0		branded+informational	cs	gtm
+digitalniarchitekti.cz	utm parametr	20	0.0	12.0	1.0	1.0	https://digitalniarchitekti.cz/clanek/utm-parametry-k-cemu-slouzi/	informational	cs	atribuce-utm
+digitalniarchitekti.cz	data studio google	30	23.0	230.0	0.0	4.0	https://digitalniarchitekti.cz/clanek/looker-studio-vizualizacni-nastroj/	branded+navigational+informational	cs	dashboardy-reporting
+digitalniarchitekti.cz	google big query	0	4.0	55.0	0.0	3.0	https://digitalniarchitekti.cz/clanek/bigquery-google-cloud-platforma/	branded+informational+commercial	cs	bigquery-data
+digitalniarchitekti.cz	utm tag	10	49.0		0.0	8.0	https://digitalniarchitekti.cz/clanek/utm-parametry-k-cemu-slouzi/	informational	cs	atribuce-utm
+digitalniarchitekti.cz	keboola logo	10	0.0	123.0	0.0	1.0		branded+informational	cs	bigquery-data
+digitalniarchitekti.cz	data studio	150	9.0	78.0	0.0	3.0	https://digitalniarchitekti.cz/clanek/looker-studio-vizualizacni-nastroj/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+digitalniarchitekti.cz	google bigquery	10	11.0	79.0	0.0	4.0	https://digitalniarchitekti.cz/clanek/bigquery-google-cloud-platforma/	branded+informational+commercial	cs	bigquery-data
+digitalniarchitekti.cz	webová analytika	80	0.0	112.0	0.0	6.0	https://digitalniarchitekti.cz/webova-analytika-digitalni-analytika/	informational+commercial	cs	analytika-obecne
+digitalniarchitekti.cz	attribution	50	1.0				https://digitalniarchitekti.cz/clanek/attribution-modeling/	informational	cs	atribuce-utm
+digitalniarchitekti.cz	power bi co to je	200	0.0	22.0			https://digitalniarchitekti.cz/clanek/power-bi/	branded+informational	cs	dashboardy-reporting
+digitalniarchitekti.cz	datastudio	50	16.0	78.0	0.0	3.0	https://digitalniarchitekti.cz/clanek/looker-studio-vizualizacni-nastroj/	branded+navigational+informational	cs	dashboardy-reporting
+digitalniarchitekti.cz	ga4	900	2.0	67.0	0.0	5.0	https://digitalniarchitekti.cz/produkty/nastaveni-ga4/	branded+informational+commercial	cs	ga4
+digitalniarchitekti.cz	datalayer	30	0.0				https://digitalniarchitekti.cz/produkty/datova-vrstva/	informational	cs	datalayer
+digitalniarchitekti.cz	konverzní poměr výpočet	250	0.0				https://digitalniarchitekti.cz/clanek/optimalizace-konverzniho-pomeru/	informational	cs	konverze-ads
+digitalniarchitekti.cz	looker	150	73.0	56.0	0.0	5.0	https://digitalniarchitekti.cz/clanek/looker-studio-vizualizacni-nastroj/	branded+informational+commercial	cs	dashboardy-reporting
+digitalniarchitekti.cz	google data studio	300	2.0	62.0	0.0	5.0	https://digitalniarchitekti.cz/clanek/looker-studio-vizualizacni-nastroj/	branded+navigational+informational	cs	dashboardy-reporting
+digitalniarchitekti.cz	pno vypocet	30	0.0				https://digitalniarchitekti.cz/clanek/spojeni-dat-z-marketingovych-systemu-a-databazi/	informational	cs	konverze-ads
+digitalniarchitekti.cz	facebook pixel	200	0.0	41.0	0.0	9.0	https://digitalniarchitekti.cz/clanek/facebook-pixel/	branded+informational	cs	konverze-ads
+digitalniarchitekti.cz	gtm	900	2.0	52.0	0.0	7.0		branded+informational	cs	gtm
+digitalniarchitekti.cz	consent mode v2	100	33.0				https://digitalniarchitekti.cz/clanek/google-consent-mode-2-0/	branded+informational	cs	consent
+digitalniarchitekti.cz	lookerstudio	30	33.0	56.0	0.0	8.0		branded+navigational+informational	cs	dashboardy-reporting
+digitalniarchitekti.cz	googletagmanager	20	81.0	87.0	0.0	8.0	https://digitalniarchitekti.cz/clanek/google-tag-manager-pro-vas-byznys/	branded+navigational+informational	cs	gtm
+digitalniarchitekti.cz	výpočet pno	100	0.0				https://digitalniarchitekti.cz/produkty/analytika-ppc-kampani/	informational	cs	konverze-ads
+digitalniarchitekti.cz	konec cookies třetích stran	0	0.0				https://digitalniarchitekti.cz/clanek/konec-cookies-3-stran/	informational	cs	consent
+foxy.cz	konverzní marketing	1300	0.0		75.0	6.0		informational	cs	konverze-ads
+foxy.cz	konverzní poměr výpočet	100	0.0		10.0	1.0	https://www.foxy.cz/blog/co-je-konverzni-pomer/	informational	cs	konverze-ads
+foxy.cz	kpi marketing	80	0.0	38.0			https://www.foxy.cz/blog/co-jsou-to-kpis-a-proc-jsou-tyto-metriky-v-marketingu-dulezite/	informational	cs	dashboardy-reporting
+foxy.cz	pno zkratka	80	0.0		1.0	9.0	https://www.foxy.cz/blog/co-je-to-pno-a-jak-s-nim-pracovat/	informational	cs	konverze-ads
+foxy.cz	roas	500	0.0	8.0	0.0	23.0	https://www.foxy.cz/blog/co-je-to-roas-a-jak-jej-vypocitat/	informational	cs	konverze-ads
+foxy.cz	výpočet pno	100	0.0				https://www.foxy.cz/blog/co-je-to-pno-a-jak-s-nim-pracovat/	informational	cs	konverze-ads
+foxy.cz	pno meaning	80	0.0				https://www.foxy.cz/blog/co-je-to-pno-a-jak-s-nim-pracovat/	informational	cs	konverze-ads
+foxy.cz	co je to konverze	60	5.0				https://www.foxy.cz/blog/co-je-to-konverze-a-jake-jsou-zpusoby-mereni/	informational	cs	konverze-ads
+foxy.cz	co je pno	70	0.0				https://www.foxy.cz/blog/co-je-to-pno-a-jak-s-nim-pracovat/	informational	cs	konverze-ads
+foxy.cz	pno vypocet	30	0.0				https://www.foxy.cz/blog/co-je-to-pno-a-jak-s-nim-pracovat/	informational	cs	konverze-ads
+foxy.cz	kpi co to je	100	0.0	1.0			https://www.foxy.cz/blog/co-jsou-to-kpis-a-proc-jsou-tyto-metriky-v-marketingu-dulezite/	informational	cs	dashboardy-reporting
+foxy.cz	google tag	300	59.0	36.0			https://www.foxy.cz/blog/co-je-to-google-tag-manager-a-k-cemu-slouzi/	branded+informational	cs	gtm
+foxy.cz	kpis	150	67.0	11.0	0.0	11.0	https://www.foxy.cz/blog/co-jsou-to-kpis-a-proc-jsou-tyto-metriky-v-marketingu-dulezite/	informational	cs	dashboardy-reporting
+foxy.cz	co je konverze měny	40	0.0				https://www.foxy.cz/blog/co-je-to-konverze-a-jake-jsou-zpusoby-mereni/	informational	cs	konverze-ads
+foxy.cz	tag manager	450	52.0	59.0			https://www.foxy.cz/blog/co-je-to-google-tag-manager-a-k-cemu-slouzi/	branded+informational+commercial	cs	gtm
+gameplan.cz	utm parametry	150	0.0	13.0			https://gameplan.cz/jak-pracovat-s-utm/	informational+commercial	cs	atribuce-utm
+impnet.cz	co je to kpi	150	0.0				https://www.impnet.cz/kpi	informational	cs	dashboardy-reporting
+impnet.cz	google consent mode v2	100	34.0				https://www.impnet.cz/blog/google-consent-mode-v2-co-je-treba-vedet-a-jak-implementovat/	branded+informational	cs	consent
+impnet.cz	kpi zkratka	700	0.0	7.0			https://www.impnet.cz/kpi	informational	cs	dashboardy-reporting
+impnet.cz	google tag manager co to je	200	0.0	50.0			https://www.impnet.cz/google-tag-manager-gtm	branded+informational	cs	gtm
+impnet.cz	zkratka kpi	150	0.0				https://www.impnet.cz/kpi	informational	cs	dashboardy-reporting
+impnet.cz	consent mode v2	50	28.0		2.0	2.0	https://www.impnet.cz/blog/google-consent-mode-v2-co-je-treba-vedet-a-jak-implementovat/	branded+informational	cs	consent
+impnet.cz	data layer	30	9.0				https://www.impnet.cz/data-layer	informational	cs	datalayer
+impnet.cz	konverze význam	150	2.0				https://www.impnet.cz/konverze	informational	cs	konverze-ads
+impnet.cz	universal analytics	50	86.0	23.0			https://www.impnet.cz/blog/universal-analytics-konci-prejdete-na-google-analytics-4/	branded+informational+commercial	cs	ga4
+impnet.cz	google tag	300	59.0	36.0			https://www.impnet.cz/google-tag-manager-gtm	branded+informational	cs	gtm
+impnet.cz	konec cookies třetích stran	0	0.0		0.0	9.0	https://www.impnet.cz/blog/konec-cookies-tretich-stran-v-google-chrome/	informational	cs	consent
+impnet.cz	co je to konverze	60	5.0				https://www.impnet.cz/konverze	informational	cs	konverze-ads
+impnet.cz	kpi co to je	100	0.0	1.0			https://www.impnet.cz/kpi	informational	cs	dashboardy-reporting
+impnet.cz	co je pno	70	0.0				https://www.impnet.cz/pno	informational	cs	konverze-ads
+impnet.cz	pno meaning	80	0.0				https://www.impnet.cz/pno	informational	cs	konverze-ads
+impnet.cz	consent mode	40	20.0	106.0			https://www.impnet.cz/blog/google-consent-mode-v2-co-je-treba-vedet-a-jak-implementovat/	branded+informational	cs	consent
+impnet.cz	audit webu	80	0.0	115.0			https://www.impnet.cz/audit-a-kontrola-webu.php	informational+commercial	cs	audit-web
+impnet.cz	výpočet pno	100	0.0				https://www.impnet.cz/pno	informational	cs	konverze-ads
+impnet.cz	co je konverze měny	40	0.0				https://www.impnet.cz/konverze	informational	cs	konverze-ads
+impnet.cz	facebook pixel	200	2.0	41.0			https://www.impnet.cz/blog/co-je-facebook-pixel-a-k-cemu-je-urceny/	branded+informational	cs	konverze-ads
+impnet.cz	tag manager	450	52.0	59.0			https://www.impnet.cz/google-tag-manager-gtm	branded+informational+commercial	cs	gtm
+impnet.cz	kpis	150	0.0	11.0			https://www.impnet.cz/kpi	informational	cs	dashboardy-reporting
+impnet.cz	gtm	900	2.0	52.0	0.0	17.0		branded+informational	cs	gtm
+impnet.cz	googletagmanager	100	52.0	87.0			https://www.impnet.cz/google-tag-manager-gtm	branded+navigational+informational	cs	gtm
+janpospisil.cz	looker google	600	39.0		2.0	18.0		branded+navigational+informational	cs	dashboardy-reporting
+janpospisil.cz	roas	500	0.0	8.0	0.0	26.0		informational	cs	konverze-ads
+janpospisil.cz	ga4	900	2.0	67.0	0.0	17.0		branded+informational+commercial	cs	ga4
+jirifranek.cz	looker studio	1100	0.0	56.0	33.0	8.0	https://jirifranek.cz/data-studio/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+jirifranek.cz	looker google	600	39.0		11.0	10.0		branded+navigational+informational	cs	dashboardy-reporting
+jirifranek.cz	pno zkratka	150	0.0				https://jirifranek.cz/co-je-pno/	informational	cs	konverze-ads
+jirifranek.cz	výpočet pno	100	0.0				https://jirifranek.cz/co-je-pno/	informational	cs	konverze-ads
+jirifranek.cz	co je pno	70	0.0				https://jirifranek.cz/co-je-pno/	informational	cs	konverze-ads
+jirifranek.cz	roas výpočet	80	0.0				https://jirifranek.cz/co-je-roas/	informational	cs	konverze-ads
+jirifranek.cz	data driven marketing	30	0.0				https://jirifranek.cz/co-je-data-driven-marketing/	informational	cs	analytika-obecne
+jirifranek.cz	pno výpočet	70	0.0				https://jirifranek.cz/co-je-pno/	informational	cs	konverze-ads
+jirifranek.cz	roas	500	0.0	8.0	2.0	15.0	https://jirifranek.cz/co-je-roas/	informational	cs	konverze-ads
+jirifranek.cz	jak zvýšit návštěvnost webu	300	0.0	107.0			https://jirifranek.cz/reseni/nekonecna-navstevnost/	informational	cs	analytika-obecne
+jirifranek.cz	pno vypocet	30	0.0				https://jirifranek.cz/co-je-pno/	informational	cs	konverze-ads
+jirifranek.cz	vypocet pno	40	0.0				https://jirifranek.cz/co-je-pno/	informational	cs	konverze-ads
+jirifranek.cz	pno meaning	80	0.0				https://jirifranek.cz/co-je-pno/	informational	cs	konverze-ads
+jirifranek.cz	návštěvnost stránek	30	0.0	59.0			https://jirifranek.cz/zvyseni-navstevnosti-stranek-v-10-krocich/	informational+commercial	cs	analytika-obecne
+jirifranek.cz	ga4	600	90.0	67.0			https://jirifranek.cz/jak-vyhodnocovat-ga4/	branded+informational+commercial	cs	ga4
+jirifranek.cz	data studio	150	9.0	78.0			https://jirifranek.cz/data-studio/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+jirifranek.cz	datastudio	50	9.0	78.0			https://jirifranek.cz/data-studio/	branded+navigational+informational	cs	dashboardy-reporting
+jirifranek.cz	návštěvnost webu	100	0.0	81.0			https://jirifranek.cz/zvyseni-navstevnosti-stranek-v-10-krocich/	informational+commercial	cs	analytika-obecne
+khoder.cz	konverzní poměr výpočet	100	0.0		3.0	8.0		informational	cs	konverze-ads
+leadhub.co	utm parametry	150	0.0	13.0			https://podpora.leadhub.co/article/62-utm-parametry-a-nazev-kampane	informational+commercial	cs	atribuce-utm
+leadhub.co	heureka ověřeno zákazníky	150	8.0	29.0			https://podpora.leadhub.co/article/223-dynamicke-hodnoceni-heureka	branded+informational+commercial	cs	konverze-ads
+magnas.cz	google analytics universal	100	1.0	32.0			https://www.magnas.cz/google-analytics-universal-konci-jste-pripraveni/	branded+informational	cs	ga4
+marketingppc.cz	pno	1300	0.0	10.0			https://www.marketingppc.cz/ppc/pno/	informational	cs	konverze-ads
+marketingppc.cz	ga4	900	2.0	67.0	135.0	1.0	https://www.marketingppc.cz/google-analytics/google-analytics-4/	branded+informational+commercial	cs	ga4
+marketingppc.cz	konverzní marketing	1300	0.0		117.0	4.0		informational	cs	konverze-ads
+marketingppc.cz	roas	500	0.0	8.0	53.0	1.0	https://www.marketingppc.cz/ppc/roas/	informational	cs	konverze-ads
+marketingppc.cz	looker studio	1400	21.0	56.0			https://www.marketingppc.cz/ppc/looker-studio/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+marketingppc.cz	google search console	8900	0.0	100.0	41.0	1.0	https://www.marketingppc.cz/marketing/google-search-console-vyuziti/	branded+navigational+informational	cs	analytika-obecne
+marketingppc.cz	google consent mode v2	100	34.0				https://www.marketingppc.cz/google-analytics/consent-mode-v2/	branded+informational	cs	consent
+marketingppc.cz	google analytics 4	250	1.0	101.0	28.0	3.0	https://www.marketingppc.cz/google-analytics/google-analytics-4/	branded+informational	cs	ga4
+marketingppc.cz	kpi	2800	0.0	11.0			https://www.marketingppc.cz/ppc/kpi/	informational	cs	dashboardy-reporting
+marketingppc.cz	google looker studio	300	31.0	85.0			https://www.marketingppc.cz/ppc/looker-studio/	branded+informational+commercial	cs	dashboardy-reporting
+marketingppc.cz	konverzní poměr výpočet	100	0.0		22.0	2.0	https://www.marketingppc.cz/ppc/konverzni-pomer/	informational	cs	konverze-ads
+marketingppc.cz	pno marketing	70	0.0	11.0	22.0	1.0	https://www.marketingppc.cz/ppc/pno/	informational	cs	konverze-ads
+marketingppc.cz	heatmap	350	69.0	29.0			https://www.marketingppc.cz/ppc/heatmap/	informational	cs	analytika-obecne
+marketingppc.cz	utm	600	53.0	31.0	18.0	7.0	https://www.marketingppc.cz/ppc/utm-parametry/	informational	cs	atribuce-utm
+marketingppc.cz	kpi příklady	100	0.0	8.0			https://www.marketingppc.cz/ppc/kpi/	informational	cs	dashboardy-reporting
+marketingppc.cz	konverzní poměr	150	0.0	16.0	16.0	1.0	https://www.marketingppc.cz/ppc/konverzni-pomer/	informational+commercial	cs	konverze-ads
+marketingppc.cz	ga 4	100	2.0	87.0	15.0	1.0	https://www.marketingppc.cz/google-analytics/google-analytics-4/	branded+informational	cs	ga4
+marketingppc.cz	kpi ukazatele	150	0.0	23.0	14.0	1.0	https://www.marketingppc.cz/ppc/kpi/	informational	cs	dashboardy-reporting
+marketingppc.cz	co je pno	80	0.0		14.0	1.0	https://www.marketingppc.cz/ppc/pno/	informational	cs	konverze-ads
+marketingppc.cz	utm parametry	100	0.0	13.0	14.0	1.0	https://www.marketingppc.cz/ppc/utm-parametry/	informational+commercial	cs	atribuce-utm
+marketingppc.cz	analýza webu	500	0.0	128.0	13.0	2.0		informational+commercial	cs	audit-web
+marketingppc.cz	jak zjistit návštěvnost webu	70	0.0	58.0	11.0	1.0	https://www.marketingppc.cz/ppc/jak-zjistit-navstevnost-webu/	informational	cs	analytika-obecne
+marketingppc.cz	kpi význam	250	0.0	3.0	11.0	1.0		informational	cs	dashboardy-reporting
+marketingppc.cz	search console	4100	79.0	84.0	11.0	2.0	https://www.marketingppc.cz/marketing/google-search-console-vyuziti/	branded+informational	cs	analytika-obecne
+marketingppc.cz	návštěvnost webu	80	1.0	81.0	11.0	2.0	https://www.marketingppc.cz/ppc/jak-zjistit-navstevnost-webu/	informational+commercial	cs	analytika-obecne
+marketingppc.cz	google search console co to je	150	1.0	4.0	10.0	4.0	https://www.marketingppc.cz/marketing/google-search-console-vyuziti/	branded+informational	cs	analytika-obecne
+marketingppc.cz	consent mode v2	50	28.0		10.0	1.0	https://www.marketingppc.cz/google-analytics/consent-mode-v2/	branded+informational	cs	consent
+marketingppc.cz	kpi marketing	80	0.0	38.0			https://www.marketingppc.cz/ppc/kpi/	informational	cs	dashboardy-reporting
+marketingppc.cz	cookies lišta	150	4.0	27.0			https://www.marketingppc.cz/google-analytics/cookies-cookie-lista/	informational	cs	consent
+marketingppc.cz	cookie lišta	200	3.0	27.0			https://www.marketingppc.cz/google-analytics/cookies-cookie-lista/	informational	cs	consent
+marketingppc.cz	roas výpočet	50	0.0		6.0	1.0	https://www.marketingppc.cz/ppc/roas/	informational	cs	konverze-ads
+marketingppc.cz	consent mode	40	20.0	106.0			https://www.marketingppc.cz/google-analytics/consent-mode-v2/	branded+informational	cs	consent
+marketingppc.cz	meta pixel	250	51.0	21.0			https://www.marketingppc.cz/google-analytics/facebook-pixel-gtm/	branded+informational	cs	konverze-ads
+marketingppc.cz	kpi zkratka	300	0.0	7.0	5.0	1.0		informational	cs	dashboardy-reporting
+marketingppc.cz	pno zkratka	80	0.0		5.0	1.0	https://www.marketingppc.cz/ppc/pno/	informational	cs	konverze-ads
+marketingppc.cz	co je konverze	200	1.0	42.0	5.0	6.0	https://www.marketingppc.cz/ppc/co-je-to-konverze/	informational	cs	konverze-ads
+marketingppc.cz	výpočet pno	80	0.0		4.0	5.0	https://www.marketingppc.cz/ppc/pno/	informational	cs	konverze-ads
+marketingppc.cz	konverze význam	150	0.0		4.0	1.0	https://www.marketingppc.cz/ppc/co-je-to-konverze/	informational	cs	konverze-ads
+marketingppc.cz	zkratka kpi	150	0.0				https://www.marketingppc.cz/ppc/kpi/	informational	cs	dashboardy-reporting
+marketingppc.cz	google consent mode	50	19.0	175.0			https://www.marketingppc.cz/google-analytics/consent-mode-v2/	branded+informational	cs	consent
+marketingppc.cz	merchant center google	30	26.0				https://www.marketingppc.cz/google-ads/jak-nastavit-google-merchant-center/	branded+navigational+informational+commercial	cs	konverze-ads
+marketingppc.cz	kpi co to je	200	0.0	1.0	4.0	8.0	https://www.marketingppc.cz/ppc/kpi/	informational	cs	dashboardy-reporting
+marketingppc.cz	atribuce	100	0.0				https://www.marketingppc.cz/ppc/atribuce-atribucni-modely/	informational	cs	atribuce-utm
+marketingppc.cz	co je kpi	400	0.0	2.0			https://www.marketingppc.cz/ppc/kpi/	informational	cs	dashboardy-reporting
+marketingppc.cz	poas	150	0.0	20.0			https://www.marketingppc.cz/ppc/poas/	informational+commercial	cs	konverze-ads
+marketingppc.cz	kpis	150	67.0	11.0	3.0	1.0	https://www.marketingppc.cz/ppc/kpi/	informational	cs	dashboardy-reporting
+marketingppc.cz	utm parametr	20	0.0	12.0			https://www.marketingppc.cz/ppc/utm-parametry/	informational	cs	atribuce-utm
+marketingppc.cz	heatmapa	150	0.0	194.0			https://www.marketingppc.cz/ppc/heatmap/	informational+commercial	cs	analytika-obecne
+nazakladedat.cz	utm	600	68.0	31.0			https://nazakladedat.cz/co-jsou-utm-parametry-a-jak-je-pouzivat/	informational	cs	atribuce-utm
+nazakladedat.cz	google analytics 4	250	1.0	101.0	12.0	3.0	https://nazakladedat.cz/co-jsou-google-analytics-4/	branded+informational	cs	ga4
+nazakladedat.cz	google tag manager co to je	200	0.0	50.0			https://nazakladedat.cz/co-je-google-tag-manager/	branded+informational	cs	gtm
+nazakladedat.cz	datalayer	10	8.0		5.0	1.0	https://nazakladedat.cz/co-je-datalayer/	informational	cs	datalayer
+nazakladedat.cz	ga 4	150	69.0	87.0			https://nazakladedat.cz/co-jsou-google-analytics-4/	branded+informational	cs	ga4
+nazakladedat.cz	google consent mode	50	19.0	175.0			https://nazakladedat.cz/jak-nastavit-google-consent-mode/	branded+informational	cs	consent
+nazakladedat.cz	consent mode	40	20.0	106.0			https://nazakladedat.cz/jak-nastavit-google-consent-mode/	branded+informational	cs	consent
+nazakladedat.cz	google tag	300	59.0	36.0			https://nazakladedat.cz/co-je-google-tag-manager/	branded+informational	cs	gtm
+nazakladedat.cz	data layer	30	9.0				https://nazakladedat.cz/co-je-datalayer/	informational	cs	datalayer
+nazakladedat.cz	big query	90	23.0	163.0			https://nazakladedat.cz/co-je-bigquery/	branded+informational	cs	bigquery-data
+nazakladedat.cz	utm parametr	20	0.0	12.0			https://nazakladedat.cz/co-jsou-utm-parametry-a-jak-je-pouzivat/	informational	cs	atribuce-utm
+nazakladedat.cz	looker studio	1400	21.0	56.0			https://nazakladedat.cz/co-je-looker-studio/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+nazakladedat.cz	atribuce	100	0.0				https://nazakladedat.cz/atribuce/	informational	cs	atribuce-utm
+nazakladedat.cz	co je google analytics	20	2.0	28.0			https://nazakladedat.cz/co-jsou-google-analytics-4/	branded+informational	cs	ga4
+nazakladedat.cz	utm parametry	150	0.0	13.0			https://nazakladedat.cz/co-jsou-utm-parametry-a-jak-je-pouzivat/	informational+commercial	cs	atribuce-utm
+nazakladedat.cz	google bigquery	10	11.0	79.0	0.0	2.0	https://nazakladedat.cz/co-je-bigquery/	branded+informational+commercial	cs	bigquery-data
+nazakladedat.cz	google big query	0	4.0	55.0	0.0	4.0	https://nazakladedat.cz/co-je-bigquery/	branded+informational+commercial	cs	bigquery-data
+nazakladedat.cz	bigquery	450	2.0	35.0			https://nazakladedat.cz/co-je-bigquery/	branded+informational+commercial	cs	bigquery-data
+nazakladedat.cz	co je pno	70	0.0				https://nazakladedat.cz/pno-podil-nakladu-na-obratu/	informational	cs	konverze-ads
+nazakladedat.cz	výpočet pno	100	0.0				https://nazakladedat.cz/pno-podil-nakladu-na-obratu/	informational	cs	konverze-ads
+nazakladedat.cz	pno vypocet	30	0.0				https://nazakladedat.cz/pno-podil-nakladu-na-obratu/	informational	cs	konverze-ads
+nazakladedat.cz	pno meaning	80	0.0				https://nazakladedat.cz/pno-podil-nakladu-na-obratu/	informational	cs	konverze-ads
+nazakladedat.cz	utm tag	10	65.0				https://nazakladedat.cz/co-jsou-utm-parametry-a-jak-je-pouzivat/	informational	cs	atribuce-utm
+nazakladedat.cz	googletagmanager	100	52.0	87.0			https://nazakladedat.cz/co-je-google-tag-manager/	branded+navigational+informational	cs	gtm
+nazakladedat.cz	tag manager	450	52.0	59.0			https://nazakladedat.cz/co-je-google-tag-manager/	branded+informational+commercial	cs	gtm
+nazakladedat.cz	ga4	900	2.0	67.0	0.0	24.0	https://nazakladedat.cz/co-jsou-google-analytics-4/	branded+informational+commercial	cs	ga4
+nazakladedat.cz	gtm	900	2.0	52.0	0.0	30.0		branded+informational	cs	gtm
+nazakladedat.cz	google analytics	3500	98.0	100.0			https://nazakladedat.cz/co-jsou-google-analytics-4/	branded+informational+commercial	cs	ga4
+neogy.cz	datastudio	50	16.0	78.0	1.0	2.0		branded+navigational+informational	cs	dashboardy-reporting
+neogy.cz	webová analytika	80	0.0	112.0	0.0	8.0	https://www.neogy.cz/slovnik-marketingovych-pojmu/webova-analytika/	informational+commercial	cs	analytika-obecne
+neogy.cz	jak zvýšit návštěvnost webu	150	0.0	107.0	0.0	11.0		informational	cs	analytika-obecne
+neogy.cz	co je to konverze	60	5.0				https://www.neogy.cz/slovnik-marketingovych-pojmu/hodnota-konverze/	informational	cs	konverze-ads
+neogy.cz	ga 4	150	69.0	87.0			https://www.neogy.cz/slovnik-marketingovych-pojmu/google-analytics/	branded+informational	cs	ga4
+neogy.cz	tagmanager	40	0.0	62.0	0.0	4.0		branded+informational+commercial	cs	gtm
+neogy.cz	konverzní poměr výpočet	250	0.0				https://www.neogy.cz/slovnik-marketingovych-pojmu/konverzni-pomer/	informational	cs	konverze-ads
+neogy.cz	ga4	900	2.0	67.0	0.0	22.0	https://www.neogy.cz/slovnik-marketingovych-pojmu/google-analytics/	branded+informational+commercial	cs	ga4
+neogy.cz	gtm	900	2.0	52.0	0.0	29.0		branded+informational	cs	gtm
+neogy.cz	google analytics	3500	98.0	100.0			https://www.neogy.cz/slovnik-marketingovych-pojmu/google-analytics/	branded+informational+commercial	cs	ga4
+neogy.cz	google search console	9600	77.0	100.0			https://www.neogy.cz/slovnik-marketingovych-pojmu/google-search-console/	branded+navigational+informational	cs	analytika-obecne
+neogy.cz	search console	4500	91.0	84.0			https://www.neogy.cz/slovnik-marketingovych-pojmu/google-search-console/	branded+informational	cs	analytika-obecne
+optimalizovany-web.cz	ga 4	100	2.0	87.0	4.0	7.0		branded+informational	cs	ga4
+optimalizovany-web.cz	google universal analytics	30	96.0	56.0			https://www.optimalizovany-web.cz/jak-zalozit-puvodni-google-universal-analytics/	branded+informational+commercial	cs	ga4
+optimalizovany-web.cz	ga4	900	2.0	67.0	0.0	10.0	https://www.optimalizovany-web.cz/prozatim-neupgradujte-na-google-analytics-4/	branded+informational+commercial	cs	ga4
+pavelszabo.cz	jak zjistit návštěvnost webu	70	0.0	58.0	17.0	1.0	https://www.pavelszabo.cz/clanek-jak-zjistit-navstevnost-webu/	informational	cs	analytika-obecne
+pavelszabo.cz	návštěvnost webu	80	1.0	81.0	4.0	2.0	https://www.pavelszabo.cz/clanek-jak-zjistit-navstevnost-webu/	informational+commercial	cs	analytika-obecne
+pavelszabo.cz	návštěvnost stránek	30	0.0	59.0	3.0	2.0	https://www.pavelszabo.cz/clanek-jak-zjistit-navstevnost-webu/	informational+commercial	cs	analytika-obecne
+pavelszabo.cz	hotjar co to je	20	0.0	1686.0	2.0	4.0		branded+informational	cs	analytika-obecne
+pavelszabo.cz	roas	500	0.0	8.0	1.0	19.0		informational	cs	konverze-ads
+pavelszabo.cz	ga 4	150	69.0	87.0			https://www.pavelszabo.cz/co-je-google-analytics/	branded+informational	cs	ga4
+pavelszabo.cz	počítadlo návštěvnosti webu	50	0.0				https://www.pavelszabo.cz/clanek-jak-zjistit-navstevnost-webu/	informational+commercial	cs	analytika-obecne
+pavelszabo.cz	co je to konverze	60	5.0				https://www.pavelszabo.cz/co-je-conversion-rate/	informational	cs	konverze-ads
+pavelszabo.cz	gtm	900	2.0	52.0	0.0	19.0		branded+informational	cs	gtm
+pavelszabo.cz	google search console	9600	77.0	100.0			https://www.pavelszabo.cz/co-je-google-search-console/	branded+navigational+informational	cs	analytika-obecne
+pavelszabo.cz	google analytics	3500	98.0	100.0			https://www.pavelszabo.cz/co-je-google-analytics/	branded+informational+commercial	cs	ga4
+pavelszabo.cz	search console	4500	91.0	84.0			https://www.pavelszabo.cz/co-je-google-search-console/	branded+informational	cs	analytika-obecne
+revolt.bi	dashboard co to je	200	0.0	40.0	6.0	9.0		informational	cs	dashboardy-reporting
+revolt.bi	power bi cena	20	0.0				https://www.revolt.bi/tableau-nebo-power-bi/	branded+informational+commercial	cs	dashboardy-reporting
+revolt.bi	keboola	1300	0.0	57.0	0.0	17.0	https://www.revolt.bi/technologie/keboola/	branded+navigational+informational+commercial	cs	bigquery-data
+revolt.bi	dbt	200	0.0	17.0			https://www.revolt.bi/technologie/dbt/	informational	cs	bigquery-data
+seoconsult.cz	seo analýza webu	200	0.0	100.0	8.0	2.0		informational+commercial	cs	audit-web
+seoconsult.cz	facebook pixel	200	2.0	41.0			https://www.seoconsult.cz/blog/instagram-vs-facebook-pro-marketing-vse-co-potrebujete-vedet	branded+informational	cs	konverze-ads
+seoconsult.cz	kpi co to je	100	0.0	1.0			https://www.seoconsult.cz/blog/jak-odlisit-cile-od-klicovych-ukazatelu-vykonnosti	informational	cs	dashboardy-reporting
+sovanet.cz	analýza webu	500	0.0	128.0			https://www.sovanet.cz/analyza-struktury-webu-pouzitelnosti/	informational+commercial	cs	audit-web
+sovanet.cz	audit webu	80	0.0	115.0			https://www.sovanet.cz/vyzkousejte-audit-webu-zdarma/	informational+commercial	cs	audit-web
+sovanet.cz	tagování	10	0.0		0.0	8.0		informational	cs	gtm
+sovanet.cz	utm parametry	150	0.0	13.0			https://www.sovanet.cz/co-jsou-utm-parametry-a-jak-mi-pomuzou/	informational+commercial	cs	atribuce-utm
+sovanet.cz	ga 4	150	69.0	87.0			https://www.sovanet.cz/googleanalytics4/	branded+informational	cs	ga4
+sovanet.cz	data studio google	10	17.0	230.0			https://www.sovanet.cz/google-data-studio-nove-v-cr/	branded+navigational+informational	cs	dashboardy-reporting
+sovanet.cz	google data studio	350	26.0	62.0			https://www.sovanet.cz/google-data-studio-nove-v-cr/	branded+navigational+informational	cs	dashboardy-reporting
+sovanet.cz	ga4	600	90.0	67.0			https://www.sovanet.cz/googleanalytics4/	branded+informational+commercial	cs	ga4
+sovanet.cz	data studio	150	9.0	78.0			https://www.sovanet.cz/google-data-studio-nove-v-cr/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+sovanet.cz	datastudio	50	9.0	78.0			https://www.sovanet.cz/google-data-studio-nove-v-cr/	branded+navigational+informational	cs	dashboardy-reporting
+strafelda.cz	kpi	2800	1.0	11.0	46.0	6.0	https://www.strafelda.cz/kpi	informational	cs	dashboardy-reporting
+strafelda.cz	audit webu	100	0.0	115.0	27.0	1.0	https://www.strafelda.cz/audit-webu	informational+commercial	cs	audit-web
+strafelda.cz	zkratka kpi	150	0.0				https://www.strafelda.cz/kpi	informational	cs	dashboardy-reporting
+strafelda.cz	konverzní poměr výpočet	100	0.0		15.0	1.0	https://www.strafelda.cz/konverzni-pomer	informational	cs	konverze-ads
+strafelda.cz	kpi co to je	200	0.0	1.0	15.0	1.0	https://www.strafelda.cz/kpi	informational	cs	dashboardy-reporting
+strafelda.cz	kpi význam	250	0.0	3.0	13.0	1.0	https://www.strafelda.cz/kpi	informational	cs	dashboardy-reporting
+strafelda.cz	konverze význam	150	0.0		8.0	1.0	https://www.strafelda.cz/konverze	informational	cs	konverze-ads
+strafelda.cz	konverzní poměr	150	0.0	16.0	7.0	1.0	https://www.strafelda.cz/konverzni-pomer	informational+commercial	cs	konverze-ads
+strafelda.cz	kpi zkratka	300	0.0	7.0	7.0	1.0	https://www.strafelda.cz/kpi	informational	cs	dashboardy-reporting
+strafelda.cz	co je konverze	200	1.0	42.0	6.0	5.0	https://www.strafelda.cz/konverze	informational	cs	konverze-ads
+strafelda.cz	kpis co to je	40	1.0		4.0	1.0	https://www.strafelda.cz/kpi	informational	cs	dashboardy-reporting
+strafelda.cz	kpi vyznam	40	0.0		4.0	1.0		informational	cs	dashboardy-reporting
+taste.cz	seo audit	800	70.0	130.0			https://taste.cz/vzorovy-seo-audit-webu	informational+commercial	cs	audit-web
+taste.cz	audit webu	100	0.0	115.0	11.0	2.0	https://taste.cz/vzorovy-seo-audit-webu	informational+commercial	cs	audit-web
+taste.cz	google analytics 4	300	67.0	101.0			https://taste.cz/ga4	branded+informational	cs	ga4
+taste.cz	ga 4	150	69.0	87.0			https://academy.taste.cz/google-analytics-4	branded+informational	cs	ga4
+taste.cz	gtm	900	2.0	52.0	0.0	16.0		branded+informational	cs	gtm
+taste.cz	ga4	600	90.0	67.0			https://academy.taste.cz/google-analytics-4	branded+informational+commercial	cs	ga4
+taste.cz	google analytics	3500	98.0	100.0			https://taste.cz/ga4	branded+informational+commercial	cs	ga4
+taste.cz	konec cookies třetích stran	0	0.0				https://taste.cz/recept-na-svet-bez-cookies	informational	cs	consent
+unikum.cz	konverzní poměr výpočet	100	0.0		6.0	5.0		informational	cs	konverze-ads
+visibility.cz	seo audit	450	82.0	130.0	20.0	4.0		informational+commercial	cs	audit-web
+visibility.cz	utm	600	68.0	31.0			https://www.visibility.cz/utm-parametry-co-jsou-zac-k-cemu-slouzi-a-jak-je-pouzivat/	informational	cs	atribuce-utm
+visibility.cz	utm parametry	150	0.0	13.0			https://www.visibility.cz/utm-parametry-co-jsou-zac-k-cemu-slouzi-a-jak-je-pouzivat/	informational+commercial	cs	atribuce-utm
+visibility.cz	co je pno	70	0.0				https://www.visibility.cz/seo-a-ppc-o-cem-to-je-to-je/	informational	cs	konverze-ads
+visibility.cz	utm parametr	20	0.0	12.0			https://www.visibility.cz/utm-parametry-co-jsou-zac-k-cemu-slouzi-a-jak-je-pouzivat/	informational	cs	atribuce-utm
+visibility.cz	návštěvnost stránek	30	0.0	59.0			https://www.visibility.cz/odhad-navstevnosti-konkurencnich-stranek/	informational+commercial	cs	analytika-obecne
+visibility.cz	počítadlo návštěvnosti webu	50	0.0				https://www.visibility.cz/odhad-navstevnosti-konkurencnich-stranek/	informational+commercial	cs	analytika-obecne
+visibility.cz	ga 4	150	69.0	87.0			https://www.visibility.cz/ga4/	branded+informational	cs	ga4
+visibility.cz	jak zjistit návštěvnost webu	70	0.0	58.0			https://www.visibility.cz/odhad-navstevnosti-konkurencnich-stranek/	informational	cs	analytika-obecne
+visibility.cz	návštěvnost webu	100	0.0	81.0			https://www.visibility.cz/odhad-navstevnosti-konkurencnich-stranek/	informational+commercial	cs	analytika-obecne
+visibility.cz	audit webu	80	0.0	115.0			https://www.visibility.cz/seo-audit/	informational+commercial	cs	audit-web
+visibility.cz	datastudio	50	9.0	78.0			https://www.visibility.cz/zacnete-pracovat-data-studiem-1-cast/	branded+navigational+informational	cs	dashboardy-reporting
+visibility.cz	data studio	150	9.0	78.0			https://www.visibility.cz/zacnete-pracovat-data-studiem-1-cast/	branded+navigational+informational+commercial	cs	dashboardy-reporting
+visibility.cz	ga4	600	90.0	67.0			https://www.visibility.cz/ga4/	branded+informational+commercial	cs	ga4
+webfusion.cz	správa webu	200	0.0	142.0			https://webfusion.cz/sprava-webovych-stranek/	local+informational+commercial	cs	sprava-webu
+webfusion.cz	správa webových stránek	150	7.0	183.0			https://webfusion.cz/sprava-webovych-stranek/	local+informational+commercial+transactional	cs	sprava-webu
+webfusion.cz	google tag	300	59.0	36.0			https://webfusion.cz/slovnik/google-tag-manager/	branded+informational	cs	gtm
+webfusion.cz	facebook pixel	200	2.0	41.0			https://webfusion.cz/slovnik/facebook-pixel/	branded+informational	cs	konverze-ads
+webfusion.cz	tag manager	450	52.0	59.0			https://webfusion.cz/slovnik/google-tag-manager/	branded+informational+commercial	cs	gtm
+webfusion.cz	search console	4500	91.0	84.0			https://webfusion.cz/slovnik/google-search-console/	branded+informational	cs	analytika-obecne
+webglobe.cz	google looker studio	700	0.0	85.0	149.0	2.0		branded+informational+commercial	cs	dashboardy-reporting
+webglobe.cz	jak zjistit návštěvnost webu	70	0.0	58.0	50.0	1.0	https://www.webglobe.cz/blog/jak-zjistit-navstevnost-ciziho-webu/	informational	cs	analytika-obecne
+webglobe.cz	návštěvnost webu	80	1.0	81.0	43.0	1.0	https://www.webglobe.cz/blog/jak-zjistit-navstevnost-ciziho-webu/	informational+commercial	cs	analytika-obecne
+webglobe.cz	looker studio	1100	0.0	56.0	31.0	2.0		branded+navigational+informational+commercial	cs	dashboardy-reporting
+webglobe.cz	customer journey	200	26.0	75.0	23.0	1.0	https://www.webglobe.cz/poradna/co-je-customer-journey	informational+commercial	cs	analytika-obecne
+webglobe.cz	co je kpi	400	0.0	2.0			https://www.webglobe.cz/poradna/co-je-kpi	informational	cs	dashboardy-reporting
+webglobe.cz	pno	1400	0.0	10.0	12.0	9.0	https://www.webglobe.cz/poradna/co-je-pno	informational	cs	konverze-ads

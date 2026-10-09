@@ -1,0 +1,2037 @@
+url,status,location,title,title_len,meta_desc,meta_desc_len,robots,canonical,lang,h1,h2,words,img_count,img_no_alt,forms,hubspot,int_links_out,ext_links_out,jsonld,og_title,og_image
+https://www.khoder.cz/,200,,"Tomáš Khoder — e-commerce konzultant z Litoměřic | Reporting, PPC a analytika pro e-shopy",89,"E-commerce konzultant pro e-shopy: reporting, PPC kampaně (Google Ads, Sklik, Facebook Ads), webová analytika a Shoptet. 10+ let praxe, 5,0/5,0 ze 16 recenzí na Googlu. Z Litoměřic pro ČR i SK.",193,"index, follow, max-image-preview:large",https://www.khoder.cz/,cs,Řídím růst e-shopů podle dat. Ne odhadů a domněnek.,"Manažerský pohled na váš e-shop. | Jak to do sebe zapadá. | Vybrané projekty, u kterých nechávám čísla mluvit. | Velké projekty a automatizace procesů u mých klientů. | Nejlepší argumenty vám dají moji klienti. | Transparentní proces od poptávky k prvním výsledkům. | Sídlo na Mírovém náměstí v rohové budově Raiffeisenbank. | Co dělá e-commerce konzultant pro e-shop? | Časté otázky týkající se spolupráce. | Fixní ceny pro typické služby a jejich správu. | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte do hloubky | Domluvme si nezávaznou konzultaci.",5484,37,3,1,False,23,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""ProfessionalService"",
+  ""@id"": ""https://www.khoder.cz/#business"",
+  ""name"": ""Tomáš Khoder — e-commerce konzultant"",
+  ""alternateName"": ""Khoder.cz"",
+  ""description"": ""E-commerce konzultant pro e-shopy. Reporting pro e-shopy, PPC kampaně (Google Ads, Sklik, Facebook Ads), webová analytika, GA4 a Google Tag Manager, správa Shoptet e-shopů."",
+  ""url"": ""https://www.khoder.cz/"",
+  ""logo"": ""https://www.khoder.cz/assets/khoder-logo-1200.png"",
+  ""image"": | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""worksFor"": {""@type"":""Organization"",""@id"":""https://www.khoder.cz/#business"",""name"":""Tomáš Khoder — e-commerce konzultant"",""url"":""https://www.khoder.cz/""},
+  ""sameAs"": [
+    ""https://www.linkedin.com/in/tomas-khoder/"",
+    ""https://www.firmy.cz/detail/13744486-khoder-cz-litomerice.html""
+  ],
+  ""image"": ""https://www.khoder.cz/asset | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Kdo je e-commerce konzultant a čím se liší od marketingové agentury?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""E-commerce konzultant je jeden konkrétní odborník, který se osobně stará o růst vašeho e-shopu od dat přes reklamu po web. Na rozdíl od agentury, kde projekt často přebírá junior a platíte režii celého týmu, jednáte přímo se mnou. Mám 10+ let praxe a pracuji jen s vybranými k",Tomáš Khoder — e-commerce konzultant z Litoměřic,https://www.khoder.cz/assets/hero.jpg
+https://www.khoder.cz/rozcestnik,200,,"Rozcestník — služby, průvodci a srovnání | Tomáš Khoder",55,"Přehled všech služeb pro e-shopy, průvodců e-commerce metrikami a srovnání reportingových nástrojů na jednom místě. Z Litoměřic pro celou ČR i SK.",146,"index, follow, max-image-preview:large",https://www.khoder.cz/rozcestnik,cs,"Služby, průvodci a srovnání pro e-shopy","S čím pomůžu | Praktické návody zdarma | Jak se liším od alternativ | Projekty v číslech | Nevíte, co potřebujete?",999,4,0,0,False,55,0,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""CollectionPage"",
+  ""name"": ""Rozcestník — služby, průvodci a srovnání"",
+  ""description"": ""Přehled všech služeb pro e-shopy, průvodců e-commerce metrikami a srovnání reportingových nástrojů."",
+  ""url"": ""https://www.khoder.cz/rozcestnik"",
+  ""isPartOf"": {""@type"":""WebSite"",""name"":""Khoder.cz"",""url"":""https://www.khoder.cz""},
+  ""about"": {""@type"":""Person"",""@id"":""https://www.khoder.cz/#person""},
+  ""inLanguage"": ""cs""
+}
+ | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""Rozcestník"",""item"":""https://www.khoder.cz/rozcestnik""}
+  ]
+}
+","Rozcestník — služby, průvodci a srovnání",https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/pripadove-studie,200,,Případové studie · Moje nejúspěšnější projekty v číslech | Tomáš Khoder,71,"Případové studie z e-shopů, pro které pracuji: konkrétní projekty, čísla z měření a u každého i to, jak je číst.",112,"index, follow, max-image-preview:large",https://www.khoder.cz/pripadove-studie,cs,Moje nejúspěšnější projekty v číslech,Jak automatizace zkrátila příjem zboží od dodavatele z 12 hodin na půl hodiny | Jak zakládáme přes 200 nových produktů měsíčně bez ručního přepisování | Jak report pomohl dostat dopravu ze ztráty do zisku | Jak plánujeme nákupy od dodavatelů na e-⁠shopu s desítkami dodavatelů a stovkami objednávek denně | Jak nová Shoptet šablona zvýšila tržby e-⁠shopu s nářadím o 44 % ve druhém týdnu po spuštění | Chcete být další?,233,9,0,0,False,17,0,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""CollectionPage"",
+  ""name"": ""Případové studie"",
+  ""url"": ""https://www.khoder.cz/pripadove-studie"",
+  ""description"": ""Případové studie z e-shopů, pro které pracuji: konkrétní projekty, čísla z měření a u každého i to, jak je číst."",
+  ""inLanguage"": ""cs"",
+  ""author"": {
+    ""@id"": ""https://www.khoder.cz/#person""
+  }
+}
+ | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""ItemList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""url"": ""https://www.khoder.cz/pripadova-studie-prijem-zbozi"",
+      ""name"": ""Jak automatizace zkrátila příjem zboží od dodavatele z 12 hodin na půl hodiny""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""url"": ""https://www.khoder.cz/pripadova-studie-zakladani-produktu"",
+      ""name"": ""Jak zakládáme přes 200 nových produktů měsíčně be | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Případové studie"",
+      ""item"": ""https://www.khoder.cz/pripadove-studie""
+    }
+  ]
+}
+",Případové studie · Moje nejúspěšnější projekty v číslech,https://www.khoder.cz/assets/cs/sablona/og-v1.jpg
+https://www.khoder.cz/pripadova-studie-ecommerce-report,200,,Jak report pomohl dostat dopravu ze ztráty do zisku | Tomáš Khoder,66,"Report pro e-shop s nářadím spojil objednávky ze Shoptetu s fakturami dopravců a ukázal, že dopravné pokrývalo jen 84 % nákladů na dopravu. Po nápravě 112 %.",157,"index, follow, max-image-preview:large",https://www.khoder.cz/pripadova-studie-ecommerce-report,cs,Jak report pomohl dostat dopravu ze ztráty do zisku,"Dopravné vypadalo jako tržba | Od objednávky po výsledek každé dopravy | Doprava se dnes zaplatí sama | Každá třetí platba přes Apple Pay propadla | Report měřil, rozhodli lidé | Jak to do sebe zapadá. | Co vás u projektu může zajímat | Kolik stojí podobné řešení | Víte, na které dopravě vyděláváte?",2912,15,4,0,False,16,0,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Jak report pomohl dostat dopravu ze ztráty do zisku"",
+  ""alternativeHeadline"": ""Případová studie: doprava a platby v e-commerce reportu"",
+  ""description"": ""Report pro e-shop s nářadím spojil objednávky ze Shoptetu s fakturami dopravců a ukázal, že dopravné pokrývalo jen 84 % nákladů na dopravu. Po nápravě 112 %."",
+  ""image"": [
+    ""https://www.khoder.cz/assets/cs/ecommerce-report/og-v1.jpg""
+  ],
+  ""datePublished"": ""2026- | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Odkud report bere náklady na dopravu?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Z přijatých faktur od dopravců. Když dopravce posílá i rozpis po zásilkách, jako PPL a GLS u tohoto e-shopu, report podle něj rozdělí náklad mezi metody dopravy a oddělí dobírku. Bez rozpisu náklad rozdělí podle objednávek. Faktury umí do reportu posílat fakturač | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Případové studie"",
+      ""item"": ""https://www.khoder.cz/pripadove-studie""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 3,
+      ""name"": ""E-commerce report"",
+      ""item"": ""https://www.khoder.cz/pripadova-s",Jak report pomohl dostat dopravu ze ztráty do zisku,https://www.khoder.cz/assets/cs/ecommerce-report/og-v1.jpg
+https://www.khoder.cz/pripadova-studie-planovani-nakupu,200,,Jak plánujeme nákupy e-shopu s desítkami dodavatelů | Tomáš Khoder,66,"Plánovač nákupu pro e-shop s nářadím spočítá u každého z přes 3 000 produktů, kolik a kdy objednat: z prodejů, sezóny, dodací lhůty a skladu dodavatele.",152,"index, follow, max-image-preview:large",https://www.khoder.cz/pripadova-studie-planovani-nakupu,cs,Plánování nákupů od dodavatelů na e-shopu s desítkami dodavatelů a stovkami objednávek denně,"Stejná rezerva pro všechno nestačila | Od prodejů po objednávku u dodavatele | Stejné peníze ve skladu, víc vykryté poptávky | Plán, který jde u dodavatele opravdu objednat | Doporučení, ne příkaz | Jak to do sebe zapadá. | Co vás u projektu může zajímat | Kolik stojí podobné řešení | Víte, co objednat, ještě než to dojde?",3111,15,4,0,False,18,0,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Jak plánujeme nákupy od dodavatelů na e-shopu s desítkami dodavatelů a stovkami objednávek denně"",
+  ""alternativeHeadline"": ""Případová studie: plánování nákupu od dodavatelů"",
+  ""description"": ""Plánovač nákupu pro e-shop s nářadím spočítá u každého z přes 3 000 produktů, kolik a kdy objednat: z prodejů, sezóny, dodací lhůty a skladu dodavatele."",
+  ""image"": [
+    ""https://www.khoder.cz/assets/cs/planovani-nakupu/og-v2.jp | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Funguje to i pro sezónní sortiment?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Ano. Sezónnost plánovač neměří proti průměrnému měsíci, ale porovná období, které objednávka pokryje, s obdobím, ze kterého zná rychlost prodeje. K tomu přidá poptávku ve vyhledávání Google a svátky. Pruh změn upozorní na produkty, které je potřeba předzásobit před | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Případové studie"",
+      ""item"": ""https://www.khoder.cz/pripadove-studie""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 3,
+      ""name"": ""Plánování nákupu"",
+      ""item"": ""https://www.khoder.cz/pripadova-st",Jak plánujeme nákupy od dodavatelů na e-shopu s desítkami dodavatelů a stovkami objednávek denně,https://www.khoder.cz/assets/cs/planovani-nakupu/og-v2.jpg
+https://www.khoder.cz/pripadova-studie-shoptet-sablona,200,,Jak nová Shoptet šablona zvýšila tržby e-shopu s nářadím o 44 % | Tomáš Khoder,78,Shoptet šablona na míru pro e-shop s nářadím nahradila placené doplňky za téměř 20 000 Kč měsíčně a ve druhém týdnu po spuštění zvedla tržby o 44 %. Co vzniklo a čísla z měření.,177,"index, follow, max-image-preview:large",https://www.khoder.cz/pripadova-studie-shoptet-sablona,cs,Jak nová Shoptet šablona zvýšila tržby e-shopu s nářadím o 44 % ve druhém týdnu po spuštění,"E-⁠shop, kterému už standardní Shoptet šablona nestačila | Místa, kde se rozhoduje o nákupu | Filtr stojí na datech v katalogu | Rychlost až na prvním místě | Vyhledávání, které rozumí kontextu | Přepnutí za provozu, bez propadu objednávek | Co ukázalo měření hned po spuštění | Víc lidí dojde z košíku do pokladny | Jak to do sebe zapadá. | Co vás u projektu může zajímat | Kolik stojí podobné řešení | Kolik by stála šablona pro váš e-shop? | Chcete vědět, co by to udělalo s vaším e-shopem? | Napište mi. Odpovídám obvykle do 24 hodin.",6220,35,14,1,False,17,0,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Jak nová Shoptet šablona zvýšila tržby e-shopu s nářadím o 44 % ve druhém týdnu po spuštění"",
+  ""alternativeHeadline"": ""Případová studie: Shoptet šablona na míru"",
+  ""description"": ""Shoptet šablona na míru pro e-shop s nářadím nahradila placené doplňky za téměř 20 000 Kč měsíčně a ve druhém týdnu po spuštění zvedla tržby o 44 %. Co vzniklo a čísla z měření."",
+  ""image"": [
+    ""https://www.khoder.cz/assets/cs/sablona/og-v | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Musel e-shop kvůli nové šabloně přestat prodávat?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Ne. Šablona vznikala na kopii e-shopu se skutečnými produkty a na ostrý e-shop jsem ji přepnul za provozu, s připravenou cestou zpět. Objednávky v den přepnutí nepropadly.""
+      }
+    },
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Proč rychlost n | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Případové studie"",
+      ""item"": ""https://www.khoder.cz/pripadove-studie""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 3,
+      ""name"": ""Shoptet šablona na míru"",
+      ""item"": ""https://www.khoder.cz/pripa",Jak nová Shoptet šablona zvýšila tržby e-shopu s nářadím o 44 % ve druhém týdnu po spuštění,https://www.khoder.cz/assets/cs/sablona/og-v1.jpg
+https://www.khoder.cz/pripadova-studie-prijem-zbozi,200,,Jak automatizace zkrátila příjem zboží z 12 hodin na půl hodiny | Tomáš Khoder,78,"Aplikace pro e-shop s nářadím čte faktury dodavatelů, páruje položky s katalogem Shoptetu a hlídá marži. Faktura o 100 položkách zabere půl hodiny místo 12 hodin.",162,"index, follow, max-image-preview:large",https://www.khoder.cz/pripadova-studie-prijem-zbozi,cs,Jak automatizace zkrátila příjem zboží od dodavatele z 12 hodin na půl hodiny,Příjem zboží zabíral polovinu pracovní doby | Od faktury dodavatele po ceny v e-shopu | Většinu položek spáruje aplikace sama | Marže pod dohledem u každé položky | Poslední slovo má vždycky člověk | Jak to do sebe zapadá. | Co vás u projektu může zajímat | Kolik stojí podobné řešení | Kolik hodin týdně vám bere příjem zboží?,3107,15,4,0,False,19,0,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Jak automatizace zkrátila příjem zboží od dodavatele z 12 hodin na půl hodiny"",
+  ""alternativeHeadline"": ""Případová studie: automatizace příjmu zboží"",
+  ""description"": ""Aplikace pro e-shop s nářadím čte faktury dodavatelů, páruje položky s katalogem Shoptetu a hlídá marži. Faktura o 100 položkách zabere půl hodiny místo 12 hodin."",
+  ""image"": [
+    ""https://www.khoder.cz/assets/cs/prijem-zbozi/og-v2.jpg""
+  ],
+  ""datePub | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Musí být faktura v nějakém formátu?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Nemusí. Stačí PDF, jak ho dodavatel pošle, i sken. Faktura může dorazit rovnou do schránky, nebo ji nahrajete, klidně víc najednou. Aplikace z ní vytáhne položky s kódem, EAN, množstvím a cenou a pozná i fakturu v eurech.""
+      }
+    },
+    {
+      ""@type"": ""Quest | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Případové studie"",
+      ""item"": ""https://www.khoder.cz/pripadove-studie""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 3,
+      ""name"": ""Automatizace příjmu zboží"",
+      ""item"": ""https://www.khoder.cz/pri",Jak automatizace zkrátila příjem zboží od dodavatele z 12 hodin na půl hodiny,https://www.khoder.cz/assets/cs/prijem-zbozi/og-v2.jpg
+https://www.khoder.cz/pripadova-studie-zakladani-produktu,200,,Jak zakládáme přes 200 nových produktů měsíčně bez ručního přepisování | Tomáš Khoder,85,"Databáze produktů pro e-shop s nářadím skládá karty nových produktů z faktur a nabídek dodavatelů: název, popisy, parametry i fotky, u každé hodnoty zdroj.",155,"index, follow, max-image-preview:large",https://www.khoder.cz/pripadova-studie-zakladani-produktu,cs,Jak zakládáme přes 200 nových produktů měsíčně bez ručního přepisování,Každý nový produkt znamenal opisování a hledání | Od faktury dodavatele po hotovou kartu v e-shopu | Každá hodnota má doložený zdroj | Podklady se najdou samy | Do e-shopu nejde nic bez náhledu | Jak to do sebe zapadá. | Co vás u projektu může zajímat | Kolik stojí podobné řešení | Zakládáte nové produkty pořád ručně?,3215,15,4,0,False,17,0,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Jak zakládáme přes 200 nových produktů měsíčně bez ručního přepisování"",
+  ""alternativeHeadline"": ""Případová studie: automatizace zakládání produktů na Shoptetu"",
+  ""description"": ""Databáze produktů pro e-shop s nářadím skládá karty nových produktů z faktur a nabídek dodavatelů: název, popisy, parametry i fotky, u každé hodnoty zdroj."",
+  ""image"": [
+    ""https://www.khoder.cz/assets/cs/zakladani-produktu/og-v1.jpg""
+  ],
+ | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Píše popisy umělá inteligence?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Text navrhne jazykový model, ale do pevné šablony e-shopu a jen z doložených podkladů: z faktury, nabídky dodavatele, webu výrobce nebo PDF návodu. U každé hodnoty v kartě je doklad, odkud pochází. Jestli citace existuje a hodnota v ní opravdu stojí, kontroluje program, | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Případové studie"",
+      ""item"": ""https://www.khoder.cz/pripadove-studie""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 3,
+      ""name"": ""Automatizace zakládání produktů"",
+      ""item"": ""https://www.khoder.",Jak zakládáme přes 200 nových produktů měsíčně bez ručního přepisování,https://www.khoder.cz/assets/cs/zakladani-produktu/og-v1.jpg
+https://www.khoder.cz/webova-analytika-pro-eshopy,200,,Webová analytika · Implementace měření přes Google Tag Manager | Litoměřice + Ústí nad Labem,92,"Webová analytika a implementace měření přes Google Tag Manager: GA4, Google Ads, Meta, Seznam a reklama v ChatGPT s Consent Mode v2. Pro Shoptet, WordPress, rezervační systémy i aplikace. Z Litoměřic a Ústí nad Labem pro celou ČR.",230,"index, follow, max-image-preview:large",https://www.khoder.cz/webova-analytika-pro-eshopy,cs,Webová analytika a implementace měření přes GTM.,"Co je webová analytika a implementace měření přes GTM? | Měření, které odpovídá realitě. | Všechny měřicí kódy na jednom místě. | Kompletní e-commerce funnel v GA4. | Consent Mode v2 se všemi čtyřmi signály. | Ověřené na datech, která web skutečně posílá. | Měření poptávek na míru. | Začínáme tím, co (ne)funguje teď. | Když prohlížeč nestačí, nákup pošlu i ze serveru. | Měření i tam, kde nákup neběží na vašem webu. | Seznam, ChatGPT a napojení na reporting. | Od kliku ke správné konverzi. | Tomáš Khoder. | Měření, které jsem opravoval nebo stavěl od nuly. | Nejlepší argumenty vám dají moji klienti. | Odpovědi na otázky, které dostávám nejčastěji. | Kolik stojí implementace GTM a GA4? | Napište mi. Odpovídám obvykle do 24 hodin. | Jsem ze severních Čech, měření vyřešíme osobně | Pokračujte dál | Domluvme si nezávaznou konzultaci.",4320,17,4,1,False,17,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Webová analytika · Implementace měření přes Google Tag Manager"",
+  ""alternateName"": [""Webová analytika"", ""Implementace měření přes GTM"", ""Nastavení Google Tag Manager"", ""Nastavení GTM"", ""GA4 implementace"", ""Měření e-shopu"", ""GTM pro Shoptet"", ""Webová analytika pro e-shopy""],
+  ""serviceType"": ""Webová analytika a implementace měření přes Google Tag Manager: GA4, GTM, e-commerce události, Consent Mode v2, Meta Conversions API a | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Co je webová analytika a implementace měření přes GTM?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""Webová analytika je soubor nástrojů, které přesně měří chování návštěvníků webu nebo e-shopu, primárně Google Tag Manager (GTM), Google Analytics 4 (GA4) a Consent Mode v2. Implementace měření přes GTM znamená, že všechny měřicí kódy (GA4, Google Ads, Meta Pixel, Seznam, reklama v ChatGPT) | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""Webová analytika"",""item"":""https://www.khoder.cz/webova-analytika-pro-eshopy""}
+  ]
+}
+",Webová analytika · Implementace měření přes Google Tag Manager,https://www.khoder.cz/assets/analytika.jpg
+https://www.khoder.cz/mereni-konverzi,200,,Měření konverzí pro e-shop — přesné a bez ztrát | Tomáš Khoder,62,"Implementace měření konverzí pro e-shop — Google Ads, Sklik, Meta i GA4, enhanced conversions, deduplikace a Consent Mode. Aby algoritmy neoptimalizovaly naslepo. Konzultace zdarma.",181,"index, follow, max-image-preview:large",https://www.khoder.cz/mereni-konverzi,cs,"Konverze měřené přesně, ne naslepo.","Proč se mi liší konverze v reklamě a objednávky v e-shopu? | Měření, kterému můžete věřit. | Projdu datovou cestu a opravím ji u zdroje. | Konverze, které sedí s reportem. | Od auditu měření ke spolehlivým datům | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem měření konverzí. | Kolik stojí nastavení měření konverzí? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Nevíte, jestli měříte konverze správně?",1934,14,4,1,False,20,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Měření konverzí pro e-shop"",
+  ""alternateName"": [
+    ""implementace měření konverzí"",
+    ""conversion tracking e-shop"",
+    ""měření konverzí Google Ads""
+  ],
+  ""serviceType"": ""Implementace a kontrola měření konverzí pro Google Ads, Sklik, Meta a GA4 — enhanced conversions a deduplikace"",
+  ""description"": ""Implementace přesného měření konverzí pro e-shop — konverze do Google Ads, Sklik a Meta (Pixel + Conversion API), enhance | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co znamená měření konverzí a proč je důležité?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Měření konverzí znamená přesně zaznamenat nákupy a další cíle e-shopu do reklamních systémů (Google Ads, Sklik, Meta) i do Google Analytics. Bez něj algoritmy optimalizují naslepo a vy nevíte, která reklama reálně vydělává. Je to předpoklad jakéhokoli ro | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Měření konverzí pro e-shop"",
+      ""item"": ""https://www.khoder.cz/mereni-konverzi""
+    }
+  ]
+}
+",Měření konverzí pro e-shop — přesné a bez ztrát,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/nastaveni-google-analytics,200,,Nastavení Google Analytics (GA4) pro e-shop | Tomáš Khoder,58,"Nastavení Google Analytics 4 pro e-shop — property, e-commerce události (purchase, add_to_cart), publika, propojení s Google Ads a Consent Mode v2. 10+ let praxe, konzultace zdarma.",181,"index, follow, max-image-preview:large",https://www.khoder.cz/nastaveni-google-analytics,cs,"Google Analytics, ze kterého jde rozhodovat.","Jak správně nastavit Google Analytics pro e-shop? | GA4, které měří byznys, ne pageviews. | Nasadím GA4 přes GTM, ne natvrdo do webu. | Data, která dávají smysl v reportu. | Od auditu měření ke spolehlivým datům | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem nastavení GA4. | Kolik stojí nastavení Google Analytics? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Měří vaše GA4 jen návštěvy?",1890,14,4,1,False,19,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Nastavení Google Analytics (GA4) pro e-shop"",
+  ""alternateName"": [
+    ""nastavení GA4"",
+    ""implementace GA4"",
+    ""Google Analytics 4 pro e-shop""
+  ],
+  ""serviceType"": ""Konfigurace GA4 property, e-commerce měření, publik a propojení s Google Ads pro e-shopy"",
+  ""description"": ""Nastavení Google Analytics 4 pro e-shop — property a datový stream, e-commerce události přes dataLayer a GTM, publika, konverze, propojení s Google  | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co zahrnuje nastavení Google Analytics pro e-shop?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Nastavení Google Analytics 4 pro e-shop zahrnuje vytvoření a konfiguraci property a datového streamu, nasazení přes Google Tag Manager, měření e-commerce událostí (zobrazení produktu, košík, nákup), publika, konverze a propojení s Google Ads. Cílem j | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Nastavení Google Analytics"",
+      ""item"": ""https://www.khoder.cz/nastaveni-google-analytics""
+    }
+  ]
+}
+",Nastavení Google Analytics (GA4) pro e-shop,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/nastaveni-google-tag-manageru,200,,Nastavení Google Tag Manageru pro e-shop | Tomáš Khoder,55,"Nastavení Google Tag Manageru pro e-shop — kontejner, dataLayer, triggery a tagy pro GA4, konverze Google Ads, Sklik a Meta, napojené na Consent Mode v2. Bez vývojáře. Konzultace zdarma.",186,"index, follow, max-image-preview:large",https://www.khoder.cz/nastaveni-google-tag-manageru,cs,"Tag Manager, ne změť skriptů ve webu.","Jak správně nastavit Google Tag Manager pro e-shop? | GTM jako základ, ne sbírka náhodných tagů. | Postavím kontejner od dataLayeru po consent. | Měření, které jde předat i rozšířit. | Od auditu měření ke spolehlivým datům | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem nastavení GTM. | Kolik stojí nastavení Google Tag Manageru? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Máte v GTM nepřehlednou hromadu tagů?",1886,14,4,1,False,18,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Nastavení Google Tag Manageru pro e-shop"",
+  ""alternateName"": [
+    ""nastavení GTM"",
+    ""implementace GTM"",
+    ""Google Tag Manager pro e-shop""
+  ],
+  ""serviceType"": ""Konfigurace GTM kontejneru, dataLayeru, triggerů a tagů pro měření e-shopu"",
+  ""description"": ""Nastavení Google Tag Manageru pro e-shop — kontejner, dataLayer pro e-commerce, triggery a tagy pro GA4, konverze Google Ads, Sklik a Meta Pixel, napojené na Consent | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je Google Tag Manager a k čemu e-shopu slouží?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Google Tag Manager (GTM) je nástroj, přes který na web nasadíte měřicí a marketingové kódy (GA4, konverze Google Ads, Meta Pixel, Sklik) bez zásahu do kódu e-shopu. Místo desítek skriptů ve webu máte jeden kontejner, kde se všechno spravuje přehledně  | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Nastavení Google Tag Manageru"",
+      ""item"": ""https://www.khoder.cz/nastaveni-google-tag-manageru""
+    }
+  ]
+}
+",Nastavení Google Tag Manageru pro e-shop,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/cookie-lista-consent-mode,200,,Cookie lišta a Consent Mode v2 pro e-shop | Tomáš Khoder,56,Nastavení cookie lišty a Consent Mode v2 pro e-shop — GDPR souhlas správně napojený na GA4 a Google Ads přes GTM. Compliance i co nejméně ztracených dat. Konzultace zdarma.,172,"index, follow, max-image-preview:large",https://www.khoder.cz/cookie-lista-consent-mode,cs,"Souhlas, který sedí s GDPR i s měřením.","Jak správně nastavit cookie lištu a Consent Mode? | Compliance, která nezničí data. | Lištu i Consent Mode nastavím přes GTM. | Méně ztracených dat, bez právního rizika. | Od auditu měření ke spolehlivým datům | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem cookie lišty a Consent Mode. | Kolik stojí nastavení cookie lišty a Consent Mode? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Máte cookie lištu jen na oko?",1918,14,4,1,False,17,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Cookie lišta a Consent Mode v2 pro e-shop"",
+  ""alternateName"": [
+    ""nastavení cookie lišty"",
+    ""cookie consent e-shop"",
+    ""Consent Mode v2 nastavení""
+  ],
+  ""serviceType"": ""Nastavení GDPR cookie lišty a Consent Mode v2 napojeného na GA4 a Google Ads přes GTM"",
+  ""description"": ""Nastavení cookie lišty a Consent Mode v2 pro e-shop — sběr souhlasu dle GDPR, napojení na GA4 a Google Ads přes Google Tag Manager a vyvážení c | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je cookie lišta a musí ji e-shop mít?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Cookie lišta (consent banner) je prvek, kterým e-shop získává souhlas návštěvníka se zpracováním cookies a dat. Podle GDPR a ePrivacy ji e-shop, který měří analytiku a reklamu, mít musí. Souhlas přitom musí být svobodný, informovaný a odvolatelný, ne předzaškr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Cookie lišta a Consent Mode v2"",
+      ""item"": ""https://www.khoder.cz/cookie-lista-consent-mode""
+    }
+  ]
+}
+",Cookie lišta a Consent Mode v2 pro e-shop,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/consent-mode-v2,200,,Consent Mode v2 — co to je a jak ho nastavit | Tomáš Khoder,59,"Consent Mode v2 srozumitelně: co to je, signály ad_user_data a ad_personalization, rozdíl basic vs advanced režim a časté chyby. Praktický průvodce pro e-shopy.",160,"index, follow, max-image-preview:large",https://www.khoder.cz/consent-mode-v2,cs,Consent Mode v2: most mezi souhlasem a měřením.,"Co je Consent Mode v2? | Mechanismus, ne cookie lišta | Proč režim rozhoduje o datech | Špatný Consent Mode = děravá data v reportu. | Tři chyby v Consent Mode v2 | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Časté otázky ke Consent Mode v2 | Pokračujte dál | Nevíte, jestli máte Consent Mode správně?",1803,7,0,0,False,17,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Consent Mode v2 — co to je a jak ho nastavit"",
+  ""description"": ""Průvodce Consent Mode v2 pro e-shopy: signály, rozdíl mezi basic a advanced režimem, vztah k cookie liště a GTM a časté chyby."",
+  ""image"": ""https://www.khoder.cz/assets/bqui.jpg"",
+  ""author"": {
+    ""@type"": ""Person"",
+    ""@id"": ""https://www.khoder.cz/#person""
+  },
+  ""publisher"": {
+    ""@type"": ""Person"",
+    ""@id"": ""https://www.khoder.cz/#person""
+  },
+  ""da | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je Consent Mode v2?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Consent Mode v2 je mechanismus Googlu, kterým weby předávají do Google nástrojů (GA4, Google Ads) informaci, zda návštěvník udělil souhlas s analytickými a reklamními cookies. Podle toho se měření buď provede plně, omezeně (bez cookies), nebo se konverze modelují. Verze 2 přida | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Consent Mode v2"",
+      ""item"": ""https://www.khoder.cz/consent-mode-v2""
+    }
+  ]
+}
+",Consent Mode v2 — co to je a jak ho nastavit,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/server-side-tracking,200,,Server-side tracking — co to je a kdy ho nasadit | Tomáš Khoder,63,"Server-side tracking srozumitelně: co to je, rozdíl proti client-side měření, kdy dává e-shopu smysl a kdy ne. Praktický průvodce e-commerce konzultanta.",153,"index, follow, max-image-preview:large",https://www.khoder.cz/server-side-tracking,cs,Server-side tracking: data jdou nejdřív k vám.,"Co je server-side tracking a kdy ho potřebuji? | Data přes váš server, ne přímo třetím stranám | Co se kdy hodí — a v jakém pořadí | Server-side pomůže jen na vyladěném základu. | Tři situace, kdy server-side nepomůže | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Časté otázky k server-side trackingu | Pokračujte dál | Zvažujete server-side tracking?",1754,7,0,0,False,17,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Server-side tracking — co to je a kdy ho nasadit"",
+  ""description"": ""Průvodce server-side trackingem pro e-shopy: princip, rozdíl proti client-side, kdy dává smysl a kdy ne, vztah ke Consent Mode."",
+  ""image"": ""https://www.khoder.cz/assets/bqui.jpg"",
+  ""author"": {
+    ""@type"": ""Person"",
+    ""@id"": ""https://www.khoder.cz/#person""
+  },
+  ""publisher"": {
+    ""@type"": ""Person"",
+    ""@id"": ""https://www.khoder.cz/#person""
+  },
+ | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je server-side tracking?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Server-side tracking je měření, při kterém data z webu neposílají do GA4, Google Ads a dalších nástrojů přímo prohlížeč návštěvníka, ale váš vlastní server (server-side GTM kontejner). Prohlížeč pošle data jednou na váš server a ten je teprve distribuuje dál — máte kontrol | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Server-side tracking"",
+      ""item"": ""https://www.khoder.cz/server-side-tracking""
+    }
+  ]
+}
+",Server-side tracking — co to je a kdy ho nasadit,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/webova-analytika-litomerice,200,,Webová analytika Litoměřice — nastavení měření a GA4 | Tomáš Khoder,67,"Webová analytika a nastavení měření pro firmy z Litoměřic — GA4, Google Tag Manager, měření konverzí a Consent Mode v2. Osobní schůzka na Mírovém náměstí. Konzultace zdarma.",173,"index, follow, max-image-preview:large",https://www.khoder.cz/webova-analytika-litomerice,cs,"Nastavení měření v Litoměřicích, osobně a správně.","Nastavení webové analytiky v Litoměřicích — jak to funguje? | Měření, kterému v Litoměřicích můžete věřit. | Měření postavím od dataLayeru po consent. | Data, která dávají smysl v reportu. | Od auditu měření ke spolehlivým datům | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem webové analytiky v Litoměřicích. | Kolik nastavení webové analytiky v Litoměřicích stojí? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Potřebujete nastavit měření v Litoměřicích?",1851,14,4,1,False,18,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Webová analytika Litoměřice"",
+  ""alternateName"": [
+    ""nastavení GA4 Litoměřice"",
+    ""nastavení měření Litoměřice"",
+    ""Google Analytics Litoměřice""
+  ],
+  ""serviceType"": ""Nastavení webové analytiky, GA4, GTM a měření konverzí pro firmy a e-shopy v Litoměřicích"",
+  ""description"": ""Nastavení webové analytiky pro firmy a e-shopy v Litoměřicích a okolí — Google Analytics 4, Google Tag Manager, měření konverzí a Consent Mode  | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Děláte webovou analytiku pro firmy z Litoměřic?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Ano. Sídlím na Mírovém náměstí v Litoměřicích a nastavení měření, GA4 a Google Tag Manageru řeším pro místní e-shopy i firmy z Litoměřic a okolí. Schůzku máme osobně v kanceláři nebo u vás.""
+      }
+    },
+    {
+      ""@type"": ""Question"",
+      ""name"":  | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Webová analytika Litoměřice"",
+      ""item"": ""https://www.khoder.cz/webova-analytika-litomerice""
+    }
+  ]
+}
+",Webová analytika Litoměřice — nastavení měření a GA4,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/webova-analytika-ustecky-kraj,200,,Webová analytika Ústecký kraj — nastavení měření a GA4 | Tomáš Khoder,69,"Webová analytika a nastavení měření po celém Ústeckém kraji — Litoměřice, Ústí nad Labem, Děčín, Teplice, Most a okolí. GA4, GTM, konverze, Consent Mode v2. Konzultace zdarma.",175,"index, follow, max-image-preview:large",https://www.khoder.cz/webova-analytika-ustecky-kraj,cs,Nastavení měření po celém Ústeckém kraji.,"Nastavení webové analytiky v Ústeckém kraji — jak to funguje? | Měření, kterému v kraji můžete věřit. | Měření postavím od dataLayeru po consent. | Data, která dávají smysl v reportu. | Od auditu měření ke spolehlivým datům | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem webové analytiky v Ústeckém kraji. | Kolik nastavení webové analytiky v kraji stojí? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Potřebujete nastavit měření v Ústeckém kraji?",1848,14,4,1,False,18,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Webová analytika Ústecký kraj"",
+  ""alternateName"": [
+    ""nastavení GA4 Ústecký kraj"",
+    ""nastavení měření severní Čechy"",
+    ""Google Analytics Ústecký kraj""
+  ],
+  ""serviceType"": ""Nastavení webové analytiky, GA4, GTM a měření konverzí pro firmy a e-shopy v Ústeckém kraji"",
+  ""description"": ""Nastavení webové analytiky pro firmy a e-shopy po celém Ústeckém kraji — Litoměřice, Ústí nad Labem, Děčín, Teplice, Most a okolí. G | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Ve kterých městech Ústeckého kraje nastavujete měření?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Webovou analytiku a měření nastavuji pro firmy a e-shopy z celého Ústeckého kraje — Litoměřice, Ústí nad Labem, Děčín, Teplice, Most, Chomutov, Louny, Roudnice nad Labem a okolí. Sídlím v Litoměřicích, po kraji za klienty dojíždím.""
+      }
+    } | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Webová analytika Ústecký kraj"",
+      ""item"": ""https://www.khoder.cz/webova-analytika-ustecky-kraj""
+    }
+  ]
+}
+",Webová analytika Ústecký kraj — nastavení měření a GA4,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/reporting-pro-eshopy,200,,Reporting pro e-shopy | Automatizovaný e-commerce report - Tomáš Khoder,71,"E-commerce report pro Shoptet — čistý zisk po nákupu, reklamě i dopravě. GA4, Google Ads, Sklik, Meta. 10+ let praxe, 5,0★ ze 16 recenzí.",137,"index, follow, max-image-preview:large",https://www.khoder.cz/reporting-pro-eshopy,cs,"Dashboard s daty,  podle kterých se řídí podnikání.","Spojené datové modely, které vám umožní škálovat business. | Den začíná tady. | Reálná návratnost reklamy. Napříč systémy, po marži. | Data produktů, jak jste je nikdy neviděli. | Plánování nákupu od dodavatelů. | Peníze, co vám spí v regále. | Detailní pohled na vaše zákazníky. | Organika, co přivádí prodeje – i z AI. | Celkem 15 reportů v jedné aplikaci. | Zeptejte se na svá čísla. | Jak to do sebe zapadá. | Tomáš Khoder. | Vybrané projekty, u kterých nechávám čísla mluvit. | Nejlepší argumenty vám dají moji klienti. | Co je reporting pro e-shopy a co umí navíc oproti GA4? | Odpovědi na otázky, které dostávám nejčastěji. | Kolik stojí reporting pro e-shop? | Poskládejte si report z modulů. | Pojďme se potkat. | Pokračujte dál | Domluvme si nezávaznou prezentaci.",6943,37,9,1,False,21,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Reporting pro e-shopy"",
+  ""alternateName"": ""E-commerce report"",
+  ""serviceType"": ""E-commerce reporting a business intelligence"",
+  ""description"": ""Denně aktualizovaný e-commerce report napojený na 12 zdrojů: Shoptet, Pohoda, GA4, Google Ads, Meta, Sklik, Heureka, eHub, OpenAI Ads, Ecomail, Search Console a Merchant Center. Počítá čistý zisk po nákupní ceně zboží, reklamě, dopravě, platbách a provizích. 15 propojených reportů | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Co je reporting pro e-shopy?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""Reporting pro e-shopy je nástroj, který každé ráno stáhne data ze Shoptetu, GA4, Google Ads, Skliku, Meta Ads, Heureky a Google Search Console a uloží je do BigQuery. Oproti GA4 umí spočítat čistý zisk po nákupní ceně zboží, dopravě, platbách i provizích - a ke každému číslu přidat konkrétní doporučení. Co objednat | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""Reporting pro e-shopy"",""item"":""https://www.khoder.cz/reporting-pro-eshopy""}
+  ]
+}
+",Reporting pro e-shopy | Automatizovaný e-commerce report,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/seo-reporting,200,,"SEO reporting pro e-shop — GSC, GA4 i AI návštěvy | Tomáš Khoder",64,"SEO reporting pro e-shop v jednom přehledu: Search Console, GA4 a návštěvy z AI vyhledávačů. Dotazy „na dosah”, organické prodeje. Úvodní konzultace zdarma.",156,"index, follow, max-image-preview:large",https://www.khoder.cz/seo-reporting,cs,"SEO reporting pro e-shop. Prodeje, ne jen pozice.","Co je SEO reporting pro e-shop a co v něm má být? | Organika, která se měří podle prodeje. | Dotazy „na dosah” jako součást celého pohledu. | Cituje vás ChatGPT? Měřte to dřív než konkurence. | Od napojení k měsíčnímu čtení. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem SEO reportingu. | Kolik stojí SEO reporting pro e-shop? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Měřte organiku podle prodeje.",2139,12,2,1,False,16,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""SEO reporting pro e-shop"",
+  ""alternateName"": [""SEO reporting"", ""Organický reporting e-shopu"", ""SEO report""],
+  ""serviceType"": ""SEO reporting a měření organického výkonu e-shopu"",
+  ""description"": ""Pravidelný přehled organického výkonu e-shopu na jednom místě — Google Search Console, GA4 a návštěvy z AI vyhledávačů. Dotazy na dosah, organické prodeje, ne jen pozice. Součást denně aktualizovaného e-commerce reportu."",
+  ""prov | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Co je striking distance v Google Search Console a jak ji využít?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""Striking distance jsou dotazy, na které se e-shop ve vyhledávání umisťuje na pozicích zhruba 5 až 20 — těsně mimo první stránku. Jsou nejcennější, protože malý posun přináší největší nárůst návštěv zdarma. SEO reporting je vybírá ze Search Console a řadí podle potenciálu prodeje, | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""SEO reporting pro e-shop"",""item"":""https://www.khoder.cz/seo-reporting""}
+  ]
+}
+","SEO reporting pro e-shop — GSC, GA4 i AI návštěvy",https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/ppc-audit,200,,PPC audit e-shopu — kde reklama prodělává | Tomáš Khoder,56,"PPC audit e-shopu od konzultanta s 10+ lety praxe. Najdu, která reklama vydělává a která žere rozpočet — napříč Google Ads, Sklik i Meta, podle marže. Konzultace zdarma.",169,"index, follow, max-image-preview:large",https://www.khoder.cz/ppc-audit,cs,PPC audit e-shopu: kde reklama prodělává.,"Co je PPC audit e-shopu a co byste z něj měli zjistit? | Reklama se počítá po marži, ne po ROAS. | PPC audit jako součást konzultace. | Návratnost reklamy vidíte každý den, ne jednou za kvartál. | Od nákladů k prioritám v pěti krocích. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem PPC auditu e-shopu. | Kolik stojí PPC audit e-shopu? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Zjistíme, kde reklama prodělává.",2104,14,4,1,False,16,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""PPC audit e-shopu"",
+  ""alternateName"": [""PPC audit"", ""Audit Google Ads"", ""PPC konzultace pro e-shop""],
+  ""serviceType"": ""PPC audit a konzultace pro e-shopy — Google Ads, Sklik, Meta"",
+  ""description"": ""Systematický PPC audit e-shopu napříč Google Ads, Sklik a Meta. Vyhodnocuje reálnou návratnost po marži (MER) proti bodu zlomu, ne ROAS v rozhraní platformy. Výstupem jsou priority, které kampaně a produkty vydělávají a které  | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Co je PPC audit e-shopu a co byste z něj měli zjistit?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""PPC audit je systematická kontrola placené reklamy napříč všemi systémy — Google Ads, Sklik, Meta. Nehodnotí kampaně podle ROAS v rozhraní platformy, ale podle reálné návratnosti po marži (MER) proti bodu zlomu. Výstupem je seznam priorit: které kampaně a produkty reálně vydělávají a které | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""PPC audit e-shopu"",""item"":""https://www.khoder.cz/ppc-audit""}
+  ]
+}
+",PPC audit e-shopu — kde reklama prodělává,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/seo-audit,200,,SEO audit e-shopu — co opravdu brzdí prodej | Tomáš Khoder,58,"SEO audit e-shopu od konzultanta s 10+ lety praxe. Najdu, co brzdí organické prodeje, a dám konkrétní priority dle dopadu na tržby. 5,0★ ze 16 recenzí. Konzultace zdarma.",170,"index, follow, max-image-preview:large",https://www.khoder.cz/seo-audit,cs,"SEO audit e-shopu, který říká, co opravit první.","Co je SEO audit e-shopu a co byste z něj měli dostat? | Ne checklist. Rozhodnutí, kam dát čas. | SEO audit jako součást konzultace, ne PDF do šuplíku. | Audit změří jen ten, kdo ho pak sleduje. | Od dat k prioritám v pěti krocích. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem SEO auditu e-shopu. | Kolik stojí SEO audit e-shopu? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Zjistíme, co váš e-shop brzdí.",2092,13,3,1,False,15,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""SEO audit e-shopu"",
+  ""alternateName"": [""SEO audit"", ""Audit e-shopu"", ""SEO analýza e-shopu""],
+  ""serviceType"": ""SEO audit a konzultace pro e-shopy"",
+  ""description"": ""Systematický SEO audit e-shopu — technika, výkon, obsah, struktura a organická konkurence. Výstupem jsou priority podle dopadu na tržby, ne jen seznam chyb. Pro Shoptet i vlastní platformy, z Litoměřic pro celou ČR i Slovensko."",
+  ""provider"": {
+    ""@type"": ""P | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Co je striking distance v Google Search Console a jak ji využít?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""Striking distance jsou dotazy, na které se e-shop ve vyhledávání umisťuje na pozicích zhruba 5 až 20 — tedy těsně mimo první stránku nebo na jejím konci. Jsou nejcennější, protože malý posun (lepší titulek, obsah, prolinkování) u nich přináší největší nárůst návštěv zdarma. V aud | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""SEO audit e-shopu"",""item"":""https://www.khoder.cz/seo-audit""}
+  ]
+}
+",SEO audit e-shopu — co opravdu brzdí prodej,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/vs-supermetrics,200,,Supermetrics alternativa pro e-shop — srovnání | Tomáš Khoder,61,Supermetrics vs e-commerce report pro Shoptet: konektor dat vs hotový report s čistým ziskem a doporučeními. Srovnání pro majitele e-shopu od konzultanta.,154,"index, follow, max-image-preview:large",https://www.khoder.cz/vs-supermetrics,cs,"Supermetrics alternativa pro e-shop, který chce odpověď.","Supermetrics, nebo e-commerce report — co si vybrat? | Konektor dat vs hotový report | Ne data. Odpověď, jestli vyděláváte. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Supermetrics vs e-commerce report — otázky. | Kolik stojí e-commerce report? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete odpověď, ne další data?",1836,9,0,1,False,18,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""E-commerce report pro e-shopy (alternativa k Supermetrics)"",
+  ""alternateName"": [""Supermetrics alternativa"", ""Reporting pro e-shop místo Supermetrics""],
+  ""serviceType"": ""E-commerce reporting a business intelligence pro e-shopy"",
+  ""description"": ""Hotový e-commerce report pro Shoptet, který počítá čistý zisk po nákupní ceně, reklamě, dopravě a provizích a dává akční doporučení — na rozdíl od konektoru dat, kde si dashboard a | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Co je Supermetrics a k čemu slouží?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""Supermetrics je konektor dat — umí stáhnout data z reklamních a analytických platforem do Google Sheets, Looker Studia nebo datového skladu. Je silný na propojení mnoha zdrojů, ale samotnou logiku reportu, výpočet zisku a vizualizaci si musíte postavit sami nebo s analytikem.""}},
+    {""@type"":""Question"",""nam | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""Supermetrics alternativa pro e-shop"",""item"":""https://www.khoder.cz/vs-supermetrics""}
+  ]
+}
+",Supermetrics alternativa pro e-shop — srovnání,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/vs-roivenue,200,,Roivenue alternativa pro e-shop — srovnání | Tomáš Khoder,57,Roivenue vs e-commerce report pro Shoptet: marketingová atribuce vs čistý zisk včetně skladu a produktů. Srovnání pro majitele e-shopu od konzultanta.,150,"index, follow, max-image-preview:large",https://www.khoder.cz/vs-roivenue,cs,"Roivenue alternativa pro e-shop, který chce čistý zisk.","Roivenue, nebo e-commerce report — co si vybrat? | Marketingová atribuce vs celá ekonomika e-shopu | Nejen marketing. Celá ekonomika e-shopu. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Roivenue vs e-commerce report — otázky. | Kolik stojí e-commerce report? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete čistý zisk, ne jen atribuci?",1890,9,0,1,False,18,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""E-commerce report pro e-shopy (alternativa k Roivenue)"",
+  ""serviceType"": ""E-commerce reporting a business intelligence pro e-shopy"",
+  ""description"": ""Hotový e-commerce report pro Shoptet, který počítá čistý zisk po nákupní ceně, reklamě, dopravě a provizích a přidává sklad, produkty i plánovač nákupu — celá ekonomika e-shopu, ne jen marketingová atribuce. Jako konzultační služba."",
+  ""provider"": {
+    ""@type"": ""Person"",
+   | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je Roivenue a komu slouží?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Roivenue je marketingová intelligence platforma zaměřená na atribuci a marketing mix napříč mnoha kanály, primárně pro větší inzerenty a agentury. Je silná na multi-touch atribuci a vyhodnocení marketingového mixu, méně už řeší skladovou a produktovou ekonomiku e-shopu."" | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Roivenue alternativa pro e-shop"",
+      ""item"": ""https://www.khoder.cz/vs-roivenue""
+    }
+  ]
+}
+",Roivenue alternativa pro e-shop — srovnání,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/vs-mergado,200,,Mergado — alternativa: štítkování feedu jako služba | Tomáš Khoder,66,"Mergado vs done-for-you štítkování produktů: férové srovnání feed nástroje a hotové služby. Strategie custom labelů, segmentace Google Nákupů a vyhodnocení po marži.",165,"index, follow, max-image-preview:large",https://www.khoder.cz/vs-mergado,cs,"Mergado, nebo hotové štítkování na míru?","Co je Mergado a jaká je alternativa? | Feed nástroj vs hotové štítkování | Štítkování řízené marží, ne ruční pravidla. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Časté otázky · Mergado a alternativa | Cena této služby | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete hotové ziskové Nákupy, ne další nástroj?",1831,13,4,1,False,18,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Štítkování produktů Google Shopping"",
+  ""alternateName"": [
+    ""alternativa k Mergado"",
+    ""Mergado vs done-for-you štítkování"",
+    ""štítkování feedu jako služba""
+  ],
+  ""serviceType"": ""Done-for-you štítkování a optimalizace produktového feedu pro Google Nákupy — strategie custom labelů, segmentace a vyhodnocení po marži"",
+  ""description"": ""Done-for-you alternativa k samoobslužnému feed nástroji: štítkování produktů a opti | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je Mergado a k čemu slouží?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Mergado je český nástroj na úpravu produktových feedů — pravidly měníte data feedu pro Google Nákupy, Zboží.cz, Heuréku a další srovnávače. Je to samoobslužný software: nastavení a údržbu pravidel i strategii štítkování si dělá e-shop sám.""
+      }
+    },
+    {
+      ""@ | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Mergado — alternativa"",
+      ""item"": ""https://www.khoder.cz/vs-mergado""
+    }
+  ]
+}
+",Mergado — alternativa: štítkování feedu jako služba,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/roas-vs-mer,200,,ROAS vs MER — jaký je rozdíl a co sledovat | Tomáš Khoder,57,"ROAS vs MER pro e-shop: jaký je rozdíl, jak se počítají, proč ROAS přeceňuje výkon kampaní a kdy sledovat MER proti bodu zlomu. Praktický průvodce e-commerce konzultanta.",170,"index, follow, max-image-preview:large",https://www.khoder.cz/roas-vs-mer,cs,ROAS vs MER: pohled na kampaň vs pohled na byznys.,"Jaký je rozdíl mezi ROAS a MER? | Co je ROAS a kde má limity | Co je MER a proč je odolnější | ROAS i MER vidíte vedle čistého zisku. | Tři chyby v práci s ROAS a MER | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Časté otázky k ROAS a MER | Pokračujte dál | Nevíte, jestli marketing reálně vydělává?",1756,7,0,0,False,16,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""ROAS vs MER — jaký je rozdíl a co sledovat"",
+  ""description"": ""Praktický průvodce rozdílem mezi ROAS a MER pro e-shop: výpočty, proč ROAS přeceňuje výkon kampaní a kdy sledovat MER proti bodu zlomu."",
+  ""image"": ""https://www.khoder.cz/assets/bqui.jpg"",
+  ""author"": {
+    ""@type"": ""Person"",
+    ""@id"": ""https://www.khoder.cz/#person""
+  },
+  ""publisher"": {
+    ""@type"": ""Person"",
+    ""@id"": ""https://www.khoder.cz/#person""
+  } | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Jaký je rozdíl mezi ROAS a MER?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""ROAS (Return on Ad Spend) měří tržby z jedné kampaně nebo kanálu na korunu vložené reklamy. MER (Marketing Efficiency Ratio) měří celkové tržby e-shopu proti veškerým marketingovým nákladům. ROAS je pohled na kampaň, MER je pohled na celý byznys — a právě MER lépe ukaz | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""ROAS vs MER"",
+      ""item"": ""https://www.khoder.cz/roas-vs-mer""
+    }
+  ]
+}
+",ROAS vs MER — jaký je rozdíl a co sledovat,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/break-even-bod,200,,Break even point — jak ho spočítat pro e-shop | Tomáš Khoder,60,"Break even point e-shopu jednoduše: vzorec, break-even ROAS i MER a proč ROAS lže. Praktický návod od e-commerce konzultanta + jak ho počítá denní report.",154,"index, follow, max-image-preview:large",https://www.khoder.cz/break-even-bod,cs,Break even point pro e-shop,"Jak spočítám break even point svého e-shopu? | Co je break even point a proč ho znát | Break-even ROAS vs break-even MER | Bod zlomu vidíte denně, ne jednou za čtvrtletí. | Časté chyby při počítání bodu zlomu | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem bodu zlomu a čistého zisku. | Pokračujte dál | Chcete bod zlomu vidět každý den?",2176,12,5,0,False,16,3,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Break even point pro e-shop — jak ho spočítat"",
+  ""description"": ""Break even point e-shopu jednoduše: vzorec, break-even ROAS i MER a proč ROAS lže. Praktický návod od e-commerce konzultanta."",
+  ""image"": ""https://www.khoder.cz/assets/bqui.jpg"",
+  ""author"": {""@type"":""Person"",""@id"":""https://www.khoder.cz/#person""},
+  ""publisher"": {""@type"":""Person"",""@id"":""https://www.khoder.cz/#person""},
+  ""datePublished"": ""2026-05-15"",
+   | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Jak zjistím skutečný čistý zisk z e-shopu po všech nákladech?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""Čistý zisk je tržba mínus nákupní cena zboží, náklady na reklamu, doprava, platební metody a provize (Heuréka, Zboží.cz, marketplace). Sečíst to ručně z pěti systémů a dělat to denně je nereálné — proto se všechny zdroje napojí do jednoho reportu, který čistý zisk dopočítá automatic | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""Break even point pro e-shop"",""item"":""https://www.khoder.cz/break-even-bod""}
+  ]
+}
+",Break even point — jak ho spočítat pro e-shop,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/konverzni-pomer,200,,Konverzní poměr e-shopu (conversion rate) — výpočet a zlepšení | Khoder,71,"Konverzní poměr e-shopu (conversion rate): vzorec, benchmark a jak ho zvednout. Praktický návod od e-commerce konzultanta + jak ho denně sledovat v reportu.",156,"index, follow, max-image-preview:large",https://www.khoder.cz/konverzni-pomer,cs,Konverzní poměr e-shopu (conversion rate),"Jak spočítám konverzní poměr e-shopu a jaká hodnota je dobrá? | Co je konverzní poměr (conversion rate) | Konverze po kanálech, ne celkově | Konverzní poměr v kontextu, ne jako osamocené číslo. | Co konverzní poměr zlepšuje a co ne | Jak to vypadá v praxi. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem konverzního poměru. | Pokračujte dál | Chcete konverzi vidět v kontextu zisku?",1930,13,5,0,False,17,2,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Konverzní poměr e-shopu (conversion rate) — výpočet a zlepšení"",
+  ""description"": ""Konverzní poměr e-shopu (conversion rate): vzorec, benchmark a jak ho zvednout. Praktický návod od e-commerce konzultanta."",
+  ""image"": ""https://www.khoder.cz/assets/bqui.jpg"",
+  ""author"": {""@type"":""Person"",""@id"":""https://www.khoder.cz/#person""},
+  ""publisher"": {""@type"":""Person"",""@id"":""https://www.khoder.cz/#person""},
+  ""datePublished"": ""2 | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Jak se počítá konverzní poměr e-shopu?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""Konverzní poměr (conversion rate) je podíl návštěv, které skončily objednávkou: počet objednávek děleno počtem návštěv krát 100. Příklad: 240 objednávek z 12 000 návštěv je konverzní poměr 2 procenta. Důležité je počítat ho ze stejného zdroje dat — buď celý z GA4, nebo celý z reálných objednávek, ne kříže | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""Konverzní poměr e-shopu"",""item"":""https://www.khoder.cz/konverzni-pomer""}
+  ]
+}
+",Konverzní poměr e-shopu (conversion rate) — výpočet a zlepšení,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/customer-lifetime-value,200,,Customer Lifetime Value (LTV) e-shopu — výpočet | Khoder,56,"Customer Lifetime Value (CLV/LTV) e-shopu: jak spočítat hodnotu zákazníka za život, poměr LTV/CAC a proč rozhoduje víc než cena první objednávky.",145,"index, follow, max-image-preview:large",https://www.khoder.cz/customer-lifetime-value,cs,Customer Lifetime Value (LTV) zákazníka e-shopu,"Jak spočítám customer lifetime value (LTV) e-shopu? | Co je LTV (CLV, cltv) a jak ho spočítat | LTV vs CAC — poměr, který rozhoduje | Hodnota zákazníka — z dostupných dat. | Jak LTV zvyšovat | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem customer lifetime value. | Pokračujte dál | Chcete vědět, kolik vám zákazník reálně přinese?",1770,10,3,0,False,16,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Customer Lifetime Value (LTV) e-shopu — výpočet"",
+  ""description"": ""Jak spočítat customer lifetime value e-shopu, proč počítat z marže a co říká poměr LTV/CAC."",
+  ""image"": ""https://www.khoder.cz/assets/bqui.jpg"",
+  ""author"": {""@type"":""Person"",""@id"":""https://www.khoder.cz/#person""},
+  ""publisher"": {""@type"":""Person"",""@id"":""https://www.khoder.cz/#person""},
+  ""datePublished"": ""2026-05-15"",
+  ""dateModified"": ""2026-05-15"",
+   | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Jak spočítám customer lifetime value (LTV) e-shopu?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""Zjednodušený vzorec: průměrná hodnota objednávky krát marže krát frekvence nákupů za rok krát průměrná délka vztahu v letech. Klíčové je počítat z marže nebo čistého zisku, ne z obratu. Přesnější je kohortní LTV, které sčítá reálný zisk skupiny zákazníků v čase z historie objednávek.""}},
+     | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},
+    {""@type"":""ListItem"",""position"":2,""name"":""Customer Lifetime Value e-shopu"",""item"":""https://www.khoder.cz/customer-lifetime-value""}
+  ]
+}
+",Customer Lifetime Value (LTV) e-shopu — výpočet,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/rfm-analyza,200,,RFM analýza zákazníků e-shopu — segmentace | Khoder,51,"RFM analýza zákazníků e-shopu: Recency, Frequency, Monetary — jak skórovat segmenty a co s nimi. Praktický návod od e-commerce konzultanta.",139,"index, follow, max-image-preview:large",https://www.khoder.cz/rfm-analyza,cs,RFM analýza zákazníků e-shopu,"Co je RFM analýza a jak ji udělat? | Co je RFM a jak skórovat | Co s každým segmentem dělat | Segmenty z dostupných dat, ne ruční Excel. | RFM, churn a hodnota zákazníka | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem RFM analýzy. | Pokračujte dál | Chcete vědět, kdo jsou vaši šampioni?",1683,9,2,0,False,16,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""RFM analýza zákazníků e-shopu — segmentace a využití"",
+  ""description"": ""RFM analýza zákazníků e-shopu: Recency, Frequency, Monetary, jak skórovat segmenty a co s nimi dělat. Návod od e-commerce konzultanta."",
+  ""image"": ""https://www.khoder.cz/assets/bqui.jpg"",
+  ""author"": {
+    ""@type"": ""Person"",
+    ""@id"": ""https://www.khoder.cz/#person""
+  },
+  ""publisher"": {
+    ""@type"": ""Person"",
+    ""@id"": ""https://www.khoder.cz/#pe | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je RFM analýza a jak ji udělat?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""RFM analýza segmentuje zákazníky podle tří os: Recency (jak dávno naposledy nakoupil), Frequency (jak často nakupuje) a Monetary (kolik celkem utratil). Každé ose se přiřadí skóre 1 až 5 a kombinace skóre rozdělí zákazníky do segmentů jako šampioni, věrní, ohrožení  | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""RFM analýza zákazníků e-shopu"",
+      ""item"": ""https://www.khoder.cz/rfm-analyza""
+    }
+  ]
+}
+",RFM analýza zákazníků e-shopu — segmentace,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/sprava-google-ads,200,,Správa Google Ads pro e-shop — řízená ziskem | Tomáš Khoder,59,"Správa Google Ads pro e-shop — Search, Nákupy, Performance Max i remarketing řízené podle čistého zisku a MER, ne podle ROAS. 10+ let praxe, konzultace zdarma.",159,"index, follow, max-image-preview:large",https://www.khoder.cz/sprava-google-ads,cs,Vedu Google Ads podle zisku. Ne podle ROASu.,"Co zahrnuje správa Google Ads pro e-shop? | Účet, který vydělává po marži. | Nejdřív účet postavím, pak ho vedu. | Návratnost vidíte denně, ne v rozhraní. | Od bodu zlomu k rozpočtu. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem správy Google Ads. | Kolik stojí správa Google Ads? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete rozpočet tam, kde vydělává?",1981,14,4,1,False,18,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Správa Google Ads pro e-shop"",
+  ""alternateName"": [
+    ""Google Ads správa"",
+    ""Google Ads pro e-shopy"",
+    ""PPC specialista Google Ads""
+  ],
+  ""serviceType"": ""Nastavení a průběžná správa Google Ads kampaní pro e-shopy — Search, Nákupy, Performance Max, remarketing"",
+  ""description"": ""Nastavení a kontinuální správa Google Ads pro e-shop — Search, Google Nákupy, Performance Max a remarketing řízené podle čistého zisku a ME | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co zahrnuje správa Google Ads pro e-shop?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Nastavím účet a pak ho vedu dál — Search, Google Nákupy, Performance Max i remarketing. Není to jednorázový zásah, ale práce týden po týdnu: rozpočet, bidy, struktura a feed se ladí podle toho, co po marži reálně vydělává, ne podle ROAS v rozhraní.""
+      }
+  | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Správa Google Ads pro e-shop"",
+      ""item"": ""https://www.khoder.cz/sprava-google-ads""
+    }
+  ]
+}
+",Správa Google Ads pro e-shop — řízená ziskem,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/sprava-sklik,200,,Správa Sklik pro e-shop — řízená ziskem | Tomáš Khoder,54,"Správa Sklik pro e-shop — produktové i textové kampaně Seznam Sklik propojené se Zboží.cz a Heurékou, řízené podle čistého zisku a MER. 10+ let praxe, konzultace zdarma.",169,"index, follow, max-image-preview:large",https://www.khoder.cz/sprava-sklik,cs,"Sklik vedu podle zisku, ne podle prokliků.","Má Sklik pro e-shop ještě smysl? | Sklik jako ziskový doplněk, ne povinnost. | Sklik i feed Zboží.cz, ne jen spuštění. | Návratnost Skliku vidíte vedle Google a Mety. | Od bodu zlomu k rozpočtu Skliku. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem správy Sklik. | Kolik stojí správa Sklik? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete Sklik jen tam, kde vydělává?",1958,14,4,1,False,17,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Správa Sklik pro e-shop"",
+  ""alternateName"": [
+    ""Sklik správa"",
+    ""Sklik pro e-shopy"",
+    ""PPC Seznam Sklik""
+  ],
+  ""serviceType"": ""Nastavení a správa kampaní Seznam Sklik pro e-shopy — produktové, textové, retargeting"",
+  ""description"": ""Nastavení a kontinuální správa Seznam Sklik kampaní pro e-shop — produktové (Zboží.cz), textové a retargetingové — řízené podle čistého zisku a MER proti bodu zlomu, propojené s Heuré | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co zahrnuje správa Sklik pro e-shop?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Nastavím a pak průběžně vedu kampaně v Seznam Skliku — produktové na Zboží.cz, textové i retargetingové. Řídím je podle toho, co po marži vydělává, ne podle ROASu v rozhraní Skliku, a propojuji je se Zboží.cz a Heurékou. Ty pro český e-shop hrají velkou roli.""
+    | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Správa Sklik pro e-shop"",
+      ""item"": ""https://www.khoder.cz/sprava-sklik""
+    }
+  ]
+}
+",Správa Sklik pro e-shop — řízená ziskem,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/meta-ads-pro-eshopy,200,,Meta Ads pro e-shop — Facebook a Instagram reklama | Tomáš Khoder,65,"Správa Meta Ads pro e-shop — katalogové (DPA) a konverzní kampaně na Facebooku a Instagramu, Advantage+, Pixel a Conversion API. Řízeno čistým ziskem. Konzultace zdarma.",169,"index, follow, max-image-preview:large",https://www.khoder.cz/meta-ads-pro-eshopy,cs,"Meta Ads vedu podle zisku, ne podle čísla v Business Manageru.","Má Meta Ads pro e-shop smysl vedle Google? | Reklama, která vydělává po marži. | Nejdřív měření, pak kampaně. | Návratnost Mety vedle Google a Skliku. | Od měření k ziskovým kampaním. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem Meta Ads. | Kolik stojí správa Meta Ads? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete Meta Ads, které vydělávají po marži?",1881,12,2,1,False,17,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Meta Ads pro e-shop (Facebook a Instagram)"",
+  ""alternateName"": [
+    ""Facebook Ads pro e-shop"",
+    ""Instagram reklama"",
+    ""katalogové kampaně Meta""
+  ],
+  ""serviceType"": ""Správa reklamy na Facebooku a Instagramu pro e-shopy — katalogové, konverzní a retargeting kampaně"",
+  ""description"": ""Nastavení a správa Meta Ads (Facebook a Instagram) pro e-shop — katalogové (DPA) a konverzní kampaně, Advantage+ Shopping, retargeting | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co zahrnuje správa Meta Ads pro e-shop?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Nastavím a vedu reklamu na Facebooku a Instagramu — katalogové (DPA) a konverzní kampaně, Advantage+ Shopping, retargeting a hlavně pořádné měření přes Pixel a Conversion API. Řídím je podle návratnosti po marži, ne podle ROASu v Business Manageru.""
+      }
+    | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Meta Ads pro e-shop"",
+      ""item"": ""https://www.khoder.cz/meta-ads-pro-eshopy""
+    }
+  ]
+}
+",Meta Ads pro e-shop — Facebook a Instagram reklama,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/google-pmax-pro-eshopy,200,,Performance Max pro e-shop — bez kanibalizace | Tomáš Khoder,60,"Performance Max pro e-shop — feed-driven PMax kampaně s vyloučením značky a hlídáním kanibalizace Search a Nákupů, řízené přírůstkovým ziskem. Konzultace zdarma.",161,"index, follow, max-image-preview:large",https://www.khoder.cz/google-pmax-pro-eshopy,cs,"PMax, který si nebere vaši značku.","Kanibalizuje Performance Max ostatní kampaně? | PMax pod kontrolou, ne naslepo. | Ohraničím, nafeeduju, měřím přírůstkově. | Přírůstek PMax vidíte v reportu. | Od feedu k měřenému PMaxu. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem Performance Max. | Kolik stojí správa Performance Max? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete PMax, který reálně přidává?",1872,14,4,1,False,17,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Performance Max pro e-shop"",
+  ""alternateName"": [
+    ""PMax pro e-shopy"",
+    ""Performance Max kampaně"",
+    ""Google Ads PMax""
+  ],
+  ""serviceType"": ""Nastavení a správa Google Ads Performance Max kampaní pro e-shopy s ohraničením proti kanibalizaci"",
+  ""description"": ""Nastavení a správa Google Ads Performance Max pro e-shop — feed-driven kampaně s vyloučením značky, hlídáním kanibalizace Search a Nákupů a vyhodnocením přírůs | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je Performance Max a jak funguje pro e-shop?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Performance Max (PMax) je automatizovaná Google Ads kampaň, která běží napříč Searchem, Nákupy, YouTube, Gmailem i Discover z jednoho rozpočtu. U e-shopu čerpá hlavně z produktového feedu a asset skupin. Klíčové je správně ho ohraničit, aby si nebral zn | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Performance Max pro e-shop"",
+      ""item"": ""https://www.khoder.cz/google-pmax-pro-eshopy""
+    }
+  ]
+}
+",Performance Max pro e-shop — bez kanibalizace,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/performance-marketing,200,,Performance marketing pro e-shop — řízený ziskem | Khoder,57,"Performance marketing pro e-shop řízený podle čistého zisku a MER, ne podle ROAS. Google Ads, Sklik, Meta v jednom čísle návratnosti. Konzultace zdarma.",152,"index, follow, max-image-preview:large",https://www.khoder.cz/performance-marketing,cs,"Performance marketing řízený ziskem, ne ROASem.","Co je performance marketing řízený ziskem? | Rozpočet tam, kde vydělává. | Kampaně i reporting, který je řídí. | Návratnost reklamy vidíte každý den. | Od bodu zlomu k rozpočtu. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem performance marketingu. | Kolik to stojí? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete rozpočet tam, kde vydělává?",2002,14,4,1,False,17,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Performance marketing pro e-shop"",
+  ""serviceType"": ""Výkonnostní marketing pro e-shopy řízený podle čistého zisku a MER"",
+  ""description"": ""Výkonnostní kampaně pro e-shop řízené podle čistého zisku a MER napříč Google Ads, Sklik a Meta, ne podle ROAS v rozhraní. Rozpočet tam, kde reálně vydělává po marži, jako konzultační služba."",
+  ""provider"": {
+    ""@type"": ""Person"",
+    ""name"": ""Tomáš Khoder"",
+    ""url"": ""https://www.kho | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je performance marketing řízený ziskem?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Performance marketing jsou výkonnostní kampaně, jejichž úspěch se měří přímo podle výsledku. Řízený ziskem znamená, že rozhodovací metrikou není ROAS v rozhraní platformy, ale čistý zisk a MER napříč všemi kanály po odečtení nákupní ceny, dopravy a provizí,  | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Performance marketing pro e-shop"",
+      ""item"": ""https://www.khoder.cz/performance-marketing""
+    }
+  ]
+}
+",Performance marketing pro e-shop — řízený ziskem,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/geo-optimalizace,200,,GEO optimalizace — aby vás citoval ChatGPT a Gemini | Khoder,60,"GEO (generative engine optimization): optimalizace obsahu, aby vás citoval ChatGPT, Gemini a Perplexity. Strukturovaná data, entity, měření AI návštěv.",151,"index, follow, max-image-preview:large",https://www.khoder.cz/geo-optimalizace,cs,"GEO optimalizace, aby vás citoval ChatGPT a Gemini.","Co je GEO a jak na to, aby vás citovala AI? | Aby vás AI doporučila, ne přehlédla. | Ověřená metoda, kterou používám i na sobě. | Citace bez měření je dojem. | Od struktury k měřeným citacím. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem GEO optimalizace. | Kolik to stojí? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete, aby vás AI doporučila?",2091,11,1,1,False,16,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""GEO optimalizace (generative engine optimization)"",
+  ""serviceType"": ""Optimalizace obsahu pro generativní AI vyhledávače — ChatGPT, Gemini, Perplexity"",
+  ""description"": ""Optimalizace obsahu e-shopu a webu tak, aby ho citovaly generativní AI vyhledávače (ChatGPT, Gemini, Perplexity, AI Overviews) — strukturovaná data, entita autora, přímé odpovědi a měření AI referralů. Jako konzultační služba."",
+  ""provider"": {
+    ""@type"": | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Co je GEO (generative engine optimization)?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""GEO je optimalizace obsahu tak, aby ho citovaly generativní AI vyhledávače — ChatGPT, Gemini, Perplexity a AI Overviews v Googlu. Na rozdíl od klasického SEO, kde jde o pozici odkazu, jde u GEO o to, aby AI vaši značku zmínila a doporučila v odpovědi uživat | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""GEO optimalizace pro e-shop"",
+      ""item"": ""https://www.khoder.cz/geo-optimalizace""
+    }
+  ]
+}
+",GEO optimalizace — aby vás citoval ChatGPT a Gemini,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/reklama-v-chatgpt-pro-eshopy,200,,Reklama v ChatGPT pro e-shopy · Produktové kampaně na klíč | Tomáš Khoder,73,"Reklama v ChatGPT pro e-shopy — produktové kampaně v OpenAI Ads na klíč. Produktový feed ze Shoptetu, výběr produktů podle návratnosti, struktura kampaně a kompletní měření konverzí na webu. V Česku od srpna 2026. Z Litoměřic pro celou ČR i Slovensko.",251,"index, follow, max-image-preview:large",https://www.khoder.cz/reklama-v-chatgpt-pro-eshopy,cs,Reklama v ChatGPT pro e-shopy.,"Jak spustit reklamu v ChatGPT pro e-shop? | Feed, kampaň, měření. | Shoptet ho vydá hotový. My do něj saháme co nejmíň. | Neinzerujeme celý katalog. Jen to, co se vrací. | Bez měření nemá kampaň na co optimalizovat. | Platforma nemá zkušební režim. | Nejdřív měřit, potom stavět. | Jak to dopadlo u e-shopu s 5 800 produkty. | Nejlepší argumenty vám dají moji klienti. | Co se u reklamy v ChatGPT ptají nejčastěji. | Kolik stojí nastavení reklamy v ChatGPT? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Podíváme se, jestli to vašemu e-shopu dává smysl.",3040,13,2,1,False,16,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Reklama v ChatGPT pro e-shopy"",
+  ""alternateName"": [
+    ""ChatGPT Ads"",
+    ""OpenAI Ads"",
+    ""Reklama v ChatGPT"",
+    ""Produktové kampaně v ChatGPT"",
+    ""Nastavení ChatGPT Ads"",
+    ""OpenAI produktový feed"",
+    ""ChatGPT reklama pro Shoptet""
+  ],
+  ""serviceType"": ""Nastavení produktových kampaní v ChatGPT (OpenAI Ads) pro e-shopy — feed, struktura kampaně a měření konverzí"",
+  ""description"": ""Nastavení reklamy v ChatGPT pro | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Kolik musím na reklamu v ChatGPT počítat minimálně?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Platforma má pevné minimum denního rozpočtu 350 Kč na kampaň. To je spodní hranice, pod kterou kampaň nejde spustit — v dokumentaci uvedená není, zjistí se až při zápisu. K tomu připočtěte jednorázové nastavení: feed, strukturu kampaně a měření konv | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Reklama v ChatGPT"",
+      ""item"": ""https://www.khoder.cz/reklama-v-chatgpt-pro-eshopy""
+    }
+  ]
+}
+",Reklama v ChatGPT pro e-shopy · Produktové kampaně na klíč,https://www.khoder.cz/assets/chatgpt-hero.webp
+https://www.khoder.cz/tvorba-webovych-stranek,200,,"Tvorba webových stránek | Litoměřice, Ústí nad Labem — Tomáš Khoder",67,"Tvorba webových stránek a landing pages z Litoměřic pro Ústecký kraj i celou ČR. Rychlé a konverzní weby s měřením, SEO a GEO optimalizací. 10+ let praxe, 5,0/5,0 ze 16 recenzí.",177,"index, follow, max-image-preview:large",https://www.khoder.cz/tvorba-webovych-stranek,cs,"Webové stránky, které prodávají.","Co je tvorba webových stránek? | Tři typy webů, každý s jiným úkolem. | Landing pages pro Google Ads a Facebook Ads. | Prezenční weby a mikrosite pro firmy. | SEO a GEO optimalizace stávajících stránek. | Lighthouse 95+ na mobilu, ne na desktopu. | CSS/JS úpravy na Shoptet šablony. | GTM + GA4 hned od spuštění. | Backend, hosting a údržba. | Od briefu k nasazení. | Tomáš Khoder. | Weby, které jsem postavil nebo přepracoval. | Nejlepší argumenty vám dají moji klienti. | Odpovědi na otázky, které dostávám nejčastěji. | Kolik stojí tvorba webových stránek? | Napište mi. Odpovídám obvykle do 24 hodin. | Jsem ze severních Čech — řešíme to osobně | Pokračujte dál | Domluvme si nezávaznou konzultaci.",3878,20,1,1,False,19,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Tvorba webových stránek"",
+  ""alternateName"": [""Tvorba webu"", ""Výroba webových stránek"", ""Tvorba webových stránek na míru"", ""Webdesign"", ""Tvorba landing page"", ""Tvorba prezenčních webů"", ""Statické weby"", ""Vývoj webových stránek"", ""Programování webů""],
+  ""serviceType"": ""Tvorba statických webových stránek, landing pages a prezenčních webů s SEO + GEO optimalizací"",
+  ""description"": ""Tvorba rychlých a konverzních webových stráne | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant a vývojář webů"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {""@type"": ""PostalAddress"",""streetAddress"": ""Mírové náměstí 9/1"",""addressLocality"": ""Litoměřice"",""postalCode"": ""412 01"",""addressCountry"": ""CZ""} | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {""@type"":""Question"",""name"":""Co je tvorba webových stránek?"",""acceptedAnswer"":{""@type"":""Answer"",""text"":""Tvorba webových stránek je komplexní proces návrhu, kódování a nasazení webu — od jednostránkové landing page pro reklamní kampaň přes prezenční firemní web až po mikrosite. Všechny weby stavím jako statické stránky z čistého HTML, CSS a JavaScriptu — bez CMS, bez frameworků. Dobře postavený web je rychlý (Core W | 
+{""@context"":""https://schema.org"",""@type"":""BreadcrumbList"",""itemListElement"":[{""@type"":""ListItem"",""position"":1,""name"":""Domů"",""item"":""https://www.khoder.cz/""},{""@type"":""ListItem"",""position"":2,""name"":""Tvorba webových stránek"",""item"":""https://www.khoder.cz/tvorba-webovych-stranek""}]}
+",Tvorba webových stránek | Rychlé a konverzní weby pro Ústecký kraj,https://www.khoder.cz/assets/weby.jpg
+https://www.khoder.cz/shoptet-premium-sablony-na-miru,200,,Shoptet Premium šablony na míru · Funkce nad rámec platformy | Tomáš Khoder,75,"Shoptet Premium šablony na míru: vlastní vzhled a funkce nad rámec platformy. Vyhledávání nad vlastní databází, graf vývoje ceny, termín doručení podle dopravců, velkoobchodní ceníky a optimalizovaný košík a pokladna. Z Litoměřic pro celou ČR i SK.",248,"index, follow, max-image-preview:large",https://www.khoder.cz/shoptet-premium-sablony-na-miru,cs,Shoptet Premium šablony na míru.,"Co šablona na míru řeší kromě vzhledu. | Hlavní stránka jako výloha produktů. | Termín doručení všude, kde na něm záleží. | Našeptávač, který rozumí kontextu. | Parametry i přímo na kartě produktu. | Celý katalog na jedno najetí myší, na mobilu na pár písmen. | Mobil dostane vlastní menu, hledání i košík. | Další moduly pro detail, ceny, sklad i homepage. | Jak to do sebe zapadá. | Od návrhu po spuštění, pod testy a měřením. | Od přepsaného vzhledu po vlastní infrastrukturu. | Nejlepší argumenty vám dají moji klienti. | Co je šablona na míru pro Shoptet Premium? | Na co se ptají e-shopaři nejčastěji. | Kolik stojí šablona na míru pro Shoptet? | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Ukažte mi svůj Shoptet.",7452,50,12,1,False,17,2,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Service"",
+  ""name"": ""Shoptet Premium šablony na míru"",
+  ""alternateName"": [
+    ""Šablona na míru pro Shoptet"",
+    ""Shoptet Premium šablona"",
+    ""Vlastní šablona Shoptet"",
+    ""Vývoj Shoptet šablony"",
+    ""Shoptet blank mode"",
+    ""Programátor Shoptet"",
+    ""Úprava Shoptet šablony"",
+    ""Shoptet API napojení""
+  ],
+  ""serviceType"": ""Vývoj šablon na míru pro Shoptet Premium: vlastní vzhled, funkce nad rámec platformy a napojení na vlastní data"",
+ | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.webp"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCount | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Potřebuju k šabloně na míru tarif Shoptet Premium?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Nemusíte, ale s Premium je práce čistší. Premium umí takzvaný blank mode, který vypne výchozí styly šablony, takže vzhled stavím od nuly a neperu se s cizím CSS. Na tarifu Basic blank mode chybí a vlastní styly píšu jako přepisovou vrstvu nad výchozí | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Shoptet Premium šablony na míru"",
+      ""item"": ""https://www.khoder.cz/shoptet-premium-sablony-na-miru""
+    }
+  ]
+}
+",Shoptet Premium šablony na míru · Funkce nad rámec platformy,https://www.khoder.cz/assets/shots/shoptet-eshop-detail-ostra.webp
+https://www.khoder.cz/automatizace-fakturace-eshopu,200,,Automatizace a digitalizace fakturace e-shopu — průvodce | Tomáš Khoder,71,"Jak zautomatizovat a digitalizovat fakturaci e-shopu — propojení e-shopu s fakturací, automatické párování plateb, ISDOC a PEPPOL a kdy přejít na účetní systém. Průvodce od konzultanta.",185,"index, follow, max-image-preview:large",https://www.khoder.cz/automatizace-fakturace-eshopu,cs,Jak zautomatizovat fakturaci e-shopu.,"Jak digitalizovat fakturaci e-shopu? | Míň ručního přepisování, míň chyb. | Objednávka, doklad a platba na jednom místě. | U dodavatelských faktur jde automatizace dál. | Kdy přejít z vestavěné fakturace na účetní systém | Od dokladu k zaúčtování. | Tomáš Khoder. | Nejlepší argumenty vám dají moji klienti. | Otázky kolem automatizace fakturace. | Napište mi. Odpovídám obvykle do 24 hodin. | Pokračujte dál | Chcete fakturaci bez ručního přepisování?",2086,13,1,1,False,15,1,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Article"",
+  ""headline"": ""Automatizace a digitalizace fakturace e-shopu"",
+  ""description"": ""Jak zautomatizovat a digitalizovat fakturaci e-shopu — propojení s fakturací, automatické párování plateb, ISDOC a PEPPOL a kdy přejít z vestavěné fakturace na účetní systém."",
+  ""image"": ""https://www.khoder.cz/assets/bqui.jpg"",
+  ""author"": {
+    ""@type"": ""Person"",
+    ""@id"": ""https://www.khoder.cz/#person""
+  },
+  ""publisher"": {
+    ""@type"": ""Person"",
+     | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Person"",
+  ""@id"": ""https://www.khoder.cz/#person"",
+  ""name"": ""Tomáš Khoder"",
+  ""url"": ""https://www.khoder.cz"",
+  ""image"": ""https://www.khoder.cz/assets/khoder-transparent.png"",
+  ""jobTitle"": ""E-commerce konzultant"",
+  ""email"": ""tomas@khoder.cz"",
+  ""telephone"": ""+420720363705"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Mírové náměstí 9/1"",
+    ""addressLocality"": ""Litoměřice"",
+    ""postalCode"": ""412 01"",
+    ""addressCountr | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""FAQPage"",
+  ""mainEntity"": [
+    {
+      ""@type"": ""Question"",
+      ""name"": ""Jak digitalizovat fakturaci e-shopu?"",
+      ""acceptedAnswer"": {
+        ""@type"": ""Answer"",
+        ""text"": ""Propojením kroků, které dnes děláte ručně. Objednávka z e-shopu automaticky založí doklad, platba se spáruje podle variabilního symbolu a doklad se archivuje elektronicky. U přijatých faktur od dodavatelů se data vytěží automaticky. Výsledkem je míň přepisování a  | 
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""BreadcrumbList"",
+  ""itemListElement"": [
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 1,
+      ""name"": ""Domů"",
+      ""item"": ""https://www.khoder.cz/""
+    },
+    {
+      ""@type"": ""ListItem"",
+      ""position"": 2,
+      ""name"": ""Automatizace a digitalizace fakturace e-shopu"",
+      ""item"": ""https://www.khoder.cz/automatizace-fakturace-eshopu""
+    }
+  ]
+}
+",Automatizace a digitalizace fakturace e-shopu — průvodce,https://www.khoder.cz/assets/bqui.jpg
+https://www.khoder.cz/vop,200,,Obchodní podmínky — Tomáš Khoder,32,"Obchodní podmínky Tomáše Khodera, IČO 17054788 — PPC kampaně, reporting a konzultace pro e-shopy.",97,"index, follow",,cs,Obchodní podmínky,1. ÚVODNÍ USTANOVENÍ | 2. OBECNÁ USTANOVENÍ | 3. MARKETINGOVÉ SLUŽBY | 4. ZHOTOVENÍ WEBOVÉ PREZENTACE (vč. E-SHOPU) ZA FIXNÍ CENU | 5. ZÁVĚREČNÁ USTANOVENÍ,3596,4,0,0,False,12,2,,,

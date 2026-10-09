@@ -1,0 +1,818 @@
+url,status,location,title,title_len,meta_desc,meta_desc_len,robots,canonical,lang,h1,h2,words,img_count,img_no_alt,forms,hubspot,int_links_out,ext_links_out,jsonld,og_title,og_image
+https://www.advisio.cz/,200,,[Advisio] - áčková digitální agentura,37,"Klíčem k úspěchu v onlinu je chytrý marketingový mix. Pomůžeme vám ho sestavit, řídit a vyhodnocovat. Od [A] do Z.",114,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/,cs-CZ,Vsaďte na áčkový digitální marketing,"Spolupracujeme od roku 2024 Za rok jsme Prazdroji zvýšili tržby o 38 % | Spolupracujeme od roku 2015 Vymazlená jednička na trhu | Spolupracujeme od roku 2014 Z malého rybníku do lovebrandu | Áčkovou značku uděláme i z vás | Agenturou roku jsme se nestali přes noc | Co je u nás nového? | Jsme Advisio [1] | Kariéra Právě hledáme do našeho týmu | Kde se můžeme potkat? MarketingON #13 | Kde se můžeme potkat? Czech Online Expo 2027 | Newsletter Přihlaste se k odběru novinek [1] | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",745,63,0,2,False,35,12,"
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Organization"",
+  ""mainEntityOfPage"": { ""@id"": ""#website"" },
+  ""name"": ""Advisio"",
+  ""legalName"": ""Advisio marketing s.r.o."",
+  ""url"": ""https://www.advisio.cz"",
+  ""logo"": {
+    ""@type"": ""ImageObject"",
+    ""url"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""width"": ""630"",
+    ""height"": ""150""
+  },
+  ""sameAs"":
+  [
+    ""https://www.facebook.com/advisio.cz"",
+    ""https://www.instagram.com/advisiocz/"",
+    ""https://www.l | 
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http",[Advisio] - áčková digitální agentura,https://www.advisio.cz/wp-content/uploads/2020/02/1200-x-630-uvod.png
+https://www.advisio.cz/co-nabizime/,200,,Komplexní digitální marketing - Advisio,39,"PPC, SEO, copywriting, sociální sítě. Propojíme marketingové disciplíny tak, aby pracovaly ve váš prospěch.",107,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/co-nabizime/,cs-CZ,Komplexní digitální marketing,"Na čem stavíme váš úspěch | Áčkovou značku uděláme i z vás | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",341,21,0,1,False,26,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Co nabízíme"",""item"": ""https://www.advisio.cz/co-nabizime/""}]}",[Advisio] - komplexní digitální marketing,https://www.advisio.cz/wp-content/uploads/2020/02/1200-x-630-co-nabizime.png
+https://www.advisio.cz/datova-analytika/,200,,Datová analytika - Advisio,26,"Schází vám důležitá data o stavu vašeho e-shopu? Nedokážete v nich číst, používat Google Analytics 4 nebo nevíte, co konkrétně měřit? Obraťte se na nás.",152,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/datova-analytika/,cs-CZ,Mějte svá data pod kontrolou,"Pracujte s daty efektivně | Materiály ke stažení | Co umíme | Služby datové analytiky | Napište nám, s čím potřebujete pomoci | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",1222,23,2,5,False,30,13,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Služby"",""item"": ""https://www.advisio.cz/co-nabizime/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Datová analytika"",""item"": ""https://www.advisio.cz/datova-analytika/""}]}",Datová analytika - Advisio,
+https://www.advisio.cz/server-side-mereni/,200,,Server side měření - Advisio,28,"Příští rok se ponese ve znamení rozsáhlého úbytku dat z webů a e-shopů. Víme, jak data ani zákazníky neztratit. Řešení je DataPlus.",131,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/server-side-mereni/,cs-CZ,"Připravte se na klíčové změny v cílené reklamě. To, co vám doteď fungovalo, v roce 2024 nebude.","Rok 2024 přinese zásadní změny pro online podnikání. | Jak nepřijít o své zákazníky? | Udržte si zákazníky i v roce 2024 a neztraťte klíčová data pro váš růst. | Komu se staráme o data | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",190,43,3,2,False,28,12,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Server side měření"",""item"": ""https://www.advisio.cz/server-side-mereni/""}]}",Server side měření - Advisio,
+https://www.advisio.cz/google-analytics-4/,200,,Zdarma E-book a další materiály pro Google Analytics 4 - Advisio,64,,0,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/google-analytics-4/,cs-CZ,Zjednodušte si reporting v Google Analytics 4 na pár kliknutí,"Tahák GA4 | Chytrý tahák reportů [1] | E-book GA4 | Praktický e-book pro vás [1] | Proč jsou data a jejich správné měření pro e-shop důležité | Komu se staráme o data | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",241,50,9,3,False,27,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Zdarma E-book a další materiály pro Google Analytics 4"",""item"": ""https://www.advisio.cz/google-analytics-4/""}]}",Zdarma E-book a další materiály pro Google Analytics 4 - Advisio,
+https://www.advisio.cz/konec-cookies-3-stran/,200,,Připravte se na konec cookies třetích stran - Advisio,53,"Ochraňte svá data a zákazníky. Připravte se na konec cookies 3. stran krok po kroku. E-mailingem, segmentací a zákaznickou péčí.",128,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/konec-cookies-3-stran/,cs-CZ,Cookies 3. stran končí,"Koho změny ovlivní? [1] | Jak se na konec cookies 3. stran připravit? | Google přehodnocuje svůj přístup ke cookies třetích stran, funkční strategii ale prozatím nemá | Digital Markets Act a konec éry cookies třetích stran | Cookies třetích stran končí: Proč je váš e-shop potřebuje? | Připravte se na nové strategie v éře bez cookies 3. stran! | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",1361,47,9,3,False,40,20,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Připravte se na konec cookies třetích stran"",""item"": ""https://www.advisio.cz/konec-cookies-3-stran/""}]}",Připravte se na konec cookies třetích stran - Advisio,
+https://www.advisio.cz/ppc/,200,,Správa PPC reklamy - Advisio,28,"Díky PPC reklamě se postaráme o to, abyste šli vidět na internetu ✅ Jsme specialisté na PPC reklamu v Ostravě a nabízíme také audit PPC reklamy ✅",145,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/ppc/,cs-CZ,Hledáte áčka na PPC reklamu?,"Kdo je vidět, prodává | Věří nám i Google [1] | Proč inzerovat v PPC systémech [1] | Výhody PPC reklamy | Vaše PPC kampaně musí vyniknout | PPC je naší královskou disciplínou | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Audit PPC reklamy | Z nováčka mezi marketingová áčka | Společně [1] dokážeme velké věci | Digitální trendy sledujeme ve dne v noci. [1]",1175,55,33,1,False,26,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Služby"",""item"": ""https://www.advisio.cz/co-nabizime/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Správa PPC kampaní"",""item"": ""https://www.advisio.cz/ppc/""}]}",Správa PPC reklamy - Advisio,
+https://www.advisio.cz/seo/,200,,SEO správa webu - Advisio,25,"Buďte jedničkou pro vyhledávače, protože kdo je na předních pozicích, prodává. Nevíte, jak na to? Nechte to na nás. Zajistíme SEO od [A] po Z.",142,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/seo/,cs-CZ,Chcete být jedničkou pro vyhledávače?,"Kdo je na předních pozicích, prodává | Proč se zaměřit na kondici vašeho e-shopu? [1] | Co je pro zdraví vašeho webu důležité? | Služby optimalizace pro vyhledávače | SEO Audit | Potřebujete podpořit vitalitu vašeho webu? Napište nám. | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",1070,25,4,2,False,29,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Služby"",""item"": ""https://www.advisio.cz/co-nabizime/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""SEO"",""item"": ""https://www.advisio.cz/seo/""}]}",SEO správa webu - Advisio,
+https://www.advisio.cz/audit-ppc-kampani/,200,,Neutíkají vám peníze? - Audit PPC kampaní - Advisio,51,"Audit PPC od [A] specialistů prověří vaše kampaně v Google Ads, Sklik i Zboží. Odhalíme chyby v účtu i strategii a dáme vám checklist pro zlepšení výkonu.",154,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/audit-ppc-kampani/,cs-CZ,"Zjistíme, jestli neutrácíte zbytečně","Audit [nejen] PPC kampaní | Co v rámci auditu prověříme? | Kdo z auditu vytěží nejvíc? | Co vám audit přinese | Komu už jsme pomohli? | Trenýrkárna | CS beton | Napište nám pro nezávazný audit vašich účtů | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",582,26,5,2,False,27,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Audit PPC kampaní"",""item"": ""https://www.advisio.cz/audit-ppc-kampani/""}]}",Neutíkají vám peníze? - Audit PPC kampaní - Advisio,
+https://www.advisio.cz/e-mail-marketing/,200,,E-mail marketing - Advisio,26,,0,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/e-mail-marketing/,cs-CZ,Využijte e-mailing na maximum,"Nerozesílejte nudné e-maily, prodávejte | Proč vsadit na e-mail marketing? [1] | Jaké e-maily fungují? | Co dělá e-mailing [áčkovým] ? | Služby e-mailingu | Audit vašeho e-mailingu | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",1050,29,7,2,False,28,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""E-mail marketing"",""item"": ""https://www.advisio.cz/e-mail-marketing/""}]}",E-mail marketing - Advisio,
+https://www.advisio.cz/css-program/,200,,CSS program - Advisio,21,Zapojte se do našeho CSS programu a ušetřete až 20 % na inzerci v Google Shopping Ads. Stačí vyplnit krátký formulář. O zbytek se postaráme my.,143,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/css-program/,cs-CZ,Inzerujte levněji v CSS programu,"Jsme áčka na Shopping Ads [1] | Co vám CSS program přinese | Kolik to stojí? [1] | Jak se do CSS programu zapojit | O CSS Programu v otázkách a odpovědích | Zapojte se do programu a ušetřete | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",522,40,0,2,False,27,16,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""CSS program"",""item"": ""https://www.advisio.cz/css-program/""}]}",CSS program,https://www.advisio.cz/wp-content/uploads/2020/06/1200x630-1.png
+https://www.advisio.cz/o-nas/,200,,O nás - Advisio,15,"Áčkoví konzultanti, chytré kampaně a schopnost propojit marketingové disciplíny tak, aby pracovaly ve váš prospěch. To je Advisio.",130,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/o-nas/,cs-CZ,Myslíme s přesahem. Řešíme věci komplexně,"Naše historie | Jsme vaši digitální rádci | Expandujte s námi | Podporujeme projekty, které mají smysl | Náš [A] tým | [Advisio] na Instagramu | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",1900,109,57,1,False,26,17,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""O nás"",""item"": ""https://www.advisio.cz/o-nas/""}]}",[Advisio] - áčková digitální agentura,https://www.advisio.sk/wp-content/uploads/2020/02/1200-x-630-o-nas.png
+https://www.advisio.cz/kontakt/,200,,Kontakt - Advisio,17,Stačí jeden telefon nebo e-mail a můžeme začít pracovat i na vašem projektu. Společně dokážeme velké věci.,106,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/kontakt/,cs-CZ,Jsme vám k dispozici,"Přímý kontakt | Jak se k nám dostanete | Jak se k nám dostanete | Někdy je lepší zeptat se, než přešlapovat na místě | Pro média a partnery | Kde se můžeme potkat? MarketingON #13 7. 10. 2026 | Kde se můžeme potkat? Czech Online Expo 2027 3.-4. 2. 2027 | Logo ke stažení | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",360,34,1,2,False,27,17,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Kontakt"",""item"": ""https://www.advisio.cz/kontakt/""}]}",[Advisio] - áčková digitální agentura,https://www.advisio.cz/wp-content/uploads/2020/02/1200-x-630-kontakt.png
+https://www.advisio.cz/poptavka/,200,,Poptávka - Advisio,18,Spojme váš projekt s našimi zkušenostmi a konkurence vám přestane šlapat na paty.,81,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/poptavka/,cs-CZ,Jsme vaši digitální rádci,"Napište nám, s čím potřebujete pomoci | Jaká je cesta od poptávky k projektu? | Komu pomáháme online | Spolupracujeme od roku 2024 Za rok jsme Prazdroji zvýšili tržby o 38 % | Spolupracujeme od roku 2015 Vymazlená jednička na trhu | Spolupracujeme od roku 2014 Z malého rybníku do lovebrandu | Držíme krok s nejlepšími | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Jdete do toho s námi? | Společně to dokážeme [1]",861,66,0,1,False,29,7,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Poptávka"",""item"": ""https://www.advisio.cz/poptavka/""}]}",[Advisio] - vaši digitální rádci,https://www.advisio.cz/wp-content/uploads/2020/02/1200-x-630-poptavka.png
+https://www.advisio.cz/klienti/,200,,Naše práce - Advisio,20,"Staráme se o to, abyste v online světě byli vidět. Podívejte se, komu se spolupráce s námi vyplácí.",99,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/klienti/,cs-CZ,Komu pomáháme v onlinu,"Vybraní spokojení klienti | Spolupracujeme od roku 2024 Za rok jsme Prazdroji zvýšili tržby o 38 % | Spolupracujeme od roku 2015 Vymazlená jednička na trhu | Spolupracujeme od roku 2014 Z malého rybníku do lovebrandu | Spolupracujeme od roku 2014 Roztáčíme nože sekaček na 5 trzích | Spolupracujeme od roku 2017 Správa sociálních sítí pro DPO | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",571,137,0,1,False,31,12,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Klienti"",""item"": ""https://www.advisio.cz/klienti/plzensky-prazdroj/""}]}",Naše práce - Advisio,https://www.advisio.cz/wp-content/themes/advisio/img/social-klienti.png?v=2
+https://www.advisio.cz/klienti/plzensky-prazdroj/,200,,Plzeňský Prazdroj - Advisio,27,"Staráme se o to, abyste v online světě byli vidět. Podívejte se, komu se spolupráce s námi vyplácí.",99,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/klienti/plzensky-prazdroj/,cs-CZ,Spolupracujeme od 2024 Za rok jsme Prazdroji zvýšili tržby o 38 %,"Cíle projektu | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",228,24,2,1,False,26,12,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Klienti"",""item"": ""https://www.advisio.cz/klienti/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Plzeňský Prazdroj"",""item"": ""https://www.advisio.cz/klienti/plzensky-prazdroj/""}]}",Plzeňský Prazdroj - Advisio,
+https://www.advisio.cz/klienti/super-zoo/,200,,Případová studie Super Zoo - Advisio,36,Super zoo představuje jednoho z nejznámějších a největších prodejců chovatelských potřeb u nás. O jeho digitální stopu se staráme už od roku 2015.,146,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/klienti/super-zoo/,cs-CZ,Spolupracujeme od 2015 Vymazlená jednička na trhu,"Cíle projektu | Naše spolupráce v číslech | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",603,32,0,1,False,27,12,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Klienti"",""item"": ""https://www.advisio.cz/klienti/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Super ZOO"",""item"": ""https://www.advisio.cz/klienti/super-zoo/""}]}",Případová studie Super Zoo - Advisio,https://www.advisio.cz/wp-content/uploads/2020/05/uvodni-foto-1.jpg
+https://www.advisio.cz/klienti/hecht/,200,,Případová studie HECHT - Advisio,32,Značka HECHT na trhu působí od roku 1994 a dodává zahradní techniku do více než 30 zemí světa. Patří mezi naše dlouhodobé klienty.,130,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/klienti/hecht/,cs-CZ,Spolupracujeme od 2014 Roztáčíme nože sekaček na 5 trzích,"Cíle projektu | Naše spolupráce v číslech | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",393,26,2,1,False,27,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Klienti"",""item"": ""https://www.advisio.cz/klienti/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Hecht"",""item"": ""https://www.advisio.cz/klienti/hecht/""}]}",Případová studie HECHT - Advisio,
+https://www.advisio.cz/zkusenosti-zakazniku/,200,,Zkušenosti - Advisio,20,Reference našich klientů jsou pro nás nesmírně důležité. Přečtěte si co o nás napsali naši klienti.,99,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/zkusenosti-zakazniku/,cs-CZ,Naši spokojení klienti,"Plzeňský Prazdroj | Hecht | Království křešel | Magnet-3pagen | Super zoo | Chyť a pusť | Szlato | Majya | SEMIX PLUSO, spol. s r.o. | OXALIS, spol. s r. o. | Kola pro Afriku | Moje Pedro | MPM-QUALITY s.r.o. | Viega, s.r.o. | ROCKWOOL, a.s. | SHANTI & Co. s.r.o. | Podravka | CK Vítkovice Tours | Beats for Love | Radynacestu.cz | Dopravní podnik Ostrava | Luxurytable.cz | Snowbitch.cz | Bewooden.cz | Audioteka | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",1754,84,13,1,False,26,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Ohlasy"",""item"": ""https://www.advisio.cz/zkusenosti-zakazniku/plzensky-prazdroj/""}]}",Zkušenosti - Advisio,https://www.advisio.cz/wp-content/themes/advisio/img/social-spokojeni-klienti.png
+https://www.advisio.cz/materialy-ke-stazeni/,200,,Materiály ke stažení - Advisio,30,,0,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/materialy-ke-stazeni/,cs-CZ,Tipy pro chytrý marketing ke stažení zdarma,"Advisio aplikace GA4 import produktů | Checklist: Nastavení Seznam Nákupů | Checklist: Vánoční SEO a AI průvodce | Checklist: Přístupnost webu podle EAA [2025] | Checklist: Konec cookies třetích stran | Chytrý tahák GA4 | Praktická personalizace GA4 přehledů | Tipy pro tvorbu videí do reklamních kampaní | Připravte e-shop [nejen] na vánoční sezónu | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",555,30,9,10,False,26,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Materiály ke stažení"",""item"": ""https://www.advisio.cz/materialy-ke-stazeni/""}]}",Materiály ke stažení - Advisio,
+https://www.advisio.cz/skoleni/,200,,Školení online marketingu - Advisio,35,"Marketingová školení nabitá informacemi, které snadno aplikujete v praxi. Naučte se to, co pomůže vašemu byznysu.",113,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/skoleni/,cs-CZ,Školení digitálního marketingu,"Vyberte si ze 3 nejbližších školení | Pořádáme MarketingON | Naše minulá školení | Řekli o školení | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",644,80,26,1,False,56,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Školení"",""item"": ""https://www.advisio.cz/skoleni/bude-vas-ai-doporucovat-jak-pripravit-e-shop-na-novou-eru-vyhledavani/""}]}",Školení online marketingu - Advisio,
+https://www.advisio.cz/konzultace/,200,,Přijďte na konzultace digitálního marketingu - Advisio,54,"Naučíme vás o digitálu přemýšlet. Přijďte na konzultaci a zjistěte jak být vidět na sítích, pracovat s Analytics 4 nebo využít e-mailing ve svůj prospěch.",154,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/konzultace/,cs-CZ,"Konzultace digitálního
+          marketingu",Proč konzultovat s Advisio? | S čím vám můžeme poradit? | Společně [1] dokážeme velké věci,673,11,0,0,False,31,6,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Konzultace"",""item"": ""https://www.advisio.cz/konzultace/jak-vyuzivat-ai-v-ramci-zlepseni-seo-webu/""}]}",Přijďte na konzultace digitálního marketingu - Advisio,
+https://www.advisio.cz/konzultace/jak-zacit-merit-v-google-analytics-4/,200,,Konzultace: Jak měřit v Google Analytics 4 - Advisio,52,"Jak začít měřit v Google Analytics 4 a neztratit dosavadní měření? Přijďte na konzultaci a naučte se pracovat s Analytics, bez pomoci programátora.",147,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/konzultace/jak-zacit-merit-v-google-analytics-4/,cs-CZ,"Konzultace digitálního
+          marketingu",Proč konzultovat s Advisio? | S čím vám můžeme poradit? | konzultace Jak začít měřit v Google Analytics 4 a nepřijít o data? | Společně [1] dokážeme velké věci,170,4,1,1,False,23,6,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Konzultace"",""item"": ""https://www.advisio.cz/konzultace/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Jak začít měřit v Google Analytics 4 a nepřijít o data?"",""item"": ""https://www.advisio.cz/konzultace/jak-zacit-merit-v-google-analytics-4/""}]} | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Konzultace"",""item"": ""https://www.advisio.cz/konzultace/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Jak začít měřit v Google Analytics 4 a nepřijít o data?"",""item"": ""https://www.advisio.cz/konzultace/jak-zacit-merit-v-google-analytics-4/""}]}",Konzultace: Jak měřit v Google Analytics 4 - Advisio,https://www.advisio.cz/wp-content/uploads/2022/06/IMG_4033-scaled.jpg
+https://www.advisio.cz/konzultace/jak-pracovat-v-google-tag-manager-bez-programatora/,200,,Konzultace: Jak pracovat v GTM bez pomoci programátora - Advisio,64,"Chcete se naučit pracovat v Google Tag Manager bez pomoci programátora? Honza vás provede prostředím GTM a ukáže, jak pracovat s kódem nebo měřit události.",155,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/konzultace/jak-pracovat-v-google-tag-manager-bez-programatora/,cs-CZ,"Konzultace digitálního
+          marketingu",Proč konzultovat s Advisio? | S čím vám můžeme poradit? | konzultace Jak pracovat v Google Tag Manager bez programátora | Společně [1] dokážeme velké věci,161,4,1,1,False,23,6,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Konzultace"",""item"": ""https://www.advisio.cz/konzultace/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Jak pracovat v Google Tag Manager bez programátora"",""item"": ""https://www.advisio.cz/konzultace/jak-pracovat-v-google-tag-manager-bez-programatora/"" | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Konzultace"",""item"": ""https://www.advisio.cz/konzultace/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Jak pracovat v Google Tag Manager bez programátora"",""item"": ""https://www.advisio.cz/konzultace/jak-pracovat-v-google-tag-manager-bez-programatora/""",Konzultace: Jak pracovat v GTM bez pomoci programátora - Advisio,https://www.advisio.cz/wp-content/uploads/2022/06/IMG_4033-scaled.jpg
+https://www.advisio.cz/skoleni/mereni-prakticky-google-tag-manager-a-analytics-4/,200,,Měření prakticky: Google Tag Manager a Analytics 4 - Advisio,60,"Marketingová školení nabitá informacemi, které snadno aplikujete v praxi. Naučte se to, co pomůže vašemu byznysu.",113,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/skoleni/mereni-prakticky-google-tag-manager-a-analytics-4/,cs-CZ,školení Měření prakticky: Google Tag Manager a Analytics 4,"Pro koho je školení určeno? | Co vás čeká? | Co je v ceně školení? | Školit vás bude | Proškolili jsme firmy: | objednávka Měření prakticky: Google Tag Manager a Analytics 4 | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",381,51,24,2,False,27,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Školení"",""item"": ""https://www.advisio.cz/skoleni/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Měření prakticky: Google Tag Manager a Analytics 4"",""item"": ""https://www.advisio.cz/skoleni/mereni-prakticky-google-tag-manager-a-analytics-4/""}]}",Měření prakticky: Google Tag Manager a Analytics 4 - Advisio,
+https://www.advisio.cz/blog/,200,,Blog - Advisio,14,"Píšeme jen o tom, co stojí v online světě za zmínku.",52,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/,cs-CZ,Co se děje v onlinu,"Stejný obsah na všechny sociální sítě? Chyba, která stojí firmy dosahy i zákazníky | Marketingové novinky pro vás. [1] | [Case Study] Může Favi fungovat jako výkonnostní kanál? | Google mění reklamy: 4 kroky, jak se připravit na AI Max | Reklama v ChatGPT: kompletní návod pro firmy v Česku v roce 2026 | PPC reklama pro e-shopy: 7 nejčastějších otázek a odpovědí | Jak uspět v AI Overviews: Nová data pro rok 2026 a praktické tipy | [Case Study] Jak jsme e-shopu Megalu téměř ztrojnásobili obrat propojením Mety a PPC | Google Ads mění fungování Smart Biddingu. Co to znamená pro vaše kampaně? | Pro značku Robzone zajišťujeme výkonnostní marketing | Odhalili jsme nejčastější UX chyby. Zjistěte, jak se jim vyhnout | Proč dobré PPC výsledky ještě neznamenají zisk | Co byste měli vědět, než se pustíte do výběru marketingové agentury? | Stránkování příspěvků | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",939,45,11,3,False,62,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""}]} | {""@context"": ""https://schema.org"",""@type"": ""ItemList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""url"": ""https://www.advisio.cz/blog/stejny-obsah-na-vsechny-socialni-site-chyba-ktera-stoji-firmy-dosahy-i-zakazniky/"",""name"": ""Stejný obsah na všechny sociální sítě? Chyba, která stojí firmy dosahy i zákazníky""},{""@type"": ""ListItem"",""position"": 2,""url"": ""https://www.advisio.cz/blog/case-study-muze-favi-fungovat-jako-vykonnostni-kanal/"",""name"": ""[",[Advisio] - co se děje v onlinu,https://www.advisio.sk/wp-content/uploads/2020/02/1200-x-630-blog.png
+https://www.advisio.cz/blog/rubrika/webova-analytika/,200,,Rubrika: Webová analytika - Advisio blog,40,,0,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/rubrika/webova-analytika/,cs-CZ,Blog o webové analytice,"7 kroků, jak nasdílet přístup do Firemního profilu na Googlu | [Case Study] Když ceny ve feedu nesedí a Google hrozí stopkou, je čas na vlastní řešení | [Case Study] Je Temu na ústupu? Jak jsme navýšili tržby o více než 50 % u klienta s tradiční cílovkou | [Case Study] Klient offline, my online. Jak jsme díky DataPlus zachránili statisícové tržby | [Case study] Jak DataPlus pomohlo zvýšit tržby u Getmi.cz o téměř 44 % | DataPlus jako nový doplněk v Upgates | Google přehodnocuje svůj přístup ke cookies třetích stran, funkční strategii ale prozatím nemá | Digital Markets Act a konec éry cookies třetích stran | Google Consent Mode V2: Jak mu rozumět a proč byste ho už dávno měli mít? | Jak budovat úspěšný byznys díky zákaznické péči? | Návod na nastavení CrUX Dashboard | Client-side vs. server-side měření: Jaký je rozdíl a co pro vaši reklamu využívat? | Návod na úpravu DNS pro DataPlus | Cookies třetích stran končí: Proč je váš e-shop potřebuje? | Google Looker Studio: Vaše data pod kontrolou | [Case study] Jak DataPlus pomohlo rozjet online kampaně Potten & Pannen – Staněk | Jak exportovat data z Upgates? | Jak exportovat data ze Shoptetu? | Conversion API – Jak se letos změnily možnosti reportování? | Za[měřte] se na Google Analytics 4 | [Google Tag Manager]: Jak založit a nasdílet účet? | Jak ukládat data v BigQuery? | Pozor: Analytics 360 přestanou sbírat data až 1. 7. 2024 | Nastavte si správně opt-in cookies měření | Jak nastavit Conversion Facebook API | O práci datového analytika: „Klient pozná výsledky mé práce ihned, i to mě na ní baví“ | Jak sdílet přístup do Google Analytics | Ve frontě se na webu nestojí II: zrychlujeme načítání | Měříme interní kampaně na webu pomocí Google Analytics | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",1783,79,26,2,False,69,11,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Webová analytika"",""item"": ""https://www.advisio.cz/blog/7-kroku-jak-nasdilet-pristup-do-firemniho-profilu-na-googlu/""}]} | {""@context"": ""https://schema.org"",""@type"": ""ItemList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""url"": ""https://www.advisio.cz/blog/7-kroku-jak-nasdilet-pristup-do-firemniho-profilu-na-googlu/"",""name"": ""7 kroků, jak nasdílet přístup do Firemního profilu na Googlu""},{""@type"": ""ListItem"",""position"": 2,""url"": ""https://www.advisio.cz/blog/case-study-kdyz-ceny-ve-feedu-nesedi-a-google-hrozi-stopkou-je-cas-na-vlastni-reseni/"",""name"": ""[Case Study]",Rubrika: Webová analytika - Advisio blog,
+https://www.advisio.cz/blog/google-consent-mode-v2-jak-mu-rozumet-a-proc-byste-ho-uz-davno-meli-mit/,200,,Google Consent Mode V2: Jak mu rozumět a proč byste ho už dávno měli mít? - Advisio,83,"Používáte Google Ads? Oslovujete zákazníky remarketingem? A nastavili jste si správně consent mode, abyste o tyhle možnosti nepřišli?  ",135,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/google-consent-mode-v2-jak-mu-rozumet-a-proc-byste-ho-uz-davno-meli-mit/,cs-CZ,Google Consent Mode V2: Jak mu rozumět a proč byste ho už dávno měli mít?,"Co je to consent mode? | Rozdíl mezi Google Consent Mode V1 a V2 | Jak funguje Google Consent Mode a jak ho implementovat | Jak zjistit, jestli je Google Consent Mode aktivní? | Google Consent Mode běží, stačí to? | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",991,26,3,1,False,31,16,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Webová analytika"",""item"": ""https://www.advisio.cz/blog/rubrika/webova-analytika/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""Google Consent Mode V2: Jak mu r | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/google-consent-mode-v2-jak-mu-rozumet-a-proc-byste-ho-uz-davno-meli-mit/"",
+    ""headline"": ""Google Consent Mode V2: Jak mu rozumět a proč byste ho už dávno měli mít?"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2024/06/AdobeStock_552970698-1-scaled.jpeg"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2024/06/AdobeStock_552970698-1-scaled.jpeg"",
+    ""datePublish",Google Consent Mode V2: Jak mu rozumět a proč byste ho už dávno měli mít? - Advisio,https://www.advisio.cz/wp-content/uploads/2024/06/gcm.png
+https://www.advisio.cz/blog/client-side-vs-server-side-mereni-jaky-je-rozdil-a-co-pro-vasi-reklamu-vyuzivat/,200,,Client-side vs. server-side měření: Jaký je rozdíl a co pro vaši reklamu využívat? - Advisio,92,"Jde o dva různé přístupy ke způsobu zpracování, ukládání a zabezpečení dat o vašich zákaznících. A co třetí pojem – server-side tagging? Víte, proč jsou pro váš e-shop důležité?",177,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/client-side-vs-server-side-mereni-jaky-je-rozdil-a-co-pro-vasi-reklamu-vyuzivat/,cs-CZ,Client-side vs. server-side měření: Jaký je rozdíl a co pro vaši reklamu využívat?,"Client-side měření | Server-side měření | Server-side tagging | Související články | Cookies třetích stran končí: Proč je váš e-shop potřebuje? | Digital Markets Act a konec éry cookies třetích stran | Google přehodnocuje svůj přístup ke cookies třetích stran, funkční strategii ale prozatím nemá | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",858,31,5,1,False,43,16,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Webová analytika"",""item"": ""https://www.advisio.cz/blog/rubrika/webova-analytika/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""Client-side vs. server-side měře | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/client-side-vs-server-side-mereni-jaky-je-rozdil-a-co-pro-vasi-reklamu-vyuzivat/"",
+    ""headline"": ""Client-side vs. server-side měření: Jaký je rozdíl a co pro vaši reklamu využívat?"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2024/04/data-scaled.jpeg"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2024/04/data-scaled.jpeg"",
+    ""datePublished"": ""2024-04-15"",
+",Client-side vs. server-side měření: Jaký je rozdíl a co pro vaši reklamu využívat? - Advisio,https://www.advisio.cz/wp-content/uploads/2024/04/client-side-vs-serverside-1.png
+https://www.advisio.cz/blog/jak-ukladat-data-v-bigquery/,200,,Jak ukládat data v BigQuery? - Advisio,38,"Používáte data sofistikovaně? Bez BigQuery se neobejdete. Připravili jsme pro vás návod, který vás celým procesem snadno provede.",129,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/jak-ukladat-data-v-bigquery/,cs-CZ,Jak ukládat data v BigQuery?,"1. Vytvořte si účet | 2. Založte projekt | 3. Přidělte práva k editování | 4. Propojte BigQuery s Google Analytics | 5. Nastavte správně platební údaje | Data vždy pod kontrolou | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",921,47,24,1,False,47,17,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Aktuality"",""item"": ""https://www.advisio.cz/blog/rubrika/aktuality/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""Jak ukládat data v BigQuery?"",""item"": ""https:/ | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/jak-ukladat-data-v-bigquery/"",
+    ""headline"": ""Jak ukládat data v BigQuery?"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2022/12/AdobeStock_430395989_Editorial_Use_Only-scaled.jpeg"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2022/12/AdobeStock_430395989_Editorial_Use_Only-scaled.jpeg"",
+    ""datePublished"": ""2022-12-16"",
+    ""dateModified"": ""2022-12-16"",
+  ",Proč mít všechna data pohromadě?,https://www.advisio.cz/wp-content/uploads/2022/12/advisio_honza_clanek.png
+https://www.advisio.cz/blog/jak-nastavit-conversion-api-pres-google-tag-manager/,200,,Jak nastavit Conversion Facebook API - Advisio,46,"Jak optimálně nastavit Conversion API přes Google Tag Manager? Která varianta je pro vás ta pravá, vám prozradí Social Ads Specialist David.",140,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/jak-nastavit-conversion-api-pres-google-tag-manager/,cs-CZ,Jak nastavit Conversion Facebook API,"Conversin API měření [CAPI] | 3 cesty, jak nastavit CAPI měření | Implementace Conversion API | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",1055,28,5,1,False,36,16,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Aktuality"",""item"": ""https://www.advisio.cz/blog/rubrika/aktuality/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""Jak nastavit Conversion Facebook API"",""item"":  | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/jak-nastavit-conversion-api-pres-google-tag-manager/"",
+    ""headline"": ""Jak nastavit Conversion Facebook API"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2022/09/AdobeStock_501659340-scaled.jpeg"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2022/09/AdobeStock_501659340-scaled.jpeg"",
+    ""datePublished"": ""2022-09-29"",
+    ""dateModified"": ""2022-09-29"",
+    ""des",Poraďte si s nastavením Facebook Conversion API,https://www.advisio.cz/wp-content/uploads/2022/09/clanek-david.png
+https://www.advisio.cz/blog/google-looker-studio-vase-data-pod-kontrolou/,200,,Google Looker Studio: Vaše data pod kontrolou - Advisio,55,"Potřebujete efektivní způsob, jak zobrazit a analyzovat vaše data? Google Looker Studio přichází s řešením.",107,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/google-looker-studio-vase-data-pod-kontrolou/,cs-CZ,Google Looker Studio: Vaše data pod kontrolou,"Co přesně je Looker Studio? | Klíčové prvky Looker Studia | Výhody Looker Studia | Překážky v cestě | Závěr: Proč si vybrat Looker Studio | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",308,26,3,1,False,34,15,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Webová analytika"",""item"": ""https://www.advisio.cz/blog/rubrika/webova-analytika/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""Google Looker Studio: Vaše data  | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/google-looker-studio-vase-data-pod-kontrolou/"",
+    ""headline"": ""Google Looker Studio: Vaše data pod kontrolou"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2024/02/IMG_5463-1-scaled-e1707312775295.jpg"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2024/02/IMG_5463-1-scaled-e1707312775295.jpg"",
+    ""datePublished"": ""2024-02-07"",
+    ""dateModified"": ""2024-02-07""",Google Looker Studio: Vaše data pod kontrolou - Advisio,https://www.advisio.cz/wp-content/uploads/2024/02/navod-na-looker-studio.png
+https://www.advisio.cz/blog/marketing-jako-fotbal-jak-atribucni-modely-pomahaji-k-vitezstvi/,200,,Marketing jako fotbal: Jak atribuční modely pomáhají k vítězství - Advisio,74,"Marketing je týmová hra: atribuční modely spravedlivě rozdělují zásluhy a zvyšují výkon. Objevte výhody, optimalizujte rozpočet, uložte si plán vítězné strategie.",162,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/marketing-jako-fotbal-jak-atribucni-modely-pomahaji-k-vitezstvi/,cs-CZ,Marketing jako fotbal: Jak atribuční modely pomáhají k vítězství,"Asistence a góly: Kdo si zaslouží uznání? | Strategie a optimalizace: Jak vyhrát ligu? | Související články | Jaký je rozdíl mezi marží a přirážkou, a proč by to měl vědět i markeťák? | [Case study] Kampaně podle marží? Díky PMax k 50% nárůstu hodnoty konverze | Jak vyladit produktový feed pro Heureku a Zboží | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",718,32,5,1,False,41,14,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Aktuality"",""item"": ""https://www.advisio.cz/blog/rubrika/aktuality/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""Marketing jako fotbal: Jak atribuční modely po | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/marketing-jako-fotbal-jak-atribucni-modely-pomahaji-k-vitezstvi/"",
+    ""headline"": ""Marketing jako fotbal: Jak atribuční modely pomáhají k vítězství"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2025/05/atribuce.png"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2025/05/atribuce.png"",
+    ""datePublished"": ""2025-05-07"",
+    ""dateModified"": ""2025-05-07"",
+    ""des",Marketing jako fotbal: Jak atribuční modely pomáhají k vítězství - Advisio,https://www.advisio.cz/wp-content/uploads/2025/05/fotball.png
+https://www.advisio.cz/blog/jak-dataplus-pomohlo-zvysit-trzby-u-getmi-cz-o-temer-44/,200,,[Case study] Jak DataPlus pomohlo zvýšit tržby u Getmi.cz o téměř 44 % - Advisio,80,"Téměř 44% meziroční nárůst tržeb? Jde to. Díky našemu server-side tagging řešení DataPlus se nám to povedlo u klienta Getmi.cz. Zjistěte, jak jsme to dokázali.",159,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/jak-dataplus-pomohlo-zvysit-trzby-u-getmi-cz-o-temer-44/,cs-CZ,[Case study] Jak DataPlus pomohlo zvýšit tržby u Getmi.cz o téměř 44 %,"Více dat = lepší cílení a vyšší obrat | Jaké jsou výsledky nasazení DataPlus? | Související články | DataPlus jako nový doplněk v Upgates | [Case study] Jak DataPlus pomohlo rozjet online kampaně Potten & Pannen – Staněk | Client-side vs. server-side měření: Jaký je rozdíl a co pro vaši reklamu využívat? | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",696,33,7,1,False,42,15,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Případová studie"",""item"": ""https://www.advisio.cz/blog/rubrika/pripadova-studie/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""[Case study] Jak DataPlus pomohl | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/jak-dataplus-pomohlo-zvysit-trzby-u-getmi-cz-o-temer-44/"",
+    ""headline"": ""[Case study] Jak DataPlus pomohlo zvýšit tržby u Getmi.cz o téměř 44 %"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2024/10/koupelna-s-grafem-e1729669122540.jpg"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2024/10/koupelna-s-grafem-e1729669122540.jpg"",
+    ""datePublished"": ""2024-10-2",[Case study] Jak DataPlus pomohlo zvýšit tržby u Getmi.cz o téměř 44 % - Advisio,https://www.advisio.cz/wp-content/uploads/2024/10/getmi-dataplus-case-study.png
+https://www.advisio.cz/blog/dataplus-jako-novy-doplnek-v-upgates/,200,,DataPlus jako nový doplněk v Upgates - Advisio,46,Jak probíhá aktivace a provoz doplňku DataPlus na Upgates? Podívejte se na náš návod.,85,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/dataplus-jako-novy-doplnek-v-upgates/,cs-CZ,DataPlus jako nový doplněk v Upgates,"Jak probíhá aktivace a provoz doplňku | Související články | Jak exportovat data z Upgates? | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",413,27,3,1,False,39,16,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""Aktuality"",""item"": ""https://www.advisio.cz/blog/rubrika/aktuality/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""DataPlus jako nový doplněk v Upgates"",""item"":  | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/dataplus-jako-novy-doplnek-v-upgates/"",
+    ""headline"": ""DataPlus jako nový doplněk v Upgates"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2024/08/dataplus-v-upgates-e1725355648119.png"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2024/08/dataplus-v-upgates-e1725355648119.png"",
+    ""datePublished"": ""2024-08-16"",
+    ""dateModified"": ""2024-08-16"",
+    ""descript",DataPlus jako nový doplněk v Upgates - Advisio,https://www.advisio.cz/wp-content/uploads/2024/08/dataplus-upgates.png
+https://www.advisio.cz/blog/merime-interni-kampane-na-webu-pomoci-google-analytics/,200,,Měříme interní kampaně na webu pomocí Google Analytics - Blog Advisio,69,"UTM parametry na interních bannerech zkreslují statistiky. Podívejte se, jak je nahradit událostmi a získat přesná data o chování uživatelů.",140,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/merime-interni-kampane-na-webu-pomoci-google-analytics/,cs-CZ,Měříme interní kampaně na webu pomocí Google Analytics,"Jak to dělat správně? | Kde události v Google Analytics najdete? | Je Google Ads a Sklik vaším druhým domovem? | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",494,25,1,1,False,35,15,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""PPC"",""item"": ""https://www.advisio.cz/blog/rubrika/ppc/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""Měříme interní kampaně na webu pomocí Google Analytics"",""i | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/merime-interni-kampane-na-webu-pomoci-google-analytics/"",
+    ""headline"": ""Měříme interní kampaně na webu pomocí Google Analytics"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2020/02/udalosti-1.png"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2020/02/udalosti-1.png"",
+    ""datePublished"": ""2013-10-01"",
+    ""dateModified"": ""2013-10-01"",
+    ""description"": ""Obs",Měříme interní kampaně na webu pomocí Google Analytics - Blog Advisio,https://www.advisio.cz/wp-content/uploads/2020/02/udalosti-1.png
+https://www.advisio.cz/blog/case-study-muze-favi-fungovat-jako-vykonnostni-kanal/,200,,Případová studie: Může Favi fungovat jako výkonnostní kanál?l | Advisio.cz,74,"Favi není jen akviziční nástroj. Přečtěte si případovou studii o tom, jak díky němu dosahujeme 4× nižší CPC než na Google Ads a generujeme stovky konverzí.",155,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://www.advisio.cz/blog/case-study-muze-favi-fungovat-jako-vykonnostni-kanal/,cs-CZ,[Case Study] Může Favi fungovat jako výkonnostní kanál?,"Umí Favi prodávat, nebo jen buduje povědomí? | Výsledek: 4× levnější prokliky a stovky konverzí | Aktivní řízení výkonu díky interní aplikaci Advisio | Proč je to důležité | Co si z této případovky odnášíme? | Chci probrat možnosti spolupráce | Je Google Ads a Sklik vaším druhým domovem? | Související články | Jak správně stanovit PNO a co vám napoví o úspěšnosti kampaní? | Pouze 20 % produktů tvoří 80 % vašich tržeb. Víte, které to jsou? | Proč dobré PPC výsledky ještě neznamenají zisk | Společně [1] dokážeme velké věci | Naši odbornost dokládají výsledky. Ale i spolupráce, které jsme navázali. | Digitální trendy sledujeme ve dne v noci. [1]",883,30,4,2,False,34,14,"
+{
+  ""@context"": ""http://schema.org"",
+  ""@type"": ""WebSite"",
+  ""@id"": ""#website"",
+  ""name"": ""Advisio"",
+  ""description"": """",
+  ""url"": ""https://www.advisio.cz"",
+  ""publisher"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio marketing s.r.o."",
+    ""email"": ""info@advisio.cz""
+  },
+  ""author"": {
+    ""@type"": ""Organization"",
+    ""name"": ""Advisio"",
+    ""legalName"": ""Advisio marketing s.r.o."",
+    ""logo"": ""https://www.advisio.cz/wp-content/themes/advisio/img/advisio-logo.png"",
+    ""url"": ""https://www. | {""@context"":""http:\/\/schema.org"",""@type"":""SiteNavigationElement"",""isPartOf"":{""@id"":""#website""},""url"":[[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/www.advisio.cz\/ppc\/""],[""https:\/\/www.advisio.cz\/datova-analytika\/""],[""https:\/\/www.advisio.cz\/seo\/""],[""https:\/\/www.advisio.cz\/e-mail-marketing\/""],[""https:\/\/www.advisio.cz\/co-nabizime\/""],[""https:\/\/dataplus.advisio.cz\/?utm_source=web&utm_medium=link&utm_campaign=dataplus""],[""http | {""@context"": ""https://schema.org"",""@type"": ""BreadcrumbList"",""mainEntityOfPage"": { ""@id"": ""#website"" },""itemListElement"": [{""@type"": ""ListItem"",""position"": 1,""name"": ""Úvod"",""item"": ""https://www.advisio.cz/""},{""@type"": ""ListItem"",""position"": 2,""name"": ""Blog"",""item"": ""https://www.advisio.cz/blog/""},{""@type"": ""ListItem"",""position"": 3,""name"": ""PPC"",""item"": ""https://www.advisio.cz/blog/rubrika/ppc/""},{""@type"": ""ListItem"",""position"": 4,""name"": ""[Case Study] Může Favi fungovat jako výkonnostní kanál?"","" | 
+  {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Article"",
+    ""url"": ""https://www.advisio.cz/blog/case-study-muze-favi-fungovat-jako-vykonnostni-kanal/"",
+    ""headline"": ""[Case Study] Může Favi fungovat jako výkonnostní kanál?"",
+    ""image"": ""https://www.advisio.cz/wp-content/uploads/2026/09/1130x490_Advisio_Blog-favi.jpg"",
+    ""thumbnailUrl"": ""https://www.advisio.cz/wp-content/uploads/2026/09/1130x490_Advisio_Blog-favi.jpg"",
+    ""datePublished"": ""2026-09-24"",
+    ""dateModified"": ""2026-",Případová studie: Může Favi fungovat jako výkonnostní kanál?l | Advisio.cz,https://www.advisio.cz/wp-content/uploads/2026/09/1200x628_Advisio_Blog-nahled_-2.jpg

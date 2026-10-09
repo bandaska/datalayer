@@ -1,0 +1,90 @@
+[
+ {
+  "url": "https://trkkn.cz/",
+  "status": 200,
+  "location": "",
+  "title": "TRKKN Czech s.r.o. – Analytics, Marketing, Cloud & AI Technology",
+  "title_len": 64,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "noindex, nofollow",
+  "canonical": "https://trkkn.cz/",
+  "og_title": "",
+  "og_image": "",
+  "lang": "en-US",
+  "h1": [],
+  "h2": [
+   "#DataOrItDidntHappen",
+   "© 2025 TRKKN Czech s.ro."
+  ],
+  "h3": [
+   "TRKKN Czech",
+   "Google Marketing Platform",
+   "Google Cloud implementace",
+   "Globální know-how s lokální znalostí trhu",
+   "Znalosti sdílíme napříč trhy",
+   "Děláme řešení na míru",
+   "Digitální analytika",
+   "Optimalizace konverzí",
+   "Reklamní nástroje",
+   "Pokročilá analytika a AI",
+   "Tech & Data strategie",
+   "Display & Video 360",
+   "Search Ads 360",
+   "Campaign Manager 360",
+   "Google Analytics 360",
+   "Google Tag Manager (GTM)",
+   "Google Cloud",
+   "TRKKN Czech"
+  ],
+  "jsonld": [],
+  "img_count": 29,
+  "img_no_alt": 26,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js-eu1.hsforms.net",
+   "trkkn.cz"
+  ],
+  "int_links_out": 2,
+  "ext_links_out": 10,
+  "words": 842
+ },
+ {
+  "url": "https://trkkn.cz/zasady-ochrany-osobnich-udaju/",
+  "status": 200,
+  "location": "",
+  "title": "Zásady ochrany osobních údajů – TRKKN Czech s.r.o.",
+  "title_len": 50,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "noindex, nofollow",
+  "canonical": "https://trkkn.cz/zasady-ochrany-osobnich-udaju/",
+  "og_title": "",
+  "og_image": "",
+  "lang": "en-US",
+  "h1": [],
+  "h2": [
+   "1. Správce osobních údajů",
+   "2. Jaké údaje zpracováváme a proč?",
+   "3. Doba uchovávání údajů",
+   "4. Kdo má k údajům přístup? (Příjemci)",
+   "5. Vaše práva",
+   "6. Soubory Cookies",
+   "#DataOrItDidntHappen",
+   "© 2025 TRKKN Czech s.ro."
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 2,
+  "img_no_alt": 2,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "trkkn.cz"
+  ],
+  "int_links_out": 4,
+  "ext_links_out": 2,
+  "words": 351
+ }
+]

@@ -1,0 +1,1853 @@
+[
+ {
+  "url": "https://www.visibility.cz/",
+  "status": 200,
+  "location": "",
+  "title": "Marketingová agentura - Visibility",
+  "title_len": 34,
+  "meta_desc": "Marketingová agentura zaměřená na strategii, média a data. Zvyšte výkon kampaní a dosáhněte svých byznysových cílů.",
+  "meta_desc_len": 115,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/",
+  "og_title": "Marketingová agentura - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Inovujeme online marketing"
+  ],
+  "h2": [
+   "Visibility media",
+   "Služby",
+   "Naše unikátní projekty",
+   "Inovujeme společně",
+   "My jsme Visibility",
+   "Marketingový blog",
+   "Historie společnosti"
+  ],
+  "h3": [
+   "Marketingová strategie",
+   "Plánování a nákup médií",
+   "Programatická reklama a data",
+   "Datová analytika",
+   "Budoucnost analytiky",
+   "GDPR Privacy",
+   "#Visičtvrtek: Konec perfektních reklam. Nastupuje UGC, kterému lidé věří"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/\",\"name\":\"Marketingová agentura - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2020-03-10T13:43:54+00:00\",\"dateModified\":\"2026-04-10T06:16:39+00:00\",\"description\":\"Marketingová agentura zaměřená na strategii, média a data. Zvyšte výkon kampaní a dosáhněte svých byznysových cílů.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.vis"
+  ],
+  "img_count": 43,
+  "img_no_alt": 12,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 22,
+  "ext_links_out": 8,
+  "words": 838
+ },
+ {
+  "url": "https://www.visibility.cz/sluzby/",
+  "status": 200,
+  "location": "",
+  "title": "Služby - Visibility",
+  "title_len": 19,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/sluzby/",
+  "og_title": "Služby - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Služby"
+  ],
+  "h2": [],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/sluzby\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/sluzby\\/\",\"name\":\"Služby - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-03T10:11:50+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/sluzby\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.visibility.cz\\/sluzby\\/\"]}]},{\"@type\":\"BreadcrumbList\",\""
+  ],
+  "img_count": 11,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 148,
+  "ext_links_out": 5,
+  "words": 387
+ },
+ {
+  "url": "https://www.visibility.cz/webova-analytika/",
+  "status": 200,
+  "location": "",
+  "title": "Data & Analytika - Visibility",
+  "title_len": 29,
+  "meta_desc": "Získejte přesná data a jasný přehled o výkonu webu. Webová analytika od Visibility vám pomůže dělat lepší rozhodnutí.",
+  "meta_desc_len": 117,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/webova-analytika/",
+  "og_title": "Data & Analytika - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Webová analytika"
+  ],
+  "h2": [
+   "Vyberte si z našich služeb",
+   "Co vám spolupráce s námi přinese?",
+   "S čím vám pomůžeme",
+   "My jsme webová analytika",
+   "Blog",
+   "Poptat webovou analytiku"
+  ],
+  "h3": [
+   "Přesná a důvěryhoná data",
+   "Přehled o výkonu webu",
+   "Vyšší návratnost investic",
+   "Data pro budoucnost",
+   "Klienti, kteří do toho šli s námi",
+   "Nastavení Google Analytics 4",
+   "Audit datové kvality",
+   "Google Tag Manager",
+   "Měření konverzí a marketingových událostí",
+   "Dashboardy a reporting",
+   "Server-side měření",
+   "Budoucnost analytiky",
+   "GDPR Privacy",
+   "Realita client side vs server side měření"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/webova-analytika\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/webova-analytika\\/\",\"name\":\"Data & Analytika - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-15T12:53:40+00:00\",\"dateModified\":\"2026-04-20T13:33:39+00:00\",\"description\":\"Získejte přesná data a jasný přehled o výkonu webu. Webová analytika od Visibility vám pomůže dělat lepší rozhodnutí.\",\"brea"
+  ],
+  "img_count": 37,
+  "img_no_alt": 8,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 26,
+  "ext_links_out": 7,
+  "words": 946
+ },
+ {
+  "url": "https://www.visibility.cz/webova-analytika-konzultace/",
+  "status": 200,
+  "location": "",
+  "title": "Webová analytika - Konzultace - Visibility",
+  "title_len": 42,
+  "meta_desc": "Mějte jasno v datech. Pomůžeme vám pochopit výkon webu i kampaní a navrhneme konkrétní další kroky.",
+  "meta_desc_len": 99,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/webova-analytika-konzultace/",
+  "og_title": "Webová analytika - Konzultace - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Konzultace webové analytiky"
+  ],
+  "h2": [
+   "Vyznat se v datech je klíč k růstu​",
+   "Nejčastější problémy, které řešíme",
+   "Co je součástí  konzultace webové analytiky?",
+   "Jak probíhá spolupráce krok za krokem",
+   "My jsme Visibility",
+   "Poptat konzultaci webové analytiky"
+  ],
+  "h3": [
+   "Data mají hodnotu jen tehdy, když s nimi někdo pracuje",
+   "Pravidelný dohled nad výkony kampaní",
+   "Rozhodování založené na datech, ne na dojmech",
+   "Pravidelná analýza výkonu webu a kampaní",
+   "Měsíční konzultace a doporučení",
+   "Přehledné dashboardy v Looker Studiu",
+   "Jaké nástroje používáme",
+   "1. Úvodní kontrola & přístupy",
+   "2. Nastavení datových výstupů",
+   "3. Pravidelné analýzy a interpretace",
+   "4. Dlouhodobá datová podpora"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-konzultace\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-konzultace\\/\",\"name\":\"Webová analytika - Konzultace - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2026-02-12T21:59:11+00:00\",\"dateModified\":\"2026-04-16T07:34:31+00:00\",\"description\":\"Mějte jasno v datech. Pomůžeme vám pochopit výkon webu i kampaní a navrhneme konkrétní da"
+  ],
+  "img_count": 30,
+  "img_no_alt": 12,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 7,
+  "words": 746
+ },
+ {
+  "url": "https://www.visibility.cz/webova-analytika-nastaveni-google-tag-manager/",
+  "status": 200,
+  "location": "",
+  "title": "Webová analytika - Nastavení Google Tag Manager - Visibility",
+  "title_len": 60,
+  "meta_desc": "Nastavení Google Tag Manager pro přesné a přehledné měření. Získejte kontrolu nad kódy i daty.",
+  "meta_desc_len": 94,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/webova-analytika-nastaveni-google-tag-manager/",
+  "og_title": "Webová analytika - Nastavení Google Tag Manager - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Nastavení Google Tag Manager"
+  ],
+  "h2": [
+   "Taggování je potřeba mít správně",
+   "Nejčastější problémy, které řešíme",
+   "Co je součástí Smart Taggingu?",
+   "Jak probíhá spolupráce krok za krokem",
+   "My jsme Visibility",
+   "Poptat nastavení GTM"
+  ],
+  "h3": [
+   "Odhalení chyb a nedostatků",
+   "Podpora výkonu kampaní",
+   "Připravenost na budoucnost",
+   "Analýza současného stavu měření",
+   "Návrh měření a událostí",
+   "Implementace a testování",
+   "Jaké nástroje používáme",
+   "1. Úvodní kontrola & přístupy",
+   "2. Audit a návrh měření",
+   "3. Implementace GA4 a GTM",
+   "4. Testování",
+   "5. Předání + doporučení"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-nastaveni-google-tag-manager\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-nastaveni-google-tag-manager\\/\",\"name\":\"Webová analytika - Nastavení Google Tag Manager - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2026-02-12T23:05:57+00:00\",\"dateModified\":\"2026-04-16T07:22:23+00:00\",\"description\":\"Nastavení Google Tag Manager pro př"
+  ],
+  "img_count": 30,
+  "img_no_alt": 12,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 7,
+  "words": 738
+ },
+ {
+  "url": "https://www.visibility.cz/webova-analytika-nastaveni-mereni-konverzi/",
+  "status": 200,
+  "location": "",
+  "title": "Webová analytika - Nastavení měření konverzí - Visibility",
+  "title_len": 57,
+  "meta_desc": "Nastavení měření konverzí pro přesná data o výkonu. Získejte jasný přehled o tom, co skutečně přináší výsledky.",
+  "meta_desc_len": 111,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/webova-analytika-nastaveni-mereni-konverzi/",
+  "og_title": "Webová analytika - Nastavení měření konverzí - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Nastavení měření konverzí a výkonu"
+  ],
+  "h2": [
+   "Bez správných konverzí výkon nevyhodnotíte",
+   "Nejčastější problémy, které řešíme",
+   "Co je součástí  nastavení GA4?",
+   "Jak probíhá spolupráce krok za krokem",
+   "My jsme Visibility",
+   "Poptat nastavení konverzí a výkonu"
+  ],
+  "h3": [
+   "Konverze musí odpovídat tomu, co je skutečně důležité",
+   "Přesná konverzní data vedou ke správným rozhodnutím",
+   "Optimalizace marketingu podle kvalitních signálů",
+   "Analýza současného stavu měření",
+   "Návrh měření a událostí",
+   "Implementace a testování",
+   "Jaké nástroje používáme",
+   "1. Úvodní kontrola & přístupy",
+   "2. Audit a návrh měření konverzí",
+   "3. Implementace Conversion Boost",
+   "4. Testování",
+   "5. Předání + doporučení"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-nastaveni-mereni-konverzi\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-nastaveni-mereni-konverzi\\/\",\"name\":\"Webová analytika - Nastavení měření konverzí - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2026-02-12T23:40:38+00:00\",\"dateModified\":\"2026-04-16T07:21:16+00:00\",\"description\":\"Nastavení měření konverzí pro přesná data o "
+  ],
+  "img_count": 30,
+  "img_no_alt": 12,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 7,
+  "words": 779
+ },
+ {
+  "url": "https://www.visibility.cz/webova-analytika-nastaveni-google-analytics-4/",
+  "status": 200,
+  "location": "",
+  "title": "Webová analytika - Nastavení Google Analytics 4 - Visibility",
+  "title_len": 60,
+  "meta_desc": "Nastavení Google Analytics 4 bez chyb a zkreslení. Získejte přesná data o návštěvnosti i výkonu kampaní.",
+  "meta_desc_len": 104,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/webova-analytika-nastaveni-google-analytics-4/",
+  "og_title": "Webová analytika - Nastavení Google Analytics 4 - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Nastavení Google Analytics4"
+  ],
+  "h2": [
+   "Proč je nastavení GA4 důležité?",
+   "Nejčastější problémy, které řešíme",
+   "Co je součástí  nastavení GA4?",
+   "Jak probíhá spolupráce krok za krokem",
+   "My jsme Visibility",
+   "Poptat nastavení GA4"
+  ],
+  "h3": [
+   "Odhalení chyb a nedostatků",
+   "Podpora výkonu kampaní",
+   "Připravenost na budoucnost",
+   "Analýza současného stavu měření",
+   "Měsíční konzultace a doporučení",
+   "Přehledné dashboardy v Looker Studiu",
+   "Jaké nástroje používáme",
+   "1. Úvodní kontrola & přístupy",
+   "2. Audit a návrh měření",
+   "3. Implementace GA4 a GTM",
+   "4. Testování",
+   "5. Předání + doporučení"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-nastaveni-google-analytics-4\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-nastaveni-google-analytics-4\\/\",\"name\":\"Webová analytika - Nastavení Google Analytics 4 - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2026-02-12T22:36:31+00:00\",\"dateModified\":\"2026-04-16T07:20:45+00:00\",\"description\":\"Nastavení Google Analytics 4 bez ch"
+  ],
+  "img_count": 30,
+  "img_no_alt": 12,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 7,
+  "words": 676
+ },
+ {
+  "url": "https://www.visibility.cz/webova-analytika-audit-google-analytics/",
+  "status": 200,
+  "location": "",
+  "title": "Webová analytika - Audit Google Analytics - Visibility",
+  "title_len": 54,
+  "meta_desc": "Máte jistotu ve svých datech? Audit GA4 a GTM odhalí chyby a nastaví měření pro správná rozhodnutí.",
+  "meta_desc_len": 99,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/webova-analytika-audit-google-analytics/",
+  "og_title": "Webová analytika - Audit Google Analytics - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Analytics Health Check  audit GA4 a GTM"
+  ],
+  "h2": [
+   "Proč je audit analytiky nezbytný?",
+   "Nejčastější problémy, které řešíme",
+   "Co je součástí auditu?",
+   "Jak probíhá spolupráce krok za krokem",
+   "My jsme Visibility",
+   "Poptat webovou analytiku"
+  ],
+  "h3": [
+   "Data musí být spolehlivá a konzistentní",
+   "Měření časem  potřebuje údržbu",
+   "Technologické změny vyžadují kontrolu",
+   "Technický audit",
+   "Analytický audit",
+   "Přehledný report",
+   "Jaké nástroje používáme",
+   "1. Úvodní kontrola & přístupy",
+   "2. Detailní analýza",
+   "3. Příprava reportu",
+   "4. Konzultace"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-audit-google-analytics\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/webova-analytika-audit-google-analytics\\/\",\"name\":\"Webová analytika - Audit Google Analytics - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2026-02-12T20:54:58+00:00\",\"dateModified\":\"2026-04-16T07:20:36+00:00\",\"description\":\"Máte jistotu ve svých datech? Audit GA4 a GTM odhalí "
+  ],
+  "img_count": 30,
+  "img_no_alt": 12,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 7,
+  "words": 784
+ },
+ {
+  "url": "https://www.visibility.cz/ppc-reklama/",
+  "status": 200,
+  "location": "",
+  "title": "PPC kampaně/Paid Search - Visibility",
+  "title_len": 36,
+  "meta_desc": "PPC reklama, která přináší výsledky. Navrhneme strategii, mediální mix i rozpočty pro maximální výkon kampaní.",
+  "meta_desc_len": 110,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/ppc-reklama/",
+  "og_title": "PPC kampaně/Paid Search - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "PPC reklama"
+  ],
+  "h2": [
+   "Proč od nás chtít PPC reklamu",
+   "Co získáte s našimi PPC kampaněmi",
+   "Vsaďte na certifikovanou agenturu",
+   "Nástroje a technologie",
+   "Naše unikátní projekty",
+   "My jsme PPC tým",
+   "Marketingový blog",
+   "Poptat PPC kampaně"
+  ],
+  "h3": [
+   "Strategie pro média",
+   "Plánování a nákup medií",
+   "Programatika a data",
+   "Analytika a reporting",
+   "Naši spokojení klienti",
+   "Vaše PPC kampaně běží. Ale fungují správně?",
+   "Šimon z Footshopu: Kreativita není darem. Je dovedností a dá se naučit!",
+   "#VISIcast s Jardou Krupkou: Ověřování zdrojů je efektivnější než AI"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/ppc-reklama\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/ppc-reklama\\/\",\"name\":\"PPC kampaně\\/Paid Search - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-15T12:50:33+00:00\",\"dateModified\":\"2026-04-20T13:47:11+00:00\",\"description\":\"PPC reklama, která přináší výsledky. Navrhneme strategii, mediální mix i rozpočty pro maximální výkon kampaní.\",\"breadcrumb\":{"
+  ],
+  "img_count": 46,
+  "img_no_alt": 17,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 21,
+  "ext_links_out": 6,
+  "words": 843
+ },
+ {
+  "url": "https://www.visibility.cz/seo/",
+  "status": 200,
+  "location": "",
+  "title": "SEO - optimalizace, marketing, správa webu - Visibility",
+  "title_len": 55,
+  "meta_desc": "SEO a AIO služby pro růst organické návštěvnosti. Dosáhněte lepších pozic a dlouhodobého úspěchu.",
+  "meta_desc_len": 97,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/seo/",
+  "og_title": "SEO - optimalizace, marketing, správa webu - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "SEO & AIO"
+  ],
+  "h2": [
+   "Vyberte si z našich služeb",
+   "Co vám spolupráce s námi přinese?",
+   "S čím vám pomůžeme",
+   "My jsme SEO",
+   "Marketingový blog",
+   "Poptat SEO"
+  ],
+  "h3": [
+   "Vysoká dohledatelnost",
+   "Vyšší organická návštěvnost",
+   "Více prodejů a konverzí",
+   "Naši spokojení klienti",
+   "SEO správa",
+   "SEO audit",
+   "Analýza klíčových slov",
+   "Linkbuilding",
+   "Content gap analýza",
+   "UX audit",
+   "Naučte se využívat sezónních faktorů i pro SEO",
+   "10 tipů na lokální SEO s využitím AI umělé inteligence",
+   "Největší změny v SEO v roce 2023"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/seo\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/seo\\/\",\"name\":\"SEO - optimalizace, marketing, správa webu - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-07T07:44:03+00:00\",\"dateModified\":\"2026-04-20T13:49:38+00:00\",\"description\":\"SEO a AIO služby pro růst organické návštěvnosti. Dosáhněte lepších pozic a dlouhodobého úspěchu.\",\"breadcrumb\":{\"@id\":\"http"
+  ],
+  "img_count": 34,
+  "img_no_alt": 7,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 28,
+  "ext_links_out": 6,
+  "words": 958
+ },
+ {
+  "url": "https://www.visibility.cz/seo-audit/",
+  "status": 200,
+  "location": "",
+  "title": "SEO audit - Visibility",
+  "title_len": 22,
+  "meta_desc": "SEO audit odhalí slabá místa i příležitosti vašeho webu. Zlepšete viditelnost a výkon v organickém vyhledávání.",
+  "meta_desc_len": 111,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/seo-audit/",
+  "og_title": "SEO audit - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "SEO audit"
+  ],
+  "h2": [
+   "Proč je SEO audit důležitý?",
+   "Co kontrolujeme při auditu",
+   "S čím vám pomůžeme",
+   "Jaký bude výstup auditu?",
+   "My jsme SEO",
+   "Poptat SEO audit"
+  ],
+  "h3": [
+   "Odhalení chyb a nedostatků",
+   "Konkurenční výhoda",
+   "Strategická doporučení",
+   "Technické SEO",
+   "On-page faktory",
+   "Off-page faktory",
+   "Obsahová část",
+   "Technická část",
+   "Obsahová část",
+   "Analýza odkazového profilu",
+   "Jaké nástroje používáme"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/seo-audit\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/seo-audit\\/\",\"name\":\"SEO audit - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-07T07:48:23+00:00\",\"dateModified\":\"2026-04-13T06:35:48+00:00\",\"description\":\"SEO audit odhalí slabá místa i příležitosti vašeho webu. Zlepšete viditelnost a výkon v organickém vyhledávání.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/w"
+  ],
+  "img_count": 28,
+  "img_no_alt": 8,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 8,
+  "words": 1090
+ },
+ {
+  "url": "https://www.visibility.cz/seo-sprava/",
+  "status": 200,
+  "location": "",
+  "title": "SEO správa - Visibility",
+  "title_len": 23,
+  "meta_desc": "Zvyšte návštěvnost i zákazníky díky SEO. Postaráme se o dlouhodobou optimalizaci a růst vašeho webu.",
+  "meta_desc_len": 100,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/seo-sprava/",
+  "og_title": "SEO správa - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "SEO správa"
+  ],
+  "h2": [
+   "Co od služby očekávat?",
+   "Výhody spolupráce s námi",
+   "My jsme SEO",
+   "Poptat SEO správu"
+  ],
+  "h3": [
+   "Kontinuální růst organické návštěvnosti",
+   "Odborný SEO tým",
+   "Více než 10 let zkušeností v oboru",
+   "Zlepšení konverzních cílů",
+   "Dlouhodobé měřitelné výsledky",
+   "Inovace a trendy",
+   "Naši spokojení klienti"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/seo-sprava\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/seo-sprava\\/\",\"name\":\"SEO správa - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-07T07:48:35+00:00\",\"dateModified\":\"2026-04-13T06:37:14+00:00\",\"description\":\"Zvyšte návštěvnost i zákazníky díky SEO. Postaráme se o dlouhodobou optimalizaci a růst vašeho webu.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visib"
+  ],
+  "img_count": 41,
+  "img_no_alt": 13,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 8,
+  "words": 633
+ },
+ {
+  "url": "https://www.visibility.cz/reklama-na-socialnich-sitich/",
+  "status": 200,
+  "location": "",
+  "title": "Paid Social - Visibility",
+  "title_len": 24,
+  "meta_desc": "Reklama na sociálních sítích, která proměňuje pozornost ve výkon. Navrhujeme kampaně, které podporují růst i prodeje.",
+  "meta_desc_len": 117,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/reklama-na-socialnich-sitich/",
+  "og_title": "Paid Social - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Reklama na sociálních sítích"
+  ],
+  "h2": [
+   "Proč chtít reklamu na sociálních sítích od nás",
+   "Co získáte s reklamou na sociálních sítích",
+   "Jak pracujeme s reklamou na sociálních sítích",
+   "Často kladené otázky",
+   "My jsme Paid social",
+   "Marketingový blog",
+   "Poptat reklamu na sociálních sítích"
+  ],
+  "h3": [
+   "Rozumíme algoritmům",
+   "Stavíme kampaně na datech",
+   "Propojujeme výkon a značku",
+   "Reagujeme v reálném čase",
+   "1. Stanovení cílů, kontextu a role kampaně",
+   "2. Návrh struktury kampaní a rozdělení rozpočtu",
+   "3. Kreativní koncept a systematické testování",
+   "4. Průběžná optimalizace a práce s daty",
+   "5. Vyhodnocení výkonu a další rozvoj",
+   "Co je Paid social?",
+   "Má smysl investovat do reklamy na sociálních sítí, když máme organický obsah?",
+   "Jak rychle uvidíme výsledky?",
+   "Jak dlouho by měla spolupráce trvat?",
+   "Naši spokojení klienti",
+   "Vaše PPC kampaně běží. Ale fungují správně?",
+   "Šimon z Footshopu: Kreativita není darem. Je dovedností a dá se naučit!",
+   "#VISIcast s Jardou Krupkou: Ověřování zdrojů je efektivnější než AI"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/reklama-na-socialnich-sitich\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/reklama-na-socialnich-sitich\\/\",\"name\":\"Paid Social - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-05T13:26:16+00:00\",\"dateModified\":\"2026-04-20T13:45:09+00:00\",\"description\":\"Reklama na sociálních sítích, která proměňuje pozornost ve výkon. Navrhujeme kampaně, které podporují růs"
+  ],
+  "img_count": 37,
+  "img_no_alt": 8,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 21,
+  "ext_links_out": 6,
+  "words": 897
+ },
+ {
+  "url": "https://www.visibility.cz/online-video-reklama/",
+  "status": 200,
+  "location": "",
+  "title": "Online Video - Visibility",
+  "title_len": 25,
+  "meta_desc": "Online video reklama, která zaujme a funguje. Navrhujeme kampaně, které pracují s pozorností a podporují výkon.",
+  "meta_desc_len": 111,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/online-video-reklama/",
+  "og_title": "Online Video - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Online video reklama"
+  ],
+  "h2": [
+   "Proč chtít online video reklamu od nás",
+   "Co získáte s online video reklamou",
+   "Jak pracujeme s online video reklamou",
+   "Často kladené otázky",
+   "My jsme Online video",
+   "Marketingový blog",
+   "Poptat Online video reklamu"
+  ],
+  "h3": [
+   "Pracujeme s pozorností",
+   "Mediální plán a realizace",
+   "Audit a optimalizace",
+   "Sledujeme dopad",
+   "1. Stanovení role videa v marketingu",
+   "2. Výběr platforem a formátů",
+   "3. Úprava sdělení a struktury videa",
+   "4. Nastavení kampaně a řízení zásahu",
+   "5. Vyhodnocení dopadu",
+   "Jaký je rozdíl mezi online video reklamou a televizní kampaní?",
+   "Co když už máme video spot z jiného kanálu?",
+   "Můžeme video využít i pro remarketing?",
+   "Jak poznáme, že je online video reklama pro nás vhodná?",
+   "Naši spokojení klienti",
+   "Vaše PPC kampaně běží. Ale fungují správně?",
+   "Šimon z Footshopu: Kreativita není darem. Je dovedností a dá se naučit!",
+   "#VISIcast s Jardou Krupkou: Ověřování zdrojů je efektivnější než AI"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/online-video-reklama\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/online-video-reklama\\/\",\"name\":\"Online Video - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-15T12:50:18+00:00\",\"dateModified\":\"2026-04-20T13:44:06+00:00\",\"description\":\"Online video reklama, která zaujme a funguje. Navrhujeme kampaně, které pracují s pozorností a podporují výkon.\",\"breadc"
+  ],
+  "img_count": 37,
+  "img_no_alt": 8,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 21,
+  "ext_links_out": 6,
+  "words": 888
+ },
+ {
+  "url": "https://www.visibility.cz/programaticka-reklama-display-reklama/",
+  "status": 200,
+  "location": "",
+  "title": "Programmatic + Display - Visibility",
+  "title_len": 35,
+  "meta_desc": "Získejte maximální výkon z display kampaní. Programatický nákup médií s přesným zásahem a kontrolou rozpočtu.",
+  "meta_desc_len": 109,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/programaticka-reklama-display-reklama/",
+  "og_title": "Programmatic + Display - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Programatická reklama (RTB) a display kampaně"
+  ],
+  "h2": [
+   "Proč chtít programatickou reklamu od nás",
+   "Co získáte s programatickou strategií",
+   "Vsaďte na certifikovanou agenturu",
+   "Často kladené otázky",
+   "Naše unikátní projekty",
+   "My jsme Programmatic & Display",
+   "Poptat RTB a programatickou reklamu"
+  ],
+  "h3": [
+   "Řídíme frekvenci napříč kanály",
+   "Pracujeme s prémiovými plochami",
+   "Využíváme pokročilé mediální technologie",
+   "Propojujeme brand a výkon",
+   "Co je programatická reklama?",
+   "Jaký je rozdíl mezi programmatic a běžnými PPC kampaněmi?",
+   "Je programatická reklama vhodná i pro menší rozpočty?",
+   "Zajišťujete i tvorbu kreativ?",
+   "Naši spokojení klienti"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/programaticka-reklama-display-reklama\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/programaticka-reklama-display-reklama\\/\",\"name\":\"Programmatic + Display - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-15T12:50:25+00:00\",\"dateModified\":\"2026-04-13T06:32:30+00:00\",\"description\":\"Získejte maximální výkon z display kampaní. Programatický nákup médií s přes"
+  ],
+  "img_count": 40,
+  "img_no_alt": 14,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 18,
+  "ext_links_out": 6,
+  "words": 864
+ },
+ {
+  "url": "https://www.visibility.cz/marketingova-strategie/",
+  "status": 200,
+  "location": "",
+  "title": "Marketing Strategy - Visibility",
+  "title_len": 31,
+  "meta_desc": "Marketingová strategie, která dává smysl. Propojíme komunikaci, média i obsah do jednoho rámce pro růst vaší značky.",
+  "meta_desc_len": 116,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/marketingova-strategie/",
+  "og_title": "Marketing Strategy - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Marketingová strategie"
+  ],
+  "h2": [
+   "Co je součástí strategie?",
+   "Nejčastější problémy, které řešíme",
+   "Jak probíhá spolupráce krok za krokem",
+   "Často kladené otázky",
+   "My jsme Strategie",
+   "Poptat marketingovou strategii",
+   "Marketingový blog"
+  ],
+  "h3": [
+   "Analýza reality značky a trhu",
+   "Nastavení směru a role marketingu",
+   "Konkrétní plán a implementace",
+   "1. Zadání",
+   "2. Objednávka a NDA",
+   "3. Strategický audit",
+   "4. Návrh strategie",
+   "5. Představení strategie a implementace",
+   "Jak musí být firma velká, aby strategie dávala smysl?",
+   "Jak dlouho trvá tvorba strategie?",
+   "Musíme mít už hotovou značku a vizuální identitu?",
+   "Co když už máme jinou agenturu na kampaně?",
+   "Naši spokojení klienti",
+   "Budoucnost analytiky",
+   "GDPR Privacy",
+   "#Visičtvrtek: Konec perfektních reklam. Nastupuje UGC, kterému lidé věří"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/marketingova-strategie\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/marketingova-strategie\\/\",\"name\":\"Marketing Strategy - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-15T12:53:25+00:00\",\"dateModified\":\"2026-04-10T06:25:09+00:00\",\"description\":\"Marketingová strategie, která dává smysl. Propojíme komunikaci, média i obsah do jednoho rámce pro růst vaší z"
+  ],
+  "img_count": 36,
+  "img_no_alt": 9,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 21,
+  "ext_links_out": 6,
+  "words": 833
+ },
+ {
+  "url": "https://www.visibility.cz/marketingove-konzultace/",
+  "status": 200,
+  "location": "",
+  "title": "Marketingové konzultace - Visibility",
+  "title_len": 36,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/marketingove-konzultace/",
+  "og_title": "Marketingové konzultace - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Marketingové konzultace"
+  ],
+  "h2": [
+   "Dostaneme vás k cíli a splněným KPIs co nejrychleji",
+   "Přinášíme chytrá řešení a inovativní přístup",
+   "Jak pracujeme?",
+   "My jsme Consulting",
+   "Poptat marketingové konzultace"
+  ],
+  "h3": [
+   "Strategie",
+   "Inovace",
+   "Testing",
+   "Go to market",
+   "Growth",
+   "Baví nás hledat nové cesty",
+   "Komplexní pohled",
+   "Efektivní data-driven rozhodnutí",
+   "13 let zkušeností a zahraniční know-how",
+   "Diskuze nad potřebami a analýza aktivit",
+   "Příprava strategie a navržení možných řešení",
+   "Implementace a vyhodnocení"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/marketingove-konzultace\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/marketingove-konzultace\\/\",\"name\":\"Marketingové konzultace - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-15T12:53:32+00:00\",\"dateModified\":\"2026-02-25T22:05:16+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/marketingove-konzultace\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialA"
+  ],
+  "img_count": 19,
+  "img_no_alt": 3,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 18,
+  "ext_links_out": 6,
+  "words": 616
+ },
+ {
+  "url": "https://www.visibility.cz/kampane/",
+  "status": 200,
+  "location": "",
+  "title": "Kampaně_vzor - Visibility",
+  "title_len": 25,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/kampane/",
+  "og_title": "Kampaně_vzor - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Kampaně"
+  ],
+  "h2": [
+   "Jak pracujeme?",
+   "S čím vám pomůžeme",
+   "My jsme kampaně",
+   "Kampaně blog"
+  ],
+  "h3": [
+   "lorem ipsum",
+   "lorem ipsum",
+   "klienti, kteří do toho šli s námi",
+   "naše služba",
+   "naše služba",
+   "naše služba",
+   "naše služba",
+   "Vaše PPC kampaně běží. Ale fungují správně?"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/kampane\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/kampane\\/\",\"name\":\"Kampaně_vzor - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-05T11:55:04+00:00\",\"dateModified\":\"2026-02-20T08:04:19+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/kampane\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.visi"
+  ],
+  "img_count": 30,
+  "img_no_alt": 10,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 20,
+  "ext_links_out": 5,
+  "words": 651
+ },
+ {
+  "url": "https://www.visibility.cz/consulting/",
+  "status": 200,
+  "location": "https://www.visibility.cz/marketingove-konzultace/",
+  "title": "Marketingové konzultace - Visibility",
+  "title_len": 36,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/marketingove-konzultace/",
+  "og_title": "Marketingové konzultace - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Marketingové konzultace"
+  ],
+  "h2": [
+   "Dostaneme vás k cíli a splněným KPIs co nejrychleji",
+   "Přinášíme chytrá řešení a inovativní přístup",
+   "Jak pracujeme?",
+   "My jsme Consulting",
+   "Poptat marketingové konzultace"
+  ],
+  "h3": [
+   "Strategie",
+   "Inovace",
+   "Testing",
+   "Go to market",
+   "Growth",
+   "Baví nás hledat nové cesty",
+   "Komplexní pohled",
+   "Efektivní data-driven rozhodnutí",
+   "13 let zkušeností a zahraniční know-how",
+   "Diskuze nad potřebami a analýza aktivit",
+   "Příprava strategie a navržení možných řešení",
+   "Implementace a vyhodnocení"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/marketingove-konzultace\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/marketingove-konzultace\\/\",\"name\":\"Marketingové konzultace - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-15T12:53:32+00:00\",\"dateModified\":\"2026-02-25T22:05:16+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/marketingove-konzultace\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialA"
+  ],
+  "img_count": 19,
+  "img_no_alt": 3,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 6,
+  "words": 616
+ },
+ {
+  "url": "https://www.visibility.cz/production/",
+  "status": 200,
+  "location": "",
+  "title": "Production - Visibility",
+  "title_len": 23,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/production/",
+  "og_title": "Production - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Production"
+  ],
+  "h2": [],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/production\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/production\\/\",\"name\":\"Production - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-15T12:53:48+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/production\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/www.visibility.cz\\/production\\/\"]}]},{\"@type"
+  ],
+  "img_count": 11,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 148,
+  "ext_links_out": 5,
+  "words": 387
+ },
+ {
+  "url": "https://www.visibility.cz/email-crm-marketing/",
+  "status": 200,
+  "location": "",
+  "title": "Email / CRM Marketing - Visibility",
+  "title_len": 34,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/email-crm-marketing/",
+  "og_title": "Email / CRM Marketing - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Email / CRM Marketing"
+  ],
+  "h2": [],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/email-crm-marketing\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/email-crm-marketing\\/\",\"name\":\"Email \\/ CRM Marketing - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-15T12:53:00+00:00\",\"dateModified\":\"2026-01-22T04:49:16+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/email-crm-marketing\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialAction\":[{\"@ty"
+  ],
+  "img_count": 11,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 148,
+  "ext_links_out": 5,
+  "words": 389
+ },
+ {
+  "url": "https://www.visibility.cz/o-nas/",
+  "status": 200,
+  "location": "",
+  "title": "O nás - Visibility",
+  "title_len": 18,
+  "meta_desc": "Seznamte se s týmem Visibility. Jsme marketingový partner, který propojuje strategii, média a data pro růst značek.",
+  "meta_desc_len": 115,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/o-nas/",
+  "og_title": "O nás - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "My jsme Visibility"
+  ],
+  "h2": [
+   "Hodnoty",
+   "Kultura",
+   "Benefity",
+   "Naše týmy",
+   "Chceme tě do Visibility!",
+   "Visibility life"
+  ],
+  "h3": [
+   "Výkon",
+   "Inovace",
+   "Kreativa",
+   "Otevřenost",
+   "Visi středy",
+   "Pet friendly office",
+   "Work hard, play hard",
+   "Práce, která se ti přizpůsobí",
+   "Dostaneš se do formy",
+   "Vzdělávání na prvním místě",
+   "Nejdříve kafe a pak technika",
+   "Event manažer/ka (Kreáč)",
+   "Head of Social Media (Kreáč)",
+   "Reporting & Dashboard Specialista/ka (Data & Analytika) (Kampaně)",
+   "Social Media Manager (Medior/Senior) – se zaměřením na automotive (Kreáč)",
+   "PPC e-commerce specialista/specialistka (Kampaně)",
+   "Obchodník po telefonu pro SMB – SK (Obchod)",
+   "Obchodník po telefonu pro SMB (Obchod)",
+   "Business development manager (Obchod)",
+   "SEO specialista/ka (SEO)",
+   "PPC Specialist (Kampaně)",
+   "RTB Specialista (Kampaně)"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/o-nas\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/o-nas\\/\",\"name\":\"O nás - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-03T10:11:43+00:00\",\"dateModified\":\"2026-04-13T05:18:17+00:00\",\"description\":\"Seznamte se s týmem Visibility. Jsme marketingový partner, který propojuje strategii, média a data pro růst značek.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visib"
+  ],
+  "img_count": 22,
+  "img_no_alt": 6,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 30,
+  "ext_links_out": 4,
+  "words": 858
+ },
+ {
+  "url": "https://www.visibility.cz/kontakt/",
+  "status": 200,
+  "location": "",
+  "title": "Kontakt - Visibility",
+  "title_len": 20,
+  "meta_desc": "Potřebujete poradit s marketingem? Kontaktujte nás a probereme vaše cíle i možnosti spolupráce.",
+  "meta_desc_len": 95,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/kontakt/",
+  "og_title": "Kontakt - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "[email protected]",
+   "+420 607 007 111"
+  ],
+  "h2": [],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/kontakt\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/kontakt\\/\",\"name\":\"Kontakt - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-03T10:12:20+00:00\",\"dateModified\":\"2026-04-10T06:22:23+00:00\",\"description\":\"Potřebujete poradit s marketingem? Kontaktujte nás a probereme vaše cíle i možnosti spolupráce.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/kont"
+  ],
+  "img_count": 15,
+  "img_no_alt": 3,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 6,
+  "words": 162
+ },
+ {
+  "url": "https://www.visibility.cz/blog/",
+  "status": 200,
+  "location": "",
+  "title": "Blog - Visibility",
+  "title_len": 17,
+  "meta_desc": "Přečtěte si, čím žijeme. Novinky, know-how a inspirace ze světa online marketingu od týmu Visibility.",
+  "meta_desc_len": 101,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/blog/",
+  "og_title": "Blog - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Přečtěte si, čím žijeme"
+  ],
+  "h2": [],
+  "h3": [
+   "Budoucnost analytiky",
+   "GDPR Privacy",
+   "Realita client side vs server side měření",
+   "#Visičtvrtek: Konec perfektních reklam. Nastupuje UGC, kterému lidé věří",
+   "Video marketing 2026: přestaňte tvořit pro algoritmus, natáčejte pro diváky",
+   "Vaše PPC kampaně běží. Ale fungují správně?"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/blog\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/blog\\/\",\"name\":\"Blog - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-03T10:11:55+00:00\",\"dateModified\":\"2026-04-10T06:12:17+00:00\",\"description\":\"Přečtěte si, čím žijeme. Novinky, know-how a inspirace ze světa online marketingu od týmu Visibility.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/blog\\/#"
+  ],
+  "img_count": 17,
+  "img_no_alt": 5,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 27,
+  "ext_links_out": 4,
+  "words": 506
+ },
+ {
+  "url": "https://www.visibility.cz/visictvrtky/",
+  "status": 200,
+  "location": "",
+  "title": "Visičtvrtek - Visibility",
+  "title_len": 24,
+  "meta_desc": "#VISIčtvrtky: marketingové akce od Visibility. Sledujte trendy, jděte do hloubky a buďte o krok napřed.",
+  "meta_desc_len": 103,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/visictvrtky/",
+  "og_title": "Visičtvrtek - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "#VISIčtvrtky"
+  ],
+  "h2": [
+   "Jak taková akce vypadá?",
+   "Kalendář akcí"
+  ],
+  "h3": [
+   "Za oponou SSP v Seznam RTB",
+   "NAROVINU: Zkušenosti ředitelů a ředitelek s koučováním ve firmách",
+   "UGC marketing v praxi",
+   "OKTAGON Fantasy",
+   "AI lead generation",
+   "Jak ovládnout Allegro: Od prvního produktu po kvalitní marketing",
+   "Koučink & Komunikace – Kolik stojí nemít kouče?",
+   "Twitch & Digital Turbine: Jak vládnou hernímu trhu a oslovují miliony hráčů?",
+   "Propojení GA4, BigQuery a Google Cloud – nové marketingové příležitosti",
+   "AI Revoluce v marketingu 30.1.2025",
+   "Influenceři v online kampaních, aneb jak to (ne)dělat správně.  28.11.2024",
+   "Generace Z: Komunikace a síla influencerů",
+   "Klasické rádio vs podcasty. A není Spotify ideálním řešením?",
+   "Twitch: reklamní platforma, aneb není to jenom o streamech",
+   "Amazon: Nástroj pro globální růst aplikací a softwarů",
+   "Jak na chytřejší nákup online médií",
+   "TikTok už není pouze pro mladé, přesvědčte se!",
+   "Světem světel",
+   "Life is ART",
+   "Digital Marketing a Employee Branding v oblasti Recruitmentu",
+   "Netřeba se Google Analytics 4 bát…",
+   "Úzkost brzdí. Od štěstí ke krizi a zase zpátky",
+   "Psychika, energie a štěstí mezi lockdowny"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/visictvrtky\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/visictvrtky\\/\",\"name\":\"Visičtvrtek - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-03T10:12:11+00:00\",\"dateModified\":\"2026-04-13T06:41:52+00:00\",\"description\":\"#VISIčtvrtky: marketingové akce od Visibility. Sledujte trendy, jděte do hloubky a buďte o krok napřed.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www"
+  ],
+  "img_count": 90,
+  "img_no_alt": 6,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 41,
+  "ext_links_out": 5,
+  "words": 1857
+ },
+ {
+  "url": "https://www.visibility.cz/case-study/10x-zvyseny-prodej-zivotniho-pojisteni/",
+  "status": 200,
+  "location": "",
+  "title": "*10x* zvýšený prodej životního pojištění - Visibility",
+  "title_len": 53,
+  "meta_desc": "Životní pojištění je asi nejsložitější pojištění na prodej. Rozhodovací proces zákazníka při jeho výběru typicky trvá několik měsíců. I přes to se nám pro Mutumutu podařilo dosáhnout významné pozice na trhu.",
+  "meta_desc_len": 207,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/case-study/10x-zvyseny-prodej-zivotniho-pojisteni/",
+  "og_title": "*10x* zvýšený prodej životního pojištění - Visibility",
+  "og_image": "https://www.visibility.cz/wp-content/uploads/2026/02/aac896ea1a0da602ee56741c0402eb852c8d1a69.png",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/case-study\\/10x-zvyseny-prodej-zivotniho-pojisteni\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/case-study\\/10x-zvyseny-prodej-zivotniho-pojisteni\\/\",\"name\":\"*10x* zvýšený prodej životního pojištění - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/case-study\\/10x-zvyseny-prodej-zivotniho-pojisteni\\/#primaryimage\"},\"image\":"
+  ],
+  "img_count": 11,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 4,
+  "words": 103
+ },
+ {
+  "url": "https://www.visibility.cz/case-study/65-snizeni-nakladu-na-objednavku/",
+  "status": 200,
+  "location": "",
+  "title": "*65 %* snížení nákladů na objednávku - Visibility",
+  "title_len": 49,
+  "meta_desc": "Projektu Zájezdy.cz, který je druhým největším prodejcem zájezdů v ČR, jsme pomohli meziročně zdvojnásobit počet objednávek dovolených a zároveň o 65 % snížit marketingové náklady na získání objednávky.",
+  "meta_desc_len": 202,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/case-study/65-snizeni-nakladu-na-objednavku/",
+  "og_title": "*65 %* snížení nákladů na objednávku - Visibility",
+  "og_image": "http://www.visibility.cz/wp-content/uploads/2026/02/c7510acecb39ff5884716e4393292f2c14554d1a-scaled-e1772118215867.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Lorem ipsum dolor sit amet consectetur"
+  ],
+  "h2": [
+   "Výsledky, které jsme klientovi přinesli",
+   "Jaké jsme stanovili cíle"
+  ],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/case-study\\/65-snizeni-nakladu-na-objednavku\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/case-study\\/65-snizeni-nakladu-na-objednavku\\/\",\"name\":\"*65 %* snížení nákladů na objednávku - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/case-study\\/65-snizeni-nakladu-na-objednavku\\/#primaryimage\"},\"image\":{\"@id\":\"https:\\/\\/www."
+  ],
+  "img_count": 16,
+  "img_no_alt": 5,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 23,
+  "ext_links_out": 4,
+  "words": 388
+ },
+ {
+  "url": "https://www.visibility.cz/case-study/4-zeme-s-rizenou-frekvenci-a-zasahem/",
+  "status": 200,
+  "location": "",
+  "title": "*4 země* s řízenou frekvencí a zásahem - Visibility",
+  "title_len": 51,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/case-study/4-zeme-s-rizenou-frekvenci-a-zasahem/",
+  "og_title": "*4 země* s řízenou frekvencí a zásahem - Visibility",
+  "og_image": "http://www.visibility.cz/wp-content/uploads/2025/12/nintendo-case.jpg",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/case-study\\/4-zeme-s-rizenou-frekvenci-a-zasahem\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/case-study\\/4-zeme-s-rizenou-frekvenci-a-zasahem\\/\",\"name\":\"*4 země* s řízenou frekvencí a zásahem - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/case-study\\/4-zeme-s-rizenou-frekvenci-a-zasahem\\/#primaryimage\"},\"image\":{\"@id\":\""
+  ],
+  "img_count": 11,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 20,
+  "ext_links_out": 4,
+  "words": 105
+ },
+ {
+  "url": "https://www.visibility.cz/jak-visibility-pomohlo-eshopu-mm-ploty-navysit-konverze-o-dvacet-procent/",
+  "status": 200,
+  "location": "",
+  "title": "Jak Visibility pomohlo eshopu M&M Ploty navýšit konverze o dvacet procent - Visibility",
+  "title_len": 86,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/jak-visibility-pomohlo-eshopu-mm-ploty-navysit-konverze-o-dvacet-procent/",
+  "og_title": "Jak Visibility pomohlo eshopu M&M Ploty navýšit konverze o dvacet procent - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Jak Visibility pomohlo eshopu M&M Ploty navýšit konverze o dvacet procent"
+  ],
+  "h2": [
+   "Pochopení klientova businessu",
+   "Cíle spolupráce s agenturou",
+   "Stanovení rozpočtu",
+   "Jak postupovalo Visibility",
+   "Výsledky kampaní",
+   "Eshop",
+   "Závěr",
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.visibility.cz\\/jak-visibility-pomohlo-eshopu-mm-ploty-navysit-konverze-o-dvacet-procent\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/jak-visibility-pomohlo-eshopu-mm-ploty-navysit-konverze-o-dvacet-procent\\/\"},\"author\":{\"name\":\"David Kotrč\",\"@id\":\"https:\\/\\/www.visibility.cz\\/#\\/schema\\/person\\/689c09290655916e18520310bc7be7b4\"},\"headline\":\"Jak Visibility pomohlo eshopu M&#038;M Ploty navýšit konve"
+  ],
+  "img_count": 14,
+  "img_no_alt": 2,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 23,
+  "ext_links_out": 6,
+  "words": 617
+ },
+ {
+  "url": "https://www.visibility.cz/budoucnost-analytiky/",
+  "status": 200,
+  "location": "",
+  "title": "Budoucnost analytiky - Visibility",
+  "title_len": 33,
+  "meta_desc": "Webová analytika prochází zásadní proměnou. Tradiční reporting založený na desítkách metrik a statických dashboardech přestává fungovat.",
+  "meta_desc_len": 136,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/budoucnost-analytiky/",
+  "og_title": "Budoucnost analytiky - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Budoucnost analytiky"
+  ],
+  "h2": [
+   "Konec reportů, jak je známe",
+   "Posun od měření k řízení",
+   "Automatizace a AI v analytice",
+   "Data bez cookies a nové identifikátory",
+   "Co z analytiky zmizí",
+   "Analytika jako konkurenční výhoda",
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.visibility.cz\\/budoucnost-analytiky\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/budoucnost-analytiky\\/\"},\"author\":{\"name\":\"Jiri Marko\",\"@id\":\"https:\\/\\/www.visibility.cz\\/#\\/schema\\/person\\/211934e7d5f71652e28a9132cb8a2383\"},\"headline\":\"Budoucnost analytiky\",\"datePublished\":\"2026-04-23T09:00:20+00:00\",\"dateModified\":\"2026-05-19T12:43:07+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/www.visibility.cz"
+  ],
+  "img_count": 13,
+  "img_no_alt": 1,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 21,
+  "ext_links_out": 4,
+  "words": 499
+ },
+ {
+  "url": "https://www.visibility.cz/realita-client-side-vs-server-side-mereni/",
+  "status": 200,
+  "location": "",
+  "title": "Realita client side vs server side měření - Visibility",
+  "title_len": 54,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/realita-client-side-vs-server-side-mereni/",
+  "og_title": "Realita client side vs server side měření - Visibility",
+  "og_image": "https://www.visibility.cz/wp-content/uploads/2026/04/server-side-1024x572.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Realita client side vs server side měření",
+   "Server-side měření dat"
+  ],
+  "h2": [
+   "Co je server-side měření a proč se o něm tolik mluví",
+   "Problémy klasického měření",
+   "Jak funguje server-side tracking",
+   "Výhody a nevýhody server-side měření",
+   "Kdy dává server-side měření smysl",
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.visibility.cz\\/realita-client-side-vs-server-side-mereni\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/realita-client-side-vs-server-side-mereni\\/\"},\"author\":{\"name\":\"Jiri Marko\",\"@id\":\"https:\\/\\/www.visibility.cz\\/#\\/schema\\/person\\/211934e7d5f71652e28a9132cb8a2383\"},\"headline\":\"Realita client side vs server side měření\",\"datePublished\":\"2026-04-22T05:55:53+00:00\",\"dateModified\":\"2026-05-19T12:37:2"
+  ],
+  "img_count": 12,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 20,
+  "ext_links_out": 4,
+  "words": 612
+ },
+ {
+  "url": "https://www.visibility.cz/gdpr-privacy/",
+  "status": 200,
+  "location": "",
+  "title": "GDPR Privacy - Visibility",
+  "title_len": 25,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/gdpr-privacy/",
+  "og_title": "GDPR Privacy - Visibility",
+  "og_image": "https://www.visibility.cz/wp-content/uploads/2026/04/gdpr-privacy-thumbnail-scaled.jpg",
+  "lang": "cs-CZ",
+  "h1": [
+   "GDPR Privacy"
+  ],
+  "h2": [
+   "Ochrana soukromí v analytice: realita po cookies",
+   "GDPR a webová analytika v praxi",
+   "Role server-side měření v ochraně soukromí",
+   "Consent Mode, cookieless měření a jejich limity",
+   "Budoucnost měření v prostředí regulací a omezených dat",
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.visibility.cz\\/gdpr-privacy\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/gdpr-privacy\\/\"},\"author\":{\"name\":\"Jiri Marko\",\"@id\":\"https:\\/\\/www.visibility.cz\\/#\\/schema\\/person\\/211934e7d5f71652e28a9132cb8a2383\"},\"headline\":\"GDPR Privacy\",\"datePublished\":\"2026-04-22T07:03:31+00:00\",\"dateModified\":\"2026-05-19T12:36:43+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/gdpr-privacy\\/\"},\"word"
+  ],
+  "img_count": 12,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 21,
+  "ext_links_out": 4,
+  "words": 540
+ },
+ {
+  "url": "https://www.visibility.cz/vase-ppc-kampane-bezi-ale-funguji-spravne/",
+  "status": 200,
+  "location": "",
+  "title": "Vaše PPC kampaně běží. Ale fungují správně? - Visibility",
+  "title_len": 56,
+  "meta_desc": "Automatizace, kreativa, vlastní data nebo měření výsledků? Zjistěte, co dnes skutečně rozhoduje o výkonu placených kampaní a kde firmy nejčastěji ztrácejí peníze.",
+  "meta_desc_len": 162,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/vase-ppc-kampane-bezi-ale-funguji-spravne/",
+  "og_title": "Vaše PPC kampaně běží. Ale fungují správně? - Visibility",
+  "og_image": "https://www.visibility.cz/wp-content/uploads/2026/03/pexels-mikael-blomkvist-6476579-1.jpg",
+  "lang": "cs-CZ",
+  "h1": [
+   "Vaše PPC kampaně běží. Ale fungují správně?"
+  ],
+  "h2": [
+   "Kreativa je dnes důležitější než samotné cílení",
+   "Vlastní zákaznická data jsou čím dál cennější",
+   "Než zvýšíte rozpočet, ověřte si, co vlastně měříte",
+   "Jak k tomu přistupujeme ve Visibility​",
+   "FAQ: Nejčastější otázky",
+   "Budoucnost analytiky",
+   "GDPR Privacy",
+   "Realita client side vs server side měření",
+   "Napište nám"
+  ],
+  "h3": [
+   "Mohlo by vás také zajímat",
+   "Zdroje"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.visibility.cz\\/vase-ppc-kampane-bezi-ale-funguji-spravne\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/vase-ppc-kampane-bezi-ale-funguji-spravne\\/\"},\"author\":{\"name\":\"Kateřina Chourová\",\"@id\":\"https:\\/\\/www.visibility.cz\\/#\\/schema\\/person\\/f69866753a65760008e9c71055503e51\"},\"headline\":\"Vaše PPC kampaně běží. Ale fungují správně?\",\"datePublished\":\"2026-03-23T13:24:43+00:00\",\"dateModified\":\"2026-09-3"
+  ],
+  "img_count": 12,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.instagram.com",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 30,
+  "ext_links_out": 8,
+  "words": 1255
+ },
+ {
+  "url": "https://www.visibility.cz/proc-google-zavadi-rezim-souhlasu-v2-a-jak-na-nem-neprodelat/",
+  "status": 200,
+  "location": "",
+  "title": "Proč Google zavádí režim souhlasu v2 a jak na něm neprodělat - Visibility",
+  "title_len": 73,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/proc-google-zavadi-rezim-souhlasu-v2-a-jak-na-nem-neprodelat/",
+  "og_title": "Proč Google zavádí režim souhlasu v2 a jak na něm neprodělat - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Proč Google zavádí režim souhlasu v2 a jak na něm neprodělat"
+  ],
+  "h2": [
+   "Připomenutí: Co je GDPR?",
+   "",
+   "Jak CM2 funguje?",
+   "Napište nám"
+  ],
+  "h3": [
+   "Proč režim souhlasu v2?",
+   "Jak implementovat režim souhlasu v2?",
+   "Co je základní režim souhlasu (Basic Consent Mode)?",
+   "Výhody režimu základního souhlasu",
+   "Nevýhody režimu základního souhlasu",
+   "Co je pokročilý režim souhlasu (Advanced Consent Mode)?",
+   "Co jsou pingy bez cookies?",
+   "Výhody pokročilého režimu souhlasu",
+   "Rozdíl mezi základním a pokročilým režimem souhlasu",
+   "Co se stane, když se na Consent Mode V2 nenastaví?"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.visibility.cz\\/proc-google-zavadi-rezim-souhlasu-v2-a-jak-na-nem-neprodelat\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/proc-google-zavadi-rezim-souhlasu-v2-a-jak-na-nem-neprodelat\\/\"},\"author\":{\"name\":\"Petr Bláha\",\"@id\":\"https:\\/\\/www.visibility.cz\\/#\\/schema\\/person\\/3ae7b323428a2f4c8a91d4476827c1b5\"},\"headline\":\"Proč Google zavádí režim souhlasu v2 a jak na něm neprodělat\",\"datePublished\":\"2024"
+  ],
+  "img_count": 16,
+  "img_no_alt": 4,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 26,
+  "ext_links_out": 13,
+  "words": 2395
+ },
+ {
+  "url": "https://www.visibility.cz/visictvrtek/propojeni-ga4-bigquery-a-google-cloud-nove-marketingove-prilezitosti/",
+  "status": 200,
+  "location": "",
+  "title": "Propojení GA4, BigQuery a Google Cloud - nové marketingové příležitosti - Visibility",
+  "title_len": 84,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/visictvrtek/propojeni-ga4-bigquery-a-google-cloud-nove-marketingove-prilezitosti/",
+  "og_title": "Propojení GA4, BigQuery a Google Cloud - nové marketingové příležitosti - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Propojení GA4, BigQuery a Google Cloud – nové marketingové příležitosti"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/visictvrtek\\/propojeni-ga4-bigquery-a-google-cloud-nove-marketingove-prilezitosti\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/visictvrtek\\/propojeni-ga4-bigquery-a-google-cloud-nove-marketingove-prilezitosti\\/\",\"name\":\"Propojení GA4, BigQuery a Google Cloud - nové marketingové příležitosti - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/ww"
+  ],
+  "img_count": 16,
+  "img_no_alt": 1,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 6,
+  "words": 354
+ },
+ {
+  "url": "https://www.visibility.cz/utm-parametry-co-jsou-zac-k-cemu-slouzi-a-jak-je-pouzivat/",
+  "status": 200,
+  "location": "",
+  "title": "UTM parametry - co jsou zač, k čemu slouží a jak je používat? - Visibility",
+  "title_len": 74,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/utm-parametry-co-jsou-zac-k-cemu-slouzi-a-jak-je-pouzivat/",
+  "og_title": "UTM parametry - co jsou zač, k čemu slouží a jak je používat? - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "UTM parametry – co jsou zač, k čemu slouží a jak je používat?",
+   "Co jsou UTM parametry?",
+   "K čemu slouží?",
+   "Jak je používat?"
+  ],
+  "h2": [
+   "Jak je nastavit?",
+   "Závěrem",
+   "Napište nám"
+  ],
+  "h3": [
+   "Google Ads",
+   "Sklik",
+   "Facebook"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.visibility.cz\\/utm-parametry-co-jsou-zac-k-cemu-slouzi-a-jak-je-pouzivat\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/utm-parametry-co-jsou-zac-k-cemu-slouzi-a-jak-je-pouzivat\\/\"},\"author\":{\"name\":\"Libor Trlifaj\",\"@id\":\"https:\\/\\/www.visibility.cz\\/#\\/schema\\/person\\/3ac6e394440532ffad945046a2ff5bcf\"},\"headline\":\"UTM parametry &#8211; co jsou zač, k&nbsp;čemu slouží a jak je používat?\",\"datePublish"
+  ],
+  "img_count": 14,
+  "img_no_alt": 2,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 24,
+  "ext_links_out": 5,
+  "words": 823
+ },
+ {
+  "url": "https://www.visibility.cz/kariera/reporting-dashboard-specialista-ka-data-analytika/",
+  "status": 200,
+  "location": "",
+  "title": "Reporting & Dashboard Specialista/ka (Data & Analytika) - Visibility",
+  "title_len": 68,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/kariera/reporting-dashboard-specialista-ka-data-analytika/",
+  "og_title": "Reporting & Dashboard Specialista/ka (Data & Analytika) - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Reporting & Dashboard Specialista/ka (Data & Analytika)"
+  ],
+  "h2": [
+   "Koho hledáme?",
+   "Co od tebe očekáváme",
+   "Tvoje odpovědnosti",
+   "Proč se k nám připojit?",
+   "Jak probíhá výběrko",
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/kariera\\/reporting-dashboard-specialista-ka-data-analytika\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/kariera\\/reporting-dashboard-specialista-ka-data-analytika\\/\",\"name\":\"Reporting & Dashboard Specialista\\/ka (Data & Analytika) - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2026-07-30T10:43:50+00:00\",\"dateModified\":\"2026-09-21T07:16:56+00:00\",\"breadcrumb\":{\""
+  ],
+  "img_count": 20,
+  "img_no_alt": 9,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 4,
+  "words": 623
+ },
+ {
+  "url": "https://www.visibility.cz/analyza-klicovych-slov/",
+  "status": 200,
+  "location": "",
+  "title": "Analýza klíčových slov - Visibility",
+  "title_len": 35,
+  "meta_desc": "Najděte klíčová slova, která vaši zákazníci skutečně hledají. Zvyšte návštěvnost webu i prodeje díky analýze od Visibility.",
+  "meta_desc_len": 123,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/analyza-klicovych-slov/",
+  "og_title": "Analýza klíčových slov - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Analýza klíčových slov"
+  ],
+  "h2": [
+   "Proč investovat do analýzy klíčových slov",
+   "Co obsahuje naše analýza klíčových slov?",
+   "V jakém formátu dodáme data",
+   "My jsme SEO",
+   "Poptat analýzu klíčových slov"
+  ],
+  "h3": [
+   "Indentifikace cílové skupiny",
+   "Optimalizace obsahu na základě dat",
+   "Návrh nebo úprava architektury",
+   "Tvorba efektivních PPC kampaní",
+   "Zhodnocení současného stavu",
+   "Konkurenční výhoda",
+   "Jaké nástroje používáme"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/analyza-klicovych-slov\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/analyza-klicovych-slov\\/\",\"name\":\"Analýza klíčových slov - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-07T07:48:45+00:00\",\"dateModified\":\"2026-04-10T06:10:55+00:00\",\"description\":\"Najděte klíčová slova, která vaši zákazníci skutečně hledají. Zvyšte návštěvnost webu i prodeje díky analý"
+  ],
+  "img_count": 33,
+  "img_no_alt": 13,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 8,
+  "words": 830
+ },
+ {
+  "url": "https://www.visibility.cz/linkbuilding/",
+  "status": 200,
+  "location": "",
+  "title": "Linkbuilding - Visibility",
+  "title_len": 25,
+  "meta_desc": "Linkbuilding, který zvyšuje pozice i návštěvnost. Získáme pro vás kvalitní zpětné odkazy přirozenou cestou.",
+  "meta_desc_len": 107,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/linkbuilding/",
+  "og_title": "Linkbuilding - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Linkbuilding"
+  ],
+  "h2": [
+   "Proč zvolit naše linkbuildingové služby?",
+   "My jsme SEO",
+   "Poptat SEO"
+  ],
+  "h3": [
+   "Růst návštěvnosti",
+   "Měřitelné výsledky",
+   "Transparentní přistup",
+   "Zvýšení pozic ve vyhledávačích",
+   "Zlepšení autority vašeho webu",
+   "Kvalitní zpětné odkazy",
+   "Jaké nástroje používáme"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.visibility.cz\\/linkbuilding\\/\",\"url\":\"https:\\/\\/www.visibility.cz\\/linkbuilding\\/\",\"name\":\"Linkbuilding - Visibility\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/#website\"},\"datePublished\":\"2025-12-07T07:49:03+00:00\",\"dateModified\":\"2026-04-10T06:23:15+00:00\",\"description\":\"Linkbuilding, který zvyšuje pozice i návštěvnost. Získáme pro vás kvalitní zpětné odkazy přirozenou cestou.\",\"breadcrumb\":{\"@id\":\"https:"
+  ],
+  "img_count": 24,
+  "img_no_alt": 4,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 8,
+  "words": 497
+ },
+ {
+  "url": "https://www.visibility.cz/vyuzijte-agenturu-s-certifikatem-google-marketing-platform-dv360/",
+  "status": 200,
+  "location": "",
+  "title": "Využijte agenturu s certifikátem Google Marketing Platform a znalostí DV360 - Visibility",
+  "title_len": 88,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.visibility.cz/vyuzijte-agenturu-s-certifikatem-google-marketing-platform-dv360/",
+  "og_title": "Využijte agenturu s certifikátem Google Marketing Platform a znalostí DV360 - Visibility",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Využijte agenturu s certifikátem Google Marketing Platform a znalostí DV360"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [
+   "Více dat, více možností",
+   "Certifikace napoví, koho si vybrat"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.visibility.cz\\/vyuzijte-agenturu-s-certifikatem-google-marketing-platform-dv360\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.visibility.cz\\/vyuzijte-agenturu-s-certifikatem-google-marketing-platform-dv360\\/\"},\"author\":{\"name\":\"Jan Brychta\",\"@id\":\"https:\\/\\/www.visibility.cz\\/#\\/schema\\/person\\/952f73805d888c7d2a7a00444d75d428\"},\"headline\":\"Využijte agenturu s&nbsp;certifikátem Google Marketing Platform a znalostí"
+  ],
+  "img_count": 14,
+  "img_no_alt": 2,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.visibility.cz"
+  ],
+  "int_links_out": 24,
+  "ext_links_out": 4,
+  "words": 825
+ }
+]

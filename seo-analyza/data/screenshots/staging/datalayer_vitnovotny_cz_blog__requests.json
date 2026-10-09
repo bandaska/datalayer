@@ -1,0 +1,19 @@
+{
+ "url": "https://datalayer.vitnovotny.cz/blog",
+ "request_hosts": [
+  "api.hubspot.com",
+  "app-eu1.hubspot.com",
+  "cdn.jsdelivr.net",
+  "cdnjs.cloudflare.com",
+  "datalayer.vitnovotny.cz",
+  "exceptions-eu1.hubspot.com",
+  "fonts.googleapis.com",
+  "fonts.gstatic.com",
+  "forms-eu1.hsforms.com",
+  "js-eu1.hsforms.net",
+  "metrics-fe-eu1.hubspot.com",
+  "metrics-fe-na1.hubspot.com",
+  "static.hsappstatic.net"
+ ],
+ "n_requests": 52
+}

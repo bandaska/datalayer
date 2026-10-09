@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homepage datalayer.cz – návrh (prototyp)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../05_formulare/prototyp/kontakt.css">
+<style>
+:root{--bg:#020d1e;--sec:#051125;--card:#0b1a30;--line:#1f2937;--cyan:#00ffff;--cyan2:#00b0b0;--orange:#ff7400;--txt:#e6edf3;--mut:#8b949e;--amber:#ffb020;--ok:#2ecc71;--light:#f6f8fa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+.mono{font-family:'Roboto Mono',monospace}
+.eyebrow{font-family:'Roboto Mono',monospace;font-size:13px;letter-spacing:.06em;color:var(--cyan2);text-transform:uppercase;margin:0 0 12px}
+h2{font-size:clamp(26px,3vw,38px);line-height:1.15;margin:0 0 14px;font-weight:800}
+.lead{color:var(--txt);opacity:.82;font-size:17px;max-width:720px;margin:0 0 34px}
+section{padding:88px 0}
+.light{background:var(--light);color:#0b1220}.light .lead{color:#334155;opacity:1}.light .eyebrow{color:#008b8b}
+.pi{width:40px;height:40px;color:var(--cyan)}.light .pi{color:#00a3a3}
+.btn{display:inline-block;font-weight:700;border-radius:6px;padding:12px 22px;text-decoration:none;font-size:15px;white-space:nowrap}
+.btn-cta{background:var(--orange);color:#fff;border:1px solid var(--orange)}
+.btn-ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+.tag{display:inline-block;font-family:'Roboto Mono',monospace;font-size:11.5px;color:var(--cyan2);border:1px solid rgba(0,255,255,.25);border-radius:4px;padding:1px 7px;margin:0 6px 6px 0}
+.light .tag{color:#007a7a;border-color:rgba(0,139,139,.3)}
+.note{font:12px/1.4 'Roboto Mono',monospace;color:#ffb020;border:1px dashed rgba(255,176,32,.5);padding:6px 10px;border-radius:6px;display:inline-block;margin-top:10px}
+/* nav */
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(2,13,30,.92);backdrop-filter:blur(6px);z-index:5}
+nav .wrap{display:flex;align-items:center;gap:26px;height:64px}
+.logo{font-weight:800;font-size:20px;text-decoration:none}.logo b{color:var(--cyan)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0 0 0 auto;padding:0;font-size:15px}
+nav li a{text-decoration:none;opacity:.9}
+@media(max-width:860px){nav ul{display:none}}
+/* hero */
+.hero{padding:72px 0 64px;background:radial-gradient(1200px 500px at 70% 30%,rgba(0,255,255,.06),transparent)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(34px,4.6vw,54px);line-height:1.08;margin:0 0 18px;font-weight:800}
+.hero h1 u{text-decoration:none;border-bottom:3px solid var(--cyan)}
+.hero p.sub{font-size:17px;opacity:.85;margin:0 0 26px;max-width:520px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero .micro{margin-top:18px;font-size:13px;color:var(--mut)}
+.flow{width:100%;height:auto}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+/* segments */
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.seg a{display:block;text-decoration:none;background:#fff;border:1px solid #e3e8ef;border-radius:12px;padding:24px;transition:transform .15s,box-shadow .15s}
+.seg a:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(2,13,30,.08)}
+.seg h3{margin:14px 0 6px;font-size:20px}
+.seg .pain{font-size:15px;color:#475569;margin:0 0 12px}
+.seg ul{margin:0 0 14px;padding-left:18px;font-size:14.5px;color:#1f2937}
+.seg .more{font-weight:700;color:#007a7a;font-size:14.5px}
+@media(max-width:900px){.seg{grid-template-columns:1fr}}
+/* symptoms */
+.sym{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sym .c{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;display:flex;flex-direction:column}
+.sym .log{font:12.5px/1.5 'Roboto Mono',monospace;background:#020a17;border:1px solid #13213a;border-radius:8px;padding:10px 12px;margin-bottom:14px;color:#9fb3c8;white-space:pre-wrap}
+.sym .log .w{color:var(--amber)} .sym .log .k{color:var(--cyan)} .sym .log .r{color:#ff6b6b}
+.sym h3{font-size:17px;margin:0 0 6px;line-height:1.3}
+.sym p{font-size:14.5px;opacity:.8;margin:0 0 12px}
+.sym .fix{margin-top:auto;font-size:14px;font-weight:600;color:var(--cyan);text-decoration:none}
+@media(max-width:900px){.sym{grid-template-columns:1fr}}
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.pipe .col{padding:0 22px;border-left:1px dashed rgba(0,255,255,.25)}
+.pipe .col:first-child{border-left:0;padding-left:0}
+.pipe .step{font:12px 'Roboto Mono',monospace;color:var(--cyan2);margin-bottom:6px}
+.pipe h3{margin:0 0 16px;font-size:21px}
+.svc{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line);text-decoration:none}
+.svc .pi{flex:0 0 36px;width:36px;height:36px}
+.svc b{display:block;font-size:15.5px}
+.svc span{font-size:13.5px;opacity:.75}
+@media(max-width:900px){.pipe{grid-template-columns:1fr}.pipe .col{border-left:0;padding:0;margin-bottom:26px}}
+/* proof */
+.proof{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.proof ul{padding-left:0;list-style:none;margin:0}
+.proof li{display:flex;gap:12px;margin-bottom:14px;font-size:15.5px}
+.proof li i{flex:0 0 22px;height:22px;border-radius:50%;background:rgba(46,204,113,.15);color:var(--ok);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-weight:800;font-size:13px}
+.devtools{background:#0a1322;border:1px solid #1d2a40;border-radius:12px;overflow:hidden;font:12.5px/1.55 'Roboto Mono',monospace}
+.devtools .bar{display:flex;gap:16px;padding:8px 14px;background:#0f1b2e;border-bottom:1px solid #1d2a40;color:#8b949e}
+.devtools .bar b{color:#e6edf3;border-bottom:2px solid var(--cyan);padding-bottom:4px}
+.devtools pre{margin:0;padding:14px 16px;color:#c9d6e3;white-space:pre-wrap}
+.devtools .k{color:#7ee0ff}.devtools .s{color:#a5e88f}.devtools .c{color:#5f6f86}
+@media(max-width:900px){.proof{grid-template-columns:1fr}}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s}
+.proc .p{background:#fff;border:1px solid #e3e8ef;border-radius:12px;padding:18px}
+.proc .n{font:700 13px 'Roboto Mono',monospace;color:#007a7a}
+.proc h3{margin:6px 0 6px;font-size:16.5px}
+.proc p{margin:0 0 10px;font-size:14px;color:#475569}
+.proc .out{font:12px 'Roboto Mono',monospace;color:#0b1220;background:#eef6f6;border-radius:6px;padding:6px 8px}
+.proc .dur{font-size:12.5px;color:#64748b;margin-top:8px}
+@media(max-width:1000px){.proc{grid-template-columns:1fr 1fr}}@media(max-width:600px){.proc{grid-template-columns:1fr}}
+/* platforms */
+.plat{display:flex;flex-wrap:wrap;gap:8px}
+.plat span{font:13px 'Roboto Mono',monospace;border:1px solid var(--line);border-radius:6px;padding:7px 11px;color:#c9d6e3;background:#06142a}
+/* articles */
+.art{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.art a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.art .th{height:130px;background:linear-gradient(135deg,#06213a,#020d1e);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+.art .th svg{width:150px;height:auto}
+.art .b{padding:16px 18px}
+.art h3{font-size:17px;margin:6px 0 6px;line-height:1.3}
+.art p{font-size:14px;opacity:.75;margin:0}
+@media(max-width:900px){.art{grid-template-columns:1fr}}
+/* faq */
+.faq details{border-top:1px solid #e3e8ef;padding:16px 0}
+.faq summary{font-weight:700;cursor:pointer;font-size:16.5px}
+.faq p{margin:10px 0 0;color:#334155;max-width:820px}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- společné: viewBox 32×32, tah 1.5, zaoblené konce, výplň akcentu 10 % -->
+    <symbol id="pi-ga4" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="26" height="20" rx="2.5"/>
+      <path d="M3 9h26"/><circle cx="6" cy="6.5" r=".6" fill="currentColor"/><circle cx="8.4" cy="6.5" r=".6" fill="currentColor"/>
+      <path d="M6.5 20.5l4.5-5 3.5 2.5 4.5-6 3.5 3 3-2.5"/>
+      <path d="M18.5 12v8.5" stroke-dasharray="1.2 1.6" opacity=".6"/>
+      <rect x="19" y="26.5" width="10" height="3.5" rx="1" fill="currentColor" fill-opacity=".1"/>
+      <path d="M21.5 27.7h5M21.5 28.9h5"/>
+    </symbol>
+    <symbol id="pi-gtm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="3.5" width="22" height="25" rx="2" fill="currentColor" fill-opacity=".08"/>
+      <path d="M5 11.8h22M5 20.2h22"/>
+      <path d="M13 7.6h6M13 16h6M13 24.4h6"/>
+      <path d="M8 7.6h.01M8 16h.01M8 24.4h.01" stroke-width="2.4"/>
+      <path d="M27 6.5h2.5v3H27" opacity=".7"/>
+    </symbol>
+    <symbol id="pi-datalayer" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9.5 5C7 5 6.5 6.5 6.5 8.5v4c0 1.8-1 3.2-2.8 3.5 1.8.3 2.8 1.7 2.8 3.5v4c0 2 .5 3.5 3 3.5"/>
+      <path d="M22.5 5c2.5 0 3 1.5 3 3.5v4c0 1.8 1 3.2 2.8 3.5-1.8.3-2.8 1.7-2.8 3.5v4c0 2-.5 3.5-3 3.5"/>
+      <rect x="11" y="10" width="10" height="2.4" rx="1" fill="currentColor" fill-opacity=".15"/>
+      <rect x="11" y="14.8" width="10" height="2.4" rx="1" fill="currentColor" fill-opacity=".15"/>
+      <rect x="11" y="19.6" width="7" height="2.4" rx="1" fill="currentColor" fill-opacity=".15"/>
+    </symbol>
+    <symbol id="pi-serverside" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="10" width="9" height="12" rx="1.5"/><path d="M2 13h9"/>
+      <path d="M11 16h3.5" stroke-dasharray="1.2 1.6"/>
+      <path d="M19 7.5l5 2v5.2c0 3.6-2.2 6.4-5 7.8-2.8-1.4-5-4.2-5-7.8V9.5z" fill="currentColor" fill-opacity=".1"/>
+      <path d="M16.8 14.8l1.6 1.6 3-3.2"/>
+      <path d="M24 12l5-4M24 15h5.5M24 18l5 4"/>
+      <circle cx="29.5" cy="7.6" r=".9" fill="currentColor"/><circle cx="30" cy="15" r=".9" fill="currentColor"/><circle cx="29.5" cy="22.4" r=".9" fill="currentColor"/>
+    </symbol>
+    <symbol id="pi-consent" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="9" width="18" height="10" rx="5" fill="currentColor" fill-opacity=".1"/>
+      <circle cx="16" cy="14" r="3.4" fill="currentColor" fill-opacity=".25"/>
+      <path d="M6.8 14l1.6 1.6 2.8-3"/>
+      <rect x="23.5" y="12.5" width="6" height="5.5" rx="1"/><path d="M24.8 12.5v-1.6a1.7 1.7 0 0 1 3.4 0v1.6"/>
+      <circle cx="6" cy="24.5" r="1.1" fill="currentColor"/><circle cx="11" cy="24.5" r="1.1" fill="currentColor"/>
+      <circle cx="16" cy="24.5" r="1.1"/><circle cx="21" cy="24.5" r="1.1" fill="currentColor"/>
+    </symbol>
+    <symbol id="pi-conversion" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.5 6h3l2.4 11.5h10.6l2.2-8H7"/>
+      <circle cx="9.5" cy="21.5" r="1.5"/><circle cx="17" cy="21.5" r="1.5"/>
+      <path d="M21 13.5h3.2"/>
+      <path d="M24.2 13.5c1.8 0 1.8-6 4.3-6M24.2 13.5h4.3M24.2 13.5c1.8 0 1.8 6 4.3 6"/>
+      <circle cx="29.3" cy="7.5" r="1" fill="currentColor"/><circle cx="29.3" cy="13.5" r="1" fill="currentColor"/><circle cx="29.3" cy="19.5" r="1" fill="currentColor"/>
+      <path d="M3 27h26" stroke-dasharray="1.2 1.8" opacity=".5"/>
+    </symbol>
+    <symbol id="pi-bigquery" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 9l12-5 12 5-12 5z" fill="currentColor" fill-opacity=".1"/>
+      <path d="M4 9v9l12 5 12-5V9"/>
+      <path d="M16 14v9M10 11.5v9M22 11.5v9" opacity=".7"/>
+      <path d="M4 13.5l12 5 12-5" opacity=".7"/>
+      <rect x="6" y="25.5" width="20" height="4" rx="1"/>
+      <path d="M8.5 27.5h4M14 27.5h2M17.5 27.5h6" />
+    </symbol>
+    <symbol id="pi-dashboard" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2.5" y="4" width="27" height="19" rx="2"/>
+      <rect x="5.5" y="7" width="8" height="6.5" rx="1" fill="currentColor" fill-opacity=".12"/>
+      <path d="M7.5 11.2h4" stroke-width="2"/>
+      <path d="M16 13l3-3 2.5 2 4.5-4.5"/>
+      <path d="M5.5 17.5h21M5.5 20h14" opacity=".6"/>
+      <path d="M12 23l-1.5 5h11L20 23"/>
+      <circle cx="27" cy="27" r="2.2"/><path d="M26 27h2M27 26v2"/>
+    </symbol>
+    <symbol id="pi-audit" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 6.5h9l6 6-7.5 7.5-7.5-7.5z" fill="currentColor" fill-opacity=".08"/>
+      <circle cx="9" cy="10" r="1.2"/>
+      <circle cx="20" cy="19" r="6"/><path d="M24.4 23.4L29 28"/>
+      <path d="M17.6 19.2l1.6 1.6 3.2-3.4"/>
+      <path d="M3.5 25l3 3M6.5 25l-3 3" opacity=".8"/>
+    </symbol>
+    <symbol id="pi-perf" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 20a12 12 0 0 1 24 0"/>
+      <path d="M8 20a8 8 0 0 1 16 0" opacity=".45"/>
+      <path d="M16 20l5-6"/><circle cx="16" cy="20" r="1.4" fill="currentColor"/>
+      <path d="M9.5 26l-3 2 3 2M22.5 26l3 2-3 2M17.5 25.5l-3 5"/>
+    </symbol>
+    <symbol id="pi-monitor" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5.5" width="26" height="22" rx="2"/><path d="M3 11h26M9 3.5v4M23 3.5v4"/>
+      <path d="M5.5 20h5l2-5 3 9 2.5-6 1.5 2h7"/>
+    </symbol>
+    <symbol id="pi-eshop" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 3h18v26l-3-2-3 2-3-2-3 2-3-2-3 2z" fill="currentColor" fill-opacity=".08"/>
+      <path d="M11 8.5h10M11 12.5h6M11 16.5h8" opacity=".75"/>
+      <path d="M11 22h10" stroke-width="2"/>
+    </symbol>
+    <symbol id="pi-lead" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2.5" y="5" width="9" height="12" rx="1.5"/><path d="M4.5 8.5h5M4.5 11.5h5M4.5 14.5h3"/>
+      <path d="M12.5 8h9l-3.5 5v4l-2 1.5V13z" fill="currentColor" fill-opacity=".1"/>
+      <path d="M17 20v2.5"/>
+      <rect x="11" y="23" width="18" height="6" rx="1.5"/><path d="M13.5 26h7"/><circle cx="25.5" cy="26" r="1.1" fill="currentColor"/>
+    </symbol>
+    <symbol id="pi-gov" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="12" y="3" width="8" height="6" rx="1.2" fill="currentColor" fill-opacity=".1"/>
+      <path d="M16 9v4M7 13h18M7 13v4M25 13v4M16 13v4"/>
+      <rect x="3.5" y="17" width="7" height="5" rx="1"/><rect x="12.5" y="17" width="7" height="5" rx="1"/><rect x="21.5" y="17" width="7" height="5" rx="1"/>
+      <rect x="12.5" y="25" width="7" height="5" rx="1"/><path d="M14 25v-1.4a2 2 0 0 1 4 0V25"/>
+    </symbol>
+    <symbol id="pi-warn" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 4l13 23H3z"/><path d="M16 12v7M16 23h.01" stroke-width="2.2"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav><div class="wrap">
+  <a class="logo" href="#">datalayer<b>.cz</b></a>
+  <ul><li><a href="#">Služby ▾</a></li><li><a href="#">Řešení ▾</a></li><li><a href="#">Případové studie</a></li><li><a href="#">Blog</a></li><li><a href="#">O nás</a></li></ul>
+  <a class="btn btn-cta" href="#kontakt">[ Konzultovat projekt ]</a>
+</div></nav>
+
+<!-- 1 HERO – vizuálně beze změny (animace zůstává), upraven jen nadtitulek, podtitul a cíl 2. CTA -->
+<header class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">Webová analytika a měření · e-shopy · B2B · velké firmy</p>
+    <h1>Stavíme neprůstřelné <u>datové základy</u> pro váš růst.</h1>
+    <p class="sub">Navrhneme, nasadíme a ověříme měření od datové vrstvy po BigQuery: GA4, Google Tag Manager, server-side tracking a Consent Mode v2. S dokumentací a s daty, která vlastníte vy.</p>
+    <div class="ctas"><a class="btn btn-cta" href="#kontakt">[ Konzultovat projekt ]</a><a class="btn btn-ghost" href="#proces">[ Jak pracujeme ]</a></div>
+    <p class="micro">Úvodní konzultace 30 minut zdarma · odpověď do 1 pracovního dne</p>
+  </div>
+  <svg class="flow" viewBox="0 0 560 330" fill="none" aria-label="Schéma: e-shop → GTM → GA4, Meta CAPI, BigQuery">
+    <g stroke="#00ffff" stroke-width="1.5">
+      <rect x="20" y="130" width="70" height="70" rx="8" opacity=".9"/><rect x="230" y="130" width="70" height="70" rx="8"/>
+      <rect x="450" y="30" width="70" height="70" rx="8"/><rect x="450" y="130" width="70" height="70" rx="8"/><rect x="450" y="230" width="70" height="70" rx="8"/>
+      <path d="M90 165H230" stroke-dasharray="5 6"/><path d="M300 165H450" stroke-dasharray="5 6"/>
+      <path d="M300 165C370 165 380 65 450 65" stroke-dasharray="5 6"/><path d="M300 165C370 165 380 265 450 265" stroke-dasharray="5 6"/>
+    </g>
+    <g fill="#e6edf3" font-family="Roboto Mono" font-size="12" text-anchor="middle">
+      <text x="55" y="222">e-shop</text><text x="265" y="222">GTM</text><text x="485" y="122">GA4</text><text x="485" y="222">Meta CAPI</text><text x="485" y="322">BigQuery</text>
+    </g>
+    <rect x="110" y="235" width="190" height="56" rx="6" fill="#020a17" stroke="#1d2a40"/>
+    <text x="122" y="258" fill="#7ee0ff" font-family="Roboto Mono" font-size="11.5">dataLayer.push({</text>
+    <text x="134" y="276" fill="#a5e88f" font-family="Roboto Mono" font-size="11.5">'event': 'purchase'</text>
+  </svg>
+</div></header>
+
+<!-- 2 SEGMENTY -->
+<section class="light"><div class="wrap">
+  <p class="eyebrow">[ Pro koho ]</p>
+  <h2>Měření podle toho, jak vyděláváte</h2>
+  <p class="lead">E-shop potřebuje jiná data než firma, která prodává přes obchodníky. Vyberte si, co je vám nejblíž.</p>
+  <div class="seg">
+    <a href="#"><svg class="pi"><use href="#pi-eshop"/></svg><h3>E-shopy</h3>
+      <p class="pain">GA4 ukazuje jiné tržby než administrace a reklamní systémy si přivlastňují stejné objednávky.</p>
+      <ul><li>e-commerce měření podle GA4 schématu</li><li>Google Ads, Meta, Sklik i Heureka se stejnou hodnotou objednávky</li><li>marže a vratky v reportu</li></ul>
+      <span class="tag">Shoptet</span><span class="tag">Upgates</span><span class="tag">WooCommerce</span><span class="tag">Shopify</span><br>
+      <span class="more">Měření pro e-shopy →</span></a>
+    <a href="#"><svg class="pi"><use href="#pi-lead"/></svg><h3>B2B a lead generation</h3>
+      <p class="pain">Víte, kolik přišlo poptávek. Nevíte, které z nich se změnily v zakázku – a reklamy to neví taky.</p>
+      <ul><li>měření formulářů a hovorů bez osobních údajů v analytice</li><li>propojení s CRM a offline konverze</li><li>cena za lead i za zakázku</li></ul>
+      <span class="tag">HubSpot</span><span class="tag">Pipedrive</span><span class="tag">Raynet</span><br>
+      <span class="more">Měření pro B2B →</span></a>
+    <a href="#"><svg class="pi"><use href="#pi-gov"/></svg><h3>Velké firmy</h3>
+      <p class="pain">Více domén, týmů a dodavatelů. Každý měří trochu jinak a nikdo nemá celkový obraz.</p>
+      <ul><li>měřicí plán, názvosloví a verzování jako standard</li><li>server-side a BigQuery ve vašem Google Cloudu</li><li>spolupráce s IT, testy a SLA</li></ul>
+      <span class="tag">governance</span><span class="tag">sGTM</span><span class="tag">BigQuery</span><br>
+      <span class="more">Měření pro velké firmy →</span></a>
+  </div>
+</div></section>
+
+<!-- 3 SYMPTOMY -->
+<section><div class="wrap">
+  <p class="eyebrow">[ Poznáváte se? ]</p>
+  <h2>Šest situací, se kterými za námi klienti chodí nejčastěji</h2>
+  <p class="lead">Každá z nich má technickou příčinu, kterou umíme najít a opravit. Žádná z nich se nevyřeší „lepším reportem“.</p>
+  <div class="sym">
+    <div class="c"><div class="log"><span class="k">GA4</span>   purchase   812
+<span class="k">e-shop</span> objednávky 1 046
+<span class="w">⚠ rozdíl −22 %</span></div>
+      <h3>GA4 ukazuje o pětinu méně objednávek než e-shop</h3><p>Typicky chybí měření u některých plateb, souhlas se ukládá špatně nebo se nákup posílá dvakrát a GA4 ho zahodí.</p><a class="fix" href="#">Audit měření →</a></div>
+    <div class="c"><div class="log"><span class="k">consent</span> default <span class="r">'denied'</span>
+<span class="k">google_ads</span> konverze  <span class="r">−38 %</span>
+<span class="w">⚠ od nasazení lišty</span></div>
+      <h3>Po nasazení cookie lišty spadly konverze v Google Ads</h3><p>Lišta blokuje tagy, ale Consent Mode v2 neposílá signály, takže Google nemá z čeho modelovat.</p><a class="fix" href="#">Cookie lišta a Consent Mode →</a></div>
+    <div class="c"><div class="log"><span class="k">meta</span>  Purchase  418
+<span class="k">ga4</span>   purchase  633
+<span class="w">⚠ event_id chybí</span></div>
+      <h3>Meta, Google a Sklik hlásí každý jiná čísla</h3><p>Rozdíly jsou zčásti normální (atribuce), zčásti chyby – chybějící Conversions API, deduplikace nebo jiná hodnota objednávky.</p><a class="fix" href="#">Měření konverzí →</a></div>
+    <div class="c"><div class="log"><span class="k">GTM</span> tagy      146
+     aktivní   <span class="w">41 ?</span>
+     verze     v212 <span class="r">bez popisu</span></div>
+      <h3>V Tag Manageru je 140 tagů a nikdo neví, které jsou potřeba</h3><p>Nánosy po agenturách zpomalují web a posílají data tam, kam nemají. Uklidíme a nastavíme pravidla, aby to vydrželo.</p><a class="fix" href="#">Google Tag Manager →</a></div>
+    <div class="c"><div class="log"><span class="k">form</span>  odesláno   94
+<span class="k">CRM</span>   zakázky    <span class="r">? </span>
+<span class="w">⚠ gclid se neukládá</span></div>
+      <h3>Poptávky končí v e-mailu, ne v CRM ani v Google Ads</h3><p>Reklama se pak optimalizuje na počet formulářů, ne na zakázky. Propojíme web, CRM a reklamní systémy.</p><a class="fix" href="#">Měření pro B2B →</a></div>
+    <div class="c"><div class="log"><span class="k">report</span>  zdroj     Excel
+        aktualizace <span class="w">ručně, Po 8:00</span>
+        GA4 vzorkování <span class="r">ano</span></div>
+      <h3>Report pro vedení se každé pondělí skládá ručně</h3><p>Data z GA4, reklam a e-shopu spojíme v BigQuery a postavíme dashboard, který se aktualizuje sám a sedí s účetnictvím.</p><a class="fix" href="#">BigQuery a dashboardy →</a></div>
+  </div>
+  <p class="note">Čísla v ukázkách jsou ilustrativní. Po dodání podkladů nahradit anonymizovanými daty z reálných auditů.</p>
+</div></section>
+
+<!-- 4 SLUŽBY JAKO PIPELINE -->
+<section style="background:var(--sec)"><div class="wrap">
+  <p class="eyebrow">[ Služby ]</p>
+  <h2>Od sběru dat po report, kterému věří vedení</h2>
+  <p class="lead">Data procházejí třemi vrstvami. Postavíme celou cestu, nebo jen tu část, která vám chybí.</p>
+  <div class="pipe">
+    <div class="col"><div class="step">01 / sběr</div><h3>Sběr dat</h3>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-datalayer"/></svg><div><b>Datová vrstva</b><span>zadání pro vývojáře, které funguje</span></div></a>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-gtm"/></svg><div><b>Google Tag Manager</b><span>pořádek v tazích a verzích</span></div></a>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-ga4"/></svg><div><b>Implementace GA4</b><span>čísla, která sedí s tržbami</span></div></a>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-serverside"/></svg><div><b>Server-side tracking</b><span>měření na vaší doméně</span></div></a>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-conversion"/></svg><div><b>Měření konverzí</b><span>Ads, Meta, Sklik i Heureka vidí totéž</span></div></a>
+    </div>
+    <div class="col"><div class="step">02 / souhlas a kvalita</div><h3>Souhlas a kvalita dat</h3>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-consent"/></svg><div><b>Cookie lišta a Consent Mode v2</b><span>legálně a bez zbytečné ztráty dat</span></div></a>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-audit"/></svg><div><b>Audit měření</b><span>zjistíme, kde data utíkají</span></div></a>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-perf"/></svg><div><b>Technický audit webu</b><span>rychlost, tagy a technické SEO</span></div></a>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-monitor"/></svg><div><b>Správa webu a měření</b><span>hlídáme, aby měření po releasu nespadlo</span></div></a>
+    </div>
+    <div class="col"><div class="step">03 / data a reporting</div><h3>Data a reporting</h3>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-bigquery"/></svg><div><b>BigQuery</b><span>surová data bez limitů GA4</span></div></a>
+      <a class="svc" href="#"><svg class="pi"><use href="#pi-dashboard"/></svg><div><b>Dashboardy a reporting</b><span>Data Studio (dříve Looker Studio) i Power BI</span></div></a>
+    </div>
+  </div>
+</div></section>
+
+<!-- 5 DŮKAZ: JAK MĚŘÍME VLASTNÍ WEB (nahrazuje osamocené „+18 %“) -->
+<section><div class="wrap proof">
+  <div>
+    <p class="eyebrow">[ Ověřte si nás ]</p>
+    <h2>Podívejte se, jak měříme vlastní web</h2>
+    <p class="lead" style="margin-bottom:22px">Místo slibů nabízíme kontrolu. Otevřete na tomto webu vývojářské nástroje prohlížeče a uvidíte totéž, co nastavujeme klientům.</p>
+    <ul>
+      <li><i>✓</i><span>Před souhlasem se neukládají žádné analytické ani reklamní cookies (Consent Mode v2, výchozí stav <span class="mono">denied</span>).</span></li>
+      <li><i>✓</i><span>Měření běží přes server-side GTM na naší vlastní subdoméně.</span></li>
+      <li><i>✓</i><span>Formulář posílá událost <span class="mono">generate_lead</span> – bez jména a e-mailu v čitelné podobě.</span></li>
+      <li><i>✓</i><span>Web nenačítá HubSpot ani jiné cizí formuláře.</span></li>
+    </ul>
+    <a class="btn btn-ghost" href="#" style="margin-top:8px">[ Jak měříme vlastní web ]</a>
+  </div>
+  <div class="devtools">
+    <div class="bar"><span>Elements</span><b>Console</b><span>Network</span><span>Application</span></div>
+<pre><span class="c">// před souhlasem</span>
+gtag(<span class="s">'consent'</span>, <span class="s">'default'</span>, {
+  ad_storage: <span class="s">'denied'</span>, analytics_storage: <span class="s">'denied'</span>,
+  ad_user_data: <span class="s">'denied'</span>, ad_personalization: <span class="s">'denied'</span>
+});
+
+<span class="c">// po odeslání formuláře</span>
+dataLayer.push({
+  event: <span class="s">'generate_lead'</span>,
+  form_id: <span class="s">'home'</span>,
+  lead_topics: <span class="s">'server-side,konverze'</span>,
+  user_data: { sha256_email_address: <span class="s">'005ed88a…d803'</span> }
+});
+
+<span class="k">Network</span>  sgtm.datalayer.cz/g/collect  <span class="s">200</span></pre>
+  </div>
+</div>
+<div class="wrap"><p class="note">Sekce předpokládá, že klient nasadí consent, sGTM a nativní formulář na vlastní web. Do té doby sekci nezobrazovat. Hodnota hashe je ukázková.</p></div>
+</section>
+
+<!-- 6 PROCES -->
+<section class="light" id="proces"><div class="wrap">
+  <p class="eyebrow">[ Jak pracujeme ]</p>
+  <h2>Pět kroků, po každém dostanete konkrétní výstup</h2>
+  <p class="lead">Žádné „nastavíme to“. Každý krok končí dokumentem nebo ověřením, které můžete předat vlastnímu týmu.</p>
+  <div class="proc">
+    <div class="p"><div class="n">01</div><h3>Audit</h3><p>Projdeme GA4, GTM, consent a reklamní systémy a porovnáme je s administrací.</p><div class="out">výstup: report s prioritami A/B/C</div><div class="dur">obvykle [DOPLNIT] dní</div></div>
+    <div class="p"><div class="n">02</div><h3>Měřicí plán</h3><p>Byznys cíle převedeme na události, parametry a pravidla pojmenování.</p><div class="out">výstup: měřicí plán + specifikace dataLayer</div><div class="dur">obvykle [DOPLNIT] dní</div></div>
+    <div class="p"><div class="n">03</div><h3>Implementace</h3><p>GTM na webu i serveru, Consent Mode v2, konverze do reklamních systémů.</p><div class="out">výstup: verzované kontejnery</div><div class="dur">obvykle [DOPLNIT] týdnů</div></div>
+    <div class="p"><div class="n">04</div><h3>Validace</h3><p>Testovací scénáře, kontrola každé události a porovnání čísel s e-shopem nebo CRM.</p><div class="out">výstup: protokol testů</div><div class="dur">obvykle [DOPLNIT] dní</div></div>
+    <div class="p"><div class="n">05</div><h3>Předání a podpora</h3><p>Dokumentace, školení týmu a hlídání, aby měření nespadlo po dalším releasu.</p><div class="out">výstup: dokumentace + monitoring</div><div class="dur">průběžně</div></div>
+  </div>
+</div></section>
+
+<!-- 7 PLATFORMY -->
+<section style="padding:56px 0"><div class="wrap">
+  <p class="eyebrow">[ S čím pracujeme ]</p>
+  <div class="plat"><span>GA4</span><span>Google Tag Manager</span><span>server-side GTM</span><span>Google Cloud Run</span><span>BigQuery</span><span>Data Studio</span><span>Power BI</span><span>Google Ads</span><span>Meta CAPI</span><span>Sklik / Seznam</span><span>Heureka</span><span>Shoptet</span><span>Upgates</span><span>WooCommerce</span><span>Shopify</span><span>HubSpot</span><span>Pipedrive</span><span>Raynet</span></div>
+</div></section>
+
+<!-- 8 ČLÁNKY -->
+<section style="background:var(--sec)"><div class="wrap">
+  <p class="eyebrow">[ Do hloubky ]</p>
+  <h2>Vysvětlujeme, jak měření doopravdy funguje</h2>
+  <p class="lead">Návody s diagramy, kódem a odkazy na dokumentaci. Bez marketingových zkratek.</p>
+  <div class="art">
+    <a href="#"><div class="th"><svg viewBox="0 0 150 80" fill="none" stroke="#00ffff" stroke-width="1.5"><rect x="6" y="28" width="38" height="22" rx="11"/><circle cx="33" cy="39" r="7" fill="#00ffff" fill-opacity=".25"/><path d="M44 39h30" stroke-dasharray="4 4"/><rect x="74" y="18" width="30" height="16" rx="3"/><rect x="74" y="44" width="30" height="16" rx="3"/><path d="M104 26h40M104 52h40" stroke-dasharray="4 4" opacity=".5"/></svg></div><div class="b"><span class="tag">consent</span><h3>Consent Mode v2: basic vs. advanced a co se posílá před souhlasem</h3><p>Signály, cookieless pingy, modelování a nastavení v GTM.</p></div></a>
+    <a href="#"><div class="th"><svg viewBox="0 0 150 80" fill="none" stroke="#00ffff" stroke-width="1.5"><rect x="6" y="26" width="34" height="28" rx="3"/><path d="M40 40h22" stroke-dasharray="4 4"/><path d="M76 22l14 6v12c0 9-6 15-14 18-8-3-14-9-14-18V28z" fill="#00ffff" fill-opacity=".1"/><path d="M90 40h20M90 34l20-14M90 46l20 14" stroke-dasharray="4 4"/><circle cx="116" cy="20" r="3"/><circle cx="116" cy="40" r="3"/><circle cx="116" cy="60" r="3"/></svg></div><div class="b"><span class="tag">server-side</span><h3>Propojení client-side a server-side trackingu krok za krokem</h3><p>Hybridní architektura, deduplikace a předávání souhlasu.</p></div></a>
+    <a href="#"><div class="th"><svg viewBox="0 0 150 80" fill="none" stroke="#00ffff" stroke-width="1.5"><path d="M20 30l30-12 30 12-30 12z" fill="#00ffff" fill-opacity=".1"/><path d="M20 30v20l30 12 30-12V30"/><path d="M90 40h50M90 50h36M90 60h44" opacity=".6"/></svg></div><div class="b"><span class="tag">bigquery</span><h3>GA4 → BigQuery: nastavení exportu, struktura tabulek a náklady</h3><p>Co export obsahuje, jaké má limity a kolik reálně stojí.</p></div></a>
+  </div>
+</div></section>
+
+<!-- 9 FAQ -->
+<section class="light"><div class="wrap faq">
+  <p class="eyebrow">[ Časté otázky ]</p>
+  <h2>Než se ozvete</h2>
+  <details open><summary>Pracujete i s menšími e-shopy, nebo jen s velkými firmami?</summary><p>S obojím. U menších e-shopů obvykle začínáme auditem a opravou základního měření (GA4, consent, konverze). Server-side a BigQuery doporučujeme až tam, kde se vyplatí – a řekneme vám to rovnou.</p></details>
+  <details><summary>Komu patří účty a data?</summary><p>Vždy vám. GA4, Tag Manager, Google Cloud i reklamní účty běží pod vaší firmou, my dostáváme přístup. Po skončení spolupráce nic nemigrujete – a dostanete dokumentaci, podle které může pokračovat kdokoli jiný.</p></details>
+  <details><summary>Jak se tvoří cena?</summary><p>Podle rozsahu: počet webů a domén, platforma e-shopu, kolik reklamních systémů napojujeme a jestli stavíme server-side nebo BigQuery. Po úvodní konzultaci dostanete nabídku s pevným rozsahem a výstupy. Provoz Google Cloudu platíte napřímo Googlu.</p></details>
+  <details><summary>Spolupracujete s naším vývojářem nebo agenturou?</summary><p>Ano, je to běžné. Vývojářům dodáme specifikaci datové vrstvy a testovací scénáře, s PPC agenturou se domluvíme na konverzích a jejich hodnotách.</p></details>
+  <details><summary>Je server-side tracking v souladu s GDPR?</summary><p>Server-side nemění nic na tom, kdy potřebujete souhlas. Nastavujeme ho tak, aby respektoval volbu v cookie liště a aby na servery třetích stran odcházelo jen to, co odcházet má. Právní posouzení konkrétního zpracování patří vašemu právníkovi.</p></details>
+</div></section>
+
+<!-- 10 KONTAKT (nativní formulář – viz 05_formulare) -->
+<section class="dl-contact" id="kontakt" data-form="home" style="padding:88px 16px"><div class="dl-contact__grid">
+  <div class="dl-contact__intro">
+    <p class="dl-contact__eyebrow">[ Kontakt ]</p>
+    <h2>Pojďme se podívat, kde vám utíkají data</h2>
+    <p class="dl-contact__lead">Napište nám, zavolejte, nebo vyplňte formulář. Na úvodní 30minutové konzultaci projdeme vaše měření a řekneme vám, co opravit jako první.</p>
+    <ul class="dl-channels">
+      <li><span class="dl-channels__icon">☎</span><span><span class="dl-channels__label">Telefon</span><a href="tel:+420000000000">+420 000 000 000</a></span></li>
+      <li><span class="dl-channels__icon">✉</span><span><span class="dl-channels__label">E-mail</span><a href="mailto:one@datalayer.cz">one@datalayer.cz</a></span></li>
+    </ul>
+  </div>
+  <form class="dl-form" onsubmit="return false">
+    <div class="dl-form__row"><label>Jméno a příjmení<input type="text"></label><label>E-mail<input type="email"></label></div>
+    <div class="dl-form__row"><label>Telefon <span class="opt">(nepovinné)</span><input type="tel"></label><label>Web <span class="opt">(nepovinné)</span><input type="url"></label></div>
+    <label>S čím vám můžeme pomoci?<textarea placeholder="Např. GA4 ukazuje o 30 % méně objednávek než e-shop a nevíme proč…"></textarea></label>
+    <button class="dl-btn">[ Odeslat zprávu ]</button>
+    <p class="dl-form__note">Plný formulář: 05_formulare/prototyp/kontakt-blok-prototyp.html</p>
+  </form>
+</div></section>
+
+<footer><div class="wrap">datalayer.cz · Služby · Řešení · Blog · Slovník · Nástroje · Zpracování osobních údajů · Cookies · Nastavení cookies</div></footer>
+</body>
+</html>

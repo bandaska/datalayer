@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontaktní blok – prototyp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="kontakt.css">
+<style>
+  body { margin: 0; background: #020d1e; }
+  .demo-bar { font: 13px/1.4 "Roboto Mono", monospace; color: #8b949e; background: #020d1e; padding: 10px 16px; border-bottom: 1px solid #1f2937; }
+  .demo-bar b { color: #00ffff; }
+  #dl-debug { font: 12px/1.5 "Roboto Mono", monospace; color: #e6edf3; background: #000814; border-top: 1px solid #1f2937; padding: 16px; white-space: pre-wrap; max-height: 260px; overflow: auto; }
+</style>
+</head>
+<body>
+
+<div class="demo-bar"><b>PROTOTYP</b> · odeslání je simulované (bez serveru) · události <code>dataLayer</code> se vypisují dole</div>
+
+<!--
+  Kontaktní blok – použít na KAŽDÉ landing page a na homepage.
+  data-form          = ID bloku pro dataLayer (home, lp-server-side, lp-ga4, kontakt, blog…)
+  data-default-topic = předvybrané téma podle stránky (hodnoty = value checkboxů „tema“)
+-->
+<section class="dl-contact" id="kontakt" data-form="home" data-default-topic="">
+  <div class="dl-contact__grid">
+
+    <div class="dl-contact__intro">
+      <p class="dl-contact__eyebrow">[ Kontakt ]</p>
+      <h2>Pojďme se podívat, kde vám utíkají data</h2>
+      <p class="dl-contact__lead">
+        Napište nám, zavolejte, nebo vyplňte formulář. Na úvodní 30minutové konzultaci
+        projdeme vaše měření a řekneme vám, co opravit jako první – nezávazně a zdarma.
+      </p>
+
+      <ul class="dl-channels">
+        <li>
+          <span class="dl-channels__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1.1l-2.2 1.9z"/></svg>
+          </span>
+          <span><span class="dl-channels__label">Telefon (Po–Pá 9–17)</span><a href="tel:+420000000000">+420 000 000 000</a></span>
+        </li>
+        <li>
+          <span class="dl-channels__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          </span>
+          <span><span class="dl-channels__label">E-mail</span><a href="mailto:one@datalayer.cz">one@datalayer.cz</a></span>
+        </li>
+        <li>
+          <span class="dl-channels__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.51 2.5 2.5 0 0 1 4.98 3.5zM.25 8h4.5v13H.25zM8 8h4.3v1.8h.06c.6-1.14 2.06-2.34 4.24-2.34 4.53 0 5.37 2.98 5.37 6.86V21h-4.5v-5.78c0-1.38-.02-3.16-1.93-3.16-1.93 0-2.22 1.5-2.22 3.06V21H8z"/></svg>
+          </span>
+          <span><span class="dl-channels__label">LinkedIn</span><a href="https://www.linkedin.com/" rel="noopener">Vít Novotný</a></span>
+        </li>
+      </ul>
+
+      <div class="dl-person">
+        <span class="dl-person__photo" aria-hidden="true">VN</span>
+        <span>
+          <span class="dl-person__name">Odpovídá Vít Novotný</span><br>
+          <span class="dl-person__role">tracking &amp; data engineer · odpověď do 1 pracovního dne</span>
+        </span>
+      </div>
+    </div>
+
+    <form class="dl-form" action="/api/kontakt" method="post" data-contact-form="home" aria-label="Kontaktní formulář" novalidate>
+      <input type="hidden" name="form_id" value="home">
+      <div class="dl-form__row">
+        <label>Jméno a příjmení
+          <input type="text" name="jmeno" autocomplete="name" required>
+        </label>
+        <label>E-mail
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+      </div>
+      <div class="dl-form__row">
+        <label>Telefon <span class="opt">(nepovinné)</span>
+          <input type="tel" name="telefon" autocomplete="tel" placeholder="+420">
+        </label>
+        <label>Web <span class="opt">(nepovinné)</span>
+          <input type="url" name="web" autocomplete="url" placeholder="www.vas-eshop.cz">
+        </label>
+      </div>
+
+      <fieldset class="dl-topics">
+        <legend>Co řešíte? <span class="opt" style="color:#8b949e;font-weight:400">(nepovinné, více možností)</span></legend>
+        <div class="dl-topics__list">
+          <label class="dl-chip"><input type="checkbox" name="tema" value="ga4"><span>GA4</span></label>
+          <label class="dl-chip"><input type="checkbox" name="tema" value="gtm"><span>Tag Manager</span></label>
+          <label class="dl-chip"><input type="checkbox" name="tema" value="server-side"><span>Server-side</span></label>
+          <label class="dl-chip"><input type="checkbox" name="tema" value="consent"><span>Cookie lišta &amp; consent</span></label>
+          <label class="dl-chip"><input type="checkbox" name="tema" value="konverze"><span>Konverze v Ads / Meta / Sklik</span></label>
+          <label class="dl-chip"><input type="checkbox" name="tema" value="bigquery"><span>BigQuery &amp; dashboardy</span></label>
+          <label class="dl-chip"><input type="checkbox" name="tema" value="audit"><span>Audit měření</span></label>
+        </div>
+      </fieldset>
+
+      <label>S čím vám můžeme pomoci?
+        <textarea name="zprava" required placeholder="Např. GA4 ukazuje o 30 % méně objednávek než e-shop a nevíme proč…"></textarea>
+      </label>
+
+      <!-- Cloudflare Turnstile (sitekey doplnit) – v prototypu vypnuto -->
+      <!-- <div class="cf-turnstile" data-sitekey="XXXX" data-theme="dark"></div> -->
+
+      <div class="dl-form__hp" aria-hidden="true">
+        <label>Nevyplňujte <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <p class="dl-form__legal">
+        Údaje použijeme jen k odpovědi na vaši zprávu a případné nabídce.
+        <a href="/zpracovani-osobnich-udaju">Jak s nimi zacházíme</a>. Žádný newsletter, žádný spam.
+      </p>
+
+      <button class="dl-btn" type="submit">[ Odeslat zprávu ]</button>
+      <p class="dl-form__note" data-form-note>Ozveme se do 1 pracovního dne.</p>
+
+      <div class="dl-form__success" data-form-success hidden aria-live="assertive">
+        <div>
+          <span class="dl-form__success-icon" aria-hidden="true">
+            <svg width="64" height="64" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15 27l7 7 15-16" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 tabindex="-1">Díky, zpráva dorazila</h3>
+          <p data-success-text>Ozveme se vám do 1 pracovního dne.</p>
+          <button class="dl-form__again" type="button" data-success-again>Napsat další zprávu</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<div id="dl-debug">dataLayer:&#10;</div>
+
+<script>
+  // ---- DEMO: simulace serveru + výpis dataLayeru (do produkce NEPATŘÍ) ----
+  (function () {
+    var out = document.getElementById('dl-debug');
+    window.dataLayer = window.dataLayer || [];
+    var push = window.dataLayer.push.bind(window.dataLayer);
+    window.dataLayer.push = function (o) { out.textContent += JSON.stringify(o, null, 2) + '\n'; return push(o); };
+    var realFetch = window.fetch;
+    window.fetch = function (url, opts) {
+      if (String(url).indexOf('/api/kontakt') !== -1) {
+        return new Promise(function (res) {
+          setTimeout(function () {
+            res(new Response(JSON.stringify({ ok: true, leadId: 'L-' + Date.now() }), { headers: { 'Content-Type': 'application/json' } }));
+          }, 700);
+        });
+      }
+      return realFetch.apply(this, arguments);
+    };
+  })();
+</script>
+<script src="kontakt.js"></script>
+</body>
+</html>

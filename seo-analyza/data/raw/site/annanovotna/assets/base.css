@@ -1,0 +1,959 @@
+/* ==========================================================================
+   annanovotna.cz — šablona stránky „Pro firmy"
+   Čisté CSS bez závislosti na Divi / WordPressu.
+
+   Obsah:
+     1. Fonty (self-hosted Nunito + Nunito Sans)
+     2. Proměnné (barvy, stíny, rozměry)
+     3. Reset a základní typografie
+     4. Layout (kontejner, sekce, sloupce)
+     5. Tlačítka
+     6. Hlavička a menu
+     7. Hero
+     8. Obsahové bloky (text, blurby, galerie, kroky)
+     9. Reference (video + testimonialy)
+    10. CTA pásy
+    11. FAQ
+    12. Patička
+    13. Zpět nahoru
+    14. Responzivní úpravy
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Fonty
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/nunito-300-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/nunito-300-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/nunito-600-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/nunito-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/nunito-700-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/nunito-700-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/nunito-sans-400-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/nunito-sans-400-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/nunito-sans-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/nunito-sans-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/nunito-sans-600-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/nunito-sans-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/nunito-sans-700-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/nunito-sans-700-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* --------------------------------------------------------------------------
+   2. Proměnné
+   -------------------------------------------------------------------------- */
+:root {
+  --color-text: #262626;
+  --color-primary: #1F9DB9;        /* tyrkysová – nadpisy, hlavička, CTA pás */
+  --color-primary-dark: #166F83;   /* tmavý petrol – odkazy, ikony, aktivní menu */
+  --color-accent: #FD6D60;         /* korálová – tlačítka */
+  --color-accent-hover: #FC4636;   /* tmavší korálová – hover tlačítek, odkazy */
+  --color-band-tint: rgba(185, 222, 230, 0.18);  /* velmi světlé modré pásy */
+  --color-band-blue: #B9DEE6;      /* světle modrý pás (reference) */
+  --color-band-yellow: #FBD032;    /* žlutý pás (CTA) */
+  --color-footer: #1A4B5A;         /* patička */
+
+  --font-heading: 'Nunito', Helvetica, Arial, Lucida, sans-serif;
+  --font-body: 'Nunito Sans', Helvetica, Arial, Lucida, sans-serif;
+
+  --radius-card: 20px;
+  --shadow-card: 0 12px 18px -6px rgba(0, 0, 0, 0.3);
+
+  --container-width: 80%;
+  --container-max: 1080px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Reset a základní typografie
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 500; /* Nunito Sans 500 není k dispozici, prohlížeč použije 400 – shodné s originálem */
+  line-height: 1.7em;
+  color: var(--color-text);
+  background: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.5em;
+  color: var(--color-primary);
+}
+
+h1 { font-size: 30px; }
+h2 { font-size: 26px; line-height: 1.7em; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+
+p {
+  margin: 0;
+  padding-bottom: 1em;
+}
+
+/* Poslední odstavec v bloku bez spodního odsazení (chování Divi textových modulů) */
+p:last-of-type {
+  padding-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 1em 1em;
+  line-height: 1.7em;
+}
+
+li {
+  padding-bottom: 0.5em;
+}
+
+a {
+  color: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.align-center {
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   4. Layout
+   -------------------------------------------------------------------------- */
+.container {
+  width: var(--container-width);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4% 0;
+}
+
+.section--tint   { background-color: var(--color-band-tint); }
+.section--blue   { background-color: var(--color-band-blue); }
+.section--yellow { background-color: var(--color-band-yellow); }
+
+.row {
+  padding: 2% 0;
+}
+
+/* Poslední blok v řadě/sloupci nemá spodní odsazení (stejné chování jako originál) */
+.row > :last-child,
+.col > :last-child {
+  margin-bottom: 0;
+}
+
+/* Dvousloupcová / třísloupcová mřížka (na tabletu a mobilu se skládá pod sebe) */
+.cols-2,
+.cols-3 {
+  display: grid;
+  column-gap: 5.5%;
+  align-items: start;
+}
+
+.cols-2 { grid-template-columns: 1fr 1fr; }
+.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+/* Užší textový blok uprostřed stránky */
+.text-block {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.text-block--wide {
+  max-width: none;
+}
+
+.text-block a {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.text-block h3 {
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 2.7em;
+}
+
+.text-block h6 {
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   5. Tlačítka
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.3em 1em;
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7em;
+  color: #fff;
+  background-color: var(--color-accent);
+  border: 2px solid transparent;
+  border-radius: 15px;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: all 300ms ease 0ms;
+}
+
+.btn::after {
+  content: '\276F';   /* šipka se objeví při najetí – jako v originálu */
+  display: inline-block;
+  width: 0;
+  margin-left: 0;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: all 300ms ease 0ms;
+}
+
+.btn:hover {
+  background-color: var(--color-accent-hover);
+  padding-right: 0.7em;
+}
+
+.btn:hover::after {
+  width: 1em;
+  margin-left: 0.3em;
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   6. Hlavička a menu
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: relative;
+  background-color: var(--color-primary);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.site-header__logo {
+  display: block;
+  padding: 16px 0;
+  line-height: 0;
+}
+
+.site-header__logo img {
+  width: 435px;
+  height: 44px;
+}
+
+.site-nav {
+  margin-left: auto;
+}
+
+.site-nav__menu {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1;
+}
+
+.site-nav__menu li {
+  padding: 0 11px;
+}
+
+.site-nav__menu a {
+  display: block;
+  padding: 31px 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 14px;
+  color: #fff;
+}
+
+.site-nav__menu li.is-current a {
+  color: var(--color-primary-dark);
+}
+
+.site-header__search-toggle {
+  margin-left: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  line-height: 0;
+  cursor: pointer;
+}
+
+/* Hamburger – zobrazuje se jen na tabletu/mobilu */
+.site-header__menu-toggle {
+  display: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-left: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.site-header__menu-toggle span,
+.site-header__menu-toggle span::before,
+.site-header__menu-toggle span::after {
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  content: '';
+}
+
+.site-header__menu-toggle span {
+  top: 15px;
+  left: 4px;
+}
+
+.site-header__menu-toggle span::before { top: -7px; left: 0; }
+.site-header__menu-toggle span::after  { top: 7px;  left: 0; }
+
+/* Vyhledávací lišta přes hlavičku */
+.site-header__search[hidden] {
+  display: none;
+}
+
+.site-header__search {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  background-color: var(--color-primary);
+  z-index: 5;
+}
+
+.site-header__search-form {
+  flex: 1;
+}
+
+.site-header__search-input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 24px;
+  color: #fff;
+  outline: none;
+}
+
+.site-header__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.site-header__search-close {
+  border: 0;
+  background: none;
+  font-size: 32px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   7. Hero
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  z-index: 10;
+  padding: 10vw 0;
+  background-image: url('../img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg');
+  background-size: cover;
+  background-position: 50%;
+  box-shadow: var(--shadow-card);
+}
+
+.hero__content {
+  width: 47.25%;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero__subtitle {
+  margin-top: 48px;   /* mezera po odstavci (v originálu odstavcová mezera + prázdný <p>) */
+  font-size: 20px;
+  line-height: 2.3em;
+  color: var(--color-text);
+}
+
+.hero__cta {
+  margin-top: 30px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Obsahové bloky
+   -------------------------------------------------------------------------- */
+
+/* Blurb = nadpis + text, volitelně s ikonou vlevo nebo nahoře */
+.blurb {
+  max-width: 550px;
+  margin: 0 auto 30px;
+}
+
+.blurb__body h4 a,
+.blurb h4 a {
+  color: inherit;
+}
+
+.blurb--icon-left {
+  display: flex;
+}
+
+.blurb--icon-left .blurb__icon {
+  flex: 0 0 32px;
+  line-height: 0;
+}
+
+.blurb--icon-left .blurb__body {
+  padding-left: 15px;
+}
+
+/* Blurb s kulatou ikonou nahoře (sekce „S čím firmám pomáhám") */
+.blurb--icon-top {
+  text-align: left;
+}
+
+.blurb__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 30px;
+  border-radius: 100%;
+  background-color: var(--color-primary-dark);
+}
+
+.blurb__badge--narrow svg {
+  width: 31px;
+}
+
+/* Blurby s odkazy v textu */
+.blurb__body a {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Foto s rámečkem a stínem (sekce „Pro koho") */
+.framed-image {
+  max-width: 350px;
+  margin: 0 auto 30px;
+  line-height: 0;
+}
+
+.framed-image img {
+  box-shadow: var(--shadow-card);
+}
+
+/* Galerie tří fotografií */
+.gallery {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.gallery__item {
+  display: block;
+  width: calc(33.333333% - 10px);
+  margin-bottom: 15px;
+}
+
+.gallery__item img {
+  display: block;
+  width: 100%;
+  box-shadow: var(--shadow-card);
+}
+
+.gallery__title {
+  padding: 10px 0;
+  text-align: left;
+}
+
+/* Kroky spolupráce („Jak to probíhá") */
+.steps {
+  max-width: 550px;
+  margin: 30px auto 0;
+}
+
+.steps .blurb {
+  margin-bottom: 30px;
+}
+
+.steps .blurb__body {
+  padding-left: 15px;
+}
+
+.steps__note {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Reference – video a testimonialy
+   -------------------------------------------------------------------------- */
+.card {
+  background-color: #fff;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.card--video {
+  padding: 50px 0;
+}
+
+.card--video .video {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 0;
+  box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card--video .video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+.card--video .text-block {
+  margin-bottom: 0;
+}
+
+.card--video .text-block a {
+  color: var(--color-primary-dark);
+}
+
+.testimonial {
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: #fcfcfc;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.testimonial::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.testimonial__portrait {
+  float: left;
+  box-sizing: content-box;   /* 90 px + 3 px rámeček = 96 px jako v originálu */
+  width: 90px;
+  height: 90px;
+  margin-right: 30px;
+  border: 3px solid var(--color-primary);
+  border-radius: 90px;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial__body {
+  overflow: hidden;
+}
+
+.testimonial__author {
+  display: block;
+  margin-top: 32px;
+  font-weight: 700;
+}
+
+.testimonial__company {
+  padding-bottom: 0;
+}
+
+.testimonial__company a {
+  color: var(--color-accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   10. CTA pásy
+   -------------------------------------------------------------------------- */
+
+/* Modrý pás („Zjistili jste, že jsem ta pravá…") */
+.cta-band {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.cta-band h2 {
+  color: #fff;
+}
+
+.cta-band__button {
+  margin-top: 30px;
+}
+
+/* Bílá karta ve žlutém pásu */
+.row.card--cta {
+  padding: 4vw 0;
+}
+
+/* --------------------------------------------------------------------------
+   11. FAQ
+   -------------------------------------------------------------------------- */
+.faq__item {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid var(--color-band-blue);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.faq__item summary {
+  position: relative;
+  padding-right: 50px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary h5 {
+  padding-bottom: 0;
+  color: #666;
+}
+
+.faq__item[open] summary h5 {
+  color: #333;
+}
+
+/* Kroužek s dvojitou šipkou vpravo */
+.faq__item summary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  background-color: var(--color-primary-dark);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7.3' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3Cpath d='M5 5.7l3 3 3-3M5 9l3 3 3-3' fill='none' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7.3' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3Cpath d='M5 5.7l3 3 3-3M5 9l3 3 3-3' fill='none' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.faq__item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq__answer {
+  padding-top: 20px;
+}
+
+.faq__answer a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   12. Patička
+   -------------------------------------------------------------------------- */
+.site-footer {
+  padding-top: 1px;
+  background-color: var(--color-footer);
+  color: #fff;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.site-footer__links {
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  font-size: 15px;
+}
+
+.site-footer__info {
+  font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   13. Zpět nahoru
+   -------------------------------------------------------------------------- */
+.scroll-top {
+  position: fixed;
+  right: 0;
+  bottom: 125px;
+  z-index: 999;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  line-height: 0;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   14. Responzivní úpravy
+   -------------------------------------------------------------------------- */
+@media only screen and (min-width: 1350px) {
+  .section { padding: 54px 0; }
+  .row     { padding: 27px 0; }
+}
+
+@media only screen and (max-width: 980px) {
+  .section { padding: 50px 0; }
+  .row     { padding: 30px 0; }
+
+  .cols-2,
+  .cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hlavička: hamburger místo menu */
+  .site-header__inner {
+    min-height: 81px;
+    padding: 0 30px;
+  }
+
+  .site-header__logo img {
+    max-width: 100%;
+    width: auto;
+    max-height: 44px;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    background: #fff;
+    border-top: 3px solid var(--color-accent);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav__menu {
+    display: block;
+    padding: 5%;
+  }
+
+  .site-nav__menu li {
+    padding: 0;
+  }
+
+  .site-nav__menu a,
+  .site-nav__menu li.is-current a {
+    padding: 10px 5%;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .site-header__menu-toggle {
+    display: block;
+  }
+
+  /* Hero: fotografie pro tablet + bílý přechod pod textem */
+  .hero {
+    background-image: url('../img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce-tablet.jpg');
+  }
+
+  .hero__content {
+    width: auto;
+    max-width: 400px;
+    padding: 10px;
+    background-image: linear-gradient(297deg, rgba(255, 255, 255, 0) 0%, #ffffff 58%);
+  }
+
+  .framed-image {
+    max-width: 400px;
+  }
+
+  .card--video,
+  .row.card--cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .gallery {
+    flex-wrap: wrap;
+  }
+
+  .gallery__item {
+    width: calc(50% - 7.5px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body { font-size: 16px; }
+
+  h1 { font-size: 26px; }
+  h2 { font-size: 22px; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 15px; }
+  h5 { font-size: 13px; }
+  h6 { font-size: 12px; }
+
+  .row { padding: 19px 0; }
+
+  .text-block h6 { font-size: 16px; }
+
+  .hero {
+    background-color: inherit;
+    background-image:
+      url('../img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce-tablet.jpg'),
+      linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 65%);
+    background-blend-mode: overlay;
+  }
+
+  .testimonial__portrait {
+    float: none;
+    margin: 0 auto 20px;
+  }
+
+  .card--video {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .gallery__item {
+    width: 100%;
+  }
+}

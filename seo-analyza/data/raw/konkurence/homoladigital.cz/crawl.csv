@@ -1,0 +1,123 @@
+url,status,location,title,title_len,meta_desc,meta_desc_len,robots,canonical,lang,h1,h2,words,img_count,img_no_alt,forms,hubspot,int_links_out,ext_links_out,jsonld,og_title,og_image
+https://homoladigital.cz/,200,,"Nastavení GA4 a GTM, weby na míru | Lukáš Homola",48,"Nastavím GA4 a GTM tak, aby čísla dávala smysl, nebo vám postavím rychlý web na míru. Cenu znáte předem a vstupní analýza je zdarma.",132,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://homoladigital.cz/,cs,Přesné měření. Rychlé weby. Cena daná předem.,"Od prvního měření po nový web | Měření na platformě, kterou už máte | Nejdřív měřím. Potom navrhnu. Nakonec zlepším. | Weby, které už slouží zákazníkům | Ceny předem, žádné hvězdičky | Lukáš Homola | Na co se ptáte nejčastěji | Pošlete mi odkaz na svůj web. | Cookies na tomto webu",1390,6,0,1,False,10,7,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": [
+          ""ProfessionalService"",
+          ""Organization""
+        ],
+        ""@id"": ""https://homoladigital.cz/#business"",
+        ""name"": ""Homola Digital"",
+        ""alternateName"": ""Lukáš Homola – Homola Digital"",
+        ""url"": ""https://homoladigital.cz/"",
+        ""logo"": {
+          ""@type"": ""ImageObject"",
+          ""@id"": ""https://homoladigital.cz/#logo"",
+          ""url"": ""https://homoladigital.cz/assets/bra",Přesné měření. Rychlé weby. Cena daná předem.,https://homoladigital.cz/og-image-2026-10.jpg
+https://homoladigital.cz/sluzby/ga4.html,200,,Nastavení a audit GA4 (Google Analytics 4) | Homola Digital,59,"Nastavím nebo zkontroluji GA4 včetně konverzí, e-shopu a cookie lišty. Cena od 6 000 Kč, obvykle hotovo do 5 pracovních dnů. Analýza zdarma.",140,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://homoladigital.cz/sluzby/ga4.html,cs,"Nastavení a audit GA4, kterému budete rozumět","Co pro vás v GA4 udělám | Proč na správném nastavení záleží | Otestujte si své znalosti GA4 a GTM | Kolik to stojí a jak začneme | Chcete vědět, co vaše čísla říkají? | Cookies na tomto webu",591,0,0,0,False,9,1,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""WebPage"",
+        ""@id"": ""https://homoladigital.cz/sluzby/ga4.html#webpage"",
+        ""url"": ""https://homoladigital.cz/sluzby/ga4.html"",
+        ""name"": ""Nastavení a audit GA4 (Google Analytics 4) | Homola Digital"",
+        ""description"": ""Nastavím nebo zkontroluji GA4 včetně konverzí, e-shopu a cookie lišty. Cena od 6 000 Kč, obvykle hotovo do 5 pracovních dnů. Analýza zdarma."",
+        ""isPartOf"": {
+          """,Nastavení a audit GA4 – Homola Digital,https://homoladigital.cz/og-image-2026-10.jpg
+https://homoladigital.cz/sluzby/gtm.html,200,,Nastavení a audit Google Tag Manageru (GTM) | Homola Digital,60,"Nastavím nebo upravím GTM včetně konverzí, e-commerce a propojení s cookie lištou. Cena od 6 000 Kč, obvykle hotovo do 5 pracovních dnů. Analýza zdarma.",152,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://homoladigital.cz/sluzby/gtm.html,cs,Nastavení a audit GTM: všechny kódy pod kontrolou,"Co pro vás v GTM udělám | Proč měřit přes GTM, a ne kódy ve webu | Kolik to stojí a jak začneme | Uděláme ve vašem měření pořádek? | Cookies na tomto webu",290,0,0,0,False,9,1,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""WebPage"",
+        ""@id"": ""https://homoladigital.cz/sluzby/gtm.html#webpage"",
+        ""url"": ""https://homoladigital.cz/sluzby/gtm.html"",
+        ""name"": ""Nastavení a audit Google Tag Manageru (GTM) | Homola Digital"",
+        ""description"": ""Nastavím nebo upravím GTM včetně konverzí, e-commerce a propojení s cookie lištou. Cena od 6 000 Kč, obvykle hotovo do 5 pracovních dnů. Analýza zdarma."",
+        ""isPartOf"": ",Nastavení a audit GTM – Homola Digital,https://homoladigital.cz/og-image-2026-10.jpg
+https://homoladigital.cz/sluzby/weby.html,200,,Tvorba webových stránek na míru | Homola Digital,48,"Vytvořím rychlý web na míru pro živnostníka nebo malou firmu. Jednostránkový web od 14 000 Kč, SEO základ a měření GA4 v ceně. Pevná cena předem.",145,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://homoladigital.cz/sluzby/weby.html,cs,"Weby na míru, které se načtou dřív, než zákazník zaváhá",Co dostanete | Pro koho weby stavím | Jak spolupráce probíhá a jak vzniká cena | Potřebujete nový web? | Cookies na tomto webu,273,0,0,0,False,9,1,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""WebPage"",
+        ""@id"": ""https://homoladigital.cz/sluzby/weby.html#webpage"",
+        ""url"": ""https://homoladigital.cz/sluzby/weby.html"",
+        ""name"": ""Tvorba webových stránek na míru | Homola Digital"",
+        ""description"": ""Vytvořím rychlý web na míru pro živnostníka nebo malou firmu. Jednostránkový web od 14 000 Kč, SEO základ a měření GA4 v ceně. Pevná cena předem."",
+        ""isPartOf"": {
+          ""@id""",Tvorba webových stránek na míru | Homola Digital,https://homoladigital.cz/og-image-2026-10.jpg
+https://homoladigital.cz/sluzby/optimalizace.html,200,,Zrychlení webu a technické SEO | Homola Digital,47,"Najdu, co web zpomaluje a co ho Googlu brání správně přečíst. Hloubkový audit od 9 000 Kč, obvykle do 5 pracovních dnů. Vstupní analýza zdarma.",143,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://homoladigital.cz/sluzby/optimalizace.html,cs,"Zrychlení webu a technické SEO: zjistím, co váš web brzdí","Co v analýze projdu | Co dostanete do ruky | Kolik vás stojí pomalý web | Kolik to stojí a jak začneme | Zajímá vás, jak je na tom váš web? | Cookies na tomto webu",444,0,0,1,False,10,1,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""WebPage"",
+        ""@id"": ""https://homoladigital.cz/sluzby/optimalizace.html#webpage"",
+        ""url"": ""https://homoladigital.cz/sluzby/optimalizace.html"",
+        ""name"": ""Zrychlení webu a technické SEO | Homola Digital"",
+        ""description"": ""Najdu, co web zpomaluje a co ho Googlu brání správně přečíst. Hloubkový audit od 9 000 Kč, obvykle do 5 pracovních dnů. Vstupní analýza zdarma."",
+        ""isPartOf"": {
+  ",Zrychlení webu a technické SEO – Homola Digital,https://homoladigital.cz/og-image-2026-10.jpg
+https://homoladigital.cz/kolik-stoji-web.html,200,,Kolik stojí webové stránky v roce 2026? Ceny od 14 000 Kč,57,"Jednostránkový web 14 000–20 000 Kč, vícestránkový 25 000–40 000 Kč, web s funkcemi 45 000–70 000 Kč. Co je v ceně? Přesnou cenu sdělím předem.",143,"index, follow",https://homoladigital.cz/kolik-stoji-web.html,cs,Kolik stojí webové stránky na míru?,"Ceny podle rozsahu | Co cenu ovlivňuje | Co v ceně není | Co platí po předání | Jak se k ceně dostaneme | Kdy nový web nepotřebujete | Časté dotazy | Nevíte, do jakého rozsahu váš web spadá? | Cookies na tomto webu",1331,3,0,0,False,9,3,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""WebPage"",
+        ""@id"": ""https://homoladigital.cz/kolik-stoji-web.html#webpage"",
+        ""url"": ""https://homoladigital.cz/kolik-stoji-web.html"",
+        ""name"": ""Kolik stojí webové stránky v roce 2026? Ceny od 14 000 Kč"",
+        ""description"": ""Jednostránkový web 14 000–20 000 Kč, vícestránkový 25 000–40 000 Kč, web s funkcemi 45 000–70 000 Kč. Co je v ceně? Přesnou cenu sdělím předem."",
+        ""inLanguage"": ",Kolik stojí webové stránky? Konkrétní ceny – Homola Digital,https://homoladigital.cz/og-image-2026-10.jpg
+https://homoladigital.cz/migrace-drupal-7-na-11.html,200,,Migrace z Drupalu 7 na Drupal 11 | Homola Digital,49,Portál běžel na Drupalu 7 a PHP 5.6 – verzích bez bezpečnostních oprav. Po migraci na Drupal 11 zůstalo funkčních všech 199 adres.,130,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://homoladigital.cz/migrace-drupal-7-na-11.html,cs,Migrace portálu z Drupalu 7 na Drupal 11,Co bylo v sázce | Jak to proběhlo | Výsledek | Čísla | Běží váš web na verzi bez podpory? | Pošlete mi adresu webu. Zbytek zjistím sám. | Cookies na tomto webu,797,1,0,0,False,10,3,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""WebPage"",
+        ""@id"": ""https://homoladigital.cz/migrace-drupal-7-na-11.html#webpage"",
+        ""url"": ""https://homoladigital.cz/migrace-drupal-7-na-11.html"",
+        ""name"": ""Migrace z Drupalu 7 na Drupal 11 | Homola Digital"",
+        ""description"": ""Portál běžel na Drupalu 7 a PHP 5.6 – verzích bez bezpečnostních oprav. Po migraci na Drupal 11 zůstalo funkčních všech 199 adres."",
+        ""inLanguage"": ""cs-CZ""",Migrace z Drupalu 7 na Drupal 11 | Homola Digital,https://homoladigital.cz/og-image-2026-10.jpg
+https://homoladigital.cz/o-mne.html,200,,"O mně – Lukáš Homola, GA4/GTM konzultant a tvůrce webů",54,"Lukáš Homola – přes 10 let v produktovém řízení digitálních služeb, dnes GA4, GTM, SEO, AI a rychlé weby na míru pro malé firmy. Vstupní analýza zdarma.",152,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",https://homoladigital.cz/o-mne.html,cs,"Cesta k datům a webům, které opravdu fungují",Moje cesta | Pro koho pracuju – a pro koho ne | Jak zapojuji AI do své práce | Chcete probrat svůj web nebo měření? | Cookies na tomto webu,422,1,0,0,False,9,1,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""WebPage"",
+        ""@id"": ""https://homoladigital.cz/o-mne.html#webpage"",
+        ""url"": ""https://homoladigital.cz/o-mne.html"",
+        ""name"": ""O mně – Lukáš Homola, GA4/GTM konzultant a tvůrce webů"",
+        ""description"": ""Lukáš Homola – přes 10 let v produktovém řízení digitálních služeb, dnes GA4, GTM, SEO, AI a rychlé weby na míru pro malé firmy. Vstupní analýza zdarma."",
+        ""isPartOf"": {
+          ""@id","O mně – Lukáš Homola, GA4/GTM konzultant a tvůrce webů",https://homoladigital.cz/og-image-2026-10.jpg
+https://homoladigital.cz/obchodni-podminky.html,200,,Obchodní podmínky – Homola Digital,34,"Podmínky poskytování služeb Homola Digital – rozsah služeb, ceny a fakturace, termíny, předání díla, tříměsíční záruka, práva k dílu a práva spotřebitelů.",154,"index, follow",https://homoladigital.cz/obchodni-podminky.html,cs,Obchodní podmínky,"1. Předmět služeb | 2. Vznik smlouvy | 3. Cena a fakturace | 4. Součinnost objednatele | 5. Termíny dodání | 6. Předání, připomínky a záruka | 7. Práva k dílu | 8. Odpovědnost | 9. Ukončení spolupráce | 10. Zvláštní ustanovení pro spotřebitele | 11. Ochrana osobních údajů | 12. Závěrečná ustanovení | Cookies na tomto webu",1050,0,0,0,False,9,2,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""WebPage"",
+        ""@id"": ""https://homoladigital.cz/obchodni-podminky.html#webpage"",
+        ""url"": ""https://homoladigital.cz/obchodni-podminky.html"",
+        ""name"": ""Obchodní podmínky – Homola Digital"",
+        ""description"": ""Podmínky poskytování služeb Homola Digital – rozsah služeb, ceny a fakturace, termíny, předání díla, tříměsíční záruka, práva k dílu a práva spotřebitelů."",
+        ""inLanguage"": ""cs-CZ"",",Obchodní podmínky – Homola Digital,https://homoladigital.cz/og-image-2026-10.jpg
+https://homoladigital.cz/ochrana-osobnich-udaju.html,200,,Ochrana osobních údajů – Homola Digital,39,"Jaké osobní údaje zpracovávám, za jakým účelem, jak dlouho je uchovávám a jaká máte práva. Zásady zpracování osobních údajů Homola Digital.",139,"index, follow",https://homoladigital.cz/ochrana-osobnich-udaju.html,cs,Ochrana osobních údajů,1. Jaké údaje zpracovávám | 2. Účel a právní základ | 3. Doba uchování | 4. Komu údaje předávám | 5. Cookies a místní úložiště | 6. Vaše práva | 7. Zabezpečení | Cookies na tomto webu,780,0,0,0,False,9,2,"
+  {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""WebPage"",
+        ""@id"": ""https://homoladigital.cz/ochrana-osobnich-udaju.html#webpage"",
+        ""url"": ""https://homoladigital.cz/ochrana-osobnich-udaju.html"",
+        ""name"": ""Ochrana osobních údajů – Homola Digital"",
+        ""description"": ""Jaké osobní údaje zpracovávám, za jakým účelem, jak dlouho je uchovávám a jaká máte práva."",
+        ""inLanguage"": ""cs-CZ"",
+        ""isPartOf"": {
+          ""@id"": ""https://",Ochrana osobních údajů – Homola Digital,https://homoladigital.cz/og-image-2026-10.jpg

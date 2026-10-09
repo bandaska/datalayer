@@ -1,0 +1,397 @@
+[
+ {
+  "url": "https://datalayer.vitnovotny.cz/",
+  "status": 200,
+  "location": "",
+  "title": "datalayer.cz – Datové základy pro váš růst",
+  "title_len": 42,
+  "meta_desc": "Techničtí inženýři vaší analytiky. Implementace GA4, GTM, Server-Side měření a BigQuery. Data, kterým konečně můžete věřit.",
+  "meta_desc_len": 123,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "Stavíme neprůstřelné datové základy pro váš růst."
+  ],
+  "h2": [
+   "Proč vaše současná analytika pravděpodobně nefunguje?",
+   "Naše technologická expertíza",
+   "Neimplementujeme jen tagy. Zlepšujeme byznys výsledky.",
+   "Transparentní technický proces",
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 217,
+  "int_links_out": 10,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/sluzby/ga4",
+  "status": 200,
+  "location": "",
+  "title": "GA4 Implementace | datalayer.cz",
+  "title_len": 31,
+  "meta_desc": "Technická implementace funkcionálního ekosystému, nastavení eventů a cílů.",
+  "meta_desc_len": 74,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "GA4 Implementace"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 41,
+  "int_links_out": 7,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/sluzby/gtm",
+  "status": 200,
+  "location": "",
+  "title": "Google Tag Manager | datalayer.cz",
+  "title_len": 33,
+  "meta_desc": "Konfigurace, správa kontejnerů a pokročilé nastavení Google Tag Manageru.",
+  "meta_desc_len": 73,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "Google Tag Manager"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 35,
+  "int_links_out": 7,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/sluzby/bigquery",
+  "status": 200,
+  "location": "",
+  "title": "BigQuery & Data | datalayer.cz",
+  "title_len": 30,
+  "meta_desc": "BigQuery export dat pro pokročilou analýzu a machine learning.",
+  "meta_desc_len": 62,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "BigQuery & Data"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 38,
+  "int_links_out": 7,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/sluzby",
+  "status": 200,
+  "location": "",
+  "title": "Služby | datalayer.cz",
+  "title_len": 21,
+  "meta_desc": "GA4, GTM, Server-Side měření, audity, Data Layer design a BigQuery.",
+  "meta_desc_len": 67,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "Technická expertíza pro vaše data"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 88,
+  "int_links_out": 10,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/blog",
+  "status": 200,
+  "location": "",
+  "title": "Blog | datalayer.cz",
+  "title_len": 19,
+  "meta_desc": "Technické návody, strategie měření a novinky o GA4 a Server-Side GTM.",
+  "meta_desc_len": 69,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "Nejnovější poznatky ze světa dat"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [
+   "GA4 → BigQuery: vlastní data bez limitů",
+   "Server-Side GTM: proč a jak začít"
+  ],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 99,
+  "int_links_out": 9,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/sluzby/serverSide",
+  "status": 200,
+  "location": "",
+  "title": "Server-Side Měření | datalayer.cz",
+  "title_len": 33,
+  "meta_desc": "Server-Side implementace měření pro přesnější data a obcházení blokátorů.",
+  "meta_desc_len": 73,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "Server-Side Měření"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 40,
+  "int_links_out": 8,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/sluzby/audit",
+  "status": 200,
+  "location": "",
+  "title": "GA4 Audit | datalayer.cz",
+  "title_len": 24,
+  "meta_desc": "Technický audit existujícího nastavení a návrh oprav.",
+  "meta_desc_len": 53,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "GA4 Audit"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 32,
+  "int_links_out": 8,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/sluzby/dataLayer",
+  "status": 200,
+  "location": "",
+  "title": "Data Layer Design | datalayer.cz",
+  "title_len": 32,
+  "meta_desc": "Návrh a specifikace datové vrstvy pro IT oddělení.",
+  "meta_desc_len": 50,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "Data Layer Design"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 33,
+  "int_links_out": 8,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/privacy",
+  "status": 200,
+  "location": "",
+  "title": "Zpracování osobních údajů | datalayer.cz",
+  "title_len": 40,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "Zpracování osobních údajů"
+  ],
+  "h2": [
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 20,
+  "int_links_out": 7,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/blog/ga4-bigquery-export",
+  "status": 200,
+  "location": "",
+  "title": "GA4 → BigQuery: vlastní data bez limitů | datalayer.cz",
+  "title_len": 54,
+  "meta_desc": "Napojení GA4 na BigQuery vám otevře surová data k pokročilým analýzám. Co získáte Surová eventová data bez samplingu Možnost spojit data napříč zdroji Základ…",
+  "meta_desc_len": 158,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "GA4 → BigQuery: vlastní data bez limitů"
+  ],
+  "h2": [
+   "Co získáte",
+   "Napište nám"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 49,
+  "int_links_out": 8,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://datalayer.vitnovotny.cz/blog/server-side-gtm-uvod",
+  "status": 200,
+  "location": "",
+  "title": "Server-Side GTM: proč a jak začít | datalayer.cz",
+  "title_len": 48,
+  "meta_desc": "Server-Side Google Tag Manager posouvá měření z prohlížeče na server. Získáte přesnější data, lepší výkon webu a odolnost vůči blokátorům. Proč server-side…",
+  "meta_desc_len": 156,
+  "robots": "",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "cs",
+  "h1": [
+   "Server-Side GTM: proč a jak začít"
+  ],
+  "h2": [
+   "Proč server-side",
+   "Napište nám"
+  ],
+  "h3": [
+   "Shrnutí"
+  ],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "cdn.jsdelivr.net"
+  ],
+  "words": 79,
+  "int_links_out": 8,
+  "ext_links_out": 0
+ }
+]

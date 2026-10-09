@@ -1,0 +1,686 @@
+/* ==========================================================================
+   annanovotna.cz 2026 — nové komponenty nad rámec šablony
+   Načítá se PO base.css (přebírá proměnné, typografii, barvy).
+
+   Obsah:
+     1. Drobné doplňky / utility
+     2. Vstupní blok bez hero (.page-intro) + pás důvěry
+     3. Rozcestník (.path-cards)
+     4. Karta reference (.reference-card) + kategorie referencí
+     5. Formulářový blok (.contact-form-block)
+     6. PPC minimální hlavička
+     7. Responzivita doplňků
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Utility
+   -------------------------------------------------------------------------- */
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Sticky footer — patička vždy dole i na krátkých stránkách (např. Kontakt).
+   Volný prostor pod obsahem vyplní poslední sekce (formulářový blok), takže
+   nevznikne bílá mezera mezi obsahem a patičkou. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+main > * { flex-shrink: 0; }
+main > *:last-child { flex-grow: 1; }
+
+.site-footer { flex-shrink: 0; }
+
+.section--white { background-color: #fff; }
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding-bottom: 0;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+}
+
+.lead {
+  max-width: 640px;
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.align-center .lead,
+.lead.is-centered { margin-left: auto; margin-right: auto; }
+
+/* --------------------------------------------------------------------------
+   2. Vstupní blok bez hero image — čistý obsah na bílém pozadí
+   -------------------------------------------------------------------------- */
+.page-intro {
+  background-color: #fff;
+  padding: 88px 0 56px;
+}
+
+.page-intro__inner {
+  max-width: 780px;
+}
+
+.page-intro h1 {
+  font-size: 42px;
+  line-height: 1.25;
+  margin-bottom: 18px;
+  padding-bottom: 0;
+}
+
+.page-intro .lead {
+  margin-bottom: 28px;
+}
+
+.page-intro__cta {
+  margin-bottom: 8px;
+}
+
+/* Pás důvěry — nenápadná řádka pod perexem */
+.trust-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  align-items: center;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trust-bar li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 0;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-primary-dark);
+}
+
+.trust-bar li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex: 0 0 auto;
+}
+
+/* Jemná linka na konci vstupního bloku, aby stránka bez hero nepůsobila useknutě */
+.page-intro--divider {
+  border-bottom: 1px solid #eaf2f4;
+}
+
+/* --------------------------------------------------------------------------
+   3. Rozcestník na homepage
+   -------------------------------------------------------------------------- */
+.path-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.path-card {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 30px;
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.path-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--color-primary-dark);
+}
+
+.path-card h3 {
+  font-size: 20px;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  padding-bottom: 0;
+}
+
+.path-card p {
+  flex: 1 1 auto;
+  color: var(--color-text);
+}
+
+.path-card .btn {
+  margin-top: 22px;
+  align-self: center;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   4. Karta reference
+   -------------------------------------------------------------------------- */
+.reference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.reference-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background: #fcfcfc;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.reference-card__quote {
+  flex: 1 1 auto;
+  margin: 0 0 20px;
+  padding-bottom: 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.reference-card__foot {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;   /* drží hlavičku autora u spodní hrany karty */
+}
+
+.reference-card__avatar {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-band-blue);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* Výchozí: silueta hlavy (když není foto ani logo) – aby kolečko nebylo prázdné. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='18.5' r='8.2' fill='%23166F83'/%3E%3Cpath d='M10 43.5c0-8.4 6.6-13 14-13s14 4.6 14 13z' fill='%23166F83'/%3E%3C/svg%3E");
+}
+
+/* Skutečná fotka člověka – vyplní kolečko (ořez na střed). */
+.reference-card__avatar--foto {
+  background-size: cover;
+}
+
+/* Logo / favicon firmy – menší, vycentrované na bílém podkladu. */
+.reference-card__avatar--logo {
+  background-color: #fff;
+  background-size: 66%;
+}
+
+.reference-card__meta {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.reference-card__author {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.reference-card__role {
+  color: var(--color-accent-hover);
+}
+
+.reference-card__source {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.reference-card__source:hover { text-decoration: underline; }
+
+.reference-card__source svg { flex: 0 0 auto; }
+
+/* Kategorie na stránce Reference */
+.reference-category {
+  scroll-margin-top: 90px;
+}
+
+.reference-category__head {
+  margin-bottom: 8px;
+}
+
+.reference-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.reference-nav a {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--shadow-card);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+.reference-nav a:hover { background: var(--color-primary); color: #fff; }
+
+/* Tlačítko „další reference" pod výběrem na LP */
+.reference-more {
+  margin-top: 34px;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   5. Formulářový blok (opakuje se dole na každé stránce)
+   -------------------------------------------------------------------------- */
+.contact-form-block {
+  scroll-margin-top: 80px;
+}
+
+.contact-form-block__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.contact-form-block h2 {
+  margin-bottom: 14px;
+}
+
+.contact-channels {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-channels li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 0 0 18px;
+}
+
+.contact-channels__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--color-primary-dark);
+  color: #fff;
+}
+
+.contact-channels__label {
+  font-size: 14px;
+  color: #6b7b80;
+  padding-bottom: 2px;
+}
+
+.contact-channels a,
+.contact-channels strong {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.contact-channels a:hover { color: var(--color-primary-dark); }
+
+/* Formulář */
+.contact-form {
+  position: relative;
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 32px;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.contact-form label span {
+  color: #9aa7ab;
+  font-weight: 400;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border: 1px solid #d7e3e6;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text);
+  background: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(31, 157, 185, 0.12);
+}
+
+.contact-form textarea { min-height: 120px; resize: vertical; }
+
+.contact-form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 4px 0 20px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  color: #6b7b80;
+}
+
+.contact-form__consent input { width: auto; margin-top: 3px; }
+
+.contact-form__consent a { color: var(--color-primary-dark); }
+
+.contact-form .btn { width: 100%; text-align: center; }
+
+.contact-form__note {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #9aa7ab;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   6. PPC minimální hlavička
+   -------------------------------------------------------------------------- */
+.site-header--minimal .site-nav,
+.site-header--minimal .site-header__search-toggle,
+.site-header--minimal .site-header__menu-toggle { display: none; }
+
+.site-header--minimal .site-header__inner { justify-content: space-between; }
+
+.site-header--minimal .header-cta {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: var(--color-accent);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.site-header--minimal .header-cta:hover { background: var(--color-accent-hover); }
+
+/* --------------------------------------------------------------------------
+   7. Menu: dřívější přechod na hamburger
+   Sedm položek + široké logo (435 px) se do jednoho řádku nevejde pod ~1200 px
+   a lámalo se do dvou řádků. Přepneme proto na hamburger už pod 1200 px.
+   -------------------------------------------------------------------------- */
+.site-nav__menu a { white-space: nowrap; }
+
+@media only screen and (max-width: 1200px) {
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    background: #fff;
+    border-top: 3px solid var(--color-accent);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+  }
+  .site-nav.is-open { display: block; }
+  .site-nav__menu { display: block; padding: 5%; }
+  .site-nav__menu li { padding: 0; }
+  .site-nav__menu a,
+  .site-nav__menu li.is-current a {
+    padding: 10px 5%;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+  .site-header__menu-toggle { display: block; }
+}
+
+/* --------------------------------------------------------------------------
+   8. Responzivita doplňků
+   -------------------------------------------------------------------------- */
+@media only screen and (max-width: 980px) {
+  .page-intro { padding: 56px 0 40px; }
+  .page-intro h1 { font-size: 34px; }
+  .path-cards { grid-template-columns: 1fr; }
+  .reference-grid { grid-template-columns: 1fr; }
+  .contact-form-block__grid { grid-template-columns: 1fr; gap: 34px; }
+}
+
+@media only screen and (max-width: 767px) {
+  .page-intro h1 { font-size: 28px; }
+  .page-intro .lead,
+  .lead { font-size: 17px; }
+  .contact-form { padding: 22px; }
+  .contact-form__row { grid-template-columns: 1fr; gap: 0; }
+
+  /* Menší tlačítka na mobilu, aby se delší popisky vešly na jeden řádek. */
+  .btn { font-size: 17px; }
+
+  /* PPC minimální hlavička: široký wordmark + CTA se na mobil nevejdou vedle sebe;
+     hero CTA je hned pod hlavičkou, proto drobné CTA v hlavičce na mobilu skryjeme. */
+  .site-header--minimal .header-cta { display: none; }
+}
+
+/* ==========================================================================
+   Právní stránky (obchodní podmínky, GDPR, cookies)
+   ========================================================================== */
+.legal-content { max-width: 820px; }
+.legal-content h2 { margin-top: 2em; }
+.legal-content h3 { margin-top: 1.4em; }
+.legal-content p,
+.legal-content li { line-height: 1.7; }
+.legal-content ul { margin: 0 0 1.2em 1.2em; }
+.legal-content .legal-note { font-size: 0.9em; color: #5a6b70; }
+.legal-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1em 0 1.4em;
+	font-size: 0.94em;
+}
+.legal-table th,
+.legal-table td {
+	border: 1px solid #dfe6e8;
+	padding: 9px 12px;
+	text-align: left;
+	vertical-align: top;
+}
+.legal-table th { background: rgba(185, 222, 230, 0.22); }
+.legal-table td:first-child { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.92em; white-space: nowrap; }
+@media (max-width: 640px) {
+	.legal-table, .legal-table thead, .legal-table tbody, .legal-table th, .legal-table td, .legal-table tr { display: block; }
+	.legal-table thead { display: none; }
+	.legal-table td { border: 0; border-bottom: 1px solid #eee; padding: 4px 0; }
+	.legal-table td:first-child { font-weight: 700; white-space: normal; }
+	.legal-table tr { border: 1px solid #dfe6e8; border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+}
+
+/* --------------------------------------------------------------------------
+   Kontaktní formulář — honeypot (skrytý) + success overlay
+   -------------------------------------------------------------------------- */
+/* Honeypot proti robotům: neviditelné pro lidi, ale zůstává v DOM. */
+.contact-form__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form__note.is-err { color: #c0392b; font-weight: 600; }
+.contact-form__note.is-ok  { color: #1e9e5a; font-weight: 600; }
+
+/* Po odeslání překryje pole výrazným potvrzením. */
+.contact-form__success {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #fff;
+  border-radius: var(--radius-card);
+  z-index: 5;
+  animation: cf-success-in .3s ease;
+}
+.contact-form__success[hidden] { display: none; }
+
+.contact-form__success-inner { text-align: center; max-width: 400px; }
+
+.contact-form__success-icon {
+  display: inline-flex;
+  color: #1e9e5a;
+  margin-bottom: 14px;
+}
+.contact-form__success-icon svg { animation: cf-check-pop .4s .08s both; }
+
+.contact-form__success-title {
+  margin: 0 0 8px;
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-size: 24px;
+}
+.contact-form__success-text {
+  margin: 0 0 20px;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+.contact-form__success-again {
+  border: 0;
+  background: #eef2f3;
+  color: var(--color-footer);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.contact-form__success-again:hover { background: #e0e6e8; }
+
+@keyframes cf-success-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cf-check-pop { from { transform: scale(.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* --------------------------------------------------------------------------
+   Reference — video v kartě a třířádková hlavička
+   -------------------------------------------------------------------------- */
+.reference-card__video {
+  margin: 0 0 20px;
+  line-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+.reference-card__video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+/* Zdroj je vlastní (třetí) řádek hlavičky. */
+.reference-card__meta .reference-card__source { margin-top: 4px; }
+
+/* --------------------------------------------------------------------------
+   Reference — rozbalování dlouhých textů
+   Zkrácení zapíná JS (přidá .is-clampable), takže bez JS zůstane text celý.
+   -------------------------------------------------------------------------- */
+.reference-card__quote.is-clampable {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  overflow: hidden;
+  /* Zkrácený text se nesmí roztahovat do výšky karty — jinak by se pod
+     výpustkou vykreslily i „odstřižené" řádky. Patičku drží dole margin-top
+     u .reference-card__foot. */
+  flex: 0 0 auto;
+}
+
+.reference-card__quote.is-expanded {
+  display: block;
+  -webkit-line-clamp: none;
+  line-clamp: none;
+  overflow: visible;
+}
+
+.reference-card__more {
+  align-self: flex-start;
+  margin: -8px 0 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.reference-card__more:hover { color: var(--color-primary); }
+
+.reference-card__more::after {
+  content: " ▾";
+  text-decoration: none;
+  display: inline-block;
+}
+
+.reference-card__more[aria-expanded="true"]::after { content: " ▴"; }

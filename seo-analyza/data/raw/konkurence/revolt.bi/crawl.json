@@ -1,0 +1,1799 @@
+[
+ {
+  "url": "https://www.revolt.bi/",
+  "status": 200,
+  "location": "",
+  "title": "Revolt.BI | Váš partner pro business, AI i technologie",
+  "title_len": 54,
+  "meta_desc": "Migrujete na novou technologii? Potřebujete podpořit váš interní datový tým? Nebo vás zajímá AI? Naši experti a konzultanti jsou vám k dispozici. Vy nejlépe rozumíte svému odvětví a tomu, jaké jsou problémy, co vás pálí. My je umíme uhasit, pomocí dat. Víme, jaká řešení fungují a přináší výsledky.",
+  "meta_desc_len": 298,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/",
+  "og_title": "Revolt.BI | Váš partner pro business, AI i technologie",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Lepší data. Lepší rozhodnutí. Lepší výsledky."
+  ],
+  "h2": [
+   "Transformujeme způsob, jakým pracujete s daty, aby rozhodování bylo rychlejší ,",
+   "náklady pod kontrolou a růst dlouhodobě udržitelný .",
+   "Co vás zajímá?",
+   "Business řešení",
+   "Technologické řešení",
+   "Jsme lidé z vašeho oboru.",
+   "Věděli jste, že?",
+   "85 % všech datových projektů selže.",
+   "Naopak, organizace, které přijmou strategie",
+   "založené na datech, mohou zaznamenat až 20% nárůst příjmů.",
+   "Reference",
+   "Věděli jste, že?",
+   "Lídři, kteří se řídí daty, mají 20x větší pravděpodobnost,",
+   "",
+   "Naši partneři",
+   "Aktuality",
+   "Kontaktujte nás",
+   "Přidej se k nám!"
+  ],
+  "h3": [
+   "Jaké business přínosy získáte, když budete řídit firmu pomocí dat?",
+   "Strategická výhoda",
+   "ROI v rámci měsíců",
+   "Data-driven rozhodování",
+   "Lepší efektivita",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://www.revolt.bi/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}},{\"@type\":\"ImageObject\",\"@id\":\"https:/"
+  ],
+  "img_count": 58,
+  "img_no_alt": 54,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 1276,
+  "int_links_out": 57,
+  "ext_links_out": 7
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/",
+  "status": 200,
+  "location": "",
+  "title": "Služby - Revolt.BI",
+  "title_len": 18,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/",
+  "og_title": "Služby - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"WebPage\",\"@id\":\"https://www.revolt.bi/sluzby/#webpage\",\"url\":\"https://www.revolt.bi/sluzby/\",\"name\":\"Slu\\u017eby - Revolt.BI\",\"datePublished\":\"2023-07-24T08:55:25+02:00\",\"dateM"
+  ],
+  "img_count": 10,
+  "img_no_alt": 6,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 134,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/business-reseni/",
+  "status": 200,
+  "location": "",
+  "title": "Business řešení - Revolt.BI",
+  "title_len": 27,
+  "meta_desc": "Jste už jen klik od řešení svého business datového problému.",
+  "meta_desc_len": 60,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/business-reseni/",
+  "og_title": "Business řešení - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Potřebuji vyřešit byznysový problém"
+  ],
+  "h2": [
+   "Retail",
+   "E-commerce",
+   "Customer Experience",
+   "Datová Strategie",
+   "Businessové dashboardy",
+   "Řešení pro obchodní ředitele a CCOs",
+   "Nenašli jste to, co hledáte?"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"WebPage\",\"@id\":\"https://www.revolt.bi/sluzby/business-reseni/#webpage\",\"url\":\"https://www.revolt.bi/sluzby/business-reseni/\",\"name\":\"Business \\u0159e\\u0161en\\u00ed - Revolt.BI\""
+  ],
+  "img_count": 10,
+  "img_no_alt": 6,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 336,
+  "int_links_out": 41,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/technologicke-reseni/",
+  "status": 200,
+  "location": "",
+  "title": "Technologická řešení - Revolt.BI",
+  "title_len": 32,
+  "meta_desc": "Revoluce ve firemních procesech díky umělé inteligenci a datům.",
+  "meta_desc_len": 63,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/technologicke-reseni/",
+  "og_title": "Technologická řešení - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Potřebuji vyřešit technologický problém"
+  ],
+  "h2": [
+   "AI",
+   "Datová strategie",
+   "Businessové dashboardy",
+   "Data end to end management",
+   "Data warehouse",
+   "Data Science",
+   "Nenašli jste to, co hledáte?"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"WebPage\",\"@id\":\"https://www.revolt.bi/sluzby/technologicke-reseni/#webpage\",\"url\":\"https://www.revolt.bi/sluzby/technologicke-reseni/\",\"name\":\"Technologick\\u00e1 \\u0159e\\u0161e"
+  ],
+  "img_count": 10,
+  "img_no_alt": 6,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 398,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/technologicke-reseni/businessove-dashboardy/",
+  "status": 200,
+  "location": "",
+  "title": "Businessové dashboardy - Revolt.BI",
+  "title_len": 34,
+  "meta_desc": "Business dashboardy poskytují přehlednou vizualizaci důležitých dat,",
+  "meta_desc_len": 68,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/technologicke-reseni/businessove-dashboardy/",
+  "og_title": "Businessové dashboardy - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2024/02/Group-390.png",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [
+   "Business Dashboardy",
+   "Víte, co se právě teď děje ve vaší firmě?",
+   "",
+   "6 důvodů, proč se rozhodnout pro business dashboard",
+   "FAQ",
+   "Dashboard, co šetří milion ročně!",
+   "Dashboard, který za měsíc zvýšil příjmy o 15 %!",
+   "Při migraci současného stavu umíme navíc zařídit:",
+   "Reporty",
+   "Zajímá vás, jak může vypadat váš dashboard? Vyplňte formulář a my se vám ozveme."
+  ],
+  "h3": [
+   "Komplexní dodání bez starostí pro vás",
+   "Podívejte se, jak děláme business dashbordy v retailu , e-commerce nebo třeba health care.",
+   "Report výkonnosti prodejny",
+   "Finanční zdraví i výkonnost firmy pod kontrolou",
+   "Report zaskladněnosti skladu",
+   "Marketing Topline",
+   "Customer Centred Reporting",
+   "RFM Analýza",
+   "Customer Life-time Value",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/02/Group-390.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/02/Group-390.png\",\"width\":\"200\",\"height"
+  ],
+  "img_count": 22,
+  "img_no_alt": 18,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 1048,
+  "int_links_out": 47,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/business-reseni/e-commerce/",
+  "status": 200,
+  "location": "",
+  "title": "E-commerce - Revolt.BI",
+  "title_len": 22,
+  "meta_desc": "E-commerce",
+  "meta_desc_len": 10,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/business-reseni/e-commerce/",
+  "og_title": "E-commerce - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2024/02/Group-390.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Otázka za miliony:"
+  ],
+  "h2": [
+   "Trápí váš e-commerce marketing některá z těchto typických „bolestí“?",
+   "FAQ",
+   "Případové studie",
+   "S nastavením a reporty vám pomůžeme"
+  ],
+  "h3": [
+   "Marketing Topline",
+   "Customer Centred Reporting",
+   "RFM Analýza",
+   "Customer Life-time Value",
+   "Atribuční model(y)",
+   "Risk Model",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/Group-184.svg\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/Group-184.svg\",\"width\":\"200\",\"height"
+  ],
+  "img_count": 38,
+  "img_no_alt": 34,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 1450,
+  "int_links_out": 47,
+  "ext_links_out": 7
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/business-reseni/retail/",
+  "status": 200,
+  "location": "",
+  "title": "Retail - Revolt.BI",
+  "title_len": 18,
+  "meta_desc": "Retail",
+  "meta_desc_len": 6,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/business-reseni/retail/",
+  "og_title": "Retail - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/08/revolt-ilustrace-web-nove-03.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Buďte o krok napřed:"
+  ],
+  "h2": [
+   "Jste šéf retailu? Z naší zkušenosti vás pálí tyto otázky:",
+   "Reporty",
+   "S nastavením a reporty vám pomůžeme"
+  ],
+  "h3": [
+   "Report zaskladněnosti skladu",
+   "Finanční zdraví i výkonnost firmy pod kontrolou",
+   "Report výkonnosti prodejny",
+   "Návštěvnost a konverze maloobchodních prodejen",
+   "Co nakoupit a kolik – Denní report pro nákupčí",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/08/revolt-ilustrace-web-nove-03-1024x995.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/08/revolt-i"
+  ],
+  "img_count": 17,
+  "img_no_alt": 13,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 616,
+  "int_links_out": 45,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/technologicke-reseni/data-warehouse/",
+  "status": 200,
+  "location": "",
+  "title": "Data Warehouse - Revolt.BI",
+  "title_len": 26,
+  "meta_desc": "Data warehouse",
+  "meta_desc_len": 14,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/technologicke-reseni/data-warehouse/",
+  "og_title": "Data Warehouse - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/08/revolt-ilustrace-web-nove-02-1.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Data warehouse má sloužit pro spolehlivý reporting, ne být přítěží."
+  ],
+  "h2": [
+   "Díky cloudovému řešení získáte:",
+   "Jak jsme datový sklad mezinárodní technologické společnosti posunuli do 21. století",
+   "Hlavní přínosy, které z projektu firma měla:",
+   "Při migraci datového skladu umíme navíc zařídit:"
+  ],
+  "h3": [
+   "When you look for consultant firm that will take innovative, modern approaches, look no futher than Revolt BI.",
+   "Komplexní dodání bez starostí pro vás",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/08/revolt-ilustrace-web-nove-02-1-1024x995.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/08/revolt"
+  ],
+  "img_count": 12,
+  "img_no_alt": 8,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 498,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/technologicke-reseni/analyticka-strategie/",
+  "status": 200,
+  "location": "",
+  "title": "Analytická strategie - Revolt.BI",
+  "title_len": 32,
+  "meta_desc": "Analytická strategie",
+  "meta_desc_len": 20,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/technologicke-reseni/analyticka-strategie/",
+  "og_title": "Analytická strategie - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/07/vojtech_telupil-200x200px.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Váš lístek na cestu k datově řízené firmě"
+  ],
+  "h2": [
+   "Analytická strategie je pro vás ideální volbou, pokud:",
+   "FAQ",
+   "Chcete analytickou strategii? Takhle může vypadat ta vaše.",
+   "Analytickou strategii nabízíme ve dvou variantách:"
+  ],
+  "h3": [
+   "Orientační roadmapa implementace",
+   "Role a odpovědnosti",
+   "Prioritizace vašich use casů",
+   "Analytická strategie standard:",
+   "Analytická strategie mini:",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/Group-184.svg\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/Group-184.svg\",\"width\":\"200\",\"height"
+  ],
+  "img_count": 33,
+  "img_no_alt": 29,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 1462,
+  "int_links_out": 41,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/datova-strategie/",
+  "status": 200,
+  "location": "",
+  "title": "Datová strategie - Revolt.BI",
+  "title_len": 28,
+  "meta_desc": "Datová strategie",
+  "meta_desc_len": 16,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/datova-strategie/",
+  "og_title": "Datová strategie - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [
+   "Proč datová strategie?",
+   "Věděli jste, že?",
+   "Co vám dá datová strategie?"
+  ],
+  "h3": [
+   "Implementační plán",
+   "Role a zodpovědnosti",
+   "Enterprise architektura",
+   "Use cases a prioritizace",
+   "Skills a adopce znalostí",
+   "Adopce & Best Practices",
+   "Business přínos Datové Strategie",
+   "Strategická výhoda",
+   "ROI v rámci měsíců",
+   "Data-driven rozhodování",
+   "Lepší efektivita",
+   "Jak vypadá postup spolupráce?",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/12/Datova-Startegie-Web-9-1024x576.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/12/Datova-Starteg"
+  ],
+  "img_count": 24,
+  "img_no_alt": 20,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 622,
+  "int_links_out": 43,
+  "ext_links_out": 7
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/technologicke-reseni/data-science/",
+  "status": 200,
+  "location": "",
+  "title": "Data science - Revolt.BI",
+  "title_len": 24,
+  "meta_desc": "Data Science",
+  "meta_desc_len": 12,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/technologicke-reseni/data-science/",
+  "og_title": "Data science - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [
+   "Tam, kde běžné datové postupy končí, my začínáme.",
+   "3 služby v Data Science"
+  ],
+  "h3": [
+   "Využití AI, strojového učení a neuronových sítí pro odstranění chyb v datech, predikci budoucího vývoje a rozpoznání kritických míst.",
+   "Klasifikační analýzy",
+   "Predikce",
+   "Optimalizační úlohy",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/08/Customer-Experiece-on-a-Laptop-1024x576.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/08/Custom"
+  ],
+  "img_count": 11,
+  "img_no_alt": 7,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 326,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/technologicke-reseni/google-cloud/",
+  "status": 200,
+  "location": "",
+  "title": "Google Cloud - Revolt.BI",
+  "title_len": 24,
+  "meta_desc": "Zlepšete svá klíčová rozhodnutí a přeměňte datový chaos různých IT systémů s Google Cloud platform. Přidejte se k řadě našich zákazníků, kteří díky Google",
+  "meta_desc_len": 154,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/technologicke-reseni/google-cloud/",
+  "og_title": "Google Cloud - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Google Cloud Platform",
+   "Akcelerujte strategický růst díky sjednoceným datům"
+  ],
+  "h2": [
+   "Success story – Business Intelligence",
+   "Jsou vám tyto nepříjemné situace povědomé?",
+   "Řešením pro vás může být Google Cloud Platform",
+   "Příklady z praxe",
+   "O Google Cloud Platform",
+   "Síla spojení Google Cloud a Revolt BI",
+   "S Google Cloud vám pomůžeme."
+  ],
+  "h3": [
+   "Jsme certifikovaný partner Google s řadou certifikovaných Google konzultantů",
+   "Business dashboardy",
+   "E-Commerce",
+   "Retail",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/06/Google_Cloud_Partner_no_outline_vertical.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/06/Googl"
+  ],
+  "img_count": 23,
+  "img_no_alt": 19,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 718,
+  "int_links_out": 45,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/power-bi/",
+  "status": 200,
+  "location": "",
+  "title": "Power BI - Revolt.BI",
+  "title_len": 20,
+  "meta_desc": "Power BI je moderní analytická platforma od Microsoftu, která umožňuje firmám snadno propojit různorodé zdroje dat, modelovat je do jednotné struktury a",
+  "meta_desc_len": 152,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/power-bi/",
+  "og_title": "Power BI - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [
+   "Power BI",
+   "Co je Power BI",
+   "4 důvody, proč chtít Power BI",
+   "Co pro vás v Power BI můžeme udělat:",
+   "Potřebujete ověřit vhodnost Power BI",
+   "pro váš use-case, nebo chcete rychlé PoV?"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"WebPage\",\"@id\":\"https://www.revolt.bi/power-bi/#webpage\",\"url\":\"https://www.revolt.bi/power-bi/\",\"name\":\"Power BI - Revolt.BI\",\"datePublished\":\"2025-10-21T14:07:54+02:00\",\"date"
+  ],
+  "img_count": 10,
+  "img_no_alt": 6,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 413,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/technologie/",
+  "status": 200,
+  "location": "",
+  "title": "Technologie - Revolt.BI",
+  "title_len": 23,
+  "meta_desc": "Začněte svou datovou transformaci s Revolt BI!",
+  "meta_desc_len": 46,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/technologie/",
+  "og_title": "Technologie - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Technologie, na které se dá spolehnout",
+   "Pomáháme datovým týmům růst"
+  ],
+  "h2": [
+   "Spojujeme nejmodernější technologie s certifikovanou odborností",
+   "Naše certifikace"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2025/09/Services_Partner_Badge_Select.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2025/09/Services_Partner"
+  ],
+  "img_count": 21,
+  "img_no_alt": 17,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 311,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/technologie/tableau/",
+  "status": 200,
+  "location": "",
+  "title": "Tableau - Revolt.BI",
+  "title_len": 19,
+  "meta_desc": "Přehledná, rychlá a působivá vizualizace vašich dat,díky které budete vždy vědět, co dělat.",
+  "meta_desc_len": 91,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/technologie/tableau/",
+  "og_title": "Tableau - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Tableau"
+  ],
+  "h2": [
+   "Kam dál?",
+   "Tableau licence",
+   "Tableau školení"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/06/revolt-mockup-web-tableau-03.webp\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/06/revolt-mockup-we"
+  ],
+  "img_count": 11,
+  "img_no_alt": 7,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 283,
+  "int_links_out": 45,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/technologie/snowflake/",
+  "status": 200,
+  "location": "",
+  "title": "Snowflake - Revolt.BI",
+  "title_len": 21,
+  "meta_desc": "Platforma Snowflake je navržena přesně pro firmy, jako je ta vaše. Funguje jako centrální místo, kde se všechna vaše data spojí a vytvoří jeden velký,",
+  "meta_desc_len": 150,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/technologie/snowflake/",
+  "og_title": "Snowflake - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/09/2.png",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [
+   "Snowflake",
+   "Proč Snowflake ?",
+   "Retailový řetězec Hot Topic dosáhl",
+   "až 10násobného zrychlení dotazů",
+   "a ušetřil $200 000 během jednoho víkendu ,",
+   "optimalizací fulfillmentu se Snowflake.",
+   "Výhody spojení Snowflake, dbt a Revolt BI",
+   "",
+   "Chcete moderní datový stack",
+   "s rychlým nasazením a nízkými náklady?"
+  ],
+  "h3": [
+   "Moderní datová platforma",
+   "pro budoucnost vašeho byznysu",
+   "Máte svá data roztroušená v prodejních, webových a marketingových systémech a unikají vám důležité souvislosti?",
+   "Oddělení výpočetního výkonu a úložiště",
+   "Automatické škálování bez omezení",
+   "Multi-cloud provoz napříč platformami",
+   "Jednotná platforma pro data i analytiku",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/11/ikonky-na-web-14.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/11/ikonky-na-web-14.png\",\"width\""
+  ],
+  "img_count": 20,
+  "img_no_alt": 16,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 643,
+  "int_links_out": 45,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/technologie/keboola/",
+  "status": 200,
+  "location": "",
+  "title": "Keboola - Revolt.BI",
+  "title_len": 19,
+  "meta_desc": "Všechna vaše data přehledně pohromadě, automaticky zpracované podle vašich potřeb.",
+  "meta_desc_len": 82,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/technologie/keboola/",
+  "og_title": "Keboola - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Keboola Connection"
+  ],
+  "h2": [
+   "4 důvody, proč chtít Keboolu",
+   "Naše služby zahrnují:",
+   ""
+  ],
+  "h3": [
+   "Předpřipravené komponenty",
+   "Keboola se přizpůsobí vaší Workflow",
+   "Základní verze zdarma",
+   "Plynulá orchestrace",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/Group-182.svg\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/Group-182.svg\",\"width\":\"200\",\"height"
+  ],
+  "img_count": 13,
+  "img_no_alt": 9,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "unpkg.com",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 353,
+  "int_links_out": 41,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/data-academy/",
+  "status": 200,
+  "location": "",
+  "title": "Data Academy - Revolt.BI",
+  "title_len": 24,
+  "meta_desc": "Praktická školení dbt, Snowflake a Tableau pro datové týmy. Data Academy od Revolt BI pomáhá firmám rozvíjet moderní datové dovednosti a proměnit data v lepší rozhodování a byznysový dopad.",
+  "meta_desc_len": 189,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/data-academy/",
+  "og_title": "Data Academy - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [
+   "Posuňte svůj datový tým na vyšší úroveň.",
+   "Pomáháme datovým týmům růst",
+   "V jaké oblasti chcete posunout svůj tým?",
+   "Školení dbt",
+   "Tableau školení",
+   "Proč školení od Revolt BI?",
+   "Chci školení, nebo konzultaci"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/Vector-42.svg\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/Vector-42.svg\",\"width\":\"200\",\"height"
+  ],
+  "img_count": 21,
+  "img_no_alt": 10,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 405,
+  "int_links_out": 42,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/ai/",
+  "status": 200,
+  "location": "",
+  "title": "AI - Revolt.BI",
+  "title_len": 14,
+  "meta_desc": "Rozhodujte se na základě dat. Využijte síly a možnosti umělé inteligence ve svůj prospěch.",
+  "meta_desc_len": 90,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/ai/",
+  "og_title": "AI - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [
+   "Pouze 11 %* českých firem",
+   "používá k rozhodování AI.",
+   "Jaké nabízí AI řešení?",
+   "Věděli jste, že?",
+   "Jak vypadá využití AI v praxi?",
+   "Přemýšlíte, jestli chcete AI řešení?",
+   "Co je AI?",
+   "",
+   "Kam dál?"
+  ],
+  "h3": [
+   "Clustering prodejen",
+   "Predikce poptávky a prodejů",
+   "Customer Experience",
+   "Tableau Pulse",
+   "Business přínos AI řešení",
+   "Strategická výhoda",
+   "ROI v rámci měsíců",
+   "Data-driven rozhodování",
+   "Lepší efektivita",
+   "Jak snížit pracnost skladových operací o 10%? Pomocí predikcí na základě AI a data science!",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/10/ikonky-na-web-8.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/10/ikonky-na-web-8.png\",\"width\":\""
+  ],
+  "img_count": 26,
+  "img_no_alt": 22,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 827,
+  "int_links_out": 49,
+  "ext_links_out": 8
+ },
+ {
+  "url": "https://www.revolt.bi/migrace-do-cloudu/",
+  "status": 200,
+  "location": "",
+  "title": "Migrace do Cloudu - Revolt.BI",
+  "title_len": 29,
+  "meta_desc": "Migrace do Cloudu",
+  "meta_desc_len": 17,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/migrace-do-cloudu/",
+  "og_title": "Migrace do Cloudu - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [
+   "Služby, které vám pokryjeme:",
+   "Proč jít do toho s námi?"
+  ],
+  "h3": [
+   "Naše certifikace a partnerství",
+   "Technologická nezávislost",
+   "Zkušenosti s reálnými projekty",
+   "Strategický přístup",
+   "Flexibilita a rychlost",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/12/Datova-Startegie-Web-11-1024x576.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/12/Datova-Starte"
+  ],
+  "img_count": 42,
+  "img_no_alt": 38,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 572,
+  "int_links_out": 52,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/pripadove-studie/",
+  "status": 200,
+  "location": "",
+  "title": "Případové studie - Podívejte se, jak můžou data pomoci k úspěchu vašeho businessu",
+  "title_len": 81,
+  "meta_desc": "Migrujete na novou technologii? Potřebujete podpořit váš interní datový tým? Nebo vás zajímá AI? Naši experti a konzultanti jsou vám k dispozici. Vy nejlépe rozumíte svému odvětví a tomu, jaké jsou problémy, co vás pálí. My je umíme uhasit, pomocí dat. Víme, jaká řešení fungují a přináší výsledky.",
+  "meta_desc_len": 298,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/pripadove-studie/",
+  "og_title": "Případové studie - Podívejte se, jak můžou data pomoci k úspěchu vašeho businessu",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2025/02/Snimek-obrazovky-2025-02-14-154113.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Případové studie"
+  ],
+  "h2": [
+   "Angry Beards",
+   "Digitální a informační agentura",
+   "BTL Group",
+   "Stock",
+   "Sportisimo",
+   "Mall Group",
+   "Witty Trade",
+   "Škoda Auto",
+   "Pietro Filipi",
+   "Carvago",
+   "Aurixa",
+   "BTL Group",
+   "Telly",
+   "Oktagon MMA",
+   "Pet center",
+   "Mafra"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2025/02/Snimek-obrazovky-2025-02-14-154113.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2025/02/Snimek-obra"
+  ],
+  "img_count": 26,
+  "img_no_alt": 22,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 462,
+  "int_links_out": 56,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/pripadove-studie/mall-group/",
+  "status": 200,
+  "location": "",
+  "title": "Mall Group - Revolt.BI",
+  "title_len": 22,
+  "meta_desc": "Mall Group",
+  "meta_desc_len": 10,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/pripadove-studie/mall-group/",
+  "og_title": "Mall Group - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/07/mall-2.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Kontaktujte nás"
+  ],
+  "h2": [
+   "Co na to říká klient",
+   "Aby bylo rozumět tomu, co data říkají",
+   "Adopce datové kultury je klíč k úspěchu"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/mall-2.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/mall-2.png\",\"width\":\"200\",\"height\":\"200"
+  ],
+  "img_count": 11,
+  "img_no_alt": 7,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 1065,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/pripadove-studie/sportisimo/",
+  "status": 200,
+  "location": "",
+  "title": "Sportisimo - Revolt.BI",
+  "title_len": 22,
+  "meta_desc": "Sportisimo",
+  "meta_desc_len": 10,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/pripadove-studie/sportisimo/",
+  "og_title": "Sportisimo - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/07/sportisimo.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Kontaktujte nás"
+  ],
+  "h2": [
+   "Predikce poptávky s využitím postupů data science zjednodušuje Sportisimu provoz skladů i tok zboží.",
+   "Co na to říká klient"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/sportisimo.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/sportisimo.png\",\"width\":\"200\",\"heig"
+  ],
+  "img_count": 11,
+  "img_no_alt": 7,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 386,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/pripadove-studie/carvago/",
+  "status": 200,
+  "location": "",
+  "title": "Carvago - Revolt.BI",
+  "title_len": 19,
+  "meta_desc": "Carvago",
+  "meta_desc_len": 7,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/pripadove-studie/carvago/",
+  "og_title": "Carvago - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/07/carvago.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Kontaktujte nás"
+  ],
+  "h2": [],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/carvago.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/carvago.png\",\"width\":\"200\",\"height\":\"2"
+  ],
+  "img_count": 13,
+  "img_no_alt": 9,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 808,
+  "int_links_out": 41,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/pripadove-studie/skoda-auto/",
+  "status": 200,
+  "location": "",
+  "title": "Škoda Auto - Revolt.BI",
+  "title_len": 22,
+  "meta_desc": "Škoda Auto",
+  "meta_desc_len": 10,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/pripadove-studie/skoda-auto/",
+  "og_title": "Škoda Auto - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/07/skoda.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Kontaktujte nás"
+  ],
+  "h2": [],
+  "h3": [
+   "Nápad – hackathon",
+   "Řešení",
+   "Výsledek",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/skoda.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/skoda.png\",\"width\":\"200\",\"height\":\"200\","
+  ],
+  "img_count": 14,
+  "img_no_alt": 10,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 708,
+  "int_links_out": 40,
+  "ext_links_out": 7
+ },
+ {
+  "url": "https://www.revolt.bi/o-nas/",
+  "status": 200,
+  "location": "",
+  "title": "O nás - Revolt.BI",
+  "title_len": 17,
+  "meta_desc": "Společnost Revolt BI byla založena v roce 2017. Za tu dobu má zhruba 100 spokojených klientů a týmvíce než 50 odborníků na data, analytiku a podnikové",
+  "meta_desc_len": 150,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/o-nas/",
+  "og_title": "O nás - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "O nás"
+  ],
+  "h2": [
+   "Jak šel čas",
+   "Naše hodnoty",
+   "Chcete pracovat s námi?",
+   "Jak to u nás žije?"
+  ],
+  "h3": [
+   "Naše kůže je ve hře",
+   "Děláme to jednoduché",
+   "Společně jsme silnější",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/08/6-1-1024x726.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/08/6-1-1024x726.png\",\"width\":\"200\",\""
+  ],
+  "img_count": 35,
+  "img_no_alt": 19,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 820,
+  "int_links_out": 53,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/kontakt/",
+  "status": 200,
+  "location": "",
+  "title": "Kontakt - Revolt.BI",
+  "title_len": 19,
+  "meta_desc": "Trápí vás data, procesy nebo celé analytické prostředí?Jsme tu pro vás.",
+  "meta_desc_len": 71,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/kontakt/",
+  "og_title": "Kontakt - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Kontaktujte nás"
+  ],
+  "h2": [
+   "Kancelář",
+   "Fakturační údaje",
+   "Najdete nás zde"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2025/12/Vhodny-pro-vizualizaci-dat-v-realnem-case-10.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2025/12/V"
+  ],
+  "img_count": 11,
+  "img_no_alt": 7,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 199,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/o-nas/aktuality/",
+  "status": 200,
+  "location": "",
+  "title": "Blog o Business Intelligence, datech a technologiích",
+  "title_len": 52,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/o-nas/aktuality/",
+  "og_title": "Blog o Business Intelligence, datech a technologiích",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"WebPage\",\"@id\":\"https://www.revolt.bi/o-nas/aktuality/#webpage\",\"url\":\"https://www.revolt.bi/o-nas/aktuality/\",\"name\":\"Blog o Business Intelligence, datech a technologi\\u00edch"
+  ],
+  "img_count": 23,
+  "img_no_alt": 19,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 318,
+  "int_links_out": 77,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/o-nas/e-booky-a-webinare/",
+  "status": 200,
+  "location": "",
+  "title": "E-booky & webináře - Revolt.BI",
+  "title_len": 30,
+  "meta_desc": "Zjistěte, jak pomocí vizualizačního nástroje Tableau analyzovat a optimalizovat váš sklad.",
+  "meta_desc_len": 90,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/o-nas/e-booky-a-webinare/",
+  "og_title": "E-booky & webináře - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Objevte všechny naše ebooky a webináře"
+  ],
+  "h2": [
+   "Optimalizace skladu pomocí Tableau",
+   "Online webinář pro datové manažery",
+   "Online webinář o Tableau Pulse."
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"WebPage\",\"@id\":\"https://www.revolt.bi/o-nas/e-booky-a-webinare/#webpage\",\"url\":\"https://www.revolt.bi/o-nas/e-booky-a-webinare/\",\"name\":\"E-booky &amp; webin\\u00e1\\u0159e - Revo"
+  ],
+  "img_count": 10,
+  "img_no_alt": 6,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 218,
+  "int_links_out": 44,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/o-nas/slovnik-pojmu/",
+  "status": 200,
+  "location": "",
+  "title": "Slovník pojmů - Revolt.BI",
+  "title_len": 25,
+  "meta_desc": "Víme, že určité odborné výrazy nejsou jen tak.Připravili jsme si pro vás slovník, který vám pomůže všechnyvýrazy hravě rozlousknout.",
+  "meta_desc_len": 132,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/o-nas/slovnik-pojmu/",
+  "og_title": "Slovník pojmů - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2024/02/revolt-ilustrace-web-nove-09-1.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Slovník pojmů"
+  ],
+  "h2": [],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/02/revolt-ilustrace-web-nove-09-1.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/02/revolt-ilustrac"
+  ],
+  "img_count": 12,
+  "img_no_alt": 8,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 2750,
+  "int_links_out": 44,
+  "ext_links_out": 11
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/business-reseni/agency-vs-in-house/",
+  "status": 200,
+  "location": "",
+  "title": "Agency vs. in-house - Revolt.BI",
+  "title_len": 31,
+  "meta_desc": "Můžete si dovolit býtmezi 87 %* datových projektů,které končí fiaskem?",
+  "meta_desc_len": 70,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/business-reseni/agency-vs-in-house/",
+  "og_title": "Agency vs. in-house - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2024/02/Group-390.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Revolt BI vs. váš in-house projekt"
+  ],
+  "h2": [
+   "Přemýšlíte o tom, že svůj příští datový projekt uděláte in-house?",
+   "Stock Plzeň",
+   "Sportisimo",
+   "Škoda Auto",
+   "Spočítali jsme to za vás",
+   "Experti, kteří jsou vám v Revolt BI k dispozici",
+   "Služby",
+   "Analytická strategie",
+   "Strikeforce",
+   "FAQ",
+   "Chcete konzultaci nad vašimi datovými dotazy?"
+  ],
+  "h3": [
+   "Projekt svěříte in-house týmu",
+   "Projekt svěříte Revolt BI",
+   "In-House",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/stock-logo-1.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/stock-logo-1.png\",\"width\":\"200\",\""
+  ],
+  "img_count": 34,
+  "img_no_alt": 30,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 1585,
+  "int_links_out": 45,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/business-reseni/mentoring/",
+  "status": 200,
+  "location": "",
+  "title": "Mentoring - Revolt.BI",
+  "title_len": 21,
+  "meta_desc": "Mentoringové služby na míru",
+  "meta_desc_len": 27,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/business-reseni/mentoring/",
+  "og_title": "Mentoring - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Posílení kompetencí manažerů BI:",
+   "Mám zájem o první sezení"
+  ],
+  "h2": [
+   "Jsem Giuliano Giannetti",
+   "Struktura programu",
+   "Jak se přihlásit",
+   "Seznamte se!",
+   "Profily mentorů",
+   "Reference"
+  ],
+  "h3": [
+   "Mým cílem je pomoci šéfům BI krizové oblasti co nejrychleji zvládnout, aby ve své funkci byli úspěšní.",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/05/Clip-path-group.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/05/Clip-path-group.png\",\"width\":\""
+  ],
+  "img_count": 18,
+  "img_no_alt": 14,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 1486,
+  "int_links_out": 40,
+  "ext_links_out": 7
+ },
+ {
+  "url": "https://www.revolt.bi/tableau-nebo-power-bi/",
+  "status": 200,
+  "location": "",
+  "title": "Tableau nebo Power BI ? - Revolt.BI",
+  "title_len": 35,
+  "meta_desc": "Každý kdo se někdy rozhodoval, jaký vizualizační tool zvolit řešil otázku - je lepší Tableau nebo Power BI? Jasná a jediná správná odpoveď neexistuje, v",
+  "meta_desc_len": 152,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/tableau-nebo-power-bi/",
+  "og_title": "Tableau nebo Power BI ? - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [
+   "Tableau nebo Power BI ?",
+   "Shrnutí hlavních bodů"
+  ],
+  "h2": [
+   "Tableau",
+   "Power BI",
+   "Přečtěte si některý z našich dalších článků"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"WebPage\",\"@id\":\"https://www.revolt.bi/tableau-nebo-power-bi/#webpage\",\"url\":\"https://www.revolt.bi/tableau-nebo-power-bi/\",\"name\":\"Tableau nebo Power BI ? - Revolt.BI\",\"datePub"
+  ],
+  "img_count": 18,
+  "img_no_alt": 14,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 557,
+  "int_links_out": 49,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/rfm-analyza/",
+  "status": 200,
+  "location": "",
+  "title": "RFM Analýza - Revolt.BI",
+  "title_len": 23,
+  "meta_desc": "Pokud chcete rozumět vaší klientské bázi, RFM analýza by neměla být opomenuta.",
+  "meta_desc_len": 78,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/rfm-analyza/",
+  "og_title": "RFM Analýza - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/07/rfm.jpg",
+  "lang": "cs-CZ",
+  "h1": [
+   "RFM Analýza"
+  ],
+  "h2": [
+   "Popis",
+   "Benefit",
+   "Pro koho",
+   "Chcete stejný report pro svou firmu?"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/07/rfm.jpg\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/07/rfm.jpg\",\"width\":\"200\",\"height\":\"200\",\"inL"
+  ],
+  "img_count": 14,
+  "img_no_alt": 9,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 380,
+  "int_links_out": 40,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/jak-se-stat-datove-rizenou-firmou-a-neselhat/",
+  "status": 200,
+  "location": "",
+  "title": "Jak se stát datově řízenou firmou a neselhat?  - Revolt.BI",
+  "title_len": 58,
+  "meta_desc": "Data dnes ovlivňují rozhodování ve všech odděleních moderních firem, ale přechod k datově řízené organizaci není pro každého snadný. Přestože většina manažerů",
+  "meta_desc_len": 158,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/jak-se-stat-datove-rizenou-firmou-a-neselhat/",
+  "og_title": "Jak se stát datově řízenou firmou a neselhat?  - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2024/08/Navrh-bez-nazvu-55.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Jak se stát datově řízenou firmou a neselhat?",
+   "Máte zájem o analytickou strategii?"
+  ],
+  "h2": [
+   "Jsme tu pro vás.",
+   "Přečtěte si některý z našich dalších článků"
+  ],
+  "h3": [
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/05/Mask-group.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/05/Mask-group.png\",\"width\":\"200\",\"heig"
+  ],
+  "img_count": 20,
+  "img_no_alt": 16,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 850,
+  "int_links_out": 48,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/business-reseni/customer-experience/",
+  "status": 200,
+  "location": "",
+  "title": "Customer Experience - Revolt.BI",
+  "title_len": 31,
+  "meta_desc": "Customer Experience Framework",
+  "meta_desc_len": 29,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/business-reseni/customer-experience/",
+  "og_title": "Customer Experience - Revolt.BI",
+  "og_image": "",
+  "lang": "cs-CZ",
+  "h1": [],
+  "h2": [
+   "Hlavní výhody řízení spokojenosti zákazníka",
+   "Do dvou měsíců",
+   "V čem jsme jiní"
+  ],
+  "h3": [
+   "Navýšení průměrné hodnoty objednávky",
+   "Snížení nákladů",
+   "Vratky",
+   "Více zákazníků",
+   "Co neměřím, to neřídím.",
+   "",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2024/10/Report-CX-v-PC-1024x576.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2024/10/Report-CX-v-PC-1024x57"
+  ],
+  "img_count": 26,
+  "img_no_alt": 22,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 721,
+  "int_links_out": 49,
+  "ext_links_out": 7
+ },
+ {
+  "url": "https://www.revolt.bi/sluzby/business-reseni/zero-to-hero-cco/",
+  "status": 200,
+  "location": "",
+  "title": "Řešení pro obchodní ředitele - Revolt.BI",
+  "title_len": 40,
+  "meta_desc": "Sbírka řešení pro úspěšné obchodní ředitele",
+  "meta_desc_len": 43,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/sluzby/business-reseni/zero-to-hero-cco/",
+  "og_title": "Řešení pro obchodní ředitele - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2023/08/zaskladnenost-1-1.jpg",
+  "lang": "cs-CZ",
+  "h1": [
+   "Řešení pro obchodní ředitele a CCOs"
+  ],
+  "h2": [
+   ""
+  ],
+  "h3": [
+   "",
+   "Čeho mám nadzásobu nebo podzásobu?",
+   "Jaké kategorie (a kdy) mi tvoří marži nebo zvyšují traffic na prodejny?",
+   "Správná cenová hladina na správném místě.",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2023/08/zaskladnenost-1-1.jpg\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2023/08/zaskladnenost-1-1.jpg\",\"widt"
+  ],
+  "img_count": 17,
+  "img_no_alt": 13,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 357,
+  "int_links_out": 46,
+  "ext_links_out": 6
+ },
+ {
+  "url": "https://www.revolt.bi/power-bi-speedrunner-jak-pracovat-s-ai-az-10x-rychleji/",
+  "status": 200,
+  "location": "",
+  "title": "Power BI Speedrunner: Jak pracovat s AI až 10× rychleji - Revolt.BI",
+  "title_len": 67,
+  "meta_desc": "Píšete DAX výrazy ručně? Dokumentaci po nocích? Copilot vám nepomáhá tak, jak jste čekali?",
+  "meta_desc_len": 90,
+  "robots": "noodp",
+  "canonical": "https://www.revolt.bi/power-bi-speedrunner-jak-pracovat-s-ai-az-10x-rychleji/",
+  "og_title": "Power BI Speedrunner: Jak pracovat s AI až 10× rychleji - Revolt.BI",
+  "og_image": "https://www.revolt.bi/wp-content/uploads/2026/07/cover-for-articles-2.png",
+  "lang": "cs-CZ",
+  "h1": [
+   "Power BI Speedrunner: Jak pracovat s AI až 10× rychleji"
+  ],
+  "h2": [
+   "Váš přednášející",
+   "Přečtěte si některý z našich dalších článků"
+  ],
+  "h3": [
+   "POWER BI SPEEDRUNNER:",
+   "JAK PRACOVAT S AI AŽ 10* RYCHLEJI",
+   "Proč se zúčastnit?",
+   "Co se na webináři dozvíte?",
+   "Co si z webináře odnesete?",
+   "Pro koho je webinář určen?",
+   "Podívejte se na záznam!",
+   "Kontakt",
+   "Služby",
+   "Technologie",
+   "Revolt.bi",
+   "Kariéra"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Person\",\"Organization\"],\"@id\":\"https://www.revolt.bi/#person\",\"name\":\"Revolt.BI\"},{\"@type\":\"WebSite\",\"@id\":\"https://www.revolt.bi/#website\",\"url\":\"https://www.revolt.bi\",\"name\":\"Revolt.BI\",\"publisher\":{\"@id\":\"https://www.revolt.bi/#person\"},\"inLanguage\":\"cs\"},{\"@type\":\"ImageObject\",\"@id\":\"https://www.revolt.bi/wp-content/uploads/2026/07/cover-for-articles-2.png\",\"url\":\"https://www.revolt.bi/wp-content/uploads/2026/07/cover-for-articles-2.png\""
+  ],
+  "img_count": 20,
+  "img_no_alt": 16,
+  "forms": 0,
+  "hubspot": true,
+  "scripts_ext": [
+   "js.hsforms.net",
+   "www.google.com",
+   "www.revolt.bi"
+  ],
+  "words": 603,
+  "int_links_out": 49,
+  "ext_links_out": 6
+ }
+]

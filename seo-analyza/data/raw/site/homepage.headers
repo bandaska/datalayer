@@ -1,0 +1,8 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+vary: Accept-Encoding
+date: Thu, 08 Oct 2026 14:26:05 GMT
+server: Google Frontend
+

@@ -1,0 +1,457 @@
+[
+ {
+  "url": "https://annanovotna.cz/",
+  "status": 200,
+  "location": "",
+  "title": "Anna Novotná, PCC — koučink pro firmy, podnikatele i koučky",
+  "title_len": 59,
+  "meta_desc": "Profesionální koučka (PCC, ICF) s 15 lety praxe v HR. Firemní koučink manažerů a týmů, koučink pro podnikatele a mentoring pro koučky. Praha 6 i online.",
+  "meta_desc_len": 152,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/",
+  "og_title": "Anna Novotná, PCC — koučink pro firmy, podnikatele i koučky",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Najděte vlastní cestu – s koučkou, která opravdu naslouchá"
+  ],
+  "h2": [
+   "Brain-based koučink · PCC u ICF · praxe od roku 2017",
+   "Koho koučuji?",
+   "Proč právě já",
+   "Co říkají lidé, se kterými jsem pracovala",
+   "Pojďme se poznat",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Pro CEO",
+   "Pro manažery",
+   "Pro firmy",
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 1,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 463,
+  "int_links_out": 11,
+  "ext_links_out": 3
+ },
+ {
+  "url": "https://annanovotna.cz/pro-ceo/",
+  "status": 200,
+  "location": "",
+  "title": "Koučink pro CEO a vrcholové leadery | Anna Novotná, PCC",
+  "title_len": 55,
+  "meta_desc": "Důvěrný prostor pro CEO a vrcholové leadery. Rozhodujte se s jistotou i v osamělosti nejvyšší role – s neutrální externí koučkou PCC (ICF). Brain-based metoda, 15 let v HR, praxe od roku 2017.",
+  "meta_desc_len": 192,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/pro-ceo/",
+  "og_title": "Koučink pro CEO a vrcholové leadery | Anna Novotná, PCC",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Úspěšní CEO nejsou na vrcholu sami, mají po boku své kouče."
+  ],
+  "h2": [
+   "S kým se poradíte, když chcete prosadit něco nového nebo odvážného?",
+   "Kdy má pro vás koučink se mnou největší přínos?",
+   "Jak spolupráce probíhá, když máte zájem o koučink se mnou?",
+   "Zkušenosti vedoucích pracovníků a firem",
+   "Nejčastější otázky",
+   "Řekněte mi, co potřebujete",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Mgr. Anna Novotná, PCC",
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 1,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 2106,
+  "int_links_out": 11,
+  "ext_links_out": 1
+ },
+ {
+  "url": "https://annanovotna.cz/pro-manazery/",
+  "status": 200,
+  "location": "",
+  "title": "Koučink pro manažery a nové teamleadery | Anna Novotná, PCC",
+  "title_len": 59,
+  "meta_desc": "Nově vedete tým? Koučink pro manažery a teamleadery – delegování, vedení 1:1, zpětná vazba, autentický styl vedení. PCC koučka (ICF), 15 let v HR, brain-based. Úvodní konzultace zdarma.",
+  "meta_desc_len": 185,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/pro-manazery/",
+  "og_title": "Koučink pro manažery a nové teamleadery | Anna Novotná, PCC",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Z experta teamleaderem"
+  ],
+  "h2": [
+   "Vedení je řemeslo, které se dá naučit",
+   "Pro koho a v jakých situacích má koučink se mnou největší přínos?",
+   "Jak spolupráce probíhá",
+   "Zkušenosti manažerů a firem",
+   "Časté otázky",
+   "Domluvte si úvodní konzultaci zdarma",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Mgr. Anna Novotná, PCC",
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 1,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 1729,
+  "int_links_out": 11,
+  "ext_links_out": 1
+ },
+ {
+  "url": "https://annanovotna.cz/pro-firmy/",
+  "status": 200,
+  "location": "",
+  "title": "Firemní koučink vedoucích, specialistů a týmů | Anna Novotná, PCC",
+  "title_len": 65,
+  "meta_desc": "Individuální a týmový koučink a workshopy na míru pro vaše lidi. Transparentní proces a cena, měřitelné cíle, důvěrnost, návaznost na Hogan, MBTI a 360°. PCC koučka (ICF), 15 let v HR.",
+  "meta_desc_len": 184,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/pro-firmy/",
+  "og_title": "Firemní koučink vedoucích, specialistů a týmů | Anna Novotná, PCC",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Firemní koučink pro vaše vedoucí pracovníky, specialisty a týmy"
+  ],
+  "h2": [
+   "Rozvoj vašich lidí je mojí prioritou a vášní",
+   "Koho z vašich lidí má smysl nechat koučovat?",
+   "Jak spolupráce s vaší firmou probíhá?",
+   "Zkušenosti manažerů a firem",
+   "Nejčastější otázky",
+   "Zvažujete rozvoj konkrétního pracovníka nebo týmu?",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Mgr. Anna Novotná, PCC",
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 1,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 1636,
+  "int_links_out": 11,
+  "ext_links_out": 1
+ },
+ {
+  "url": "https://annanovotna.cz/reference/",
+  "status": 200,
+  "location": "",
+  "title": "Reference – zkušenosti klientů | Anna Novotná, PCC",
+  "title_len": 50,
+  "meta_desc": "Reference od CEO, manažerů a firem, od podnikatelů i z workshopů a kurzů. Skutečné zkušenosti klientů s koučovací spoluprací s Annou Novotnou, PCC.",
+  "meta_desc_len": 147,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/reference/",
+  "og_title": "Reference – zkušenosti klientů | Anna Novotná, PCC",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Zkušenosti lidí, se kterými jsem pracovala"
+  ],
+  "h2": [
+   "Firemní koučink – vedení, manažeři a firmy",
+   "Koučovací série a pro OSVČ podnikatelky",
+   "Workshopy, kurzy a přednášky",
+   "Chcete být další spokojený klient?",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 1,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 4892,
+  "int_links_out": 11,
+  "ext_links_out": 16
+ },
+ {
+  "url": "https://annanovotna.cz/o-mne/",
+  "status": 200,
+  "location": "",
+  "title": "O mně – Mgr. Anna Novotná, PCC koučka",
+  "title_len": 37,
+  "meta_desc": "Profesionální koučka PCC (ICF) s praxí od roku 2017 a 15 lety v HR. Brain-based koučink, andragogika FF UK. O mém přístupu, metodě a zkušenostech.",
+  "meta_desc_len": 146,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/o-mne/",
+  "og_title": "O mně – Mgr. Anna Novotná, PCC koučka",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Mgr. Anna Novotná, PCC"
+  ],
+  "h2": [
+   "Kdo jsem",
+   "Jak pracuji",
+   "Média a přednášky",
+   "Pojďme se poznat",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 440,
+  "int_links_out": 11,
+  "ext_links_out": 4
+ },
+ {
+  "url": "https://annanovotna.cz/kontakt/",
+  "status": 200,
+  "location": "",
+  "title": "Kontakt | Anna Novotná, PCC koučka Praha",
+  "title_len": 40,
+  "meta_desc": "Napište mi nebo zavolejte. Koučovna Praha 6 – Břevnov, koučink online i osobně, česky a anglicky. E-mail email@annanovotna.cz, tel. 724 554 022.",
+  "meta_desc_len": 144,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/kontakt/",
+  "og_title": "Kontakt | Anna Novotná, PCC koučka Praha",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Ozvěte se mi, zavolejte"
+  ],
+  "h2": [
+   "Napište mi",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 1,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 115,
+  "int_links_out": 11,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://annanovotna.cz/cdn-cgi/l/email-protection",
+  "status": 404,
+  "location": "",
+  "title": "Email Protection | Cloudflare",
+  "title_len": 29,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "noindex, nofollow",
+  "canonical": "",
+  "og_title": "",
+  "og_image": "",
+  "lang": "en-US",
+  "h1": [
+   "Email Protection"
+  ],
+  "h2": [
+   "You are unable to access this email address annanovotna.cz"
+  ],
+  "h3": [],
+  "jsonld": [],
+  "img_count": 0,
+  "img_no_alt": 0,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [],
+  "words": 116,
+  "int_links_out": 0,
+  "ext_links_out": 4
+ },
+ {
+  "url": "https://annanovotna.cz/ochrana-osobnich-udaju/",
+  "status": 200,
+  "location": "",
+  "title": "Zpracování osobních údajů | Anna Novotná, PCC",
+  "title_len": 45,
+  "meta_desc": "Zásady zpracování a ochrany osobních údajů (GDPR) – Mgr. Anna Novotná, PCC.",
+  "meta_desc_len": 75,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/ochrana-osobnich-udaju/",
+  "og_title": "Zpracování osobních údajů | Anna Novotná, PCC",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Zásady zpracování a ochrany osobních údajů"
+  ],
+  "h2": [
+   "Ochrana osobních údajů",
+   "Kdo je správce?",
+   "Kontaktní údaje",
+   "Rozsah osobních údajů a účely zpracování",
+   "Cookies",
+   "Zabezpečení a ochrana osobních údajů",
+   "Předání osobních údajů třetím osobám",
+   "Předávání dat mimo Evropskou unii",
+   "Vaše práva v souvislosti s ochranou osobních údajů",
+   "Mlčenlivost",
+   "Máte dotaz?",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 1,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 1286,
+  "int_links_out": 11,
+  "ext_links_out": 1
+ },
+ {
+  "url": "https://annanovotna.cz/zasady-cookies/",
+  "status": 200,
+  "location": "",
+  "title": "Zásady cookies | Anna Novotná, PCC",
+  "title_len": 34,
+  "meta_desc": "Jaké cookies web používá, k čemu slouží a jak spravovat svůj souhlas.",
+  "meta_desc_len": 69,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/zasady-cookies/",
+  "og_title": "Zásady cookies | Anna Novotná, PCC",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Zásady cookies"
+  ],
+  "h2": [
+   "Co jsou cookies",
+   "Váš souhlas",
+   "Kategorie cookies",
+   "Konkrétní cookies",
+   "Předání třetím stranám",
+   "Jak souhlas změnit nebo odvolat",
+   "Máte dotaz?",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 1,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 515,
+  "int_links_out": 11,
+  "ext_links_out": 0
+ },
+ {
+  "url": "https://annanovotna.cz/obchodni-podminky/",
+  "status": 200,
+  "location": "",
+  "title": "Obchodní podmínky | Anna Novotná, PCC",
+  "title_len": 37,
+  "meta_desc": "Všeobecné obchodní podmínky pro služby a produkty – Mgr. Anna Novotná, PCC.",
+  "meta_desc_len": 75,
+  "robots": "",
+  "canonical": "https://annanovotna.cz/obchodni-podminky/",
+  "og_title": "Obchodní podmínky | Anna Novotná, PCC",
+  "og_image": "https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg",
+  "lang": "cs",
+  "h1": [
+   "Obchodní podmínky"
+  ],
+  "h2": [
+   "I. Obecná ustanovení",
+   "II. Objednávka a uzavření smlouvy",
+   "III. Cena a platební podmínky",
+   "IV. Dodací podmínky",
+   "V. Reklamační podmínky",
+   "VI. Závěrečná ustanovení",
+   "Máte dotaz?",
+   "Cookies na tomto webu"
+  ],
+  "h3": [
+   "Poskytovatelka:",
+   "Kontaktní údaje:",
+   "Zpráva odeslána"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"ProfessionalService\",\"@id\":\"https://annanovotna.cz/#praxe\",\"name\":\"Anna Novotná, PCC\",\"url\":\"https://annanovotna.cz/\",\"image\":\"https://annanovotna.cz/assets/img/Firemni-koucka-pro-vedouci-pracovniky-i-jednotlivce.jpg\",\"logo\":\"https://annanovotna.cz/assets/img/logo-anna-novotna-pcc.svg\",\"description\":\"Profesionální koučink pro CEO, manažery, firmy, podnikatele a koučky. Brain-based metoda, osobně v Praze 6 – Břevnově i online, česky a anglicky."
+  ],
+  "img_count": 1,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "challenges.cloudflare.com"
+  ],
+  "words": 1742,
+  "int_links_out": 11,
+  "ext_links_out": 2
+ }
+]

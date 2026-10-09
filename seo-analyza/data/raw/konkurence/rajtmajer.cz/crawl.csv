@@ -1,0 +1,194 @@
+url,status,location,title,title_len,meta_desc,meta_desc_len,robots,canonical,lang,h1,h2,words,img_count,img_no_alt,forms,hubspot,int_links_out,ext_links_out,jsonld,og_title,og_image
+https://www.rajtmajer.cz/,200,,Spolehlivý PPC specialista z Plzně František Rajtmajer,54,Jmenuji se František Rajtmajer. Jsem spolehlivý PPC specialista z Plzně a 11 rokem pomáhám podnikatelům zvyšovat tržby prostřednictvím PPC reklamy.,147,,,cs-cz,Spolehlivý PPC specialista z Plzně,Online marketing na základě dat | Proč se mnou spolupracovat | Kdy nám to nebude fungovat | Certifikáty,430,5,0,0,False,12,5,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""ProfessionalService"",
+        ""@id"": ""https://www.rajtmajer.cz/#business"",
+        ""name"": ""Ing. František Rajtmajer - PPC specialista"",
+        ""description"": ""Spolehlivý PPC specialista z Plzně."",
+        ""url"": ""https://www.rajtmajer.cz/"",
+        ""image"": ""https://www.rajtmajer.cz/images/frantisek_rajtmajer.jpg"",
+        ""telephone"": ""+420732757452"",
+        ""email"": ""frantisek@rajtmajer.cz"",
+        ""pric",,
+https://www.rajtmajer.cz/sluzby/,200,,Služby - František Rajtmajer,28,"Kompletní služby PPC reklamy, audit kampaní, implementace měření, GA4 a konzultace. Zaměřeno na výkon a data-driven růst pro malé firmy a e-shopy.",146,,,cs-cz,Služby,Zvyšování prodejů a zisku | Technická nastavení | Konzultace a školení,208,0,0,0,False,17,0,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""ItemList"",
+    ""name"": ""Nabízené služby - František Rajtmajer"",
+    ""description"": ""Kompletní služby PPC reklamy, audit kampaní, implementace měření, GA4 a konzultace."",
+    ""url"": ""https://www.rajtmajer.cz/sluzby/"",
+    ""itemListElement"": [
+      { ""@type"": ""ListItem"", ""position"": 1, ""item"": { ""@id"": ""https://www.rajtmajer.cz/sprava-ppc/#service"" } },
+      { ""@type"": ""ListItem"", ""position"": 2, ""item"": { ""@id"": ""https://www.rajtmajer.cz",,
+https://www.rajtmajer.cz/en/,200,,Reliable PPC Specialist from Pilsen František Rajtmajer,55,I help e-shop owners and small businesses grow revenue through PPC advertising and web analytics. Reliable PPC specialist with 10+ years of experience.,151,,,en,"Reliable PPC Specialist from Pilsen, Czechia",Data-Driven Online Marketing | Why To Work With Me | Why To Choose Someone Else | Certifications,349,5,0,0,False,4,4,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""ProfessionalService"",
+        ""@id"": ""https://www.rajtmajer.cz/#business-en"",
+        ""name"": ""Ing. František Rajtmajer - PPC Specialist & Web Analyst"",
+        ""description"": ""PPC advertising management, web analytics, tracking code implementation, and data-driven online marketing."",
+        ""url"": ""https://www.rajtmajer.cz/en/"",
+        ""image"": ""https://www.rajtmajer.cz/images/frantisek_rajtmajer.jpg"",
+    ",,
+https://www.rajtmajer.cz/reference/,200,,Reference - František Rajtmajer,31,"Reference e-shopů a podnikatelů, kterým pomáhám s PPC reklamou a analytikou. Důraz na spolehlivost, data, návratnost a dlouhodobou spolupráci.",142,,,cs-cz,Reference,Vybrané referenční spolupráce | Pomáhal jsem mimojiné těmto klientům | Doporučení od klientů,3205,76,0,0,False,9,105,,,
+https://www.rajtmajer.cz/o-frantiskovi/,200,,O Františku Rajtmajerovi - spolehlivém PPC specialistovi z Plzně,64,"Kdo jsem, co mám za sebou a jak pracuji? Seznamte se se mnou.",61,,,cs-cz,O mně,Pracovní zkušenosti | Začátek podnikání | Konference a školení,736,0,0,0,False,12,17,,,
+https://www.rajtmajer.cz/kontakt/,200,,Kontakt - František Rajtmajer,29,"Napište mi na frantisek@rajtmajer.cz, Volejte 732 757 452, nebo se podívejte na další kontakty.",95,,,cs-cz,Kontakt,Kontaktní údaje | Fakturační údaje,149,0,0,0,False,8,1,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@graph"": [
+      {
+        ""@type"": ""Person"",
+        ""@id"": ""https://www.rajtmajer.cz/#person"",
+        ""name"": ""Ing. František Rajtmajer"",
+        ""gender"": ""https://schema.org/Male"",
+        ""jobTitle"": ""PPC specialista"",
+        ""email"": ""frantisek@rajtmajer.cz"",
+        ""telephone"": ""+420732757452"",
+        ""image"": ""https://www.rajtmajer.cz/images/frantisek_rajtmajer.jpg"",
+        ""worksFor"": {
+          ""@id"": ""https://www.rajtmajer.cz/#bu",,
+https://www.rajtmajer.cz/nastaveni-mericich-kodu/,200,,"Nastavení měřících kódů, analytiky, cookies lišty - František Rajtmajer",71,"Získejte precizní nastavení Google Analytics a ostatních kódů jako je Facebook Pixel, Google Ads, Sklik, Heureka či Adform.",123,,,cs-cz,Nastavení měřících kódů,Popis služby | Co získáte | Reference | Cena | Objednávka,367,0,0,0,False,8,5,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Service"",
+    ""@id"": ""https://www.rajtmajer.cz/nastaveni-mericich-kodu/#service"",
+    ""name"": ""Nastavení měřících kódů"",
+    ""description"": ""Precizní nastavení Google Analytics, Meta Pixelu, Google Ads, Skliku, Heureky, Cookie lišty a GTM."",
+    ""url"": ""https://www.rajtmajer.cz/nastaveni-mericich-kodu/"",
+    ""provider"": {
+      ""@id"": ""https://www.rajtmajer.cz/#business""
+    },
+    ""areaServed"": {
+      ""@type"": ""Country"",
+      ""name"": ",,
+https://www.rajtmajer.cz/audit-google-analytics/,200,,Audit Google Analytics 4 - kontrola nastavení a dat - František Rajtmajer,73,"Zkontroluji vám nastavení a nasbíraná data v GA4, abyste jim mohli věřit a správně se na jejich základě rozhodovat.",115,,,cs-cz,Audit Google Analytics 4,Popis služby | Co získáte | Reference | Varianty | Objednávka,354,0,0,0,False,8,4,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Service"",
+    ""@id"": ""https://www.rajtmajer.cz/audit-google-analytics/#service"",
+    ""name"": ""Audit Google Analytics 4"",
+    ""description"": ""Kontrola nastavení a naměřených dat v GA4, aby byla data spolehlivá a využitelná pro rozhodování."",
+    ""url"": ""https://www.rajtmajer.cz/audit-google-analytics/"",
+    ""provider"": {
+      ""@id"": ""https://www.rajtmajer.cz/#business""
+    },
+    ""areaServed"": {
+      ""@type"": ""Country"",
+      ""name"": ""Č",,
+https://www.rajtmajer.cz/certifikace/,200,,Certifikace potvrzující odbornost - František Rajtmajer,55,Přehled certifikátů z oblasti PPC a webové analytiky udělených Františkovi Rajtmajerovi.,88,,,cs-cz,Certifikace,Certifikát Google Ads | Mergado certifikace | Certifikát Google Analytics | Shoptet Partner | Certifikát Google Analytics Akademie | Kurz PPC reklama strategicky | Školení Google Tag Manager pro fajnšmekry | Školení Google Analytics pro fajnšmekry | Data Driven marketing management prakticky | Certifikát Introduction to Data Science | PPC reklama pro pokročilé od Dobrého webu | Školení PPC reklamy Robert Němec | Certifikát Digitální garáž | Nastavení PPC kampaní s analýzou klíčových slov | Kurz Chytrá marketingová strategie,566,15,0,0,False,23,12,,,
+https://www.rajtmajer.cz/sprava-ppc/,200,,Správa PPC reklamy pro podnikatele - František Rajtmajer,56,"Pomáhám e-shopům vydělávat víc díky efektivní správě PPC reklam. Google Ads, Sklik a Meta, jasná data, kontrola nákladů a spolehlivá spolupráce.",144,,,cs-cz,Správa PPC reklamy,Popis služby | Co získáte | Reference | Cena | Objednávka,476,0,0,0,False,8,1,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Service"",
+    ""@id"": ""https://www.rajtmajer.cz/sprava-ppc/#service"",
+    ""name"": ""Správa PPC reklamy"",
+    ""description"": ""Pomáhám e-shopům a firmám vydělávat víc díky efektivní správě PPC reklam na Google Ads, Sklik a Meta."",
+    ""url"": ""https://www.rajtmajer.cz/sprava-ppc/"",
+    ""provider"": {
+      ""@id"": ""https://www.rajtmajer.cz/#business""
+    },
+    ""areaServed"": {
+      ""@type"": ""Country"",
+      ""name"": ""Česká republika""
+    },
+   ",,
+https://www.rajtmajer.cz/audit-ppc/,200,,"Audit PPC reklam na Googlu, Seznamu, Metě - František Rajtmajer",63,"Poznejte skryté chyby a příležitosti ve vašich PPC kampaních na Googlu, Seznamu a Metě. Provedu audit nastavení a výkonu reklam a doporučím, co zlepšit.",152,,,cs-cz,Audit PPC reklam,Popis služby | Co získáte | Reference | Cena | Objednávka,372,0,0,0,False,8,2,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Service"",
+    ""@id"": ""https://www.rajtmajer.cz/audit-ppc/#service"",
+    ""name"": ""Audit PPC reklam"",
+    ""description"": ""Odhalte skryté chyby a příležitosti ve vašich PPC kampaních. Audit nastavení a výkonu s konkrétními doporučeními."",
+    ""url"": ""https://www.rajtmajer.cz/audit-ppc/"",
+    ""provider"": {
+      ""@id"": ""https://www.rajtmajer.cz/#business""
+    },
+    ""areaServed"": {
+      ""@type"": ""Country"",
+      ""name"": ""Česká republika""
+  ",,
+https://www.rajtmajer.cz/skoleni-google-analytics/,200,,Školení Google Analytics 4 - František Rajtmajer,48,Potřebujete se naučit pracovat v GA4? Přímo pro vás uspořádám školení na míru. Vyjasníme si vaše potřeby a následně se potkáme osobně nebo online. Ukázky budu dělat přímo na vašich datech.,188,,,cs-cz,Školení Google Analytics 4,Popis služby | Co získáte | Reference | Varianty | Objednávka,289,0,0,0,False,8,1,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Service"",
+    ""@id"": ""https://www.rajtmajer.cz/skoleni-google-analytics/#service"",
+    ""name"": ""Školení Google Analytics 4"",
+    ""description"": ""Školení GA4 na míru pro vás a váš tým. Praktické ukázky přímo na vašich datech osobně nebo online."",
+    ""url"": ""https://www.rajtmajer.cz/skoleni-google-analytics/"",
+    ""provider"": {
+      ""@id"": ""https://www.rajtmajer.cz/#business""
+    },
+    ""areaServed"": {
+      ""@type"": ""Country"",
+      ""na",,
+https://www.rajtmajer.cz/skoleni-google-tag-manager/,200,,Školení Google Tag Manager - František Rajtmajer,48,"Naučte se používat Google Tag Manager. Díky školení od Františka se naučíte jak úplné základy, tak i pokročilé způsoby implementace datové vrstvy a GTM. Vždy na míru vašim potřebám.",181,,,cs-cz,Školení Google Tag Manageru,Popis služby | Co získáte | Reference | Varianty | Objednávka,293,0,0,0,False,8,1,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Service"",
+    ""@id"": ""https://www.rajtmajer.cz/skoleni-google-tag-manager/#service"",
+    ""name"": ""Školení Google Tag Manager"",
+    ""description"": ""Naučte se pracovat s GTM od základů po pokročilou implementaci datové vrstvy. Školení na míru vašim potřebám."",
+    ""url"": ""https://www.rajtmajer.cz/skoleni-google-tag-manager/"",
+    ""provider"": {
+      ""@id"": ""https://www.rajtmajer.cz/#business""
+    },
+    ""areaServed"": {
+      ""@type"": ""Coun",,
+https://www.rajtmajer.cz/analyza-dat/,200,,"Analýza dat z webu, mobilní aplikace a o zákaznících - František Rajtmajer",74,Odpovědi na mnohé otázky k webu a online marketingu se skrývají v Google Analytics či v jiných nástrojích webové analytiky. Pomohu vám je nalézt.,145,,,cs-cz,Analýza dat,Popis služby | Co získáte | Reference | Varianty | Objednávka,277,0,0,0,False,8,1,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Service"",
+    ""@id"": ""https://www.rajtmajer.cz/analyza-dat/#service"",
+    ""name"": ""Analýza dat"",
+    ""description"": ""Získejte odpovědi na otázky k webu a marketingu skryté v Google Analytics a analytických nástrojích."",
+    ""url"": ""https://www.rajtmajer.cz/analyza-dat/"",
+    ""provider"": {
+      ""@id"": ""https://www.rajtmajer.cz/#business""
+    },
+    ""areaServed"": {
+      ""@type"": ""Country"",
+      ""name"": ""Česká republika""
+    },
+    ""serv",,
+https://www.rajtmajer.cz/prehledy-v-google-data-studiu/,200,,Přehledy v Google Data Studiu - František Rajtmajer,51,Připravím pro vás přehledy v Google Data Studiu uzpůsobené na míru.,67,,,cs-cz,Přehledy v Google Data Studiu,Popis služby | Co získáte | Reference | Varianty | Objednávka,272,0,0,0,False,8,2,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Service"",
+    ""@id"": ""https://www.rajtmajer.cz/prehledy-v-google-data-studiu/#service"",
+    ""name"": ""Přehledy v Google Data Studiu"",
+    ""description"": ""Tvorba přehledných datových dashboardů a reportů na míru v nástroji Google Data Studio."",
+    ""url"": ""https://www.rajtmajer.cz/prehledy-v-google-data-studiu/"",
+    ""provider"": {
+      ""@id"": ""https://www.rajtmajer.cz/#business""
+    },
+    ""areaServed"": {
+      ""@type"": ""Country"",
+      """,,
+https://www.rajtmajer.cz/audit-technickeho-seo/,404,,404 Stránka nenalezena,22,,0,"noindex,follow",,cs-cz,Stránka nenalezena,,86,0,0,0,False,8,0,,,
+https://www.rajtmajer.cz/dokumenty/,200,,Dokumenty,9,Seznam dokumentů.,17,"noindex,follow",,cs-cz,Přehled dokumentů,,65,0,0,0,False,13,0,,,
+https://www.rajtmajer.cz/zasady-pouzivani-cookie/,200,,Zásady používání cookie,23,,0,"noindex, nofollow",,cs-cz,Zásady používání cookie,Definice používaných cookies | Zásady ochrany osobních údajů,235,0,0,0,False,8,0,,,
+https://www.rajtmajer.cz/konzultace/,200,,Konzultace - František Rajtmajer,32,"Řešíte problém a nevíte si rady? Poradím, změřím, nastavím, vyhodnotím. Ozvěte se.",82,,,cs-cz,Konzultace,Popis služby | Co získáte | Reference | Příklady proběhlých konzultací | Objednávka,263,0,0,0,False,8,1,"
+    {
+    ""@context"": ""https://schema.org"",
+    ""@type"": ""Service"",
+    ""@id"": ""https://www.rajtmajer.cz/konzultace/#service"",
+    ""name"": ""Konzultace"",
+    ""description"": ""Odborná konzultace a poradenství v oblastech PPC reklamy, webové analytiky, GA4 a optimalizace výkonu."",
+    ""url"": ""https://www.rajtmajer.cz/konzultace/"",
+    ""provider"": {
+      ""@id"": ""https://www.rajtmajer.cz/#business""
+    },
+    ""areaServed"": {
+      ""@type"": ""Country"",
+      ""name"": ""Česká republika""
+    },
+    ""servi",,
+https://www.rajtmajer.cz/doporucuji/,200,,František Rajtmajer doporučuje,30,"Seznam profíků, které doporučuje František Rajtmajer.",53,,,cs-cz,Doporučuji,SEO | Analytika | UX | Tvorba webů | PPC,147,0,0,0,False,8,24,,,
+https://www.rajtmajer.cz/zpracovatelska-smlouva/,200,,Zpracovatelská smlouva,22,,0,"noindex, nofollow",,cs-cz,Zpracovatelská smlouva,Data o vašich zákaznících | Data o vás | Zacházení s osobními údaji,486,0,0,0,False,8,0,,,
+https://www.rajtmajer.cz/zasady-zpracovani-osobnich-udaju/,200,,Zásady zpracování ososbních údajů,33,,0,"noindex, nofollow",,cs-cz,Zásady zpracování ososbních údajů,Poptávky | Spolupráce | Třetí strany,276,0,0,0,False,8,0,,,
+https://www.rajtmajer.cz/pridat-referenci/,200,,Přidat referenci,16,Přidat referenci.,17,"noindex,follow",,cs-cz,Přidat referenci,,153,0,0,0,False,8,0,,,

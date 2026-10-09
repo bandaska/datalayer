@@ -1,0 +1,354 @@
+seed	type	rows	total
+google analytics	MatchingQuestionsTermsMatch	39	39
+google analytics	MatchingTermsTermsMatch	1000	14838
+ga4	MatchingQuestionsTermsMatch	4	4
+ga4	MatchingTermsTermsMatch	1000	4654
+google analytics 4	MatchingQuestionsTermsMatch	3	3
+google analytics 4	MatchingTermsTermsMatch	998	998
+analytics	MatchingTermsTermsMatch	1000	55388
+webová analytika	MatchingTermsTermsMatch	25	25
+analytika webu	MatchingTermsTermsMatch	2	2
+webová analytika	MatchingQuestionsTermsMatch	3	3
+analytika webu	MatchingQuestionsTermsMatch	0	0
+analytics	MatchingQuestionsTermsMatch	52	52
+analýza webu	MatchingQuestionsTermsMatch	0	0
+analýza návštěvnosti	MatchingTermsTermsMatch	6	6
+analýza webu	MatchingTermsTermsMatch	40	40
+měření návštěvnosti	MatchingQuestionsTermsMatch	0	0
+analýza návštěvnosti	MatchingQuestionsTermsMatch	1	1
+měření návštěvnosti	MatchingTermsTermsMatch	18	18
+návštěvnost webu	MatchingQuestionsTermsMatch	6	6
+návštěvnost webu	MatchingTermsTermsMatch	ERR	["Error","InternalError"]
+google tag manager	MatchingQuestionsTermsMatch	11	11
+návštěvnost webu	MatchingTermsTermsMatch	41	41
+gtm	MatchingTermsTermsMatch	1000	3524
+gtm	MatchingQuestionsTermsMatch	8	8
+google tag manager	MatchingQuestionsTermsMatch	11	11
+tag manager	MatchingTermsTermsMatch	1000	3246
+tag manager	MatchingQuestionsTermsMatch	13	13
+google tag manager	MatchingTermsTermsMatch	1000	2587
+server side	MatchingQuestionsTermsMatch	1	1
+gtm	MatchingTermsTermsMatch	1000	3524
+google tag manager	MatchingTermsTermsMatch	1000	2587
+server side	MatchingTermsTermsMatch	1000	1762
+server-side	MatchingQuestionsTermsMatch	1	1
+gtm	MatchingQuestionsTermsMatch	8	8
+serverové měření	MatchingTermsTermsMatch	0	0
+serverové měření	MatchingQuestionsTermsMatch	0	0
+server-side	MatchingTermsTermsMatch	1000	1762
+tag manager	MatchingQuestionsTermsMatch	13	13
+stape	MatchingTermsTermsMatch	101	101
+server side	MatchingTermsTermsMatch	1000	1762
+tag manager	MatchingTermsTermsMatch	1000	3246
+stape	MatchingQuestionsTermsMatch	0	0
+first party data	MatchingQuestionsTermsMatch	0	0
+first party data	MatchingTermsTermsMatch	147	147
+server side	MatchingQuestionsTermsMatch	1	1
+cookies třetích stran	MatchingTermsTermsMatch	4	4
+adblock	MatchingQuestionsTermsMatch	63	63
+adblock	MatchingTermsTermsMatch	1000	9806
+server-side	MatchingQuestionsTermsMatch	1	1
+serverové měření	MatchingTermsTermsMatch	0	0
+datalayer	MatchingTermsTermsMatch	318	318
+datalayer	MatchingQuestionsTermsMatch	0	0
+serverové měření	MatchingQuestionsTermsMatch	0	0
+data layer	MatchingTermsTermsMatch	479	479
+server-side	MatchingTermsTermsMatch	1000	1762
+cookies třetích stran	MatchingQuestionsTermsMatch	1	1
+datová vrstva	MatchingQuestionsTermsMatch	0	0
+data layer	MatchingQuestionsTermsMatch	0	0
+stape	MatchingTermsTermsMatch	101	101
+datová vrstva	MatchingTermsTermsMatch	4	4
+stape	MatchingQuestionsTermsMatch	0	0
+měření konverzí	MatchingTermsTermsMatch	32	32
+first party data	MatchingQuestionsTermsMatch	0	0
+měření konverzí	MatchingQuestionsTermsMatch	1	1
+cookies třetích stran	MatchingTermsTermsMatch	4	4
+konverze	MatchingTermsTermsMatch	1000	1720
+konverze	MatchingQuestionsTermsMatch	36	36
+sledování konverzí	MatchingTermsTermsMatch	6	6
+first party data	MatchingTermsTermsMatch	147	147
+konverzní kód	MatchingTermsTermsMatch	11	11
+adblock	MatchingTermsTermsMatch	1000	9806
+enhanced conversions	MatchingTermsTermsMatch	86	86
+adblock	MatchingQuestionsTermsMatch	63	63
+sledování konverzí	MatchingQuestionsTermsMatch	2	2
+cookies třetích stran	MatchingQuestionsTermsMatch	1	1
+datalayer	MatchingTermsTermsMatch	318	318
+rozšířené konverze	MatchingTermsTermsMatch	3	3
+datalayer	MatchingQuestionsTermsMatch	0	0
+data layer	MatchingTermsTermsMatch	479	479
+rozšířené konverze	MatchingQuestionsTermsMatch	0	0
+data layer	MatchingQuestionsTermsMatch	0	0
+datová vrstva	MatchingTermsTermsMatch	4	4
+offline konverze	MatchingTermsTermsMatch	3	3
+datová vrstva	MatchingQuestionsTermsMatch	0	0
+měření konverzí	MatchingTermsTermsMatch	32	32
+offline konverze	MatchingQuestionsTermsMatch	0	0
+měření konverzí	MatchingQuestionsTermsMatch	1	1
+konverzní kód	MatchingQuestionsTermsMatch	0	0
+konverze	MatchingQuestionsTermsMatch	36	36
+conversion api	MatchingTermsTermsMatch	232	232
+konverze	MatchingTermsTermsMatch	1000	1720
+enhanced conversions	MatchingQuestionsTermsMatch	0	0
+conversions api	MatchingTermsTermsMatch	100	100
+conversion api	MatchingQuestionsTermsMatch	0	0
+konverzní kód	MatchingTermsTermsMatch	11	11
+konverzní kód	MatchingQuestionsTermsMatch	0	0
+conversions api	MatchingQuestionsTermsMatch	0	0
+facebook pixel	MatchingQuestionsTermsMatch	5	5
+sledování konverzí	MatchingQuestionsTermsMatch	2	2
+meta pixel	MatchingTermsTermsMatch	372	372
+facebook pixel	MatchingTermsTermsMatch	1000	1832
+consent mode	MatchingQuestionsTermsMatch	2	2
+cookie lišta	MatchingTermsTermsMatch	15	15
+consent mode	MatchingTermsTermsMatch	468	468
+cookie lišta	MatchingQuestionsTermsMatch	0	0
+cookies	MatchingTermsTermsMatch	1000	59686
+cookies	MatchingQuestionsTermsMatch	145	145
+cookie banner	MatchingTermsTermsMatch	390	390
+souhlas s cookies	MatchingTermsTermsMatch	13	13
+souhlas s cookies	MatchingQuestionsTermsMatch	0	0
+sledování konverzí	MatchingTermsTermsMatch	6	6
+cookiebot	MatchingTermsTermsMatch	362	362
+enhanced conversions	MatchingQuestionsTermsMatch	0	0
+cookiebot	MatchingQuestionsTermsMatch	1	1
+meta pixel	MatchingQuestionsTermsMatch	2	2
+rozšířené konverze	MatchingTermsTermsMatch	3	3
+gdpr cookies	MatchingQuestionsTermsMatch	0	0
+gdpr cookies	MatchingTermsTermsMatch	105	105
+rozšířené konverze	MatchingQuestionsTermsMatch	0	0
+zákon o cookies	MatchingQuestionsTermsMatch	0	0
+enhanced conversions	MatchingTermsTermsMatch	86	86
+zákon o cookies	MatchingTermsTermsMatch	3	3
+offline konverze	MatchingTermsTermsMatch	3	3
+offline konverze	MatchingQuestionsTermsMatch	0	0
+cookie banner	MatchingQuestionsTermsMatch	0	0
+bigquery	MatchingTermsTermsMatch	1000	5794
+conversion api	MatchingTermsTermsMatch	232	232
+big query	MatchingQuestionsTermsMatch	0	0
+conversions api	MatchingTermsTermsMatch	100	100
+datový sklad	MatchingTermsTermsMatch	34	34
+conversions api	MatchingQuestionsTermsMatch	0	0
+bigquery	MatchingQuestionsTermsMatch	1	1
+conversion api	MatchingQuestionsTermsMatch	0	0
+datový sklad	MatchingQuestionsTermsMatch	2	2
+big query	MatchingTermsTermsMatch	630	630
+facebook pixel	MatchingQuestionsTermsMatch	5	5
+data warehouse	MatchingQuestionsTermsMatch	4	4
+looker studio	MatchingQuestionsTermsMatch	2	2
+meta pixel	MatchingTermsTermsMatch	372	372
+looker studio	MatchingTermsTermsMatch	1000	1341
+facebook pixel	MatchingTermsTermsMatch	ERR	["Error","InternalError"]
+meta pixel	MatchingQuestionsTermsMatch	2	2
+data studio	MatchingQuestionsTermsMatch	1	1
+data studio	MatchingTermsTermsMatch	1000	3190
+power bi	MatchingQuestionsTermsMatch	15	15
+power bi	MatchingTermsTermsMatch	1000	29918
+data warehouse	MatchingTermsTermsMatch	1000	3092
+consent mode	MatchingQuestionsTermsMatch	2	2
+dashboard	MatchingTermsTermsMatch	1000	39098
+dashboard	MatchingQuestionsTermsMatch	29	29
+consent mode	MatchingTermsTermsMatch	468	468
+reporting	MatchingTermsTermsMatch	1000	18750
+reporting	MatchingQuestionsTermsMatch	30	30
+report	MatchingQuestionsTermsMatch	71	71
+datová analýza	MatchingTermsTermsMatch	15	15
+cookie lišta	MatchingTermsTermsMatch	15	15
+cookie lišta	MatchingQuestionsTermsMatch	0	0
+report	MatchingTermsTermsMatch	1000	97765
+datová analýza	MatchingQuestionsTermsMatch	3	3
+analýza dat	MatchingTermsTermsMatch	202	202
+analýza dat	MatchingQuestionsTermsMatch	3	3
+cookies	MatchingTermsTermsMatch	1000	59686
+cookies	MatchingQuestionsTermsMatch	145	145
+datový analytik	MatchingTermsTermsMatch	36	36
+datový analytik	MatchingQuestionsTermsMatch	4	4
+cookie banner	MatchingQuestionsTermsMatch	0	0
+e-commerce měření	MatchingTermsTermsMatch	0	0
+webový analytik	MatchingTermsTermsMatch	5	5
+webový analytik	MatchingQuestionsTermsMatch	0	0
+cookie banner	MatchingTermsTermsMatch	390	390
+e-commerce měření	MatchingQuestionsTermsMatch	0	0
+sklik konverze	MatchingTermsTermsMatch	9	9
+ecommerce tracking	MatchingQuestionsTermsMatch	0	0
+ecommerce tracking	MatchingTermsTermsMatch	213	213
+heureka měřicí kód	MatchingTermsTermsMatch	0	0
+heureka měřicí kód	MatchingQuestionsTermsMatch	0	0
+souhlas s cookies	MatchingTermsTermsMatch	13	13
+cookiebot	MatchingTermsTermsMatch	362	362
+souhlas s cookies	MatchingQuestionsTermsMatch	0	0
+cookiebot	MatchingQuestionsTermsMatch	1	1
+gdpr cookies	MatchingQuestionsTermsMatch	0	0
+zboží konverzní kód	MatchingTermsTermsMatch	0	0
+gdpr cookies	MatchingTermsTermsMatch	105	105
+sklik konverze	MatchingQuestionsTermsMatch	0	0
+google ads konverze	MatchingTermsTermsMatch	3	3
+zákon o cookies	MatchingTermsTermsMatch	3	3
+google ads konverze	MatchingQuestionsTermsMatch	0	0
+zákon o cookies	MatchingQuestionsTermsMatch	0	0
+bigquery	MatchingQuestionsTermsMatch	1	1
+bigquery	MatchingTermsTermsMatch	1000	5794
+big query	MatchingQuestionsTermsMatch	0	0
+datový sklad	MatchingTermsTermsMatch	34	34
+datový sklad	MatchingQuestionsTermsMatch	2	2
+zboží konverzní kód	MatchingQuestionsTermsMatch	0	0
+data warehouse	MatchingTermsTermsMatch	1000	3092
+audit webu	MatchingQuestionsTermsMatch	1	1
+audit webu	MatchingTermsTermsMatch	23	23
+big query	MatchingTermsTermsMatch	630	630
+data warehouse	MatchingQuestionsTermsMatch	4	4
+seo audit	MatchingQuestionsTermsMatch	2	2
+technický audit webu	MatchingTermsTermsMatch	1	1
+seo audit	MatchingTermsTermsMatch	1000	1465
+technický audit webu	MatchingQuestionsTermsMatch	0	0
+looker studio	MatchingQuestionsTermsMatch	2	2
+ux audit	MatchingTermsTermsMatch	107	107
+looker studio	MatchingTermsTermsMatch	1000	1341
+ux audit	MatchingQuestionsTermsMatch	0	0
+audit analytiky	MatchingQuestionsTermsMatch	0	0
+data studio	MatchingQuestionsTermsMatch	1	1
+data studio	MatchingTermsTermsMatch	1000	3190
+atribuce	MatchingTermsTermsMatch	75	75
+power bi	MatchingQuestionsTermsMatch	15	15
+atribuce	MatchingQuestionsTermsMatch	3	3
+atribuční model	MatchingTermsTermsMatch	14	14
+audit analytiky	MatchingTermsTermsMatch	1	1
+atribuční model	MatchingQuestionsTermsMatch	3	3
+power bi	MatchingTermsTermsMatch	1000	29918
+utm	MatchingQuestionsTermsMatch	13	13
+utm parametry	MatchingTermsTermsMatch	15	15
+dashboard	MatchingTermsTermsMatch	1000	39098
+utm	MatchingTermsTermsMatch	1000	3997
+utm parametry	MatchingQuestionsTermsMatch	2	2
+dashboard	MatchingQuestionsTermsMatch	29	29
+správa webu	MatchingQuestionsTermsMatch	1	1
+správa webu	MatchingTermsTermsMatch	43	43
+správa webových stránek	MatchingTermsTermsMatch	23	23
+reporting	MatchingQuestionsTermsMatch	30	30
+údržba webu	MatchingTermsTermsMatch	9	9
+správa webových stránek	MatchingQuestionsTermsMatch	0	0
+reporting	MatchingTermsTermsMatch	1000	18750
+údržba webu	MatchingQuestionsTermsMatch	0	0
+hotjar	MatchingQuestionsTermsMatch	3	3
+report	MatchingQuestionsTermsMatch	71	71
+report	MatchingTermsTermsMatch	1000	97765
+microsoft clarity	MatchingTermsTermsMatch	211	211
+hotjar	MatchingTermsTermsMatch	745	745
+microsoft clarity	MatchingQuestionsTermsMatch	0	0
+datová analýza	MatchingTermsTermsMatch	15	15
+datová analýza	MatchingQuestionsTermsMatch	3	3
+matomo	MatchingQuestionsTermsMatch	0	0
+piwik pro	MatchingTermsTermsMatch	38	38
+matomo	MatchingTermsTermsMatch	391	391
+analýza dat	MatchingQuestionsTermsMatch	3	3
+search console	MatchingQuestionsTermsMatch	12	12
+piwik pro	MatchingQuestionsTermsMatch	0	0
+analýza dat	MatchingTermsTermsMatch	202	202
+search console	MatchingTermsTermsMatch	1000	2329
+cross domain tracking	MatchingQuestionsTermsMatch	0	0
+datový analytik	MatchingTermsTermsMatch	36	36
+datový analytik	MatchingQuestionsTermsMatch	4	4
+cross domain tracking	MatchingTermsTermsMatch	64	64
+user id	MatchingQuestionsTermsMatch	2	2
+webový analytik	MatchingTermsTermsMatch	5	5
+ga4 eventy	MatchingTermsTermsMatch	0	0
+webový analytik	MatchingQuestionsTermsMatch	0	0
+e-commerce měření	MatchingQuestionsTermsMatch	0	0
+user id	MatchingTermsTermsMatch	1000	1764
+e-commerce měření	MatchingTermsTermsMatch	0	0
+ga4 eventy	MatchingQuestionsTermsMatch	0	0
+ga4 události	MatchingTermsTermsMatch	0	0
+ga4 události	MatchingQuestionsTermsMatch	0	0
+ga4 ecommerce	MatchingQuestionsTermsMatch	0	0
+ecommerce tracking	MatchingQuestionsTermsMatch	0	0
+lead generation	MatchingQuestionsTermsMatch	7	7
+sklik konverze	MatchingTermsTermsMatch	9	9
+ga4 ecommerce	MatchingTermsTermsMatch	126	126
+sklik konverze	MatchingQuestionsTermsMatch	0	0
+heureka měřicí kód	MatchingTermsTermsMatch	0	0
+ecommerce tracking	MatchingTermsTermsMatch	ERR	["ABORT","AbortError: signal is aborted without reason"]
+lead generation	MatchingTermsTermsMatch	ERR	["Error","InternalError"]
+crm	MatchingTermsTermsMatch	ERR	["Error","InternalError"]
+zboží konverzní kód	MatchingTermsTermsMatch	0	0
+zboží konverzní kód	MatchingQuestionsTermsMatch	0	0
+crm	MatchingQuestionsTermsMatch	ERR	["Error","InternalError"]
+heureka měřicí kód	MatchingQuestionsTermsMatch	0	0
+google ads konverze	MatchingTermsTermsMatch	3	3
+hubspot	MatchingTermsTermsMatch	ERR	["Error","InternalError"]
+hubspot	MatchingQuestionsTermsMatch	17	17
+google ads konverze	MatchingQuestionsTermsMatch	0	0
+marketing automation	MatchingTermsTermsMatch	1000	2771
+marketingová data	MatchingTermsTermsMatch	1	1
+audit webu	MatchingQuestionsTermsMatch	1	1
+audit webu	MatchingTermsTermsMatch	ERR	["Error","InternalError"]
+seo audit	MatchingQuestionsTermsMatch	2	2
+technický audit webu	MatchingTermsTermsMatch	1	1
+technický audit webu	MatchingQuestionsTermsMatch	0	0
+marketing automation	MatchingQuestionsTermsMatch	4	4
+první strana cookies	MatchingQuestionsTermsMatch	0	0
+první strana cookies	MatchingTermsTermsMatch	0	0
+sledování uživatelů	MatchingQuestionsTermsMatch	0	0
+měření formulářů	MatchingTermsTermsMatch	0	0
+sledování uživatelů	MatchingTermsTermsMatch	11	11
+ux audit	MatchingTermsTermsMatch	107	107
+tracking	MatchingTermsTermsMatch	1000	76904
+ux audit	MatchingQuestionsTermsMatch	0	0
+marketingová data	MatchingQuestionsTermsMatch	0	0
+tracking	MatchingQuestionsTermsMatch	53	53
+měření formulářů	MatchingQuestionsTermsMatch	0	0
+audit analytiky	MatchingTermsTermsMatch	1	1
+seo audit	MatchingTermsTermsMatch	1000	1465
+audit analytiky	MatchingQuestionsTermsMatch	0	0
+atribuce	MatchingQuestionsTermsMatch	3	3
+atribuce	MatchingTermsTermsMatch	75	75
+atribuční model	MatchingTermsTermsMatch	14	14
+atribuční model	MatchingQuestionsTermsMatch	3	3
+utm	MatchingQuestionsTermsMatch	13	13
+utm parametry	MatchingTermsTermsMatch	15	15
+utm	MatchingTermsTermsMatch	1000	3997
+utm parametry	MatchingQuestionsTermsMatch	2	2
+správa webu	MatchingQuestionsTermsMatch	1	1
+správa webových stránek	MatchingTermsTermsMatch	23	23
+správa webových stránek	MatchingQuestionsTermsMatch	0	0
+údržba webu	MatchingTermsTermsMatch	9	9
+údržba webu	MatchingQuestionsTermsMatch	0	0
+hotjar	MatchingTermsTermsMatch	745	745
+hotjar	MatchingQuestionsTermsMatch	3	3
+správa webu	MatchingTermsTermsMatch	43	43
+microsoft clarity	MatchingTermsTermsMatch	211	211
+microsoft clarity	MatchingQuestionsTermsMatch	0	0
+matomo	MatchingQuestionsTermsMatch	0	0
+matomo	MatchingTermsTermsMatch	391	391
+piwik pro	MatchingTermsTermsMatch	38	38
+piwik pro	MatchingQuestionsTermsMatch	0	0
+search console	MatchingQuestionsTermsMatch	12	12
+cross domain tracking	MatchingTermsTermsMatch	64	64
+cross domain tracking	MatchingQuestionsTermsMatch	0	0
+user id	MatchingTermsTermsMatch	1000	1764
+user id	MatchingQuestionsTermsMatch	2	2
+ga4 eventy	MatchingTermsTermsMatch	0	0
+search console	MatchingTermsTermsMatch	1000	2329
+ga4 události	MatchingTermsTermsMatch	0	0
+ga4 události	MatchingQuestionsTermsMatch	0	0
+ga4 ecommerce	MatchingTermsTermsMatch	126	126
+ga4 eventy	MatchingQuestionsTermsMatch	0	0
+lead generation	MatchingTermsTermsMatch	1000	5184
+ga4 ecommerce	MatchingQuestionsTermsMatch	0	0
+lead generation	MatchingQuestionsTermsMatch	7	7
+crm	MatchingQuestionsTermsMatch	123	123
+crm	MatchingTermsTermsMatch	1000	38270
+hubspot	MatchingTermsTermsMatch	1000	10798
+hubspot	MatchingQuestionsTermsMatch	17	17
+marketing automation	MatchingQuestionsTermsMatch	4	4
+marketing automation	MatchingTermsTermsMatch	1000	2771
+marketingová data	MatchingQuestionsTermsMatch	0	0
+první strana cookies	MatchingTermsTermsMatch	0	0
+marketingová data	MatchingTermsTermsMatch	1	1
+sledování uživatelů	MatchingTermsTermsMatch	11	11
+sledování uživatelů	MatchingQuestionsTermsMatch	0	0
+první strana cookies	MatchingQuestionsTermsMatch	0	0
+měření formulářů	MatchingQuestionsTermsMatch	0	0
+měření formulářů	MatchingTermsTermsMatch	0	0
+tracking	MatchingQuestionsTermsMatch	53	53
+tracking	MatchingTermsTermsMatch	1000	76904

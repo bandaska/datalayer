@@ -1,0 +1,2243 @@
+[
+ {
+  "url": "https://www.neogy.cz/",
+  "status": 200,
+  "location": "",
+  "title": "Online marketing s výsledky | Neogy",
+  "title_len": 35,
+  "meta_desc": "Marketingová agentura s reálnými výsledky. Staráme se o online marketing malých a středních firem. Systematická péče o vaše značky a prodeje.",
+  "meta_desc_len": 141,
+  "robots": "index, follow",
+  "canonical": "https://www.neogy.cz/",
+  "og_title": "Online marketing s výsledky | Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Pomůžeme s navigací vašeho marketingu"
+  ],
+  "h2": [
+   "Posílíme vaši schopnost dělat správná rozhodnutí. Teď i v marketingu",
+   "Které plachty chcete napnout?",
+   "Neogy?",
+   "Ozvěte se mi"
+  ],
+  "h3": [
+   "Podporujeme živnostníky a malé firmy",
+   "Potřebuji přivést nové zákazníky",
+   "Chci podpořit růst svého podnikání",
+   "Něco mi v marketingu nefunguje",
+   "Hledám konkrétní nástroje a služby"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://www.neogy.cz/\",\"url\":\"https://www.neogy.cz/\",\"name\":\"Online marketing s výsledky | Neogy\",\"isPartOf\":{\"@id\":\"https://www.neogy.cz/#website\"},\"about\":{\"@id\":\"https://www.neogy.cz/#organization\"},\"datePublished\":\"2021-11-01T05:58:14+00:00\",\"dateModified\":\"2026-04-10T21:39:16+00:00\",\"description\":\"Marketingová agentura s reálnými výsledky. Staráme se o online marketing malých a středních firem. Systematická péče o vaše zna"
+  ],
+  "img_count": 17,
+  "img_no_alt": 16,
+  "forms": 0,
+  "hubspot": false,
+  "scripts_ext": [],
+  "int_links_out": 17,
+  "ext_links_out": 7,
+  "words": 636
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/",
+  "status": 200,
+  "location": "",
+  "title": "Naše služby | Neogy",
+  "title_len": 19,
+  "meta_desc": "Kompletní sada nástrojů pro maximální výkon online marketingu. Objednejte jednotlivě nebo využijte synergii celku. Individuální přístup k unikátním potřebám",
+  "meta_desc_len": 156,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/",
+  "og_title": "Služby pro online marketing - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Jaké služby hledáte?"
+  ],
+  "h2": [],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/\",\"name\":\"Služby pro online marketing - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T06:18:48+00:00\",\"dateModified\":\"2025-12-19T15:00:44+00:00\",\"description\":\"Kompletní sada nástrojů pro maximální výkon online marketingu. Objednejte jednotlivě nebo využijte synergii celku. Individuální přístup k unikátním potře"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 33,
+  "ext_links_out": 4,
+  "words": 284
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/webova-analytika/",
+  "status": 200,
+  "location": "",
+  "title": "Webová analytika | Neogy",
+  "title_len": 24,
+  "meta_desc": "Konec dohadů o kvalitách vašeho webu. Profesionální měření a interpretace dat o návštěvnosti. Srozumitelné reporty, návrhy na zlepšení.",
+  "meta_desc_len": 135,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/webova-analytika/",
+  "og_title": "Webová analytika - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Webová analytika"
+  ],
+  "h2": [
+   "Co je webová analytika",
+   "Kdy potřebujete webovou analytiku",
+   "Jak výsledky analytiky využijete",
+   "Co byste nám měli zajistit a říct",
+   "Jak postupujeme",
+   "Co přesně získáte",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/webova-analytika\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/webova-analytika\\/\",\"name\":\"Webová analytika - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T07:48:14+00:00\",\"dateModified\":\"2026-01-17T08:34:08+00:00\",\"description\":\"Konec dohadů o kvalitách vašeho webu. Profesionální měření a interpretace dat o návštěvnosti. Srozumitelné reporty, návrhy na zl"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 39,
+  "ext_links_out": 4,
+  "words": 736
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/audit-seo/",
+  "status": 200,
+  "location": "",
+  "title": "SEO audit | Neogy",
+  "title_len": 17,
+  "meta_desc": "Vyšetřete zdraví svého webu. SEO audit najde důvody, proč si váš web nevede dobře vyhledávačích. Popis konkrétních nedostatků s návodem na jejich opravu.",
+  "meta_desc_len": 153,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/audit-seo/",
+  "og_title": "SEO audit - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "SEO audit"
+  ],
+  "h2": [
+   "Co je SEO audit",
+   "Kdy potřebujete SEO audit",
+   "Jak SEO audit využijete",
+   "Jak postupujeme",
+   "Co byste nám měli zajistit a říct",
+   "Co přesně dostanete",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/audit-seo\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/audit-seo\\/\",\"name\":\"SEO audit - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2023-06-13T09:59:11+00:00\",\"dateModified\":\"2026-01-17T08:33:20+00:00\",\"description\":\"Vyšetřete zdraví svého webu. SEO audit najde důvody, proč si váš web nevede dobře vyhledávačích. Popis konkrétních nedostatků s návodem na jejich opr"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 40,
+  "ext_links_out": 4,
+  "words": 747
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/pro-stredni-a-velke-spolecnosti/",
+  "status": 200,
+  "location": "",
+  "title": "Online marketing pro střední firmy a velké společnosti | Neogy",
+  "title_len": 62,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/pro-stredni-a-velke-spolecnosti/",
+  "og_title": "Online marketing pro střední firmy a velké společnosti - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Online marketing pro střední firmy a velké společnosti"
+  ],
+  "h2": [
+   "Proč svěřit kontrolu marketingu právě nám?",
+   "Jak vám pomůžeme?",
+   "Kdy naše spolupráce přinese očekávané ovoce?",
+   "Ozvěte se nám",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Poměr cena / výkon",
+   "Postaveno na 20 letech praxe",
+   "Zkušený tým specialistů",
+   "Pohled na váš byznys",
+   "1. Poznáme se",
+   "2. Prozkoumáme situaci",
+   "3. Opravíme nalezené chyby",
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/pro-stredni-a-velke-spolecnosti\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/pro-stredni-a-velke-spolecnosti\\/\",\"name\":\"Online marketing pro střední firmy a velké společnosti - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2025-07-26T20:03:59+00:00\",\"dateModified\":\"2025-07-26T20:04:07+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/pro-stredni-a-velke-sp"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 40,
+  "ext_links_out": 4,
+  "words": 653
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/ppc-agentura/",
+  "status": 200,
+  "location": "",
+  "title": "Proč si vybrat naší PPC agenturu? | Neogy",
+  "title_len": 41,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/ppc-agentura/",
+  "og_title": "Proč si vybrat naší PPC agenturu? - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Hledáte PPC agenturu? Vyberte si Neogy"
+  ],
+  "h2": [
+   "Děláme jen to, co má smysl",
+   "Budou pro vás pracovat zkušení specialisté",
+   "Zapojíme marketéra a další profese",
+   "Jsme bdělí a aktivní",
+   "Chápeme cenu svobody",
+   "Mluvíme srozumitelně",
+   "Než spustíme kampaně",
+   "Po spuštění kampaní",
+   "Pozvěte nás do výběrového řízení",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/ppc-agentura\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/ppc-agentura\\/\",\"name\":\"Proč si vybrat naší PPC agenturu? - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2022-11-28T12:09:18+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/ppc-agentura\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialAction\":[{\"@type\":\"ReadAc"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 40,
+  "ext_links_out": 4,
+  "words": 730
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/sprava-reklamnich-kampani/",
+  "status": 200,
+  "location": "",
+  "title": "Správa reklamních kampaní | Neogy",
+  "title_len": 33,
+  "meta_desc": "Zvyšte návštěvnost svého webu reklamou. Účinná forma propagace webu s okamžitým účinkem. Náklady pod kontrolou.",
+  "meta_desc_len": 111,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/sprava-reklamnich-kampani/",
+  "og_title": "PPC: správa reklamních kampaní - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Správa reklamních kampaní (PPC)"
+  ],
+  "h2": [
+   "Jak funguje PPC reklama",
+   "Kdy potřebujete PPC reklamu",
+   "Jak postupujeme",
+   "Co budeme k přípravě kampaně potřebovat",
+   "Co přesně dostanete",
+   "Přemýšlíte o spolupráci?",
+   "Jsme nejen odborníci, ale také certifikovaní partneři.",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/sprava-reklamnich-kampani\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/sprava-reklamnich-kampani\\/\",\"name\":\"PPC: správa reklamních kampaní - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T07:42:21+00:00\",\"dateModified\":\"2025-10-13T06:16:50+00:00\",\"description\":\"Zvyšte návštěvnost svého webu reklamou. Účinná forma propagace webu s okamžitým účinkem. Náklady"
+  ],
+  "img_count": 6,
+  "img_no_alt": 2,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 40,
+  "ext_links_out": 7,
+  "words": 738
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/marketingova-strategie/",
+  "status": 200,
+  "location": "",
+  "title": "Marketingová strategie | Neogy",
+  "title_len": 30,
+  "meta_desc": "Definujte si směr a cíle. Tvorba a aktualizace marketingové strategie. Základní mapa podnikání s návody pro aplikaci v praxi.",
+  "meta_desc_len": 125,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/marketingova-strategie/",
+  "og_title": "Marketingová strategie - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Marketingová strategie"
+  ],
+  "h2": [
+   "K čemu je marketingová strategie",
+   "Kdy potřebujete marketingovou strategii",
+   "Jak strategii využijete",
+   "Jak vzniká marketingová strategie",
+   "Co byste nám měli zajistit a říct",
+   "Co přesně dostanete",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/marketingova-strategie\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/marketingova-strategie\\/\",\"name\":\"Marketingová strategie - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T07:45:25+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"description\":\"Definujte si směr a cíle. Tvorba a aktualizace marketingové strategie. Základní mapa podnikání s návody pro ap"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 40,
+  "ext_links_out": 4,
+  "words": 676
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/prubezna-sprava-webu/",
+  "status": 200,
+  "location": "",
+  "title": "Průběžná správa webu | Neogy",
+  "title_len": 28,
+  "meta_desc": "Monitoring aktualizace a modernizace redakčních systémů, zabezpečení, aktualizace SEO, obsahová správa stránek, Péče o dlouhodobé zdraví webu.",
+  "meta_desc_len": 142,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/prubezna-sprava-webu/",
+  "og_title": "Technická a obsahová správa webů - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Průběžná správa webu"
+  ],
+  "h2": [
+   "Co obnáší správa webu",
+   "Kdy přichází chvíle pro profesionálního správce",
+   "Jak postupujeme",
+   "Co byste nám měli dodat",
+   "Výstup",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/prubezna-sprava-webu\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/prubezna-sprava-webu\\/\",\"name\":\"Technická a obsahová správa webů - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T07:45:46+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"description\":\"Monitoring aktualizace a modernizace redakčních systémů, zabezpečení, aktualizace SEO, obsahová správa s"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 39,
+  "ext_links_out": 4,
+  "words": 593
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/zajisteni-provozu-webu/",
+  "status": 200,
+  "location": "",
+  "title": "Zajištění provozu webu | Neogy",
+  "title_len": 30,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/zajisteni-provozu-webu/",
+  "og_title": "Zajištění provozu webu - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Zajištění provozu webu"
+  ],
+  "h2": [
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/zajisteni-provozu-webu\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/zajisteni-provozu-webu\\/\",\"name\":\"Zajištění provozu webu - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2026-01-19T15:34:52+00:00\",\"dateModified\":\"2026-01-20T09:44:26+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/zajisteni-provozu-webu\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialAction"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 41,
+  "ext_links_out": 4,
+  "words": 972
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/supervize-a-koordinace-dodavatelu/",
+  "status": 200,
+  "location": "",
+  "title": "Supervize a koordinace dodavatelů | Neogy",
+  "title_len": 41,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/supervize-a-koordinace-dodavatelu/",
+  "og_title": "Supervize a koordinace dodavatelů - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Supervize a koordinace dodavatelů"
+  ],
+  "h2": [
+   "Reference",
+   "Kdy se hodí externí supervize",
+   "Kdy je dobrá externí koordinace",
+   "Jak postupujeme",
+   "Dohled nad tvorbou webu – ceník",
+   "Dohled nad marketingem – ceník",
+   "Doplňující informace",
+   "Příklady z praxe",
+   "Přemýšlíte o spolupráci?",
+   "Supervize a koordinace dodavatelů",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/supervize-a-koordinace-dodavatelu\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/supervize-a-koordinace-dodavatelu\\/\",\"name\":\"Supervize a koordinace dodavatelů - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2025-05-11T12:38:35+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/supervize-a-koordinace-dodavatelu\\/#bre"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 41,
+  "ext_links_out": 4,
+  "words": 1034
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/marketingovy-proces/",
+  "status": 200,
+  "location": "",
+  "title": "Vytvoření a nastavení marketingových procesů | Neogy",
+  "title_len": 52,
+  "meta_desc": "Konec dohadů o přáních vašich zákazníků. Uživatelské a sociologické výzkumy za ceny pro malé a střední organizace. Pomoc s praktickou aplikací závěrů.",
+  "meta_desc_len": 150,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/marketingovy-proces/",
+  "og_title": "Vytvoření a nastavení marketingových procesů - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Vytvoření a nastavení marketingových procesů"
+  ],
+  "h2": [
+   "Příklad z praxe: VEKRA / Otherm",
+   "Co získáte díky nastavení marketingových procesů?",
+   "Příklady častých marketingových procesů",
+   "Rychlost zavádění procesů a jejich návratnost",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vytěžíte marketing na maximum",
+   "Jako majitelé / manažeři šetříte čas",
+   "Větší motivace pro zaměstance",
+   "Hlídání rozpočtů na marketing",
+   "Pravidelná marketingová kontrola",
+   "Opakované marketingové aktivity",
+   "Procesy vychází ze zkušeností",
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/marketingovy-proces\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/marketingovy-proces\\/\",\"name\":\"Vytvoření a nastavení marketingových procesů - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2025-07-25T15:10:38+00:00\",\"dateModified\":\"2025-07-25T15:49:21+00:00\",\"description\":\"Konec dohadů o přáních vašich zákazníků. Uživatelské a sociologické výzkumy za ceny pro malé a"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 41,
+  "ext_links_out": 4,
+  "words": 964
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/audit-pouzitelnosti/",
+  "status": 200,
+  "location": "",
+  "title": "Audit použitelnosti (UX/UI) | Neogy",
+  "title_len": 35,
+  "meta_desc": "Odhalte slabá místa webu, na kterých ztrácíte zákazníky. UX specialista se zaměří na jejich pohodlí a navrhne zlepšení.",
+  "meta_desc_len": 119,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/audit-pouzitelnosti/",
+  "og_title": "Audit použitelnosti (UX/UI) - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Audit použitelnosti (UX/UI)"
+  ],
+  "h2": [
+   "Co je audit použitelnosti",
+   "Kdy potřebujete audit použitelnosti",
+   "Jak výstupy auditu využijete",
+   "Jak postupujeme",
+   "Co byste nám měli zajistit a říct",
+   "Co přesně dostanete",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/audit-pouzitelnosti\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/audit-pouzitelnosti\\/\",\"name\":\"Audit použitelnosti (UX\\/UI) - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T07:46:05+00:00\",\"dateModified\":\"2026-01-17T08:26:08+00:00\",\"description\":\"Odhalte slabá místa webu, na kterých ztrácíte zákazníky. UX specialista se zaměří na jejich pohodlí a navrhne "
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 40,
+  "ext_links_out": 4,
+  "words": 838
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/optimalizace-pro-vyhledavace/",
+  "status": 200,
+  "location": "",
+  "title": "Optimalizace pro vyhledávače | Neogy",
+  "title_len": 36,
+  "meta_desc": "Nejste spokojeni s návštěvností webu? Víte, co přesně hledá váš zákazník? Nalaďte svůj web na skutečnou poptávku a vylepšete jeho pozici ve vyhledávačích.",
+  "meta_desc_len": 154,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/optimalizace-pro-vyhledavace/",
+  "og_title": "SEO: optimalizace pro vyhledávače - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Optimalizace pro vyhledávače (SEO)"
+  ],
+  "h2": [
+   "Jak funguje optimalizace pro vyhledávače",
+   "Kdy potřebujete analýzu klíčových slov",
+   "Kdy potřebujete optimalizovat stránky",
+   "Kdy SEO nemusí stačit",
+   "Jak postupujeme",
+   "Co byste nám měli zajistit a říct",
+   "Co přesně dostanete",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/optimalizace-pro-vyhledavace\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/optimalizace-pro-vyhledavace\\/\",\"name\":\"SEO: optimalizace pro vyhledávače - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T07:44:50+00:00\",\"dateModified\":\"2026-01-17T08:29:53+00:00\",\"description\":\"Nejste spokojeni s návštěvností webu? Víte, co přesně hledá váš zákazník? Nalaďte svůj "
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 40,
+  "ext_links_out": 4,
+  "words": 817
+ },
+ {
+  "url": "https://www.neogy.cz/sluzby/optimalizace-pro-umelou-inteligenci-ai/",
+  "status": 200,
+  "location": "",
+  "title": "Optimalizace pro umělou inteligenci (AI) | Neogy",
+  "title_len": 48,
+  "meta_desc": "Nejste spokojeni s návštěvností webu? Víte, co přesně hledá váš zákazník? Nalaďte svůj web na skutečnou poptávku a vylepšete jeho pozici ve vyhledávačích.",
+  "meta_desc_len": 154,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/sluzby/optimalizace-pro-umelou-inteligenci-ai/",
+  "og_title": "SEO: optimalizace pro vyhledávače - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Optimalizace pro umělou inteligenci (AI, GEO, LLMO, MEO)"
+  ],
+  "h2": [
+   "Dopady AI Overviews a AI Mode na podnikatele",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Jak situaci řešíme",
+   "Budování autority webu",
+   "Další související služby",
+   "Vývoj webu v redakčním systému WordPress",
+   "Vývoj webu a aplikací v Symfony",
+   "Vytvoření a nastavení marketingových procesů",
+   "Marketingový výzkum",
+   "Marketingová strategie",
+   "Webová analytika",
+   "SEO audit",
+   "Optimalizace pro umělou inteligenci (AI)",
+   "Optimalizace pro vyhledávače",
+   "Audit použitelnosti (UX/UI)",
+   "UX design",
+   "Copywriting",
+   "Grafický design",
+   "Kódování a programování",
+   "Průběžná správa webu",
+   "Linkbuilding",
+   "Správa reklamních kampaní",
+   "Audit přístupnosti vašeho webu",
+   "Supervize a koordinace dodavatelů",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/optimalizace-pro-umelou-inteligenci-ai\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/sluzby\\/optimalizace-pro-umelou-inteligenci-ai\\/\",\"name\":\"SEO: optimalizace pro vyhledávače - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2025-05-30T11:47:56+00:00\",\"dateModified\":\"2025-12-21T14:28:12+00:00\",\"description\":\"Nejste spokojeni s návštěvností webu? Víte, co přesně hledá váš zák"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 40,
+  "ext_links_out": 7,
+  "words": 846
+ },
+ {
+  "url": "https://www.neogy.cz/marketingova-agentura/",
+  "status": 200,
+  "location": "",
+  "title": "Marketingová agentura pro komplexní marketing | Neogy",
+  "title_len": 53,
+  "meta_desc": "Proč marketing od nás",
+  "meta_desc_len": 21,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/marketingova-agentura/",
+  "og_title": "Marketingová agentura pro komplexní marketing - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Marketingová agentura pro komplexní marketing"
+  ],
+  "h2": [
+   "Jak obvykle postupujeme?",
+   "Chcete něco jiného?",
+   "Jak o marketingu přemýšlíme?",
+   "Jakou si vybrat marketingovou agenturu?",
+   "Kdo pro vás bude pracovat?",
+   "Co si o nás myslí naši zákazníci",
+   "Jak obvykle postupujeme",
+   "Dává vám to smysl? Neváhejte ."
+  ],
+  "h3": [
+   "Začínáte podnikat?",
+   "Podnikání vám nefunguje",
+   "Podnikání funguje, ale chcete růst",
+   "Produkt / služba",
+   "Povědomí",
+   "Nákupní proces",
+   "Pověst",
+   "Agentura pro výkonnostní marketing",
+   "Kreativní agentura",
+   "Grafické studio",
+   "Reklamní a mediální agentura",
+   "Fakturační údaje:",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/marketingova-agentura\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/marketingova-agentura\\/\",\"name\":\"Marketingová agentura pro komplexní marketing - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2025-06-24T15:51:39+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"description\":\"Proč marketing od nás\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/marketingova-agentura\\/#breadcrumb\"},"
+  ],
+  "img_count": 5,
+  "img_no_alt": 2,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 20,
+  "ext_links_out": 5,
+  "words": 771
+ },
+ {
+  "url": "https://www.neogy.cz/marketingova-agentura/jak-probiha-spoluprace/",
+  "status": 200,
+  "location": "",
+  "title": "Jak probíhá spolupráce s námi? | Neogy",
+  "title_len": 38,
+  "meta_desc": "Proč marketing od nás",
+  "meta_desc_len": 21,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/marketingova-agentura/jak-probiha-spoluprace/",
+  "og_title": "Jak probíhá spolupráce s námi? - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Jak probíhá spolupráce s námi?"
+  ],
+  "h2": [
+   "Jak obvykle postupujeme?",
+   "Zaměření na výkonnostní marketing",
+   "Jak probíhá spolupráce?",
+   "Co vlastně čekat od samotného marketingu?",
+   "Kdo pro vás bude pracovat?",
+   "Co si o nás myslí naši zákazníci",
+   "Jak obvykle postupujeme",
+   "Dává vám to smysl? Neváhejte ."
+  ],
+  "h3": [
+   "Ctíme dobrou praxi",
+   "Zkušení specialisté",
+   "Pozvolný a bezpečný růst",
+   "Co budeme hlídat?",
+   "Zpětná vazba od specialistů",
+   "Vyhodnocování výsledků",
+   "Další rozvoj marketingu",
+   "Fakturační údaje:",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/marketingova-agentura\\/jak-probiha-spoluprace\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/marketingova-agentura\\/jak-probiha-spoluprace\\/\",\"name\":\"Jak probíhá spolupráce s námi? - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2025-07-25T15:57:00+00:00\",\"dateModified\":\"2026-01-08T10:24:06+00:00\",\"description\":\"Proč marketing od nás\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/mark"
+  ],
+  "img_count": 5,
+  "img_no_alt": 2,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 19,
+  "ext_links_out": 5,
+  "words": 645
+ },
+ {
+  "url": "https://www.neogy.cz/nabidka-pro-marketingove-reditele/",
+  "status": 200,
+  "location": "",
+  "title": "Nabídka pro marketingové ředitele | Neogy",
+  "title_len": 41,
+  "meta_desc": "Dodáme chybějící členy marketingového týmu, zrychlíme práci marketingového oddělení. Tým můžeme řídit nebo ho podřídit vašemu vedení.",
+  "meta_desc_len": 133,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/nabidka-pro-marketingove-reditele/",
+  "og_title": "Nabídka pro marketingové ředitele - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Nabídka pro marketingové ředitele"
+  ],
+  "h2": [
+   "Co pro vás můžeme udělat",
+   "Kdo jsme",
+   "Způsob spolupráce",
+   "Výhody modelu Neogy",
+   "Jak začít",
+   "Klienti si na nás nestěžují",
+   "Máte přání nebo otázky? Za konzultaci nic nedáte.",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/nabidka-pro-marketingove-reditele\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/nabidka-pro-marketingove-reditele\\/\",\"name\":\"Nabídka pro marketingové ředitele - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T06:17:47+00:00\",\"dateModified\":\"2026-01-17T08:16:10+00:00\",\"description\":\"Dodáme chybějící členy marketingového týmu, zrychlíme práci marketingového oddělení. Tým může"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 24,
+  "ext_links_out": 7,
+  "words": 567
+ },
+ {
+  "url": "https://www.neogy.cz/nabidka-pro-jednatele/",
+  "status": 200,
+  "location": "",
+  "title": "Nabídka pro majitele firmy | Neogy",
+  "title_len": 34,
+  "meta_desc": "Sestavíme pro vás tým specialistů na marketingové obory, které nechcete řešit se zaměstnanci, živnostníky ani kamennou agenturou.",
+  "meta_desc_len": 129,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/nabidka-pro-jednatele/",
+  "og_title": "Nabídka pro jednatele firem - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Nabídka pro majitele firmy"
+  ],
+  "h2": [
+   "Co pro vás můžeme udělat",
+   "Kdo jsme",
+   "Způsob spolupráce",
+   "Výhody modelu Neogy",
+   "Jak začít",
+   "Klienti si na nás nestěžují",
+   "Máte přání nebo otázky? Za konzultaci nic nedáte.",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/nabidka-pro-jednatele\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/nabidka-pro-jednatele\\/\",\"name\":\"Nabídka pro jednatele firem - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T06:17:34+00:00\",\"dateModified\":\"2026-01-17T08:18:02+00:00\",\"description\":\"Sestavíme pro vás tým specialistů na marketingové obory, které nechcete řešit se zaměstnanci, živnostníky ani kamennou agen"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 23,
+  "ext_links_out": 7,
+  "words": 586
+ },
+ {
+  "url": "https://www.neogy.cz/kontakt/",
+  "status": 200,
+  "location": "",
+  "title": "Kontakt | Neogy",
+  "title_len": 15,
+  "meta_desc": "Ozvěte se nám a řekněte, s čím se právě potýkáte. Staráme se o marketing malých a středních firem. Individuální řešení, komplexní přístup.",
+  "meta_desc_len": 138,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/kontakt/",
+  "og_title": "Kontakt - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Kontakty"
+  ],
+  "h2": [
+   "Kontakt pro živnostníky a malé firmy"
+  ],
+  "h3": [
+   "Fakturační údaje:",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/kontakt\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/kontakt\\/\",\"name\":\"Kontakt - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T06:19:40+00:00\",\"dateModified\":\"2026-07-27T11:04:10+00:00\",\"description\":\"Ozvěte se nám a řekněte, s čím se právě potýkáte. Staráme se o marketing malých a středních firem. Individuální řešení, komplexní přístup.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 2,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.google.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 20,
+  "ext_links_out": 5,
+  "words": 130
+ },
+ {
+  "url": "https://www.neogy.cz/tym/",
+  "status": 200,
+  "location": "",
+  "title": "O nás | Neogy",
+  "title_len": 13,
+  "meta_desc": "Jsme virtuální agentura s reálnými výsledky. Staráme se o online marketing firem. Dílčí úlohy řešíme v kontextu vašich dlouhodobých zájmů.",
+  "meta_desc_len": 138,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/tym/",
+  "og_title": "O týmu - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "O nás"
+  ],
+  "h2": [
+   "Zakladatelé",
+   "17",
+   "5",
+   "100+",
+   "Historie značky Neogy",
+   "Styl práce",
+   "Výhody externího týmu Neogy ve srovnání…",
+   "Formality",
+   "Garance",
+   "Klienti si na nás nestěžují",
+   "Priority",
+   "Zaujali jsme vás? Za konzultaci nic nedáte."
+  ],
+  "h3": [
+   "Lukáš Hladeček",
+   "Radim Hasalík",
+   "Karel Melecký",
+   "Eva Kočí",
+   "profesionálů v týmu",
+   "let usilovné práce",
+   "dokončených projektů",
+   "… s vlastními zaměstnanci",
+   "… s jednotlivými živnostníky",
+   "… s tradiční agenturou",
+   "Personální zajištění",
+   "Organizační zajištění",
+   "Nasloucháme vám.",
+   "Vždy víte, co si myslíme.",
+   "Vždy víte, co děláme.",
+   "Fakturujeme bez překvapení.",
+   "Odbornost",
+   "Systematičnost",
+   "Kreativita",
+   "Zodpovědnost",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/tym\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/tym\\/\",\"name\":\"O týmu - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2023-06-13T10:00:20+00:00\",\"dateModified\":\"2026-04-01T08:38:21+00:00\",\"description\":\"Jsme virtuální agentura s reálnými výsledky. Staráme se o online marketing firem. Dílčí úlohy řešíme v kontextu vašich dlouhodobých zájmů.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 21,
+  "ext_links_out": 15,
+  "words": 983
+ },
+ {
+  "url": "https://www.neogy.cz/tym/lukas-hladecek/",
+  "status": 200,
+  "location": "",
+  "title": "Lukáš Hladeček | Neogy",
+  "title_len": 22,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/tym/lukas-hladecek/",
+  "og_title": "Lukáš Hladeček - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Lukáš Hladeček"
+  ],
+  "h2": [
+   "Moje pozice v Neogy",
+   "Jak přistupuji k práci",
+   "Profesní úspěchy a zkušenosti",
+   "Na čem si zakládám",
+   "S jakými profesemi nejčastěji spolupracuji"
+  ],
+  "h3": [
+   "Představujeme náš tým",
+   "Fakturační údaje:",
+   "Jak poznat, co zákazníci chtějí",
+   "Jak zvýšit návštěvnost webu",
+   "Jak zvýšit prodej v e-shopu",
+   "Jak pořídit kvalitní obsah webu",
+   "Jak vytvořit nový web",
+   "Hledáte konkrétní odborníky nebo služby?",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/tym\\/lukas-hladecek\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/tym\\/lukas-hladecek\\/\",\"name\":\"Lukáš Hladeček - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2023-04-30T07:53:00+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/tym\\/lukas-hladecek\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https"
+  ],
+  "img_count": 4,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 27,
+  "ext_links_out": 5,
+  "words": 484
+ },
+ {
+  "url": "https://www.neogy.cz/reference/",
+  "status": 200,
+  "location": "",
+  "title": "Reference | Neogy",
+  "title_len": 17,
+  "meta_desc": "Většina klientů je šťastných, že nás má. Podívejte se, co o nás říkají. Jsme virtuální marketingové oddělení mnoha českých firem a projektů.",
+  "meta_desc_len": 140,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/reference/",
+  "og_title": "Reference - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Reference"
+  ],
+  "h2": [
+   "Vebra",
+   "Profinaradi.com",
+   "Vekra, Otherm",
+   "Solvertech",
+   "Svět koupelny",
+   "Česká bankovní asociace",
+   "ProMistry",
+   "Zaparkuj levně",
+   "Ortopedické matrace",
+   "Dilapan",
+   "Karlovarský kraj",
+   "Homing",
+   "Prime servis",
+   "Online dispečer",
+   "Zaujali jsme vás? Za konzultaci nic nedáte."
+  ],
+  "h3": [
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/reference\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/reference\\/\",\"name\":\"Reference - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T06:19:23+00:00\",\"dateModified\":\"2025-12-17T18:16:36+00:00\",\"description\":\"Většina klientů je šťastných, že nás má. Podívejte se, co o nás říkají. Jsme virtuální marketingové oddělení mnoha českých firem a projektů.\",\"breadcrumb\":{\"@id\":\"ht"
+  ],
+  "img_count": 16,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 32,
+  "ext_links_out": 19,
+  "words": 1083
+ },
+ {
+  "url": "https://www.neogy.cz/reference-zivnostnici-male-firmy/",
+  "status": 200,
+  "location": "",
+  "title": "Reference: živnostníci a malé firmy | Neogy",
+  "title_len": 43,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/reference-zivnostnici-male-firmy/",
+  "og_title": "Reference: živnostníci a malé firmy - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Reference: živnostníci a malé firmy"
+  ],
+  "h2": [
+   "Michal Haničinec",
+   "Sleep Centrum s.r.o.",
+   "Lemito",
+   "Patron Zahrad",
+   "Praktik Rosice",
+   "SMART 4 WAY s.r.o.",
+   "Ferdinand.cz",
+   "Sporthotel Kácov",
+   "Centrum Tance",
+   "Erik Jelínek",
+   "Bc. Helena Šimánková",
+   "Zdeněk Bártek",
+   "Kruháč Bořislavka",
+   "Veterinární klinika Na Weilovně",
+   "Martin Dolejš",
+   "Hildegard Braukmann",
+   "Zdeněk Štefko",
+   "Naturela – dary přírody",
+   "Černé Sklo",
+   "R&F Trade s.r.o.",
+   "MercaFestum s.r.o.",
+   "HumbleWood s.r.o.",
+   "Můj šťastný domov",
+   "Počítače Průcha",
+   "Martin Macháček",
+   "Jiří Thiele",
+   "Marek Vít",
+   "Barbora Diduchová",
+   "ToSevyplati.cz",
+   "Anna Mouchová",
+   "Jana Sándorová",
+   "Cestarelaxace.cz",
+   "Ing. Jan Zavadil",
+   "Jiří Pekárek",
+   "Petr Baudyš",
+   "Huradosveta.cz",
+   "Připojen, s. r. o.",
+   "Naturalpack.cz",
+   "Hafánek",
+   "Actionpark.cz",
+   "Titaniumpro.cz",
+   "TTcokolada.cz",
+   "rehazone.cz",
+   "Zaujali jsme vás? Za konzultaci nic nedáte."
+  ],
+  "h3": [
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/reference-zivnostnici-male-firmy\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/reference-zivnostnici-male-firmy\\/\",\"name\":\"Reference: živnostníci a malé firmy - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2025-12-08T08:32:06+00:00\",\"dateModified\":\"2025-12-17T18:16:20+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/reference-zivnostnici-male-firmy\\/#breadcrumb\"},\"inLanguage\":\"c"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 16,
+  "ext_links_out": 37,
+  "words": 2958
+ },
+ {
+  "url": "https://www.neogy.cz/pripadove-studie/jak-vekra-vymenila-tym-a-nastartovala-vykonnostni-marketing/",
+  "status": 200,
+  "location": "",
+  "title": "Případová studie: jak VEKRA vyměnila tým a nastartovala výkonnostní marketing | Neogy",
+  "title_len": 85,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/pripadove-studie/jak-vekra-vymenila-tym-a-nastartovala-vykonnostni-marketing/",
+  "og_title": "Případová studie: jak VEKRA vyměnila tým a nastartovala výkonnostní marketing - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Případová studie: jak VEKRA vyměnila tým a nastartovala výkonnostní marketing"
+  ],
+  "h2": [
+   "Proč vás nebudeme ohromovat fantastickými čísly",
+   "VEKRA, jednička na trhu s okny",
+   "Přebíráme online marketing za pochodu",
+   "Žádná překvapení, prosím",
+   "Komunikační mix: Propojujeme televizní reklamu s onlinem",
+   "SEO: Přirozené vyhledávání hraje prim",
+   "PPC: Kde končí SEO, nastupuje placená reklama",
+   "Uživatelský zážitek: Přesvědčivý web zvyšuje množství poptávek",
+   "Naše hodnocení",
+   "Jak spolupráci hodnotil zákazník",
+   "Potřebuje váš marketing čerstvé nápady a síly? Přizvěte nás do týmu stejně, jako to udělala VEKRA."
+  ],
+  "h3": [
+   "Startuje nový web",
+   "Co práce na SEO přinesla",
+   "Co práce v PPC přinesla",
+   "Co práce na UX/UI přinesla",
+   "Fakturační údaje:",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/pripadove-studie\\/jak-vekra-vymenila-tym-a-nastartovala-vykonnostni-marketing\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/pripadove-studie\\/jak-vekra-vymenila-tym-a-nastartovala-vykonnostni-marketing\\/\",\"name\":\"Případová studie: jak VEKRA vyměnila tým a nastartovala výkonnostní marketing - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2024-09-18T20:13:14+00:00\",\"dateModified\":\"202"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 20,
+  "ext_links_out": 5,
+  "words": 1524
+ },
+ {
+  "url": "https://www.neogy.cz/spokojenost/",
+  "status": 200,
+  "location": "",
+  "title": "Spokojenost zákazníků pro nás není fráze | Neogy",
+  "title_len": 48,
+  "meta_desc": "Proč marketing od nás",
+  "meta_desc_len": 21,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/spokojenost/",
+  "og_title": "Spokojenost zákazníků pro nás není fráze - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Spokojenost zákazníků pro nás není fráze"
+  ],
+  "h2": [
+   "Jaký je postup, abychom zajistili vaší spokojenost?",
+   "Co nemůžeme ovlivnit?"
+  ],
+  "h3": [
+   "1. Prověříme to",
+   "2. Napravíme to",
+   "3. Ověříme to s vámi",
+   "4. Spolupracujeme dál",
+   "Váš podnikatelský záměr",
+   "Stav trhu a chování zákazníků",
+   "Možnosti na vaší straně",
+   "Nečekané situace mimo naší kontrolu",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/spokojenost\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/spokojenost\\/\",\"name\":\"Spokojenost zákazníků pro nás není fráze - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2025-07-26T17:40:11+00:00\",\"dateModified\":\"2026-01-15T06:55:23+00:00\",\"description\":\"Proč marketing od nás\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/spokojenost\\/#breadcrumb\"},\"inLanguage\":\"cs\",\"potentialAction\""
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 18,
+  "ext_links_out": 5,
+  "words": 312
+ },
+ {
+  "url": "https://www.neogy.cz/vysvetleni/",
+  "status": 200,
+  "location": "",
+  "title": "Proč měníme jméno na Neogy? | Neogy",
+  "title_len": 35,
+  "meta_desc": "Marketingové agentury Neologic a ParMinut.cz se spojují pod nový název Neogy. Spojení vám přinese řadu výhod.",
+  "meta_desc_len": 109,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/vysvetleni/",
+  "og_title": "Proč měníme jméno na Neogy? - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Proč měníme jméno na Neogy?"
+  ],
+  "h2": [
+   "Co získáte jako výhody?",
+   "Proč tato změna?",
+   "Co se mění pro naše zákazníky?",
+   "Máte přání nebo otázky? Za konzultaci nic nedáte."
+  ],
+  "h3": [
+   "Fakturační údaje:",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/vysvetleni\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/vysvetleni\\/\",\"name\":\"Proč měníme jméno na Neogy? - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2025-06-27T16:49:50+00:00\",\"dateModified\":\"2026-01-17T08:14:58+00:00\",\"description\":\"Marketingové agentury Neologic a ParMinut.cz se spojují pod nový název Neogy. Spojení vám přinese řadu výhod.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 20,
+  "ext_links_out": 8,
+  "words": 374
+ },
+ {
+  "url": "https://www.neogy.cz/navody/",
+  "status": 200,
+  "location": "",
+  "title": "Vaše potřeby | Neogy",
+  "title_len": 20,
+  "meta_desc": "Východiska, rizika a řešení nejčastější úloh, se kterými se potýkáte v kůži firemní marketérů. Odkazy na služby, které vám usnadní život.",
+  "meta_desc_len": 137,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/navody/",
+  "og_title": "Návody k řešení úloh online marketingu - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Jaký problém řešíte?"
+  ],
+  "h2": [],
+  "h3": [
+   "Jak poznat, co zákazníci chtějí",
+   "Jak zvýšit návštěvnost webu",
+   "Jak zvýšit prodej v e-shopu",
+   "Jak pořídit kvalitní obsah webu",
+   "Jak vytvořit nový web",
+   "Hledáte konkrétní odborníky nebo služby?",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/navody\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/navody\\/\",\"name\":\"Návody k řešení úloh online marketingu - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T06:18:30+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"description\":\"Východiska, rizika a řešení nejčastější úloh, se kterými se potýkáte v kůži firemní marketérů. Odkazy na služby, které vám usnadní život.\",\"br"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 22,
+  "ext_links_out": 4,
+  "words": 134
+ },
+ {
+  "url": "https://www.neogy.cz/navody/jak-poznat-co-zakaznici-chteji/",
+  "status": 200,
+  "location": "",
+  "title": "Jak poznat, co zákazníci chtějí | Neogy",
+  "title_len": 39,
+  "meta_desc": "Na co se ptát, koho se ptát a jak naložit s tím, co zjistíte? Pomůžeme vám poznat potřeby vašich zákazníků.",
+  "meta_desc_len": 107,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/navody/jak-poznat-co-zakaznici-chteji/",
+  "og_title": "Jak poznat, co zákazníci chtějí - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Jak poznat, co zákazníci chtějí"
+  ],
+  "h2": [
+   "Užitečné otázky",
+   "Kdy se ptát",
+   "Co dělat",
+   "Co hrozí, když se nezeptáte anebo si odpovíte špatně",
+   "Doporučené služby",
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka"
+  ],
+  "h3": [
+   "Jak poznat, co zákazníci chtějí",
+   "Jak zvýšit návštěvnost webu",
+   "Jak zvýšit prodej v e-shopu",
+   "Jak pořídit kvalitní obsah webu",
+   "Jak vytvořit nový web",
+   "Hledáte konkrétní odborníky nebo služby?",
+   "Máte jiné přání nebo otázky? Za konzultaci nic nedáte.",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/navody\\/jak-poznat-co-zakaznici-chteji\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/navody\\/jak-poznat-co-zakaznici-chteji\\/\",\"name\":\"Jak poznat, co zákazníci chtějí - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T07:32:00+00:00\",\"dateModified\":\"2026-01-17T08:27:12+00:00\",\"description\":\"Na co se ptát, koho se ptát a jak naložit s tím, co zjistíte? Pomůžeme vám poznat pot"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 31,
+  "ext_links_out": 4,
+  "words": 473
+ },
+ {
+  "url": "https://www.neogy.cz/blog/",
+  "status": 200,
+  "location": "",
+  "title": "Čtení | Neogy",
+  "title_len": 13,
+  "meta_desc": "Většinu myšlenek věnujeme klientům, občas ale něco přeteče. Případové studie vás mohou inspirovat k vlastním postupům.",
+  "meta_desc_len": 118,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/blog/",
+  "og_title": "Čtení - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Čtení"
+  ],
+  "h2": [
+   "Došla vašemu e-shopu šťáva? Povolejte následníka!",
+   "Jak to s námi funguje: první schůzka",
+   "Umělá inteligence: nástroje pro marketing",
+   "Umělá inteligence: pomůže i vašemu marketingu?",
+   "Měření návštěvnosti webu v Google Analytics",
+   "USP: jak jedinečná prodejní nabídka pomůže vaší firmě?",
+   "Nízkonákladový marketing: přehled možností"
+  ],
+  "h3": [
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/blog\\/\",\"name\":\"Čtení - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2021-11-01T06:19:03+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"description\":\"Většinu myšlenek věnujeme klientům, občas ale něco přeteče. Případové studie vás mohou inspirovat k vlastním postupům.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/#breadcr"
+  ],
+  "img_count": 2,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 30,
+  "ext_links_out": 4,
+  "words": 254
+ },
+ {
+  "url": "https://www.neogy.cz/blog/mereni-navstevnosti-webu-google-analytics/",
+  "status": 200,
+  "location": "",
+  "title": "Měření návštěvnosti webu v Google Analytics | Neogy",
+  "title_len": 51,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/blog/mereni-navstevnosti-webu-google-analytics/",
+  "og_title": "Měření návštěvnosti webu v Google Analytics - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Měření návštěvnosti webu v Google Analytics"
+  ],
+  "h2": [
+   "Co je Google Analytics?",
+   "Orientace v účtu Google Analytics – dimenze a metriky",
+   "Jak změřit úspěšnost webové stránky? A jak zjistím kolik lidí chodí na moji stránku?",
+   "Vyhodnocování v reálném čase",
+   "Období a jeho srovnání s minulým rokem",
+   "Zlepšení výkonu vstupních stránek",
+   "Události vs. Cíle",
+   "Atribuční model",
+   "Zasílání reportů",
+   "Pomůžeme vám s vyhodnocením a správnou interpretací",
+   "Jak to s námi funguje: první schůzka",
+   "Umělá inteligence: nástroje pro marketing"
+  ],
+  "h3": [
+   "Hlavní metriky Google Analytics",
+   "Jak na to, pokud chcete vyhodnotit efektivitu PPC?",
+   "Nastavení konverzí",
+   "Krok 1 – Vytvoření konverzní akce",
+   "Krok 2 – vytvoření značky",
+   "Přehledy Analytics využívají tři atribuční modely:",
+   "Návody",
+   "Služby",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/mereni-navstevnosti-webu-google-analytics\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/mereni-navstevnosti-webu-google-analytics\\/\"},\"author\":{\"name\":\"neologicadmin\",\"@id\":\"https:\\/\\/www.neogy.cz\\/#\\/schema\\/person\\/eaa41652c39a8301b36ec535c19e64be\"},\"headline\":\"Měření návštěvnosti webu v Google Analytics\",\"datePublished\":\"2024-04-30T06:42:14+00:00\",\"dateModified\":\"2026-05-20T12:18"
+  ],
+  "img_count": 11,
+  "img_no_alt": 1,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 21,
+  "ext_links_out": 8,
+  "words": 1657
+ },
+ {
+  "url": "https://www.neogy.cz/blog/co-o-vasem-webu-zjisti-webovy-analytik/",
+  "status": 200,
+  "location": "",
+  "title": "Co o vašem webu zjistí webový analytik | Neogy",
+  "title_len": 46,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/blog/co-o-vasem-webu-zjisti-webovy-analytik/",
+  "og_title": "Co o vašem webu zjistí webový analytik - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Co o vašem webu zjistí webový analytik"
+  ],
+  "h2": [
+   "Co pro vás udělá webový analytik",
+   "Pořádně, nebo nijak",
+   "Nástroje webové analytiky",
+   "Analytika nastavuje zrcadlo celé firmě",
+   "Typický postup analýzy",
+   "Nejčastější důvody snížené konvertibility",
+   "Poznejte svůj web",
+   "Jak to s námi funguje: první schůzka",
+   "Umělá inteligence: nástroje pro marketing"
+  ],
+  "h3": [
+   "Neintuitivní nákupní proces",
+   "Nedůvěryhodnost stránek",
+   "Nedostatečné informace o produktech",
+   "Vysoké ceny nebo nejasné nabídky",
+   "Problémy s dostupností produktu",
+   "Návody",
+   "Služby",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/co-o-vasem-webu-zjisti-webovy-analytik\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/co-o-vasem-webu-zjisti-webovy-analytik\\/\"},\"author\":{\"name\":\"neologicadmin\",\"@id\":\"https:\\/\\/www.neogy.cz\\/#\\/schema\\/person\\/eaa41652c39a8301b36ec535c19e64be\"},\"headline\":\"Co o vašem webu zjistí webový analytik\",\"datePublished\":\"2023-07-20T07:22:33+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\","
+  ],
+  "img_count": 5,
+  "img_no_alt": 3,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 26,
+  "ext_links_out": 7,
+  "words": 1195
+ },
+ {
+  "url": "https://www.neogy.cz/blog/jak-zachranit-data-z-google-analytics-universal/",
+  "status": 200,
+  "location": "",
+  "title": "Jak zachránit data z Google Analytics Universal | Neogy",
+  "title_len": 55,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/blog/jak-zachranit-data-z-google-analytics-universal/",
+  "og_title": "Jak zachránit data z Google Analytics Universal - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Jak zachránit data z Google Analytics Universal"
+  ],
+  "h2": [
+   "Export dashboardů do PDF",
+   "Export dashboardů do Google Sheets",
+   "Export surových dat do BigQuery",
+   "Potřebujete s exportem poradit?",
+   "Jak to s námi funguje: první schůzka",
+   "Umělá inteligence: nástroje pro marketing"
+  ],
+  "h3": [
+   "Návody",
+   "Služby",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/jak-zachranit-data-z-google-analytics-universal\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/jak-zachranit-data-z-google-analytics-universal\\/\"},\"author\":{\"name\":\"neologicadmin\",\"@id\":\"https:\\/\\/www.neogy.cz\\/#\\/schema\\/person\\/eaa41652c39a8301b36ec535c19e64be\"},\"headline\":\"Jak zachránit data z Google Analytics Universal\",\"datePublished\":\"2023-06-12T20:57:09+00:00\",\"dateModified\":\""
+  ],
+  "img_count": 6,
+  "img_no_alt": 4,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 23,
+  "ext_links_out": 7,
+  "words": 595
+ },
+ {
+  "url": "https://www.neogy.cz/blog/co-delat-kdyz-klesa-vykon-nebo-navstevnost/",
+  "status": 200,
+  "location": "",
+  "title": "Co dělat, když klesá výkon nebo návštěvnost | Neogy",
+  "title_len": 51,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/blog/co-delat-kdyz-klesa-vykon-nebo-navstevnost/",
+  "og_title": "Co dělat, když klesá výkon nebo návštěvnost - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Co dělat, když klesá výkon nebo návštěvnost"
+  ],
+  "h2": [
+   "Nahlédněte skutečnost, jaká opravdu je",
+   "Jak zvýšit návštěvnost a výkon",
+   "SEO: optimalizace pro vyhledávače",
+   "UX audit: test použitelnosti webu",
+   "Další nástroje pro vyšší návštěvnost a konvertibilitu",
+   "Jak to s námi funguje: první schůzka",
+   "Umělá inteligence: nástroje pro marketing"
+  ],
+  "h3": [
+   "SEO audit",
+   "Analýza klíčových slov",
+   "Specialisté a “specialisté”",
+   "Kdy je čas na SEO audit",
+   "Co je audit použitelnosti",
+   "Kdy je čas na audit použitelnosti",
+   "Buďte sociální",
+   "Věnujte se online marketingu",
+   "Reagujte na zpětnou vazbu uživatelů",
+   "Přemýšlejte o inovacích",
+   "Dře to, ale jde to",
+   "Návody",
+   "Služby",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/co-delat-kdyz-klesa-vykon-nebo-navstevnost\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/co-delat-kdyz-klesa-vykon-nebo-navstevnost\\/\"},\"author\":{\"name\":\"neologicadmin\",\"@id\":\"https:\\/\\/www.neogy.cz\\/#\\/schema\\/person\\/eaa41652c39a8301b36ec535c19e64be\"},\"headline\":\"Co dělat, když klesá výkon nebo návštěvnost\",\"datePublished\":\"2023-07-26T09:06:27+00:00\",\"dateModified\":\"2025-07-03T13:"
+  ],
+  "img_count": 5,
+  "img_no_alt": 3,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 25,
+  "ext_links_out": 7,
+  "words": 1668
+ },
+ {
+  "url": "https://www.neogy.cz/slovnik-marketingovych-pojmu/",
+  "status": 200,
+  "location": "",
+  "title": "Slovník pojmů ze světa online marketingu | Neogy",
+  "title_len": 48,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/slovnik-marketingovych-pojmu/",
+  "og_title": "Slovník Archiv - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Slovník pojmů ze světa online marketingu"
+  ],
+  "h2": [],
+  "h3": [
+   "A/B testování",
+   "Affiliate marketing",
+   "AIDA",
+   "API",
+   "Co je atribuční model?",
+   "Cookie",
+   "Copywriting",
+   "CPA",
+   "CPC",
+   "CPL",
+   "CPM",
+   "CPV",
+   "CRO",
+   "CTA",
+   "CTBO",
+   "CTR",
+   "Bounce rate",
+   "Data Studio",
+   "Facebook Ads",
+   "GDPR",
+   "Google Ads",
+   "Google Analytics",
+   "Google Performance MAX",
+   "Google Search Console",
+   "GTM",
+   "Hodnota konverze",
+   "HTTPS",
+   "Imprese",
+   "Instagram Ads",
+   "Kliknutí",
+   "Konverze",
+   "Konverzní poměr",
+   "KPI",
+   "Landing page",
+   "Linkbuilding",
+   "LinkedIn Ads",
+   "Long tail",
+   "LTV",
+   "PNO",
+   "PPC",
+   "ROAS",
+   "ROI",
+   "SEM",
+   "SEO",
+   "Sklik",
+   "STDC",
+   "SWOT",
+   "UTM",
+   "UX / UI audit",
+   "Webová analytika",
+   "X Ads",
+   "XML",
+   "Fakturační údaje:",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/\",\"name\":\"Slovník Archiv - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/#breadcrumb\"},\"inLanguage\":\"cs\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/#breadcrumb\",\"itemList"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 2,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 94,
+  "ext_links_out": 5,
+  "words": 1686
+ },
+ {
+  "url": "https://www.neogy.cz/slovnik-marketingovych-pojmu/webova-analytika/",
+  "status": 200,
+  "location": "",
+  "title": "Co je to webová analytika | Neogy",
+  "title_len": 33,
+  "meta_desc": "Webová analytika zahrnuje sběr a vyhodnocování dat o návštěvnosti a chování návštěvníků webových stránek a e-shopů. Lze z nich odvodit, jak web plní vaše cíle i očekávání zákazníků.",
+  "meta_desc_len": 181,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/slovnik-marketingovych-pojmu/webova-analytika/",
+  "og_title": "Webová analytika - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Co je to webová analytika"
+  ],
+  "h2": [
+   "Klíčové prvky webové analytiky",
+   "Související témata"
+  ],
+  "h3": [
+   "AIDA",
+   "API",
+   "Bounce rate",
+   "Cookie",
+   "Fakturační údaje:",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/webova-analytika\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/webova-analytika\\/\",\"name\":\"Webová analytika - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2023-10-27T22:54:35+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"description\":\"Webová analytika zahrnuje sběr a vyhodnocování dat o návštěvnosti a chování návštěvn"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 29,
+  "ext_links_out": 5,
+  "words": 492
+ },
+ {
+  "url": "https://www.neogy.cz/slovnik-marketingovych-pojmu/gtm/",
+  "status": 200,
+  "location": "",
+  "title": "Co je to GTM (Google Tag Manager) | Neogy",
+  "title_len": 41,
+  "meta_desc": "Google Tag Manager (GTM) je zdarma dostupný nástroj, který umožňuje spravovat a implementovat sledovací kódy a značky (tagy) na webových stránkách.",
+  "meta_desc_len": 147,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/slovnik-marketingovych-pojmu/gtm/",
+  "og_title": "GTM - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Co je to GTM (Google Tag Manager)"
+  ],
+  "h2": [
+   "Hlavní rysy a funkce Google Tag Manager zahrnují",
+   "Související témata"
+  ],
+  "h3": [
+   "Affiliate marketing",
+   "AIDA",
+   "API",
+   "Bounce rate",
+   "Fakturační údaje:",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/gtm\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/gtm\\/\",\"name\":\"GTM - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2023-10-27T13:07:28+00:00\",\"dateModified\":\"2025-07-03T13:10:41+00:00\",\"description\":\"Google Tag Manager (GTM) je zdarma dostupný nástroj, který umožňuje spravovat a implementovat sledovací kódy a značky (tagy"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 25,
+  "ext_links_out": 5,
+  "words": 441
+ },
+ {
+  "url": "https://www.neogy.cz/slovnik-marketingovych-pojmu/atribucni-model/",
+  "status": 200,
+  "location": "",
+  "title": "Co je atribuční model? | Neogy",
+  "title_len": 30,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/slovnik-marketingovych-pojmu/atribucni-model/",
+  "og_title": "Co je atribuční model? - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Co je atribuční model?"
+  ],
+  "h2": [
+   "Co je to marketingový atribuční model?",
+   "Jak atribuční modely využít pro vaší firmu?",
+   "Související témata"
+  ],
+  "h3": [
+   "Fakturační údaje:",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/atribucni-model\\/\",\"url\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/atribucni-model\\/\",\"name\":\"Co je atribuční model? - Neogy\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/#website\"},\"datePublished\":\"2026-01-08T10:30:01+00:00\",\"dateModified\":\"2026-01-08T10:39:15+00:00\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/slovnik-marketingovych-pojmu\\/atribucni-model\\/#br"
+  ],
+  "img_count": 3,
+  "img_no_alt": 0,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 25,
+  "ext_links_out": 5,
+  "words": 742
+ },
+ {
+  "url": "https://www.neogy.cz/blog/cil-webu-vyplneni-dotazniku/",
+  "status": 200,
+  "location": "",
+  "title": "Cíl online marketingu: vyplnění dotazníku | Neogy",
+  "title_len": 49,
+  "meta_desc": "",
+  "meta_desc_len": 0,
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "canonical": "https://www.neogy.cz/blog/cil-webu-vyplneni-dotazniku/",
+  "og_title": "Cíl online marketingu: vyplnění dotazníku - Neogy",
+  "og_image": "https://www.neogy.cz/wp-content/uploads/2025/06/logo-share.jpg",
+  "lang": "cs",
+  "h1": [
+   "Cíl online marketingu: vyplnění dotazníku"
+  ],
+  "h2": [
+   "Jaké jsou důvody pro získávání zpětné vazby od zákazníků?",
+   "Kdo by měl průzkum připravit?",
+   "Jakou formou zpětnou vazbu sbírat?",
+   "Jaké nástroje na sběr dotazníků použít?",
+   "Čím doplnit dotazníky?",
+   "Jak to s námi funguje: první schůzka",
+   "Umělá inteligence: nástroje pro marketing"
+  ],
+  "h3": [
+   "Návody",
+   "Služby",
+   "Mapa webu",
+   "Rychlá pomoc",
+   "Jak nás hodnotí zákazníci"
+  ],
+  "jsonld": [
+   "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/cil-webu-vyplneni-dotazniku\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.neogy.cz\\/blog\\/cil-webu-vyplneni-dotazniku\\/\"},\"author\":{\"name\":\"neologicadmin\",\"@id\":\"https:\\/\\/www.neogy.cz\\/#\\/schema\\/person\\/eaa41652c39a8301b36ec535c19e64be\"},\"headline\":\"Cíl online marketingu: vyplnění dotazníku\",\"datePublished\":\"2024-04-27T07:41:19+00:00\",\"dateModified\":\"2026-01-21T19:09:01+00:00\",\"mainEntityOfPage\":"
+  ],
+  "img_count": 8,
+  "img_no_alt": 1,
+  "forms": 1,
+  "hubspot": false,
+  "scripts_ext": [
+   "ajax.googleapis.com",
+   "www.neogy.cz"
+  ],
+  "int_links_out": 23,
+  "ext_links_out": 7,
+  "words": 691
+ }
+]
