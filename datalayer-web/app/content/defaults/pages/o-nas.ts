@@ -9,7 +9,8 @@ import type { PageInput } from '../../schema';
 // stránka neuvádí jméno, fotku ani blok osoby. Sekce „Kdo web provozuje“ ukáže jen
 // identifikaci provozovatele z Nastavení, jakmile ji klient vyplní. Do té doby chybí
 // firemní údaje (IČO, DIČ, sídlo, rejstřík), příběh založení a telefon. Tvrzení o správě
-// kampaní čeká na rozhodnutí klienta (viz kap. B6), proto na stránce není.
+// kampaní čeká na rozhodnutí klienta (viz kap. B6), proto na stránce není. Texty prošly
+// jazykovým auditem z 9. října 2026 (kap. 3.19), bez slibů lhůt (rozhodnutí klienta).
 
 export const page: PageInput = {
   path: 'o-nas',
@@ -19,19 +20,19 @@ export const page: PageInput = {
   pictogram: 'gov',
 
   seo: {
-    title: 'O nás: jak pracujeme s daty | datalayer.cz',
+    title: 'O nás – jak pracujeme s daty | datalayer.cz',
     description:
-      'Jak datalayer.cz pracuje s daty klientů, pro koho stavíme měření a co od vás budeme potřebovat. Technický tým pro GA4, GTM, server-side, consent a BigQuery.',
+      'Jak datalayer.cz pracuje s daty klientů a pro koho stavíme měření. Technický tým pro GA4, GTM, server-side měření, souhlas (Consent Mode) a BigQuery.',
   },
 
   hero: {
     eyebrow: 'o nás',
-    h1: 'O nás: jak pracujeme s daty a pro koho',
+    h1: 'Jak pracujeme s daty a pro koho',
     subtitle:
-      'Stavíme a ověřujeme měření pro e-shopy, B2B a velké firmy – od datové vrstvy přes Tag Manager, GA4 a souhlasy po server-side tracking a BigQuery. Pracujeme ve vašich účtech a každou implementaci předáme s dokumentací.',
+      'Stavíme a ověřujeme měření pro e-shopy, B2B firmy a velké firmy – od datové vrstvy přes Google Tag Manager (GTM), GA4 a souhlasy po server-side tracking a BigQuery. Pracujeme ve vašich účtech a každou implementaci předáme s dokumentací.',
     primaryCta: { label: 'Napsat nám', href: '#kontakt' },
     secondaryCta: { label: 'Jak pracujeme', href: '/jak-pracujeme' },
-    microcopy: 'Úvodní konzultace zdarma · odpověď do jednoho pracovního dne',
+    microcopy: 'Úvodní konzultace zdarma a nezávazně',
   },
 
   trust: ['Účty a data zakládáme na vaši firmu', 'Validace před každým předáním', 'Standardní nástroje, žádné černé skříňky'],
@@ -57,7 +58,7 @@ export const page: PageInput = {
           items: [
             'Problém bývá ve spodní vrstvě: v tom, jak web data sbírá, jestli respektuje souhlas a jestli někdo ověřil, že čísla sedí. Proto začínáme u datové vrstvy, podle které nese jméno i datalayer.cz.',
             'Nasadit kód pro nás neznamená konec projektu. Končíme až ve chvíli, kdy čísla sedí s tržbami nebo s CRM a rozdíly umíme vysvětlit.',
-            'Neprodáváme krabicové nástroje. Měření stavíme ve vašich účtech a předáváme ho s dokumentací, podle které může pokračovat kdokoli.',
+            'Neprodáváme krabicové nástroje. Měření stavíme ve vašich účtech a předáváme ho s dokumentací.',
           ],
         },
       ],
@@ -88,7 +89,7 @@ export const page: PageInput = {
             {
               title: 'Velké firmy',
               pictogram: 'gov',
-              text: 'Více domén, týmů a dodavatelů a každý měří trochu jinak. Zavedeme měřicí plán, názvosloví a verzování jako standard. Server-side a BigQuery postavíme ve vašem Google Cloudu.',
+              text: 'Více domén, týmů a dodavatelů – a každý měří trochu jinak. Zavedeme měřicí plán, názvosloví a verzování jako standard. Server-side měření a BigQuery postavíme ve vašem Google Cloudu.',
               link: { label: 'Měření pro velké firmy', href: '/reseni/velke-firmy' },
             },
           ],
@@ -115,7 +116,7 @@ export const page: PageInput = {
         {
           type: 'paragraphs',
           items: [
-            'Nejsme advokátní kancelář, právní posouzení konkrétního zpracování zajišťuje váš právník. Postup spolupráce a to, co od vás v jednotlivých krocích budeme potřebovat, popisuje stránka <a href="/jak-pracujeme">Jak pracujeme</a>.',
+            'Nejsme advokátní kancelář – právní posouzení konkrétního zpracování zajišťuje váš právník. Postup spolupráce a to, co od vás v jednotlivých krocích budeme potřebovat, popisuje stránka <a href="/jak-pracujeme">Jak pracujeme</a>.',
           ],
         },
       ],
@@ -125,7 +126,7 @@ export const page: PageInput = {
   faq: [
     {
       q: 'Komu patří účty a data?',
-      a: 'Vám. GA4, Tag Manager, Google Cloud i reklamní účty zakládáme na vaši firmu a my dostáváme jen přístup, který můžete kdykoli odebrat. Po skončení spolupráce nic nemigrujete.',
+      a: 'Vám. GA4, GTM, Google Cloud i reklamní účty zakládáme na vaši firmu a my dostáváme jen přístup, který můžete kdykoli odebrat. Po skončení spolupráce nic nemigrujete.',
     },
     {
       q: 'Může po vás pokračovat někdo jiný?',
@@ -145,8 +146,8 @@ export const page: PageInput = {
 
   contact: {
     formId: 'o-nas',
-    title: 'Chcete nás nejdřív poznat? Napište nám',
-    lead: 'Napište nám e-mail, nebo vyplňte formulář. Ozveme se do jednoho pracovního dne.',
+    title: 'Napište nám, co řešíte',
+    lead: 'Napište nám e-mail nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první.',
     placeholder: 'Krátce napište, co řešíte…',
     leadType: 'consultation',
   },

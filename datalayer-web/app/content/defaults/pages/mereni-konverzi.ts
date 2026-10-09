@@ -5,7 +5,7 @@ import type { PageInput } from '../../schema';
 // platforem zmizela jako duplicita tabů, každý tab má tři body a tab Meta navíc
 // dvě věty o deduplikaci a kvalitě shody (ukázka Event Match Quality poputuje
 // do článku B5). Dvě tabulky mapování a deduplikace nahradil vizuální pruh
-// „objednávka → ID → jedna konverze“ a devět důvodů rozdílů čtyři body (detail
+// „objednávka, ID, jedna konverze“ a devět důvodů rozdílů čtyři body (detail
 // do článků E2, B5 a D2). Ve sbalených Technických detailech zůstává přehled
 // deduplikace po systémech a pravidla pro ID, hodnotu a identitu zákazníka.
 // Dokud klient nedodá podklady, stránka neobsahuje: počet nastavených účtů,
@@ -13,38 +13,42 @@ import type { PageInput } from '../../schema';
 // e-shopových platforem ani výchozí atribuční okno Mety. Čísla v symptomu jsou
 // ilustrační a otevřené zůstává, jestli backendová napojení nasazujeme sami,
 // nebo jen dodáváme zadání pro vývojáře.
+// Texty prošly jazykovým auditem z 9. října 2026 (seo-analyza/2026-10-09_jazykovy-audit,
+// kap. 3.9): skloňovaná Meta, poptávka místo leadu, porovnání s backendem místo
+// odsouhlasení, jednotně Conversions API (bez zkratky CAPI), reklamní systémy
+// místo platforem a SEM rozepsané při prvním výskytu.
 
 export const page: PageInput = {
   path: 'sluzby/mereni-konverzi',
   kind: 'service',
   navTitle: 'Měření konverzí',
-  tagline: 'Ads, Meta, Sklik i Heureka vidí totéž',
+  tagline: 'Google Ads, Meta, Sklik i Heureka vidí totéž',
   pictogram: 'conversion',
   menuGroup: 'sber',
 
   seo: {
-    title: 'Měření konverzí: Ads, Meta, Sklik, Heureka | datalayer.cz',
+    title: 'Měření konverzí – Google Ads, Meta, Sklik, Heureka | datalayer.cz',
     description:
-      'Nastavíme měření konverzí pro Google Ads, Meta (Pixel + CAPI), Sklik, Heureku i TikTok z jedné datové vrstvy, bez dvojího počítání. Konzultace zdarma.',
+      'Nastavíme měření konverzí pro Google Ads, Metu (pixel a Conversions API), Sklik, Heureku i TikTok z jedné datové vrstvy, bez dvojího počítání. Konzultace zdarma.',
   },
 
   hero: {
-    eyebrow: 'conversion',
-    h1: 'Měření konverzí pro Google Ads, Meta, Sklik i Heureku',
+    eyebrow: 'konverze',
+    h1: 'Měření konverzí pro Google Ads, Metu, Sklik i Heureku',
     subtitle:
-      'Měření konverzí předává reklamním systémům informaci, že návštěvník z reklamy nakoupil nebo poslal poptávku. Stavíme ho z jedné datové vrstvy, aby každá objednávka dorazila do Google Ads, Mety, Skliku i Heureky jednou, se stejným ID a hodnotou – a jen podle souhlasu návštěvníka. Reklamy pak optimalizují na čísla, která sedí s administrací.',
+      'Měření konverzí předává reklamním systémům informaci, že návštěvník z reklamy nakoupil nebo poslal poptávku. Stavíme ho z jedné datové vrstvy, aby každá objednávka dorazila do Google Ads, Mety, Skliku i Heureky jednou, se stejným ID a hodnotou – a jen podle souhlasu návštěvníka. Reklamní systémy se pak učí z čísel, která sedí s administrací.',
     primaryCta: { label: 'Zkontrolovat moje konverze', href: '#kontakt' },
     secondaryCta: { label: 'Proč se čísla liší', href: '#proc-se-lisi' },
-    microcopy: 'Úvodní konzultace zdarma · účty a data zůstávají vaše, pracujeme přes role, ne přes hesla',
+    microcopy: 'Úvodní konzultace zdarma, účty a data zůstávají vaše',
   },
 
-  trust: ['Google Ads, Meta, Sklik i Heureka z jedné datové vrstvy', 'Stejné ID a hodnota ve všech systémech', 'Odsouhlasení s backendem po čtrnácti dnech'],
+  trust: ['Google Ads, Meta, Sklik i Heureka z jedné datové vrstvy', 'Stejné ID a hodnota ve všech systémech', 'Porovnání s backendem po čtrnácti dnech'],
 
   sections: [
     {
       id: 'symptomy',
       eyebrow: 'symptomy',
-      title: 'Které z toho znáte?',
+      title: 'Poznáváte se?',
       lead: 'Část rozdílů mezi systémy je přirozená, část je chyba v nastavení.',
       tone: 'light',
       blocks: [
@@ -57,25 +61,25 @@ export const page: PageInput = {
               title: 'Každý systém hlásí jiné číslo',
               text: 'Administrace třeba ukáže 412 objednávek, GA4 371 a Meta 388 – a nevíte, který rozdíl je chyba.',
               pictogram: 'dashboard',
-              tag: 'admin ≠ ga4',
+              tag: 'administrace ≠ GA4',
             },
             {
               title: 'Systémy počítají nákup dvakrát',
-              text: 'Pixel i Conversions API bez společného ID nebo import z GA4 vedle konverzní značky – a k tomu jednou cena s DPH, jednou bez.',
+              text: 'Pixel i Conversions API bez společného ID nebo import z GA4 vedle konverzního tagu – a k tomu jednou cena s DPH, jednou bez.',
               pictogram: 'eshop',
               tag: '×2',
             },
             {
               title: 'Sklik měří jen část',
-              text: 'Starý konverzní kód bez předání souhlasu, retargeting zvlášť – a Seznam mezitím spouští nové měření SEM.',
+              text: 'Starý konverzní kód bez předání souhlasu, retargeting zvlášť – a Seznam mezitím spouští nové měření Seznam Event Measurement (SEM).',
               pictogram: 'warn',
-              tag: 'rc.js → sul.js',
+              tag: 'z rc.js na sul.js',
             },
             {
-              title: 'Google Ads optimalizuje na formuláře, ne na zakázky',
-              text: 'Reklama počítá každý odeslaný formulář, i když obchod v CRM ví, které leady jsou dobré.',
+              title: 'Google Ads se učí z formulářů, ne ze zakázek',
+              text: 'Reklama počítá každý odeslaný formulář, i když obchod v CRM ví, které poptávky jsou dobré.',
               pictogram: 'lead',
-              tag: 'crm',
+              tag: 'CRM',
             },
           ],
         },
@@ -86,7 +90,7 @@ export const page: PageInput = {
       id: 'vystupy',
       eyebrow: 'výstupy',
       title: 'Co uděláme a co dostanete',
-      lead: 'Než napíšeme první tag, dohodneme s vámi, co je konverze a jaká je její hodnota. Pravidla zapíšeme do konverzní mapy, aby platila i pro agentury a budoucí dodavatele.',
+      lead: 'Než nastavíme první tag, dohodneme s vámi, co je konverze a jaká je její hodnota. Pravidla zapíšeme do konverzní mapy, aby platila i pro agentury a budoucí dodavatele.',
       tone: 'white',
       blocks: [
         {
@@ -94,32 +98,32 @@ export const page: PageInput = {
           columns: 3,
           items: [
             {
-              tag: 'conversion-map',
+              tag: 'pravidla',
               title: 'Konverzní mapa',
-              text: 'Které akce jsou konverze, primární a sekundární akce, hodnoty, ID a okna – pro každý systém.',
+              text: 'Které akce jsou konverze, primární a sekundární akce, hodnoty, ID a konverzní okna – pro každý systém.',
             },
             {
               tag: 'dataLayer.md',
               title: 'Zadání datové vrstvy',
-              text: 'Pokud chybí nebo je neúplná: specifikace pro vývojáře s událostmi nákupu a leadu. Navazuje na službu <a href="/sluzby/datova-vrstva">Datová vrstva</a>.',
+              text: 'Pokud chybí nebo je neúplná: specifikace pro vývojáře s událostmi nákupu a poptávky. Navazuje na službu <a href="/sluzby/datova-vrstva">Datová vrstva</a>.',
             },
             {
-              tag: 'gtm-web · gtm-server',
-              title: 'Nastavený GTM',
+              tag: 'web a server',
+              title: 'Nastavený Google Tag Manager (GTM)',
               text: 'Tagy, spouštěče a podmínky souhlasu s popisem verzí, volitelně Conversions API a Events API přes server-side GTM.',
             },
             {
-              tag: 'api-spec',
+              tag: 'zadání API',
               title: 'Backendové napojení',
               text: 'Zadání pro vývojáře: Ověřeno zákazníky, Seznam Nákupy a offline konverze přes Data Manager API.',
             },
             {
-              tag: 'test-report',
-              title: 'Testovací protokol a odsouhlasení',
-              text: 'Výsledky testovacích objednávek po systémech a po čtrnácti dnech tabulka backendu a systémů s vysvětlením rozdílů.',
+              tag: 'testovací objednávky',
+              title: 'Testovací protokol a porovnání s backendem',
+              text: 'Výsledky testovacích objednávek pro každý systém. Po čtrnácti dnech srovnání backendu s reklamními systémy a vysvětlení rozdílů.',
             },
             {
-              tag: 'access-list',
+              tag: 'role',
               title: 'Přístupy a předání',
               text: 'Přehled rolí ve všech účtech a krátké zaškolení pro marketing a agentury, jak konverze číst.',
             },
@@ -132,7 +136,7 @@ export const page: PageInput = {
       id: 'jak-to-funguje',
       eyebrow: 'architektura',
       title: 'Jedna objednávka, jeden zdroj, všechny systémy',
-      lead: 'Základ je datová vrstva, kterou e-shop nebo web naplní při nákupu či odeslání formuláře. Z ní konverze putují třemi cestami podle toho, co která platforma podporuje. Kdy se serverová cesta vyplatí, rozebíráme u služby <a href="/sluzby/server-side-tracking">Server-side tracking</a>.',
+      lead: 'Základ je datová vrstva, kterou e-shop nebo web naplní při nákupu či odeslání formuláře. Z ní konverze putují třemi cestami podle toho, co který reklamní systém podporuje. Kdy se serverová cesta vyplatí, rozebíráme u služby <a href="/sluzby/server-side-tracking">Server-side tracking</a>.',
       tone: 'dark',
       blocks: [
         {
@@ -140,10 +144,10 @@ export const page: PageInput = {
           caption:
             'Jedna objednávka putuje třemi cestami: z datové vrstvy přes webový GTM do skriptů v prohlížeči, přes volitelný server-side GTM do Google Ads, Meta Conversions API a TikTok Events API a z backendu přes API do Heureky, Seznam Nákupů a offline konverzí Google Ads.',
           columns: [
-            { label: 'zdroje', items: ['datová vrstva: nákup nebo lead s ID, hodnotou a měnou', 'backend, ERP nebo CRM'] },
-            { label: 'cesty', items: ['prohlížeč: web GTM s Consent Mode v2', 'server: server-side GTM, volitelně', 'backend: API'] },
+            { label: 'zdroje', items: ['datová vrstva: nákup nebo poptávka s ID, hodnotou a měnou', 'backend, ERP nebo CRM'] },
+            { label: 'cesty', items: ['prohlížeč: webový GTM s Consent Mode v2', 'server: server-side GTM, volitelně', 'backend: API'] },
             {
-              label: 'platformy',
+              label: 'reklamní systémy',
               items: [
                 'Google Ads a rozšířené konverze',
                 'Meta a TikTok: pixel i API se stejným <code>event_id</code>',
@@ -157,8 +161,8 @@ export const page: PageInput = {
           type: 'list',
           style: 'check',
           items: [
-            '<strong>Prohlížeč:</strong> tagy v GTM naběhnou jen podle souhlasu návštěvníka – základ pro většinu platforem.',
-            '<strong>Server:</strong> Meta CAPI a rozšířené konverze doplní, co prohlížeč nezachytí, vždy jen se souhlasem.',
+            '<strong>Prohlížeč:</strong> tagy v GTM naběhnou jen podle souhlasu návštěvníka – základ pro většinu reklamních systémů.',
+            '<strong>Server:</strong> Conversions API a rozšířené konverze doplní, co prohlížeč nezachytí, vždy jen se souhlasem.',
             '<strong>Backend:</strong> Ověřeno zákazníky s tajným klíčem a offline konverze z CRM, které do prohlížeče nepatří.',
           ],
         },
@@ -167,7 +171,7 @@ export const page: PageInput = {
 
     {
       id: 'platformy',
-      eyebrow: 'platformy',
+      eyebrow: 'reklamní systémy',
       title: 'Co nastavíme v jednotlivých systémech',
       lead: 'Každý systém má vlastní pravidla pro deduplikaci a souhlas.',
       tone: 'white',
@@ -178,9 +182,9 @@ export const page: PageInput = {
           items: [
             {
               id: 'meta',
-              label: 'Meta Pixel a CAPI',
+              label: 'Meta Pixel a Conversions API',
               paragraphs: [
-                'Pixel doplníme o Conversions API ze serveru a oba posílají stejný název události i <code>event_id</code>, takže Meta duplicitu do 48 hodin zahodí. Kvalitu párování ukazuje Event Match Quality – zvedají ji hashovaný e-mail a telefon a další parametry zákazníka, vždy jen se souhlasem.',
+                'Pixel doplníme o Conversions API ze serveru; oba pak posílají stejný název události i <code>event_id</code>, takže Meta duplicitu do osmačtyřiceti hodin zahodí. Kvalitu shody ukazuje Event Match Quality – zvyšují ji hashovaný e-mail a telefon a další parametry zákazníka, vždy jen se souhlasem.',
               ],
               bullets: [
                 'standardní události od <code>ViewContent</code> po <code>Purchase</code> nebo <code>Lead</code> s hodnotou',
@@ -194,7 +198,7 @@ export const page: PageInput = {
               bullets: [
                 'konverzní akce přes Google tag v GTM s <code>transaction_id</code>, hodnotou a měnou',
                 'rozšířené konverze s hashovaným e-mailem nebo telefonem, jen se souhlasem <code>ad_user_data</code>',
-                'pro B2B konverze z CRM přes Data Manager API, od 15. června 2026 místo nahrávání přes Google Ads API',
+                'pro B2B: konverze z CRM přes Data Manager API, od 15. června 2026 místo nahrávání přes Google Ads API',
               ],
             },
             {
@@ -203,7 +207,7 @@ export const page: PageInput = {
               bullets: [
                 'jeden skript <code>sul.js</code> nahradí kódy Skliku i Seznam Nákupů, jejichž podpora skončí v průběhu roku 2027',
                 'SEM je v betě a přepnutí účtu je nevratné, proto ho nasazujeme souběžně a testujeme v sandboxu',
-                `souhlas přes IAB TCF nebo <code>SEM('updateConsent')</code>, server jen pro události mimo web`,
+                `souhlas přes standard IAB TCF (Transparency and Consent Framework) nebo <code>SEM('updateConsent')</code>, server jen pro události mimo web`,
               ],
             },
             {
@@ -211,15 +215,15 @@ export const page: PageInput = {
               label: 'Seznam Nákupy',
               bullets: [
                 'standardní měření: kód na děkovací stránce a backendový kód s tajným klíčem z Centra prodejce',
-                'měření jen v prohlížeči je citlivější na blokátory a neumožní hodnocení ani API',
-                'postup volíme podle stavu účtu a platformy, protože Seznam s nástupem SEM měření sjednocuje',
+                'měření jen v prohlížeči je citlivější na blokátory a neumožní sběr hodnocení ani napojení přes API',
+                'postup volíme podle stavu účtu a e-shopové platformy, protože Seznam s nástupem SEM měření sjednocuje',
               ],
             },
             {
               id: 'heureka',
               label: 'Heureka',
               bullets: [
-                'měření konverzí dvěma skripty v šabloně nebo modulu platformy – GTM Heureka kvůli blokátorům nedoporučuje',
+                'měření konverzí dvěma skripty v šabloně nebo modulu e-shopové platformy – Heureka nasazení přes GTM kvůli blokátorům nedoporučuje',
                 'Ověřeno zákazníky voláme z backendu s tajným klíčem a ID produktů z XML feedu',
                 'zákazník musí mít možnost dotazník odmítnout, ÚOOÚ ho považuje za obchodní sdělení',
               ],
@@ -228,7 +232,7 @@ export const page: PageInput = {
               id: 'other',
               label: 'TikTok, LinkedIn, Microsoft',
               bullets: [
-                '<strong>TikTok:</strong> Pixel a Events API se stejným <code>event_id</code>, deduplikace do 48 hodin',
+                '<strong>TikTok:</strong> pixel a Events API se stejným <code>event_id</code>, deduplikace do osmačtyřiceti hodin',
                 '<strong>LinkedIn:</strong> Insight Tag a Conversions API se společným <code>eventId</code>, hlavně pro B2B',
                 '<strong>Microsoft Ads:</strong> UET tag s Consent Mode, v EHP od 5. května 2025 povinné signály souhlasu',
               ],
@@ -250,7 +254,7 @@ export const page: PageInput = {
           caption: 'Objednávka 1234 dostane jedno ID, které prohlížeč i server posílají jako stejný klíč, a každý systém z ní započítá jednu konverzi.',
           columns: [
             { label: 'objednávka 1234', items: ['ID z backendu, prohlížeč ho nikdy negeneruje', 'hodnota podle jednoho pravidla'] },
-            { label: 'transaction_id · event_id', items: ['stejný klíč pro prohlížeč i server'] },
+            { label: 'transaction_id a event_id', items: ['stejný klíč pro prohlížeč i server'] },
             { label: 'jedna konverze v každém systému', items: ['Google Ads, Meta, Sklik i Heureka', 'znovunačtení stránky nic nepřidá'] },
           ],
         },
@@ -272,7 +276,7 @@ export const page: PageInput = {
       id: 'postup',
       eyebrow: 'postup',
       title: 'Jak nastavení probíhá',
-      lead: 'Stejných pět kroků jako u všech našich služeb. Po spuštění následuje čtrnáct dní souběžného běhu a odsouhlasení s backendem, staré kódy vypneme až potom.',
+      lead: 'Stejných pět kroků jako u všech našich služeb. Po spuštění následuje čtrnáct dní souběžného běhu a porovnání s backendem; staré kódy vypneme až potom.',
       tone: 'white',
       blocks: [
         {
@@ -296,10 +300,10 @@ export const page: PageInput = {
           type: 'list',
           style: 'check',
           items: [
-            'testovací objednávka, kterou sledujeme od datové vrstvy po každý systém',
-            'stejné ID a hodnota všude a jedna konverze i po znovunačtení stránky',
-            'deduplikace v Metě a TikToku a správné chování po odmítnutí souhlasu',
-            'odsouhlasení s backendem po čtrnácti dnech s vysvětlením rozdílů',
+            'Testovací objednávku sledujeme od datové vrstvy po každý systém.',
+            'Všude dorazí stejné ID a hodnota a ani po znovunačtení stránky nepřibude druhá konverze.',
+            'Deduplikace v Metě a TikToku funguje a po odmítnutí souhlasu se tagy chovají správně.',
+            'Po čtrnácti dnech porovnáme čísla s backendem a rozdíly vysvětlíme.',
           ],
         },
       ],
@@ -307,18 +311,18 @@ export const page: PageInput = {
   ],
 
   techDetails: {
-    summary: 'Technické detaily: deduplikace a parametry po systémech',
+    summary: 'Deduplikace a parametry v jednotlivých systémech',
     blocks: [
       {
         type: 'table',
         caption: 'Jak deduplikují jednotlivé systémy',
-        head: ['Systém', 'Klíč a okno', 'Co testujeme'],
+        head: ['Systém', 'Klíč a okno deduplikace', 'Co testujeme'],
         rows: [
-          ['Meta', 'shodný <code>event_name</code> a <code>event_id</code>, 48 hodin', 'podíl deduplikovaných událostí v Events Manageru'],
-          ['TikTok', 'shodná událost a <code>event_id</code>, 48 hodin', 'Test Events'],
-          ['LinkedIn', 'shodné <code>eventId</code>, okno LinkedIn neuvádí', 'duplicity z Conversions API LinkedIn odečte'],
-          ['Google Ads', '<code>transaction_id</code> u konverzní akce', 'znovunačtení děkovací stránky dá jednu konverzi'],
-          ['Seznam SEM', 'deduplikace je podle Seznamu teprve v přípravě', 'stejná událost jde jen jednou cestou'],
+          ['Meta', 'shodný <code>event_name</code> a <code>event_id</code>, osmačtyřicet hodin', 'podíl deduplikovaných událostí v Events Manageru'],
+          ['TikTok', 'shodná událost a <code>event_id</code>, osmačtyřicet hodin', 'Test Events'],
+          ['LinkedIn', 'shodné <code>eventId</code>, okno LinkedIn neuvádí', 'odečtení duplicit z Conversions API v LinkedInu'],
+          ['Google Ads', '<code>transaction_id</code> u konverzní akce', 'jedna konverze po znovunačtení děkovací stránky'],
+          ['Sklik a SEM', 'deduplikace je podle Seznamu teprve v přípravě', 'odeslání každé události jen jednou cestou'],
           ['Heureka', 'ID objednávky v <code>set_order_id</code>', 'opakované zobrazení děkovací stránky'],
         ],
       },
@@ -326,7 +330,7 @@ export const page: PageInput = {
         type: 'paragraphs',
         items: [
           'ID objednávky generuje vždy backend, nikdy prohlížeč. Hodnotu posíláme podle jednoho pravidla, třeba bez DPH a bez dopravy pro reklamní systémy, Heurece podle nastavení ve statistikách. ID produktů se shodují s produktovými feedy a měna odpovídá trhu.',
-          'E-mail a telefon posíláme jen se souhlasem, po normalizaci a jako hash SHA-256: do Mety spolu s <code>external_id</code>, do Google Ads jako rozšířené konverze. Kvalitu shody v Metě dál zvedají aktuální <code>fbp</code> a <code>fbc</code>, IP adresa a user agent a také odesílání událostí hned, ne dávkově po hodinách.',
+          'E-mail a telefon posíláme jen se souhlasem, po normalizaci a jako hash SHA-256: do Mety spolu s <code>external_id</code>, do Google Ads jako rozšířené konverze. Kvalitu shody v Metě dál zvyšují aktuální <code>fbp</code> a <code>fbc</code>, IP adresa a user agent a také odesílání událostí hned, ne dávkově po hodinách.',
         ],
       },
     ],
@@ -334,8 +338,8 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Potřebuju Meta Pixel, když mám Conversions API?',
-      a: 'Meta doporučuje oba zdroje souběžně: pixel zachytí události v prohlížeči a Conversions API je doplní ze serveru i tam, kde prohlížeč selže. Aby Meta nákup nepočítala dvakrát, posílají oba stejný název události a stejné <code>event_id</code>. Samotné Conversions API dává smysl třeba pro offline konverze, pro běžný e-shop doporučujeme kombinaci.',
+      q: 'Potřebuji Meta Pixel, když mám Conversions API?',
+      a: 'Meta doporučuje oba zdroje souběžně: pixel zachytí události v prohlížeči a Conversions API je doplní ze serveru i tam, kde prohlížeč selže. Aby Meta nákup nepočítala dvakrát, posílají oba stejný název události a stejné <code>event_id</code>. Samotné Conversions API se hodí třeba pro offline konverze, pro běžný e-shop doporučujeme kombinaci.',
     },
     {
       q: 'Co je Seznam Event Measurement a musím přejít?',
@@ -343,15 +347,15 @@ export const page: PageInput = {
     },
     {
       q: 'Jde měřit konverze bez souhlasu?',
-      a: 'Ne tak, že bychom souhlas ignorovali – bez něj web nesmí ukládat ani číst netechnické údaje v zařízení návštěvníka. Google v advanced režimu Consent Mode dostává pingy bez cookies a část konverzí modeluje, ostatní systémy návštěvníka bez souhlasu nevidí. Naše práce je, aby u lidí se souhlasem konverze dorazily spolehlivě – víc u služby <a href="/sluzby/cookie-lista-consent-mode">Cookie lišta a Consent Mode v2</a>.',
+      a: 'Souhlas obejít nelze – bez něj web nesmí ukládat ani číst netechnické údaje v zařízení návštěvníka. V režimu advanced dostává Google přes Consent Mode pingy bez cookies a část konverzí modeluje; ostatní systémy návštěvníka bez souhlasu nevidí. Staráme se o to, aby u lidí se souhlasem konverze dorazily spolehlivě – více u služby <a href="/sluzby/cookie-lista-consent-mode">Cookie lišta a Consent Mode v2</a>.',
     },
     {
       q: 'Co budete potřebovat od našich vývojářů?',
-      a: 'Záleží na stavu datové vrstvy a platformě. Pokud datová vrstva chybí nebo je neúplná, připravíme vývojářům zadání s událostmi nákupu a leadu, nebo upravíme nastavení e-shopové platformy. Pro backendová napojení – Ověřeno zákazníky, Seznam Nákupy a offline konverze – dostanou vývojáři zadání od nás.',
+      a: 'Záleží na stavu datové vrstvy a platformě. Pokud datová vrstva chybí nebo je neúplná, připravíme vývojářům zadání s událostmi nákupu a poptávky, nebo upravíme nastavení e-shopové platformy. Pro backendová napojení – Ověřeno zákazníky, Seznam Nákupy a offline konverze – dostanou vývojáři zadání od nás.',
     },
     {
       q: 'Komu patří účty a jaké přístupy potřebujete?',
-      a: 'Všechny účty – Google Ads, Meta Business, Sklik, Heureka i GTM – zůstávají vaše. Potřebujeme role s oprávněním k úpravám konverzí a značek, nikdy hesla, a nový token nebo datový zdroj vznikne vždy ve vašem účtu. Seznam přístupů dostanete při předání, abyste je mohli kdykoli odebrat.',
+      a: 'Všechny účty – Google Ads, Meta Business, Sklik, Heureka i GTM – zůstávají vaše. Potřebujeme role s oprávněním k úpravám konverzí a tagů, nikdy hesla, a nový token nebo datový zdroj vznikne vždy ve vašem účtu. Seznam přístupů dostanete při předání, abyste je mohli kdykoli odebrat.',
     },
     {
       q: 'Z čeho se skládá cena a jak dlouho to trvá?',
@@ -370,17 +374,17 @@ export const page: PageInput = {
   contact: {
     formId: 'lp-konverze',
     topics: ['konverze'],
-    title: 'Ať reklamní systémy vidí stejné konverze jako vy',
-    lead: 'Na úvodní konzultaci zdarma projdeme, jak objednávky nebo poptávky putují do reklamních systémů, a řekneme, kde je systémy počítají dvakrát a kde je nevidí vůbec.',
+    title: 'Nastavíme, aby reklamní systémy viděly stejné konverze jako vy',
+    lead: 'Na úvodní konzultaci projdeme, jak objednávky nebo poptávky putují do reklamních systémů, a řekneme, kde je systémy počítají dvakrát a kde je nevidí vůbec.',
     placeholder: 'Např. Meta hlásí víc nákupů, než jich máme v administraci…',
     leadType: 'consultation',
   },
 
   schema: {
-    name: 'Měření konverzí pro Google Ads, Meta, Sklik a Heureku',
+    name: 'Měření konverzí pro Google Ads, Metu, Sklik a Heureku',
     serviceType: 'Nastavení a sjednocení měření konverzí v reklamních systémech',
     description:
-      'Nastavení konverzí z jedné datové vrstvy pro Google Ads včetně rozšířených konverzí, Meta Pixel a Conversions API, Seznam Event Measurement pro Sklik a Seznam Nákupy, Heureku s měřením konverzí a Ověřeno zákazníky, TikTok, LinkedIn a Microsoft Ads. Sjednocení hodnot, deduplikace, testovací objednávky a odsouhlasení s backendem.',
+      'Nastavení konverzí z jedné datové vrstvy pro Google Ads včetně rozšířených konverzí, Meta Pixel a Conversions API, Seznam Event Measurement pro Sklik a Seznam Nákupy, Heureku s měřením konverzí a Ověřeno zákazníky, TikTok, LinkedIn a Microsoft Ads. Sjednocení hodnot, deduplikace, testovací objednávky a porovnání s backendem.',
     audience: 'E-shopy, B2B firmy a velké firmy',
   },
 };

@@ -25,7 +25,7 @@ export type SiteSettings = {
 export const DEFAULT_SETTINGS: SiteSettings = {
   recipients: [],
   gtmId: '',
-  phone: '',
+  phone: '+420 704 664 774',
   linkedinUrl: '',
   operatorName: '',
   operatorId: '',

@@ -505,7 +505,7 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
     case 'process':
       return (
         <>
-          <p className="small text-secondary">Kroky upravíte pro celý web v sekci Texty webu → Postup spolupráce.</p>
+          <p className="small text-secondary">Kroky upravíte pro celý web v sekci Texty webu → Postup spolupráce. Tady jen to, co je u této stránky jinak.</p>
           <TextArea
             label="Popis kroku 3 – implementace pro tuto službu (nepovinné)"
             value={block.implementation}
@@ -532,6 +532,25 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
               />
             </div>
           </div>
+          {[0, 1, 3, 4].map((i) => {
+            const own = block.stepOverrides?.[i] ?? {};
+            const setOwn = (patch: { text?: string; fromClient?: string }) => {
+              const list = Array.from({ length: 5 }, (_, j) => block.stepOverrides?.[j] ?? {});
+              list[i] = { ...list[i], ...patch };
+              const clean = list.map((o) => ({ ...(o.text ? { text: o.text } : {}), ...(o.fromClient ? { fromClient: o.fromClient } : {}) }));
+              onChange({ ...block, stepOverrides: clean.some((o) => o.text || o.fromClient) ? clean : undefined });
+            };
+            return (
+              <div className="row g-2" key={i}>
+                <div className="col-md-7">
+                  <TextInput label={`Krok ${i + 1} – vlastní popis (nepovinné)`} value={own.text} onChange={(text) => setOwn({ text: text || undefined })} />
+                </div>
+                <div className="col-md-5">
+                  <TextInput label={`Krok ${i + 1} – od vás (nepovinné)`} value={own.fromClient} onChange={(fromClient) => setOwn({ fromClient: fromClient || undefined })} />
+                </div>
+              </div>
+            );
+          })}
         </>
       );
 

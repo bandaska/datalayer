@@ -13,7 +13,8 @@ import type { PageInput } from '../../schema';
 // vývojářů, šablonu specifikace ke stažení (lead magnet z briefu C1),
 // nasazení datové vrstvy vlastními silami ani odkazy na nástroj dataLayer
 // validátor (/nastroje zatím neexistuje). Klient ještě potvrzuje, že testy
-// v CI a monitoring nabízí (zadání, kap. 6).
+// v CI a monitoring nabízí (zadání, kap. 6). Texty prošly jazykovým auditem
+// z 9. října 2026 (seo-analyza/2026-10-09_jazykovy-audit, kap. 3.6).
 
 const CODE_PURCHASE = `window.dataLayer.push({ ecommerce: null });   // vyčistí předchozí ecommerce objekt
 window.dataLayer.push({
@@ -47,20 +48,20 @@ export const page: PageInput = {
   seo: {
     title: 'Datová vrstva dataLayer – zadání pro vývojáře | datalayer.cz',
     description:
-      'Navrhneme datovou vrstvu (dataLayer) podle schématu GA4 pro e-shop i leady: specifikace, ukázky kódu, automatické testy a podpora IT. Konzultace zdarma.',
+      'Navrhneme datovou vrstvu (dataLayer) podle schématu GA4 pro e-commerce i poptávky: specifikace, ukázky kódu, automatické testy a podpora IT.',
   },
 
   hero: {
-    eyebrow: 'dataLayer · sběr dat',
+    eyebrow: 'dataLayer – sběr dat',
     h1: 'Datová vrstva (dataLayer), které rozumí vývojáři',
     subtitle:
-      'Datová vrstva neboli dataLayer je JavaScriptové pole, do kterého web zapisuje informace o stránce, produktech, objednávkách a akcích návštěvníka. Google Tag Manager z něj bere data pro GA4, Google Ads, Metu i další nástroje. Navrhneme, co přesně má web posílat, napíšeme specifikaci s ukázkami kódu a hotovou implementaci ověříme automatickými testy.',
+      'Datová vrstva neboli dataLayer je javascriptové pole, do kterého web zapisuje informace o stránce, produktech, objednávkách a akcích návštěvníka. Google Tag Manager (GTM) z něj bere data pro GA4, Google Ads, Metu i další nástroje. Navrhneme, co přesně má web posílat, napíšeme specifikaci s ukázkami kódu a hotovou implementaci ověříme automatickými testy.',
     primaryCta: { label: 'Konzultovat datovou vrstvu', href: '#kontakt' },
     secondaryCta: { label: 'Ukázka specifikace', href: '#ukazka' },
-    microcopy: 'Úvodní konzultace zdarma · píšeme pro vývojáře, ne pro marketing · odpovíme do jednoho pracovního dne',
+    microcopy: 'Úvodní konzultace je zdarma a specifikaci píšeme jazykem vývojářů.',
   },
 
-  trust: ['Podle oficiálního schématu GA4', 'Testy poběží v CI vašeho projektu', 'Specifikace a testy patří vám'],
+  trust: ['Podle oficiálního schématu GA4', 'Testy poběží v průběžné integraci (CI) vašeho projektu', 'Specifikace a testy patří vám'],
 
   sections: [
     {
@@ -79,11 +80,11 @@ export const page: PageInput = {
               title: 'Vývojáři nevědí, co nasadit',
               text: 'Zadání „přidejte GA4 e-commerce“ nestačí, protože si ho každý vyloží jinak.',
               pictogram: 'warn',
-              tag: '?spec',
+              tag: 'bez specifikace',
             },
             {
-              title: 'GTM „škrábe“ data ze stránky',
-              text: 'GTM čte cenu a název produktu z HTML a po změně šablony měření tiše přestane fungovat.',
+              title: 'GTM čte data z HTML stránky',
+              text: 'Cenu a název produktu bere z HTML, takže po změně šablony měření bez varování přestane fungovat.',
               pictogram: 'gtm',
               tag: 'querySelector',
             },
@@ -108,13 +109,13 @@ export const page: PageInput = {
       id: 'jak-to-funguje',
       eyebrow: 'diagram',
       title: 'Kde datová vrstva v měření sedí',
-      lead: 'Datová vrstva je smlouva mezi webem a měřením. Web zapisuje data jednou, v jednom formátu, a GTM je překládá pro jednotlivé nástroje.',
+      lead: 'Datová vrstva je dohoda mezi webem a měřením. Web zapisuje data jednou, v jednom formátu, a GTM je překládá pro jednotlivé nástroje.',
       tone: 'dark',
       blocks: [
         {
           type: 'flow',
           caption:
-            'Schéma: backend a šablona webu zapisují do window.dataLayer a Google Tag Manager data předá do GA4, Google Ads, Meta a server-side GTM. Automatické testy kontrolují web při každém nasazení, vratky posílá backend rovnou do GA4.',
+            'Schéma: backend a šablona webu zapisují do window.dataLayer a GTM data předá do GA4, Google Ads, Mety a server-side GTM. Automatické testy kontrolují web při každém nasazení. Vratky posílá backend rovnou do GA4.',
           columns: [
             {
               label: 'Backend',
@@ -122,13 +123,13 @@ export const page: PageInput = {
               note: 'Vratky posílá rovnou do GA4 přes Measurement Protocol.',
             },
             {
-              label: 'Šablona / SPA',
+              label: 'Šablona/SPA',
               items: ['dataLayer.push'],
-              note: 'Automatické testy v CI ji kontrolují při každém nasazení.',
+              note: 'Automatické testy v CI kontrolují datovou vrstvu při každém nasazení.',
             },
-            { label: 'window.dataLayer', items: ['page · user', 'purchase · generate_lead'] },
-            { label: 'Google Tag Manager', items: ['překlad dat pro jednotlivé nástroje'] },
-            { label: 'Nástroje', items: ['GA4', 'Google Ads', 'Meta Pixel', 'server-side GTM → Meta CAPI, Sklik…'] },
+            { label: 'window.dataLayer', items: ['page, user', 'purchase, generate_lead'] },
+            { label: 'GTM', items: ['překlad dat pro jednotlivé nástroje'] },
+            { label: 'Nástroje', items: ['GA4', 'Google Ads', 'Meta Pixel', 'server-side GTM pro Meta Conversions API, Sklik a další'] },
           ],
         },
         {
@@ -147,7 +148,7 @@ export const page: PageInput = {
       id: 'vystupy',
       eyebrow: 'výstupy',
       title: 'Co uděláme a co dostanete',
-      lead: 'Specifikace vychází z měřicího plánu: nejdřív víme, na co se budete ptát, pak navrhujeme data.',
+      lead: 'Specifikace vychází z měřicího plánu: nejdřív zjistíme, na co se budete ptát, pak navrhneme data.',
       tone: 'white',
       blocks: [
         {
@@ -162,7 +163,7 @@ export const page: PageInput = {
             {
               tag: 'datalayer-spec.md',
               title: 'Specifikace datové vrstvy',
-              text: 'Kontext stránky, e-commerce podle schématu GA4, leady, uživatelské atributy a pravidla zápisu s ukázkami kódu.',
+              text: 'Kontext stránky, e-commerce podle schématu GA4, poptávky, uživatelské atributy a pravidla zápisu s ukázkami kódu.',
             },
             {
               tag: 'schema/*.json',
@@ -170,9 +171,9 @@ export const page: PageInput = {
               text: 'Strojově čitelná pravidla pro každou událost: povinné parametry, typy a povolené hodnoty.',
             },
             {
-              tag: 'backlog',
+              tag: 'zadání',
               title: 'Tickety s akceptačními kritérii',
-              text: 'Pro každou událost user story rovnou do Jiry, YouTracku nebo GitLabu.',
+              text: 'Pro každou událost napíšeme user story rovnou do Jiry, YouTracku nebo GitLabu.',
             },
             {
               tag: 'tests/datalayer/',
@@ -180,8 +181,8 @@ export const page: PageInput = {
               text: 'Testy scénářů pro Playwright nebo Cypress, které poběží v CI vašeho projektu.',
             },
             {
-              tag: 'qa-protocol.pdf · gtm',
-              title: 'Protokol z kontroly a nastavení GTM',
+              tag: 'qa-protocol.pdf',
+              title: 'Kontrolní protokol a nastavení GTM',
               text: 'Nálezy z testovacího prostředí a produkce. Proměnné datové vrstvy a tagy v GTM, pokud patří do zakázky.',
             },
           ],
@@ -199,7 +200,7 @@ export const page: PageInput = {
         {
           type: 'table',
           caption: 'Ukázka ze specifikace e-shopu',
-          head: ['Událost', 'Kdy ji web odešle', 'Klíčové parametry'],
+          head: ['Událost', 'Kdy ji web odešle', 'Hlavní parametry'],
           rows: [
             [
               '<em>kontext stránky</em>',
@@ -218,7 +219,7 @@ export const page: PageInput = {
         },
         {
           type: 'paragraphs',
-          items: ['Chcete takovou specifikaci pro svůj web? <a href="#kontakt">Napište nám</a>.'],
+          items: ['Takovou specifikaci připravíme i pro váš web.'],
         },
       ],
     },
@@ -226,7 +227,7 @@ export const page: PageInput = {
     {
       id: 'rozhodnuti',
       eyebrow: 'rozhodnutí',
-      title: 'Scraping, integrace platformy, nebo vlastní datová vrstva?',
+      title: 'Tři způsoby, jak dostat data do GTM',
       lead: 'Vlastní datovou vrstvu nenavrhujeme vždy. Na hotové platformě často stačí doladit mapování v GTM.',
       tone: 'dark',
       blocks: [
@@ -235,7 +236,7 @@ export const page: PageInput = {
           columns: 3,
           items: [
             {
-              tag: 'scraping',
+              tag: 'stránka',
               title: 'Čtení ze stránky v GTM',
               text: 'Vývojáři nic dělat nemusí, GTM ale vidí jen to, co je na stránce, a změna šablony měření rozbije. Hodí se jen dočasně.',
             },
@@ -247,14 +248,14 @@ export const page: PageInput = {
             {
               tag: 'specifikace',
               title: 'Vlastní datová vrstva podle specifikace',
-              text: 'Pokryje celý měřicí plán včetně leadů a pravidel pro DPH a slevy a hlídají ji testy. Pro vlastní řešení, headless a B2B aplikace.',
+              text: 'Pokryje celý měřicí plán včetně poptávek i pravidel pro DPH a slevy; hlídají ji testy. Pro vlastní řešení, headless a B2B aplikace.',
             },
           ],
         },
         {
           type: 'paragraphs',
           items: [
-            '<strong>Na čem je váš web?</strong> U hotových platforem vycházíme z jejich datové vrstvy a doplníme, co chybí, u vlastních řešení a SPA navrhujeme vše od začátku.',
+            '<strong>Záleží na platformě.</strong> U hotových platforem vycházíme z jejich datové vrstvy a doplníme, co chybí; u vlastních řešení a jednostránkových aplikací (SPA) navrhujeme vše od začátku.',
           ],
         },
         {
@@ -278,13 +279,13 @@ export const page: PageInput = {
       id: 'postup',
       eyebrow: 'postup',
       title: 'Jak spolupráce probíhá',
-      lead: 'Stejných pět kroků jako u všech našich služeb. Předáním specifikace nekončíme – s vývojáři pracujeme až do akceptace, ať jde o interní tým, nebo externího dodavatele.',
+      lead: 'Stejných pět kroků jako u všech našich služeb. Předáním specifikace nekončíme – s vývojáři interního týmu i externího dodavatele pracujeme až do akceptace.',
       tone: 'white',
       blocks: [
         {
           type: 'process',
           implementation:
-            'Vývojáři naprogramují datovou vrstvu podle ticketů s akceptačními kritérii, my odpovídáme na dotazy a nastavíme GTM.',
+            'Vývojáři naprogramují datovou vrstvu podle ticketů s akceptačními kritérii; my odpovídáme na dotazy a nastavíme GTM.',
           implementationFromClient: 'kapacita vývoje a přístup k testovacímu prostředí',
         },
         {
@@ -306,7 +307,7 @@ export const page: PageInput = {
               bullets: [
                 'testy scénářů projdou nákup, košík, formulář a přihlášení a porovnají data se schématem',
                 'testy běží v CI při každém nasazení na testovací prostředí',
-                'testovací prostředí zkontrolujeme s protokolem nálezů, po spuštění i produkci',
+                'testovací prostředí zkontrolujeme a sepíšeme protokol nálezů, po spuštění zkontrolujeme i produkci',
                 'volitelně denní monitoring v BigQuery: nákupy bez <code>transaction_id</code>, duplicity a propad událostí',
               ],
             },
@@ -317,7 +318,7 @@ export const page: PageInput = {
   ],
 
   techDetails: {
-    summary: 'Technické detaily: ukázka purchase a akceptační kritéria',
+    summary: 'Ukázka události purchase a akceptační kritéria',
     blocks: [
       { type: 'code', lang: 'js', caption: 'Nákup – purchase', code: CODE_PURCHASE },
       {
@@ -327,7 +328,7 @@ export const page: PageInput = {
         items: [
           'Web událost odešle právě jednou na objednávku, i po obnovení děkovací stránky nebo návratu z platební brány.',
           '<code>transaction_id</code> = číslo objednávky v administraci, typ string.',
-          '<code>value</code> = Σ <code>price</code> × <code>quantity</code>, bez dopravy, s DPH, nebo bez podle dohody.',
+          '<code>value</code> = Σ <code>price</code> × <code>quantity</code>, bez dopravy, s DPH nebo bez DPH podle dohody.',
           'Všechna čísla jsou <code>number</code> s tečkou, ne text s čárkou.',
           'Před pushem proběhne <code>dataLayer.push({ ecommerce: null })</code>.',
           '<code>item_id</code> odpovídá ID ve feedu pro Merchant Center, Heureku a Zboží.',
@@ -351,7 +352,7 @@ export const page: PageInput = {
     },
     {
       q: 'Jak dlouho to trvá?',
-      a: 'Záleží hlavně na rozsahu a na kapacitě vývoje. Specifikace zahrnuje i workshop s vývojáři, tempo implementace, kontroly a spuštění pak určuje hlavně vývojový tým. Rychlejší je zadat datovou vrstvu hned na začátku vývoje nového webu než upravovat hotový web.',
+      a: 'Záleží hlavně na rozsahu a na kapacitě vývoje. Součástí specifikace je i workshop s vývojáři. Tempo implementace, kontroly a spuštění pak určuje hlavně vývojový tým. Rychlejší je zadat datovou vrstvu hned na začátku vývoje nového webu než upravovat hotový web.',
     },
     {
       q: 'Kdo datovou vrstvu naprogramuje?',
@@ -359,7 +360,7 @@ export const page: PageInput = {
     },
     {
       q: 'Neposílá datová vrstva osobní údaje?',
-      a: 'Nesmí. Do datové vrstvy a GA4 nepatří e-mail, jméno, telefon ani adresa v čitelné podobě – uživatele identifikujeme interním ID a pro rozšířené konverze v Google Ads a Meta posíláme jen hash SHA-256, a to až po souhlasu návštěvníka. Marže do prohlížeče neposíláme vůbec, protože jsou vidět ve zdrojovém kódu. Právní posouzení zpracování by měl udělat váš právník.',
+      a: 'Nesmí. Do datové vrstvy a GA4 nepatří e-mail, jméno, telefon ani adresa v čitelné podobě – uživatele identifikujeme interním ID a pro rozšířené konverze v Google Ads a Metě posíláme jen hash SHA-256, a to až po souhlasu návštěvníka. Marže do prohlížeče neposíláme vůbec, protože jsou vidět ve zdrojovém kódu. Právní posouzení zpracování by měl udělat váš právník.',
     },
     {
       q: 'Komu patří specifikace?',
@@ -367,7 +368,7 @@ export const page: PageInput = {
     },
     {
       q: 'Jak poznáme, že datová vrstva funguje?',
-      a: 'Rychlá kontrola: v konzoli prohlížeče napište <code>window.dataLayer</code> a uvidíte všechny objekty, které web zapsal, nebo použijte náhled Google Tag Manageru. Spolehlivě to ale ukážou až automatické testy, které při každém nasazení projdou nákup nebo formulář a porovnají data se specifikací.',
+      a: 'Rychlá kontrola: v konzoli prohlížeče napište <code>window.dataLayer</code> a uvidíte všechny objekty, které web zapsal, nebo použijte náhled GTM. Spolehlivě to ale ukážou až automatické testy, které při každém nasazení projdou nákup nebo formulář a porovnají data se specifikací.',
     },
   ],
 
@@ -383,7 +384,7 @@ export const page: PageInput = {
     formId: 'lp-datalayer',
     topics: ['ga4'],
     title: 'Připravíme zadání datové vrstvy pro vaše vývojáře',
-    lead: 'Na úvodní konzultaci zdarma zjistíme, co web posílá dnes a co bude potřeba přidat.',
+    lead: 'Na úvodní konzultaci zjistíme, co web posílá dnes a co bude potřeba přidat.',
     placeholder: 'Např. vyvíjíme nový e-shop a potřebujeme specifikaci dataLayer…',
     leadType: 'consultation',
   },
@@ -392,7 +393,7 @@ export const page: PageInput = {
     name: 'Datová vrstva (dataLayer)',
     serviceType: 'Návrh a specifikace datové vrstvy pro vývojáře',
     description:
-      'Návrh datové vrstvy podle schématu GA4 pro e-commerce, leady a uživatelské atributy: specifikace s ukázkami kódu, akceptační kritéria, JSON Schema, automatické testy a podpora vývojářů.',
+      'Návrh datové vrstvy podle schématu GA4 pro e-commerce, poptávky a uživatelské atributy: specifikace s ukázkami kódu, akceptační kritéria, JSON Schema, automatické testy a podpora vývojářů.',
     audience: 'E-shopy, vývojové týmy, B2B firmy',
   },
 };

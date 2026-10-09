@@ -66,7 +66,7 @@ export function organizationLd(
     knowsAbout: [
       'Google Analytics 4',
       'Google Tag Manager',
-      'Server-side tagging',
+      'Server-side tracking',
       'Google Consent Mode v2',
       'BigQuery',
       'Měření konverzí',

@@ -7,6 +7,7 @@ import { pushEvent } from '~/lib/dataLayer';
 import type { ArticleTeaser } from '~/lib/cms/loadPage.server';
 import type { RootData } from '~/lib/rootData';
 import { formatDate } from '~/lib/text';
+import { typo, typoHtml } from '~/lib/typo';
 import { Pi } from '../Pictograms';
 
 // Vykreslení obsahových bloků stránky (schéma v app/content/schema.ts).
@@ -17,7 +18,7 @@ import { Pi } from '../Pictograms';
 export type BlockContext = { latest: ArticleTeaser[]; code?: Record<string, string>; sectionTitle?: string };
 
 function Html({ as: Tag = 'span', html, className }: { as?: 'span' | 'p' | 'div' | 'li' | 'td' | 'th' | 'small'; html: string; className?: string }) {
-  return <Tag className={className} dangerouslySetInnerHTML={{ __html: html }} />;
+  return <Tag className={className} dangerouslySetInnerHTML={{ __html: typoHtml(html) }} />;
 }
 
 export function Blocks({ blocks, sectionId, ctx }: { blocks: Block[]; sectionId: string; ctx: BlockContext }) {
@@ -211,7 +212,7 @@ function BlockView({ block, sectionId, index, ctx }: { block: Block; sectionId: 
       return (
         <p>
           <button type="button" className="btn btn-outline-custom" onClick={openConsentSettings}>
-            [ {block.label || 'Změnit nastavení cookies'} ]
+            {block.label || 'Změnit nastavení cookies'}
           </button>
         </p>
       );
@@ -379,7 +380,7 @@ function CardsBlock({ block, sectionId, index }: { block: Extract<Block, { type:
         {block.items.map((c, i) => (
           <article className={c.console?.length ? 'lp-card has-console' : 'lp-card'} key={i}>
             {c.console && c.console.length ? (
-              <pre className="lp-console" aria-label="Ilustrativní ukázka">
+              <pre className="lp-console" aria-label="Ilustrační ukázka">
                 {c.console.map((line, j) => (
                   <span key={j} className={line.trim().startsWith('⚠') ? 'w' : undefined}>
                     {line}
@@ -391,10 +392,14 @@ function CardsBlock({ block, sectionId, index }: { block: Extract<Block, { type:
             {c.pictogram || c.tag ? (
               <div className="lp-card__head">
                 {c.pictogram ? <Pi name={c.pictogram} className="lp-card__pi" /> : null}
-                {c.tag ? <span className="tag">{c.tag}</span> : null}
+                {c.tag ? (
+                  <span className="tag" aria-hidden="true">
+                    {c.tag}
+                  </span>
+                ) : null}
               </div>
             ) : null}
-            <h3 className="lp-card__title">{c.title}</h3>
+            <h3 className="lp-card__title">{typo(c.title)}</h3>
             {c.text ? <Html as="div" className="lp-card__text" html={c.text} /> : null}
             {c.bullets && c.bullets.length ? (
               <ul className="lp-card__bullets">
@@ -419,7 +424,6 @@ function CardsBlock({ block, sectionId, index }: { block: Extract<Block, { type:
                 onClick={() => pushEvent('cta_click', { cta_id: `${sectionId}_${index}_${i}`, cta_text: c.link!.label, section: sectionId })}
               >
                 {c.link.label}
-                {'\u00a0→'}
               </a>
             ) : null}
           </article>
@@ -463,12 +467,12 @@ function StepsBlock({ block }: { block: Extract<Block, { type: 'steps' }> }) {
             <div className="lp-step__meta">
               {s.output ? (
                 <p className="lp-step__out">
-                  <span className="lp-step__label">výstup:</span> {s.output}
+                  <span className="lp-step__label">Výstup:</span> {s.output}
                 </p>
               ) : null}
               {s.fromClient ? (
                 <p className="lp-step__client">
-                  <span className="lp-step__label">od vás:</span> {s.fromClient}
+                  <span className="lp-step__label">Od vás:</span> {s.fromClient}
                 </p>
               ) : null}
               {s.duration ? <p className="lp-step__dur">{s.duration}</p> : null}
@@ -488,8 +492,9 @@ function ProcessBlock({ block }: { block: Extract<Block, { type: 'process' }> })
   return (
     <ol className="lp-process">
       {proc.steps.map((st, i) => {
-        const text = i === 2 && block.implementation ? block.implementation : st.text;
-        const fromClient = i === 2 && block.implementationFromClient ? block.implementationFromClient : st.fromClient;
+        const own = block.stepOverrides?.[i];
+        const text = own?.text || (i === 2 && block.implementation) || st.text;
+        const fromClient = own?.fromClient || (i === 2 && block.implementationFromClient) || st.fromClient;
         const extra = detail === 'output' ? st.output : fromClient;
         return (
           <li className="lp-process__step" key={i}>
@@ -498,7 +503,7 @@ function ProcessBlock({ block }: { block: Extract<Block, { type: 'process' }> })
             <Html as="p" className="lp-process__text" html={text} />
             {extra ? (
               <span className="lp-process__extra">
-                {detail === 'output' ? 'výstup' : 'od vás'}: {extra}
+                <span className="lp-process__label">{detail === 'output' ? 'Výstup:' : 'Od vás:'}</span> {extra}
               </span>
             ) : null}
           </li>

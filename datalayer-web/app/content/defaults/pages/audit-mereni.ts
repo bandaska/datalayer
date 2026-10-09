@@ -10,8 +10,11 @@ import type { PageInput } from '../../schema';
 // článek H2. Dokud klient nedodá podklady, stránka neobsahuje případovou
 // studii, počet auditů, délky kroků ani celkovou délku auditu, počet
 // kontrol, termín a kapacitu rychlé kontroly ani ukázkový PDF report.
-// Rychlá kontrola zdarma nemá vlastní formulář – obě karty vedou na jeden
+// Rychlá kontrola nemá vlastní formulář – obě karty vedou na jeden
 // formulář (leadType audit).
+// Texty prošly jazykovým auditem z 9. října 2026 (seo-analyza/2026-10-09_jazykovy-audit,
+// kap. 3.12): „souhlas“ místo „consent“, bezplatnost rychlé kontroly jen
+// v tlačítku hero a ve FAQ o ceně, postup s výchozími kroky.
 
 export const page: PageInput = {
   path: 'sluzby/audit-mereni',
@@ -22,19 +25,19 @@ export const page: PageInput = {
   menuGroup: 'audity',
 
   seo: {
-    title: 'Audit měření – GA4, GTM, consent a konverze | datalayer.cz',
+    title: 'Audit měření – GA4, GTM, souhlas a konverze | datalayer.cz',
     description:
-      'Nevěříte číslům v GA4? Audit měření prověří GA4, GTM, souhlas i konverze v Ads a Meta a porovná je s e-shopem. Nálezy s prioritou A/B/C. Kontrola zdarma.',
+      'Nevěříte číslům v GA4? Audit měření prověří GA4, GTM, souhlas i konverze v Google Ads a Metě a porovná je s e-shopem. Nálezy s prioritou A, B a C.',
   },
 
   hero: {
-    eyebrow: 'audity · audit měření',
-    h1: 'Audit měření: GA4, GTM, consent a konverze',
+    eyebrow: 'audity a správa',
+    h1: 'Audit měření GA4, GTM, souhlasu a konverzí',
     subtitle:
-      'Audit měření je nezávislá kontrola, jestli analytická a reklamní data odpovídají skutečnosti. Prověříme GA4, Google Tag Manager, souhlas návštěvníků a konverze v Google Ads, Metě a Skliku a porovnáme je s objednávkami v administraci nebo leady v CRM. Nálezy seřadíme podle dopadu a navrhneme plán oprav.',
+      'Audit měření je nezávislá kontrola, jestli analytická a reklamní data odpovídají skutečnosti. Prověříme GA4, Google Tag Manager (GTM), souhlas návštěvníků a konverze v Google Ads, Metě a Skliku a porovnáme je s objednávkami v administraci nebo poptávkami v CRM. Nálezy seřadíme podle dopadu a navrhneme plán oprav.',
     primaryCta: { label: 'Objednat audit měření', href: '#kontakt' },
     secondaryCta: { label: 'Rychlá kontrola zdarma', href: '#rychla-kontrola' },
-    microcopy: 'Přístupy jen pro čtení · NDA na požádání · report vlastníte vy',
+    microcopy: 'Stačí přístupy pro čtení, dohodu o mlčenlivosti (NDA) podepíšeme na požádání',
   },
 
   trust: ['Testovací nákupy a formuláře', 'Porovnání s administrací nebo CRM', 'Nálezy s prioritou A, B a C'],
@@ -44,7 +47,7 @@ export const page: PageInput = {
       id: 'symptomy',
       eyebrow: 'kdy audit',
       title: 'Poznáváte se?',
-      lead: 'Audit se vyplatí, když čísla přestanou dávat smysl, nebo těsně před velkou změnou.',
+      lead: 'Audit se vyplatí, když čísla přestanou sedět nebo když chystáte velkou změnu.',
       tone: 'light',
       blocks: [
         {
@@ -62,19 +65,19 @@ export const page: PageInput = {
               title: 'Po nové cookie liště spadly konverze',
               text: 'Propad o desítky procent přišel hned po nasazení lišty nebo po změně jejího nastavení.',
               pictogram: 'consent',
-              tag: 'consent',
+              tag: 'souhlas',
             },
             {
               title: 'Měníte agenturu nebo přebíráte web',
               text: 'Potřebujete vědět, co přebíráte: kdo má přístupy, jak vypadá nastavení a co nefunguje.',
               pictogram: 'gtm',
-              tag: 'handover',
+              tag: 'předání',
             },
             {
-              title: 'Chystáte redesign, migraci nebo server-side',
+              title: 'Chystáte redesign, migraci nebo server-side měření',
               text: 'Než postavíte nové měření, je dobré vědět, které chyby nepřenést.',
               pictogram: 'serverside',
-              tag: 'migration',
+              tag: 'migrace',
             },
           ],
         },
@@ -94,20 +97,20 @@ export const page: PageInput = {
           items: [
             {
               id: 'ga4',
-              label: 'A · GA4',
+              label: 'A – GA4',
               paragraphs: ['Při auditu Google Analytics 4 procházíme hlavně:'],
               bullets: [
-                'vlastnictví účtu a property, role, přístupy a retenci dat',
-                'filtry interní návštěvnosti a nežádoucí referraly, typicky platební brány',
+                'vlastnictví účtu a property, role, přístupy a dobu uchovávání dat',
+                'filtry interní návštěvnosti a nežádoucí referraly, obvykle platební brány',
                 'klíčové události a e-commerce: <code>transaction_id</code>, hodnotu, měnu a duplicity',
                 'podíl <code>(not set)</code>, UTM, kanály a propojení s Google Ads a BigQuery',
               ],
             },
             {
               id: 'gtm',
-              label: 'B · GTM a další kódy',
+              label: 'B – GTM a další kódy',
               paragraphs: [
-                'Potřebujete jen kontrolu kontejneru? Samostatný audit GTM popisuje stránka <a href="/sluzby/google-tag-manager">Google Tag Manager</a>.',
+                'Když potřebujete jen kontrolu kontejneru, samostatný audit GTM popisuje stránka <a href="/sluzby/google-tag-manager">Google Tag Manager</a>.',
               ],
               bullets: [
                 'inventura tagů, spouštěčů a proměnných, duplicity a nepoužívané položky',
@@ -118,42 +121,42 @@ export const page: PageInput = {
             },
             {
               id: 'souhlas',
-              label: 'C · Souhlas a cookies',
+              label: 'C – Souhlas a cookies',
               paragraphs: [
-                'Jde o technickou kontrolu, ne o právní posouzení. Technickou nápravu řeší služba <a href="/sluzby/cookie-lista-consent-mode">Cookie lišta a Consent Mode v2</a>.',
+                'Jde o technickou kontrolu, ne o právní posouzení. Technickou nápravu řeší služba <a href="/sluzby/cookie-lista-consent-mode">Cookie lišta a Consent Mode</a>.',
               ],
               bullets: [
                 'co web načte a jaké cookies vzniknou <strong>před</strong> souhlasem',
                 'Consent Mode v2: výchozí stav a aktualizace všech čtyř signálů',
                 'jestli web respektuje odmítnutí, změnu volby a odvolání souhlasu',
-                'stav consent mode v diagnostice Google Ads a v nastavení GA4',
+                'stav Consent Mode v diagnostice Google Ads a v nastavení GA4',
               ],
             },
             {
               id: 'reklamni-systemy',
-              label: 'D · Reklamní systémy',
+              label: 'D – Reklamní systémy',
               bullets: [
-                '<strong>Google Ads:</strong> tag, nebo import z GA4, primární akce, hodnoty, duplicity a rozšířené konverze',
+                '<strong>Google Ads:</strong> tag nebo import z GA4, primární akce, hodnoty, duplicity a rozšířené konverze',
                 '<strong>Meta:</strong> Pixel a Conversions API, deduplikace přes <code>event_id</code>, Event Match Quality',
-                '<strong>Sklik a Seznam:</strong> konverzní a retargetingový kód vs. nový Seznam Event Measurement',
+                '<strong>Sklik:</strong> konverzní a retargetingový kód vs. nový Seznam Event Measurement',
                 '<strong>Heureka, Zboží.cz, TikTok a LinkedIn</strong> podle toho, co používáte',
               ],
             },
             {
               id: 'administrace',
-              label: 'E · Shoda s administrací',
+              label: 'E – Shoda s administrací',
               bullets: [
                 'objednávky a tržby po dnech: GA4 vs. administrace za třicet až devadesát dní',
-                'rozpad podle platební metody, zařízení, prohlížeče a země – tam chyby vyplavou',
-                'u B2B formuláře v GA4 vs. poptávky v CRM a předávání <code>gclid</code>',
-                'kolik rozdílu čekáme kvůli souhlasu, blokaci a stornům a kolik je chyba',
+                'členění podle platební metody, zařízení, prohlížeče a země – tam chyby vyplavou',
+                'u B2B: formuláře v GA4 vs. poptávky v CRM a předávání <code>gclid</code>',
+                'jakou část rozdílu vysvětlí souhlas, blokace a storna a jaká část je chyba',
               ],
             },
             {
               id: 'datova-vrstva',
-              label: 'F · Datová vrstva a technika',
+              label: 'F – Datová vrstva a technika',
               bullets: [
-                'struktura datové vrstvy vs. schéma GA4, časování pushů a SPA',
+                'struktura datové vrstvy vs. schéma GA4, časování pushů a jednostránkové aplikace (SPA)',
                 'server-side GTM, pokud ho máte: deduplikace, first-party cookies, Google Tag Gateway',
                 '<strong>testovací nákupy:</strong> kartou s návratem z brány, převodem, na dobírku a s kupónem',
                 '<strong>další scénáře:</strong> obnovení děkovací stránky, formuláře, přihlášení a volba v cookie liště',
@@ -183,7 +186,7 @@ export const page: PageInput = {
             {
               tag: 'remediation-plan.xlsx',
               title: 'Plán oprav',
-              text: 'Pořadí A → B → C, závislosti a kdo co opraví – třeba „nejdřív datová vrstva, pak tagy“.',
+              text: 'Pořadí podle priorit A, B a C, závislosti a kdo co opraví – třeba „nejdřív datová vrstva, pak tagy“.',
             },
             {
               tag: 'reconciliation.xlsx',
@@ -191,13 +194,13 @@ export const page: PageInput = {
               text: 'GA4 vs. administrace nebo CRM vs. reklamní systémy, s vysvětlením každého rozdílu.',
             },
             {
-              tag: 'gtm-inventory.xlsx · qa-protocol.pdf',
+              tag: 'gtm-inventory.xlsx, qa-protocol.pdf',
               title: 'Inventura GTM a protokol testů',
-              text: 'Všechny tagy s doporučením ponechat, upravit, nebo smazat a výsledky testovacích scénářů se screenshoty.',
+              text: 'Všechny tagy s doporučením ponechat, upravit, nebo smazat a výsledky testovacích scénářů se snímky obrazovky.',
             },
             {
-              tag: 'meeting',
-              title: 'Šedesátiminutová prezentace',
+              tag: 'schůzka',
+              title: 'Prezentace výsledků',
               text: 'Nálezy projdeme s marketingem, vývojem a vedením.',
             },
           ],
@@ -207,9 +210,9 @@ export const page: PageInput = {
 
     {
       id: 'rychla-kontrola',
-      eyebrow: 'kontrola zdarma',
-      title: 'Rychlá kontrola zdarma, nebo celý audit?',
-      lead: 'Nevíte, jestli audit potřebujete? Začněte rychlou kontrolou – ve formuláři stačí adresa webu a do zprávy napište „Rychlá kontrola měření“.',
+      eyebrow: 'rychlá kontrola',
+      title: 'Kdy stačí rychlá kontrola a kdy celý audit',
+      lead: 'Když nevíte, jestli audit potřebujete, začněte rychlou kontrolou – ve formuláři stačí adresa webu a do zprávy napište „Rychlá kontrola měření“.',
       tone: 'light',
       blocks: [
         {
@@ -217,13 +220,13 @@ export const page: PageInput = {
           columns: 2,
           items: [
             {
-              tag: 'zdarma',
-              title: 'Rychlá kontrola zdarma',
-              text: 'Podíváme se na web zvenku, bez přístupů, a tři až pět nejvýraznějších nálezů pošleme e-mailem nebo probereme na dvacetiminutovém hovoru.',
+              tag: 'bez přístupů',
+              title: 'Rychlá kontrola',
+              text: 'Podíváme se na web zvenku a tři až pět nejvýraznějších nálezů pošleme e-mailem, nebo je probereme v krátkém hovoru.',
               bullets: [
                 'tagy a cookies před souhlasem, stav Consent Mode',
                 'duplicity GTM a Google tagu, reklamní pixely',
-                'e-commerce události na produktu a v košíku, hrubý dopad na rychlost',
+                'události e-commerce na produktu a v košíku, hrubý dopad na rychlost',
                 'nákup, účty ani shodu s administrací nekontrolujeme',
               ],
               link: { label: 'Chci rychlou kontrolu', href: '#kontakt' },
@@ -249,7 +252,7 @@ export const page: PageInput = {
       id: 'postup',
       eyebrow: 'postup',
       title: 'Jak audit probíhá',
-      lead: 'Audit je první z pěti kroků, které platí pro všechny naše služby. Data ze všech systémů svedeme do jednoho porovnání a každý rozdíl buď vysvětlíme, nebo z něj uděláme nález. Od vás potřebujeme přístupy pro čtení, export objednávek nebo leadů bez osobních údajů a možnost testovacího nákupu.',
+      lead: 'Audit je první z pěti kroků, které platí pro všechny naše služby. Data ze všech systémů svedeme do jednoho porovnání a každý rozdíl buď vysvětlíme, nebo z něj uděláme nález. Od vás potřebujeme přístupy pro čtení, export objednávek nebo poptávek bez osobních údajů a možnost testovacího nákupu.',
       tone: 'white',
       blocks: [
         {
@@ -264,37 +267,37 @@ export const page: PageInput = {
       id: 'ukazka-reportu',
       eyebrow: 'ukázka – fiktivní data',
       title: 'Jak vypadá report z auditu',
-      lead: 'Výřez z tabulky nálezů. V reportu má každý nález i důkaz, doporučení, pracnost a toho, kdo ho opraví.',
+      lead: 'Výřez z tabulky nálezů. U každého nálezu v reportu najdete důkaz, doporučení, pracnost a to, kdo ho opraví.',
       tone: 'dark',
-      note: 'Fiktivní data. Priorita A: opravit do dvou týdnů · B: do jednoho až dvou měsíců · C: podle kapacity.',
+      note: 'Fiktivní data. Priorita A znamená opravit do dvou týdnů, B do jednoho až dvou měsíců, C podle kapacity.',
       blocks: [
         {
           type: 'cards',
           columns: 3,
           items: [
             {
-              tag: 'A1 · datová vrstva',
+              tag: 'A1 – datová vrstva',
               title: 'Web po návratu z brány neodešle nákup',
               text: 'GA4 nevidí šestnáct procent plateb kartou a kampaně vypadají hůř.',
             },
             {
-              tag: 'A2 · souhlas',
+              tag: 'A2 – souhlas',
               title: 'Meta Pixel běží před volbou v cookie liště',
-              text: 'Data bez souhlasu a možný rozpor s § 89 odst. 3 ZEK, který by měl posoudit právník.',
+              text: 'Data bez souhlasu a možný rozpor s § 89 odst. 3 zákona o elektronických komunikacích – ten by měl posoudit právník.',
             },
             {
-              tag: 'A3 · Google Ads',
+              tag: 'A3 – Google Ads',
               title: 'Google Ads počítá nákup dvakrát',
               text: 'Import z GA4 i tag Google Ads jako primární akce nadhodnotí konverze a zkreslí optimalizaci nabídek.',
             },
             {
-              tag: 'B2 · GA4',
+              tag: 'B2 – GA4',
               title: 'Platební brány jako referral',
               text: 'GA4 přepíše zdroj nákupu na platební bránu.',
             },
             {
-              tag: 'C1 · GTM',
-              title: '37 nepoužívaných tagů bez názvosloví',
+              tag: 'C1 – GTM',
+              title: 'Sedmatřicet nepoužívaných tagů a chybějící pravidla pojmenování',
               text: 'Pomalejší správa kontejneru a vyšší riziko chyb.',
             },
           ],
@@ -304,7 +307,7 @@ export const page: PageInput = {
   ],
 
   techDetails: {
-    summary: 'Technické detaily: struktura reportu, priority a přístupy k auditu',
+    summary: 'Struktura reportu, priority a potřebné přístupy',
     blocks: [
       {
         type: 'list',
@@ -313,7 +316,7 @@ export const page: PageInput = {
         items: [
           '<strong>Manažerské shrnutí</strong> na jedné straně: stav šesti oblastí, pět nejdůležitějších nálezů a odhad dopadu na rozhodování.',
           '<strong>Rozsah a metodika:</strong> co jsme kontrolovali, období dat a testovací scénáře.',
-          '<strong>Nálezy podle oblastí:</strong> popis, důkaz v podobě screenshotu nebo síťového požadavku, dopad, doporučení, priorita, pracnost a kdo opraví.',
+          '<strong>Nálezy podle oblastí:</strong> popis, důkaz v podobě snímku obrazovky nebo síťového požadavku, dopad, doporučení, priorita, pracnost a kdo opraví.',
           '<strong>Porovnání čísel</strong> GA4, administrace nebo CRM a reklamních systémů s vysvětlením rozdílů.',
           '<strong>Plán oprav</strong> s pořadím, odhadem pracnosti a závislostmi.',
           '<strong>Přílohy:</strong> inventura GTM, seznam cookies a požadavků před souhlasem a po něm, protokol testovacích scénářů.',
@@ -324,9 +327,9 @@ export const page: PageInput = {
         style: 'bullet',
         title: 'Co znamenají priority',
         items: [
-          '<strong>A – kritické:</strong> chyby v datech vedou ke špatným rozhodnutím nebo optimalizaci kampaní, případně hrozí právní či smluvní riziko kvůli souhlasu, osobním údajům nebo pravidlům Googlu.',
+          '<strong>A – kritické:</strong> chyby v datech vedou ke špatným rozhodnutím nebo špatné optimalizaci kampaní, případně hrozí právní či smluvní riziko kvůli souhlasu, osobním údajům nebo pravidlům Googlu.',
           '<strong>B – důležité:</strong> data mají mezery nebo zkreslení a omezují analýzu, hlavní čísla ale zůstávají použitelná.',
-          '<strong>C – doporučení:</strong> údržba, přehlednost a rozvoj, třeba názvosloví, BigQuery nebo dokumentace.',
+          '<strong>C – doporučení:</strong> údržba, přehlednost a rozvoj, třeba pravidla pojmenování, BigQuery nebo dokumentace.',
         ],
       },
       {
@@ -336,14 +339,14 @@ export const page: PageInput = {
         rows: [
           ['GA4', 'roli Čtenář na úrovni property', 'nastavení a data, metriky tržeb neomezujte'],
           ['Google Tag Manager', 'oprávnění Číst, nebo export kontejneru', 'inventura tagů'],
-          ['Google Ads', 'přístup Jen pro čtení', 'konverzní akce, diagnostika consent mode'],
+          ['Google Ads', 'přístup Jen pro čtení', 'konverzní akce, diagnostika Consent Mode'],
           ['Meta Business', 'zobrazení datové sady v Events Manageru', 'deduplikace, kvalita párování'],
-          ['Sklik a Seznam', 'přístup k účtu jen pro čtení', 'konverze, Seznam Event Measurement'],
-          ['Search Console', 'omezený uživatel', 'propojení s GA4'],
-          ['Cookie lišta, tedy CMP', 'čtení v administraci, pokud CMP používáte', 'kategorie a signály'],
+          ['Sklik', 'přístup k účtu jen pro čtení', 'konverze, Seznam Event Measurement'],
+          ['Search Console', 'omezeného uživatele', 'propojení s GA4'],
+          ['Cookie lišta, tedy nástroj pro správu souhlasů (CMP)', 'čtení v administraci, pokud ho používáte', 'kategorie a signály'],
           ['Administrace e-shopu', 'export objednávek bez osobních údajů: číslo, datum a čas, hodnota s DPH i bez, doprava, platba, stav', 'porovnání čísel'],
-          ['CRM u B2B', 'export leadů bez osobních údajů: ID, datum, zdroj, stav', 'porovnání formulářů a leadů'],
-          ['Testovací nákup', 'slevový kód na celou částku nebo testovací platební metoda a možnost storna', 'testovací scénáře'],
+          ['CRM u B2B', 'export poptávek bez osobních údajů: ID, datum, zdroj, stav', 'porovnání formulářů a poptávek'],
+          ['Testovací nákup', 'slevový kód na celou částku nebo testovací platební metodu a možnost storna', 'testovací scénáře'],
         ],
       },
     ],
@@ -360,7 +363,7 @@ export const page: PageInput = {
     },
     {
       q: 'Jaké přístupy potřebujete a je to bezpečné?',
-      a: 'Stačí přístupy pro čtení: role Čtenář v GA4, oprávnění Číst v Tag Manageru, přístup Jen pro čtení v Google Ads a obdobně v Metě a Skliku. Nic neměníme a od e-shopu potřebujeme export objednávek <strong>bez osobních údajů zákazníků</strong>. Na požádání podepíšeme NDA a po auditu doporučíme přístupy odebrat. Úplný seznam najdete v Technických detailech.',
+      a: 'Stačí přístupy pro čtení: role Čtenář v GA4, oprávnění Číst v GTM, přístup Jen pro čtení v Google Ads a obdobně v Metě a Skliku. Nic neměníme a od e-shopu potřebujeme export objednávek <strong>bez osobních údajů zákazníků</strong>. Na požádání podepíšeme NDA a po auditu doporučíme přístupy odebrat. Úplný seznam najdete v Technických detailech.',
     },
     {
       q: 'Posoudíte i právní stránku cookie lišty?',
@@ -368,18 +371,18 @@ export const page: PageInput = {
     },
     {
       q: 'Kdo nálezy opraví – vy, nebo naši vývojáři?',
-      a: 'Jak chcete. Report píšeme tak, aby podle něj mohl opravy udělat kdokoli: váš vývojář, agentura, nebo my. Nálezy v GTM, GA4 a consentu většinou opravujeme sami, úpravy datové vrstvy připravíme jako zadání pro vývojáře a jejich práci zkontrolujeme.',
+      a: 'Jak chcete. Report píšeme tak, aby podle něj mohl opravy udělat kdokoli: váš vývojář, agentura, nebo my. Nálezy v GTM, GA4 a nastavení souhlasu většinou opravujeme sami, úpravy datové vrstvy připravíme jako zadání pro vývojáře a jejich práci zkontrolujeme.',
     },
     {
       q: 'Jak velký rozdíl mezi GA4 a e-shopem je normální?',
-      a: 'Pevné číslo neexistuje – záleží na podílu návštěvníků, kteří odmítnou souhlas, na blokování měření v prohlížečích a na stornech. Důležitější než velikost rozdílu je, zda je stabilní a vysvětlitelný. Když se rozdíl liší podle platební metody nebo prohlížeče, jde téměř jistě o chybu, proto v auditu porovnáváme čísla v tomto rozpadu.',
+      a: 'Pevné číslo neexistuje – záleží na podílu návštěvníků, kteří odmítnou souhlas, na blokování měření v prohlížečích a na stornech. Důležitější než velikost rozdílu je, zda je stabilní a vysvětlitelný. Když se rozdíl liší podle platební metody nebo prohlížeče, jde téměř jistě o chybu, proto v auditu porovnáváme čísla v tomto členění.',
     },
   ],
 
   relatedArticles: [
     { slug: 'co-obsahuje-audit-mereni', title: 'Co má obsahovat audit měření' },
-    { slug: 'proc-nesedi-data', title: 'Proč nesedí čísla v GA4, Ads a e-shopu' },
-    { slug: 'ga4-checklist-kvality-dat', title: 'Checklist kvality dat v GA4' },
+    { slug: 'proc-nesedi-data', title: 'Proč nesedí čísla v GA4, Google Ads a e-shopu' },
+    { slug: 'ga4-checklist-kvality-dat', title: 'Kontrolní seznam kvality dat v GA4' },
   ],
 
   relatedPages: ['sluzby/implementace-ga4', 'sluzby/mereni-konverzi', 'sluzby/sprava-webu-a-mereni'],
@@ -387,7 +390,7 @@ export const page: PageInput = {
   contact: {
     formId: 'lp-audit',
     topics: ['audit'],
-    title: 'Zjistěte, kde utíkají data',
+    title: 'Zjistíme, kde utíkají data',
     lead: 'Pošlete adresu webu a krátce popište, co nesedí. Ozveme se s návrhem rozsahu, nebo rovnou s výsledkem rychlé kontroly.',
     placeholder: 'Např. nevěříme číslům v GA4 a chceme vědět, kde je chyba…',
     leadType: 'audit',
@@ -397,7 +400,7 @@ export const page: PageInput = {
     name: 'Audit měření',
     serviceType: 'Audit webové analytiky a měření konverzí',
     description:
-      'Nezávislá kontrola GA4, Google Tag Manageru, souhlasu návštěvníků v Consent Mode v2 a konverzí v Google Ads, Meta a Skliku, kterou porovnáme s administrací e-shopu nebo CRM. Výsledek tvoří report s nálezy podle priority A, B a C a plán oprav.',
+      'Nezávislá kontrola GA4, Google Tag Manageru, souhlasu návštěvníků v Consent Mode v2 a konverzí v Google Ads, Metě a Skliku; čísla porovnáme s administrací e-shopu nebo CRM. Výsledek tvoří report s nálezy podle priority A, B a C a plán oprav.',
     audience: 'E-shopy, B2B firmy, velké firmy',
   },
 };

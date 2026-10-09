@@ -12,8 +12,9 @@ import { CONTACT_EMAIL, SITE_NAME } from '~/lib/site';
 import { phoneHref } from '~/lib/settings';
 
 // Nativní kontaktní blok (náhrada HubSpotu) podle vzoru annanovotna.cz, kompaktní
-// verze z vyhodnocení webu: vlevo výzva, kanály, osoba a co se stane po odeslání,
-// vpravo formulář se sedmi tématy a rozbalitelným telefonem a webem.
+// verze z vyhodnocení webu: vlevo výzva, kanály, volitelně osoba a co se stane po
+// odeslání, vpravo formulář jako světlá karta – všechna pole viditelná, telefon a web
+// nepovinné, sedm témat.
 // Bez JS funguje klasický POST na /api/kontakt (→ /dekujeme), s JS odešle
 // fetch, ukáže stav a pošle do dataLayeru lead_form_start / lead_form_error /
 // generate_lead (s SHA-256 hashi e-mailu a telefonu, nikdy čitelné údaje).
@@ -87,7 +88,7 @@ export function ContactBlock({
     loadTurnstile()
       .then((t) => {
         if (cancelled || !turnstileRef.current || widgetId.current) return;
-        widgetId.current = t.render(turnstileRef.current, { sitekey: siteKey, theme: 'dark', language: 'cs' });
+        widgetId.current = t.render(turnstileRef.current, { sitekey: siteKey, theme: 'light', language: 'cs' });
       })
       .catch(() => {});
     return () => {
@@ -212,7 +213,7 @@ export function ContactBlock({
       <span id="contact-form" />
       <div className="dl-contact__grid">
         <div className="dl-contact__intro">
-          <p className="eyebrow">[ {t.eyebrow} ]</p>
+          <p className="eyebrow">{t.eyebrow}</p>
           <h2>{title || t.defaultTitle}</h2>
           <p className="dl-contact__lead">{lead || defaultLead}</p>
           {compact ? null : (
@@ -328,6 +329,16 @@ export function ContactBlock({
               ) : null}
             </label>
           </div>
+          <div className="dl-form__row">
+            <label>
+              Telefon <span className="opt">(nepovinné)</span>
+              <input type="tel" name="telefon" autoComplete="tel" placeholder="+420" maxLength={40} />
+            </label>
+            <label>
+              Web <span className="opt">(nepovinné)</span>
+              <input type="text" name="web" inputMode="url" autoComplete="url" placeholder="www.vas-web.cz" maxLength={200} />
+            </label>
+          </div>
           <fieldset className="dl-topics">
             <legend>
               Co řešíte? <span className="opt">(nepovinné)</span>
@@ -352,26 +363,12 @@ export function ContactBlock({
             ) : null}
           </label>
 
-          <details className="dl-form__more">
-            <summary>{t.moreFields ?? '+ Přidat telefon a web (nepovinné)'}</summary>
-            <div className="dl-form__row">
-              <label>
-                Telefon <span className="opt">(nepovinné)</span>
-                <input type="tel" name="telefon" autoComplete="tel" placeholder="+420" maxLength={40} />
-              </label>
-              <label>
-                Web <span className="opt">(nepovinné)</span>
-                <input type="text" name="web" inputMode="url" autoComplete="url" placeholder="www.vas-web.cz" maxLength={200} />
-              </label>
-            </div>
-          </details>
-
           {siteKey ? <div className="dl-form__turnstile" ref={turnstileRef} /> : null}
 
           <p className="dl-form__legal" dangerouslySetInnerHTML={{ __html: t.legal }} />
 
           <button type="submit" className="dl-btn" disabled={sending}>
-            [ {t.submit} ]
+            {t.submit}
           </button>
           <p className={note?.error ? 'dl-form__note is-err' : 'dl-form__note'} role="status" aria-live="polite">
             {note ? note.text : t.note}

@@ -1,4 +1,5 @@
 import { Timestamp } from '@google-cloud/firestore';
+import { DEFAULT_PAGES } from '~/content/defaults';
 import { pageSchema, type PageInput } from '~/content/schema';
 import { pageToDoc } from '~/lib/cms/codec';
 import { pageIdFromPath } from '~/lib/cms/ids';
@@ -82,4 +83,66 @@ export function replaceAll(text: string, replacements: [from: string, to: string
     }
   }
   return { text: out, count };
+}
+
+/** Porovnatelný tvar dokumentu: bez metadat, klíče seřazené, bez prázdných hodnot (Firestore je neukládá). */
+function comparable(doc: Record<string, unknown>): string {
+  const norm = (v: unknown): unknown => {
+    if (Array.isArray(v)) return v.map(norm);
+    if (v instanceof Timestamp) return v.toMillis();
+    if (typeof v === 'object' && v !== null) {
+      return Object.fromEntries(
+        Object.entries(v)
+          .filter(([, x]) => x !== undefined)
+          .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+          .map(([k, x]) => [k, norm(x)]),
+      );
+    }
+    return v;
+  };
+  const { updatedAt: _at, updatedBy: _by, ...content } = doc;
+  return JSON.stringify(norm(content));
+}
+
+/**
+ * Přepíše výchozí stránky v databázi zněním z kódu (app/content/defaults), pokud se
+ * liší. Původní dokument předtím uloží do `pages_backup/<id>@<migrationId>`, stav
+ * Zveřejněná a noindex převezme z databáze, smazanou stránku znovu nezaloží.
+ * Idempotentní – shodnou stránku přeskočí. Vrací počty pro souhrn migrace.
+ */
+export async function syncPagesWithDefaults(
+  ctx: MigrationContext,
+  migrationId: string,
+): Promise<{ updated: number; edited: number; same: number; missing: string[] }> {
+  const db = ctx.firestore();
+  const now = Timestamp.now();
+  const result = { updated: 0, edited: 0, same: 0, missing: [] as string[] };
+  for (const input of DEFAULT_PAGES) {
+    const id = pageIdFromPath(input.path);
+    const ref = db.collection('pages').doc(id);
+    const snap = await ref.get();
+    const current = snap.exists ? (snap.data() ?? {}) : null;
+    if (!current || !current.hero) {
+      result.missing.push(input.path || '(homepage)');
+      continue;
+    }
+    const page = sanitizePage(
+      pageSchema.parse({
+        ...input,
+        published: typeof current.published === 'boolean' ? current.published : true,
+        noindex: typeof current.noindex === 'boolean' ? current.noindex : (input.noindex ?? false),
+      }),
+    );
+    const next = pageToDoc(page, 'migrace', now);
+    if (comparable(current) === comparable(next)) {
+      result.same++;
+      continue;
+    }
+    const backup = db.collection('pages_backup').doc(`${id}@${migrationId}`);
+    if (!(await backup.get()).exists) await backup.set({ ...current, backedUpAt: now, backedUpBy: migrationId });
+    await ref.set(next);
+    result.updated++;
+    if (current.updatedBy !== 'migrace') result.edited++;
+  }
+  return result;
 }
