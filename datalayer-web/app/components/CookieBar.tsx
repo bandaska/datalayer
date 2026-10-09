@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router';
+import { useRouteLoaderData } from 'react-router';
+import { DEFAULT_TEXTS } from '~/content/defaults/texts';
+import type { RootData } from '~/lib/rootData';
 import { OPEN_CONSENT_EVENT, readConsent, saveConsent } from '~/lib/consent';
 
 // Cookie lišta s granulárním souhlasem (Nezbytné / Analytické / Marketingové).
@@ -12,6 +14,8 @@ export function CookieBar() {
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const root = useRouteLoaderData('root') as RootData | undefined;
+  const t = root?.texts.cookieBar ?? DEFAULT_TEXTS.cookieBar;
 
   useEffect(() => {
     const current = readConsent();
@@ -43,52 +47,42 @@ export function CookieBar() {
     <div className="cc" role="dialog" aria-modal="false" aria-labelledby="cc-title" aria-describedby="cc-desc">
       <div className="cc__panel">
         <h2 id="cc-title" className="cc__title" tabIndex={-1} ref={titleRef}>
-          Cookies na tomto webu
+          {t.title}
         </h2>
-        <p id="cc-desc" className="cc__desc">
-          Nezbytné cookies drží web v chodu. Analytické a marketingové cookies použijeme jen se souhlasem:
-          pomáhají nám měřit návštěvnost a vyhodnocovat kampaně. Volbu můžete kdykoli změnit odkazem
-          Nastavení cookies v patičce. Podrobnosti najdete v <Link to="/cookies">zásadách cookies</Link>.
-        </p>
+        <p id="cc-desc" className="cc__desc" dangerouslySetInnerHTML={{ __html: t.text }} />
 
         {detail ? (
           <div className="cc__options">
             <label className="cc__opt">
               <input type="checkbox" checked disabled />
-              <span>
-                <strong>Nezbytné</strong> – základní chod webu a ochrana formuláře proti spamu. Vždy aktivní.
-              </span>
+              <span dangerouslySetInnerHTML={{ __html: t.necessary }} />
             </label>
             <label className="cc__opt">
               <input type="checkbox" checked={analytics} onChange={(e) => setAnalytics(e.target.checked)} />
-              <span>
-                <strong>Analytické</strong> – měření návštěvnosti přes Google Analytics 4.
-              </span>
+              <span dangerouslySetInnerHTML={{ __html: t.analytics }} />
             </label>
             <label className="cc__opt">
               <input type="checkbox" checked={marketing} onChange={(e) => setMarketing(e.target.checked)} />
-              <span>
-                <strong>Marketingové</strong> – měření kampaní a remarketing v Google Ads, Meta a Skliku.
-              </span>
+              <span dangerouslySetInnerHTML={{ __html: t.marketing }} />
             </label>
           </div>
         ) : null}
 
         <div className="cc__actions">
           <button type="button" className="cc__btn" onClick={() => decide(false, false)}>
-            Odmítnout vše
+            {t.reject}
           </button>
           {detail ? (
             <button type="button" className="cc__btn" onClick={() => decide(analytics, marketing)}>
-              Uložit volbu
+              {t.save}
             </button>
           ) : (
             <button type="button" className="cc__btn" onClick={() => setDetail(true)}>
-              Nastavení
+              {t.settings}
             </button>
           )}
           <button type="button" className="cc__btn" onClick={() => decide(true, true)}>
-            Přijmout vše
+            {t.accept}
           </button>
         </div>
       </div>

@@ -1,27 +1,23 @@
-import { STATIC_PAGES } from '~/content/menu';
 import { getAll } from '~/lib/articles.server';
-import { getAllPages } from '~/lib/pages.server';
+import { listPages } from '~/lib/cms/pages.server';
 import { absoluteUrl } from '~/lib/site';
 
-// /sitemap.xml – všechny indexovatelné stránky: obsahové stránky z menu,
-// blog, zásady, články a landing pages z administrace (kolekce `pages`).
+// /sitemap.xml – zveřejněné stránky z administrace (bez noindex), blog, články.
 
 function esc(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 export async function loader() {
-  const urls: { loc: string; lastmod?: string }[] = [
-    { loc: '/' },
-    ...STATIC_PAGES.map((p) => ({ loc: p.path })),
-    { loc: '/blog' },
-    { loc: '/zpracovani-osobnich-udaju' },
-    { loc: '/cookies' },
-  ];
+  const urls: { loc: string; lastmod?: string }[] = [];
   try {
-    const [articles, pages] = await Promise.all([getAll(), getAllPages()]);
+    const [pages, articles] = await Promise.all([listPages(), getAll()]);
+    for (const p of pages) {
+      if (!p.page.published || p.page.noindex) continue;
+      urls.push({ loc: `/${p.page.path}`, lastmod: p.updatedAt?.slice(0, 10) });
+    }
+    urls.push({ loc: '/blog' });
     for (const a of articles) urls.push({ loc: `/blog/${a.slug}`, lastmod: (a.updatedAt ?? a.date).slice(0, 10) });
-    for (const p of pages) urls.push({ loc: `/${p.slug}` });
   } catch (err) {
     console.error('sitemap: načtení obsahu z Firestore selhalo', err);
   }

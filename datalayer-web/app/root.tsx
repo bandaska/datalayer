@@ -27,6 +27,8 @@ import { PictogramSprite } from './components/Pictograms';
 import { consentHeadScript } from './lib/consent';
 import { redirectTarget } from './lib/redirects';
 import type { RootData } from './lib/rootData';
+import { getNavigation, getTexts } from './lib/cms/singletons.server';
+import { DEFAULT_TEXTS } from './content/defaults/texts';
 import { getSettings } from './lib/settings.server';
 import { CONTACT_EMAIL } from './lib/site';
 import { turnstileSiteKey } from './lib/turnstile.server';
@@ -51,13 +53,18 @@ export async function loader({ request }: LoaderFunctionArgs): Promise<RootData>
   const target = redirectTarget(url.pathname, url.search);
   if (target) throw redirect(target, 301);
 
-  const settings = await getSettings();
+  const [settings, navigation, texts] = await Promise.all([getSettings(), getNavigation(), getTexts()]);
+  // Metadata úprav (kdo a kdy) do prohlížeče neposíláme.
+  const { updatedAt: _n, updatedBy: _nb, ...nav } = navigation;
+  const { updatedAt: _t, updatedBy: _tb, ...txt } = texts;
   return {
     gtmId: settings.gtmId,
     phone: settings.phone,
     linkedinUrl: settings.linkedinUrl,
     email: CONTACT_EMAIL,
     turnstileSiteKey: turnstileSiteKey(),
+    navigation: nav,
+    texts: txt,
   };
 }
 
@@ -126,6 +133,8 @@ export default function App() {
 export function ErrorBoundary() {
   const error = useRouteError();
   const is404 = isRouteErrorResponse(error) && error.status === 404;
+  const root = useRouteLoaderData('root') as RootData | undefined;
+  const t = root?.texts.notFound ?? DEFAULT_TEXTS.notFound;
 
   return (
     <div className="page-home">
@@ -133,15 +142,13 @@ export function ErrorBoundary() {
       <main id="obsah">
         <section className="article-hero text-center">
           <div className="container">
-            <h1 className="article-title">{is404 ? '404' : 'Chyba'}</h1>
-            <p className="article-perex mx-auto">
-              {is404 ? 'Tuhle stránku jsme nenašli. Možná jsme ji přesunuli.' : 'Omlouváme se, na serveru nastala neočekávaná chyba.'}
-            </p>
+            <h1 className="article-title">{is404 ? t.title : 'Chyba'}</h1>
+            <p className="article-perex mx-auto">{is404 ? t.text : 'Omlouváme se, na serveru nastala neočekávaná chyba.'}</p>
             <a href="/" className="btn btn-cta mt-3">
-              [ Zpět na úvod ]
+              [ {t.home} ]
             </a>{' '}
             <a href="/sluzby" className="btn btn-outline-custom mt-3">
-              [ Přehled služeb ]
+              [ {t.services} ]
             </a>
           </div>
         </section>

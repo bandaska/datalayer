@@ -13,8 +13,10 @@
 import type { Migration } from './types';
 import { migration as m20261009SettingsDefaults } from './scripts/20261009_settings_defaults';
 import { migration as m20261009ArticlesSeoFixes } from './scripts/20261009_articles_seo_fixes';
+import { migration as m20261009CmsContentImport } from './scripts/20261009_cms_content_import';
 
 export const MIGRATIONS: Migration[] = [
   m20261009SettingsDefaults, // výchozí příjemce formuláře v settings/site
   m20261009ArticlesSeoFixes, // opravy původních článků podle SEO auditu
+  m20261009CmsContentImport, // stránky, menu a texty webu z kódu do administrace
 ];

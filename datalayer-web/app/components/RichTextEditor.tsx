@@ -15,10 +15,14 @@ export function RichTextEditor({
   name,
   defaultValue = '',
   rows = 16,
+  onChange,
 }: {
-  name: string;
+  /** Jméno pole pro klasický formulář (články). V editoru stránek se nepoužívá. */
+  name?: string;
   defaultValue?: string;
   rows?: number;
+  /** Volitelně: hlásí každou změnu HTML (editor stránek ukládá JSON). */
+  onChange?: (html: string) => void;
 }) {
   const taRef = useRef<HTMLTextAreaElement>(null);
   const edRef = useRef<HTMLDivElement>(null);
@@ -37,6 +41,7 @@ export function RichTextEditor({
   function sync() {
     if (edRef.current && taRef.current) {
       taRef.current.value = edRef.current.innerHTML;
+      onChange?.(taRef.current.value);
     }
   }
 
@@ -122,7 +127,7 @@ export function RichTextEditor({
           ) : null}
           <button
             type="button"
-            className={`btn btn-sm ${raw ? 'btn-cta' : 'btn-outline-secondary'} ms-auto`}
+            className={`btn btn-sm ${raw ? 'btn-primary' : 'btn-outline-secondary'} ms-auto`}
             onClick={toggleRaw}
           >
             {raw ? 'Vizuální editor' : 'HTML'}
@@ -148,6 +153,7 @@ export function RichTextEditor({
         rows={rows}
         className="form-control font-monospace"
         style={mounted && !raw ? { display: 'none' } : undefined}
+        onChange={(e) => onChange?.(e.target.value)}
       />
     </div>
   );

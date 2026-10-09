@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
-import { Link, useLocation, useRouteLoaderData } from 'react-router';
-import type { Topic } from '~/content/types';
+import { useLocation, useRouteLoaderData } from 'react-router';
+import { DEFAULT_TEXTS } from '~/content/defaults/texts';
+import type { Topic } from '~/content/schema';
 import { TOPICS, normalizeEmail, normalizePhone, validateContact } from '~/lib/contact';
 import type { ContactErrors, LeadType } from '~/lib/contact';
 import { readConsent } from '~/lib/consent';
@@ -55,7 +56,7 @@ export function ContactBlock({
   formId,
   title,
   lead,
-  placeholder = 'Krátce napište, co řešíte…',
+  placeholder,
   topics = [],
   leadType = 'consultation',
   compact = false,
@@ -65,6 +66,7 @@ export function ContactBlock({
   const phone = root?.phone || '';
   const linkedin = root?.linkedinUrl || '';
   const siteKey = root?.turnstileSiteKey || '';
+  const t = root?.texts.contact ?? DEFAULT_TEXTS.contact;
   const location = useLocation();
 
   const formRef = useRef<HTMLFormElement>(null);
@@ -199,9 +201,9 @@ export function ContactBlock({
     onInput: () => errors[name] && setErrors((prev) => ({ ...prev, [name]: undefined })),
   });
 
-  const defaultLead = phone
-    ? 'Napište nám, zavolejte, nebo vyplňte formulář. Na úvodní třicetiminutové konzultaci projdeme měření a řekneme vám, co opravit jako první – nezávazně a zdarma.'
-    : 'Napište nám e-mail, nebo vyplňte formulář. Na úvodní třicetiminutové konzultaci projdeme měření a řekneme vám, co opravit jako první – nezávazně a zdarma.';
+  const defaultLead = phone ? t.leadWithPhone : t.leadWithoutPhone;
+  const successMessage =
+    t.successText.replace('{email}', success ?? '').replace(/ na \.$/, '.') + (phone && t.successPhone ? ` ${t.successPhone.replace('{phone}', phone)}` : '');
 
   return (
     <section id="kontakt" className={compact ? 'dl-contact dl-contact--compact' : 'dl-contact'} data-form={formId}>
@@ -209,8 +211,8 @@ export function ContactBlock({
       <span id="contact-form" />
       <div className="dl-contact__grid">
         <div className="dl-contact__intro">
-          <p className="eyebrow">[ Kontakt ]</p>
-          <h2>{title}</h2>
+          <p className="eyebrow">[ {t.eyebrow} ]</p>
+          <h2>{title || t.defaultTitle}</h2>
           <p className="dl-contact__lead">{lead || defaultLead}</p>
           {compact ? null : (
             <>
@@ -264,8 +266,8 @@ export function ContactBlock({
                   VN
                 </span>
                 <span>
-                  <span className="dl-person__name">Odpovídá Vít Novotný</span>
-                  <span className="dl-person__role">obvykle do jednoho pracovního dne</span>
+                  <span className="dl-person__name">{t.personName}</span>
+                  <span className="dl-person__role">{t.personNote}</span>
                 </span>
               </div>
             </>
@@ -339,7 +341,7 @@ export function ContactBlock({
 
           <label>
             S čím vám můžeme pomoci?
-            <textarea name="zprava" required maxLength={5000} placeholder={placeholder} {...fieldProps('zprava')} />
+            <textarea name="zprava" required maxLength={5000} placeholder={placeholder || t.defaultPlaceholder} {...fieldProps('zprava')} />
             {errors.zprava ? (
               <span className="dl-form__fielderr" id={`${formId}-zprava-err`}>
                 {errors.zprava}
@@ -349,16 +351,13 @@ export function ContactBlock({
 
           {siteKey ? <div className="dl-form__turnstile" ref={turnstileRef} /> : null}
 
-          <p className="dl-form__legal">
-            Údaje použijeme jen k odpovědi na zprávu a případné nabídce.{' '}
-            <Link to="/zpracovani-osobnich-udaju">Jak s nimi zacházíme</Link>. Žádný newsletter, žádný spam.
-          </p>
+          <p className="dl-form__legal" dangerouslySetInnerHTML={{ __html: t.legal }} />
 
           <button type="submit" className="dl-btn" disabled={sending}>
-            [ Odeslat zprávu ]
+            [ {t.submit} ]
           </button>
           <p className={note?.error ? 'dl-form__note is-err' : 'dl-form__note'} role="status" aria-live="polite">
-            {note ? note.text : 'Ozveme se do jednoho pracovního dne.'}
+            {note ? note.text : t.note}
           </p>
 
           {success !== null ? (
@@ -371,12 +370,9 @@ export function ContactBlock({
                   </svg>
                 </div>
                 <h3 tabIndex={-1} ref={successRef}>
-                  Díky, zpráva dorazila
+                  {t.successTitle}
                 </h3>
-                <p>
-                  Ozveme se vám do jednoho pracovního dne{success ? ` na ${success}` : ''}.
-                  {phone ? ` Spěchá to? Zavolejte na ${phone}.` : ''}
-                </p>
+                <p>{successMessage}</p>
                 <button type="button" className="dl-form__again" onClick={again}>
                   Napsat další zprávu
                 </button>

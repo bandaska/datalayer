@@ -1,31 +1,57 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation, useMatches, useRouteLoaderData } from 'react-router';
-import { SERVICE_GROUPS, SOLUTIONS } from '~/content/menu';
+import { DEFAULT_NAVIGATION } from '~/content/defaults/navigation';
+import type { NavLink as NavLinkItem } from '~/content/schema';
 import { pushEvent } from '~/lib/dataLayer';
 import type { RootData } from '~/lib/rootData';
 import { phoneHref } from '~/lib/settings';
 import { Pi } from './Pictograms';
 
-// Hlavní menu (architektura webu, kap. 2): Služby ▾ · Řešení ▾ · Blog · O nás
-// · CTA. Mega-menu bez Bootstrap JS, na mobilu akordeon a spodní lišta
+// Hlavní menu z administrace (Menu a patička): odkazy a rozbalovací menu se
+// sloupci (mega-menu). Bez Bootstrap JS, na mobilu akordeon a spodní lišta
 // Zavolat / Napsat. CTA vede na #kontakt, pokud stránka kontaktní blok má,
 // jinak na /kontakt.
 
-type Menu = 'sluzby' | 'reseni' | null;
-
-/** Má aktuální stránka vlastní kontaktní blok (route `handle.hasContact`)? */
+/** Má aktuální stránka kontaktní blok? (loader vrací `hasContact`, nebo route `handle.hasContact`) */
 export function useContactHref(): string {
   const matches = useMatches();
-  const has = matches.some((m) => (m.handle as { hasContact?: boolean } | undefined)?.hasContact);
+  const has = matches.some(
+    (m) =>
+      (m.handle as { hasContact?: boolean } | undefined)?.hasContact ||
+      (m.data as { hasContact?: boolean } | undefined)?.hasContact === true,
+  );
   return has ? '#kontakt' : '/kontakt';
 }
 
+function MenuLink({ item }: { item: NavLinkItem }) {
+  const inner = (
+    <>
+      {item.pictogram ? <Pi name={item.pictogram} /> : null}
+      <span>
+        <strong>{item.label}</strong>
+        {item.tagline ? <span>{item.tagline}</span> : null}
+      </span>
+    </>
+  );
+  const cls = item.pictogram ? 'mega__item' : 'mega__item mega__item--plain';
+  return item.href.startsWith('/') ? (
+    <Link to={item.href} className={cls}>
+      {inner}
+    </Link>
+  ) : (
+    <a href={item.href} className={cls}>
+      {inner}
+    </a>
+  );
+}
+
 export function Navbar() {
-  const [open, setOpen] = useState<Menu>(null);
+  const [open, setOpen] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const location = useLocation();
   const contactHref = useContactHref();
   const root = useRouteLoaderData('root') as RootData | undefined;
+  const nav = root?.navigation ?? DEFAULT_NAVIGATION;
   const navRef = useRef<HTMLElement>(null);
 
   // zavřít menu po přechodu na jinou stránku
@@ -50,8 +76,6 @@ export function Navbar() {
     };
   }, []);
 
-  const toggle = (m: Exclude<Menu, null>) => setOpen((cur) => (cur === m ? null : m));
-
   return (
     <>
       <header className="site-nav" ref={navRef}>
@@ -60,92 +84,84 @@ export function Navbar() {
             datalayer<span className="highlight">.cz</span>
           </Link>
 
-          <button
-            type="button"
-            className="site-nav__toggle"
-            aria-expanded={mobile}
-            aria-controls="site-menu"
-            onClick={() => setMobile((v) => !v)}
-          >
+          <button type="button" className="site-nav__toggle" aria-expanded={mobile} aria-controls="site-menu" onClick={() => setMobile((v) => !v)}>
             <span className="visually-hidden">{mobile ? 'Zavřít menu' : 'Otevřít menu'}</span>
             <span className="site-nav__burger" aria-hidden="true" />
           </button>
 
           <nav id="site-menu" className={mobile ? 'site-menu is-open' : 'site-menu'} aria-label="Hlavní menu">
             <ul className="site-menu__list">
-              <li className={open === 'sluzby' ? 'has-mega is-open' : 'has-mega'}>
-                <button type="button" className="site-menu__link" aria-expanded={open === 'sluzby'} onClick={() => toggle('sluzby')}>
-                  Služby <span className="caret" aria-hidden="true" />
-                </button>
-                <div className="mega" hidden={open !== 'sluzby'}>
-                  <div className="mega__grid mega__grid--3">
-                    {SERVICE_GROUPS.map((g) => (
-                      <div key={g.id}>
-                        <p className="mega__group">{g.label}</p>
+              {nav.items.map((item, idx) =>
+                item.type === 'link' ? (
+                  <li key={idx}>
+                    {item.href.startsWith('/') ? (
+                      <NavLink className="site-menu__link" to={item.href}>
+                        {item.label}
+                      </NavLink>
+                    ) : (
+                      <a className="site-menu__link" href={item.href}>
+                        {item.label}
+                      </a>
+                    )}
+                  </li>
+                ) : (
+                  <li key={idx} className={open === item.id ? 'has-mega is-open' : 'has-mega'}>
+                    <button
+                      type="button"
+                      className="site-menu__link"
+                      aria-expanded={open === item.id}
+                      onClick={() => setOpen((cur) => (cur === item.id ? null : item.id))}
+                    >
+                      {item.label} <span className="caret" aria-hidden="true" />
+                    </button>
+                    <div className={item.columns.length > 1 ? 'mega' : 'mega mega--narrow'} hidden={open !== item.id}>
+                      {item.columns.length > 1 ? (
+                        <div className="mega__grid mega__grid--3" style={{ gridTemplateColumns: `repeat(${item.columns.length}, 1fr)` }}>
+                          {item.columns.map((col, ci) => (
+                            <div key={ci}>
+                              {col.title ? <p className="mega__group">{col.title}</p> : null}
+                              <ul>
+                                {col.items.map((s) => (
+                                  <li key={s.href}>
+                                    <MenuLink item={s} />
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
                         <ul>
-                          {g.items.map((s) => (
-                            <li key={s.path}>
-                              <Link to={s.path} className="mega__item">
-                                <Pi name={s.pictogram} />
-                                <span>
-                                  <strong>{s.label}</strong>
-                                  <span>{s.tagline}</span>
-                                </span>
-                              </Link>
+                          {item.columns[0].items.map((s) => (
+                            <li key={s.href}>
+                              <MenuLink item={s} />
                             </li>
                           ))}
                         </ul>
-                      </div>
-                    ))}
-                  </div>
-                  <Link to="/sluzby" className="mega__all">
-                    Všechny služby →
-                  </Link>
-                </div>
-              </li>
-              <li className={open === 'reseni' ? 'has-mega is-open' : 'has-mega'}>
-                <button type="button" className="site-menu__link" aria-expanded={open === 'reseni'} onClick={() => toggle('reseni')}>
-                  Řešení <span className="caret" aria-hidden="true" />
-                </button>
-                <div className="mega mega--narrow" hidden={open !== 'reseni'}>
-                  <ul>
-                    {SOLUTIONS.map((s) => (
-                      <li key={s.path}>
-                        <Link to={s.path} className="mega__item">
-                          <Pi name={s.pictogram} />
-                          <span>
-                            <strong>{s.label}</strong>
-                            <span>{s.tagline}</span>
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                    <li className="mega__sep" role="separator" />
-                    <li>
-                      <Link to="/jak-pracujeme" className="mega__item mega__item--plain">
-                        <strong>Jak pracujeme</strong>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <NavLink className="site-menu__link" to="/blog">
-                  Blog
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="site-menu__link" to="/o-nas">
-                  O nás
-                </NavLink>
-              </li>
+                      )}
+                      {item.footerLink ? (
+                        item.columns.length > 1 ? (
+                          <Link to={item.footerLink.href} className="mega__all">
+                            {item.footerLink.label} →
+                          </Link>
+                        ) : (
+                          <>
+                            <div className="mega__sep" role="separator" />
+                            <MenuLink item={{ label: item.footerLink.label, href: item.footerLink.href }} />
+                          </>
+                        )
+                      ) : null}
+                    </div>
+                  </li>
+                ),
+              )}
               <li className="site-menu__cta">
                 <a
                   href={contactHref}
                   className="btn btn-cta"
-                  onClick={() => pushEvent('cta_click', { cta_id: 'nav_cta', cta_text: 'Konzultovat projekt', section: 'nav' })}
+                  onClick={() => pushEvent('cta_click', { cta_id: 'nav_cta', cta_text: nav.cta.label, section: 'nav' })}
                 >
-                  [ Konzultovat projekt ]
+                  [ {nav.cta.label} ]
                 </a>
               </li>
             </ul>
@@ -156,16 +172,12 @@ export function Navbar() {
       {/* Mobil: spodní lišta se dvěma akcemi */}
       <div className="mobile-bar">
         {root?.phone ? (
-          <a
-            href={phoneHref(root.phone)}
-            className="mobile-bar__btn"
-            onClick={() => pushEvent('contact_click', { channel: 'phone', section: 'mobile_bar' })}
-          >
-            Zavolat
+          <a href={phoneHref(root.phone)} className="mobile-bar__btn" onClick={() => pushEvent('contact_click', { channel: 'phone', section: 'mobile_bar' })}>
+            {nav.mobileBar.callLabel}
           </a>
         ) : null}
         <a href={contactHref} className="mobile-bar__btn mobile-bar__btn--cta">
-          Napsat
+          {nav.mobileBar.writeLabel}
         </a>
       </div>
     </>

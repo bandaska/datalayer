@@ -9,9 +9,11 @@ deployem na **Google Cloud Run z gitu**.
 - **Runtime:** Node.js 20+
 - **Server:** Express 4 (SSR handler React Routeru) – `server.js`
 - **Frontend:** React 19 + React Router 7 (framework mode, SSR) + Vite
-- **Data:** Firestore (Native) – kolekce `articles` (blog) a `pages` (landing
-  pages). Free tier, serverless, bez DB instance a bez hesla.
-- **Obsah:** HTML z Firestore, sanitizace (`sanitize-html`) + highlight.js
+- **Data:** Firestore (Native) – stránky webu (`pages`), menu a texty (`content`), blog
+  (`articles`), zprávy z formuláře a nastavení. Free tier, serverless, bez DB instance a bez hesla.
+- **Obsah:** celý obsah webu jde upravovat v administraci – stránky, menu, patička, texty
+  formuláře a cookie lišty ([`docs/cms.md`](./docs/cms.md)); HTML čistí `sanitize-html`,
+  kód v článcích nasvítí highlight.js
 - **Konfigurace:** `.env` (viz `.env.example`); na Cloud Run env proměnné
 
 ## Struktura
@@ -24,13 +26,15 @@ app/
   root.tsx                layout, Consent Mode v2 + GTM, 301 přesměrování, ErrorBoundary
   routes.ts               routování (architektura URL podle SEO analýzy)
   app.css                 styly webu
-  content/                obsah stránek jako typovaná data
-    types.ts              schéma landing page (sekce, bloky, FAQ, kontakt, schema)
-    pages/*.ts            11 služeb, 3 řešení, jak pracujeme, o nás, kontakt, rozcestník
-    registry.server.ts    registr stránek (jen server)
-    menu.ts               mega-menu, patička, sitemapa
+  admin.css               světlý vzhled administrace (jen /admin)
+  content/
+    schema.ts             schéma obsahu (zod): stránka, sekce, bloky, FAQ, menu, texty webu
+    defaults/             výchozí obsah – homepage, 11 služeb, 3 řešení, rozcestník, jak
+                          pracujeme, o nás, kontakt, zásady, cookies, menu a texty; z něj
+                          migrace založí obsah v administraci (docs/cms.md)
   components/             Navbar (mega-menu), Footer, ContactBlock, CookieBar,
-                          Pictograms (vlastní SVG piktogramy), landing/* (šablona LP)
+                          Pictograms (vlastní SVG piktogramy), landing/* (šablona stránky),
+                          admin/* (editor stránek, bloků, menu a textů)
   lib/
     seo.ts                meta tagy, canonical, OG, JSON-LD (Organization, Service,
                           BreadcrumbList, FAQPage, BlogPosting)
@@ -42,14 +46,17 @@ app/
     messages.server.ts    zprávy z formuláře (kolekce messages)
     settings*.ts          nastavení webu z administrace (settings/site)
     tokenGate.ts          brána tokenem pro /migrate
-    articles/pages/users/auth.server.ts …
+    textRules.ts          strojová kontrola pravidel českých textů (editor i testy)
+    cms/                  stránky, menu a texty ve Firestore: čtení, uložení, čištění HTML,
+                          převod pro Firestore, stav importu (docs/cms.md)
+    articles/users/auth.server.ts …
   migrations/             migrace Firestore (manifest, runner, skripty) – docs/migrace.md
-  routes/                 home, landing (služby/řešení/stránky), services (rozcestník),
-                          blog, zásady, dekujeme, api.kontakt, sitemap.xml, robots.txt,
-                          llms.txt, migrate, admin*
+  routes/                 home, page (všechny ostatní stránky z administrace), blog,
+                          dekujeme, api.kontakt, sitemap.xml, robots.txt, llms.txt,
+                          migrate, admin*
 scripts/                  seed.ts, create-admin.ts, og-images.ts
-tests/                    vitest: migrace, token, přesměrování, formulář, obsah
-docs/                     migrace.md, HARD-RULES.md (pravidla českých textů)
+tests/                    vitest: obsah, CMS a migrace obsahu, migrace, token, přesměrování, formulář
+docs/                     cms.md, migrace.md, HARD-RULES.md (pravidla českých textů)
 public/                   favicon, dl.png, og/*.png (obrázky pro sdílení)
 ```
 
@@ -61,7 +68,7 @@ Podle analýzy v `../seo-analyza/` (souhrn `00_SOUHRN.md`):
   ze stagingu přesměrované 301 (`app/lib/redirects.ts`), sjednocené velikosti písmen a lomítka.
 - Každá stránka má **title, description, canonical, Open Graph** (obrázek 1200×630 z `public/og/`)
   a **JSON-LD** – generuje `seoMeta()` ze stejných dat jako viditelný obsah (FAQ 1:1).
-- **`/sitemap.xml`** (stránky, články, landing pages z administrace), **`/robots.txt`**,
+- **`/sitemap.xml`** (zveřejněné stránky bez noindex a články, s datem poslední úpravy), **`/robots.txt`**,
   **`/llms.txt`** (přehled pro AI vyhledávače).
 - Výkon: bez HubSpotu, bez Font Awesome, bez CDN – Bootstrap i fonty (Inter 400/600/800, Roboto
   Mono 400) jsou z balíčků, highlight.js jen na stránce článku.
@@ -84,24 +91,29 @@ načte jen s ID z administrace. Další události: `cta_click`, `faq_open`, `tab
 
 ## Admin
 
-Jednoduchá administrace na `/admin` (SSR formuláře přes React Router actions):
+Administrace na `/admin` – světlý vzhled s kontrastními texty (`app/admin.css`), postranní menu
+(na mobilu rozbalovací):
 
 - **Přihlášení** (`/admin/login`) – cookie session podepsaná `SESSION_SECRET`,
   hesla hashovaná bcryptem, uživatelé v kolekci `users`.
-- **Články** (`/admin/articles`) – výpis, vytvoření, editace, mazání (kolekce
-  `articles`).
-- **Landing pages** (`/admin/pages`) – výpis, vytvoření, editace, mazání
-  (kolekce `pages`); dostupné veřejně na `/{slug}`.
-- **WYSIWYG editor** – vizuální editace obsahu (tučné, nadpisy, seznamy, odkaz,
-  bloky kódu/infobox) s přepínačem na surové HTML; funguje i bez JS (textarea).
-  Obsah se sanitizuje při zobrazení.
+- **Přehled** (`/admin`) – počty, nepřečtené zprávy, čekající migrace, naposledy upravené stránky.
+- **Stránky** (`/admin/pages`) – homepage, služby, řešení, ostatní stránky i zásady: hero,
+  sekce s bloky (odstavce, karty, kroky, tabulky, schéma, záložky, volný text…), FAQ, kontaktní
+  blok, související stránky a články, SEO, strukturovaná data; koncept / zveřejněná, noindex,
+  kontrola pravidel českých textů přímo v editoru ([`docs/cms.md`](./docs/cms.md)).
+- **Menu a patička** (`/admin/navigation`) – hlavní menu s rozbalovacími sloupci, tlačítko,
+  patička, lišta na mobilu.
+- **Texty webu** (`/admin/texts`) – kontaktní formulář, cookie lišta, úvod blogu, děkovací
+  stránka, 404, popis firmy pro vyhledávače.
+- **Články** (`/admin/articles`) – výpis, vytvoření, editace, mazání (kolekce `articles`);
+  WYSIWYG editor s přepínačem na surové HTML, funguje i bez JS (textarea).
 - **Zprávy** (`/admin/messages`) – zprávy z kontaktního formuláře (detail, přečteno, smazání).
 - **Nastavení** (`/admin/settings`, jen role `admin`) – příjemci formuláře, ID Google Tag
   Manageru, telefon a LinkedIn zobrazené na webu; přehled, jestli je nastavený Turnstile a SMTP.
 - **Migrace** (`/admin/migrations`, jen role `admin`) – připravené změny dat ve Firestore
   (import článků, úpravy obsahu…) jedním kliknutím, viz [`docs/migrace.md`](./docs/migrace.md).
 - **Uživatelé** (`/admin/users`, jen role `admin`) – výpis, vytvoření, mazání,
-  **reset hesla**; role `admin` (vše) / `editor` (články + LP).
+  **reset hesla**; role `admin` (vše) / `editor` (obsah webu a zprávy).
 - **Můj účet** (`/admin/account`) – změna vlastního hesla (s ověřením stávajícího).
 
 První admin se vytvoří skriptem:
@@ -116,8 +128,8 @@ GOOGLE_CLOUD_PROJECT=<id> npm run admin:create -- mail@vit.cz HesloMin8znaku "Jm
 |---|---|
 | `RouterFactory` | `app/routes.ts` |
 | `@layout.latte` | `app/root.tsx` + `app/app.css` + komponenty |
-| `HomePresenter` | `app/routes/home.tsx` |
-| `ServicesPresenter` (+ akce) | `app/routes/services.tsx` (rozcestník) + `landing.tsx` (obsah z `app/content/pages`) |
+| `HomePresenter` | `app/routes/home.tsx` (obsah ze stránky `home` v administraci) |
+| `ServicesPresenter` (+ akce) | `app/routes/page.tsx` – stránky z administrace (kolekce `pages`) |
 | `BlogPresenter::default` | `app/routes/blog._index.tsx` |
 | `BlogPresenter::detail` | `app/routes/blog.$slug.tsx` |
 | `ArticleService` | `app/lib/articles.server.ts` (Firestore) |
@@ -125,18 +137,21 @@ GOOGLE_CLOUD_PROJECT=<id> npm run admin:create -- mail@vit.cz HesloMin8znaku "Jm
 | `Error4xx/5xx` | `ErrorBoundary` v `root.tsx` |
 | Basic auth v `BasePresenter` | `express-basic-auth` v `server.js` (`ENABLE_AUTH=1`) |
 | MySQL + Nette Database | Firestore (Native) |
-| — (nově) | Admin na `/admin`: login, správa článků a uživatelů |
+| – (nově) | Admin na `/admin`: stránky, menu, texty, články, zprávy, nastavení, migrace, uživatelé |
 
 ## Datový model (Firestore)
 
-- **`articles/{slug}`** — `slug`, `title`, `author`, `date` (Timestamp),
+- **`articles/{slug}`** – `slug`, `title`, `author`, `date` (Timestamp),
   `description` (meta popis), `updatedAt`, `content` (HTML). Slug = ID dokumentu.
-- **`messages/{leadId}`** — zprávy z kontaktního formuláře (jméno, e-mail, telefon, web, témata,
+- **`messages/{leadId}`** – zprávy z kontaktního formuláře (jméno, e-mail, telefon, web, témata,
   zpráva, `formId`, `leadType`, stránka, `createdAt`, `read`, `mailSent`).
-- **`settings/site`** — nastavení z administrace: `recipients`, `gtmId`, `phone`, `linkedinUrl`.
-- **`_migrations/state`, `_migrations/lock`** — evidence a zámek migrací.
-- **`pages/{slug}`** — `slug`, `title`, `perex?`, `content` (HTML). Dostupné na
-  cestě `/{slug}` přes catch-all route `routes/$.tsx`.
+- **`settings/site`** – nastavení z administrace: `recipients`, `gtmId`, `phone`, `linkedinUrl`.
+- **`_migrations/state`, `_migrations/lock`** – evidence a zámek migrací.
+- **`pages/{id}`** – stránka webu podle schématu `app/content/schema.ts`; ID = cesta s `__` místo
+  lomítka (`sluzby__bigquery`), homepage `home`. Starší dokumenty (`title`, `perex`, `content`)
+  web převede za běhu a editor je při uložení uloží v novém formátu.
+- **`content/navigation`, `content/texts`** – menu s patičkou a texty webu; **`content/meta`**
+  – `initialized: true` po importu obsahu (do té doby web doplní chybějící obsah z kódu).
 
 ## Lokální vývoj
 
@@ -202,7 +217,7 @@ Pro deploy z gitu nastav Cloud Build trigger na `datalayer-web/cloudbuild.yaml`.
 | `MIGRATION_TOKEN` | migrační URL `/migrate` (min. 32 znaků, nastavit jen na dobu potřeby) |
 
 Příjemci formuláře, GTM ID, telefon a LinkedIn se **nenastavují v env**, ale v administraci
-(`/admin/settings`). Firestore se autentizuje přes service account (ADC) — **žádné DB heslo**.
+(`/admin/settings`). Firestore se autentizuje přes service account (ADC) – **žádné DB heslo**.
 `cloudbuild.yaml` nasazuje s `--update-env-vars`, takže proměnné nastavené ručně na službě
 (heslo webu, Turnstile, SMTP) deploy nepřepíše.
 

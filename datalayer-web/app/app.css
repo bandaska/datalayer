@@ -548,95 +548,6 @@ footer .highlight {
   }
 }
 
-/* --- Admin --- */
-.admin-shell {
-  min-height: 100vh;
-  background-color: var(--brand-dark);
-}
-.admin-nav {
-  background-color: #010812;
-  border-bottom: 1px solid var(--border-color);
-}
-.admin-link {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-.admin-link:hover,
-.admin-link.active {
-  color: var(--brand-cyan);
-}
-.admin-card {
-  background-color: #0b1a30;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-.admin-card.p-0 {
-  overflow: hidden;
-}
-.admin-auth {
-  min-height: 100vh;
-  background-color: var(--brand-dark);
-}
-/* Formulářové prvky v adminu (tmavé pozadí) */
-.admin-shell .form-control,
-.admin-shell .form-select,
-.admin-auth .form-control {
-  background-color: #020d1e;
-  border-color: var(--border-color);
-  color: var(--text-light);
-}
-.admin-shell .form-control:focus,
-.admin-shell .form-select:focus,
-.admin-auth .form-control:focus {
-  background-color: #020d1e;
-  color: var(--text-light);
-  border-color: var(--brand-cyan);
-  box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.15);
-}
-.admin-shell .form-label,
-.admin-auth .form-label {
-  color: var(--text-light);
-  font-weight: 500;
-}
-.admin-shell .table-dark {
-  --bs-table-bg: #0b1a30;
-  --bs-table-hover-bg: rgba(0, 255, 255, 0.06);
-  --bs-table-border-color: var(--border-color);
-}
-
-/* WYSIWYG editor */
-.rte-toolbar .btn {
-  --bs-btn-color: var(--text-light);
-  --bs-btn-border-color: var(--border-color);
-  --bs-btn-hover-bg: rgba(0, 255, 255, 0.1);
-  --bs-btn-hover-color: var(--brand-cyan);
-  --bs-btn-hover-border-color: var(--brand-cyan);
-}
-.rte-area {
-  min-height: 22rem;
-  max-height: 60vh;
-  overflow-y: auto;
-  line-height: 1.6;
-}
-.rte-area:focus {
-  outline: none;
-}
-.rte-area h2,
-.rte-area h3 {
-  color: #fff;
-}
-.rte-area .code-container,
-.rte-area .infobox {
-  font-size: 0.9rem;
-}
-.rte-area:empty::before {
-  content: 'Začni psát…';
-  color: var(--text-muted);
-}
-
 /* ==========================================================================
    Redesign podle SEO analýzy (seo-analyza/03_landing-pages, 04_homepage-ux,
    05_formulare): navigace, landing pages, kontaktní blok, cookie lišta.
@@ -2412,5 +2323,74 @@ footer .highlight {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* --- Bloky z administrace (CMS) --- */
+.draft-banner {
+  background: var(--amber);
+  color: #1a1000;
+  font-weight: 700;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.lp-card__bullets {
+  margin: 0 0 12px;
+  padding-left: 18px;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.lp-card__tags {
+  margin: 0 0 10px;
+}
+.pipe {
+  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+}
+.lp-html {
+  max-width: 860px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #c9d1d9;
+}
+.lp-html h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin: 2.2rem 0 1rem;
+}
+.lp-html h2:first-child {
+  margin-top: 0;
+}
+.lp-html h3 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 1.8rem 0 0.8rem;
+}
+.lp-html p,
+.lp-html ul,
+.lp-html ol {
+  margin-bottom: 1.2rem;
+}
+.lp-html a {
+  color: var(--brand-cyan);
+}
+.lp-html ul li::marker {
+  color: var(--brand-cyan);
+}
+.lp-section--light .lp-html {
+  color: var(--light-muted);
+}
+.lp-section--light .lp-html h2,
+.lp-section--light .lp-html h3 {
+  color: var(--light-text);
+}
+.lp-section--light .lp-html a {
+  color: var(--light-accent);
+}
+@media (max-width: 900px) {
+  .pipe {
+    grid-template-columns: 1fr;
   }
 }

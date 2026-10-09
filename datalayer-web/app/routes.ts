@@ -1,20 +1,14 @@
 import { type RouteConfig, index, route } from '@react-router/dev/routes';
 
-// Architektura URL: seo-analyza/03_landing-pages/00_architektura-webu.md.
-// Staré adresy ze stagingu přesměrovává (301) kořenový loader (app/lib/redirects.ts).
+// Obsahové stránky (služby, řešení, rozcestník, zásady…) i homepage čte web
+// z administrace (kolekce `pages`); pevné routy mají jen blog, formulář,
+// strojové soubory a administrace. Staré adresy ze stagingu přesměrovává (301)
+// kořenový loader (app/lib/redirects.ts).
 
 export default [
   index('routes/home.tsx'), // /
-  route('sluzby', 'routes/services.tsx'), // /sluzby – rozcestník
-  route('sluzby/:slug', 'routes/landing.tsx', { id: 'landing-sluzby' }),
-  route('reseni/:slug', 'routes/landing.tsx', { id: 'landing-reseni' }),
-  route('jak-pracujeme', 'routes/landing.tsx', { id: 'landing-jak-pracujeme' }),
-  route('o-nas', 'routes/landing.tsx', { id: 'landing-o-nas' }),
-  route('kontakt', 'routes/landing.tsx', { id: 'landing-kontakt' }),
   route('blog', 'routes/blog._index.tsx'), // /blog
   route('blog/:slug', 'routes/blog.$slug.tsx'), // /blog/<slug>
-  route('zpracovani-osobnich-udaju', 'routes/privacy.tsx'),
-  route('cookies', 'routes/cookies.tsx'),
   route('dekujeme', 'routes/dekujeme.tsx'), // fallback formuláře bez JS (noindex)
 
   // --- Strojové soubory a API ---
@@ -29,12 +23,14 @@ export default [
   route('admin/logout', 'routes/admin.logout.tsx'),
   route('admin', 'routes/admin.tsx', [
     index('routes/admin._index.tsx'),
+    route('pages', 'routes/admin.pages._index.tsx'),
+    route('pages/new', 'routes/admin.pages.new.tsx'),
+    route('pages/:id', 'routes/admin.pages.$id.tsx'),
+    route('navigation', 'routes/admin.navigation.tsx'),
+    route('texts', 'routes/admin.texts.tsx'),
     route('articles', 'routes/admin.articles._index.tsx'),
     route('articles/new', 'routes/admin.articles.new.tsx'),
     route('articles/:slug/edit', 'routes/admin.articles.$slug.edit.tsx'),
-    route('pages', 'routes/admin.pages._index.tsx'),
-    route('pages/new', 'routes/admin.pages.new.tsx'),
-    route('pages/:slug/edit', 'routes/admin.pages.$slug.edit.tsx'),
     route('messages', 'routes/admin.messages._index.tsx'),
     route('messages/:id', 'routes/admin.messages.$id.tsx'),
     route('settings', 'routes/admin.settings.tsx'),
@@ -44,5 +40,5 @@ export default [
     route('account', 'routes/admin.account.tsx'),
   ]),
 
-  route('*', 'routes/$.tsx'), // landing pages z Firestore (catch-all)
+  route('*', 'routes/page.tsx'), // stránky z administrace (catch-all)
 ] satisfies RouteConfig;

@@ -3,15 +3,20 @@
 - Jazyk dokumentace, komentářů a všech textů pro uživatele: čeština. **Každý český text (web,
   administrace, články, hlášky) musí splňovat `docs/HARD-RULES.md`** – hlavně žádný trpný rod,
   uvozovky „…“, pomlčka –, číslovky slovy, data s měsícem slovy. Strojově ověřitelnou část hlídá
-  `tests/content.test.ts`.
+  `app/lib/textRules.ts` – v editoru administrace i v `tests/content.test.ts`.
 - Obsah webu vychází z SEO analýzy v `../seo-analyza/` (architektura `03_landing-pages/00_architektura-webu.md`,
   homepage `04_homepage-ux/`, formulář `05_formulare/`, články `06_clanky/`). Nevymýšlet čísla ani
   reference; podklady označené `[DOPLNIT]` vynechat, dokud je nedodá klient.
-- Obsahové stránky (služby, řešení, jak pracujeme, o nás, kontakt) jsou typovaná data
-  v `app/content/pages/` (typy `app/content/types.ts`, registr `app/content/registry.server.ts`,
-  menu `app/content/menu.ts`). Nová stránka = soubor + registr + menu + případně route.
+- **Veškerý obsah webu je v administraci** (`docs/cms.md`): stránky včetně homepage a zásad
+  (kolekce `pages`), menu s patičkou a texty webu (`content/*`). Schéma `app/content/schema.ts`,
+  vykreslení `app/components/landing/`, čtení a zápis `app/lib/cms/`. Výchozí obsah
+  v `app/content/defaults/` slouží jen jako zdroj migrace `20261009_cms_content_import` a záloha,
+  než ji někdo nasadí – jeho úprava produkční web nezmění. Novou stránku nebo hromadnou změnu
+  obsahu připravit jako migraci (`importPage` v `app/migrations/helpers.ts`), obsah se do šablon
+  natvrdo nepíše. Firestore neumí pole v poli: stránky zapisovat jen přes `pageToDoc` /
+  `encodeNested` (`app/lib/cms/codec.ts`).
 - SEO: meta tagy jen přes `seoMeta()` (`app/lib/seo.ts`) – canonical, OG, JSON-LD. Staré URL přesměrovat
-  v `app/lib/redirects.ts` (301). Nová indexovatelná stránka patří do sitemapy.
+  v `app/lib/redirects.ts` (301). Sitemapa bere zveřejněné stránky bez noindex z administrace sama.
 - Kontaktní formulář: `app/components/ContactBlock.tsx` + `app/routes/api.kontakt.ts` (honeypot →
   limit → validace → Cloudflare Turnstile → uložení do Firestore → e-mail). Příjemci, GTM ID,
   telefon a LinkedIn se nastavují v administraci (`/admin/settings`, `app/lib/settings.server.ts`),
