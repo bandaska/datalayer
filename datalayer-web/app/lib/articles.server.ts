@@ -10,6 +10,10 @@ export type Article = {
   slug: string;
   author: string;
   date: string; // ISO string – serializovatelné do loaderu
+  /** Datum poslední úpravy (ISO) – `dateModified` ve strukturovaných datech. */
+  updatedAt?: string;
+  /** Meta popis (140–160 znaků); prázdný = vezme se začátek textu. */
+  description: string;
   content: string;
 };
 
@@ -22,12 +26,15 @@ function toEntity(
   const raw = d.date;
   const date =
     raw instanceof Timestamp ? raw.toDate() : new Date((raw as string) ?? Date.now());
+  const updated = d.updatedAt;
   return {
     id: doc.id,
     title: (d.title as string) ?? '',
     slug: (d.slug as string) ?? doc.id,
     author: (d.author as string) ?? '',
     date: date.toISOString(),
+    updatedAt: updated instanceof Timestamp ? updated.toDate().toISOString() : undefined,
+    description: (d.description as string) ?? '',
     content: (d.content as string) ?? '',
   };
 }
@@ -47,8 +54,22 @@ export type ArticleInput = {
   title: string;
   author: string;
   date: string; // 'YYYY-MM-DD' nebo ISO
+  description: string;
   content: string;
 };
+
+/** Ze zadaných slugů vrátí ty, které na blogu existují (pro odkazy „Do hloubky“). */
+export async function existingSlugs(slugs: string[]): Promise<string[]> {
+  const unique = [...new Set(slugs)].filter(Boolean);
+  if (!unique.length) return [];
+  try {
+    const snaps = await firestore.getAll(...unique.map((s) => collection().doc(s)));
+    return snaps.filter((s) => s.exists).map((s) => s.id);
+  } catch (err) {
+    console.error('články: kontrola existence selhala', err);
+    return [];
+  }
+}
 
 export async function slugExists(slug: string): Promise<boolean> {
   const doc = await collection().doc(slug).get();
@@ -62,7 +83,9 @@ export async function createArticle(input: ArticleInput): Promise<void> {
     title: input.title,
     author: input.author,
     date: Timestamp.fromDate(new Date(input.date)),
+    description: input.description,
     content: input.content,
+    updatedAt: Timestamp.now(),
   });
 }
 
@@ -76,7 +99,9 @@ export async function updateArticle(
       title: input.title,
       author: input.author,
       date: Timestamp.fromDate(new Date(input.date)),
+      description: input.description,
       content: input.content,
+      updatedAt: Timestamp.now(),
     },
     { merge: true },
   );

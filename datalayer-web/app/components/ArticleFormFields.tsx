@@ -5,6 +5,7 @@ type Defaults = {
   title?: string;
   author?: string;
   date?: string; // YYYY-MM-DD
+  description?: string;
   content?: string;
 };
 
@@ -64,6 +65,20 @@ export function ArticleFormFields({
             defaultValue={defaults.author}
             required
           />
+        </div>
+        <div className="col-12">
+          <label className="form-label">Meta popis</label>
+          <textarea
+            name="description"
+            className="form-control"
+            rows={2}
+            maxLength={200}
+            defaultValue={defaults.description}
+          />
+          <div className="form-text">
+            Popisek do výsledků vyhledávání a pro sdílení (ideálně 140–160 znaků). Prázdné pole =
+            web použije začátek článku.
+          </div>
         </div>
         <div className="col-12">
           <label className="form-label">Obsah</label>

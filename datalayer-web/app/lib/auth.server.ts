@@ -1,5 +1,5 @@
 import { createCookieSessionStorage, redirect } from 'react-router';
-import { getUserById, type User } from './users.server';
+import { getUserById, type Role, type User } from './users.server';
 
 const sessionSecret = process.env.SESSION_SECRET || 'dev-secret-change-me';
 if (process.env.NODE_ENV === 'production' && sessionSecret === 'dev-secret-change-me') {
@@ -40,6 +40,13 @@ export async function requireUser(request: Request): Promise<User> {
     if (user) return user;
   }
   throw redirect('/admin/login');
+}
+
+/** Přihlášený uživatel s danou rolí (admin smí vše), jinak zpět na přehled adminu. */
+export async function requireRole(request: Request, role: Role): Promise<User> {
+  const user = await requireUser(request);
+  if (user.role !== role && user.role !== 'admin') throw redirect('/admin');
+  return user;
 }
 
 export async function logout(request: Request) {

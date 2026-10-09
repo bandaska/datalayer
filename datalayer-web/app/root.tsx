@@ -5,75 +5,93 @@ import {
   Scripts,
   ScrollRestoration,
   isRouteErrorResponse,
+  redirect,
   useLocation,
   useRouteError,
+  useRouteLoaderData,
 } from 'react-router';
-import type { LinksFunction, MetaFunction } from 'react-router';
+import type { LinksFunction, LoaderFunctionArgs, MetaFunction } from 'react-router';
 
-// app.css přidáváme do links() AŽ ZA Bootstrap (níže), aby vlastní styly
-// (oranžová tlačítka apod.) přebíjely Bootstrap – stejně jako inline <style>
-// v původním Nette layoutu.
+// Fonty hostujeme sami (Inter 400/600/800, Roboto Mono 400) – žádné Google Fonts.
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/800.css';
+import '@fontsource/roboto-mono/400.css';
+// Bootstrap z balíčku (žádné CDN), vlastní styly až za ním, ať mají přednost.
+import bootstrapHref from 'bootstrap/dist/css/bootstrap.min.css?url';
 import appStylesHref from './app.css?url';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { ContactForm } from './components/ContactForm';
+import { CookieBar } from './components/CookieBar';
+import { PictogramSprite } from './components/Pictograms';
+import { consentHeadScript } from './lib/consent';
+import { redirectTarget } from './lib/redirects';
+import type { RootData } from './lib/rootData';
+import { getSettings } from './lib/settings.server';
+import { CONTACT_EMAIL } from './lib/site';
+import { turnstileSiteKey } from './lib/turnstile.server';
 
 export const meta: MetaFunction = () => [
   { title: 'datalayer.cz' },
   {
     name: 'description',
-    content:
-      'Stavíme neprůstřelné datové základy. Specializovaná implementace GA4, GTM, Server-Side měření a BigQuery.',
+    content: 'Webová analytika a měření pro e-shopy a firmy: GA4, Google Tag Manager, server-side tracking a Consent Mode v2.',
   },
 ];
 
 export const links: LinksFunction = () => [
-  {
-    rel: 'stylesheet',
-    href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
-  },
-  {
-    rel: 'stylesheet',
-    href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
-  },
-  {
-    rel: 'stylesheet',
-    href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css',
-  },
-  {
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap',
-  },
-  // Vlastní styly jako poslední → mají přednost před Bootstrapem.
+  { rel: 'icon', href: '/favicon.ico' },
+  { rel: 'stylesheet', href: bootstrapHref },
   { rel: 'stylesheet', href: appStylesHref },
 ];
 
-// HubSpot konfigurace se čte z env na serveru a předá se klientovi přes loader.
-export function loader() {
+export async function loader({ request }: LoaderFunctionArgs): Promise<RootData> {
+  // 301: staré URL ze stagingu, velká písmena, koncové lomítko.
+  const url = new URL(request.url);
+  const target = redirectTarget(url.pathname, url.search);
+  if (target) throw redirect(target, 301);
+
+  const settings = await getSettings();
   return {
-    hubspot: {
-      portalId: process.env.HUBSPOT_PORTAL_ID || '147434044',
-      formId: process.env.HUBSPOT_FORM_ID || '8aa3bd5d-8122-47d2-ae62-fa002f6691ca',
-      region: process.env.HUBSPOT_REGION || 'eu1',
-    },
+    gtmId: settings.gtmId,
+    phone: settings.phone,
+    linkedinUrl: settings.linkedinUrl,
+    email: CONTACT_EMAIL,
+    turnstileSiteKey: turnstileSiteKey(),
   };
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const data = useRouteLoaderData('root') as RootData | undefined;
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith('/admin');
+  const gtmId = isAdmin ? '' : data?.gtmId ?? '';
+
   return (
     <html lang="cs">
       <head>
         <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#020d1e" />
+        {/* Consent Mode v2 (výchozí „denied“) musí běžet před GTM. */}
+        {isAdmin ? null : <script dangerouslySetInnerHTML={{ __html: consentHeadScript(gtmId) }} />}
         <Meta />
         <Links />
       </head>
       <body>
+        {gtmId ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+              title="Google Tag Manager"
+            />
+          </noscript>
+        ) : null}
+        <PictogramSprite />
         {children}
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-          defer
-        />
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -81,25 +99,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App({ loaderData }: { loaderData: ReturnType<typeof loader> }) {
+export default function App() {
   const location = useLocation();
   const isHome = location.pathname === '/';
-  const isAdmin = location.pathname.startsWith('/admin');
-  const hubspot = loaderData.hubspot;
 
-  // Admin běží bez veřejné hlavičky/patičky/kontaktního formuláře.
-  if (isAdmin) {
+  // Admin běží bez veřejné hlavičky, patičky a cookie lišty.
+  if (location.pathname.startsWith('/admin')) {
     return <Outlet />;
   }
 
   return (
     <div className={isHome ? 'page-home' : undefined}>
+      <a className="skip-link" href="#obsah">
+        Přeskočit na obsah
+      </a>
       <Navbar />
-      <main>
+      <main id="obsah">
         <Outlet />
       </main>
-      <ContactForm portalId={hubspot.portalId} formId={hubspot.formId} region={hubspot.region} />
       <Footer />
+      <CookieBar />
     </div>
   );
 }
@@ -111,17 +130,18 @@ export function ErrorBoundary() {
   return (
     <div className="page-home">
       <Navbar />
-      <main>
+      <main id="obsah">
         <section className="article-hero text-center">
           <div className="container">
             <h1 className="article-title">{is404 ? '404' : 'Chyba'}</h1>
             <p className="article-perex mx-auto">
-              {is404
-                ? 'Požadovaná stránka nebyla nalezena.'
-                : 'Omlouváme se, došlo k neočekávané chybě.'}
+              {is404 ? 'Tuhle stránku jsme nenašli. Možná jsme ji přesunuli.' : 'Omlouváme se, na serveru nastala neočekávaná chyba.'}
             </p>
             <a href="/" className="btn btn-cta mt-3">
               [ Zpět na úvod ]
+            </a>{' '}
+            <a href="/sluzby" className="btn btn-outline-custom mt-3">
+              [ Přehled služeb ]
             </a>
           </div>
         </section>

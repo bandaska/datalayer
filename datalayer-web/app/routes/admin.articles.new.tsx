@@ -10,6 +10,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const author = String(form.get('author') ?? '').trim();
   const date = String(form.get('date') ?? '').trim();
   const content = String(form.get('content') ?? '');
+  const description = String(form.get('description') ?? '').trim().slice(0, 200);
 
   if (!slug || !title || !author || !date) {
     return { error: 'Vyplň všechna povinná pole.' };
@@ -21,7 +22,7 @@ export async function action({ request }: ActionFunctionArgs) {
     return { error: `Článek se slugem „${slug}" už existuje.` };
   }
 
-  await createArticle({ slug, title, author, date, content });
+  await createArticle({ slug, title, author, date, description, content });
   return redirect('/admin/articles');
 }
 
