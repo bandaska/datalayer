@@ -372,7 +372,7 @@ function CardsBlock({ block, sectionId, index }: { block: Extract<Block, { type:
   return (
     <div className={cls}>
       {block.items.map((c, i) => (
-        <article className="lp-card" key={i}>
+        <article className={c.pictogram ? 'lp-card lp-card--pi' : 'lp-card'} key={i}>
           {c.pictogram ? (
             <div className="lp-card__head">
               <Pi name={c.pictogram} className="lp-card__pi" />
