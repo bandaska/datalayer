@@ -4,18 +4,19 @@ import { navigationSchema, pageSchema, templateAnchors, textsSchema, type Link, 
 import { checkPage, checkText, pageTexts, plainText } from '~/lib/textRules';
 
 // Kontrola výchozího obsahu webu (app/content/defaults) – z něj migrace
-// 20261009_cms_content_import a 20261009_lp_stihla_sablona zakládají a přepisují
-// obsah v administraci. Hlídá integritu
+// (20261009_cms_content_import, 20261009_lp_stihla_sablona, 20261009_ux_redukce…)
+// zakládají a přepisují obsah v administraci. Hlídá integritu
 // (schéma, cesty, odkazy, kotvy, menu) a pravidla českých textů
 // z docs/HARD-RULES.md, která jde ověřit strojově (app/lib/textRules.ts –
 // tatáž kontrola běží v editoru administrace). Trpný rod a styl hlídá autor.
 
-const KNOWN_PATHS = new Set(['/', '/blog', ...DEFAULT_PAGES.map((p) => `/${p.path}`)]);
+// blog je od UX redukce skrytý – obsah na něj neodkazuje
+const KNOWN_PATHS = new Set(['/', ...DEFAULT_PAGES.map((p) => `/${p.path}`)]);
 
 /** Kotvy, na které jde odkázat: viditelné sekce, jejich záložky a kotvy šablony (skrytá sekce na webu chybí). */
 function anchorsOf(page: PageContent): Set<string> {
   const visible = page.sections.filter((s) => !s.hidden);
-  const blocks = [...visible.flatMap((s) => s.blocks), ...(page.techDetails?.blocks ?? [])];
+  const blocks = visible.flatMap((s) => s.blocks);
   return new Set([...visible.map((s) => s.id), ...blocks.flatMap((b) => (b.type === 'tabs' ? b.items.map((t) => t.id) : [])), ...templateAnchors(page)]);
 }
 
@@ -80,11 +81,13 @@ describe('výchozí stránky', () => {
         expect(page.ogImage).toMatch(/^\/og\/[a-z0-9-]+\.png$/);
       });
 
-      it('FAQ, formulář a související stránky', () => {
+      it('FAQ a formulář', () => {
         if (page.kind === 'service' || page.kind === 'solution') expect(page.faq.length).toBeGreaterThanOrEqual(3);
+        // UX redukce: nejvýš čtyři otázky na stránku
+        expect(page.faq.length, 'otázek ve FAQ').toBeLessThanOrEqual(4);
         expect(page.contact.formId).toMatch(/^[a-z0-9-]+$/);
-        for (const r of page.relatedPages ?? []) expect(KNOWN_PATHS, `neznámá související stránka ${r}`).toContain(`/${r}`);
-        for (const a of page.relatedArticles ?? []) expect(a.slug).toMatch(/^[a-z0-9-]+$/);
+        // formulář nemá pole Web – adresu webu připomene nápověda ve zprávě
+        if (page.contact.enabled !== false) expect(page.contact.placeholder, 'nápověda ve zprávě').toMatch(/^Adresa webu a co řešíte/);
       });
 
       it('kotvy se neopakují a nekříží se šablonou', () => {
@@ -102,7 +105,6 @@ describe('výchozí stránky', () => {
         }
         const links = [
           page.hero.primaryCta,
-          page.hero.secondaryCta,
           ...page.sections.flatMap((s) => s.blocks.flatMap((b) => (b.type === 'cards' ? b.items.map((c) => c.link) : []))),
           ...page.sections.flatMap((s) => s.blocks.flatMap((b) => (b.type === 'tags' ? b.items.map((t) => (t.href ? { label: t.label, href: t.href } : undefined)) : []))),
         ].filter((l): l is Link => Boolean(l));
@@ -119,45 +121,40 @@ describe('výchozí stránky', () => {
             }
       });
 
-      if (page.kind === 'service' || page.kind === 'solution') {
-        // štíhlá šablona LP (vyhodnocení webu, kap. 3.1): rozhodnutí a poptávka,
-        // detaily sbalené v Technických detailech nebo v článcích
-        it('štíhlá šablona: sekce, FAQ, tabulky, kód, úvod', () => {
-          // pod hero nejvýš devět sekcí – šablona sama přidá FAQ, pruh Pokračujte a kontakt
-          expect(page.sections.length, 'sekcí z obsahu').toBeLessThanOrEqual(7);
-          expect(page.faq.length, 'otázek ve FAQ').toBeGreaterThanOrEqual(5);
-          expect(page.faq.length, 'otázek ve FAQ').toBeLessThanOrEqual(6);
-          const blocks = page.sections.flatMap((s) => s.blocks);
-          expect(blocks.filter((b) => b.type === 'table').length, 'viditelných tabulek').toBeLessThanOrEqual(1);
-          for (const b of blocks) {
-            if (b.type === 'table') {
-              expect(b.head.length, 'sloupců tabulky').toBeLessThanOrEqual(3);
-              expect(b.rows.length, 'řádků tabulky').toBeLessThanOrEqual(6);
+      if (page.kind !== 'legal') {
+        // UX redukce (seo-analyza/2026-10-09_ux-redukce, kap. 5.1): jen bloky, které vedou
+        // k formuláři – žádné tabulky, čísla v boxech, kód, postup ani přehledy z menu
+        it('UX redukce: povolené bloky', () => {
+          const allowed = new Set(['paragraphs', 'list', 'cards', 'proscons', 'flow', 'tabs', 'operator']);
+          for (const s of page.sections)
+            for (const b of s.blocks) {
+              expect(allowed.has(b.type), `sekce ${s.id}: blok ${b.type}`).toBe(true);
+              // záložky zůstaly jen u platforem na stránce E-shopy
+              if (b.type === 'tabs') expect(`${page.path}#${s.id}`).toBe('reseni/e-shopy#platformy');
+              if (b.type === 'cards') expect(b.items.length, 'karet v bloku').toBeLessThanOrEqual(8);
             }
-            if (b.type === 'cards') expect(b.items.length, 'karet v bloku').toBeLessThanOrEqual(8);
-          }
-          expect(blocks.some((b) => b.type === 'code'), 'kód patří do Technických detailů').toBe(false);
-          expect(page.hero.quickAnswer, 'úvod a rychlá odpověď jsou jeden odstavec').toBeUndefined();
-          expect((page.trust ?? []).length, 'bodů důvěry').toBeLessThanOrEqual(3);
-          // taby „Co je jinak u e-shopu, B2B a velké firmy“ zmizely ze všech služeb
-          expect(blocks.some((b) => b.type === 'tabs' && b.items.some((t) => ['eshop', 'b2b', 'enterprise'].includes(t.id))), 'taby segmentů').toBe(false);
-          expect((page.relatedArticles ?? []).length, 'článků v pruhu Pokračujte').toBeLessThanOrEqual(3);
-          expect((page.relatedPages ?? []).length, 'stránek v pruhu Pokračujte').toBeLessThanOrEqual(3);
+          const flows = page.sections.flatMap((s) => s.blocks).filter((b) => b.type === 'flow');
+          expect(flows.length, 'schémat toku dat').toBeLessThanOrEqual(1);
         });
+      }
 
-        it('štíhlá šablona: rozsah textu', () => {
-          const words = pageTexts(page)
-            .filter((t) => !t.where.startsWith('Technické detaily') && !t.where.startsWith('Schema') && !t.where.startsWith('SEO'))
-            .reduce((n, t) => n + plainText(t.text).split(/\s+/).filter(Boolean).length, 0);
-          // cíl 1 300–1 800 slov včetně FAQ (kap. 3.1), s rezervou na kontaktní blok a nadpisy
-          expect(words, 'slov na stránce').toBeLessThanOrEqual(1900);
-        });
-
-        it('štíhlá šablona: symptomy a postup', () => {
-          const blocks = page.sections.flatMap((s) => s.blocks);
-          const symptoms = blocks.find((b) => b.type === 'cards' && b.variant === 'symptoms');
+      if (page.kind === 'service' || page.kind === 'solution') {
+        it('UX redukce: sekce a symptomy', () => {
+          // pod hero nejvýš čtyři sekce – šablona sama přidá FAQ a kontakt
+          expect(page.sections.length, 'sekcí z obsahu').toBeLessThanOrEqual(4);
+          const first = page.sections[0];
+          expect(first?.title, 'první sekce').toBe('Poznáváte se?');
+          const symptoms = first?.blocks.find((b) => b.type === 'cards' && b.variant === 'symptoms');
           expect(symptoms, 'blok symptomů').toBeDefined();
-          expect(blocks.some((b) => b.type === 'process'), 'jednotný postup').toBe(true);
+          if (symptoms?.type === 'cards') expect(symptoms.items.length, 'karet „Poznáváte se?“').toBeLessThanOrEqual(4);
+        });
+
+        it('UX redukce: rozsah textu', () => {
+          const words = pageTexts(page)
+            .filter((t) => !t.where.startsWith('Schema') && !t.where.startsWith('SEO'))
+            .reduce((n, t) => n + plainText(t.text).split(/\s+/).filter(Boolean).length, 0);
+          // včetně odpovědí ve FAQ a kontaktního bloku
+          expect(words, 'slov na stránce').toBeLessThanOrEqual(1200);
         });
       }
 
@@ -183,7 +180,7 @@ describe('web bez kontaktní osoby', () => {
     expect(DEFAULT_TEXTS.contact.personName).toBe('');
     expect(DEFAULT_TEXTS.contact.personPhoto ?? '').toBe('');
     for (const p of DEFAULT_PAGES) {
-      const blocks = [...p.sections.flatMap((s) => s.blocks), ...(p.techDetails?.blocks ?? [])];
+      const blocks = p.sections.flatMap((s) => s.blocks);
       expect(blocks.some((b) => b.type === 'person'), `/${p.path}: blok Osoba za webem`).toBe(false);
     }
   });
@@ -199,7 +196,6 @@ describe('jazykový audit a texty bez závazků', () => {
     const PROMISE = /pracovního dne|pracovních dn|třicetiminut|třicet minut|do 24 hodin|do čtyřiadvaceti hodin|prvních třicet dní/i;
     for (const p of DEFAULT_PAGES) expect(JSON.stringify(p), `/${p.path}`).not.toMatch(PROMISE);
     expect(JSON.stringify(DEFAULT_TEXTS)).not.toMatch(PROMISE);
-    expect(DEFAULT_TEXTS.contact.nextSteps).toEqual(['Domluvíme termín callu', 'Projdeme web a cíle', 'Připravíme návrh na míru']);
   });
 
   it('bez středových teček a hranatých závorek v textu (šipky jen v cestách menu v tabulkách)', () => {
@@ -226,18 +222,62 @@ describe('jazykový audit a texty bez závazků', () => {
   });
 });
 
-describe('jednotný postup spolupráce', () => {
-  it('kroky na stránce Jak pracujeme odpovídají pěti krokům z Textů webu', () => {
-    const page = DEFAULT_PAGES.find((p) => p.path === 'jak-pracujeme')!;
-    const steps = page.sections.flatMap((s) => s.blocks).find((b) => b.type === 'steps');
-    expect(steps?.type === 'steps' ? steps.items.map((i) => i.title) : []).toEqual(DEFAULT_TEXTS.process.steps.map((st) => st.title));
+describe('UX redukce webu', () => {
+  // seo-analyza/2026-10-09_ux-redukce, kap. 3: třináct stránek, ostatní přesměrované
+  const REMOVED = [
+    '/sluzby',
+    '/sluzby/google-tag-manager',
+    '/sluzby/datova-vrstva',
+    '/sluzby/dashboardy-a-reporting',
+    '/sluzby/technicky-audit-webu',
+    '/sluzby/sprava-webu-a-mereni',
+    '/reseni/velke-firmy',
+    '/jak-pracujeme',
+  ];
+
+  it('web má třináct stránek', () => {
+    expect(DEFAULT_PAGES.map((p) => `/${p.path}`).sort()).toEqual(
+      [
+        '/',
+        '/sluzby/audit-mereni',
+        '/sluzby/implementace-ga4',
+        '/sluzby/server-side-tracking',
+        '/sluzby/cookie-lista-consent-mode',
+        '/sluzby/mereni-konverzi',
+        '/sluzby/bigquery',
+        '/reseni/e-shopy',
+        '/reseni/b2b-a-lead-generation',
+        '/o-nas',
+        '/kontakt',
+        '/cookies',
+        '/zpracovani-osobnich-udaju',
+      ].sort(),
+    );
   });
 
-  it('kroky postupu se nevypisují ručně jinde než na stránce Jak pracujeme', () => {
-    for (const p of DEFAULT_PAGES.filter((x) => x.path !== 'jak-pracujeme')) {
-      const blocks = p.sections.filter((s) => !s.hidden).flatMap((s) => s.blocks);
-      expect(blocks.some((b) => b.type === 'steps'), `/${p.path}: místo bloku Kroky použijte blok Postup spolupráce`).toBe(false);
+  it('obsah, menu ani texty neodkazují na zrušené stránky a blog', () => {
+    const all = JSON.stringify([DEFAULT_PAGES, DEFAULT_NAVIGATION, DEFAULT_TEXTS]);
+    // JSON: odkaz v poli href ("/cesta") i v HTML textu (href=\"/cesta\"), s kotvou i bez ní
+    const forms = (path: string) => [`"${path}"`, `"${path}#`, `href=\\"${path}\\"`, `href=\\"${path}#`];
+    for (const path of [...REMOVED, '/blog']) for (const f of forms(path)) expect(all.includes(f), `odkaz ${f}`).toBe(false);
+  });
+
+  it('menu: šest služeb bez popisků, E-shopy, B2B a O nás', () => {
+    const [services, ...rest] = DEFAULT_NAVIGATION.items;
+    expect(services.type).toBe('menu');
+    if (services.type === 'menu') {
+      const items = services.columns.flatMap((c) => c.items);
+      expect(items).toHaveLength(6);
+      for (const it of items) expect(it.tagline ?? '', it.label).toBe('') ;
+      expect(services.footerLink).toBeUndefined();
     }
+    expect(rest.map((i) => (i.type === 'link' ? i.href : i.id))).toEqual(['/reseni/e-shopy', '/reseni/b2b-a-lead-generation', '/o-nas']);
+    expect(DEFAULT_NAVIGATION.footer.description).toBe('');
+  });
+
+  it('kontaktní formulář bez kroků po odeslání, s krátkým právním textem', () => {
+    expect(DEFAULT_TEXTS.contact).not.toHaveProperty('nextSteps');
+    expect(DEFAULT_TEXTS.contact.legal).toMatch(/^Údaje použijeme jen k odpovědi\./);
   });
 });
 
@@ -249,7 +289,6 @@ describe('odkazy s kotvou na jiné stránky', () => {
       for (const { where, text } of pageTexts(p)) for (const m of text.matchAll(/href="([^"#]+)#([^"]+)"/g)) links.push({ where: `/${p.path} › ${where}`, href: `${m[1]}#${m[2]}` });
       for (const s of p.sections)
         for (const b of s.blocks) {
-          if (b.type === 'tags') for (const t of b.items) if (t.href?.includes('#') && !t.href.startsWith('#')) links.push({ where: `/${p.path} › štítek ${t.label}`, href: t.href });
           if (b.type === 'cards') for (const c of b.items) if (c.link?.href.includes('#') && !c.link.href.startsWith('#')) links.push({ where: `/${p.path} › karta ${c.title}`, href: c.link.href });
         }
     }
@@ -307,10 +346,6 @@ describe('výchozí texty webu', () => {
             : [];
     const errors = strings(DEFAULT_TEXTS, 'texty').flatMap(({ where, text }) => checkText(text, where));
     expect(errors.filter((i) => i.level === 'error').map((e) => `${e.where}: ${e.message}`)).toEqual([]);
-  });
-
-  it('postup spolupráce má pět kroků', () => {
-    expect(DEFAULT_TEXTS.process.steps).toHaveLength(5);
   });
 
   it('zástupné symboly v hláškách formuláře', () => {

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { DEFAULT_NEXT_STEPS, DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
+import { DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
 import { LEGACY_TOPICS, TOPIC_VALUES } from './topics';
 
 // Schéma veškerého obsahu webu, který se edituje v administraci a ukládá do
@@ -66,15 +66,13 @@ export const topicSchema = z.preprocess((v) => (typeof v === 'string' && v in LE
 
 // ---------- bloky obsahu ----------
 
+// Karta bez štítků a ukázek konzole (UX redukce 9. října 2026): piktogram, nadpis,
+// text, případně odrážky a odkaz.
 const cardSchema = z.object({
   title: req(200),
   text: str(3000), // HTML
   pictogram: pictogramSchema.optional(),
-  tag: str(60).optional(),
-  /** „Konzole“: 2–4 řádky mono textu, řádek začínající „⚠“ se zvýrazní. */
-  console: z.array(str(160)).optional(),
   bullets: z.array(str(400)).optional(), // HTML
-  tags: z.array(str(60)).optional(),
   link: linkSchema.optional(),
 });
 
@@ -95,7 +93,7 @@ export const blockSchema = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('cards'),
     columns: z.union([z.literal(2), z.literal(3), z.literal(4)]).optional(),
-    /** symptoms = na mobilu kompaktní seznam (piktogram vlevo), u víc než čtyř karet tři a tlačítko „Zobrazit další“. */
+    /** symptoms = na mobilu kompaktní seznam (piktogram vlevo). */
     variant: z.enum(['default', 'symptoms']).optional(),
     items: z.array(cardSchema).min(1, 'Aspoň jedna karta'),
   }),
@@ -225,7 +223,6 @@ export const BLOCK_TYPES = blockSchema.options.map((o) => o.shape.type.value);
 export const sectionSchema = z.object({
   /** Kotva sekce (např. `jak-to-funguje`). */
   id: slug,
-  eyebrow: str(80).optional(),
   /** H2 – prázdný nadpis se nezobrazí (např. sekce jen s volným textem). */
   title: str(200),
   lead: str(2000).optional(), // HTML
@@ -233,8 +230,6 @@ export const sectionSchema = z.object({
   tone: z.enum(['light', 'white', 'dark', 'deep']).optional(),
   /** split = nadpis a úvod vlevo, bloky vpravo (např. blok Důkaz). */
   layout: z.enum(['default', 'split']).optional(),
-  /** Drobná poznámka pod sekcí (např. „Čísla v ukázkách jsou ilustrativní.“). */
-  note: str(300).optional(),
   /** Skrytou sekci web nevykreslí, obsah ale zůstane v databázi (např. čeká na nasazení měření). */
   hidden: z.boolean().optional(),
   blocks: z.array(blockSchema),
@@ -248,21 +243,9 @@ export const pathSchema = z
   .trim()
   .regex(/^(?:[a-z0-9]+(?:-[a-z0-9]+)*(?:\/[a-z0-9]+(?:-[a-z0-9]+)*)*)?$/, 'Cesta: malá písmena, číslice, pomlčky a lomítka (např. sluzby/nova-sluzba)');
 
-/** Kotvy, které na stránku vkládá šablona: kontaktní blok, FAQ, související stránky a články, menu. */
-export function templateAnchors(page: {
-  contact: { enabled?: boolean };
-  faq: unknown[];
-  relatedPages?: unknown[];
-  relatedArticles?: unknown[];
-  techDetails?: unknown;
-}): string[] {
-  return [
-    'site-menu',
-    ...(page.contact.enabled !== false ? ['kontakt', 'contact-form'] : []),
-    ...(page.faq.length ? ['faq'] : []),
-    ...(page.relatedPages?.length || page.relatedArticles?.length ? ['navazujici'] : []),
-    ...(page.techDetails ? ['technicke-detaily'] : []),
-  ];
+/** Kotvy, které na stránku vkládá šablona: kontaktní blok, FAQ a menu. */
+export function templateAnchors(page: { contact: { enabled?: boolean }; faq: unknown[] }): string[] {
+  return ['site-menu', ...(page.contact.enabled !== false ? ['kontakt', 'contact-form'] : []), ...(page.faq.length ? ['faq'] : [])];
 }
 
 export const pageSchema = z
@@ -282,34 +265,26 @@ export const pageSchema = z
     seo: z.object({ title: req(90), description: req(220) }),
     /** Obrázek pro sdílení (1200×630), cesta nebo https URL. */
     ogImage: z.string().trim().max(500).optional(),
+    // Hero jen s nadpisem, podtitulem a jedním tlačítkem – bez nadtitulku, druhého tlačítka,
+    // mikrotextu a bodů důvěry (UX redukce 9. října 2026). Starší pole v databázi schéma zahodí.
     hero: z.object({
       /** pictogram = rámeček s piktogramem, diagram = schéma z homepage, simple = jen text. */
       variant: z.enum(['pictogram', 'diagram', 'simple']).optional(),
-      eyebrow: str(80),
       h1: req(160),
       /** Část H1, která se podtrhne (jen varianta diagram). */
       h1Highlight: str(80).optional(),
       subtitle: str(1200),
-      quickAnswer: str(1500).optional(), // HTML
       primaryCta: linkSchema.optional(),
-      secondaryCta: linkSchema.optional(),
-      microcopy: str(300).optional(),
     }),
-    trust: z.array(str(200)).optional(),
     sections: z.array(sectionSchema),
     faq: z.array(faqSchema),
     faqTitle: str(120).optional(),
-    /** Technické detaily: sbalený blok u FAQ pro obsah, který jednou poputuje do článku. Nejvýš jeden na stránku. */
-    techDetails: z.object({ summary: req(200), blocks: z.array(blockSchema) }).optional(),
-    relatedArticles: z.array(z.object({ slug, title: str(200) })).optional(),
-    relatedPages: z.array(pathSchema).optional(),
     contact: z.object({
       /** Vypnutý kontaktní blok se na stránce nezobrazí (např. zásady). */
       enabled: z.boolean().optional(),
       /** top = formulář hned pod úvodem stránky (stránka Kontakt), jinak na konci. */
       position: z.enum(['bottom', 'top']).optional(),
       formId: slug,
-      topics: z.array(topicSchema).optional(),
       title: str(200),
       lead: str(1000).optional(),
       placeholder: str(300),
@@ -335,9 +310,6 @@ export const pageSchema = z
       else if (ids.has(id)) ctx.addIssue({ code: 'custom', path, message: `Kotva „${id}“ se opakuje` });
       ids.add(id);
     };
-    page.techDetails?.blocks.forEach((b, j) => {
-      if (b.type === 'tabs') b.items.forEach((t, k) => anchor(t.id, ['techDetails', 'blocks', j, 'items', k, 'id']));
-    });
     page.sections.forEach((s, i) => {
       anchor(s.id, ['sections', i, 'id']);
       s.blocks.forEach((b, j) => {
@@ -411,13 +383,12 @@ export type NavLink = z.infer<typeof navLinkSchema>;
 // Nová pole mají výchozí hodnotu, aby prošel i dokument content/texts uložený
 // před jejich zavedením.
 
-export { DEFAULT_NEXT_STEPS, DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
+export { DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
 
 const processStepSchema = z.object({ title: req(120), text: req(400), output: str(200).optional(), fromClient: str(200).optional() });
 
 export const textsSchema = z.object({
   contact: z.object({
-    eyebrow: req(40),
     defaultTitle: req(200),
     leadWithPhone: req(600),
     leadWithoutPhone: req(600),
@@ -436,8 +407,6 @@ export const textsSchema = z.object({
     personNote: str(160).default(''),
     /** Fotka osoby u kontaktu (cesta nebo https URL); bez ní web ukáže iniciály. */
     personPhoto: z.string().trim().max(500).optional(),
-    /** Tři kroky „co se stane po odeslání“ pod formulářem. */
-    nextSteps: z.array(req(200)).max(5).default(DEFAULT_NEXT_STEPS),
   }),
   cookieBar: z.object({
     title: req(80),
@@ -470,12 +439,12 @@ export const textsSchema = z.object({
     /** Další odkazy pod tlačítkem zpět. */
     links: z.array(linkSchema).max(4).default(DEFAULT_THANK_YOU_LINKS),
   }),
-  notFound: z.object({ title: req(80), text: req(300), home: req(60), services: req(60) }),
+  notFound: z.object({ title: req(80), text: req(300), home: req(60) }),
   organization: z.object({ description: req(500) }),
   /** Jednotný postup spolupráce (blok „Postup“ na stránkách). */
   process: z.object({ steps: z.array(processStepSchema).length(5, 'Postup má přesně pět kroků') }).default(DEFAULT_PROCESS),
-  /** Společné texty šablony stránek: FAQ a pruh „Pokračujte“. */
-  page: z.object({ faqTitle: req(120), faqLead: str(300), continueLabel: req(60) }).default(DEFAULT_PAGE_TEXTS),
+  /** Společné texty šablony stránek: nadpis FAQ. */
+  page: z.object({ faqTitle: req(120) }).default(DEFAULT_PAGE_TEXTS),
 });
 
 export type SiteTexts = z.infer<typeof textsSchema>;

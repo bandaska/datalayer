@@ -86,7 +86,7 @@ export function replaceAll(text: string, replacements: [from: string, to: string
 }
 
 /** Porovnatelný tvar dokumentu: bez metadat, klíče seřazené, bez prázdných hodnot (Firestore je neukládá). */
-function comparable(doc: Record<string, unknown>): string {
+export function comparable(doc: Record<string, unknown>): string {
   const norm = (v: unknown): unknown => {
     if (Array.isArray(v)) return v.map(norm);
     if (v instanceof Timestamp) return v.toMillis();

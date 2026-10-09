@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Form, useFetcher } from 'react-router';
-import { BLOCK_TYPES, TOPIC_VALUES, type Block, type BlockType, type PageContent, type PageKind, type Section } from '~/content/schema';
-import { TOPICS } from '~/lib/contact';
+import { BLOCK_TYPES, type Block, type BlockType, type PageContent, type PageKind, type Section } from '~/content/schema';
 import { checkPage } from '~/lib/textRules';
 import { BLOCK_HELP, BLOCK_LABELS, BlockEditor, blockSummary, newBlock, type EditorOptions } from './BlockEditor';
-import { CheckGrid, LinesInput, LinkInput, ListEditor, PictogramPicker, Select, TextArea, TextInput, Toggle, short } from './fields';
+import { LinkInput, ListEditor, PictogramPicker, Select, TextArea, TextInput, Toggle, short } from './fields';
 import { Card, Pill, formatDateTime, plural } from './ui';
 
 // Editor stránky webu. Celý obsah drží jako jeden objekt (schéma
@@ -42,7 +41,6 @@ const LABELS: Record<string, string> = {
   seo: 'SEO',
   contact: 'Kontakt',
   schema: 'Strukturovaná data',
-  trust: 'Pruh faktů',
   title: 'nadpis',
   text: 'text',
   label: 'text',
@@ -52,12 +50,10 @@ const LABELS: Record<string, string> = {
   a: 'odpověď',
   h1: 'nadpis H1',
   subtitle: 'podtitul',
-  eyebrow: 'štítek',
   description: 'description',
   navTitle: 'Krátký název',
   tagline: 'Řádek „co to řeší“',
   primaryCta: 'hlavní tlačítko',
-  secondaryCta: 'druhé tlačítko',
   formId: 'ID formuláře',
   placeholder: 'nápověda v poli zprávy',
   html: 'volný text',
@@ -79,13 +75,11 @@ export function PageEditor({
   initial,
   meta,
   pages,
-  articles,
   options,
 }: {
   initial: PageContent;
   meta: { source: 'firestore' | 'legacy' | 'default'; updatedAt?: string; updatedBy?: string };
   pages: PageOption[];
-  articles: { slug: string; title: string }[];
   options: EditorOptions;
 }) {
   const [page, setPage] = useState<PageContent>(initial);
@@ -248,24 +242,17 @@ export function PageEditor({
 
           {tab === 'obsah' ? (
             <>
-              <Card title="Úvod stránky (hero)" desc="První obrazovka: nadpis H1, podtitul a tlačítka.">
-                <div className="row g-2">
-                  <div className="col-md-4">
-                    <Select
-                      label="Vzhled"
-                      value={page.hero.variant ?? 'pictogram'}
-                      onChange={(variant) => setHero({ variant })}
-                      options={[
-                        { value: 'pictogram', label: 'S piktogramem' },
-                        { value: 'diagram', label: 'S diagramem (homepage)' },
-                        { value: 'simple', label: 'Jen text' },
-                      ]}
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <TextInput label="Štítek nad nadpisem" value={page.hero.eyebrow} onChange={(eyebrow) => setHero({ eyebrow })} />
-                  </div>
-                </div>
+              <Card title="Úvod stránky (hero)" desc="První obrazovka: nadpis H1, jeden odstavec a jedno tlačítko.">
+                <Select
+                  label="Vzhled"
+                  value={page.hero.variant ?? 'pictogram'}
+                  onChange={(variant) => setHero({ variant })}
+                  options={[
+                    { value: 'pictogram', label: 'S piktogramem' },
+                    { value: 'diagram', label: 'S diagramem (homepage)' },
+                    { value: 'simple', label: 'Jen text' },
+                  ]}
+                />
                 <TextInput label="Nadpis H1" value={page.hero.h1} onChange={(h1) => setHero({ h1 })} counter={{ max: 75 }} required />
                 {page.hero.variant === 'diagram' ? (
                   <TextInput label="Podtržená část H1" value={page.hero.h1Highlight} onChange={(v) => setHero({ h1Highlight: v || undefined })} help="Musí přesně odpovídat části nadpisu." />
@@ -277,23 +264,7 @@ export function PageEditor({
                   rows={3}
                   help="Dvě až tři věty, které rovnou odpoví, co služba řeší – slouží i jako odpověď pro AI přehledy."
                 />
-                {page.hero.quickAnswer ? (
-                  <TextArea
-                    label="Rychlá odpověď – web ji už nezobrazuje"
-                    value={page.hero.quickAnswer}
-                    onChange={(v) => setHero({ quickAnswer: v || undefined })}
-                    html
-                    rows={3}
-                    help="Úvod stránky tvoří jeden odstavec o dvou až třech větách. Sloučte text s podtitulem a pole vymažte."
-                  />
-                ) : null}
-                <LinkInput label="Hlavní tlačítko" value={page.hero.primaryCta} onChange={(primaryCta) => setHero({ primaryCta })} optional hrefList={hrefList} help="Hranaté závorky doplní web sám." />
-                <LinkInput label="Druhé tlačítko" value={page.hero.secondaryCta} onChange={(secondaryCta) => setHero({ secondaryCta })} optional hrefList={hrefList} />
-                <TextInput label="Mikrotext pod tlačítky" value={page.hero.microcopy} onChange={(v) => setHero({ microcopy: v || undefined })} />
-              </Card>
-
-              <Card title="Body důvěry pod tlačítky" desc="Nejvýš tři jasné výhody s fajfkou pod tlačítky v úvodu. Prázdné = nezobrazí se.">
-                <LinesInput label="Body" value={page.trust} onChange={(trust) => set('trust', trust)} rows={3} />
+                <LinkInput label="Tlačítko" value={page.hero.primaryCta} onChange={(primaryCta) => setHero({ primaryCta })} optional hrefList={hrefList} help="Obvykle #kontakt. Hranaté závorky doplní web sám." />
               </Card>
 
               <Card title={`Sekce (${page.sections.length})`} desc="Obsah stránky po sekcích. Každá sekce má nadpis H2 a libovolné bloky.">
@@ -325,14 +296,7 @@ export function PageEditor({
                           <TextInput label="Kotva (#)" value={s.id} onChange={(id) => update({ ...s, id })} mono help="Odkaz na sekci: /stranka#kotva" />
                         </div>
                       </div>
-                      <div className="row g-2">
-                        <div className="col-md-8">
-                          <TextInput label="Štítek nad nadpisem" value={s.eyebrow} onChange={(v) => update({ ...s, eyebrow: v || undefined })} />
-                        </div>
-                        <div className="col-md-4">
-                          <Select label="Pozadí" value={s.tone ?? 'dark'} onChange={(tone) => update({ ...s, tone })} options={[...TONES]} />
-                        </div>
-                      </div>
+                      <Select label="Pozadí" value={s.tone ?? 'dark'} onChange={(tone) => update({ ...s, tone })} options={[...TONES]} />
                       <Select
                         label="Rozvržení"
                         value={s.layout ?? 'default'}
@@ -345,7 +309,6 @@ export function PageEditor({
                       <TextArea label="Úvodní text" value={s.lead} onChange={(v) => update({ ...s, lead: v || undefined })} html rows={2} />
                       <div className="form-label mt-2">Bloky obsahu</div>
                       {blocksEditor(s.blocks, (blocks) => update({ ...s, blocks }), 'Sekce zatím nemá žádný blok.')}
-                      <TextInput label="Poznámka pod sekcí" value={s.note} onChange={(v) => update({ ...s, note: v || undefined })} help="Drobný text, např. „Čísla v ukázkách jsou ilustrativní.“" />
                       <Toggle
                         label="Skrýt sekci na webu"
                         checked={Boolean(s.hidden)}
@@ -357,32 +320,11 @@ export function PageEditor({
                 />
               </Card>
 
-              <Card
-                title="Technické detaily (sbalené u FAQ)"
-                desc="Nejvýš jeden sbalený blok na stránku: obsah pro technické čtenáře, který jednou poputuje do článku. Na LP pak zůstane jen věta a odkaz."
-              >
-                <Toggle
-                  label="Zobrazit Technické detaily"
-                  checked={Boolean(page.techDetails)}
-                  onChange={(on) => set('techDetails', on ? { summary: 'Technické detaily', blocks: [] } : undefined)}
-                />
-                {page.techDetails ? (
-                  <>
-                    <TextInput
-                      label="Text rozbalovacího odkazu"
-                      value={page.techDetails.summary}
-                      onChange={(summary) => set('techDetails', { ...page.techDetails!, summary })}
-                      required
-                    />
-                    {blocksEditor(page.techDetails.blocks, (blocks) => set('techDetails', { ...page.techDetails!, blocks }), 'Zatím žádný blok.')}
-                  </>
-                ) : null}
-              </Card>
             </>
           ) : null}
 
           {tab === 'faq' ? (
-            <Card title="Časté otázky" desc="Zobrazí se pod sekcemi a web z nich vytvoří i strukturovaná data FAQPage.">
+            <Card title="Časté otázky" desc="Zobrazí se pod sekcemi a web z nich vytvoří i strukturovaná data FAQPage. Nejvýš čtyři otázky, které odstraní pochybnost před odesláním formuláře.">
               <TextInput label="Nadpis sekce FAQ" value={page.faqTitle} onChange={(v) => set('faqTitle', v || undefined)} placeholder="Časté otázky" />
               <ListEditor
                 items={page.faq}
@@ -423,12 +365,11 @@ export function PageEditor({
                       </div>
                     </div>
                     <TextArea label="Úvodní text" value={page.contact.lead} onChange={(v) => setContact({ lead: v || undefined })} rows={2} />
-                    <TextInput label="Nápověda v poli zprávy" value={page.contact.placeholder} onChange={(placeholder) => setContact({ placeholder })} />
-                    <CheckGrid
-                      label="Předvybraná témata"
-                      options={TOPIC_VALUES.map((t) => ({ value: t, label: TOPICS.find((x) => x.value === t)?.label ?? t }))}
-                      value={page.contact.topics ?? []}
-                      onChange={(topics) => setContact({ topics: topics.length ? topics : undefined })}
+                    <TextInput
+                      label="Nápověda v poli zprávy"
+                      value={page.contact.placeholder}
+                      onChange={(placeholder) => setContact({ placeholder })}
+                      help="Formulář nemá pole Web – začněte „Adresa webu a co řešíte, např. …“."
                     />
                     <Select
                       label="Typ poptávky (měření)"
@@ -441,42 +382,6 @@ export function PageEditor({
                       ]}
                     />
                   </>
-                ) : null}
-              </Card>
-              <Card title="Související stránky" desc="Karty „Navazující služby“ pod FAQ.">
-                <CheckGrid
-                  label="Stránky"
-                  options={pages.filter((p) => p.path !== page.path && p.kind !== 'home').map((p) => ({ value: p.path, label: p.label, hint: `/${p.path}${p.published ? '' : ' · koncept'}` }))}
-                  value={page.relatedPages ?? []}
-                  onChange={(relatedPages) => set('relatedPages', relatedPages.length ? relatedPages : undefined)}
-                />
-              </Card>
-              <Card title="Články k tématu" desc="Odkaz se zobrazí, jen když článek na blogu existuje.">
-                {articles.length ? (
-                  <CheckGrid
-                    label="Články"
-                    options={articles.map((a) => ({ value: a.slug, label: a.title, hint: `/blog/${a.slug}` }))}
-                    value={(page.relatedArticles ?? []).map((a) => a.slug)}
-                    onChange={(slugs) =>
-                      set(
-                        'relatedArticles',
-                        slugs.length
-                          ? slugs.map((s) => ({ slug: s, title: articles.find((a) => a.slug === s)?.title ?? page.relatedArticles?.find((a) => a.slug === s)?.title ?? s }))
-                          : undefined,
-                      )
-                    }
-                  />
-                ) : (
-                  <p className="text-muted mb-0">Blog zatím nemá články.</p>
-                )}
-                {(page.relatedArticles ?? []).filter((a) => !articles.some((x) => x.slug === a.slug)).length ? (
-                  <p className="form-text mb-0">
-                    Plánované články (zobrazí se po vydání):{' '}
-                    {(page.relatedArticles ?? [])
-                      .filter((a) => !articles.some((x) => x.slug === a.slug))
-                      .map((a) => a.title)
-                      .join(', ')}
-                  </p>
                 ) : null}
               </Card>
             </>

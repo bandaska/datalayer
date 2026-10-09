@@ -54,10 +54,8 @@ function cleanBlock(b: Block): Block {
 export function sanitizePage(page: PageContent): PageContent {
   return {
     ...page,
-    hero: { ...page.hero, quickAnswer: inl(page.hero.quickAnswer) },
     sections: page.sections.map((s) => ({ ...s, lead: inl(s.lead), blocks: s.blocks.map(cleanBlock) })),
     faq: page.faq.map((f) => ({ ...f, a: cleanInline(f.a) })),
-    ...(page.techDetails ? { techDetails: { ...page.techDetails, blocks: page.techDetails.blocks.map(cleanBlock) } } : {}),
   };
 }
 
@@ -73,6 +71,5 @@ export function sanitizeTexts(t: SiteTexts): SiteTexts {
       marketing: cleanInline(t.cookieBar.marketing),
     },
     process: { ...t.process, steps: t.process.steps.map((st) => ({ ...st, text: cleanInline(st.text) })) },
-    page: { ...t.page, faqLead: cleanInline(t.page.faqLead) },
   };
 }

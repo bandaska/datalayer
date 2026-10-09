@@ -73,7 +73,9 @@ Přestavbu existujících stránek ukazuje `20261009_lp_stihla_sablona`: stránk
 když se liší od nového znění, původní dokument předtím uloží do `pages_backup/{id}@{id migrace}`
 a stav zveřejnění převezme z databáze. Texty a menu mění jen tam, kde zůstalo původní výchozí
 znění – úpravy z administrace nechá být. Stejný postup pro všechny výchozí stránky najednou nabízí
-`syncPagesWithDefaults` v `app/migrations/helpers.ts` (používá ho `20261009_jazykovy_audit`).
+`syncPagesWithDefaults` v `app/migrations/helpers.ts` (používá ho `20261009_jazykovy_audit`
+a `20261009_ux_redukce`). Zrušenou stránku migrace před smazáním uloží do `pages_backup`
+(vzor v `20261009_ux_redukce`) a její adresu přesměruje `app/lib/redirects.ts`.
 
 ## Nasazení
 

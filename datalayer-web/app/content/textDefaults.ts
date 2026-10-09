@@ -40,15 +40,7 @@ export const DEFAULT_PROCESS = {
 
 export const DEFAULT_PAGE_TEXTS = {
   faqTitle: 'Časté otázky',
-  // výzvu pod nadpisem FAQ jazykový audit doporučil vypustit (kontaktní blok je hned pod ní)
-  faqLead: '',
-  continueLabel: 'pokračujte',
 };
 
-// kroky bez slibů lhůt a délek (zadání klienta)
-export const DEFAULT_NEXT_STEPS = ['Domluvíme termín callu', 'Projdeme web a cíle', 'Připravíme návrh na míru'];
-
-export const DEFAULT_THANK_YOU_LINKS = [
-  { label: 'Jak pracujeme', href: '/jak-pracujeme' },
-  { label: 'Přehled služeb', href: '/sluzby' },
-];
+// Děkovací stránka jen s tlačítkem zpět – rozcestník služeb a Jak pracujeme web nemá (UX redukce).
+export const DEFAULT_THANK_YOU_LINKS: { label: string; href: string }[] = [];

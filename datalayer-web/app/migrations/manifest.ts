@@ -17,6 +17,7 @@ import { migration as m20261009CmsContentImport } from './scripts/20261009_cms_c
 import { migration as m20261009LpStihlaSablona } from './scripts/20261009_lp_stihla_sablona';
 import { migration as m20261009BezKontaktniOsoby } from './scripts/20261009_bez_kontaktni_osoby';
 import { migration as m20261009JazykovyAudit } from './scripts/20261009_jazykovy_audit';
+import { migration as m20261009UxRedukce } from './scripts/20261009_ux_redukce';
 
 export const MIGRATIONS: Migration[] = [
   m20261009SettingsDefaults, // výchozí příjemce formuláře v settings/site
@@ -25,4 +26,5 @@ export const MIGRATIONS: Migration[] = [
   m20261009LpStihlaSablona, // štíhlá šablona stránek podle vyhodnocení webu
   m20261009BezKontaktniOsoby, // web bez kontaktní osoby: texty, stránky, autor článků
   m20261009JazykovyAudit, // jazykový audit: stránky, texty, menu, telefon, články
+  m20261009UxRedukce, // UX redukce: třináct stránek, kratší menu, patička a formulář
 ];

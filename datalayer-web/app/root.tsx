@@ -28,7 +28,7 @@ import { Footer } from './components/Footer';
 import { CookieBar } from './components/CookieBar';
 import { PictogramSprite } from './components/Pictograms';
 import { consentHeadScript } from './lib/consent';
-import { redirectTarget } from './lib/redirects';
+import { redirectFor } from './lib/redirects';
 import type { RootData } from './lib/rootData';
 import { getNavigation, getTexts } from './lib/cms/singletons.server';
 import { DEFAULT_TEXTS } from './content/defaults/texts';
@@ -57,10 +57,10 @@ export const links: LinksFunction = () => [
 ];
 
 export async function loader({ request }: LoaderFunctionArgs): Promise<RootData> {
-  // 301: staré URL ze stagingu, velká písmena, koncové lomítko.
+  // 301: staré a zrušené URL, velká písmena, koncové lomítko; 302: dočasně skrytý blog.
   const url = new URL(request.url);
-  const target = redirectTarget(url.pathname, url.search);
-  if (target) throw redirect(target, 301);
+  const target = redirectFor(url.pathname, url.search);
+  if (target) throw redirect(target.to, target.status);
 
   const [settings, navigation, texts] = await Promise.all([getSettings(), getNavigation(), getTexts()]);
   // Metadata úprav (kdo a kdy) do prohlížeče neposíláme.
@@ -156,9 +156,6 @@ export function ErrorBoundary() {
             <p className="article-perex mx-auto">{is404 ? t.text : 'Omlouváme se, na serveru nastala neočekávaná chyba.'}</p>
             <a href="/" className="btn btn-cta mt-3">
               {t.home}
-            </a>{' '}
-            <a href="/sluzby" className="btn btn-outline-custom mt-3">
-              {t.services}
             </a>
           </div>
         </section>

@@ -1,16 +1,11 @@
 import type { PageInput } from '../../schema';
 
-// Zdroj: seo-analyza/03_landing-pages/15_jak-pracujeme-a-podpurne-stranky.md, kap. C
-// (návrh v1, 8. října 2026), úpravy podle vyhodnocení webu (9. října 2026, kap. 5.15
-// a 8). Sekce „Pro koho pracujeme“ přebírá texty segmentů z 04_homepage-ux/
-// homepage-audit-a-navrh.md (sekce 2). Pravidla práce s daty jsme zkrátili na čtyři body,
-// postup a „co od vás budeme potřebovat“ najde návštěvník na /jak-pracujeme.
-// Web zatím nemá obličej ani kontaktní osobu (rozhodnutí klienta, 9. října 2026):
-// stránka neuvádí jméno, fotku ani blok osoby. Sekce „Kdo web provozuje“ ukáže jen
-// identifikaci provozovatele z Nastavení, jakmile ji klient vyplní. Do té doby chybí
-// firemní údaje (IČO, DIČ, sídlo, rejstřík), příběh založení a telefon. Tvrzení o správě
-// kampaní čeká na rozhodnutí klienta (viz kap. B6), proto na stránce není. Texty prošly
-// jazykovým auditem z 9. října 2026 (kap. 3.19), bez slibů lhůt (rozhodnutí klienta).
+// Stránka O nás prošla UX redukcí z 9. října 2026 (seo-analyza/2026-10-09_ux-redukce,
+// kap. 5.2): zůstal hero s jedním tlačítkem, „Proč začínáme u datové vrstvy“, pravidla
+// práce s daty a kontaktní blok; „Pro koho pracujeme“ (segmenty jsou v menu) a FAQ
+// (opakovalo úvodní stránku) vypadly. Web zatím nemá obličej ani kontaktní osobu
+// (rozhodnutí klienta): sekce „Kdo web provozuje“ ukáže identifikaci provozovatele
+// z Nastavení, až ji klient vyplní, do té doby se nevykreslí.
 
 export const page: PageInput = {
   path: 'o-nas',
@@ -26,21 +21,15 @@ export const page: PageInput = {
   },
 
   hero: {
-    eyebrow: 'o nás',
     h1: 'Jak pracujeme s daty a pro koho',
     subtitle:
       'Stavíme a ověřujeme měření pro e-shopy, B2B firmy a velké firmy – od datové vrstvy přes Google Tag Manager (GTM), GA4 a souhlasy po server-side tracking a BigQuery. Pracujeme ve vašich účtech a každou implementaci předáme s dokumentací.',
     primaryCta: { label: 'Napsat nám', href: '#kontakt' },
-    secondaryCta: { label: 'Jak pracujeme', href: '/jak-pracujeme' },
-    microcopy: 'Úvodní konzultace zdarma a nezávazně',
   },
-
-  trust: ['Účty a data zakládáme na vaši firmu', 'Validace před každým předáním', 'Standardní nástroje, žádné černé skříňky'],
 
   sections: [
     {
       id: 'provozovatel',
-      eyebrow: 'provozovatel',
       title: 'Kdo web provozuje',
       tone: 'white',
       // bez údajů v Nastavení → Provozovatel webu web sekci nevykreslí
@@ -48,7 +37,6 @@ export const page: PageInput = {
     },
     {
       id: 'pristup',
-      eyebrow: 'přístup',
       title: 'Proč začínáme u datové vrstvy',
       lead: 'Když firma rozhoduje o reklamě podle dat, kterým nikdo nevěří, problém většinou není v nástroji.',
       tone: 'light',
@@ -64,41 +52,7 @@ export const page: PageInput = {
       ],
     },
     {
-      id: 'pro-koho',
-      eyebrow: 'pro koho',
-      title: 'Pro koho pracujeme',
-      lead: 'E-shop potřebuje jiná data než firma, která prodává přes obchodníky.',
-      tone: 'dark',
-      blocks: [
-        {
-          type: 'cards',
-          columns: 3,
-          items: [
-            {
-              title: 'E-shopy',
-              pictogram: 'eshop',
-              text: 'Pro e-shopy, kterým GA4 ukazuje jiné tržby než administrace. Stavíme e-commerce měření podle schématu GA4, aby Google Ads, Meta, Sklik i Heureka dostaly stejnou hodnotu objednávky.',
-              link: { label: 'Měření pro e-shopy', href: '/reseni/e-shopy' },
-            },
-            {
-              title: 'B2B a lead generation',
-              pictogram: 'lead',
-              text: 'Víte, kolik přišlo poptávek, ale ne, které z nich se změnily v zakázku. Propojíme formuláře s CRM a reklamním systémům pošleme i to, co se s poptávkou stalo dál.',
-              link: { label: 'Měření pro B2B a lead generation', href: '/reseni/b2b-a-lead-generation' },
-            },
-            {
-              title: 'Velké firmy',
-              pictogram: 'gov',
-              text: 'Více domén, týmů a dodavatelů – a každý měří trochu jinak. Zavedeme měřicí plán, názvosloví a verzování jako standard. Server-side měření a BigQuery postavíme ve vašem Google Cloudu.',
-              link: { label: 'Měření pro velké firmy', href: '/reseni/velke-firmy' },
-            },
-          ],
-        },
-      ],
-    },
-    {
       id: 'principy',
-      eyebrow: 'principy',
       title: 'Jak zacházíme s daty – vašimi i vašich zákazníků',
       lead: 'Čtyři pravidla, která platí pro každý projekt.',
       tone: 'white',
@@ -113,42 +67,18 @@ export const page: PageInput = {
             '<strong>Žádné černé skříňky.</strong> Stavíme na standardních nástrojích jako GTM, GA4 a BigQuery, takže po nás může pokračovat kdokoli.',
           ],
         },
-        {
-          type: 'paragraphs',
-          items: [
-            'Nejsme advokátní kancelář – právní posouzení konkrétního zpracování zajišťuje váš právník. Postup spolupráce a to, co od vás v jednotlivých krocích budeme potřebovat, popisuje stránka <a href="/jak-pracujeme">Jak pracujeme</a>.',
-          ],
-        },
+        { type: 'paragraphs', items: ['Nejsme advokátní kancelář – právní posouzení konkrétního zpracování zajišťuje váš právník.'] },
       ],
     },
   ],
 
-  faq: [
-    {
-      q: 'Komu patří účty a data?',
-      a: 'Vám. GA4, GTM, Google Cloud i reklamní účty zakládáme na vaši firmu a my dostáváme jen přístup, který můžete kdykoli odebrat. Po skončení spolupráce nic nemigrujete.',
-    },
-    {
-      q: 'Může po vás pokračovat někdo jiný?',
-      a: 'Ano. Stavíme na standardních nástrojích a dokumentace je výstup každého projektu. Podle ní může pokračovat interní tým i jiný dodavatel.',
-    },
-    {
-      q: 'Posíláte osobní údaje do GA4?',
-      a: 'Ne. Do GA4 neposíláme e-maily ani telefony. Do reklamních systémů je posíláme jen jako hash SHA-256 a jen se souhlasem návštěvníka.',
-    },
-    {
-      q: 'Řešíte i právní stránku cookies a souhlasu?',
-      a: 'Měření nastavujeme podle zákona o elektronických komunikacích a doporučení ÚOOÚ. Nejsme ale advokátní kancelář, takže právní posouzení konkrétního zpracování zajišťuje váš právník.',
-    },
-  ],
-
-  relatedPages: ['jak-pracujeme', 'sluzby/audit-mereni', 'kontakt'],
+  faq: [],
 
   contact: {
     formId: 'o-nas',
     title: 'Napište nám, co řešíte',
     lead: 'Napište nám e-mail nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první.',
-    placeholder: 'Krátce napište, co řešíte…',
+    placeholder: 'Adresa webu a co řešíte, např. „Měření nám nastavila agentura a nemáme k němu dokumentaci“',
     leadType: 'consultation',
   },
 };

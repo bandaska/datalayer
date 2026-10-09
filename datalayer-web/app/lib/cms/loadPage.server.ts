@@ -1,21 +1,18 @@
 import type { PageContent } from '~/content/schema';
-import { existingSlugs, getAll } from '../articles.server';
+import { getAll } from '../articles.server';
 import { getUserId } from '../auth.server';
 import { highlightCode } from '../highlight.server';
 import { perex } from '../text';
-import { getPageByPath, summarize, type PageSummary } from './pages.server';
+import { getPageByPath } from './pages.server';
 
-// Data jedné stránky webu pro loader: obsah bez skrytých sekcí, existující
-// související články, nejnovější články (blok „Články“), shrnutí souvisejících
-// stránek. Koncept (published: false) uvidí jen přihlášený správce.
+// Data jedné stránky webu pro loader: obsah bez skrytých sekcí a nejnovější
+// články (blok „Články“). Koncept (published: false) uvidí jen přihlášený správce.
 
 export type ArticleTeaser = { slug: string; title: string; date: string; perex: string };
 
 export type PageData = {
   page: PageContent;
-  existing: string[];
   latest: ArticleTeaser[];
-  related: PageSummary[];
   draft: boolean;
   hasContact: boolean;
   /** Obarvené bloky kódu (HTML z highlight.js) podle `kotva-sekce/pořadí-bloku`. */
@@ -51,13 +48,7 @@ function highlightedCode(page: PageContent): Record<string, string> {
       if (b.type === 'code') out[`${sectionId}/${i}`] = highlightCode(b.code, b.lang).html;
     });
   for (const s of page.sections) add(s.id, s.blocks);
-  if (page.techDetails) add('technicke-detaily', page.techDetails.blocks);
   return out;
-}
-
-async function relatedSummaries(paths: string[]): Promise<PageSummary[]> {
-  const loaded = await Promise.all(paths.map((p) => getPageByPath(p).catch(() => null)));
-  return loaded.filter((l): l is NonNullable<typeof l> => Boolean(l && l.page.published)).map((l) => summarize(l.page));
 }
 
 export async function loadPage(request: Request, path: string): Promise<PageData> {
@@ -69,10 +60,6 @@ export async function loadPage(request: Request, path: string): Promise<PageData
   if (draft && !(await getUserId(request))) throw new Response('Stránka nenalezena', { status: 404 });
 
   const wanted = articlesWanted(page);
-  const [existing, latest, related] = await Promise.all([
-    existingSlugs((page.relatedArticles ?? []).map((a) => a.slug)),
-    wanted ? latestArticles(wanted) : Promise.resolve([]),
-    relatedSummaries(page.relatedPages ?? []),
-  ]);
-  return { page, existing, latest, related, draft, hasContact: page.contact.enabled !== false, code: highlightedCode(page) };
+  const latest = wanted ? await latestArticles(wanted) : [];
+  return { page, latest, draft, hasContact: page.contact.enabled !== false, code: highlightedCode(page) };
 }

@@ -152,27 +152,14 @@ export function pageTexts(page: PageContent): PageText[] {
   add('Podtitulek v menu', page.tagline);
   const h = page.hero;
   add('Hero › H1', h.h1, page.kind === 'home');
-  [
-    ['Hero › štítek', h.eyebrow],
-    ['Hero › podtitul', h.subtitle],
-    ['Hero › rychlá odpověď', h.quickAnswer],
-    ['Hero › mikrotext', h.microcopy],
-    ['Hero › hlavní tlačítko', h.primaryCta?.label],
-    ['Hero › druhé tlačítko', h.secondaryCta?.label],
-  ].forEach(([w, t]) => add(w as string, t));
-  page.trust?.forEach((t, i) => add(`Pruh faktů ${i + 1}`, t));
+  add('Hero › podtitul', h.subtitle);
+  add('Hero › tlačítko', h.primaryCta?.label);
   page.sections.forEach((s, i) => {
     const w = `Sekce ${i + 1} (${s.title || s.id})`;
-    add(`${w} › štítek`, s.eyebrow);
     add(`${w} › nadpis`, s.title);
     add(`${w} › úvod`, s.lead);
-    add(`${w} › poznámka`, s.note);
     s.blocks.forEach((b, j) => blockTexts(b, `${w} › blok ${j + 1}`, add));
   });
-  if (page.techDetails) {
-    add('Technické detaily › odkaz', page.techDetails.summary);
-    page.techDetails.blocks.forEach((b, j) => blockTexts(b, `Technické detaily › blok ${j + 1}`, add));
-  }
   add('FAQ › nadpis', page.faqTitle);
   page.faq.forEach((f, i) => {
     add(`FAQ ${i + 1} › otázka`, f.q);

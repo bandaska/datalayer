@@ -1,7 +1,6 @@
 import { redirect, useLoaderData } from 'react-router';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { PageEditor } from '~/components/admin/PageEditor';
-import { getAll } from '~/lib/articles.server';
 import { requireUser } from '~/lib/auth.server';
 import { PageError, deletePage, getPageById, listPages, savePage } from '~/lib/cms/pages.server';
 import { getNavigation } from '~/lib/cms/singletons.server';
@@ -12,12 +11,11 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
   await requireUser(request);
   const loaded = await getPageById(params.id!);
   if (!loaded) throw new Response('Stránka neexistuje', { status: 404 });
-  const [pages, articles, navigation] = await Promise.all([listPages(), getAll().catch(() => []), getNavigation()]);
+  const [pages, navigation] = await Promise.all([listPages(), getNavigation()]);
   return {
     page: loaded.page,
     meta: { source: loaded.source, updatedAt: loaded.updatedAt, updatedBy: loaded.updatedBy },
     pages: pages.map((p) => ({ path: p.page.path, label: p.page.navTitle, kind: p.page.kind, published: p.page.published })),
-    articles: articles.map((a) => ({ slug: a.slug, title: a.title })),
     menus: navigation.items.flatMap((i) => (i.type === 'menu' ? [{ id: i.id, label: i.label }] : [])),
   };
 }
@@ -48,5 +46,5 @@ export async function action({ request, params }: ActionFunctionArgs) {
 
 export default function AdminPageEdit() {
   const data = useLoaderData<typeof loader>();
-  return <PageEditor key={data.page.path} initial={data.page} meta={data.meta} pages={data.pages} articles={data.articles} options={{ menus: data.menus }} />;
+  return <PageEditor key={data.page.path} initial={data.page} meta={data.meta} pages={data.pages} options={{ menus: data.menus }} />;
 }

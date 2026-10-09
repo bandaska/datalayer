@@ -6,7 +6,8 @@ import type { PageInput } from '../../schema';
 // pre-clearance, kterou web nepoužívá). Cookies Seznamu (sid, udid) doplnit, až
 // v GTM poběží Sklik (vyhodnocení webu, kap. 5.15 a 8). Texty prošly jazykovým auditem
 // z 9. října 2026 (kap. 3.24); platnost cookies v tabulce drží pravidla HARD-RULES
-// (číslovky vyjádřitelné jedním slovem slovy).
+// (číslovky vyjádřitelné jedním slovem slovy). UX redukce z 9. října 2026 obsah
+// nezměnila, z hero jen vypadl prázdný nadtitulek (pole zmizelo ze schématu).
 
 export const page: PageInput = {
   path: 'cookies',
@@ -21,7 +22,6 @@ export const page: PageInput = {
   },
   hero: {
     variant: 'simple',
-    eyebrow: '',
     h1: 'Zásady cookies',
     subtitle:
       'Cookies jsou malé soubory, které web ukládá do prohlížeče. Nezbytné cookies drží web v chodu; analytické a marketingové používáme jen se souhlasem.',
