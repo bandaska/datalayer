@@ -1,14 +1,13 @@
 import { useEffect, useRef } from 'react';
-import hljs from 'highlight.js';
 import { pushEvent } from '~/lib/dataLayer';
 
 /**
  * Render obsahu článku uloženého v DB (HTML) – ekvivalent původního
- * DbContentControl. Obsah se sanitizuje, nasvítí (highlight.js) a doplní
- * o funkci kopírování kódu (původní copyCode + tlačítko .btn-copy).
+ * DbContentControl, s funkcí kopírování kódu (původní copyCode + tlačítko
+ * .btn-copy).
  *
- * `html` se sanitizuje na serveru (viz cleanHtml v blog.$slug loaderu),
- * sem už chodí bezpečné HTML.
+ * `html` vyčistí a obarví server (cleanHtml a highlightCodeBlocks v loaderu
+ * blog.$slug), sem už chodí bezpečné HTML s hotovým zvýrazněním syntaxe.
  */
 export function ArticleContent({ html }: { html: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,11 +15,6 @@ export function ArticleContent({ html }: { html: string }) {
   useEffect(() => {
     const root = ref.current;
     if (!root) return;
-
-    // Zvýraznění syntaxe.
-    root.querySelectorAll('pre code').forEach((el) => {
-      hljs.highlightElement(el as HTMLElement);
-    });
 
     // Kopírovací tlačítka (delegace na celý obsah).
     const onClick = (e: Event) => {

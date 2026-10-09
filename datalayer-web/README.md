@@ -13,7 +13,7 @@ deployem na **Google Cloud Run z gitu**.
   (`articles`), zprávy z formuláře a nastavení. Free tier, serverless, bez DB instance a bez hesla.
 - **Obsah:** celý obsah webu jde upravovat v administraci – stránky, menu, patička, texty
   formuláře a cookie lišty ([`docs/cms.md`](./docs/cms.md)); HTML čistí `sanitize-html`,
-  kód v článcích nasvítí highlight.js
+  ukázky kódu v článcích i na stránkách obarví highlight.js už na serveru
 - **Konfigurace:** `.env` (viz `.env.example`); na Cloud Run env proměnné
 
 ## Struktura
@@ -47,6 +47,7 @@ app/
     settings*.ts          nastavení webu z administrace (settings/site)
     tokenGate.ts          brána tokenem pro /migrate
     textRules.ts          strojová kontrola pravidel českých textů (editor i testy)
+    highlight.server.ts   zvýraznění syntaxe ukázek kódu na serveru (highlight.js)
     cms/                  stránky, menu a texty ve Firestore: čtení, uložení, čištění HTML,
                           převod pro Firestore, stav importu (docs/cms.md)
     articles/users/auth.server.ts …
@@ -71,7 +72,7 @@ Podle analýzy v `../seo-analyza/` (souhrn `00_SOUHRN.md`):
 - **`/sitemap.xml`** (zveřejněné stránky bez noindex a články, s datem poslední úpravy), **`/robots.txt`**,
   **`/llms.txt`** (přehled pro AI vyhledávače).
 - Výkon: bez HubSpotu, bez Font Awesome, bez CDN – Bootstrap i fonty (Inter 400/600/800, Roboto
-  Mono 400) jsou z balíčků, highlight.js jen na stránce článku.
+  Mono 400) jsou z balíčků. Ukázky kódu obarví highlight.js na serveru, prohlížeč ho nestahuje.
 - Dokud je web zamčený heslem (`ENABLE_AUTH=1`), server posílá `X-Robots-Tag: noindex`.
 - OG obrázky se generují skriptem: `npm i --no-save playwright && npm run og:images`.
 

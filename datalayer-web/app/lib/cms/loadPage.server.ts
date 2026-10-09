@@ -1,6 +1,7 @@
 import type { PageContent } from '~/content/schema';
 import { existingSlugs, getAll } from '../articles.server';
 import { getUserId } from '../auth.server';
+import { highlightCode } from '../highlight.server';
 import { perex } from '../text';
 import { getPageByPath, summarize, type PageSummary } from './pages.server';
 
@@ -17,6 +18,8 @@ export type PageData = {
   related: PageSummary[];
   draft: boolean;
   hasContact: boolean;
+  /** Obarvené bloky kódu (HTML z highlight.js) podle `kotva-sekce/pořadí-bloku`. */
+  code: Record<string, string>;
 };
 
 function articlesWanted(page: PageContent): number {
@@ -39,6 +42,17 @@ async function latestArticles(n: number): Promise<ArticleTeaser[]> {
   }
 }
 
+/** Bloky kódu obarví server – prohlížeč dostane hotové HTML bez highlight.js. */
+function highlightedCode(page: PageContent): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const s of page.sections) {
+    s.blocks.forEach((b, i) => {
+      if (b.type === 'code') out[`${s.id}/${i}`] = highlightCode(b.code, b.lang).html;
+    });
+  }
+  return out;
+}
+
 async function relatedSummaries(paths: string[]): Promise<PageSummary[]> {
   const loaded = await Promise.all(paths.map((p) => getPageByPath(p).catch(() => null)));
   return loaded.filter((l): l is NonNullable<typeof l> => Boolean(l && l.page.published)).map((l) => summarize(l.page));
@@ -57,5 +71,5 @@ export async function loadPage(request: Request, path: string): Promise<PageData
     wanted ? latestArticles(wanted) : Promise.resolve([]),
     relatedSummaries(page.relatedPages ?? []),
   ]);
-  return { page, existing, latest, related, draft, hasContact: page.contact.enabled !== false };
+  return { page, existing, latest, related, draft, hasContact: page.contact.enabled !== false, code: highlightedCode(page) };
 }
