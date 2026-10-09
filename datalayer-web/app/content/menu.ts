@@ -16,7 +16,7 @@ export const SERVICE_GROUPS: { id: 'sber' | 'data' | 'audity'; label: string; it
       { path: '/sluzby/google-tag-manager', label: 'Google Tag Manager', tagline: 'pořádek v tazích a verzích', pictogram: 'gtm' },
       { path: '/sluzby/datova-vrstva', label: 'Datová vrstva', tagline: 'zadání pro vývojáře, které funguje', pictogram: 'datalayer' },
       { path: '/sluzby/server-side-tracking', label: 'Server-side tracking', tagline: 'měření na vaší doméně', pictogram: 'serverside' },
-      { path: '/sluzby/cookie-lista-consent-mode', label: 'Cookie lišta a Consent Mode', tagline: 'souhlas legálně a bez ztráty dat', pictogram: 'consent' },
+      { path: '/sluzby/cookie-lista-consent-mode', label: 'Cookie lišta a Consent Mode', tagline: 'souhlas legálně a bez zbytečné ztráty dat', pictogram: 'consent' },
       { path: '/sluzby/mereni-konverzi', label: 'Měření konverzí', tagline: 'Ads, Meta, Sklik i Heureka vidí totéž', pictogram: 'conversion' },
     ],
   },

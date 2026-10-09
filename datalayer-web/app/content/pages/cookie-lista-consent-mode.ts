@@ -11,7 +11,7 @@ export const page: LandingPageContent = {
   path: 'sluzby/cookie-lista-consent-mode',
   kind: 'service',
   navTitle: 'Cookie lišta a Consent Mode v2',
-  tagline: 'souhlas legálně a bez ztráty dat',
+  tagline: 'souhlas legálně a bez zbytečné ztráty dat',
   pictogram: 'consent',
   menuGroup: 'sber',
 

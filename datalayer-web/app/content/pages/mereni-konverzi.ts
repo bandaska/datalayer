@@ -101,7 +101,7 @@ export const page: LandingPageContent = {
         {
           type: 'flow',
           caption:
-            'Jedna objednávka putuje třemi cestami. Z datové vrstvy jde přes webový GTM do prohlížeče, kde běží Meta Pixel, sul.js, skripty Heureky, TikTok Pixel, LinkedIn Insight Tag a UET, a přes volitelný server-side GTM do Google Ads, Meta Conversions API a TikTok Events API. Backend volá přes API Ověřeno zákazníky od Heureky, standardní měření Seznam Nákupů a offline konverze Google Ads; do Seznam SEM posílá data jen tam, kde nehrozí duplicita.',
+            'Jedna objednávka putuje třemi cestami: z datové vrstvy přes webový GTM do skriptů v prohlížeči, přes volitelný server-side GTM do Google Ads, Meta Conversions API a TikTok Events API a z backendu přes API do Heureky, Seznam Nákupů a offline konverzí Google Ads.',
           columns: [
             {
               label: 'Zdroje',
@@ -142,7 +142,7 @@ export const page: LandingPageContent = {
         {
           type: 'table',
           caption: 'Přehled platforem',
-          head: ['Platforma', 'Prohlížeč', 'Server nebo API', 'Deduplikace', 'Souhlas', 'Na co si dát pozor'],
+          head: ['Platforma', 'Prohlížeč', 'Server nebo API', 'Deduplikace', 'Souhlas'],
           rows: [
             [
               '<strong>Google Ads</strong>',
@@ -150,31 +150,27 @@ export const page: LandingPageContent = {
               'sGTM; offline konverze a leady přes Data Manager API',
               '<code>transaction_id</code>',
               'Consent Mode v2: <code>ad_storage</code>, <code>ad_user_data</code>',
-              'Rozšířené konverze: od dubna 2026 data z tagu, Data Manageru i API současně, od června 2026 jeden přepínač pro web i leady',
             ],
             [
               '<strong>Meta</strong>',
               'Meta Pixel s <code>eventID</code>',
               'Conversions API přes sGTM nebo z backendu',
               '<code>event_name</code> a <code>event_id</code>, 48 hodin',
-              'Marketingový souhlas; tag mimo Google potřebuje podmínku v GTM',
-              'Event Match Quality na škále od nuly do deseti',
+              'Marketingový souhlas, podmínka v GTM',
             ],
             [
               '<strong>Sklik</strong>: Seznam Event Measurement',
               '<code>sul.js</code>, povinný',
               'S2S na <code>sem.seznam.cz</code>',
-              'Plná deduplikace je „v přípravě“ – stejnou událost neposíláme z webu i serveru',
+              'Plná deduplikace je „v přípravě“',
               'IAB TCF nebo formát Google Consent Mode; <code>sid</code> a <code>udid</code> až po <code>ad_storage</code>',
-              'Beta, nevratné přepnutí účtu, sandbox',
             ],
             [
               '<strong>Seznam Nákupy</strong>, dříve Zboží.cz',
               'Frontendový kód na děkovací stránce',
-              'Backendový kód s tajným klíčem, tedy standardní měření',
+              'Backendový kód s tajným klíčem',
               '–',
               'Podmínky měření a zpracovatelská smlouva',
-              'Seznam doporučuje standardní měření kvůli blokátorům, SEM měření sjednocuje',
             ],
             [
               '<strong>Heureka</strong>: měření konverzí',
@@ -182,32 +178,22 @@ export const page: LandingPageContent = {
               '–',
               '<code>set_order_id</code>',
               'Skript si podle Heureky hlídá souhlas sám, ověřujeme to',
-              'Heureka nedoporučuje vkládání přes GTM; atribuce třicet dní po prokliku',
             ],
             [
               '<strong>Heureka</strong>: Ověřeno zákazníky',
               '–',
-              'Volání z backendu s e-mailem, ID objednávky, ID produktů a tajným klíčem',
+              'Volání z backendu s tajným klíčem',
               '–',
               'Dotazník je obchodní sdělení, zákazník musí mít možnost ho odmítnout',
-              'Klíč jen na serveru, ID produktů z XML feedu',
             ],
-            ['<strong>TikTok</strong>', 'TikTok Pixel', 'Events API', 'Událost a <code>event_id</code>, 48 hodin', 'Marketingový souhlas', '–'],
-            [
-              '<strong>LinkedIn</strong>',
-              'Insight Tag',
-              'Conversions API',
-              '<code>eventId</code>; při shodě LinkedIn započítá Insight Tag',
-              'Marketingový souhlas',
-              'Vlastní konverzní pravidlo pro každý zdroj',
-            ],
+            ['<strong>TikTok</strong>', 'TikTok Pixel', 'Events API', 'Událost a <code>event_id</code>, 48 hodin', 'Marketingový souhlas'],
+            ['<strong>LinkedIn</strong>', 'Insight Tag', 'Conversions API', '<code>eventId</code>', 'Marketingový souhlas'],
             [
               '<strong>Microsoft Ads</strong>',
               'UET tag',
               'Podle aktuální nabídky Microsoftu',
               '–',
-              'Od 5. května 2025 v EHP, Spojeném království a Švýcarsku povinné signály souhlasu, <code>ad_storage</code>',
-              '–',
+              'Od 5. května 2025 v EHP, Spojeném království a Švýcarsku povinné signály souhlasu',
             ],
           ],
         },
