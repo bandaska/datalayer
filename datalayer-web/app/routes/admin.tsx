@@ -27,10 +27,21 @@ export default function AdminLayout() {
             <NavLink to="/admin/pages" className="admin-link">
               Landing pages
             </NavLink>
+            <NavLink to="/admin/messages" className="admin-link">
+              Zprávy
+            </NavLink>
             {user.role === 'admin' ? (
-              <NavLink to="/admin/users" className="admin-link">
-                Uživatelé
-              </NavLink>
+              <>
+                <NavLink to="/admin/settings" className="admin-link">
+                  Nastavení
+                </NavLink>
+                <NavLink to="/admin/migrations" className="admin-link">
+                  Migrace
+                </NavLink>
+                <NavLink to="/admin/users" className="admin-link">
+                  Uživatelé
+                </NavLink>
+              </>
             ) : null}
             <a href="/" className="admin-link" target="_blank" rel="noreferrer">
               Web ↗

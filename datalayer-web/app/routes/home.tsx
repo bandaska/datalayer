@@ -1,40 +1,274 @@
-import { Link } from 'react-router';
+import { Link, useLoaderData, useRouteLoaderData } from 'react-router';
 import type { MetaFunction } from 'react-router';
+import { ContactBlock } from '~/components/ContactBlock';
+import { HeroDiagram } from '~/components/HeroDiagram';
+import { FaqList } from '~/components/landing/LandingPage';
+import { Pi } from '~/components/Pictograms';
+import type { Faq, Pictogram } from '~/content/types';
+import { getAll } from '~/lib/articles.server';
+import { pushEvent } from '~/lib/dataLayer';
+import type { RootData } from '~/lib/rootData';
+import { faqLd, organizationLd, seoMeta, websiteLd } from '~/lib/seo';
+import { CONTACT_EMAIL } from '~/lib/site';
+import { formatDate, perex } from '~/lib/text';
 
-export const meta: MetaFunction = () => [
-  { title: 'datalayer.cz – Datové základy pro váš růst' },
+// Homepage podle návrhu seo-analyza/04_homepage-ux/homepage-audit-a-navrh.md:
+// hero (vizuál beze změny) → pro koho → poznáváte se? → služby jako pipeline →
+// jak pracujeme → s čím pracujeme → do hloubky → FAQ → kontakt.
+// Sekce „Ověřte si nás“ čeká, až na webu poběží i server-side GTM (podmínka
+// z návrhu, kap. 5).
+
+export const handle = { hasContact: true };
+
+export async function loader() {
+  let articles: { slug: string; title: string; date: string; perex: string }[] = [];
+  try {
+    articles = (await getAll()).slice(0, 3).map((a) => ({
+      slug: a.slug,
+      title: a.title,
+      date: a.date,
+      perex: a.description || perex(a.content, 140),
+    }));
+  } catch (err) {
+    console.error('homepage: načtení článků selhalo', err);
+  }
+  return { articles };
+}
+
+const FAQ: Faq[] = [
   {
-    name: 'description',
-    content:
-      'Techničtí inženýři vaší analytiky. Implementace GA4, GTM, Server-Side měření a BigQuery. Data, kterým konečně můžete věřit.',
+    q: 'Pracujete i s menšími e-shopy, nebo jen s velkými firmami?',
+    a: 'S obojím. U menších e-shopů obvykle začínáme auditem a opravou základního měření: GA4, consentu a konverzí. Server-side a BigQuery doporučujeme až tam, kde se vyplatí – a řekneme vám to rovnou.',
+  },
+  {
+    q: 'Komu patří účty a data?',
+    a: 'Vždy vám. GA4, Tag Manager, Google Cloud i reklamní účty běží pod vaší firmou, my dostáváme přístup. Po skončení spolupráce nic nemigrujete a dostanete dokumentaci, podle které může pokračovat kdokoli jiný.',
+  },
+  {
+    q: 'Jak se tvoří cena?',
+    a: 'Podle rozsahu: počet webů a domén, platforma e-shopu, kolik reklamních systémů napojujeme a jestli stavíme server-side nebo BigQuery. Po úvodní konzultaci dostanete nabídku s pevným rozsahem a výstupy. Provoz Google Cloudu platíte napřímo Googlu.',
+  },
+  {
+    q: 'Spolupracujete s naším vývojářem nebo agenturou?',
+    a: 'Ano, je to běžné. Vývojářům dodáme specifikaci datové vrstvy a testovací scénáře, s PPC agenturou se domluvíme na konverzích a jejich hodnotách.',
+  },
+  {
+    q: 'Je server-side tracking v souladu s GDPR?',
+    a: 'Server-side nemění nic na tom, kdy potřebujete souhlas. Nastavujeme ho tak, aby respektoval volbu v cookie liště a aby na servery třetích stran odcházelo jen to, co odcházet má. Právní posouzení konkrétního zpracování patří vašemu právníkovi.',
   },
 ];
 
+export const meta: MetaFunction = ({ matches }) => {
+  const root = matches.find((m) => m.id === 'root')?.data as RootData | undefined;
+  return seoMeta({
+    title: 'Webová analytika a měření pro e-shopy a firmy | datalayer.cz',
+    description:
+      'Implementace GA4, Google Tag Manager, server-side tracking a Consent Mode v2. Měření, které sedí s tržbami – s dokumentací. Konzultace zdarma.',
+    path: '/',
+    jsonLd: [
+      organizationLd({
+        email: root?.email || CONTACT_EMAIL,
+        telephone: root?.phone || undefined,
+        sameAs: root?.linkedinUrl ? [root.linkedinUrl] : undefined,
+      }),
+      websiteLd(),
+      faqLd(FAQ),
+    ],
+  });
+};
+
+const SEGMENTS: {
+  id: string;
+  title: string;
+  pain: string;
+  bullets: string[];
+  tags: string[];
+  pictogram: Pictogram;
+  href: string;
+  linkText: string;
+}[] = [
+  {
+    id: 'eshop',
+    title: 'E-shopy',
+    pain: 'GA4 ukazuje jiné tržby než administrace a reklamní systémy si přivlastňují stejné objednávky.',
+    bullets: [
+      'e-commerce měření podle schématu GA4',
+      'Google Ads, Meta, Sklik i Heureka se stejnou hodnotou objednávky',
+      'marže a vratky v reportu',
+    ],
+    tags: ['Shoptet', 'Upgates', 'WooCommerce', 'Shopify'],
+    pictogram: 'eshop',
+    href: '/reseni/e-shopy',
+    linkText: 'Měření pro e-shopy',
+  },
+  {
+    id: 'b2b',
+    title: 'B2B a lead generation',
+    pain: 'Víte, kolik přišlo poptávek. Nevíte, které z nich se změnily v zakázku – a reklamy to nevědí taky.',
+    bullets: [
+      'měření formulářů a hovorů bez osobních údajů v analytice',
+      'propojení s CRM a offline konverze',
+      'cena za lead i za zakázku',
+    ],
+    tags: ['HubSpot', 'Pipedrive', 'Raynet'],
+    pictogram: 'lead',
+    href: '/reseni/b2b-a-lead-generation',
+    linkText: 'Měření pro B2B',
+  },
+  {
+    id: 'enterprise',
+    title: 'Velké firmy',
+    pain: 'Více domén, týmů a dodavatelů. Každý měří trochu jinak a nikdo nemá celkový obraz.',
+    bullets: [
+      'měřicí plán, názvosloví a verzování jako standard',
+      'server-side a BigQuery ve vašem Google Cloudu',
+      'spolupráce s IT, testy a jasná pravidla předávání',
+    ],
+    tags: ['governance', 'sGTM', 'BigQuery'],
+    pictogram: 'gov',
+    href: '/reseni/velke-firmy',
+    linkText: 'Měření pro velké firmy',
+  },
+];
+
+const SYMPTOMS: { console: string[]; title: string; text: string; href: string; linkText: string }[] = [
+  {
+    console: ['GA4 purchase        812', 'e-shop objednávky  1 046', '⚠ rozdíl −22 %'],
+    title: 'GA4 ukazuje o pětinu méně objednávek než e-shop',
+    text: 'Typicky chybí měření u některých plateb, cookie lišta špatně ukládá souhlas nebo web posílá nákup dvakrát a GA4 ho zahodí.',
+    href: '/sluzby/audit-mereni',
+    linkText: 'Audit měření',
+  },
+  {
+    console: ["consent default 'denied'", 'google_ads konverze −38 %', '⚠ od nasazení lišty'],
+    title: 'Po nasazení cookie lišty spadly konverze v Google Ads',
+    text: 'Lišta blokuje tagy, ale Consent Mode v2 neposílá signály, takže Google nemá z čeho modelovat.',
+    href: '/sluzby/cookie-lista-consent-mode',
+    linkText: 'Cookie lišta a Consent Mode',
+  },
+  {
+    console: ['meta Purchase   418', 'ga4 purchase    633', '⚠ event_id chybí'],
+    title: 'Meta, Google a Sklik hlásí každý jiná čísla',
+    text: 'Část rozdílů způsobuje atribuce a je normální. Zbytek tvoří chyby: chybí Conversions API nebo deduplikace, případně každý systém dostává jinou hodnotu objednávky.',
+    href: '/sluzby/mereni-konverzi',
+    linkText: 'Měření konverzí',
+  },
+  {
+    console: ['GTM tagy        146', 'aktivní         41 ?', 'verze v212 bez popisu'],
+    title: 'V Tag Manageru je 140 tagů a nikdo neví, které jsou potřeba',
+    text: 'Nánosy po agenturách zpomalují web a posílají data tam, kam nemají. Uklidíme a nastavíme pravidla, aby to vydrželo.',
+    href: '/sluzby/google-tag-manager',
+    linkText: 'Google Tag Manager',
+  },
+  {
+    console: ['form odesláno   94', 'CRM zakázky     ?', '⚠ CRM gclid neukládá'],
+    title: 'Poptávky končí v e-mailu, ne v CRM ani v Google Ads',
+    text: 'Reklamní systémy pak optimalizují na počet formulářů, ne na zakázky. Propojíme web, CRM a reklamní systémy.',
+    href: '/reseni/b2b-a-lead-generation',
+    linkText: 'Měření pro B2B',
+  },
+  {
+    console: ['report zdroj    Excel', 'aktualizace     ručně, Po 8:00', 'GA4 vzorkování  ano'],
+    title: 'Report pro vedení každé pondělí někdo skládá ručně',
+    text: 'Data z GA4, reklam a e-shopu spojíme v BigQuery a postavíme dashboard, který obnovuje data sám a sedí s účetnictvím.',
+    href: '/sluzby/bigquery',
+    linkText: 'BigQuery a dashboardy',
+  },
+];
+
+/** Služby ve třech vrstvách datové pipeline (rozdělení podle návrhu homepage). */
+const PIPELINE: { step: string; title: string; items: { path: string; label: string; tagline: string; pictogram: Pictogram }[] }[] = [
+  {
+    step: '01 / sběr',
+    title: 'Sběr dat',
+    items: [
+      { path: '/sluzby/datova-vrstva', label: 'Datová vrstva', tagline: 'zadání pro vývojáře, které funguje', pictogram: 'datalayer' },
+      { path: '/sluzby/google-tag-manager', label: 'Google Tag Manager', tagline: 'pořádek v tazích a verzích', pictogram: 'gtm' },
+      { path: '/sluzby/implementace-ga4', label: 'Implementace GA4', tagline: 'čísla, která sedí s tržbami', pictogram: 'ga4' },
+      { path: '/sluzby/server-side-tracking', label: 'Server-side tracking', tagline: 'měření na vaší doméně', pictogram: 'serverside' },
+      { path: '/sluzby/mereni-konverzi', label: 'Měření konverzí', tagline: 'Ads, Meta, Sklik i Heureka vidí totéž', pictogram: 'conversion' },
+    ],
+  },
+  {
+    step: '02 / souhlas a kvalita',
+    title: 'Souhlas a kvalita',
+    items: [
+      { path: '/sluzby/cookie-lista-consent-mode', label: 'Cookie lišta a Consent Mode v2', tagline: 'legálně a bez zbytečné ztráty dat', pictogram: 'consent' },
+      { path: '/sluzby/audit-mereni', label: 'Audit měření', tagline: 'zjistíme, kde data utíkají', pictogram: 'audit' },
+      { path: '/sluzby/technicky-audit-webu', label: 'Technický audit webu', tagline: 'rychlost, tagy a technické SEO', pictogram: 'perf' },
+      { path: '/sluzby/sprava-webu-a-mereni', label: 'Správa webu a měření', tagline: 'hlídáme, aby měření po releasu nespadlo', pictogram: 'monitor' },
+    ],
+  },
+  {
+    step: '03 / data a reporting',
+    title: 'Data a reporting',
+    items: [
+      { path: '/sluzby/bigquery', label: 'BigQuery', tagline: 'surová data bez limitů GA4', pictogram: 'bigquery' },
+      { path: '/sluzby/dashboardy-a-reporting', label: 'Dashboardy a reporting', tagline: 'Data Studio (dříve Looker Studio) i Power BI', pictogram: 'dashboard' },
+    ],
+  },
+];
+
+const PROCESS: { title: string; text: string; output: string }[] = [
+  { title: 'Audit', text: 'Projdeme GA4, GTM, consent a reklamní systémy a porovnáme je s administrací.', output: 'report s prioritami A/B/C' },
+  { title: 'Měřicí plán', text: 'Byznys cíle převedeme na události, parametry a pravidla pojmenování.', output: 'měřicí plán + specifikace dataLayer' },
+  { title: 'Implementace', text: 'Nasadíme GTM na webu i serveru, Consent Mode v2 a konverze do reklamních systémů.', output: 'verzované kontejnery' },
+  { title: 'Validace', text: 'Projdeme testovací scénáře, zkontrolujeme každou událost a porovnáme čísla s e-shopem nebo CRM.', output: 'protokol testů' },
+  { title: 'Předání a podpora', text: 'Předáme dokumentaci, proškolíme tým a hlídáme, aby měření nespadlo po dalším releasu.', output: 'dokumentace + monitoring' },
+];
+
+const TOOLS: { label: string; href?: string }[] = [
+  { label: 'GA4', href: '/sluzby/implementace-ga4' },
+  { label: 'Google Tag Manager', href: '/sluzby/google-tag-manager' },
+  { label: 'server-side GTM', href: '/sluzby/server-side-tracking' },
+  { label: 'Google Cloud Run' },
+  { label: 'BigQuery', href: '/sluzby/bigquery' },
+  { label: 'Data Studio', href: '/sluzby/dashboardy-a-reporting' },
+  { label: 'Power BI', href: '/sluzby/dashboardy-a-reporting' },
+  { label: 'Google Ads', href: '/sluzby/mereni-konverzi' },
+  { label: 'Meta CAPI', href: '/sluzby/mereni-konverzi' },
+  { label: 'Sklik / Seznam', href: '/sluzby/mereni-konverzi' },
+  { label: 'Heureka', href: '/reseni/e-shopy' },
+  { label: 'Shoptet', href: '/reseni/e-shopy#shoptet' },
+  { label: 'Upgates', href: '/reseni/e-shopy#upgates' },
+  { label: 'WooCommerce', href: '/reseni/e-shopy#woocommerce' },
+  { label: 'Shopify', href: '/reseni/e-shopy#shopify' },
+  { label: 'HubSpot', href: '/reseni/b2b-a-lead-generation' },
+  { label: 'Pipedrive', href: '/reseni/b2b-a-lead-generation' },
+  { label: 'Raynet', href: '/reseni/b2b-a-lead-generation' },
+];
+
+const cta = (id: string, text: string, section: string) => () => pushEvent('cta_click', { cta_id: id, cta_text: text, section });
+
 export default function Home() {
+  const { articles } = useLoaderData<typeof loader>();
+  const root = useRouteLoaderData('root') as RootData | undefined;
+
   return (
     <>
-      <section className="hero-section d-flex align-items-center">
+      {/* 1 – Hero */}
+      <section className="hero-section">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-5 mb-5 mb-lg-0">
+              <p className="eyebrow">Webová analytika a měření · e-shopy · B2B · velké firmy</p>
               <h1 className="hero-heading">
-                Stavíme neprůstřelné <span className="cyan-underline">datové základy</span> pro váš
-                růst.
+                Stavíme neprůstřelné <span className="cyan-underline">datové základy</span> pro váš růst.
               </h1>
               <p className="hero-sub">
-                Jsme techničtí inženýři vaší analytiky. Specializovaná implementace GA4, GTM,
-                Server-Side měření a BigQuery. Data, kterým konečně můžete věřit.
+                Navrhneme, nasadíme a ověříme měření od datové vrstvy po BigQuery: GA4, Google Tag Manager,
+                server-side tracking a Consent Mode v2. S dokumentací a s daty, která vlastníte vy.
               </p>
-              <div className="d-flex gap-3">
-                <Link to="/sluzby" className="btn btn-cta">
-                  [ Naše služby ]
-                </Link>
-                <a href="#contact-form" className="btn btn-outline-custom">
-                  [ Jak pracujeme ]
+              <div className="hero-ctas">
+                <a href="#kontakt" className="btn btn-cta" onClick={cta('home_hero_primary', 'Konzultovat projekt', 'hero')}>
+                  [ Konzultovat projekt ]
                 </a>
+                <Link to="/jak-pracujeme" className="btn btn-outline-custom" onClick={cta('home_hero_secondary', 'Jak pracujeme', 'hero')}>
+                  [ Jak pracujeme ]
+                </Link>
               </div>
+              <p className="hero-micro">Úvodní třicetiminutová konzultace zdarma · odpověď do jednoho pracovního dne</p>
             </div>
-
             <div className="col-lg-7 hero-svg-container">
               <HeroDiagram />
             </div>
@@ -42,248 +276,174 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="container">
-          <h2 className="section-title">
-            Proč vaše současná analytika
-            <br />
-            pravděpodobně nefunguje?
-          </h2>
-          <div className="row text-center mt-5">
-            <div className="col-md-4 mb-4">
-              <div className="feature-icon">
-                <i className="fas fa-chart-line" />
-              </div>
-              <h5>Nepřesná data a duplicity</h5>
-              <p className="text-muted small px-3">
-                Nepřesná data a duplicity berou jistotu. Nesprávná data generují mylná rozhodnutí.
-              </p>
-            </div>
-            <div className="col-md-4 mb-4">
-              <div className="feature-icon">
-                <i className="fas fa-cookie-bite" />
-              </div>
-              <h5>Konec cookies třetích stran</h5>
-              <p className="text-muted small px-3">
-                Konec cookies třetích stran a specializovaná implementace GA4, GTM, Server-Side
-                měření atd.
-              </p>
-            </div>
-            <div className="col-md-4 mb-4">
-              <div className="feature-icon">
-                <i className="fas fa-database" />
-              </div>
-              <h5>Data uvězněná v nástrojích</h5>
-              <p className="text-muted small px-3">
-                Data zviditelníme v nástrojích pro vizualizaci, uvolníme je pro další použití.
-              </p>
-            </div>
+      {/* 2 – Pro koho */}
+      <section className="lp-section lp-section--light" id="pro-koho">
+        <div className="container lp-container">
+          <p className="eyebrow">[ Pro koho ]</p>
+          <h2 className="lp-h2">Měření podle toho, jak vyděláváte</h2>
+          <p className="lp-lead">E-shop potřebuje jiná data než firma, která prodává přes obchodníky. Vyberte si, co je vám nejblíž.</p>
+          <div className="seg">
+            {SEGMENTS.map((s) => (
+              <Link key={s.id} to={s.href} className="seg__card" onClick={cta(`home_segment_${s.id}`, s.linkText, 'segments')}>
+                <Pi name={s.pictogram} />
+                <h3>{s.title}</h3>
+                <p className="seg__pain">{s.pain}</p>
+                <ul>
+                  {s.bullets.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+                <p className="seg__tags">
+                  {s.tags.map((t) => (
+                    <span className="tag" key={t}>
+                      {t}
+                    </span>
+                  ))}
+                </p>
+                <span className="seg__more">{s.linkText} →</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding" style={{ backgroundColor: '#f8f9fa' }}>
-        <div className="container">
-          <h2 className="section-title text-dark">Naše technologická expertíza</h2>
-          <div className="row g-4">
-            {techCards.map((c) => (
-              <div className="col-md-4" key={c.slug}>
-                <Link to={`/sluzby/${c.slug}`} className="tech-card text-decoration-none">
-                  <div className="tech-icon">
-                    <i className={c.icon} />
-                  </div>
-                  <h5>{c.title}</h5>
-                  <p className="text-muted small">{c.text}</p>
+      {/* 3 – Poznáváte se? */}
+      <section className="lp-section lp-section--dark" id="symptomy">
+        <div className="container lp-container">
+          <p className="eyebrow">[ Poznáváte se? ]</p>
+          <h2 className="lp-h2">Šest situací, se kterými za námi klienti chodí nejčastěji</h2>
+          <p className="lp-lead">
+            Každá z nich má technickou příčinu, kterou umíme najít a opravit. Žádnou z nich nevyřeší „lepší report“.
+          </p>
+          <div className="lp-cards lp-cards--3">
+            {SYMPTOMS.map((s, i) => (
+              <article className="lp-card" key={s.title}>
+                <pre className="lp-console" aria-label="Ilustrativní ukázka">
+                  {s.console.map((line) => (
+                    <span key={line} className={line.startsWith('⚠') ? 'w' : undefined}>
+                      {line}
+                      {'\n'}
+                    </span>
+                  ))}
+                </pre>
+                <h3 className="lp-card__title">{s.title}</h3>
+                <p className="lp-card__text">{s.text}</p>
+                <Link className="lp-card__link" to={s.href} onClick={cta(`home_symptom_${i + 1}`, s.linkText, 'symptoms')}>
+                  {s.linkText} →
                 </Link>
+              </article>
+            ))}
+          </div>
+          <p className="lp-note">Čísla v ukázkách jsou ilustrativní.</p>
+        </div>
+      </section>
+
+      {/* 4 – Služby jako pipeline */}
+      <section className="lp-section lp-section--deep" id="sluzby">
+        <div className="container lp-container">
+          <p className="eyebrow">[ Služby ]</p>
+          <h2 className="lp-h2">Od sběru dat po report, kterému věří vedení</h2>
+          <p className="lp-lead">Data procházejí třemi vrstvami. Postavíme celou cestu, nebo jen tu část, která vám chybí.</p>
+          <div className="pipe">
+            {PIPELINE.map((col) => (
+              <div className="pipe__col" key={col.step}>
+                <p className="pipe__step">{col.step}</p>
+                <h3 className="pipe__title">{col.title}</h3>
+                {col.items.map((s) => (
+                  <Link className="svc" to={s.path} key={s.path} onClick={cta(`home_service_${s.path.split('/').pop()}`, s.label, 'services')}>
+                    <Pi name={s.pictogram} />
+                    <span>
+                      <strong>{s.label}</strong>
+                      <span>{s.tagline}</span>
+                    </span>
+                  </Link>
+                ))}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="stats-section section-padding">
-        <div className="container">
-          <h2 className="mb-4">
-            Neimplementujeme jen tagy.
-            <br />
-            Zlepšujeme byznys výsledky.
-          </h2>
-          <div className="big-stat">+18 %</div>
-          <p className="lead mt-3 text-white-50">
-            Konverzní uplift po přidání Server-Side implementace.
+      {/* 6 – Jak pracujeme */}
+      <section className="lp-section lp-section--light" id="jak-pracujeme">
+        <div className="container lp-container">
+          <p className="eyebrow">[ Jak pracujeme ]</p>
+          <h2 className="lp-h2">Pět kroků, po každém dostanete konkrétní výstup</h2>
+          <p className="lp-lead">
+            Žádné „nastavíme to“. Každý krok končí dokumentem nebo ověřením, které můžete předat vlastnímu týmu.
+          </p>
+          <ol className="lp-steps lp-steps--5">
+            {PROCESS.map((p, i) => (
+              <li className="lp-step" key={p.title}>
+                <span className="lp-step__n">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="lp-step__title">{p.title}</h3>
+                <p className="lp-step__text">{p.text}</p>
+                <p className="lp-step__out">
+                  <span className="lp-step__label">výstup:</span> {p.output}
+                </p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-4">
+            <Link to="/jak-pracujeme" className="lp-card__link">
+              Celý postup a co od vás budeme potřebovat →
+            </Link>
           </p>
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="container">
-          <h2 className="section-title">Transparentní technický proces</h2>
-          <div className="row process-line justify-content-center">
-            {processSteps.map((s, i) => (
-              <div className="col-lg-2 col-md-4 process-step" key={i}>
-                <div className="step-number">{i + 1}</div>
-                <h6>{s.title}</h6>
-                <p className="small text-muted">{s.text}</p>
-              </div>
-            ))}
+      {/* 7 – S čím pracujeme */}
+      <section className="lp-section lp-section--dark" id="nastroje">
+        <div className="container lp-container">
+          <p className="eyebrow">[ S čím pracujeme ]</p>
+          <div className="plat">
+            {TOOLS.map((t) =>
+              t.href ? (
+                <Link key={t.label} to={t.href}>
+                  {t.label}
+                </Link>
+              ) : (
+                <span key={t.label}>{t.label}</span>
+              ),
+            )}
           </div>
         </div>
       </section>
+
+      {/* 8 – Do hloubky */}
+      {articles.length ? (
+        <section className="lp-section lp-section--dark lp-section--tight" id="do-hloubky">
+          <div className="container lp-container">
+            <p className="eyebrow">[ Do hloubky ]</p>
+            <h2 className="lp-h2">Vysvětlujeme, jak měření doopravdy funguje</h2>
+            <p className="lp-lead">Návody s diagramy, kódem a odkazy na dokumentaci. Bez marketingových zkratek.</p>
+            <div className="art">
+              {articles.map((a) => (
+                <Link key={a.slug} to={`/blog/${a.slug}`} className="art__card" onClick={cta(`home_article_${a.slug}`, a.title, 'articles')}>
+                  <span className="art__date">{formatDate(a.date)}</span>
+                  <h3>{a.title}</h3>
+                  <p>{a.perex}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {/* 9 – FAQ */}
+      <FaqList items={FAQ} title="Než se ozvete" />
+
+      {/* 10 – Kontakt */}
+      <ContactBlock
+        formId="home"
+        title="Pojďme se podívat, kde vám utíkají data"
+        lead={
+          root?.phone
+            ? 'Napište nám, zavolejte, nebo vyplňte formulář. Na úvodní třicetiminutové konzultaci projdeme měření a řekneme vám, co opravit jako první.'
+            : 'Napište nám, nebo vyplňte formulář. Na úvodní třicetiminutové konzultaci projdeme měření a řekneme vám, co opravit jako první.'
+        }
+        placeholder="Např. GA4 ukazuje o třicet procent méně objednávek než e-shop a nevíme proč…"
+      />
     </>
-  );
-}
-
-const techCards = [
-  { slug: 'ga4', icon: 'fas fa-chart-bar', title: 'GA4 Implementace', text: 'Technická implementace funkcionálního ekosystému, nastavení eventů a cílů.' },
-  { slug: 'gtm', icon: 'fas fa-tags', title: 'Google Tag Manager', text: 'Google Tag Manager konfigurace, správa kontejnerů, pokročilé nastavení.' },
-  { slug: 'serverSide', icon: 'fas fa-server', title: 'Server-Side Měření', text: 'Server-Side implementace měření pro přesnější data a obcházení blokátorů.' },
-  { slug: 'audit', icon: 'fas fa-cogs', title: 'GA4 Audit', text: 'Technický audit existujícího nastavení a návrh oprav.' },
-  { slug: 'dataLayer', icon: 'fas fa-project-diagram', title: 'Data Layer Design', text: 'Návrh a specifikace datové vrstvy pro IT oddělení.' },
-  { slug: 'bigquery', icon: 'fas fa-search-dollar', title: 'BigQuery', text: 'BigQuery export dat pro pokročilou analýzu a machine learning.' },
-];
-
-const processSteps = [
-  { title: 'Audit & Strategie', text: 'Hloubková analýza současného stavu.' },
-  { title: 'Specifikace Data Layer', text: 'Návrh přesné definice datové vrstvy.' },
-  { title: 'Technická Implementace', text: 'Nasazení měřících kódů a tagů.' },
-  { title: 'Validace & Testování', text: 'Kontrola kvality a přesnosti dat.' },
-  { title: 'Předání & Support', text: 'Dokumentace a dlouhodobá podpora.' },
-];
-
-function HeroDiagram() {
-  return (
-    <svg width="100%" height="auto" viewBox="0 0 800 550" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="neon-cyan" x="-50%" y="-50%" width="200%" height="200%">
-          <feFlood floodColor="rgb(0, 255, 255)" floodOpacity="0.6" in="SourceGraphic" />
-          <feComposite operator="in" in2="SourceGraphic" />
-          <feGaussianBlur stdDeviation="5" />
-          <feComponentTransfer result="glow1">
-            <feFuncA type="linear" slope="3" intercept="0" />
-          </feComponentTransfer>
-          <feMerge>
-            <feMergeNode in="glow1" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-        <marker id="arrow-straight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="0">
-          <polygon points="0 0, 10 3.5, 0 7" fill="rgb(0, 255, 255)" />
-        </marker>
-        <marker id="arrow-up" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="-58">
-          <polygon points="0 0, 10 3.5, 0 7" fill="rgb(0, 255, 255)" />
-        </marker>
-        <marker id="arrow-down" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="58">
-          <polygon points="0 0, 10 3.5, 0 7" fill="rgb(0, 255, 255)" />
-        </marker>
-      </defs>
-      <g filter="url(#neon-cyan)" stroke="rgb(0, 255, 255)" strokeWidth="3" fill="none">
-        <rect x="50" y="225" width="100" height="100" rx="15" fill="rgb(0, 255, 255)" fillOpacity="0.05" />
-        <rect x="350" y="225" width="100" height="100" rx="15" fill="rgb(0, 255, 255)" fillOpacity="0.05" />
-        <rect x="650" y="65" width="100" height="100" rx="15" fill="rgb(0, 255, 255)" fillOpacity="0.05" />
-        <rect x="650" y="225" width="100" height="100" rx="15" fill="rgb(0, 255, 255)" fillOpacity="0.05" />
-        <rect x="650" y="385" width="100" height="100" rx="15" fill="rgb(0, 255, 255)" fillOpacity="0.05" />
-        <path d="M 160 275 L 340 275" markerEnd="url(#arrow-straight)" strokeDasharray="10, 5" />
-        <path d="M 460 275 C 550 275, 630 130, 640 115" markerEnd="url(#arrow-up)" strokeDasharray="10, 5" />
-        <path d="M 460 275 L 640 275" markerEnd="url(#arrow-straight)" strokeDasharray="10, 5" />
-        <path d="M 460 275 C 550 275, 630 420, 640 435" markerEnd="url(#arrow-down)" strokeDasharray="10, 5" />
-        <path d="M 240 275 L 240 385" strokeWidth="0.75" />
-      </g>
-      <rect x="195" y="385" width="195" height="80" rx="10" fill="#808080" fillOpacity="0.05" stroke="#404040" strokeWidth="2" />
-      <g transform="translate(195, 385)">
-        <text x="14" y="20" className="code-text-sm">
-          <tspan x="14" dy="0">
-            <tspan className="base-light">{'dataLayer.'}</tspan>
-            <tspan className="method-light">{'push'}</tspan>
-            <tspan className="base-light">{'({'}</tspan>
-          </tspan>
-          <tspan x="24" dy="20">
-            <tspan className="string-light">{"'event'"}</tspan>
-            <tspan className="base-light">{': '}</tspan>
-            <tspan className="string-light">{"'purchase'"}</tspan>
-          </tspan>
-          <tspan x="14" dy="20" className="base-light">{'});'}</tspan>
-        </text>
-      </g>
-
-      {/* e-shop (košík) */}
-      <svg x="65" y="240" width="70" height="70" viewBox="0 0 48 48">
-        <g fill="rgb(0, 255, 255)" stroke="none">
-          <path d="M15 39a3 3 0 1 0 3-3 3 3 0 0 0-3 3zm4 0a1 1 0 1 1-1-1 1 1 0 0 1 1 1zM31 39a3 3 0 1 0 3-3 3 3 0 0 0-3 3zm4 0a1 1 0 1 1-1-1 1 1 0 0 1 1 1z" />
-          <circle cx="28.55" cy="20.55" r="1.45" />
-          <path d="M23.45 16.9A1.45 1.45 0 1 0 22 15.45a1.45 1.45 0 0 0 1.45 1.45zM23 22a1 1 0 0 0 .71-.29l6-6a1 1 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.42A1 1 0 0 0 23 22z" />
-          <path d="M7 10a1 1 0 0 0 1-1 1 1 0 0 1 1-1h2.26l5.4 17.27 1.38 5A1 1 0 0 0 19 31h13a1 1 0 0 1 0 2H20a1 1 0 0 0 0 2h12a3 3 0 0 0 0-6H19.76l-.83-3h13.54a6.92 6.92 0 0 0 3.58-1 7 7 0 0 0 3-3.46 6.45 6.45 0 0 0 .21-.62L42 11.27a1 1 0 0 0-.16-.87A1 1 0 0 0 41 10H14l-1-3.3a1 1 0 0 0-1-.7H9a3 3 0 0 0-3 3 1 1 0 0 0 1 1zm32.67 2L38 18l-.68 2.37A5 5 0 0 1 32.47 24H18.36l-1.87-6-1.88-6z" />
-        </g>
-      </svg>
-
-      {/* GTM (kosočtverec) */}
-      <svg x="365" y="240" width="70" height="70" viewBox="0 0 256 256">
-        <g stroke="none">
-          <polygon
-            fill="#A0FFFF"
-            points="150.261818 245.516364 105.825455 202.185455 201.258182 104.730909 247.265455 149.821818"
-          />
-          <path
-            fill="#00FFFF"
-            d="M150.450909,53.9381818 L106.174545,8.73090909 L9.36,104.629091 C-3.12,117.109091 -3.12,137.341818 9.36,149.836364 L104.72,245.821818 L149.810909,203.64 L77.1563636,127.232727 L150.450909,53.9381818 Z"
-          />
-          <path
-            fill="#A0FFFF"
-            d="M246.625455,105.370909 L150.625455,9.37090909 C138.130909,-3.12363636 117.869091,-3.12363636 105.374545,9.37090909 C92.88,21.8654545 92.88,42.1272727 105.374545,54.6218182 L201.374545,150.621818 C213.869091,163.116364 234.130909,163.116364 246.625455,150.621818 C259.12,138.127273 259.12,117.865455 246.625455,105.370909 Z"
-          />
-          <circle fill="#00B0B0" cx="127.265455" cy="224.730909" r="31.2727273" />
-        </g>
-      </svg>
-
-      {/* GA4 */}
-      <svg x="665" y="80" width="70" height="70" viewBox="-14 0 284 284">
-        <g stroke="none">
-          <path
-            fill="#00FFFF"
-            d="M256.003159,247.933017 C256.055907,258.030289 251.77298,267.664804 244.241349,274.390297 C236.709718,281.11579 226.653817,284.285366 216.626905,283.094249 C198.58347,280.424364 185.360959,264.722632 185.800619,246.488035 L185.800619,36.8452103 C185.364944,18.5907614 198.619678,2.88144681 216.687112,0.238996295 C226.704325,-0.933476157 236.743571,2.24455542 244.261279,8.9678962 C251.778988,15.691237 256.053811,25.3147619 256.003159,35.4002282 L256.003159,247.933017 Z"
-          />
-          <path
-            fill="#00B0B0"
-            d="M35.1010243,213.193238 C54.4867848,213.193238 70.2020487,228.908502 70.2020487,248.294263 C70.2020487,267.680023 54.4867848,283.395287 35.1010243,283.395287 C15.7152639,283.395287 0,267.680023 0,248.294263 C0,228.908502 15.7152639,213.193238 35.1010243,213.193238 Z M127.459466,106.806429 C107.981896,107.874068 92.8698765,124.212107 93.3217628,143.713681 L93.3217628,237.998765 C93.3217628,263.58699 104.580582,279.120548 121.077461,282.431965 C131.434034,284.530959 142.185473,281.860819 150.356699,275.160414 C158.527925,268.460009 163.252393,258.439904 163.222912,247.872809 L163.222912,142.088076 C163.240039,132.641687 159.462041,123.584285 152.737293,116.950107 C146.012546,110.315928 136.904752,106.661084 127.459466,106.806429 L127.459466,106.806429 Z"
-          />
-        </g>
-      </svg>
-
-      {/* FB CAPI (server) */}
-      <svg x="665" y="240" width="70" height="70" viewBox="0 0 24 24">
-        <g stroke="#00FFFF" strokeWidth="1.0" fill="none">
-          <rect x="2" y="3.5" width="20" height="5" rx="2.5" />
-          <rect x="2" y="9.5" width="20" height="5" rx="2.5" />
-          <rect x="2" y="15.5" width="20" height="5" rx="2.5" />
-        </g>
-        <g fill="#00B0B0" stroke="none">
-          <circle cx="5" cy="6" r="1" />
-          <circle cx="5" cy="12" r="1" />
-          <circle cx="5" cy="18" r="1" />
-        </g>
-      </svg>
-
-      {/* BigQuery (lupa) */}
-      <svg x="665" y="400" width="70" height="70" viewBox="0 0 24 24">
-        <g stroke="none">
-          <path fill="#A0FFFF" d="M6.73,10.83v2.63A4.91,4.91,0,0,0,8.44,15.2V10.83Z" />
-          <path fill="#00FFFF" d="M9.89,8.41v7.53A7.62,7.62,0,0,0,11,16,8,8,0,0,0,12,16V8.41Z" />
-          <path fill="#A0FFFF" d="M13.64,11.86v3.29a5,5,0,0,0,1.7-1.82V11.86Z" />
-          <path
-            fill="#00B0B0"
-            d="M17.74,16.32l-1.42,1.42a.42.42,0,0,0,0,.6l3.54,3.54a.42.42,0,0,0,.59,0l1.43-1.43a.42.42,0,0,0,0-.59l-3.54-3.54a.42.42,0,0,0-.6,0"
-          />
-          <path
-            fill="#00FFFF"
-            d="M11,2a9,9,0,1,0,9,9,9,9,0,0,0-9-9m0,15.69A6.68,6.68,0,1,1,17.69,11,6.68,6.68,0,0,1,11,17.69"
-          />
-        </g>
-      </svg>
-
-      <text x="100" y="355" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="16" fill="white" stroke="none">e-shop</text>
-      <text x="400" y="355" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="16" fill="white" stroke="none">GTM</text>
-      <text x="700" y="195" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="16" fill="white" stroke="none">GA4</text>
-      <text x="700" y="355" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="16" fill="white" stroke="none">FB CAPI</text>
-      <text x="700" y="515" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="16" fill="white" stroke="none">BigQuery</text>
-    </svg>
   );
 }

@@ -235,8 +235,45 @@ Poté nastav DNS záznamy dle výpisu (Google vydá certifikát automaticky).
 
 ```bash
 gcloud run services update "$SERVICE" --region "$REGION" \
-  --set-env-vars "NODE_ENV=production,GOOGLE_CLOUD_PROJECT=${PROJECT_ID},ENABLE_AUTH=1,SITE_USER=vn,SITE_PASS=tajne"
+  --update-env-vars "ENABLE_AUTH=1,SITE_USER=vn,SITE_PASS=tajne"
 ```
+
+`--update-env-vars` ostatní proměnné služby ponechá (`--set-env-vars` by je smazal). Dokud je
+`ENABLE_AUTH=1`, posílá server hlavičku `X-Robots-Tag: noindex` – po vypnutí hesla zmizí sama.
+
+### 11.1 Kontaktní formulář: Cloudflare Turnstile a SMTP
+
+Formulář funguje i bez nich (zprávy se ukládají do Firestore a čtou v administraci → Zprávy),
+pro ostrý provoz ale nastav ochranu proti robotům a odesílání e-mailů:
+
+1. **Turnstile:** Cloudflare dashboard → Turnstile → *Add widget* (doména webu, režim *Managed*)
+   → získáš *site key* (veřejný) a *secret key*.
+2. **SMTP:** účet, přes který web odesílá upozornění na novou poptávku (Google Workspace,
+   transakční e-mailová služba…). Odesílací adresu ověř v SPF/DKIM domény, jinak pošta padá do spamu.
+3. Tajemství do Secret Manageru a proměnné na službu:
+
+```bash
+printf '%s' "<turnstile secret key>" | gcloud secrets create TURNSTILE_SECRET_KEY --data-file=-
+printf '%s' "<heslo SMTP>" | gcloud secrets create SMTP_PASS --data-file=-
+for S in TURNSTILE_SECRET_KEY SMTP_PASS; do
+  gcloud secrets add-iam-policy-binding "$S" \
+    --member="serviceAccount:${RUN_SA}" --role="roles/secretmanager.secretAccessor"
+done
+
+gcloud run services update "$SERVICE" --region "$REGION" \
+  --update-env-vars "TURNSTILE_SITE_KEY=<site key>,SMTP_HOST=<smtp server>,SMTP_PORT=587,SMTP_USER=<uživatel>,MAIL_FROM=web@datalayer.cz" \
+  --update-secrets "TURNSTILE_SECRET_KEY=TURNSTILE_SECRET_KEY:latest,SMTP_PASS=SMTP_PASS:latest"
+```
+
+**Příjemce poptávek, GTM ID, telefon a LinkedIn** nastav v administraci → **Nastavení**. Stav
+Turnstile a SMTP tam uvidíš také.
+
+### 11.2 Migrace dat (Firestore)
+
+Po každém nasazení, které přináší novou migraci (import článků, úpravy obsahu…), otevři
+administraci → **Migrace** → **Nasadit čekající**. Podrobnosti a migrační URL s tokenem
+`MIGRATION_TOKEN`: [`docs/migrace.md`](./docs/migrace.md). Po prvním nasazení této verze
+čekají dvě migrace: výchozí nastavení webu a opravy dvou původních článků.
 
 ---
 

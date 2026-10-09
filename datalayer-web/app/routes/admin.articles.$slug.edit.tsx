@@ -22,12 +22,13 @@ export async function action({ request, params }: ActionFunctionArgs) {
   const author = String(form.get('author') ?? '').trim();
   const date = String(form.get('date') ?? '').trim();
   const content = String(form.get('content') ?? '');
+  const description = String(form.get('description') ?? '').trim().slice(0, 200);
 
   if (!title || !author || !date) {
     return { error: 'Vyplň všechna povinná pole.' };
   }
 
-  await updateArticle(slug, { title, author, date, content });
+  await updateArticle(slug, { title, author, date, description, content });
   return redirect('/admin/articles');
 }
 
@@ -56,6 +57,7 @@ export default function EditArticle() {
               title: article.title,
               author: article.author,
               date: article.date.slice(0, 10),
+              description: article.description,
               content: article.content,
             }}
           />

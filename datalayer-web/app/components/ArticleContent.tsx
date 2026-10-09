@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import hljs from 'highlight.js';
+import { pushEvent } from '~/lib/dataLayer';
 
 /**
  * Render obsahu článku uloženého v DB (HTML) – ekvivalent původního
@@ -28,8 +29,9 @@ export function ArticleContent({ html }: { html: string }) {
       if (!btn) return;
       const code = btn.closest('.code-container')?.querySelector('code')?.textContent ?? '';
       navigator.clipboard.writeText(code).then(() => {
+        pushEvent('code_copy', { snippet_id: btn.closest('.code-container')?.id || 'article' });
         const original = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        btn.textContent = 'Zkopírováno';
         (btn as HTMLElement).style.color = '#00ffff';
         setTimeout(() => {
           btn.innerHTML = original;

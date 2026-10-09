@@ -37,6 +37,9 @@ steps:
 
   # 3) Deploy na Cloud Run. Firestore se autentizuje přes runtime SA (ADC),
   #    GOOGLE_CLOUD_PROJECT zajistí správný projekt pro klienta.
+  #    --update-env-vars / --update-secrets jen doplní uvedené hodnoty a ostatní
+  #    proměnné služby (ENABLE_AUTH a heslo webu, Turnstile, SMTP…) ponechá.
+  #    Dřívější --set-env-vars je při každém deployi smazal – web by se odemkl.
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     entrypoint: gcloud
     args:
@@ -48,8 +51,8 @@ steps:
       - --platform=managed
       - --allow-unauthenticated
       - --port=8080
-      - --set-env-vars=NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID
-      - --set-secrets=SESSION_SECRET=SESSION_SECRET:latest
+      - --update-env-vars=NODE_ENV=production,GOOGLE_CLOUD_PROJECT=$PROJECT_ID
+      - --update-secrets=SESSION_SECRET=SESSION_SECRET:latest
 
 images:
   - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/${_SERVICE}:$COMMIT_SHA

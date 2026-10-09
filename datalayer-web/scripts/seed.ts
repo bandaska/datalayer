@@ -16,16 +16,18 @@ async function main() {
     title: 'Server-Side GTM: proč a jak začít',
     author: 'Vít Novotný',
     date: Timestamp.fromDate(new Date('2025-01-15')),
+    description:
+      'Co je server-side Google Tag Manager, proč přesouvá měření z prohlížeče na server a jak začít. Přesnější data a rychlejší web, vždy se souhlasem návštěvníka.',
     content: `
       <p class="article-perex">Server-Side Google Tag Manager posouvá měření z prohlížeče na server.
-      Získáte přesnější data, lepší výkon webu a odolnost vůči blokátorům.</p>
+      Získáte přesnější data, rychlejší web a odolnější first-party měření, vždy v souladu se souhlasem návštěvníka.</p>
       <h2>Proč server-side</h2>
-      <p>Klientské měření naráží na limity prohlížečů, blokátory a konec cookies třetích stran.
+      <p>Klientské měření naráží na limity prohlížečů, blokátory reklam a omezení cookies v Safari a Firefoxu.
       Přesunem zpracování na server získáte kontrolu nad daty.</p>
       <div class="code-container">
         <div class="code-header">
           <span class="code-lang">javascript</span>
-          <button class="btn-copy" type="button"><i class="far fa-copy"></i> Copy</button>
+          <button class="btn-copy" type="button">Kopírovat</button>
         </div>
         <pre class="code-content"><code class="language-javascript">dataLayer.push({
   event: 'purchase',
@@ -33,7 +35,7 @@ async function main() {
 });</code></pre>
       </div>
       <h3>Shrnutí</h3>
-      <p>Server-side měření je dnes standardem pro datově řízené e-shopy.</p>
+      <p>Server-side měření je dnes standard pro datově řízené e-shopy.</p>
     `,
   });
 
@@ -42,6 +44,8 @@ async function main() {
     title: 'GA4 → BigQuery: vlastní data bez limitů',
     author: 'Vít Novotný',
     date: Timestamp.fromDate(new Date('2025-02-20')),
+    description:
+      'Napojení GA4 na BigQuery: surová data o událostech bez vzorkování, spojení dat napříč zdroji a základ pro reporting. Na co si dát pozor u sandboxu.',
     content: `
       <p class="article-perex">Napojení GA4 na BigQuery vám otevře surová data k pokročilým analýzám.</p>
       <h2>Co získáte</h2>
@@ -51,10 +55,10 @@ async function main() {
         <li>Základ pro reporting a machine learning</li>
       </ul>
       <div class="infobox">
-        <div class="infobox-icon"><i class="fas fa-lightbulb"></i></div>
+        <div class="infobox-icon">i</div>
         <div class="infobox-content">
           <h5>Tip</h5>
-          <p>Export je zdarma v rámci sandbox limitů BigQuery.</p>
+          <p>Sandbox BigQuery nic nestojí, ale tabulky v něm po šedesáti dnech vyprší, streamovaný export nefunguje a úložiště má limit deset GiB. Pro trvalý export proto připojte k projektu platební účet a upravte výchozí expiraci tabulek.</p>
         </div>
       </div>
     `,
@@ -72,7 +76,7 @@ async function main() {
         <li>Specifikace datové vrstvy</li>
         <li>Server-Side měření a BigQuery export</li>
       </ul>
-      <p><a href="#contact-form" class="btn btn-cta">[ Nezávazná konzultace ]</a></p>
+      <p><a href="#kontakt" class="btn btn-cta">[ Nezávazná konzultace ]</a></p>
     `,
   });
 
