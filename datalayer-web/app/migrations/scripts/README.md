@@ -37,7 +37,7 @@ export const migration: Migration = {
     const result = await importArticle(ctx, {
       slug: 'consent-mode-v2-pruvodce',
       title: 'Consent Mode v2: basic vs. advanced a co se posílá před souhlasem',
-      author: 'Vít Novotný',
+      author: 'datalayer.cz',
       date: '2026-10-20',
       description: '…140–160 znaků…',
       content,

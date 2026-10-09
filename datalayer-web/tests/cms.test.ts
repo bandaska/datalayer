@@ -61,6 +61,7 @@ const { decodeNested, encodeNested } = await import('~/lib/cms/codec');
 const { navigationStore, textsStore } = await import('~/lib/cms/singletons.server');
 const { migration } = await import('~/migrations/scripts/20261009_cms_content_import');
 const { migration: slimMigration } = await import('~/migrations/scripts/20261009_lp_stihla_sablona');
+const { migration: noPersonMigration } = await import('~/migrations/scripts/20261009_bez_kontaktni_osoby');
 const { importPage } = await import('~/migrations/helpers');
 type MigrationContext = import('~/migrations/types').MigrationContext;
 
@@ -341,6 +342,52 @@ describe('migrace 20261009_lp_stihla_sablona', () => {
     expect(summary).toContain('stránky: 0 přepsaných');
     expect(summary).toContain('cookie lišta: vlastní znění z administrace, beze změny');
     expect((docs.get('content/texts') as { cookieBar: { text: string } }).cookieBar.text).toBe('Vlastní text lišty.');
+  });
+});
+
+describe('migrace 20261009_bez_kontaktni_osoby', () => {
+  it('vymaže kontaktní osobu z textů, stránky přepíše se zálohou, autora článků změní', async () => {
+    await migration.run(ctx);
+    // stav po předchozím kole: osoba v textech, na stránce O nás a jako autor článku
+    const texts = docs.get('content/texts')!;
+    docs.set('content/texts', { ...texts, contact: { ...(texts.contact as object), personName: 'Odpovídá Vít Novotný', personNote: 'obvykle do jednoho pracovního dne' } });
+    const onas = stored('o-nas')!;
+    docs.set('pages/o-nas', { ...onas, hero: { ...(onas.hero as object), subtitle: 'Za datalayer.cz stojí Vít Novotný, tracking & data engineer.' }, updatedBy: 'editor@example.com' });
+    docs.set('pages/vlastni-stranka', { ...onas, path: 'vlastni-stranka', hero: { ...(onas.hero as object), h1: 'Napište Vítovi' } });
+    docs.set('articles/clanek', { slug: 'clanek', title: 'Článek', author: 'Vít Novotný', content: '<p>Text bez jména.</p>' });
+    docs.set('articles/zminka', { slug: 'zminka', title: 'Rozhovor', author: 'Jiný autor', content: '<p>Ptali jsme se Víta Novotného.</p>' });
+
+    const summary = await noPersonMigration.run(ctx);
+    expect(summary).toContain('texty webu: kontaktní osoba vymazaná');
+    expect(summary).toContain('stránky: 1 přepsaných');
+    expect(summary).toContain('1 z nich mělo úpravy z administrace');
+    expect(summary).toContain('autor článků změněný: 1');
+    expect(summary).toContain('stránka /vlastni-stranka');
+    expect(summary).toContain('článek zminka');
+
+    const contact = (decodeNested(docs.get('content/texts')) as { contact: { personName: string; personNote: string } }).contact;
+    expect(contact.personName).toBe('');
+    expect(contact.personNote).toBe('');
+    expect(textsSchema.safeParse(decodeNested(docs.get('content/texts'))).success).toBe(true);
+    expect(JSON.stringify(stored('o-nas'))).not.toContain('Novotn');
+    expect(stored('o-nas')?.updatedBy).toBe('migrace');
+    expect((docs.get('pages_backup/o-nas@20261009_bez_kontaktni_osoby')?.hero as { subtitle: string }).subtitle).toContain('Vít Novotný');
+    expect(docs.get('articles/clanek')?.author).toBe('datalayer.cz');
+    expect(docs.get('articles/zminka')?.author).toBe('Jiný autor');
+
+    // podruhé už nic nemění (zmínky mimo výchozí obsah dál jen hlásí)
+    const snapshot = JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')));
+    const second = await noPersonMigration.run(ctx);
+    expect(second).toContain('texty webu: beze změny');
+    expect(second).toContain('stránky: 0 přepsaných');
+    expect(second).toContain('autor článků změněný: 0');
+    expect(JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')))).toBe(snapshot);
+  });
+
+  it('obsah bez zmínek nechá být', async () => {
+    await migration.run(ctx);
+    const summary = await noPersonMigration.run(ctx);
+    expect(summary).toBe('texty webu: beze změny; stránky: 0 přepsaných; autor článků změněný: 0; jiné zmínky nezůstaly');
   });
 });
 

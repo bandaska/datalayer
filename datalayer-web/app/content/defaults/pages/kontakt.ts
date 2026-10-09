@@ -8,8 +8,9 @@ import type { PageInput } from '../../schema';
 // H1 a meta popis ze zadání slibují telefonát („nebo rovnou zavolejte“). Telefon
 // zatím chybí, proto texty stránky na telefonu nestojí – po doplnění čísla
 // v administraci lze H1 ze zadání vrátit.
-// Do dodání podkladů klientem chybí: telefon a pracovní doba, firemní údaje,
-// osobní schůzky, angličtina.
+// Web zatím nemá kontaktní osobu (rozhodnutí klienta, 9. října 2026), stránka proto
+// neuvádí, kdo odpovídá. Do dodání podkladů klientem chybí: telefon a pracovní doba,
+// firemní údaje, osobní schůzky, angličtina.
 
 export const page: PageInput = {
   path: 'kontakt',
@@ -32,7 +33,7 @@ export const page: PageInput = {
       'Na úvodní třicetiminutové konzultaci projdeme vaše měření a řekneme, co opravit jako první – nezávazně a zdarma.',
   },
 
-  trust: ['Odpověď do jednoho pracovního dne', 'Úvodní konzultace zdarma a nezávazně', 'Odpovídá přímo Vít Novotný'],
+  trust: ['Odpověď do jednoho pracovního dne', 'Úvodní konzultace zdarma a nezávazně', 'Žádný newsletter ani spam'],
 
   sections: [
     {
@@ -81,7 +82,7 @@ export const page: PageInput = {
     position: 'top',
     formId: 'kontakt',
     title: 'Napište nám, co řešíte',
-    lead: 'Ozveme se do jednoho pracovního dne. Odpovídá přímo Vít Novotný.',
+    lead: 'Ozveme se do jednoho pracovního dne.',
     placeholder: 'Krátce napište, co řešíte…',
     leadType: 'consultation',
   },

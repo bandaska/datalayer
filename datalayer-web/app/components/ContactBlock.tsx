@@ -8,7 +8,7 @@ import type { ContactErrors, LeadType } from '~/lib/contact';
 import { readConsent } from '~/lib/consent';
 import { pushEvent, sha256Hex } from '~/lib/dataLayer';
 import type { RootData } from '~/lib/rootData';
-import { CONTACT_EMAIL } from '~/lib/site';
+import { CONTACT_EMAIL, SITE_NAME } from '~/lib/site';
 import { phoneHref } from '~/lib/settings';
 
 // Nativní kontaktní blok (náhrada HubSpotu) podle vzoru annanovotna.cz, kompaktní
@@ -256,12 +256,13 @@ export function ContactBlock({
                     <span>
                       <span className="dl-channels__label">LinkedIn</span>
                       <a href={linkedin} target="_blank" rel="noopener noreferrer">
-                        Vít Novotný
+                        {SITE_NAME}
                       </a>
                     </span>
                   </li>
                 ) : null}
               </ul>
+              {t.personName?.trim() ? (
               <div className="dl-person">
                 {t.personPhoto ? (
                   <img className="dl-person__photo" src={t.personPhoto} alt="" width={52} height={52} loading="lazy" />
@@ -272,9 +273,10 @@ export function ContactBlock({
                 )}
                 <span>
                   <span className="dl-person__name">{t.personName}</span>
-                  <span className="dl-person__role">{t.personNote}</span>
+                  {t.personNote ? <span className="dl-person__role">{t.personNote}</span> : null}
                 </span>
               </div>
+              ) : null}
               {t.nextSteps?.length ? (
                 <ol className="dl-next" aria-label="Co se stane po odeslání">
                   {t.nextSteps.map((step, i) => (
@@ -400,7 +402,7 @@ export function ContactBlock({
   );
 }
 
-/** Iniciály pro kruh místo fotky („Odpovídá Vít Novotný“ → VN). */
+/** Iniciály pro kruh místo fotky („Odpovídá Jana Nováková“ → JN). */
 function initials(name: string): string {
   const words = name.replace(/^Odpovídá\s+/i, '').split(/\s+/).filter(Boolean);
   return words

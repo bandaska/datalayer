@@ -162,7 +162,7 @@ export default function AdminSettings() {
           <div className="row g-3">
             {(
               [
-                ['operatorName', 'Jméno nebo obchodní firma', settings.operatorName, 'Např. Vít Novotný nebo datalayer s.r.o.'],
+                ['operatorName', 'Jméno nebo obchodní firma', settings.operatorName, 'Např. Jana Nováková nebo datalayer s.r.o.'],
                 ['operatorId', 'IČO', settings.operatorId, '12345678'],
                 ['operatorAddress', 'Sídlo nebo místo podnikání', settings.operatorAddress, 'Ulice 1, 110 00 Praha'],
                 ['operatorRegistry', 'Zápis v rejstříku (nepovinné)', settings.operatorRegistry, 'Např. zapsaný v obchodním rejstříku u Městského soudu v Praze, oddíl C, vložka 000000'],

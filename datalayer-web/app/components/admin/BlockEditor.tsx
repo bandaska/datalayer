@@ -46,7 +46,7 @@ export const BLOCK_HELP: Record<BlockType, string> = {
   figures: 'Dvě až čtyři čísla v boxech, např. náklady provozu, a poznámka se zdrojem.',
   process: 'Jednotný postup spolupráce – pět kroků z Textů webu. U služby jde upravit popis kroku 3 (implementace).',
   operator: 'Jméno nebo firma, IČO a sídlo z Nastavení. Dokud nejsou vyplněné, blok se nezobrazí.',
-  person: 'Jméno, role, praxe a nástroje tady, fotka z Textů webu (Kontakt), LinkedIn z Nastavení. Bez fotky i bez textu o praxi se blok nezobrazí.',
+  person: 'Jméno, role, praxe a nástroje tady, fotka z Textů webu (Kontakt), LinkedIn z Nastavení. Bez jména, nebo bez fotky i textu o praxi se blok nezobrazí.',
 };
 
 export function newBlock(type: BlockType): Block {
@@ -548,7 +548,7 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
         <>
           <div className="row g-2">
             <div className="col-md-6">
-              <TextInput label="Jméno" value={block.name} onChange={(name) => onChange({ ...block, name: name || undefined })} help="Prázdné = jméno z Textů webu → Kontakt." />
+              <TextInput label="Jméno" value={block.name} onChange={(name) => onChange({ ...block, name: name || undefined })} help="Prázdné = kontaktní osoba z Textů webu → Kontakt." />
             </div>
             <div className="col-md-6">
               <TextInput label="Role" value={block.role} onChange={(role) => onChange({ ...block, role: role || undefined })} help="Např. tracking & data engineer." />

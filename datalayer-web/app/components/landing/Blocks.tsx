@@ -508,7 +508,7 @@ function ProcessBlock({ block }: { block: Extract<Block, { type: 'process' }> })
   );
 }
 
-/** Jméno z kontaktního bloku bez úvodního „Odpovídá“ („Odpovídá Vít Novotný“ → „Vít Novotný“). */
+/** Jméno z kontaktního bloku bez úvodního „Odpovídá“ („Odpovídá Jana Nováková“ → „Jana Nováková“). */
 function bareName(name: string): string {
   return name.replace(/^Odpovídá\s+/i, '').trim();
 }
@@ -522,16 +522,16 @@ function initials(name: string): string {
     .join('');
 }
 
-/** Blok osoby má co ukázat až s fotkou nebo textem o praxi (podklady od klienta). */
-export function personReady(block: Extract<Block, { type: 'person' }>, photo?: string): boolean {
-  return Boolean(photo || block.paragraphs?.length);
+/** Blok osoby má co ukázat až se jménem a k tomu s fotkou nebo textem o praxi (podklady od klienta). */
+export function personReady(block: Extract<Block, { type: 'person' }>, photo?: string, contactName = ''): boolean {
+  return Boolean((block.name || bareName(contactName)) && (photo || block.paragraphs?.length));
 }
 
 /** Osoba za webem: jméno z bloku (jinak z Textů webu), fotka z Textů webu, praxe a nástroje z bloku, LinkedIn z Nastavení. */
 function PersonBlock({ block }: { block: Extract<Block, { type: 'person' }> }) {
   const root = useRouteLoaderData('root') as RootData | undefined;
   const t = root?.texts.contact ?? DEFAULT_TEXTS.contact;
-  if (!personReady(block, t.personPhoto)) return null;
+  if (!personReady(block, t.personPhoto, t.personName)) return null;
   const name = block.name || bareName(t.personName);
   return (
     <div className="lp-person">

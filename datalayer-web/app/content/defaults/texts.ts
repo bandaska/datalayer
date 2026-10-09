@@ -20,8 +20,9 @@ export const DEFAULT_TEXTS: SiteTexts = {
     successTitle: 'Díky, zpráva dorazila',
     successText: 'Ozveme se vám do jednoho pracovního dne na {email}.',
     successPhone: 'Spěchá to? Zavolejte na {phone}.',
-    personName: 'Odpovídá Vít Novotný',
-    personNote: 'obvykle do jednoho pracovního dne',
+    // web zatím nemá kontaktní osobu – s prázdným jménem se karta u formuláře nezobrazí
+    personName: '',
+    personNote: '',
     nextSteps: DEFAULT_NEXT_STEPS,
     moreFields: '+ Přidat telefon a web (nepovinné)',
   },

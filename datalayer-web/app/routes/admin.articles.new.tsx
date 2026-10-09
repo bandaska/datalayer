@@ -4,6 +4,7 @@ import { createArticle, slugExists } from '~/lib/articles.server';
 import { requireUser } from '~/lib/auth.server';
 import { ArticleFormFields } from '~/components/ArticleFormFields';
 import { Card, PageHead } from '~/components/admin/ui';
+import { SITE_NAME } from '~/lib/site';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   await requireUser(request);
@@ -54,7 +55,7 @@ export default function NewArticle() {
           </div>
         ) : null}
         <Form method="post">
-          <ArticleFormFields />
+          <ArticleFormFields defaults={{ author: SITE_NAME }} />
           <div className="mt-4 d-flex gap-2 flex-wrap">
             <button type="submit" className="btn btn-primary">
               Vytvořit článek

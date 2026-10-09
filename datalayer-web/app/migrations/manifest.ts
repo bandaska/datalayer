@@ -15,10 +15,12 @@ import { migration as m20261009SettingsDefaults } from './scripts/20261009_setti
 import { migration as m20261009ArticlesSeoFixes } from './scripts/20261009_articles_seo_fixes';
 import { migration as m20261009CmsContentImport } from './scripts/20261009_cms_content_import';
 import { migration as m20261009LpStihlaSablona } from './scripts/20261009_lp_stihla_sablona';
+import { migration as m20261009BezKontaktniOsoby } from './scripts/20261009_bez_kontaktni_osoby';
 
 export const MIGRATIONS: Migration[] = [
   m20261009SettingsDefaults, // výchozí příjemce formuláře v settings/site
   m20261009ArticlesSeoFixes, // opravy původních článků podle SEO auditu
   m20261009CmsContentImport, // stránky, menu a texty webu z kódu do administrace
   m20261009LpStihlaSablona, // štíhlá šablona stránek podle vyhodnocení webu
+  m20261009BezKontaktniOsoby, // web bez kontaktní osoby: texty, stránky, autor článků
 ];

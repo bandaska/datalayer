@@ -197,7 +197,7 @@ export const blockSchema = z.discriminatedUnion('type', [
    */
   z.object({
     type: z.literal('person'),
-    /** Jméno v nadpisu bloku; prázdné = jméno z Textů webu (Kontakt) bez „Odpovídá“. */
+    /** Jméno v nadpisu bloku; prázdné = kontaktní osoba z Textů webu bez „Odpovídá“. Bez jména se blok nezobrazí. */
     name: str(120).optional(),
     role: str(120).optional(),
     paragraphs: z.array(str(1500)).max(6, 'Nejvýš šest odstavců').optional(), // HTML
@@ -425,8 +425,9 @@ export const textsSchema = z.object({
     successText: req(300),
     /** {phone} se nahradí telefonem z nastavení. */
     successPhone: str(200),
-    personName: req(120),
-    personNote: req(160),
+    /** Kontaktní osoba u formuláře (např. „Odpovídá Jana Nováková“); prázdné = blok bez osoby. */
+    personName: str(120).default(''),
+    personNote: str(160).default(''),
     /** Fotka osoby u kontaktu (cesta nebo https URL); bez ní web ukáže iniciály. */
     personPhoto: z.string().trim().max(500).optional(),
     /** Tři kroky „co se stane po odeslání“ pod formulářem. */

@@ -5,50 +5,45 @@ import type { PageInput } from '../../schema';
 // a 8). Sekce „Pro koho pracujeme“ přebírá texty segmentů z 04_homepage-ux/
 // homepage-audit-a-navrh.md (sekce 2). Pravidla práce s daty jsme zkrátili na čtyři body,
 // postup a „co od vás budeme potřebovat“ najde návštěvník na /jak-pracujeme.
-// Sekce „Kdo za datalayer.cz stojí“ (blok osoby a provozovatele) se ukáže, až klient
-// dodá fotku nebo text o praxi (Texty webu → Kontakt, blok Osoba) nebo firemní údaje
-// (Nastavení → Provozovatel webu). Do té doby chybí: fotografie, bio a fakta o Vítu
-// Novotném (praxe, certifikace, přednášky, LinkedIn), citace, příběh založení, tým,
-// firemní údaje (IČO, DIČ, sídlo, rejstřík), telefon. Množné číslo („my“) zůstává,
-// dokud klient nerozhodne, jestli web mluví za tým, nebo za jednu osobu. Tvrzení
-// o správě kampaní čeká na rozhodnutí klienta (viz kap. B6), proto na stránce není.
+// Web zatím nemá obličej ani kontaktní osobu (rozhodnutí klienta, 9. října 2026):
+// stránka neuvádí jméno, fotku ani blok osoby. Sekce „Kdo web provozuje“ ukáže jen
+// identifikaci provozovatele z Nastavení, jakmile ji klient vyplní. Do té doby chybí
+// firemní údaje (IČO, DIČ, sídlo, rejstřík), příběh založení a telefon. Tvrzení o správě
+// kampaní čeká na rozhodnutí klienta (viz kap. B6), proto na stránce není.
 
 export const page: PageInput = {
   path: 'o-nas',
   kind: 'page',
   navTitle: 'O nás',
-  tagline: 'kdo jsme a jak pracujeme s daty',
+  tagline: 'jak pracujeme s daty a pro koho',
   pictogram: 'gov',
 
   seo: {
-    title: 'O nás: Vít Novotný a tým datalayer.cz',
+    title: 'O nás: jak pracujeme s daty | datalayer.cz',
     description:
-      'Kdo stojí za datalayer.cz, jak pracujeme s daty klientů a co od vás budeme potřebovat. Technický tým pro GA4, GTM, server-side, consent a BigQuery.',
+      'Jak datalayer.cz pracuje s daty klientů, pro koho stavíme měření a co od vás budeme potřebovat. Technický tým pro GA4, GTM, server-side, consent a BigQuery.',
   },
 
   hero: {
     eyebrow: 'o nás',
-    h1: 'Kdo stojí za datalayer.cz a jak pracujeme s daty',
+    h1: 'O nás: jak pracujeme s daty a pro koho',
     subtitle:
-      'Za datalayer.cz stojí Vít Novotný, tracking & data engineer. Stavíme a ověřujeme měření pro e-shopy, B2B a velké firmy – od datové vrstvy přes Tag Manager, GA4 a souhlasy po server-side tracking a BigQuery. Pracujeme ve vašich účtech a každou implementaci předáme s dokumentací.',
-    primaryCta: { label: 'Napsat Vítovi', href: '#kontakt' },
+      'Stavíme a ověřujeme měření pro e-shopy, B2B a velké firmy – od datové vrstvy přes Tag Manager, GA4 a souhlasy po server-side tracking a BigQuery. Pracujeme ve vašich účtech a každou implementaci předáme s dokumentací.',
+    primaryCta: { label: 'Napsat nám', href: '#kontakt' },
     secondaryCta: { label: 'Jak pracujeme', href: '/jak-pracujeme' },
-    microcopy: 'Odpovídá přímo Vít Novotný · odpověď do jednoho pracovního dne',
+    microcopy: 'Úvodní konzultace zdarma · odpověď do jednoho pracovního dne',
   },
 
   trust: ['Účty a data zakládáme na vaši firmu', 'Validace před každým předáním', 'Standardní nástroje, žádné černé skříňky'],
 
   sections: [
     {
-      id: 'kdo',
-      eyebrow: 'kdo za webem stojí',
-      title: 'Kdo za datalayer.cz stojí',
+      id: 'provozovatel',
+      eyebrow: 'provozovatel',
+      title: 'Kdo web provozuje',
       tone: 'white',
-      // bez fotky, textu o praxi i firemních údajů web sekci nevykreslí
-      blocks: [
-        { type: 'person', name: 'Vít Novotný', role: 'tracking & data engineer' },
-        { type: 'operator', title: 'Provozovatel webu' },
-      ],
+      // bez údajů v Nastavení → Provozovatel webu web sekci nevykreslí
+      blocks: [{ type: 'operator' }],
     },
     {
       id: 'pristup',
@@ -129,10 +124,6 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Kdo odpoví na moji zprávu?',
-      a: 'Přímo Vít Novotný, tracking & data engineer. Ozve se do jednoho pracovního dne.',
-    },
-    {
       q: 'Komu patří účty a data?',
       a: 'Vám. GA4, Tag Manager, Google Cloud i reklamní účty zakládáme na vaši firmu a my dostáváme jen přístup, který můžete kdykoli odebrat. Po skončení spolupráce nic nemigrujete.',
     },
@@ -154,8 +145,8 @@ export const page: PageInput = {
 
   contact: {
     formId: 'o-nas',
-    title: 'Chcete nás nejdřív poznat? Napište Vítovi',
-    lead: 'Napište nám e-mail, nebo vyplňte formulář. Odpovídá přímo Vít Novotný.',
+    title: 'Chcete nás nejdřív poznat? Napište nám',
+    lead: 'Napište nám e-mail, nebo vyplňte formulář. Ozveme se do jednoho pracovního dne.',
     placeholder: 'Krátce napište, co řešíte…',
     leadType: 'consultation',
   },
