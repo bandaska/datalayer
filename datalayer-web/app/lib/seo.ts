@@ -47,7 +47,7 @@ export function seoMeta(input: SeoInput): MetaDescriptor[] {
 /** Odkaz na organizaci – sdílený `@id`, na který se odkazují ostatní schémata. */
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 
-export function organizationLd(extra: { email?: string; telephone?: string; sameAs?: string[] } = {}) {
+export function organizationLd(extra: { email?: string; telephone?: string; sameAs?: string[]; description?: string } = {}) {
   return {
     '@context': 'https://schema.org',
     '@type': ['Organization', 'ProfessionalService'],
@@ -57,6 +57,7 @@ export function organizationLd(extra: { email?: string; telephone?: string; same
     logo: `${SITE_URL}/dl.png`,
     image: absoluteUrl(DEFAULT_OG_IMAGE),
     description:
+      extra.description ||
       'Webová analytika a měření pro e-shopy, B2B firmy a velké firmy: implementace GA4, Google Tag Manager, server-side tracking, Consent Mode v2, BigQuery a dashboardy.',
     areaServed: { '@type': 'Country', name: 'Česká republika' },
     availableLanguage: 'cs',

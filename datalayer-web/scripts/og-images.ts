@@ -1,6 +1,8 @@
 // Vygeneruje OG obrázky (1200×630 PNG) pro sdílení stránek na LinkedInu
 // a sociálních sítích: public/og/default.png + jeden pro každou obsahovou
-// stránku (název souboru = cesta s pomlčkami, viz ogImageFor v app/lib/landingLd.ts).
+// výchozí stránku z app/content/defaults (pole ogImage, název souboru = cesta
+// s pomlčkami). Stránky založené v administraci používají default.png, nebo
+// obrázek, který jim editor nastaví v záložce SEO.
 //
 // Spuštění (Playwright se do projektu neinstaluje natrvalo):
 //   npm i --no-save playwright && npx tsx scripts/og-images.ts
@@ -10,8 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { chromium } from 'playwright';
-import { PAGES } from '../app/content/registry.server';
-import { ogImageFor } from '../app/lib/landingLd';
+import { DEFAULT_PAGES } from '../app/content/defaults';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const OUT = path.join(ROOT, 'public');
@@ -48,7 +49,12 @@ h1{font-weight:800;font-size:64px;line-height:1.08;letter-spacing:-1px;max-width
 
 const jobs = [
   { file: '/og/default.png', title: 'Měření, kterému věříte', tag: 'GA4 · GTM · server-side · Consent Mode v2', pictogram: 'datalayer' },
-  ...PAGES.map((p) => ({ file: ogImageFor(p.path), title: p.hero.h1, tag: p.hero.eyebrow, pictogram: p.pictogram })),
+  ...DEFAULT_PAGES.filter((p) => p.ogImage && p.ogImage !== '/og/default.png').map((p) => ({
+    file: p.ogImage!,
+    title: p.hero.h1,
+    tag: p.hero.eyebrow && p.hero.eyebrow !== p.hero.h1 ? p.hero.eyebrow : p.kind === 'legal' ? 'Zásady a právní informace' : p.navTitle,
+    pictogram: p.pictogram,
+  })),
 ];
 
 const browser = await chromium.launch();

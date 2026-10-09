@@ -1,4 +1,6 @@
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useRouteLoaderData } from 'react-router';
+import { DEFAULT_TEXTS } from '~/content/defaults/texts';
+import type { RootData } from '~/lib/rootData';
 import type { LinksFunction, LoaderFunctionArgs, MetaFunction } from 'react-router';
 import hljsStylesHref from 'highlight.js/styles/atom-one-dark.css?url';
 import { ArticleContent } from '~/components/ArticleContent';
@@ -64,6 +66,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function BlogDetail() {
   const { article } = useLoaderData<typeof loader>();
+  const root = useRouteLoaderData('root') as RootData | undefined;
+  const t = root?.texts.blog ?? DEFAULT_TEXTS.blog;
   const crumbs = [
     { name: 'Úvod', path: '/' },
     { name: 'Blog', path: '/blog' },
@@ -100,13 +104,7 @@ export default function BlogDetail() {
         </div>
       </section>
 
-      <ContactBlock
-        formId="blog"
-        title="Řešíte totéž u sebe?"
-        lead="Napište, na čem jste se zasekli. Ozveme se do jednoho pracovního dne a řekneme, kde začít."
-        placeholder="Napište, na čem jste se zasekli…"
-        compact
-      />
+      <ContactBlock formId="blog" title={t.ctaTitle} lead={t.ctaLead} placeholder={t.ctaPlaceholder} compact />
     </>
   );
 }

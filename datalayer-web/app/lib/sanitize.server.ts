@@ -23,3 +23,16 @@ export function cleanHtml(html: string): string {
     allowedSchemes: ['http', 'https', 'mailto', 'data'],
   });
 }
+
+/**
+ * Inline HTML v textech stránek (odstavce, karty, FAQ…): jen zvýraznění,
+ * kód, zalomení a odkazy. Ostatní značky zmizí, text zůstane.
+ */
+export function cleanInline(html: string): string {
+  return sanitizeHtml(html, {
+    allowedTags: ['strong', 'em', 'b', 'i', 'code', 'br', 'a', 'span'],
+    allowedAttributes: { a: ['href', 'target', 'rel'] },
+    allowedSchemes: ['http', 'https', 'mailto', 'tel'],
+    allowProtocolRelative: false,
+  });
+}

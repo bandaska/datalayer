@@ -1,4 +1,6 @@
-import { Link, useSearchParams } from 'react-router';
+import { Link, useRouteLoaderData, useSearchParams } from 'react-router';
+import { DEFAULT_TEXTS } from '~/content/defaults/texts';
+import type { RootData } from '~/lib/rootData';
 import type { MetaFunction } from 'react-router';
 import { SimplePage } from '~/components/SimplePage';
 import { seoMeta } from '~/lib/seo';
@@ -23,10 +25,12 @@ const ERRORS: Record<string, string> = {
 export default function Dekujeme() {
   const [params] = useSearchParams();
   const error = params.get('chyba');
+  const root = useRouteLoaderData('root') as RootData | undefined;
+  const t = root?.texts.thankYou ?? DEFAULT_TEXTS.thankYou;
 
   if (error) {
     return (
-      <SimplePage title="Zprávu se nepodařilo odeslat" path="/dekujeme">
+      <SimplePage title={t.errorTitle} path="/dekujeme">
         <p>{ERRORS[error] ?? 'Na serveru nastala chyba. Zkuste to prosím později.'}</p>
         <p>
           Napsat nám můžete i přímo na <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
@@ -41,11 +45,13 @@ export default function Dekujeme() {
   }
 
   return (
-    <SimplePage title="Díky, zpráva dorazila" path="/dekujeme">
-      <p>Ozveme se vám do jednoho pracovního dne. Spěchá to? Napište na <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <SimplePage title={t.title} path="/dekujeme">
+      <p>
+        {t.text} Spěchá to? Napište na <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+      </p>
       <p>
         <Link to="/" className="btn btn-outline-custom">
-          [ Zpět na úvod ]
+          [ {t.back} ]
         </Link>
       </p>
     </SimplePage>

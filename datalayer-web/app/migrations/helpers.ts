@@ -1,4 +1,8 @@
 import { Timestamp } from '@google-cloud/firestore';
+import { pageSchema, type PageInput } from '~/content/schema';
+import { pageToDoc } from '~/lib/cms/codec';
+import { pageIdFromPath } from '~/lib/cms/ids';
+import { sanitizePage } from '~/lib/cms/sanitize.server';
 import type { MigrationContext } from './types';
 
 // Pomocné funkce pro časté migrace obsahu (import článků, úpravy textů).
@@ -42,6 +46,25 @@ export async function importArticle(
     },
     { merge: true },
   );
+  return snap.exists ? 'updated' : 'created';
+}
+
+/**
+ * Založí stránku webu (kolekce `pages`, docs/cms.md), pokud ještě neexistuje.
+ * Obsah projde schématem a čištěním HTML jako při uložení v administraci.
+ * Existující stránku nepřepisuje (mohl ji mezitím někdo upravit), pokud
+ * není `overwrite`. Vrací `created` / `updated` / `skipped`.
+ */
+export async function importPage(
+  ctx: MigrationContext,
+  input: PageInput,
+  options: { overwrite?: boolean } = {},
+): Promise<'created' | 'updated' | 'skipped'> {
+  const page = sanitizePage(pageSchema.parse(input));
+  const ref = ctx.firestore().collection('pages').doc(pageIdFromPath(page.path));
+  const snap = await ref.get();
+  if (snap.exists && !options.overwrite) return 'skipped';
+  await ref.set(pageToDoc(page, 'migrace'));
   return snap.exists ? 'updated' : 'created';
 }
 

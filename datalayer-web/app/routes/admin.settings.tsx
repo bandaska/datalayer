@@ -1,5 +1,6 @@
 import { Form, useActionData, useLoaderData, useNavigation } from 'react-router';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
+import { Card, PageHead, Pill, formatDateTime } from '~/components/admin/ui';
 import { requireRole } from '~/lib/auth.server';
 import { mailEnabled } from '~/lib/mailer.server';
 import { isValidGtmId, isValidLinkedinUrl, normalizeGtmId, parseRecipients } from '~/lib/settings';
@@ -53,103 +54,156 @@ export default function AdminSettings() {
   const result = useActionData<typeof action>();
   const saving = useNavigation().state === 'submitting';
   const err = result?.errors ?? {};
+  const hasErrors = Object.keys(err).length > 0;
 
   return (
     <>
-      <h1 className="h3 text-white mb-4">Nastavení webu</h1>
+      <PageHead title="Nastavení webu" desc="Příjemci zpráv z formuláře, měření a kontakty, které web zobrazuje." />
       {result?.ok ? <div className="alert alert-success">Nastavení jsme uložili. Web ho použije do půl minuty.</div> : null}
-
-      <Form method="post" className="admin-card mb-4">
-        <h2 className="h5 text-white mb-3">Kontaktní formulář</h2>
-        <label className="form-label" htmlFor="recipients">
-          Příjemci zpráv
-        </label>
-        <textarea
-          id="recipients"
-          name="recipients"
-          className={err.recipients ? 'form-control is-invalid' : 'form-control'}
-          rows={3}
-          defaultValue={settings.recipients.join('\n')}
-          placeholder={CONTACT_EMAIL}
-        />
-        {err.recipients ? <div className="invalid-feedback d-block">{err.recipients}</div> : null}
-        <div className="form-text mb-4">
-          Jedna adresa na řádek, případně několik adres za sebou s čárkou. Každá zpráva z formuláře přijde všem
-          příjemcům a web ji zároveň uloží do sekce Zprávy.
+      {hasErrors ? (
+        <div className="alert alert-danger" role="alert">
+          Nastavení jsme neuložili. Opravte prosím zvýrazněná pole.
         </div>
+      ) : null}
 
-        <h2 className="h5 text-white mb-3">Měření</h2>
-        <label className="form-label" htmlFor="gtmId">
-          Google Tag Manager ID
-        </label>
-        <input
-          id="gtmId"
-          name="gtmId"
-          className={err.gtmId ? 'form-control is-invalid' : 'form-control'}
-          defaultValue={settings.gtmId}
-          placeholder="GTM-XXXXXXX"
-        />
-        {err.gtmId ? <div className="invalid-feedback d-block">{err.gtmId}</div> : null}
-        <div className="form-text mb-4">
-          Prázdné pole = GTM vypnutý. Consent Mode v2 a cookie lišta fungují i bez něj, web načte GTM až po nich.
-        </div>
-
-        <h2 className="h5 text-white mb-3">Kontakty na webu</h2>
-        <div className="row g-3">
-          <div className="col-md-6">
-            <label className="form-label" htmlFor="phone">
-              Telefon
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              className={err.phone ? 'form-control is-invalid' : 'form-control'}
-              defaultValue={settings.phone}
-              placeholder="+420 123 456 789"
-            />
-            {err.phone ? <div className="invalid-feedback d-block">{err.phone}</div> : null}
-            <div className="form-text">Prázdné = web telefon nezobrazí (kontaktní blok, patička, lišta na mobilu).</div>
+      <Form method="post">
+        <Card title="Kontaktní formulář" desc="Komu web posílá zprávy z formuláře.">
+          <label className="form-label" htmlFor="recipients">
+            Příjemci zpráv
+          </label>
+          <textarea
+            id="recipients"
+            name="recipients"
+            className={err.recipients ? 'form-control is-invalid' : 'form-control'}
+            rows={3}
+            defaultValue={settings.recipients.join('\n')}
+            placeholder={CONTACT_EMAIL}
+            aria-describedby="recipients-help"
+          />
+          {err.recipients ? <div className="invalid-feedback d-block">{err.recipients}</div> : null}
+          <div id="recipients-help" className="form-text">
+            Jedna adresa na řádek, případně několik adres za sebou s čárkou. Každá zpráva z formuláře přijde všem
+            příjemcům a web ji zároveň uloží do sekce Zprávy z formuláře.
           </div>
-          <div className="col-md-6">
-            <label className="form-label" htmlFor="linkedinUrl">
-              LinkedIn
-            </label>
-            <input
-              id="linkedinUrl"
-              name="linkedinUrl"
-              className={err.linkedinUrl ? 'form-control is-invalid' : 'form-control'}
-              defaultValue={settings.linkedinUrl}
-              placeholder="https://www.linkedin.com/in/…"
-            />
-            {err.linkedinUrl ? <div className="invalid-feedback d-block">{err.linkedinUrl}</div> : null}
-          </div>
-        </div>
+        </Card>
 
-        <button type="submit" className="btn btn-cta mt-4" disabled={saving}>
-          {saving ? 'Ukládám…' : 'Uložit nastavení'}
-        </button>
-        {settings.updatedAt ? (
-          <p className="small text-muted mt-3 mb-0">
-            Naposledy uložil {settings.updatedBy || '–'}, {new Date(settings.updatedAt).toLocaleString('cs-CZ')}.
-          </p>
-        ) : null}
+        <Card title="Měření" desc="Google Tag Manager na veřejném webu. Administrace ho nenačítá.">
+          <label className="form-label" htmlFor="gtmId">
+            Google Tag Manager ID
+          </label>
+          <input
+            id="gtmId"
+            name="gtmId"
+            className={err.gtmId ? 'form-control is-invalid' : 'form-control'}
+            defaultValue={settings.gtmId}
+            placeholder="GTM-XXXXXXX"
+            aria-describedby="gtmId-help"
+          />
+          {err.gtmId ? <div className="invalid-feedback d-block">{err.gtmId}</div> : null}
+          <div id="gtmId-help" className="form-text">
+            Když pole necháte prázdné, web GTM nenačte. Consent Mode v2 a cookie lišta fungují i bez něj, web načte GTM
+            až po nich.
+          </div>
+        </Card>
+
+        <Card title="Kontakty na webu" desc="Telefon a LinkedIn v kontaktním bloku a patičce, telefon i v liště na mobilu.">
+          <div className="row g-3">
+            <div className="col-md-6">
+              <label className="form-label" htmlFor="phone">
+                Telefon
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                className={err.phone ? 'form-control is-invalid' : 'form-control'}
+                defaultValue={settings.phone}
+                placeholder="+420 123 456 789"
+                aria-describedby="phone-help"
+              />
+              {err.phone ? <div className="invalid-feedback d-block">{err.phone}</div> : null}
+              <div id="phone-help" className="form-text">
+                Když pole necháte prázdné, web telefon nezobrazí.
+              </div>
+            </div>
+            <div className="col-md-6">
+              <label className="form-label" htmlFor="linkedinUrl">
+                LinkedIn
+              </label>
+              <input
+                id="linkedinUrl"
+                name="linkedinUrl"
+                className={err.linkedinUrl ? 'form-control is-invalid' : 'form-control'}
+                defaultValue={settings.linkedinUrl}
+                placeholder="https://www.linkedin.com/in/…"
+                aria-describedby="linkedinUrl-help"
+              />
+              {err.linkedinUrl ? <div className="invalid-feedback d-block">{err.linkedinUrl}</div> : null}
+              <div id="linkedinUrl-help" className="form-text">
+                Když pole necháte prázdné, web odkaz nezobrazí.
+              </div>
+            </div>
+          </div>
+        </Card>
+
+        <div className="d-flex align-items-center gap-3 flex-wrap mb-4">
+          <button type="submit" className="btn btn-primary" disabled={saving}>
+            {saving ? 'Ukládám…' : 'Uložit nastavení'}
+          </button>
+          {settings.updatedAt ? (
+            <span className="small text-muted">
+              Poslední změna: {formatDateTime(settings.updatedAt)}, {settings.updatedBy || '–'}
+            </span>
+          ) : null}
+        </div>
       </Form>
 
-      <div className="admin-card">
-        <h2 className="h5 text-white mb-3">Služby nastavené v prostředí (Cloud Run)</h2>
-        <ul className="list-unstyled mb-0 small">
-          <li className="mb-2">
-            <strong>Cloudflare Turnstile:</strong>{' '}
-            {status.turnstile ? 'zapnutý' : 'vypnutý – chybí TURNSTILE_SITE_KEY nebo TURNSTILE_SECRET_KEY (formulář chrání jen honeypot a limit frekvence)'}
-          </li>
-          <li>
-            <strong>Odesílání e-mailů (SMTP):</strong>{' '}
-            {status.smtp
-              ? `nastavené${status.mailFrom ? `, odesílatel ${status.mailFrom}` : ''}`
-              : 'nenastavené – chybí SMTP_HOST; web zprávy jen ukládá do sekce Zprávy'}
-          </li>
-        </ul>
-      </div>
+      <Card
+        title="Služby v prostředí"
+        desc="Klíče a hesla web čte z proměnných prostředí v Cloud Run. Tady jen vidíte, které služby díky nim běží."
+        flush
+      >
+        <div className="adm-table-wrap">
+          <table className="adm-table">
+            <tbody>
+              <tr>
+                <td className="fw-semibold text-nowrap">Cloudflare Turnstile</td>
+                <td>{status.turnstile ? <Pill tone="ok">zapnutý</Pill> : <Pill tone="warn">vypnutý</Pill>}</td>
+                <td>
+                  {status.turnstile ? (
+                    'Ověření od Cloudflare chrání formulář před spamem.'
+                  ) : (
+                    <>
+                      Chybí <code>TURNSTILE_SITE_KEY</code> nebo <code>TURNSTILE_SECRET_KEY</code>, takže formulář před
+                      spamem chrání jen honeypot a limit frekvence.
+                    </>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td className="fw-semibold text-nowrap">Odesílání e-mailů přes SMTP</td>
+                <td>{status.smtp ? <Pill tone="ok">zapnuté</Pill> : <Pill tone="warn">vypnuté</Pill>}</td>
+                <td>
+                  {status.smtp ? (
+                    <>
+                      Web posílá zprávy z formuláře příjemcům e-mailem
+                      {status.mailFrom ? (
+                        <>
+                          , odesílatel <code>{status.mailFrom}</code>
+                        </>
+                      ) : null}
+                      .
+                    </>
+                  ) : (
+                    <>
+                      Chybí <code>SMTP_HOST</code>, takže web zprávy jen ukládá do sekce Zprávy z formuláře.
+                    </>
+                  )}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </Card>
     </>
   );
 }

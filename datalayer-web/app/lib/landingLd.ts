@@ -1,13 +1,27 @@
-import type { LandingPageContent } from '~/content/types';
+import type { PageContent, SiteTexts } from '~/content/schema';
 import { crumbsFor } from '~/components/landing/crumbs';
-import { ORGANIZATION_ID, breadcrumbLd, faqLd } from './seo';
-import { absoluteUrl } from './site';
+import type { RootData } from './rootData';
+import { ORGANIZATION_ID, breadcrumbLd, faqLd, organizationLd, websiteLd } from './seo';
+import { CONTACT_EMAIL, absoluteUrl } from './site';
 
-/** JSON-LD obsahové stránky: BreadcrumbList, Service a FAQPage ze stejných dat jako obsah. */
-export function landingJsonLd(page: LandingPageContent): object[] {
-  const url = absoluteUrl(`/${page.path}`);
-  const ld: object[] = [breadcrumbLd(crumbsFor(page))];
+/** JSON-LD stránky ze stejných dat jako obsah: BreadcrumbList, Service, FAQPage (homepage: Organization, WebSite). */
+export function pageJsonLd(page: PageContent, root?: Pick<RootData, 'email' | 'phone' | 'linkedinUrl'> & { texts?: SiteTexts }): object[] {
+  const ld: object[] = [];
+  if (page.kind === 'home') {
+    ld.push(
+      organizationLd({
+        email: root?.email || CONTACT_EMAIL,
+        telephone: root?.phone || undefined,
+        sameAs: root?.linkedinUrl ? [root.linkedinUrl] : undefined,
+        description: root?.texts?.organization.description,
+      }),
+      websiteLd(),
+    );
+  } else {
+    ld.push(breadcrumbLd(crumbsFor(page)));
+  }
   if (page.schema) {
+    const url = absoluteUrl(`/${page.path}`);
     ld.push({
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -26,7 +40,7 @@ export function landingJsonLd(page: LandingPageContent): object[] {
   return ld;
 }
 
-/** Cesta OG obrázku stránky (generuje scripts/og-images.ts). */
-export function ogImageFor(path: string): string {
-  return `/og/${path.replace(/^\/+|\/+$/g, '').replace(/\//g, '-') || 'default'}.png`;
+/** Obrázek pro sdílení: z administrace, jinak výchozí. */
+export function ogImageOf(page: PageContent): string {
+  return page.ogImage || '/og/default.png';
 }

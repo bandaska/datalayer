@@ -1,15 +1,19 @@
 import { Form, Link, redirect, useActionData, useLoaderData } from 'react-router';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { deleteArticle, getBySlug, updateArticle } from '~/lib/articles.server';
+import { requireUser } from '~/lib/auth.server';
 import { ArticleFormFields } from '~/components/ArticleFormFields';
+import { Card, PageHead } from '~/components/admin/ui';
 
-export async function loader({ params }: LoaderFunctionArgs) {
+export async function loader({ request, params }: LoaderFunctionArgs) {
+  await requireUser(request);
   const article = await getBySlug(params.slug!);
   if (!article) throw new Response('Článek nenalezen', { status: 404 });
   return { article };
 }
 
 export async function action({ request, params }: ActionFunctionArgs) {
+  await requireUser(request);
   const slug = params.slug!;
   const form = await request.formData();
 
@@ -25,7 +29,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
   const description = String(form.get('description') ?? '').trim().slice(0, 200);
 
   if (!title || !author || !date) {
-    return { error: 'Vyplň všechna povinná pole.' };
+    return { error: 'Vyplňte všechna povinná pole.' };
   }
 
   await updateArticle(slug, { title, author, date, description, content });
@@ -38,16 +42,22 @@ export default function EditArticle() {
 
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="h3 text-white mb-0">Upravit článek</h1>
-        <Link to="/admin/articles" className="admin-link">
-          ← Zpět
-        </Link>
-      </div>
+      <PageHead
+        crumb={{ to: '/admin/articles', label: 'Články' }}
+        title="Úprava článku"
+        desc={article.title}
+        actions={
+          <a href={`/blog/${article.slug}`} target="_blank" rel="noreferrer" className="btn btn-outline-secondary">
+            Zobrazit na webu ↗
+          </a>
+        }
+      />
 
-      <div className="admin-card">
+      <Card>
         {actionData?.error ? (
-          <div className="alert alert-danger py-2">{actionData.error}</div>
+          <div className="alert alert-danger py-2" role="alert">
+            {actionData.error}
+          </div>
         ) : null}
         <Form method="post">
           <ArticleFormFields
@@ -61,29 +71,30 @@ export default function EditArticle() {
               content: article.content,
             }}
           />
-          <div className="mt-4 d-flex gap-2">
-            <button type="submit" className="btn btn-cta">
+          <div className="mt-4 d-flex gap-2 flex-wrap">
+            <button type="submit" className="btn btn-primary">
               Uložit změny
             </button>
-            <Link to={`/blog/${article.slug}`} className="btn btn-outline-custom" target="_blank">
-              Náhled ↗
+            <Link to="/admin/articles" className="btn btn-outline-secondary">
+              Zrušit
             </Link>
           </div>
         </Form>
+      </Card>
 
-        <hr className="my-4 border-secondary" />
+      <Card title="Smazání článku" desc="Článek zmizí z blogu i z administrace. Smazání nejde vzít zpět.">
         <Form
           method="post"
           onSubmit={(e) => {
-            if (!confirm(`Smazat článek „${article.title}"?`)) e.preventDefault();
+            if (!confirm(`Smazat článek „${article.title}“? Smazání nejde vzít zpět.`)) e.preventDefault();
           }}
         >
           <input type="hidden" name="intent" value="delete" />
-          <button type="submit" className="btn btn-outline-danger btn-sm">
+          <button type="submit" className="btn btn-outline-danger">
             Smazat článek
           </button>
         </Form>
-      </div>
+      </Card>
     </>
   );
 }
