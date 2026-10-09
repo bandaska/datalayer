@@ -37,7 +37,7 @@ Obsah tvoří **hero** (nadpis H1, podtitul, rychlá odpověď, tlačítka), **s
 | Tabulka | srovnání, zvýrazněný sloupec |
 | Schéma toku | sloupce se šipkami (jak tečou data) |
 | Upozornění | zvýrazněný box |
-| Kód | ukázka kódu s tlačítkem Kopírovat |
+| Kód | ukázka kódu se zvýrazněním syntaxe (obarví server) a tlačítkem Kopírovat |
 | Záložky | obsah pro e-shop / B2B / velkou firmu apod. |
 | Volný text | HTML z vizuálního editoru (zásady, starší stránky) |
 | Štítky | platformy a nástroje, volitelně s odkazem |

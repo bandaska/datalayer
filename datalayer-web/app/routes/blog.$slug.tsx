@@ -1,21 +1,18 @@
 import { useLoaderData, useRouteLoaderData } from 'react-router';
 import { DEFAULT_TEXTS } from '~/content/defaults/texts';
 import type { RootData } from '~/lib/rootData';
-import type { LinksFunction, LoaderFunctionArgs, MetaFunction } from 'react-router';
-import hljsStylesHref from 'highlight.js/styles/atom-one-dark.css?url';
+import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { ArticleContent } from '~/components/ArticleContent';
 import { ContactBlock } from '~/components/ContactBlock';
 import { Breadcrumbs } from '~/components/landing/LandingPage';
 import { getBySlug } from '~/lib/articles.server';
+import { highlightCodeBlocks } from '~/lib/highlight.server';
 import { cleanHtml } from '~/lib/sanitize.server';
 import { ORGANIZATION_ID, breadcrumbLd, seoMeta } from '~/lib/seo';
 import { absoluteUrl } from '~/lib/site';
 import { formatDate, perex } from '~/lib/text';
 
 export const handle = { hasContact: true };
-
-// Styl zvýraznění kódu jen na stránce článku (ne na celém webu).
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: hljsStylesHref }];
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const article = await getBySlug(params.slug!);
@@ -26,7 +23,8 @@ export async function loader({ params }: LoaderFunctionArgs) {
     article: {
       ...article,
       description: article.description || perex(article.content, 160),
-      content: cleanHtml(article.content),
+      // kód obarví server, prohlížeč highlight.js nestahuje
+      content: highlightCodeBlocks(cleanHtml(article.content)),
     },
   };
 }

@@ -210,6 +210,7 @@ export function LandingPage({
   latest,
   related,
   draft,
+  code = {},
 }: {
   page: PageContent;
   /** Slugy souvisejících článků, které na blogu opravdu existují. */
@@ -217,6 +218,8 @@ export function LandingPage({
   latest: ArticleTeaser[];
   related: PageSummary[];
   draft?: boolean;
+  /** Obarvené bloky kódu z loaderu (highlight.js na serveru). */
+  code?: Record<string, string>;
 }) {
   const articles = (page.relatedArticles ?? []).filter((a) => existingArticles.includes(a.slug));
   // Sekce jen s blokem „Články“ zmizí, dokud blog žádné články nemá.
@@ -250,7 +253,7 @@ export function LandingPage({
             {s.eyebrow ? <p className="eyebrow">[ {s.eyebrow} ]</p> : null}
             {s.title ? <h2 className="lp-h2">{s.title}</h2> : null}
             {s.lead ? <p className="lp-lead" dangerouslySetInnerHTML={{ __html: s.lead }} /> : null}
-            <Blocks blocks={s.blocks} sectionId={s.id} ctx={{ latest }} />
+            <Blocks blocks={s.blocks} sectionId={s.id} ctx={{ latest, code }} />
             {s.note ? <p className="lp-note">{s.note}</p> : null}
           </div>
         </section>

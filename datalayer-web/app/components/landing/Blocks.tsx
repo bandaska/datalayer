@@ -12,8 +12,8 @@ import { Pi } from '../Pictograms';
 // Pole označená ve schématu jako HTML server čistí už při uložení
 // z administrace (app/lib/cms/sanitize.server.ts), proto je lze vložit přímo.
 
-/** Data, která bloky potřebují mimo vlastní obsah (nejnovější články). */
-export type BlockContext = { latest: ArticleTeaser[] };
+/** Data, která bloky potřebují mimo vlastní obsah: nejnovější články a obarvený kód (`kotva-sekce/pořadí-bloku`). */
+export type BlockContext = { latest: ArticleTeaser[]; code?: Record<string, string> };
 
 function Html({ as: Tag = 'span', html, className }: { as?: 'span' | 'p' | 'div' | 'li' | 'td' | 'th'; html: string; className?: string }) {
   return <Tag className={className} dangerouslySetInnerHTML={{ __html: html }} />;
@@ -186,7 +186,7 @@ function BlockView({ block, sectionId, index, ctx }: { block: Block; sectionId: 
       );
 
     case 'code':
-      return <CodeBlock lang={block.lang} code={block.code} caption={block.caption} id={`${sectionId}-${index}`} />;
+      return <CodeBlock lang={block.lang} code={block.code} html={ctx.code?.[`${sectionId}/${index}`]} caption={block.caption} id={`${sectionId}-${index}`} />;
 
     case 'tabs':
       return <Tabs block={block} />;
@@ -290,7 +290,7 @@ function MenuGrid({ menuId, extraMenuId, extraTitle, sectionId }: { menuId: stri
   );
 }
 
-function CodeBlock({ lang, code, caption, id }: { lang: string; code: string; caption?: string; id: string }) {
+function CodeBlock({ lang, code, html, caption, id }: { lang: string; code: string; html?: string; caption?: string; id: string }) {
   const [copied, setCopied] = useState(false);
   return (
     <figure className="lp-code">
@@ -311,7 +311,8 @@ function CodeBlock({ lang, code, caption, id }: { lang: string; code: string; ca
         </button>
       </div>
       <pre>
-        <code>{code}</code>
+        {/* html = kód obarvený na serveru (highlight.js escapuje text, přidá jen <span class="hljs-…">) */}
+        {html !== undefined ? <code className="hljs" dangerouslySetInnerHTML={{ __html: html }} /> : <code>{code}</code>}
       </pre>
       {caption ? <figcaption>{caption}</figcaption> : null}
     </figure>
