@@ -26,7 +26,7 @@ export const page: LandingPageContent = {
     eyebrow: 'Řešení pro e-shopy',
     h1: 'Měření e-shopu od datové vrstvy po marži v reportu',
     subtitle:
-      'Nastavíme GA4, Tag Manager, cookie lištu, server-side a konverze pro Google Ads, Metu, Sklik i Heureku tak, aby objednávky v reportech odpovídaly administraci e-shopu. A rozdíl, který zbude, vám umíme vysvětlit.',
+      'Nastavíme GA4, Tag Manager, cookie lištu, server-side a konverze pro Google Ads, Metu, Sklik i Heureku tak, aby objednávky v reportech odpovídaly administraci e-shopu. A rozdíl, který zbude, umíme vysvětlit.',
     quickAnswer:
       '<strong>Kompletní měření e-shopu</strong> tvoří datová vrstva s údaji o produktech a objednávkách, GA4 s e-commerce událostmi, cookie lišta s Consent Mode v2 a konverze pro reklamní systémy. Podle velikosti e-shopu přidáváme server-side měření, marže a BigQuery. Na Shoptetu, Upgates, Shopify, WooCommerce i vlastním řešení navážeme na to, co platforma změří sama, a doplníme zbytek.',
     primaryCta: { label: 'Konzultovat měření e-shopu', href: '#kontakt' },
@@ -244,7 +244,7 @@ export const page: LandingPageContent = {
               note: 'události v doporučeném formátu GA4, i když platforma používá vlastní',
             },
             {
-              label: 'Server na vaší doméně',
+              label: 'Server na doméně e-shopu',
               items: [
                 'sGTM na data.vas-eshop.cz v Google Cloudu',
                 'backend e-shopu: zaplacené a vrácené objednávky server-to-server',
@@ -321,8 +321,8 @@ export const page: LandingPageContent = {
             ],
             [
               'Co obsahuje',
-              'audit stávajícího stavu<br>datová vrstva: napojení na datovou vrstvu platformy, nebo specifikace<br>GA4 e-commerce<br>cookie lišta a Consent Mode v2<br>Google Ads a rozšířené konverze<br>Meta Pixel<br>Sklik přes SEM<br>Heureka a Seznam Nákupy',
-              'vše z úrovně 1<br>server-side GTM na vaší doméně a Google Cloudu<br>Meta Conversions API s deduplikací<br>nákup ze serveru po zaplacení<br>monitoring událostí',
+              'audit stávajícího stavu<br>datová vrstva platformy, nebo specifikace pro vývojáře<br>GA4 e-commerce<br>cookie lišta a Consent Mode v2<br>Google Ads a rozšířené konverze<br>Meta Pixel<br>Sklik přes SEM<br>Heureka a Seznam Nákupy',
+              'vše z úrovně 1<br>server-side GTM na doméně e-shopu a vlastním Google Cloudu<br>Meta Conversions API s deduplikací<br>nákup ze serveru po zaplacení<br>monitoring událostí',
               'vše z úrovně 2<br>hodnota konverzí podle marže, kterou doplní server<br>data o košíku a náklady na zboží v Google Ads<br>vratky a storna<br>nový zákazník, nebo opakovaný nákup',
               'GA4 → BigQuery<br>objednávky z e-shopu nebo ERP<br>náklady z Google Ads, Mety a Skliku<br>datový model<br>dashboard',
             ],
@@ -362,7 +362,7 @@ export const page: LandingPageContent = {
         {
           type: 'table',
           caption:
-            'Přehled vychází z veřejné dokumentace platforem, stav k říjnu 2026. Platformy své integrace mění, proto při auditu vždy ověřujeme aktuální stav na vašem e-shopu.',
+            'Přehled vychází z veřejné dokumentace platforem, stav k říjnu 2026. Platformy své integrace mění, proto při auditu vždy ověřujeme aktuální stav na konkrétním e-shopu.',
           head: ['Platforma', 'Co změří sama', 'Na co si dát pozor'],
           rows: [
             [
@@ -493,7 +493,7 @@ export const page: LandingPageContent = {
               'Odolnost vůči ztrátě dat v prohlížeči, třeba kvůli ITP nebo blokování skriptů',
               'nízká',
               'nízká',
-              'vyšší díky first-party požadavkům na vaší doméně; souhlas platí vždy',
+              'vyšší díky first-party požadavkům na doméně e-shopu; souhlas platí vždy',
             ],
             [
               'Náklady na provoz',
@@ -631,7 +631,7 @@ export const page: LandingPageContent = {
             },
             {
               title: 'Měřicí plán',
-              text: 'Události, parametry, cíle a úroveň 1–4.',
+              text: 'Události, parametry, cíle a volba úrovně 1–4.',
               fromClient: 'Jedna schůzka, na které plán schválíte',
             },
             {
@@ -700,7 +700,7 @@ export const page: LandingPageContent = {
     },
     {
       q: 'Proč GA4 nikdy neukáže všechny objednávky z administrace? Jaký rozdíl je normální?',
-      a: 'GA4 měří chování v prohlížeči, administrace účtuje objednávky. Část návštěvníků odmítne analytické cookies, část blokuje skripty a někdo zaplatí a z platební brány se už nevrátí. V administraci jsou navíc i telefonické nebo testovací objednávky. Univerzální „normální“ procento neexistuje – záleží na podílu souhlasů, platebních metodách a platformě. Důležité je, aby byl rozdíl stabilní a abyste ho uměli vysvětlit. Pokud kolísá nebo ho nikdo neumí rozložit na příčiny, je v měření chyba.',
+      a: 'GA4 měří chování v prohlížeči, administrace účtuje objednávky. Část návštěvníků odmítne analytické cookies, část blokuje skripty, někdo zaplatí a z platební brány se už nevrátí. V administraci jsou navíc i telefonické nebo testovací objednávky. Univerzální „normální“ procento neexistuje – záleží na podílu souhlasů, platebních metodách a platformě. Důležité je, aby byl rozdíl stabilní a abyste ho uměli vysvětlit. Pokud kolísá nebo ho nikdo neumí rozložit na příčiny, je v měření chyba.',
     },
     {
       q: 'Jak nastavit Google Tag Manager na Shopify po konci checkout.liquid?',
@@ -740,7 +740,7 @@ export const page: LandingPageContent = {
     },
     {
       q: 'Měníme platformu nebo děláme redesign. Kdy se máme ozvat?',
-      a: 'Ideálně ve chvíli, kdy vzniká zadání. Jako součást vývoje vyjde správné měření levněji než oprava po spuštění: dodáme specifikaci datové vrstvy, vývojáři ji implementují a my ji před spuštěním otestujeme. Pohlídáme také přenos historických dat, nová ID kontejnerů, cookie lištu a přesměrování, aby měření kampaní po spuštění nevypadlo. Pokud už web běží, začneme auditem a opravíme, co při migraci vypadlo.',
+      a: 'Ideálně ve chvíli, kdy vzniká zadání. Jako součást vývoje vyjde správné měření levněji než oprava po spuštění: dodáme specifikaci datové vrstvy, vývojáři ji implementují a my ji před spuštěním otestujeme. Pohlídáme také přenos historických dat, nová ID kontejnerů, cookie lištu a přesměrování, aby měření kampaní po spuštění fungovalo dál. Pokud už web běží, začneme auditem a opravíme, co při migraci vypadlo.',
     },
   ],
 
