@@ -213,20 +213,6 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
                 <TextInput label="Nadpis" value={c.title} onChange={(title) => set({ ...c, title })} required />
                 <TextArea label="Text" value={c.text} onChange={(text) => set({ ...c, text })} html rows={3} />
                 <PictogramPicker label="Piktogram" value={c.pictogram} onChange={(pictogram) => set({ ...c, pictogram })} allowEmpty />
-                <div className="row g-2">
-                  <div className="col-md-4">
-                    <TextInput label="Štítek nad nadpisem" value={c.tag} onChange={(tag) => set({ ...c, tag: tag || undefined })} />
-                  </div>
-                  <div className="col-md-8">
-                    <TextInput
-                      label="Štítky pod textem"
-                      value={c.tags?.join(', ')}
-                      onChange={(v) => set({ ...c, tags: v.split(',').map((x) => x.trim()).filter(Boolean).length ? v.split(',').map((x) => x.trim()).filter(Boolean) : undefined })}
-                      help="Oddělte čárkou."
-                    />
-                  </div>
-                </div>
-                <LinesInput label="Konzole (nepovinné)" value={c.console} onChange={(console) => set({ ...c, console })} mono rows={3} help="Řádky „logu“ v mono písmu, řádek začínající ⚠ se zvýrazní." />
                 <LinesInput label="Odrážky (nepovinné)" value={c.bullets} onChange={(bullets) => set({ ...c, bullets })} rows={3} />
                 <LinkInput label="Odkaz karty" value={c.link} onChange={(link) => set({ ...c, link })} optional />
               </>

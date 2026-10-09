@@ -9,8 +9,9 @@ import { Pi } from './Pictograms';
 
 // Hlavní menu z administrace (Menu a patička): odkazy a rozbalovací menu se
 // sloupci (mega-menu). Bez Bootstrap JS, na mobilu akordeon a spodní lišta
-// Zavolat / Napsat. CTA vede na #kontakt, pokud stránka kontaktní blok má,
-// jinak na /kontakt.
+// Zavolat / Napsat – ta se ukáže až po odscrollování z úvodu stránky, aby
+// v první obrazovce nesvítila tři tlačítka najednou (UX redukce, kap. 6.4).
+// CTA vede na #kontakt, pokud stránka kontaktní blok má, jinak na /kontakt.
 
 /** Má aktuální stránka kontaktní blok? (loader vrací `hasContact`, nebo route `handle.hasContact`) */
 export function useContactHref(): string {
@@ -58,6 +59,19 @@ export function Navbar() {
   useEffect(() => {
     setOpen(null);
     setMobile(false);
+  }, [location.pathname]);
+
+  // spodní lišta až za úvodem stránky; stránka bez úvodu ji má hned
+  const [barHidden, setBarHidden] = useState(true);
+  useEffect(() => {
+    const hero = document.querySelector('main .hero-section, main .lp-hero, main .article-hero');
+    if (!hero || typeof IntersectionObserver === 'undefined') {
+      setBarHidden(false);
+      return;
+    }
+    const io = new IntersectionObserver(([entry]) => setBarHidden(entry.isIntersecting));
+    io.observe(hero);
+    return () => io.disconnect();
   }, [location.pathname]);
 
   // zavřít klávesou Escape a kliknutím mimo
@@ -169,8 +183,8 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobil: spodní lišta se dvěma akcemi */}
-      <nav className="mobile-bar" aria-label="Rychlý kontakt">
+      {/* Mobil: spodní lišta se dvěma akcemi (schovaná, dokud je vidět úvod stránky) */}
+      <nav className={barHidden ? 'mobile-bar is-hidden' : 'mobile-bar'} aria-label="Rychlý kontakt" inert={barHidden}>
         {root?.phone ? (
           <a href={phoneHref(root.phone)} className="mobile-bar__btn" onClick={() => pushEvent('contact_click', { channel: 'phone', section: 'mobile_bar' })}>
             {nav.mobileBar.callLabel}

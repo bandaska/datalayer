@@ -18,3 +18,10 @@ export function absoluteUrl(path: string): string {
   if (/^https?:\/\//.test(path)) return path;
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
 }
+
+/**
+ * Blog je od UX redukce (9. října 2026) skrytý: není v menu, patičce, sitemapě ani
+ * v llms.txt a jeho adresy dočasně přesměrovává app/lib/redirects.ts. Vrátí se,
+ * až bude mít aspoň tři skutečné články – pak true a přesměrování blogu smazat.
+ */
+export const BLOG_PUBLIC = false;

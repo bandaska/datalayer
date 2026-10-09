@@ -11,13 +11,16 @@
   (kolekce `pages`), menu s patičkou a texty webu (`content/*`). Schéma `app/content/schema.ts`,
   vykreslení `app/components/landing/`, čtení a zápis `app/lib/cms/`. Výchozí obsah
   v `app/content/defaults/` slouží jen jako zdroj migrací (`20261009_cms_content_import`,
-  `20261009_lp_stihla_sablona`, `20261009_jazykovy_audit`) a záloha, než je někdo nasadí – jeho úprava produkční web
+  `20261009_lp_stihla_sablona`, `20261009_jazykovy_audit`, `20261009_ux_redukce`) a záloha, než je někdo nasadí – jeho úprava produkční web
   nezmění. Novou stránku nebo hromadnou změnu obsahu připravit jako migraci (`importPage`
   v `app/migrations/helpers.ts`, přepis všech výchozích stránek se zálohou `syncPagesWithDefaults`), obsah
   se do šablon natvrdo nepíše. Firestore neumí pole v poli: stránky zapisovat jen přes `pageToDoc` /
   `encodeNested` (`app/lib/cms/codec.ts`).
 - SEO: meta tagy jen přes `seoMeta()` (`app/lib/seo.ts`) – canonical, OG, JSON-LD. Staré URL přesměrovat
   v `app/lib/redirects.ts` (301). Sitemapa bere zveřejněné stránky bez noindex z administrace sama.
+- Web po UX redukci (`../seo-analyza/2026-10-09_ux-redukce/`): třináct stránek, každý blok musí vést
+  k formuláři. Nadtitulky, druhá tlačítka, mikrotexty, štítky karet, Technické detaily a pruh Pokračujte
+  šablona nemá; FAQ nejvýš čtyři otázky. Blog je skrytý (`BLOG_PUBLIC` v `app/lib/site.ts`).
 - Kontaktní formulář: `app/components/ContactBlock.tsx` + `app/routes/api.kontakt.ts` (honeypot →
   limit → validace → Cloudflare Turnstile → uložení do Firestore → e-mail). Příjemci, GTM ID,
   telefon a LinkedIn se nastavují v administraci (`/admin/settings`, `app/lib/settings.server.ts`),

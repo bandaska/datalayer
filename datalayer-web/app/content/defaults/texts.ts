@@ -1,20 +1,19 @@
 import type { SiteTexts } from '../schema';
-import { DEFAULT_NEXT_STEPS, DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from '../textDefaults';
+import { DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from '../textDefaults';
 
 // Výchozí texty webu mimo stránky (kontaktní formulář, cookie lišta, blog,
 // děkovací a chybová stránka) – po migraci se editují v administraci (Texty webu).
 
 export const DEFAULT_TEXTS: SiteTexts = {
   contact: {
-    eyebrow: 'Kontakt',
     defaultTitle: 'Napište nám, co řešíte',
     leadWithPhone:
       'Napište nám, zavolejte nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první – nezávazně a zdarma.',
     leadWithoutPhone:
       'Napište nám e-mail nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první – nezávazně a zdarma.',
-    defaultPlaceholder: 'Krátce napište, co řešíte…',
-    legal:
-      'Údaje použijeme jen k odpovědi na zprávu a případné nabídce. <a href="/zpracovani-osobnich-udaju">Jak s nimi zacházíme</a>. Žádný newsletter, žádný spam.',
+    // pole Web formulář nemá – adresu webu připomene nápověda ve zprávě (UX redukce)
+    defaultPlaceholder: 'Adresa webu a co řešíte, např. „GA4 ukazuje o pětinu méně objednávek než e-shop“',
+    legal: 'Údaje použijeme jen k odpovědi. <a href="/zpracovani-osobnich-udaju">Jak s nimi zacházíme</a>',
     // žádné sliby lhůt (rozhodnutí klienta) – prázdná poznámka se nezobrazí
     note: '',
     submit: 'Odeslat zprávu',
@@ -24,7 +23,6 @@ export const DEFAULT_TEXTS: SiteTexts = {
     // web zatím nemá kontaktní osobu – s prázdným jménem se karta u formuláře nezobrazí
     personName: '',
     personNote: '',
-    nextSteps: DEFAULT_NEXT_STEPS,
   },
   cookieBar: {
     title: 'Cookies na tomto webu',
@@ -62,11 +60,10 @@ export const DEFAULT_TEXTS: SiteTexts = {
     title: 'Stránka neexistuje',
     text: 'Tuto stránku jsme nenašli. Možná jsme ji přesunuli.',
     home: 'Zpět na úvod',
-    services: 'Přehled služeb',
   },
   organization: {
     description:
-      'Webová analytika a měření pro e-shopy, B2B firmy a velké firmy: implementace GA4, Google Tag Manager, server-side tracking, Consent Mode v2, BigQuery a dashboardy.',
+      'Webová analytika a měření pro e-shopy a B2B firmy: GA4 a Google Tag Manager, server-side tracking, cookie lišta a Consent Mode v2, měření konverzí, BigQuery a dashboardy.',
   },
   process: DEFAULT_PROCESS,
   page: DEFAULT_PAGE_TEXTS,

@@ -38,7 +38,8 @@ function clean(value: string): string {
 
 export function buildLeadMail(leadId: string, f: ContactFields, now = new Date()) {
   const topics = f.temata.map(topicLabel).join(', ');
-  const subject = clean(`Poptávka z webu: ${topics || 'obecná'} – ${f.jmeno || f.email}`);
+  // formulář témata nemá (UX redukce) – téma nese stránka, ze které zpráva přišla
+  const subject = clean(`Poptávka z webu: ${topics || f.page || f.formId} – ${f.jmeno || f.email}`);
   const text = [
     `Nová zpráva z kontaktního formuláře na webu datalayer.cz (${leadId}).`,
     '',

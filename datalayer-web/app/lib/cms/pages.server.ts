@@ -53,7 +53,7 @@ export function convertLegacyPage(id: string, d: Record<string, unknown>): PageC
     tagline: '',
     pictogram: 'datalayer',
     seo: { title: `${title} | datalayer.cz`.slice(0, 90), description: desc.slice(0, 220) },
-    hero: { variant: 'simple', eyebrow: '', h1: title.slice(0, 160) || id, subtitle: perex },
+    hero: { variant: 'simple', h1: title.slice(0, 160) || id, subtitle: perex },
     sections: [{ id: 'obsah', title: '', blocks: [{ type: 'html', html: content }] }],
     faq: [],
     contact: { formId: `cms-${id}`.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/-$/, '').slice(0, 40), title: '', placeholder: '' },
@@ -155,7 +155,6 @@ export async function createPage(
       seo: { title: `${input.navTitle} | datalayer.cz`, description: input.navTitle },
       hero: {
         variant: input.kind === 'legal' ? 'simple' : 'pictogram',
-        eyebrow: '',
         h1: input.navTitle,
         subtitle: '',
         ...(input.kind === 'legal' ? {} : { primaryCta: { label: 'Konzultovat projekt', href: '#kontakt' } }),

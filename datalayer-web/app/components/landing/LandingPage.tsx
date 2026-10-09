@@ -1,7 +1,6 @@
 import { Link, useRouteLoaderData } from 'react-router';
 import { DEFAULT_TEXTS } from '~/content/defaults/texts';
-import type { Block, Faq, PageContent, Pictogram, Section, SiteTexts } from '~/content/schema';
-import type { PageSummary } from '~/lib/cms/pages.server';
+import type { Block, Faq, PageContent, Section, SiteTexts } from '~/content/schema';
 import type { ArticleTeaser } from '~/lib/cms/loadPage.server';
 import { pushEvent } from '~/lib/dataLayer';
 import type { RootData } from '~/lib/rootData';
@@ -10,14 +9,15 @@ import { ContactBlock } from '../ContactBlock';
 import { HeroDiagram } from '../HeroDiagram';
 import { Pi } from '../Pictograms';
 import { Blocks, personReady, type BlockContext } from './Blocks';
-import { crumbsFor } from './crumbs';
 import { typo, typoHtml } from '~/lib/typo';
 
-// Šablona stránky z administrace (štíhlá LP podle vyhodnocení webu, prototyp
-// seo-analyza/prototyp/): hero s jedním úvodem a body důvěry → sekce s bloky →
-// FAQ se sbalenými Technickými detaily → pruh „Pokračujte“ (stránky a články)
-// → kontakt. Všechen obsah přichází z dat (kolekce `pages` ve Firestore).
+// Šablona stránky z administrace po UX redukci (seo-analyza/2026-10-09_ux-redukce):
+// hero s nadpisem, podtitulem a jedním tlačítkem → sekce s bloky → FAQ → kontakt.
+// Bez nadtitulků, drobečkové navigace (zůstává ve strukturovaných datech),
+// Technických detailů a pruhu „Pokračujte“. Všechen obsah přichází z dat
+// (kolekce `pages` ve Firestore).
 
+/** Drobečková navigace – na stránkách z administrace se nezobrazuje, používá ji blog. */
 export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
   if (!crumbs.length) return null;
   return (
@@ -51,37 +51,14 @@ function FaqItems({ items }: { items: Faq[] }) {
   );
 }
 
-/** FAQ ve dvou sloupcích (vlevo nadpis a sbalené Technické detaily, vpravo otázky). */
-function FaqSection({ page, texts, ctx }: { page: PageContent; texts: SiteTexts['page']; ctx: BlockContext }) {
-  const tech = page.techDetails;
-  if (!page.faq.length && !tech) return null;
-  const details = tech ? (
-    <details className="lp-tech" id="technicke-detaily">
-      <summary>
-        <span className="lp-tech__label">Technické detaily</span>
-        {/* štítek dodá šablona – předponu „Technické detaily:“ v textu (starší obsah) vynechá */}
-        {tech.summary.replace(/^Technické detaily\s*[:–-]\s*/i, '')}
-      </summary>
-      <div className="lp-tech__in">
-        <Blocks blocks={tech.blocks} sectionId="technicke-detaily" ctx={ctx} />
-      </div>
-    </details>
-  ) : null;
-  if (!page.faq.length) {
-    return (
-      <section className="lp-section lp-section--light">
-        <div className="container lp-container">{details}</div>
-      </section>
-    );
-  }
+/** FAQ ve dvou sloupcích (vlevo nadpis, vpravo otázky). */
+function FaqSection({ page, texts }: { page: PageContent; texts: SiteTexts['page'] }) {
+  if (!page.faq.length) return null;
   return (
     <section className="lp-section lp-section--light" id="faq">
       <div className="container lp-container lp-faqwrap">
         <div>
-          <p className="eyebrow">FAQ</p>
           <h2 className="lp-h2">{page.faqTitle || texts.faqTitle}</h2>
-          {page.contact.enabled !== false && texts.faqLead ? <p className="lp-lead" dangerouslySetInnerHTML={{ __html: texts.faqLead }} /> : null}
-          {details}
         </div>
         <FaqItems items={page.faq} />
       </div>
@@ -89,40 +66,8 @@ function FaqSection({ page, texts, ctx }: { page: PageContent; texts: SiteTexts[
   );
 }
 
-/** Pruh „Pokračujte“: navazující stránky a články k tématu v jednom řádku. */
-function ContinueStrip({ pages, articles, label, pictogram }: { pages: PageSummary[]; articles: { slug: string; title: string }[]; label: string; pictogram: Pictogram }) {
-  if (!pages.length && !articles.length) return null;
-  return (
-    <section className="lp-section lp-section--light lp-section--white lp-section--strip" id="navazujici">
-      <div className="container lp-container">
-        <p className="eyebrow">{label}</p>
-        <div className="lp-strip">
-          {pages.map((p) => (
-            <Link key={p.path} to={`/${p.path}`} className="lp-rel" onClick={() => pushEvent('cta_click', { cta_id: `related_${p.path}`, cta_text: p.label, section: 'navazujici' })}>
-              <Pi name={p.pictogram} />
-              <span>
-                <strong>{p.label}</strong>
-                {p.tagline ? <span>{p.tagline}</span> : null}
-              </span>
-            </Link>
-          ))}
-          {articles.map((a) => (
-            <Link key={a.slug} to={`/blog/${a.slug}`} className="lp-rel" onClick={() => pushEvent('cta_click', { cta_id: `article_${a.slug}`, cta_text: a.title, section: 'navazujici' })}>
-              <Pi name={pictogram} />
-              <span>
-                <strong>{a.title}</strong>
-                <span>článek</span>
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Cta({ href, label, primary, id }: { href: string; label: string; primary: boolean; id: string }) {
-  const cls = primary ? 'btn btn-cta' : 'btn btn-outline-custom';
+function Cta({ href, label, id }: { href: string; label: string; id: string }) {
+  const cls = 'btn btn-cta';
   const onClick = () => pushEvent('cta_click', { cta_id: id, cta_text: label, section: 'hero' });
   return href.startsWith('/') ? (
     <Link to={href} className={cls} onClick={onClick}>
@@ -151,21 +96,11 @@ function Headline({ text, highlight }: { text: string; highlight?: string }) {
 function Hero({ page }: { page: PageContent }) {
   const { hero } = page;
   const variant = hero.variant ?? 'pictogram';
-  const ctaId = page.contact.formId;
-  const trust = page.trust?.length ? (
-    <ul className="lp-hero__trust">
-      {page.trust.slice(0, 3).map((t, i) => (
-        <li key={i}>{t}</li>
-      ))}
-    </ul>
+  const cta = hero.primaryCta ? (
+    <div className={variant === 'diagram' ? 'hero-ctas' : 'lp-hero__ctas'}>
+      <Cta href={hero.primaryCta.href} label={hero.primaryCta.label} id={`${page.contact.formId}_hero_primary`} />
+    </div>
   ) : null;
-  const ctas =
-    hero.primaryCta || hero.secondaryCta ? (
-      <div className={variant === 'diagram' ? 'hero-ctas' : 'lp-hero__ctas'}>
-        {hero.primaryCta ? <Cta href={hero.primaryCta.href} label={hero.primaryCta.label} primary id={`${ctaId}_hero_primary`} /> : null}
-        {hero.secondaryCta ? <Cta href={hero.secondaryCta.href} label={hero.secondaryCta.label} primary={false} id={`${ctaId}_hero_secondary`} /> : null}
-      </div>
-    ) : null;
 
   if (variant === 'diagram') {
     return (
@@ -173,13 +108,11 @@ function Hero({ page }: { page: PageContent }) {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-5 mb-5 mb-lg-0">
-              {hero.eyebrow ? <p className="eyebrow">{hero.eyebrow}</p> : null}
               <h1 className="hero-heading">
                 <Headline text={hero.h1} highlight={hero.h1Highlight} />
               </h1>
               {hero.subtitle ? <p className="hero-sub">{hero.subtitle}</p> : null}
-              {ctas}
-              {hero.microcopy ? <p className="hero-micro">{hero.microcopy}</p> : null}
+              {cta}
             </div>
             <div className="col-lg-7 hero-svg-container">
               <HeroDiagram />
@@ -195,12 +128,9 @@ function Hero({ page }: { page: PageContent }) {
       <header className="article-hero">
         <div className="container">
           <div className="article-container">
-            <Breadcrumbs crumbs={crumbsFor(page)} />
-            {hero.eyebrow ? <p className="eyebrow">{hero.eyebrow}</p> : null}
             <h1 className="article-title">{typo(hero.h1)}</h1>
             {hero.subtitle ? <p className="article-perex">{typo(hero.subtitle)}</p> : null}
-            {ctas}
-            {trust}
+            {cta}
           </div>
         </div>
       </header>
@@ -210,16 +140,11 @@ function Hero({ page }: { page: PageContent }) {
   return (
     <header className="lp-hero">
       <div className="container lp-container">
-        <Breadcrumbs crumbs={crumbsFor(page)} />
         <div className="lp-hero__grid">
           <div>
-            {hero.eyebrow ? <p className="eyebrow">{hero.eyebrow}</p> : null}
             <h1 className="lp-hero__h1">{typo(hero.h1)}</h1>
-            {/* jeden úvodní odstavec = rychlá odpověď (box „Rychlá odpověď“ šablona už nemá) */}
             {hero.subtitle ? <p className="lp-hero__sub">{typo(hero.subtitle)}</p> : null}
-            {ctas}
-            {hero.microcopy ? <p className="lp-hero__micro">{hero.microcopy}</p> : null}
-            {trust}
+            {cta}
           </div>
           <div className="lp-hero__visual" aria-hidden="true">
             <div className="lp-hero__frame">
@@ -238,28 +163,22 @@ function SectionView({ s, ctx }: { s: Section; ctx: BlockContext }) {
   const cls = `lp-section lp-section--${tone === 'white' ? 'light lp-section--white' : tone}${s.layout === 'split' ? ' lp-section--split' : ''}`;
   const head = (
     <>
-      {s.eyebrow ? <p className="eyebrow">{s.eyebrow}</p> : null}
       {s.title ? <h2 className="lp-h2">{typo(s.title)}</h2> : null}
       {s.lead ? <p className="lp-lead" dangerouslySetInnerHTML={{ __html: typoHtml(s.lead) }} /> : null}
     </>
   );
   const blocks = <Blocks blocks={s.blocks} sectionId={s.id} ctx={{ ...ctx, sectionTitle: s.title }} />;
-  const note = s.note ? <p className="lp-note">{s.note}</p> : null;
   return (
     <section id={s.id} className={cls}>
       {s.layout === 'split' ? (
         <div className="container lp-container lp-split">
-          <div className="lp-split__text">
-            {head}
-            {note}
-          </div>
+          <div className="lp-split__text">{head}</div>
           <div className="lp-split__body">{blocks}</div>
         </div>
       ) : (
         <div className="container lp-container">
           {head}
           {blocks}
-          {note}
         </div>
       )}
     </section>
@@ -287,29 +206,24 @@ function visibleSection(s: Section, env: BlockEnv): boolean {
 
 export function LandingPage({
   page,
-  existingArticles,
   latest,
-  related,
   draft,
   code = {},
 }: {
   page: PageContent;
-  /** Slugy souvisejících článků, které na blogu opravdu existují. */
-  existingArticles: string[];
   latest: ArticleTeaser[];
-  related: PageSummary[];
   draft?: boolean;
   /** Obarvené bloky kódu z loaderu (highlight.js na serveru). */
   code?: Record<string, string>;
 }) {
   const root = useRouteLoaderData('root') as RootData | undefined;
   const texts = root?.texts.page ?? DEFAULT_TEXTS.page;
-  const articles = (page.relatedArticles ?? []).filter((a) => existingArticles.includes(a.slug));
   const contactTexts = root?.texts.contact ?? DEFAULT_TEXTS.contact;
   const sections = page.sections.filter((s) =>
     visibleSection(s, { articles: latest.length, operator: Boolean(root?.operator?.name), photo: contactTexts.personPhoto, contactName: contactTexts.personName }),
   );
   const ctx: BlockContext = { latest, code };
+  const contactTop = page.contact.position === 'top';
   const contact =
     page.contact.enabled !== false ? (
       <ContactBlock
@@ -317,11 +231,11 @@ export function LandingPage({
         title={page.contact.title}
         lead={page.contact.lead}
         placeholder={page.contact.placeholder}
-        topics={page.contact.topics}
         leadType={page.contact.leadType}
+        // formulář hned pod úvodem (stránka Kontakt): nadpis a úvod by opakovaly H1 a perex
+        hideIntro={contactTop}
       />
     ) : null;
-  const contactTop = page.contact.position === 'top';
 
   return (
     <>
@@ -338,8 +252,7 @@ export function LandingPage({
         <SectionView key={s.id} s={s} ctx={ctx} />
       ))}
 
-      <FaqSection page={page} texts={texts} ctx={ctx} />
-      <ContinueStrip pages={related} articles={articles} label={texts.continueLabel} pictogram={page.pictogram} />
+      <FaqSection page={page} texts={texts} />
 
       {contactTop ? null : contact}
     </>

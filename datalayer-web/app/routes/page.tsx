@@ -33,5 +33,5 @@ export const meta: MetaFunction<typeof loader> = ({ data, matches }) => {
 
 export default function PageRoute() {
   const data = useLoaderData<typeof loader>();
-  return <LandingPage page={data.page} existingArticles={data.existing} latest={data.latest} related={data.related} draft={data.draft} code={data.code} />;
+  return <LandingPage page={data.page} latest={data.latest} draft={data.draft} code={data.code} />;
 }

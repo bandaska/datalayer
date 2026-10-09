@@ -72,6 +72,7 @@ const { migration } = await import('~/migrations/scripts/20261009_cms_content_im
 const { migration: slimMigration } = await import('~/migrations/scripts/20261009_lp_stihla_sablona');
 const { migration: noPersonMigration } = await import('~/migrations/scripts/20261009_bez_kontaktni_osoby');
 const { migration: auditMigration } = await import('~/migrations/scripts/20261009_jazykovy_audit');
+const { migration: uxMigration, REMOVED_PAGES } = await import('~/migrations/scripts/20261009_ux_redukce');
 const { importPage } = await import('~/migrations/helpers');
 type MigrationContext = import('~/migrations/types').MigrationContext;
 
@@ -149,8 +150,17 @@ describe('převod pro Firestore (pole v poli)', () => {
   });
 
   it('přepisy kroků postupu drží pořadí i s prázdnými položkami', async () => {
-    const withOverrides = DEFAULT_PAGES.filter((p) => p.sections.some((s) => s.blocks.some((b) => b.type === 'process' && b.stepOverrides?.some((o) => !o.text && !o.fromClient))));
-    expect(withOverrides.length).toBeGreaterThan(0);
+    // výchozí obsah blok Postup po UX redukci nemá – stránka s ním jen pro test
+    const base = DEFAULT_PAGES.find((p) => p.path === 'sluzby/bigquery')!;
+    const withOverrides = [
+      {
+        ...base,
+        sections: [
+          ...base.sections,
+          { id: 'postup', title: 'Postup', blocks: [{ type: 'process' as const, stepOverrides: [{}, { text: 'Vlastní krok 2' }, {}, { fromClient: 'export z CRM' }] }] },
+        ],
+      },
+    ];
     for (const page of withOverrides) {
       await savePage(page, 'x');
       const loaded = await getPageByPath(page.path);
@@ -308,9 +318,10 @@ describe('migrace 20261009_lp_stihla_sablona', () => {
     const texts = docs.get('content/texts')!;
     docs.set('content/texts', { ...texts, cookieBar: { ...(texts.cookieBar as object), text: OLD_COOKIE_TEXT } });
     const nav = decodeNested(docs.get('content/navigation')) as typeof DEFAULT_NAVIGATION;
-    const items = nav.items.map((i) =>
-      i.type === 'menu'
-        ? { ...i, columns: i.columns.map((c) => ({ ...c, items: c.items.map((l) => (l.href === '/sluzby/dashboardy-a-reporting' ? { ...l, tagline: 'Data Studio (dříve Looker Studio) i Power BI' } : l)) })) }
+    // menu z tehdejšího kola mělo Dashboardy s vysvětlivkou (výchozí menu je po UX redukci nemá)
+    const items = nav.items.map((i, idx) =>
+      i.type === 'menu' && idx === 0
+        ? { ...i, columns: [{ ...i.columns[0], items: [...i.columns[0].items, { label: 'Dashboardy a reporting', href: '/sluzby/dashboardy-a-reporting', tagline: 'Data Studio (dříve Looker Studio) i Power BI' }] }] }
         : i,
     );
     docs.set('content/navigation', encodeNested({ ...nav, items }) as Doc);
@@ -428,8 +439,11 @@ describe('migrace 20261009_jazykovy_audit', () => {
     texts.contact = { ...texts.contact, note: 'Ozveme se do jednoho pracovního dne.', nextSteps: OLD_NEXT, successTitle: 'Vlastní nadpis z administrace' };
     texts.page = { ...texts.page, faqLead: 'Nenašli jste odpověď? <a href="#kontakt">Napište nám</a>.' };
     docs.set('content/texts', encodeNested(texts) as Doc);
-    const nav = JSON.parse(JSON.stringify(docs.get('content/navigation')).replace('Google Ads, Meta, Sklik i Heureka vidí totéž', 'Ads, Meta, Sklik i Heureka vidí totéž'));
-    docs.set('content/navigation', nav);
+    // menu z tehdejšího kola s popisky (výchozí menu je po UX redukci nemá)
+    const nav = decodeNested(docs.get('content/navigation')) as typeof DEFAULT_NAVIGATION;
+    const first = nav.items[0];
+    if (first.type === 'menu') first.columns[0].items[0] = { ...first.columns[0].items[0], tagline: 'Ads, Meta, Sklik i Heureka vidí totéž' };
+    docs.set('content/navigation', encodeNested(nav) as Doc);
     const home = stored('')!;
     docs.set('pages/home', { ...home, hero: { ...(home.hero as object), microcopy: 'Úvodní třicetiminutová konzultace zdarma · odpověď do jednoho pracovního dne' } });
     docs.set('settings/site', { recipients: ['a@example.com'], phone: '' });
@@ -444,12 +458,13 @@ describe('migrace 20261009_jazykovy_audit', () => {
 
     const after = decodeNested(docs.get('content/texts')) as typeof DEFAULT_TEXTS;
     expect(after.contact.note).toBe('');
-    expect(after.contact.nextSteps).toEqual(['Domluvíme termín callu', 'Projdeme web a cíle', 'Připravíme návrh na míru']);
+    // kroky po odeslání a výzvu pod FAQ šablona po UX redukci nemá – pole zmizí
+    expect(after.contact).not.toHaveProperty('nextSteps');
     expect(after.contact.successTitle).toBe('Vlastní nadpis z administrace');
-    expect(after.page.faqLead).toBe('');
+    expect(after.page).not.toHaveProperty('faqLead');
     expect(textsSchema.safeParse(after).success).toBe(true);
     expect(JSON.stringify(docs.get('content/navigation'))).toContain('Google Ads, Meta, Sklik i Heureka vidí totéž');
-    expect((stored('')?.hero as { microcopy: string }).microcopy).toBe('Úvodní konzultace zdarma a nezávazně');
+    expect(stored('')?.hero).not.toHaveProperty('microcopy');
     expect((docs.get('pages_backup/home@20261009_jazykovy_audit')?.hero as { microcopy: string }).microcopy).toContain('pracovního dne');
     expect(docs.get('settings/site')).toMatchObject({ recipients: ['a@example.com'], phone: '+420 704 664 774' });
     const article = docs.get('articles/server-side-gtm-uvod')!;
@@ -460,6 +475,63 @@ describe('migrace 20261009_jazykovy_audit', () => {
     const snapshot = JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')));
     const second = await auditMigration.run(ctx);
     expect(second).toBe('stránky: 0 přepsaných, ' + DEFAULT_PAGES.length + ' beze změny; texty webu: 0 polí; menu a patička: 0 popisků; telefon: beze změny; články: beze změny');
+    expect(JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')))).toBe(snapshot);
+  });
+});
+
+describe('migrace 20261009_ux_redukce', () => {
+  it('zkrátí stránky, zrušené smaže se zálohou, menu nahradí a texty formuláře uklidí', async () => {
+    await migration.run(ctx);
+    // stav před redukcí: zrušené stránky v databázi, úvod s nadtitulkem, staré menu a texty
+    docs.set('pages/jak-pracujeme', { path: 'jak-pracujeme', kind: 'page', hero: { h1: 'Jak pracujeme' }, updatedBy: 'migrace' });
+    docs.set('pages/sluzby__google-tag-manager', { path: 'sluzby/google-tag-manager', kind: 'service', hero: { h1: 'GTM' }, updatedBy: 'editor@example.com' });
+    const home = stored('')!;
+    docs.set('pages/home', { ...home, hero: { ...(home.hero as object), eyebrow: 'Webová analytika a měření', secondaryCta: { label: 'Jak pracujeme', href: '/jak-pracujeme' } } });
+    const oldNav = { ...DEFAULT_NAVIGATION, items: [...DEFAULT_NAVIGATION.items, { type: 'link', label: 'Blog', href: '/blog' }], footer: { ...DEFAULT_NAVIGATION.footer, description: 'Webová analytika a měření.' } };
+    docs.set('content/navigation', encodeNested(oldNav) as Doc);
+    const texts = decodeNested(docs.get('content/texts')) as Record<string, Record<string, unknown>>;
+    texts.contact = {
+      ...texts.contact,
+      eyebrow: 'Kontakt',
+      nextSteps: ['Domluvíme termín callu', 'Projdeme web a cíle', 'Připravíme návrh na míru'],
+      legal: 'Údaje použijeme jen k odpovědi na zprávu a případné nabídce. <a href="/zpracovani-osobnich-udaju">Jak s nimi zacházíme</a>. Žádný newsletter, žádný spam.',
+      defaultPlaceholder: 'Vlastní nápověda z administrace',
+    };
+    texts.page = { ...texts.page, faqLead: '', continueLabel: 'pokračujte' };
+    texts.notFound = { ...texts.notFound, services: 'Přehled služeb' };
+    texts.thankYou = { ...texts.thankYou, links: [{ label: 'Jak pracujeme', href: '/jak-pracujeme' }, { label: 'Přehled služeb', href: '/sluzby' }, { label: 'Kontakt', href: '/kontakt' }] };
+    docs.set('content/texts', encodeNested(texts) as Doc);
+
+    const summary = await uxMigration.run(ctx);
+    expect(summary).toContain('stránky: 1 přepsaných');
+    expect(summary).toContain('zrušené stránky: 2 smazaných (/sluzby/google-tag-manager, /jak-pracujeme)');
+    expect(summary).toContain('menu a patička: zkrácené');
+    expect(summary).toContain('contact.legal');
+
+    expect(stored('jak-pracujeme')).toBeUndefined();
+    expect(stored('sluzby/google-tag-manager')).toBeUndefined();
+    expect(docs.get('pages_backup/sluzby__google-tag-manager@20261009_ux_redukce')).toMatchObject({ updatedBy: 'editor@example.com' });
+    expect(stored('')?.hero).not.toHaveProperty('eyebrow');
+    expect((docs.get('pages_backup/home@20261009_ux_redukce')?.hero as { eyebrow: string }).eyebrow).toBe('Webová analytika a měření');
+    for (const path of REMOVED_PAGES) expect(await getPageByPath(path), path).toBeNull();
+
+    expect(decodeNested(docs.get('content/navigation'))).toMatchObject({ items: DEFAULT_NAVIGATION.items, footer: { description: '' } });
+    expect(JSON.stringify(docs.get('content_backup/navigation@20261009_ux_redukce'))).toContain('/blog');
+    expect(navigationSchema.safeParse(decodeNested(docs.get('content/navigation'))).success).toBe(true);
+
+    const after = decodeNested(docs.get('content/texts')) as Record<string, Record<string, unknown>>;
+    expect(after.contact.legal).toBe(DEFAULT_TEXTS.contact.legal);
+    expect(after.contact.defaultPlaceholder).toBe('Vlastní nápověda z administrace');
+    expect(after.contact).not.toHaveProperty('eyebrow');
+    expect(after.contact).not.toHaveProperty('nextSteps');
+    expect(after.page).not.toHaveProperty('continueLabel');
+    expect(after.notFound).not.toHaveProperty('services');
+    expect(after.thankYou.links).toEqual([{ label: 'Kontakt', href: '/kontakt' }]);
+    expect(textsSchema.safeParse(after).success).toBe(true);
+
+    const snapshot = JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')));
+    const second = await uxMigration.run(ctx);
+    expect(second).toBe(`stránky: 0 přepsaných, ${DEFAULT_PAGES.length} beze změny; zrušené stránky: žádné; menu a patička: beze změny; texty webu: beze změny`);
     expect(JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')))).toBe(snapshot);
   });
 });

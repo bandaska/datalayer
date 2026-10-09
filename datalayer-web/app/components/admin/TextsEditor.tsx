@@ -18,7 +18,6 @@ const GROUPS: Group[] = [
     title: 'Kontaktní formulář',
     desc: 'Výchozí texty bloku s formulářem. Nadpis, úvod a nápovědu v poli zprávy jde nastavit i u každé stránky zvlášť.',
     fields: [
-      { key: 'eyebrow', label: 'Štítek nad nadpisem' },
       { key: 'defaultTitle', label: 'Výchozí nadpis' },
       { key: 'leadWithPhone', label: 'Úvod, když je vyplněný telefon', type: 'area' },
       { key: 'leadWithoutPhone', label: 'Úvod bez telefonu', type: 'area' },
@@ -32,17 +31,14 @@ const GROUPS: Group[] = [
       { key: 'personName', label: 'Kontaktní osoba (nepovinné)', help: 'Např. „Odpovídá Jana Nováková“. Prázdné = blok bez kontaktní osoby, fotky i iniciál.' },
       { key: 'personNote', label: 'Doplněk ke jménu (nepovinné)' },
       { key: 'personPhoto', label: 'Fotka (cesta nebo https URL)', help: 'Jen s vyplněnou kontaktní osobou. Bez fotky web ukáže iniciály.' },
-      { key: 'nextSteps', label: 'Co se stane po odeslání', type: 'lines', help: 'Každý řádek jeden krok, ideálně tři.' },
     ],
   },
   {
     id: 'page',
     title: 'Šablona stránek',
-    desc: 'Společné texty všech stránek: sekce FAQ a pruh „Pokračujte“ s navazujícími stránkami a články.',
+    desc: 'Společné texty všech stránek.',
     fields: [
       { key: 'faqTitle', label: 'Výchozí nadpis FAQ' },
-      { key: 'faqLead', label: 'Text pod nadpisem FAQ', type: 'html' },
-      { key: 'continueLabel', label: 'Štítek pruhu s navazujícími stránkami' },
     ],
   },
   {
@@ -97,7 +93,6 @@ const GROUPS: Group[] = [
       { key: 'title', label: 'Nadpis' },
       { key: 'text', label: 'Text', type: 'area' },
       { key: 'home', label: 'Tlačítko na úvod' },
-      { key: 'services', label: 'Tlačítko na služby' },
     ],
   },
   {

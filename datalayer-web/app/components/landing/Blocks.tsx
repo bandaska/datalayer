@@ -366,75 +366,39 @@ function plainLabel(html: string): string {
   return html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
 }
 
+/** Karty: piktogram, nadpis, text, odrážky a odkaz – bez štítků a ukázek konzole (UX redukce). */
 function CardsBlock({ block, sectionId, index }: { block: Extract<Block, { type: 'cards' }>; sectionId: string; index: number }) {
-  const symptoms = block.variant === 'symptoms';
-  // na mobilu ukáže symptomy po třech, zbytek po kliknutí (u čtyř a méně karet všechny)
-  const collapsible = symptoms && block.items.length > 4;
-  const [expanded, setExpanded] = useState(false);
-  const cls = ['lp-cards', `lp-cards--${block.columns ?? 3}`, symptoms ? 'lp-cards--symptoms' : '', collapsible && !expanded ? 'is-collapsed' : '']
-    .filter(Boolean)
-    .join(' ');
+  const cls = ['lp-cards', `lp-cards--${block.columns ?? 3}`, block.variant === 'symptoms' ? 'lp-cards--symptoms' : ''].filter(Boolean).join(' ');
   return (
-    <>
-      <div className={cls}>
-        {block.items.map((c, i) => (
-          <article className={c.console?.length ? 'lp-card has-console' : 'lp-card'} key={i}>
-            {c.console && c.console.length ? (
-              <pre className="lp-console" aria-label="Ilustrační ukázka">
-                {c.console.map((line, j) => (
-                  <span key={j} className={line.trim().startsWith('⚠') ? 'w' : undefined}>
-                    {line}
-                    {'\n'}
-                  </span>
-                ))}
-              </pre>
-            ) : null}
-            {c.pictogram || c.tag ? (
-              <div className="lp-card__head">
-                {c.pictogram ? <Pi name={c.pictogram} className="lp-card__pi" /> : null}
-                {c.tag ? (
-                  <span className="tag" aria-hidden="true">
-                    {c.tag}
-                  </span>
-                ) : null}
-              </div>
-            ) : null}
-            <h3 className="lp-card__title">{typo(c.title)}</h3>
-            {c.text ? <Html as="div" className="lp-card__text" html={c.text} /> : null}
-            {c.bullets && c.bullets.length ? (
-              <ul className="lp-card__bullets">
-                {c.bullets.map((b, j) => (
-                  <Html as="li" key={j} html={b} />
-                ))}
-              </ul>
-            ) : null}
-            {c.tags && c.tags.length ? (
-              <p className="lp-card__tags">
-                {c.tags.map((t) => (
-                  <span className="tag" key={t}>
-                    {t}
-                  </span>
-                ))}
-              </p>
-            ) : null}
-            {c.link ? (
-              <a
-                className="lp-card__link"
-                href={c.link.href}
-                onClick={() => pushEvent('cta_click', { cta_id: `${sectionId}_${index}_${i}`, cta_text: c.link!.label, section: sectionId })}
-              >
-                {c.link.label}
-              </a>
-            ) : null}
-          </article>
-        ))}
-      </div>
-      {collapsible && !expanded ? (
-        <button type="button" className="lp-cards__more" onClick={() => setExpanded(true)}>
-          Zobrazit další ({block.items.length - 3})
-        </button>
-      ) : null}
-    </>
+    <div className={cls}>
+      {block.items.map((c, i) => (
+        <article className="lp-card" key={i}>
+          {c.pictogram ? (
+            <div className="lp-card__head">
+              <Pi name={c.pictogram} className="lp-card__pi" />
+            </div>
+          ) : null}
+          <h3 className="lp-card__title">{typo(c.title)}</h3>
+          {c.text ? <Html as="div" className="lp-card__text" html={c.text} /> : null}
+          {c.bullets && c.bullets.length ? (
+            <ul className="lp-card__bullets">
+              {c.bullets.map((b, j) => (
+                <Html as="li" key={j} html={b} />
+              ))}
+            </ul>
+          ) : null}
+          {c.link ? (
+            <a
+              className="lp-card__link"
+              href={c.link.href}
+              onClick={() => pushEvent('cta_click', { cta_id: `${sectionId}_${index}_${i}`, cta_text: c.link!.label, section: sectionId })}
+            >
+              {c.link.label}
+            </a>
+          ) : null}
+        </article>
+      ))}
+    </div>
   );
 }
 

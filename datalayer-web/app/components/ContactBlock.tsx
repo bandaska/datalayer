@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import { useLocation, useRouteLoaderData } from 'react-router';
 import { DEFAULT_TEXTS } from '~/content/defaults/texts';
-import type { Topic } from '~/content/schema';
-import { TOPICS, normalizeEmail, normalizePhone, validateContact } from '~/lib/contact';
+import { normalizeEmail, normalizePhone, validateContact } from '~/lib/contact';
 import type { ContactErrors, LeadType } from '~/lib/contact';
 import { readConsent } from '~/lib/consent';
 import { pushEvent, sha256Hex } from '~/lib/dataLayer';
@@ -11,10 +10,10 @@ import type { RootData } from '~/lib/rootData';
 import { CONTACT_EMAIL, SITE_NAME } from '~/lib/site';
 import { phoneHref } from '~/lib/settings';
 
-// Nativní kontaktní blok (náhrada HubSpotu) podle vzoru annanovotna.cz, kompaktní
-// verze z vyhodnocení webu: vlevo výzva, kanály, volitelně osoba a co se stane po
-// odeslání, vpravo formulář jako světlá karta – všechna pole viditelná, telefon a web
-// nepovinné, sedm témat.
+// Nativní kontaktní blok (náhrada HubSpotu) podle vzoru annanovotna.cz, po UX redukci
+// (seo-analyza/2026-10-09_ux-redukce, kap. 6.3): vlevo nadpis, jedna až dvě věty
+// a kanály (e-mail, telefon), vpravo formulář jako světlá karta se čtyřmi poli –
+// jméno, e-mail, nepovinný telefon a zpráva. Téma poptávky nese skryté pole form_id.
 // Bez JS funguje klasický POST na /api/kontakt (→ /dekujeme), s JS odešle
 // fetch, ukáže stav a pošle do dataLayeru lead_form_start / lead_form_error /
 // generate_lead (s SHA-256 hashi e-mailu a telefonu, nikdy čitelné údaje).
@@ -24,10 +23,11 @@ export type ContactBlockProps = {
   title: string;
   lead?: string;
   placeholder?: string;
-  topics?: Topic[];
   leadType?: LeadType;
   /** Zkrácená varianta pod články (bez kanálů vlevo). */
   compact?: boolean;
+  /** Bez nadpisu a úvodu – formulář hned pod úvodem stránky, který říká totéž (stránka Kontakt). */
+  hideIntro?: boolean;
 };
 
 type TurnstileApi = {
@@ -59,9 +59,9 @@ export function ContactBlock({
   title,
   lead,
   placeholder,
-  topics = [],
   leadType = 'consultation',
   compact = false,
+  hideIntro = false,
 }: ContactBlockProps) {
   const root = useRouteLoaderData('root') as RootData | undefined;
   const email = root?.email || CONTACT_EMAIL;
@@ -135,7 +135,6 @@ export function ContactBlock({
     setSending(true);
     setNote({ text: 'Odesíláme…', error: false });
     const phoneValue = String(fd.get('telefon') ?? '');
-    const leadTopics = fd.getAll('tema').map(String);
     try {
       const res = await fetch(form.action, {
         method: 'POST',
@@ -160,7 +159,6 @@ export function ContactBlock({
           form_id: formId,
           form_location: location.pathname,
           lead_type: leadType,
-          lead_topics: leadTopics.join(','),
           lead_id: data.leadId || undefined,
           ...(marketing
             ? {
@@ -213,9 +211,14 @@ export function ContactBlock({
       <span id="contact-form" />
       <div className="dl-contact__grid">
         <div className="dl-contact__intro">
-          <p className="eyebrow">{t.eyebrow}</p>
-          <h2>{title || t.defaultTitle}</h2>
-          <p className="dl-contact__lead">{lead || defaultLead}</p>
+          {hideIntro ? (
+            <h2 className="visually-hidden">{title || t.defaultTitle}</h2>
+          ) : (
+            <>
+              <h2>{title || t.defaultTitle}</h2>
+              <p className="dl-contact__lead">{lead || defaultLead}</p>
+            </>
+          )}
           {compact ? null : (
             <>
               <ul className="dl-channels">
@@ -278,13 +281,6 @@ export function ContactBlock({
                 </span>
               </div>
               ) : null}
-              {t.nextSteps?.length ? (
-                <ol className="dl-next" aria-label="Co se stane po odeslání">
-                  {t.nextSteps.map((step, i) => (
-                    <li key={i}>{step}</li>
-                  ))}
-                </ol>
-              ) : null}
             </>
           )}
         </div>
@@ -329,29 +325,13 @@ export function ContactBlock({
               ) : null}
             </label>
           </div>
+          {/* telefon sám v řádku, v polovině šířky jako pole nad ním */}
           <div className="dl-form__row">
             <label>
               Telefon <span className="opt">(nepovinné)</span>
               <input type="tel" name="telefon" autoComplete="tel" placeholder="+420" maxLength={40} />
             </label>
-            <label>
-              Web <span className="opt">(nepovinné)</span>
-              <input type="text" name="web" inputMode="url" autoComplete="url" placeholder="www.vas-web.cz" maxLength={200} />
-            </label>
           </div>
-          <fieldset className="dl-topics">
-            <legend>
-              Co řešíte? <span className="opt">(nepovinné)</span>
-            </legend>
-            <div className="dl-topics__list">
-              {TOPICS.map((t) => (
-                <label className="dl-chip" key={t.value}>
-                  <input type="checkbox" name="tema" value={t.value} defaultChecked={topics.includes(t.value)} />
-                  <span>{t.label}</span>
-                </label>
-              ))}
-            </div>
-          </fieldset>
 
           <label>
             S čím vám můžeme pomoci?
