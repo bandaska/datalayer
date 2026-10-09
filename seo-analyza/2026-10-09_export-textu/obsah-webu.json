@@ -1,0 +1,1823 @@
+{
+  "format": "datalayer-web/obsah-webu",
+  "verze": 1,
+  "web": "https://datalayer.cz",
+  "jazyk": "cs",
+  "exportovano": "2026-10-09",
+  "zdroj": "Výchozí obsah webu v kódu (app/content/defaults) ve stavu po UX redukci a jazykovém auditu z 9. října 2026 – tentýž obsah nasazují migrace do administrace. Skrytý blog v exportu není.",
+  "zadani_pro_ai": {
+    "ukol": "Navrhni alternativní textaci stránek webu datalayer.cz (webová analytika a měření pro e-shopy a B2B firmy: GA4, Google Tag Manager, server-side tracking, cookie lišta a Consent Mode, měření konverzí, BigQuery a dashboardy, audit měření). Cíl textů: aby návštěvník poznal svůj problém, pochopil, co dostane, a vyplnil kontaktní formulář.",
+    "jak_odpovedet": "Vrať JSON ve stejném formátu (stejné klíče a pořadí). Měň jen textové hodnoty. U každé stránky můžeš přidat pole „poznamky“ se stručným zdůvodněním hlavních změn. Pokud navrhuješ změnu struktury (jiný počet karet, otázek, sekcí), napiš ji do „poznamky“, strukturu samotnou neměň.",
+    "nemenit": [
+      "klíče JSON, url, druh, pocet_slov",
+      "id sekcí a záložek, type a variant bloků, group u záložek",
+      "href odkazů (cíle odkazů musí zůstat platné)",
+      "počet položek v polích (sekce, bloky, karty, otázky FAQ, odrážky)",
+      "hero.h1Highlight musí zůstat přesnou částí hero.h1"
+    ],
+    "pravidla": {
+      "jazyk_hard_rules": [
+        "Žádný trpný rod, vždy činný („Zákonodárci zákon upravili.“, ne „Zákon byl upraven.“). Pozor i na zvratný trpný rod („se nepíšou“).",
+        "Žádný formální ani úřednický jazyk.",
+        "Místo přechodníků a participií vztažné věty („který vysvětluje“, ne „vysvětlující“), ale ne příliš mnoho vztažných zájmen v jedné větě.",
+        "1. pád místo 7. po „je“: „je metoda“, ne „je metodou“.",
+        "Spojka „než“, ne „jak“ (větší než).",
+        "Málo přivlastňovacích zájmen (váš, vám, vašemu…).",
+        "Co nejméně závorek – větu raději přeformuluj.",
+        "České uvozovky „…“, pomlčka jen – (en dash), nikdy —.",
+        "Číslovku, kterou jde napsat jedním slovem, piš slovy („čtrnáct“, „desetkrát“), výjimka jsou data.",
+        "Data s měsícem slovy („16. února 2024“), měny skloňované („123 eur“, „123,9 eura“).",
+        "Verzálky jen u zkratek."
+      ],
+      "obsah": [
+        "Fakta, čísla, limity, ceny a nabídku neměň a nic nevymýšlej: žádné nové reference, klienty, výsledky, ceny ani sliby.",
+        "Žádné sliby lhůt a délek („do jednoho pracovního dne“, „třicetiminutová konzultace“, „do 24 hodin“, „obvykle do…“). Fakta o nástrojích (limity GA4, Safari sedm dní…) sliby nejsou.",
+        "„zdarma“ nejvýš dvakrát na stránku a nikdy v nadpisech.",
+        "Web nemá kontaktní osobu – žádná jména lidí.",
+        "Každý blok má vést k formuláři: odstranit pochybnost, ukázat, co klient dostane, nebo vysvětlit službu. Žádná vata.",
+        "U služeb a řešení je první sekce nadepsaná přesně „Poznáváte se?“ (nejvýš čtyři karty). Jinak nadpisy oznamovací, bez dvojtečky „Téma: podtitul“ a bez tečky na konci; řečnická otázka nejvýš jednou na stránku.",
+        "Nadpisy kontaktních bloků oznamovací (ne „Pojďme…“).",
+        "Nápověda ve zprávě (contact.placeholder) začíná „Adresa webu a co řešíte, např. „…““ – formulář nemá pole Web.",
+        "FAQ nejvýš čtyři otázky, odpovědi dvě až čtyři věty.",
+        "Text tlačítek bez hranatých závorek – závorky kreslí šablona."
+      ],
+      "terminologie": [
+        "souhlas (ne consent); „Consent Mode (v2)“ jen jako název funkce",
+        "při prvním výskytu na stránce „Google Tag Manager (GTM)“, dál GTM; vždy „Google Ads“, nikdy holé „Ads“",
+        "Meta se skloňuje (Metu, Metě, Mety); nesklonně jen „Meta Pixel“ a „Meta Conversions API“",
+        "„server-side měření“ nebo „server-side GTM“, ne samotné „server-side“ jako podstatné jméno",
+        "poptávka v běžném textu (lead jen jako název události a v B2B po zavedení)",
+        "tag (ne značka), upozornění (ne alert), kontrolní seznam (ne checklist), snímek obrazovky, hovor nebo schůzka (ne call), správce (ne admin)",
+        "přímo (ne napřímo), má smysl nebo vyplatí se (ne dává smysl), obvykle (ne typicky), obchodní cíle (ne byznys cíle), Sklik (ne Seznam jako reklamní systém)",
+        "zkratky (CMP, CAPI, KPI, SLA…) rozepsat při prvním výskytu na stránce"
+      ],
+      "typografie": [
+        "Žádná středová tečka „·“, žádné šipky „→“ v textu ani na konci odkazů (šipky kreslí šablona), žádné hranaté závorky.",
+        "„&“ jen v názvech produktů; lomítko bez mezer mezi jednoslovnými výrazy.",
+        "Nedělitelné mezery (po jednopísmenných předložkách, mezi číslem a jednotkou) doplní šablona – nevkládej je.",
+        "V jednom seznamu buď úryvky (malé písmeno, bez tečky), nebo celé věty (velké písmeno, tečka). Karty a odrážky jsou úryvky, kontrolní seznamy věty."
+      ],
+      "html": "Pole lead, text, items, bullets, paragraphs, a (odpověď FAQ), note a buňky tabulek smí obsahovat jen <strong>, <em>, <code>, <br> a <a href=\"…\">. Ostatní pole jsou čistý text.",
+      "limity": {
+        "seo.title": "25–70 znaků včetně „ | datalayer.cz“ na konci",
+        "seo.description": "100–170 znaků",
+        "hero.h1": "nejvýš 75 znaků (na úvodní stránce musí obsahovat hero.h1Highlight)",
+        "stránka služby nebo řešení": "nejvýš 1 200 slov včetně FAQ a kontaktu (pocet_slov ukazuje současný stav)"
+      }
+    }
+  },
+  "stranky": [
+    {
+      "url": "/",
+      "druh": "úvodní stránka",
+      "pocet_slov": 404,
+      "obsah": {
+        "navTitle": "Úvod",
+        "tagline": "webová analytika a měření",
+        "seo": {
+          "title": "Webová analytika a měření pro e-shopy a firmy | datalayer.cz",
+          "description": "Implementace GA4, Google Tag Manager, server-side tracking a Consent Mode v2. Měření, které sedí s tržbami – s dokumentací. Konzultace zdarma."
+        },
+        "hero": {
+          "h1": "Stavíme neprůstřelné datové základy pro váš růst.",
+          "h1Highlight": "datové základy",
+          "subtitle": "Navrhneme, nasadíme a ověříme měření pro e-shopy a B2B firmy – od datové vrstvy po BigQuery. S dokumentací a s daty, která vlastníte vy.",
+          "primaryCta": {
+            "label": "Konzultovat projekt",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "symptomy",
+            "title": "Šest situací, se kterými za námi klienti chodí nejčastěji",
+            "blocks": [
+              {
+                "type": "cards",
+                "variant": "symptoms",
+                "items": [
+                  {
+                    "title": "GA4 ukazuje o pětinu méně objednávek než e-shop",
+                    "text": "Obvykle chybí měření u některých plateb, cookie lišta špatně ukládá souhlas nebo web posílá nákup dvakrát a GA4 ho zahodí.",
+                    "link": {
+                      "label": "Audit měření",
+                      "href": "/sluzby/audit-mereni"
+                    }
+                  },
+                  {
+                    "title": "Po nasazení cookie lišty spadly konverze v Google Ads",
+                    "text": "Lišta blokuje tagy, ale Consent Mode v2 neposílá signály, takže Google nemá z čeho modelovat.",
+                    "link": {
+                      "label": "Cookie lišta a Consent Mode",
+                      "href": "/sluzby/cookie-lista-consent-mode"
+                    }
+                  },
+                  {
+                    "title": "Meta, Google a Sklik – každý hlásí jiná čísla",
+                    "text": "Část rozdílů způsobuje atribuce a je normální. Zbytek tvoří chyby: chybí Conversions API nebo deduplikace, případně každý systém dostává jinou hodnotu objednávky.",
+                    "link": {
+                      "label": "Měření konverzí",
+                      "href": "/sluzby/mereni-konverzi"
+                    }
+                  },
+                  {
+                    "title": "V Tag Manageru je 140 tagů a nikdo neví, které jsou potřeba",
+                    "text": "Nánosy po agenturách zpomalují web a posílají data tam, kam nemají. Uklidíme a nastavíme pravidla, aby to vydrželo.",
+                    "link": {
+                      "label": "GA4 a Google Tag Manager",
+                      "href": "/sluzby/implementace-ga4"
+                    }
+                  },
+                  {
+                    "title": "Poptávky končí v e-mailu, ne v CRM ani v Google Ads",
+                    "text": "Reklamní systémy se pak učí z počtu formulářů, ne ze zakázek. Propojíme web, CRM a reklamní systémy.",
+                    "link": {
+                      "label": "Měření pro B2B",
+                      "href": "/reseni/b2b-a-lead-generation"
+                    }
+                  },
+                  {
+                    "title": "Report pro vedení každé pondělí někdo skládá ručně",
+                    "text": "Data z GA4, reklam a e-shopu spojíme v BigQuery a postavíme dashboard, který obnovuje data sám a sedí s účetnictvím.",
+                    "link": {
+                      "label": "BigQuery a dashboardy",
+                      "href": "/sluzby/bigquery"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "faqTitle": "Než se ozvete",
+        "faq": [
+          {
+            "q": "Pracujete i s menšími e-shopy, nebo jen s velkými firmami?",
+            "a": "S obojím. U menších e-shopů obvykle začínáme auditem a opravou základního měření: GA4, souhlasu a konverzí. Server-side měření a BigQuery doporučujeme až tam, kde se vyplatí – a řekneme vám to rovnou."
+          },
+          {
+            "q": "Komu patří účty a data?",
+            "a": "Vždy vám. GA4, GTM, Google Cloud i reklamní účty běží pod vaší firmou, my dostáváme přístup. Po skončení spolupráce nic nemigrujete a dostanete dokumentaci, podle které může pokračovat kdokoli jiný."
+          },
+          {
+            "q": "Jak se tvoří cena?",
+            "a": "Podle rozsahu: počet webů a domén, platforma e-shopu, počet napojených reklamních systémů a to, jestli stavíme server-side měření nebo BigQuery. Po úvodní konzultaci dostanete nabídku s pevným rozsahem a výstupy. Provoz Google Cloudu platíte přímo Googlu."
+          },
+          {
+            "q": "Spolupracujete s naším vývojářem nebo agenturou?",
+            "a": "Ano, je to běžné. Vývojářům dodáme specifikaci datové vrstvy a testovací scénáře; s PPC agenturou se domluvíme na konverzích a jejich hodnotách."
+          }
+        ],
+        "contact": {
+          "title": "Zjistíme, kde vám utíkají data",
+          "placeholder": "Adresa webu a co řešíte, např. „GA4 ukazuje o třicet procent méně objednávek než e-shop“"
+        }
+      }
+    },
+    {
+      "url": "/sluzby/implementace-ga4",
+      "druh": "služba",
+      "pocet_slov": 746,
+      "obsah": {
+        "navTitle": "GA4 a Google Tag Manager",
+        "tagline": "čísla, která sedí, a tagy v pořádku",
+        "seo": {
+          "title": "Nastavení GA4 a Google Tag Manageru | datalayer.cz",
+          "description": "Nastavíme Google Analytics 4 a Google Tag Manager od nuly, nebo opravíme a uklidíme ty stávající. E-commerce, poptávky, tagy a souhlas. Čísla porovnáme s e-shopem."
+        },
+        "hero": {
+          "h1": "Nastavení GA4 a Google Tag Manageru, které sedí s vašimi tržbami",
+          "subtitle": "Implementace GA4 neznamená jen vložit měřicí kód. Nastavíme Google Analytics 4 a Google Tag Manager (GTM) od nuly, nebo opravíme a uklidíme to, co už máte: měřicí plán, datovou vrstvu, e-commerce, poptávky, Consent Mode v2 a propojení s Google Ads, Search Console a BigQuery. V GTM zavedeme pravidla pro názvy, verze a oprávnění. Výsledek ověříme testovacími scénáři a porovnáním s administrací e-shopu nebo s CRM.",
+          "primaryCta": {
+            "label": "Konzultovat GA4 a GTM",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "symptomy",
+            "title": "Poznáváte se?",
+            "lead": "Když někdo GA4 a GTM jen „vloží“ na web, čísla obvykle během prvních měsíců přestanou odpovídat skutečnosti. Pokud nevíte, co z toho platí u vás, začněte <a href=\"/sluzby/audit-mereni\">auditem měření</a>.",
+            "blocks": [
+              {
+                "type": "cards",
+                "variant": "symptoms",
+                "items": [
+                  {
+                    "title": "GA4 ukazuje jiné tržby než e-shop",
+                    "text": "Čísla se liší, nikdo neví, které platí, a vedení pak nevěří ani reportům z reklam."
+                  },
+                  {
+                    "title": "Desítky tagů, které nikdo nezná",
+                    "text": "Agentury se střídaly, tagy s názvy jako „New Tag (3)“ zůstaly a nikdo neví, které z nich jsou potřeba."
+                  },
+                  {
+                    "title": "Návštěvy z reklam padají do (not set)",
+                    "text": "GA4 ztratí zdroj návštěvy na platební bráně nebo mezi doménami a kampaně pak vypadají hůř, než jsou."
+                  },
+                  {
+                    "title": "Poptávky jen jako „děkovací stránka“",
+                    "text": "Nevíte, který formulář a která kampaň přinesly zakázku, protože data končí v GA4 a do CRM se nedostanou."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "vystupy",
+            "title": "Co uděláme a co dostanete",
+            "lead": "Kromě „hotového GA4“ a kontejneru GTM dostanete i dokumenty, podle kterých může měření převzít kdokoli jiný.",
+            "blocks": [
+              {
+                "type": "cards",
+                "items": [
+                  {
+                    "title": "Měřicí plán",
+                    "text": "Jaké otázky mají data zodpovědět, jaké události k tomu potřebujeme a kde je v GA4 najdete."
+                  },
+                  {
+                    "title": "Specifikace datové vrstvy",
+                    "text": "Zadání pro vývojáře: kontext stránky, e-commerce podle schématu GA4, poptávky, uživatelské atributy a pravidla zápisu s ukázkami kódu."
+                  },
+                  {
+                    "title": "GA4 a Google Tag Manager (GTM) podle plánu",
+                    "text": "E-commerce, poptávky, tři až osm klíčových událostí, filtry, Consent Mode v2 a propojení. Kontejner GTM má verze s popisem změn."
+                  },
+                  {
+                    "title": "Inventura a úklid kontejneru",
+                    "text": "Tabulka všech tagů s doporučením ponechat, upravit, nebo smazat. Po dohodě s vámi kontejner uklidíme a zavedeme jednotné názvy, složky a oprávnění, aby se v něm vyznal i další člověk."
+                  },
+                  {
+                    "title": "Testovací protokol",
+                    "text": "Kontrola v Tag Assistantu a scénáře: nákup kartou, převodem i s kupónem, návrat z platební brány a obnovení děkovací stránky."
+                  },
+                  {
+                    "title": "Porovnání s administrací nebo CRM",
+                    "text": "GA4 porovnáme s objednávkami či poptávkami za stejné období a vysvětlíme rozdíly."
+                  },
+                  {
+                    "title": "Monitoring po releasech",
+                    "text": "Na přání hlídáme měření i po předání: po releasu webu automatický test projde nákup nebo formulář a kontrola dat porovná události s průměrem a s objednávkami. Když něco nesedí, přijde upozornění."
+                  },
+                  {
+                    "title": "Školení, BigQuery nebo dashboard",
+                    "text": "Volitelně firemní školení na vašich datech, export do BigQuery nebo dashboard v Data Studiu (dříve Looker Studio)."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Kolik stojí nastavení GA4 a GTM?",
+            "a": "Cenu určuje rozsah, ne balíček: hlavně jestli web už má datovou vrstvu, kolik typů konverzí, platforem a domén měříme, jak velký je kontejner GTM a jestli chcete i BigQuery, dashboardy nebo školení. Po úvodní konzultaci a krátké analýze dostanete nabídku s pevným rozsahem a seznamem výstupů. Samotné GA4 i GTM nic nestojí, platíte jen BigQuery nad rámec bezplatných limitů, případně licenci GA4 360 nebo Tag Manager 360."
+          },
+          {
+            "q": "Kdy opravit stávající GA4 a kdy založit novou property?",
+            "a": "Většinou opravujeme property, kterou už máte, protože v ní zůstane historie, a opravy označíme v GA4 anotací s datem. Novou založíme, když property patří agentuře nebo bývalému dodavateli a převod nejde, když je historie tak chybná, že by spíš škodila, nebo když jedna property míchá nesouvisející weby či testovací a produkční data. Při přechodu necháme obě property jeden až tři měsíce běžet souběžně a pak přepneme reporty. U GTM zakládáme nový kontejner, jen když je stávající tak chaotický, že vyjde levněji začít znovu."
+          },
+          {
+            "q": "Budeme potřebovat vývojáře?",
+            "a": "Obvykle ano, ale jen na začátku: vloží kód kontejneru, nasadí datovou vrstvu podle naší specifikace a připraví testovací prostředí. GA4 a GTM nastavíme my a práci vývojářů otestujeme. U Shoptetu, Shopify nebo WooCommerce zkontrolujeme vestavěnou integraci a rozhodneme, jestli ji použít, rozšířit, nebo nahradit vlastní datovou vrstvou."
+          },
+          {
+            "q": "Komu budou patřit účty a data?",
+            "a": "Vám. Property GA4, kontejner GTM i projekt BigQuery zakládáme na firemních účtech, administrátor jste vy a my v nich máme jen oprávnění, která nám přidělíte. Po skončení spolupráce nám je jednoduše odeberete. Pokud dnes účty patří agentuře nebo bývalému dodavateli, pomůžeme s převodem administrátorských práv, nebo s bezpečným přechodem na nové účty."
+          }
+        ],
+        "contact": {
+          "title": "Nastavíme GA4 a GTM tak, aby čísla seděla s tržbami",
+          "lead": "Na úvodní konzultaci projdeme GA4 a kontejner GTM a řekneme, co opravit jako první.",
+          "placeholder": "Adresa webu a co řešíte, např. „GA4 ukazuje jiné tržby než e-shop a v GTM máme desítky neznámých tagů“"
+        },
+        "schema": {
+          "name": "GA4 a Google Tag Manager",
+          "serviceType": "Nastavení Google Analytics 4 a Google Tag Manageru",
+          "description": "Nastavení Google Analytics 4 a Google Tag Manageru od nuly i oprava a úklid stávajících: měřicí plán, specifikace datové vrstvy, e-commerce a klíčové události, Consent Mode v2, názvosloví, verze a oprávnění v GTM, propojení s Google Ads, Search Console a BigQuery a porovnání s administrací e-shopu nebo CRM.",
+          "audience": "E-shopy, B2B a lead generation, velké firmy"
+        }
+      }
+    },
+    {
+      "url": "/sluzby/server-side-tracking",
+      "druh": "služba",
+      "pocet_slov": 740,
+      "obsah": {
+        "navTitle": "Server-side tracking",
+        "tagline": "měření na vaší doméně",
+        "seo": {
+          "title": "Server-side tracking – měření na vaší doméně | datalayer.cz",
+          "description": "Server-side GTM na vaší doméně a ve vašem Google Cloudu. Meta Conversions API, Google Ads, GA4 i Sklik přes server, v souladu se souhlasem. Konzultace zdarma."
+        },
+        "hero": {
+          "h1": "Server-side tracking na vaší doméně a ve vašem cloudu",
+          "subtitle": "Prohlížeč pošle každou událost jen jednou – na server-side Google Tag Manager (GTM) na vaší doméně. Ten ji podle souhlasu návštěvníka předá do GA4, Google Ads, Meta Conversions API (CAPI) nebo Skliku. Máte pod kontrolou, co a komu odchází; povinnost získat souhlas se nemění.",
+          "primaryCta": {
+            "label": "Konzultovat architekturu",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "symptomy",
+            "title": "Poznáváte se?",
+            "lead": "Server-side měření má smysl, když základní měření funguje, ale naráží na limity prohlížeče, na požadavky IT na rychlost nebo na kontrolu nad daty.",
+            "blocks": [
+              {
+                "type": "cards",
+                "variant": "symptoms",
+                "items": [
+                  {
+                    "title": "Meta vidí méně nákupů než e-shop",
+                    "text": "Pixel zachytí jen část objednávek a kampaně se učí z neúplných dat."
+                  },
+                  {
+                    "title": "Zákazníci ze Safari se „rozpadají“",
+                    "text": "Safari zkracuje cookies z JavaScriptu na sedm dní a vracející se zákazník vypadá jako nový."
+                  },
+                  {
+                    "title": "IT tlačí na rychlost a bezpečnost",
+                    "text": "Desítka cizích skriptů zpomaluje web a komplikuje bezpečnostní politiku."
+                  },
+                  {
+                    "title": "Pověřenec pro ochranu osobních údajů chce vědět, co komu odchází",
+                    "text": "Bez prostředníka nemáte jak doložit ani omezit, co skripty posílají."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "vystupy",
+            "title": "Co uděláme a co dostanete",
+            "lead": "Dostanete zdokumentovanou architekturu, kterou převezme váš tým nebo kdokoli jiný.",
+            "blocks": [
+              {
+                "type": "cards",
+                "items": [
+                  {
+                    "title": "Návrh architektury",
+                    "text": "Co jde přes server, co zůstává v prohlížeči a kde se rozhoduje o souhlasu."
+                  },
+                  {
+                    "title": "Server ve vašem Google Cloudu",
+                    "text": "Cloud Run s nejméně dvěma servery, doména, certifikát a upozornění na rozpočet."
+                  },
+                  {
+                    "title": "Kontejnery GTM",
+                    "text": "Webový i serverový kontejner s verzemi a jednotnými názvy."
+                  },
+                  {
+                    "title": "Mapa událostí a deduplikace",
+                    "text": "Stejné ID objednávky pro všechny platformy, žádná konverze dvakrát."
+                  },
+                  {
+                    "title": "Matice souhlasu",
+                    "text": "Který tag smí běžet při jakém souhlasu – podklad pro pověřence."
+                  },
+                  {
+                    "title": "Monitoring a provozní příručka",
+                    "text": "Upozornění na výpadek a pokles událostí, postup při výpadku i plán pro odchod k jinému dodavateli."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "jak-to-funguje",
+            "title": "Jak server-side měření funguje",
+            "lead": "Místo pěti skriptů, které posílají data každý zvlášť, odejde z prohlížeče jedna událost na váš server. Ten ji rozešle dál.",
+            "blocks": [
+              {
+                "type": "flow",
+                "caption": "Prohlížeč a backend posílají události na server-side GTM na vaší doméně. Server je podle souhlasu návštěvníka předá platformám.",
+                "columns": [
+                  {
+                    "label": "zdroje",
+                    "items": [
+                      "prohlížeč: dataLayer a souhlas",
+                      "backend nebo CRM: platby, storna, poptávky"
+                    ]
+                  },
+                  {
+                    "label": "sgtm.vasweb.cz",
+                    "items": [
+                      "server-side GTM",
+                      "Cloud Run ve vašem cloudu",
+                      "rozhodnutí podle souhlasu"
+                    ]
+                  },
+                  {
+                    "label": "platformy",
+                    "items": [
+                      "GA4 a Google Ads",
+                      "Meta CAPI",
+                      "Sklik a TikTok"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "style": "check",
+                "items": [
+                  "<strong>Kontrola nad daty.</strong> Osobní údaje před odesláním odstraníte nebo zahashujete.",
+                  "<strong>Spolehlivější konverze.</strong> Meta CAPI, rozšířené konverze Google Ads a platby z backendu.",
+                  "<strong>Souhlas platí dál.</strong> Kdo cookies odmítne, toho neměříme ani touto cestou."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rozhodnuti",
+            "title": "Kdy se server-side měření vyplatí",
+            "lead": "Server-side měření není první krok. Když se vám nevyplatí, řekneme to rovnou.",
+            "blocks": [
+              {
+                "type": "proscons",
+                "yes": {
+                  "title": "Má smysl, když…",
+                  "items": [
+                    {
+                      "text": "reklama tvoří velkou část objednávek nebo poptávek"
+                    },
+                    {
+                      "text": "potřebujete Meta CAPI, Sklik nebo TikTok s deduplikací"
+                    },
+                    {
+                      "text": "chcete posílat události z backendu – platby, storna, CRM"
+                    },
+                    {
+                      "text": "IT nebo pověřenec požaduje kontrolu nad odchozími daty"
+                    },
+                    {
+                      "text": "někdo bude mít server na starosti a bude ho hlídat"
+                    }
+                  ]
+                },
+                "no": {
+                  "title": "Doporučíme počkat, když…",
+                  "items": [
+                    {
+                      "text": "nesedí základní měření",
+                      "note": "nejdřív <a href=\"/sluzby/audit-mereni\">audit měření</a>"
+                    },
+                    {
+                      "text": "chybí funkční cookie lišta",
+                      "note": "nejdřív <a href=\"/sluzby/cookie-lista-consent-mode\">Consent Mode v2</a>"
+                    },
+                    {
+                      "text": "inzerujete jen v Google Ads",
+                      "note": "často stačí Google Tag Gateway"
+                    },
+                    {
+                      "text": "máte malý rozpočet a návštěvnost"
+                    },
+                    {
+                      "text": "čekáte měření bez souhlasu – to server-side GTM nedělá"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Je server-side měření legální? Potřebuji pořád cookie lištu?",
+            "a": "Lištu potřebujete dál. Server-side měření je jen jiná technická cesta: ukládání a čtení netechnických údajů dál vyžaduje předchozí souhlas podle § 89 odst. 3 zákona o elektronických komunikacích. Server proto s každou událostí dostane stav souhlasu a podle něj data pošle, nebo ne. Nejsme advokátní kancelář – právní posouzení zajistí váš právník."
+          },
+          {
+            "q": "Kolik stojí implementace a provoz serveru?",
+            "a": "Cena implementace se odvíjí od rozsahu – rozhoduje počet platforem a domén, stav datové vrstvy a požadavky IT. Fakturu za provoz dostáváte přímo od Googlu nebo poskytovatele hostingu: u Cloud Run realisticky 110–150 dolarů měsíčně, spravovaný hosting stojí od stovek korun. Odhad pro vaši návštěvnost připravíme ještě před spuštěním."
+          },
+          {
+            "q": "Co od nás budete potřebovat?",
+            "a": "Potřebujeme přístupy do GTM, GA4 a reklamních účtů přes role, fakturační účet Google Cloud, úpravu DNS a vývojáře pro případné úpravy datové vrstvy. Server běží ve vašem Google Cloudu, kontejnery i reklamní účty zůstávají vaše a my dostáváme jen role. Po skončení spolupráce své přístupy odebereme podle provozní příručky a měření běží dál beze změny."
+          },
+          {
+            "q": "Google Tag Gateway, nebo server-side GTM?",
+            "a": "Gateway načítá Google tag z vaší domény přes síť pro doručování obsahu (CDN). Je jednodušší a levnější, ale jen pro tagy Google a bez úprav dat. Pokud chcete Metu, Sklik, kontrolu nad osobními údaji nebo události z backendu, potřebujete server-side GTM. Obojí lze kombinovat."
+          }
+        ],
+        "contact": {
+          "title": "Probereme, jestli se vám server-side měření vyplatí",
+          "lead": "Na úvodní konzultaci projdeme vaše měření a řekneme, jestli je server-side GTM další krok, nebo je potřeba nejdřív opravit základ.",
+          "placeholder": "Adresa webu a co řešíte, např. „Meta vidí o třetinu méně nákupů než e-shop“"
+        },
+        "schema": {
+          "name": "Server-side tracking se serverovým Google Tag Managerem",
+          "serviceType": "Server-side tracking a měření konverzí",
+          "description": "Návrh a nasazení server-side Google Tag Manageru na doméně a v Google Cloudu klienta: GA4, Google Ads, Meta Conversions API, Seznam Event Measurement a TikTok Events API přes server, deduplikace, monitoring a dokumentace. Vždy v souladu se souhlasem návštěvníka.",
+          "audience": "E-shopy, B2B firmy a velké firmy"
+        }
+      }
+    },
+    {
+      "url": "/sluzby/cookie-lista-consent-mode",
+      "druh": "služba",
+      "pocet_slov": 713,
+      "obsah": {
+        "navTitle": "Cookie lišta a Consent Mode v2",
+        "tagline": "souhlas legálně a bez zbytečné ztráty dat",
+        "seo": {
+          "title": "Cookie lišta a Consent Mode v2 – nastavení | datalayer.cz",
+          "description": "Vybereme a nastavíme cookie lištu, Consent Mode v2 a GTM. Ověříme, co web posílá před souhlasem, a vysvětlíme dopad na data. Konzultace zdarma."
+        },
+        "hero": {
+          "h1": "Cookie lišta a Consent Mode v2 nastavené a ověřené",
+          "subtitle": "Cookie lišta sbírá souhlas návštěvníka, Consent Mode v2 ho předává tagům Googlu a Google Tag Manager (GTM) podle něj spouští ostatní tagy, třeba Mety nebo Skliku. Lištu vybereme a nastavíme tak, aby tagy souhlas respektovaly od prvního načtení stránky. Pak ověříme, co web posílá před souhlasem a po něm, a vysvětlíme dopad na data.",
+          "primaryCta": {
+            "label": "Zkontrolovat můj web",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "symptomy",
+            "title": "Poznáváte se?",
+            "lead": "To, že web lištu zobrazí, ještě neznamená, že tagy souhlas respektují. Ani platforma pro správu souhlasů (CMP) s certifikací od Googlu sama soulad nezaručí – rozhoduje, jak ji nasadíte.",
+            "blocks": [
+              {
+                "type": "cards",
+                "variant": "symptoms",
+                "items": [
+                  {
+                    "title": "Tagy běží bez ohledu na lištu",
+                    "text": "Meta Pixel, Sklik nebo chatovací widget odešlou data ještě před kliknutím, nebo dokonce po odmítnutí."
+                  },
+                  {
+                    "title": "Consent Mode startuje pozdě",
+                    "text": "Výchozí stav přichází až po načtení GTM, chybí nové reklamní signály a v GA4 roste podíl „Unassigned“."
+                  },
+                  {
+                    "title": "Po nasazení lišty spadly konverze",
+                    "text": "Tagy naběhnou až na další stránce nebo web zbytečně běží v režimu basic bez modelování a data mizí i u lidí, kteří souhlasili."
+                  },
+                  {
+                    "title": "Lišta neodpovídá doporučení ÚOOÚ",
+                    "text": "Chybí „Odmítnout“ v první vrstvě, tlačítka nejsou rovnocenná nebo lišta jen informuje tlačítkem „Rozumím“."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "vystupy",
+            "title": "Co uděláme a co dostanete",
+            "lead": "Službu nabízíme ve dvou variantách: audit, když lištu máte, a nastavení na klíč, když ji zavádíte nebo měníte.",
+            "blocks": [
+              {
+                "type": "cards",
+                "items": [
+                  {
+                    "title": "Inventura cookies a tagů",
+                    "text": "Všechny cookies, tagy a skripty včetně kódů mimo GTM – v šabloně, pluginech, chatu nebo videu."
+                  },
+                  {
+                    "title": "Lišta a podklady pro texty",
+                    "text": "Doporučíme CMP nebo navrhneme vlastní lištu a připravíme technické podklady, ze kterých právník sestaví texty lišty."
+                  },
+                  {
+                    "title": "Consent Mode v2",
+                    "text": "Výchozí stav před načtením tagů, aktualizace po volbě, všechny čtyři reklamní a analytické signály a režim podle rozhodnutí s právníkem."
+                  },
+                  {
+                    "title": "Napojení všech tagů",
+                    "text": "Tagy Mety, TikToku nebo LinkedInu naběhnou hned po souhlasu. Stav souhlasu předáme i do <a href=\"/sluzby/server-side-tracking\">server-side GTM</a> a backendu, pokud je máte."
+                  },
+                  {
+                    "title": "Sklik a Seznam Event Measurement",
+                    "text": "Souhlas předáme i novému měření Seznamu – přes standard IAB TCF (Transparency and Consent Framework), nebo ve formátu Google Consent Mode."
+                  },
+                  {
+                    "title": "Protokol a dokumentace",
+                    "text": "Osm testovacích scénářů se záznamem síťového provozu ve formátu HAR, matice tagů a souhlasů, popis verzí GTM a seznam oprav pro vývojáře."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Je cookie lišta povinná a co k ní říkají ÚOOÚ a Google?",
+            "a": "Lištu se souhlasem potřebuje každý web s analytikou, reklamními pixely nebo remarketingem, i jen s GA4: § 89 odst. 3 zákona o elektronických komunikacích vyžaduje předchozí prokazatelný souhlas a výjimku má jen technicky nezbytné ukládání. ÚOOÚ chce „Odmítnout“ už v první vrstvě, rovnocenná tlačítka a odvolání souhlasu stejně snadné jako jeho udělení. Google u uživatelů z EHP chce souhlas i s personalizací reklam a po inzerentech fakticky vyžaduje Consent Mode – při nesouladu může pozastavit publika a měření konverzí. Nejsme advokátní kancelář – texty lišty a zásady cookies sestaví z našich technických podkladů váš právník."
+          },
+          {
+            "q": "Režim basic, nebo advanced?",
+            "a": "V režimu basic tagy Googlu čekají na souhlas a před volbou neodejde nic; Google Ads pak modeluje konverze jen obecným modelem a GA4 chování bez souhlasu nemodeluje. V režimu advanced odejdou bez souhlasu jen pingy bez cookies, Google Ads modeluje konverze modelem pro váš účet a GA4 chování, pokud web překročí prahy, které stanovil Google. Basic se hodí pro přísný právní výklad, regulované obory a malou návštěvnost, advanced pro inzerenty v Google Ads s dostatkem návštěv, když právník souhlasí s přenosem pingů. Režim volíme spolu s vámi a s právníkem nebo pověřencem pro ochranu osobních údajů."
+          },
+          {
+            "q": "Proč po nasazení lišty klesly konverze?",
+            "a": "Část poklesu je očekávaná, protože nástroje dřív měřily i lidi bez souhlasu. Často jde ale o chybu: režim basic bez modelování; tagy, které naběhnou až po znovunačtení stránky; výchozí stav až po GTM; nebo nastavení bez signálu <code>ad_user_data</code>, které blokuje rozšířené konverze. Audit proto obsahuje i odhad dopadu na data."
+          },
+          {
+            "q": "Kolik to stojí?",
+            "a": "Cenu skládáme podle rozsahu: počet domén a jazyků, tagů a nástrojů, jestli lištu vybíráme, nebo vyvíjíme, a kolik kódů běží mimo GTM. Licenci CMP platíte přímo poskytovateli. Žádnou CMP neprodáváme – nastavíme kteroukoli a ověříme i lištu e-shopové platformy, třeba Shoptetu."
+          }
+        ],
+        "contact": {
+          "title": "Nastavíme sběr souhlasu podle pravidel – a bez zbytečné ztráty dat",
+          "lead": "Na úvodní konzultaci se podíváme, co web posílá před souhlasem, a řekneme, jestli stačí oprava, nebo je potřeba nové nastavení.",
+          "placeholder": "Adresa webu a co řešíte, např. „Po nasazení lišty nám spadly konverze v Google Ads“"
+        },
+        "schema": {
+          "name": "Cookie lišta a Google Consent Mode v2",
+          "serviceType": "Nastavení a audit cookie lišty, Consent Mode v2 a Google Tag Manageru",
+          "description": "Výběr a nastavení cookie lišty, Google Consent Mode v2 v režimu basic nebo advanced a napojení všech tagů v GTM na souhlas. Audit, co web posílá před souhlasem, testovací protokol a vysvětlení dopadu na data. Technické nastavení podle § 89 odst. 3 zákona č. 127/2005 Sb. a doporučení ÚOOÚ; právní posouzení zajišťuje právník klienta.",
+          "audience": "E-shopy, B2B firmy a velké firmy"
+        }
+      }
+    },
+    {
+      "url": "/sluzby/mereni-konverzi",
+      "druh": "služba",
+      "pocet_slov": 650,
+      "obsah": {
+        "navTitle": "Měření konverzí",
+        "tagline": "Google Ads, Meta, Sklik i Heureka vidí totéž",
+        "seo": {
+          "title": "Měření konverzí – Google Ads, Meta, Sklik, Heureka | datalayer.cz",
+          "description": "Nastavíme měření konverzí pro Google Ads, Metu (pixel a Conversions API), Sklik, Heureku i TikTok z jedné datové vrstvy, bez dvojího počítání. Konzultace zdarma."
+        },
+        "hero": {
+          "h1": "Měření konverzí pro Google Ads, Metu, Sklik i Heureku",
+          "subtitle": "Měření konverzí předává reklamním systémům informaci, že návštěvník z reklamy nakoupil nebo poslal poptávku. Stavíme ho z jedné datové vrstvy, aby každá objednávka dorazila do Google Ads, Mety, Skliku i Heureky jednou, se stejným ID a hodnotou – a jen podle souhlasu návštěvníka. Reklamní systémy se pak učí z čísel, která sedí s administrací.",
+          "primaryCta": {
+            "label": "Zkontrolovat moje konverze",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "symptomy",
+            "title": "Poznáváte se?",
+            "lead": "Část rozdílů mezi systémy je přirozená, část je chyba v nastavení.",
+            "blocks": [
+              {
+                "type": "cards",
+                "variant": "symptoms",
+                "items": [
+                  {
+                    "title": "Každý systém hlásí jiné číslo",
+                    "text": "Administrace třeba ukáže 412 objednávek, GA4 371 a Meta 388 – a nevíte, který rozdíl je chyba."
+                  },
+                  {
+                    "title": "Systémy počítají nákup dvakrát",
+                    "text": "Pixel i Conversions API bez společného ID nebo import z GA4 vedle konverzního tagu – a k tomu jednou cena s DPH, jednou bez."
+                  },
+                  {
+                    "title": "Sklik měří jen část",
+                    "text": "Starý konverzní kód bez předání souhlasu, retargeting zvlášť – a Seznam mezitím spouští nové měření Seznam Event Measurement (SEM)."
+                  },
+                  {
+                    "title": "Google Ads se učí z formulářů, ne ze zakázek",
+                    "text": "Reklama počítá každý odeslaný formulář, i když obchod v CRM ví, které poptávky jsou dobré."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "vystupy",
+            "title": "Co uděláme a co dostanete",
+            "lead": "Než nastavíme první tag, dohodneme s vámi, co je konverze a jaká je její hodnota. Pravidla zapíšeme do konverzní mapy, aby platila i pro agentury a budoucí dodavatele.",
+            "blocks": [
+              {
+                "type": "cards",
+                "items": [
+                  {
+                    "title": "Konverzní mapa",
+                    "text": "Které akce jsou konverze, primární a sekundární akce, hodnoty, ID a konverzní okna – pro každý systém."
+                  },
+                  {
+                    "title": "Zadání datové vrstvy",
+                    "text": "Pokud chybí nebo je neúplná: specifikace pro vývojáře s událostmi nákupu a poptávky. Navazuje na službu <a href=\"/sluzby/implementace-ga4\">GA4 a Google Tag Manager</a>."
+                  },
+                  {
+                    "title": "Nastavený Google Tag Manager (GTM)",
+                    "text": "Tagy, spouštěče a podmínky souhlasu s popisem verzí, volitelně Conversions API a Events API přes server-side GTM."
+                  },
+                  {
+                    "title": "Backendové napojení",
+                    "text": "Zadání pro vývojáře: Ověřeno zákazníky, Seznam Nákupy a offline konverze přes Data Manager API."
+                  },
+                  {
+                    "title": "Testovací protokol a porovnání s backendem",
+                    "text": "Výsledky testovacích objednávek pro každý systém. Po čtrnácti dnech srovnání backendu s reklamními systémy a vysvětlení rozdílů."
+                  },
+                  {
+                    "title": "Přístupy a předání",
+                    "text": "Přehled rolí ve všech účtech a krátké zaškolení pro marketing a agentury, jak konverze číst."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Proč se čísla v reklamních systémech a v administraci liší i po nastavení?",
+            "a": "Stejné ID objednávky zajistí, že ji každý systém započítá jen jednou, stejné číslo ale všechny ukazovat nebudou. Meta i Google Ads si připíšou stejný nákup, na kterém se podílely, Google Ads ho připisuje ke dni prokliku a GA4 ke dni nákupu a storno odečte backend, reklamní systém ne. Google Ads navíc ukazuje i modelované konverze, kdežto Meta a Sklik vidí jen lidi se souhlasem. Cíl je vysvětlitelný a stabilní rozdíl – jeho náhlá změna pak spustí kontrolu."
+          },
+          {
+            "q": "Co je Seznam Event Measurement a musím přejít?",
+            "a": "Seznam Event Measurement, zkráceně SEM, je nové měření Seznamu: jeden skript <code>sul.js</code> nahrazuje kódy Skliku i měření pro Seznam Nákupy. Přechod budou podle Seznamu potřebovat všechny účty a podporu původních kódů Seznam ukončí v průběhu roku 2027. SEM je zatím v betě a přepnutí účtu je nevratné, proto ho nasazujeme souběžně a přepínáme až po ověření. Stav k říjnu 2026."
+          },
+          {
+            "q": "Co budete potřebovat od nás a od našich vývojářů?",
+            "a": "Od vás potřebujeme role s oprávněním k úpravám konverzí a tagů, nikdy hesla – účty Google Ads, Meta Business, Sklik, Heureka i GTM zůstávají vaše. Pokud datová vrstva chybí nebo je neúplná, připravíme vývojářům zadání s událostmi nákupu a poptávky, nebo upravíme nastavení e-shopové platformy. Pro backendová napojení – Ověřeno zákazníky, Seznam Nákupy a offline konverze – dostanou vývojáři zadání od nás."
+          },
+          {
+            "q": "Z čeho se skládá cena?",
+            "a": "Cena se odvíjí od počtu systémů, stavu datové vrstvy, platformy e-shopu, zapojení serveru nebo CRM a počtu domén a zemí. Provoz serveru, pokud ho využijete, platíte přímo poskytovateli."
+          }
+        ],
+        "contact": {
+          "title": "Nastavíme, aby reklamní systémy viděly stejné konverze jako vy",
+          "lead": "Na úvodní konzultaci projdeme, jak objednávky nebo poptávky putují do reklamních systémů, a řekneme, kde je systémy počítají dvakrát a kde je nevidí vůbec.",
+          "placeholder": "Adresa webu a co řešíte, např. „Meta hlásí víc nákupů, než jich máme v administraci“"
+        },
+        "schema": {
+          "name": "Měření konverzí pro Google Ads, Metu, Sklik a Heureku",
+          "serviceType": "Nastavení a sjednocení měření konverzí v reklamních systémech",
+          "description": "Nastavení konverzí z jedné datové vrstvy pro Google Ads včetně rozšířených konverzí, Meta Pixel a Conversions API, Seznam Event Measurement pro Sklik a Seznam Nákupy, Heureku s měřením konverzí a Ověřeno zákazníky, TikTok, LinkedIn a Microsoft Ads. Sjednocení hodnot, deduplikace, testovací objednávky a porovnání s backendem.",
+          "audience": "E-shopy, B2B firmy a velké firmy"
+        }
+      }
+    },
+    {
+      "url": "/sluzby/bigquery",
+      "druh": "služba",
+      "pocet_slov": 995,
+      "obsah": {
+        "navTitle": "BigQuery a dashboardy",
+        "tagline": "surová data bez limitů GA4 a reporty",
+        "seo": {
+          "title": "BigQuery, datový sklad a dashboardy pro marketing | datalayer.cz",
+          "description": "GA4 v BigQuery spojíme s náklady z Google Ads, Mety a Skliku i s daty e-shopu a CRM. Datový model a dashboard v Data Studiu nebo Power BI, který sedí s účetnictvím."
+        },
+        "hero": {
+          "h1": "BigQuery a dashboardy pro marketing",
+          "subtitle": "BigQuery je datový sklad Googlu, do kterého GA4 umí exportovat všechny události bez vzorkování. Surová data z GA4 v něm spojíme s náklady z Google Ads, Mety a Skliku a s objednávkami, maržemi a vratkami z e-shopu, CRM nebo ERP. Nad nimi postavíme dashboard v Data Studiu (dříve Looker Studio) nebo Power BI, kterému věří i finanční ředitel. Vše běží ve vašem Google Cloudu, s hlídanými náklady.",
+          "primaryCta": {
+            "label": "Konzultovat BigQuery",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "symptomy",
+            "title": "Poznáváte se?",
+            "lead": "GA4 je dobrý nástroj na sběr dat. Na řízení marketingu podle peněz mu ale chybí data, která firma drží jinde.",
+            "blocks": [
+              {
+                "type": "cards",
+                "variant": "symptoms",
+                "items": [
+                  {
+                    "title": "Meziroční srovnání končí na čtrnácti měsících",
+                    "text": "V Průzkumech ve standardní verzi GA4 vidíte událostní data nejvýš čtrnáct měsíců zpět, takže sezónnost a kohorty porovnáte jen obtížně."
+                  },
+                  {
+                    "title": "ROAS počítáte z obratu, ne z marže",
+                    "text": "GA4 nezná nákupní ceny, storna ani vratky. Kampaň, která „vydělává“, může po odečtení vratek prodělávat."
+                  },
+                  {
+                    "title": "Náklady sčítá někdo ručně",
+                    "text": "Každé pondělí někdo stahuje náklady z Google Ads, Mety a Skliku do Excelu. Chyba v jednom řádku a porada řeší špatná čísla."
+                  },
+                  {
+                    "title": "Poptávku z webu nikdo nespojí se zakázkou",
+                    "text": "Marketing vykazuje poptávky, obchod zakázky v CRM. Kolik tržeb přinesla která kampaň, neví nikdo."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "vystupy",
+            "title": "Co uděláme a co dostanete",
+            "lead": "Nejdřív se domluvíme, jaká rozhodnutí mají data podpořit, teprve pak stavíme tabulky a grafy.",
+            "blocks": [
+              {
+                "type": "cards",
+                "items": [
+                  {
+                    "title": "Měřicí plán pro data",
+                    "text": "Otázky, na které má sklad odpovídat, s metrikami, zdroji, klíči pro propojení a vlastníky v jednom dokumentu."
+                  },
+                  {
+                    "title": "Export GA4 do BigQuery",
+                    "text": "Denní, případně průběžný export v projektu na vašem účtu, s regionem dat a filtrem událostí. Zapneme ho hned na začátku, protože data zpětně Google nedoplní."
+                  },
+                  {
+                    "title": "Náklady a data firmy",
+                    "text": "Náklady z Google Ads, Mety a Skliku, data ze Search Console a objednávky, marže a vratky z e-shopu, ERP nebo CRM."
+                  },
+                  {
+                    "title": "Datový model ve třech vrstvách",
+                    "text": "Reportovací tabulky pro konkrétní otázky a zdrojový kód transformací v Gitu – v Dataformu, dbt nebo plánovaných dotazech."
+                  },
+                  {
+                    "title": "Kontrola nákladů a přístupů",
+                    "text": "Dělení tabulek na oddíly a clustering, limity zpracovaných bajtů, rozpočtová upozornění a role pro každý přístup."
+                  },
+                  {
+                    "title": "Strom KPI a slovník metrik",
+                    "text": "Tři až pět hlavních ukazatelů výkonu (KPI) pro vedení, pod nimi metriky pro marketing a obchod. U každé, třeba marže nebo POAS, definice, výpočet, zdroj a vlastník."
+                  },
+                  {
+                    "title": "Dashboardy pro vedení i marketing",
+                    "text": "Manažerský přehled, marketingový a e-commerce dashboard nebo B2B pipeline v Data Studiu nebo Power BI. Nejdřív klikací prototyp na vašich datech, pak automatická aktualizace a týdenní přehled e-mailem."
+                  },
+                  {
+                    "title": "Sladění s účetnictvím a školení",
+                    "text": "Vybraný měsíc porovnáme s účetnictvím řádek po řádku a každý rozdíl vysvětlíme. Předáme návod ke čtení dashboardu a proškolíme tým."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "architektura",
+            "title": "Jak data tečou z webu a firemních systémů do reportu",
+            "lead": "Data držíme ve třech vrstvách: surová beze změn; očištěná se sjednocenými názvy, měnami a časovými pásmy; reportovací s tabulkami pro konkrétní otázky.",
+            "blocks": [
+              {
+                "type": "flow",
+                "caption": "Schéma architektury: GA4, reklamní systémy, Search Console, e-shop, ERP a CRM plní BigQuery, kde data držíme ve vrstvách raw, staging a marts. Z reportovacích tabulek čerpají dashboardy v Data Studiu nebo Power BI.",
+                "columns": [
+                  {
+                    "label": "zdroje",
+                    "items": [
+                      "web: Google Tag Manager a GA4",
+                      "Google Ads, Meta, Sklik",
+                      "Search Console",
+                      "e-shop, ERP a CRM"
+                    ]
+                  },
+                  {
+                    "label": "BigQuery – raw",
+                    "items": [
+                      "events_YYYYMMDD",
+                      "ads_*, meta_* a sklik_*",
+                      "erp_orders a crm_deals"
+                    ],
+                    "note": "Data beze změn, model kdykoli přepočítáme."
+                  },
+                  {
+                    "label": "BigQuery – staging",
+                    "items": [
+                      "sjednocené typy a měny",
+                      "DPH a časová pásma",
+                      "odstranění duplicit"
+                    ],
+                    "note": "Transformace v Dataformu, dbt nebo plánovaných dotazech."
+                  },
+                  {
+                    "label": "BigQuery – marts",
+                    "items": [
+                      "sessions",
+                      "channel_daily",
+                      "orders_margin",
+                      "leads_to_deals"
+                    ],
+                    "note": "Tabulky pro konkrétní otázky, nad nimi běží dashboardy."
+                  },
+                  {
+                    "label": "výstupy",
+                    "items": [
+                      "Data Studio",
+                      "Power BI",
+                      "exporty zpět: marže do Google Ads, offline konverze"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list",
+                "style": "check",
+                "items": [
+                  "<strong>Všechna data na jednom místě.</strong> Chování na webu, náklady kampaní a data e-shopu či CRM v jednom modelu.",
+                  "<strong>Každé číslo dohledáte</strong> v dashboardu až ke zdrojové události."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rozhodnuti",
+            "title": "Co v rozhraní GA4 nejde – a kdy BigQuery zatím nepotřebujete",
+            "lead": "BigQuery rozhraní GA4 nenahrazuje. Doplňuje ho o delší historii, úplná data a spojení s daty firmy.",
+            "blocks": [
+              {
+                "type": "proscons",
+                "yes": {
+                  "title": "Co v rozhraní GA4 nejde, v BigQuery ano",
+                  "items": [
+                    {
+                      "text": "historie delší než čtrnáct měsíců, expiraci určujete vy"
+                    },
+                    {
+                      "text": "surové události bez „(other)“ a přesné počty uživatelů a relací"
+                    },
+                    {
+                      "text": "marže, storna a vratky z e-shopu nebo ERP"
+                    },
+                    {
+                      "text": "automatické načítání nákladů z Mety a Skliku každý den"
+                    },
+                    {
+                      "text": "spojení poptávky se zakázkou v CRM, vlastní atribuce, kohorty a LTV"
+                    }
+                  ]
+                },
+                "no": {
+                  "title": "Doporučíme počkat, když…",
+                  "items": [
+                    {
+                      "text": "máte jednotky až nízké desítky objednávek nebo poptávek týdně",
+                      "note": "stačí GA4 a dashboard nad přímými konektory"
+                    },
+                    {
+                      "text": "GA4 nesedí s e-shopem o desítky procent",
+                      "note": "nejdřív <a href=\"/sluzby/audit-mereni\">audit měření</a>"
+                    },
+                    {
+                      "text": "podle dat ve firmě nikdo nebude rozhodovat",
+                      "note": "začneme jedním reportem pro vedení"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Kolik stojí projekt a provoz?",
+            "a": "Cenu projektu stanovíme po úvodní konzultaci jako pevnou částku – rozhoduje počet a typ zdrojů, rozsah modelu, stav měření a počet dashboardů. Provoz BigQuery a případné licence Data Studia Pro nebo Power BI platíte přímo Googlu nebo Microsoftu. V našem modelovém výpočtu pro e-shop se 100 000 událostmi v GA4 denně vyjde provoz BigQuery na jednotky dolarů měsíčně."
+          },
+          {
+            "q": "Potřebujeme BigQuery, nebo stačí dashboard nad přímými konektory?",
+            "a": "Pro jednoduchý report nad GA4 a Google Ads stačí přímé konektory. BigQuery doporučujeme, když spojujete víc zdrojů, třeba Metu, Sklik, ERP a CRM, když potřebujete marži, vratky nebo delší historii, než dovolí GA4, nebo když report otevírá hodně lidí. Konektor GA4 v Data Studiu totiž při velkém provozu naráží na kvóty Google Analytics Data API."
+          },
+          {
+            "q": "Co od nás budete potřebovat?",
+            "a": "Projekt v Google Cloudu s platebním účtem nebo souhlas ho založit, roli Editor v GA4, přístupy pro čtení do reklamních systémů a export nebo API k e-shopu, ERP či CRM. Od týmu pak jednu až dvě hodiny na úvodní workshop a kontrolní čísla z účetnictví za jeden měsíc. Projekt i reporty patří vaší organizaci, my dostaneme jen potřebné role, které můžete kdykoli odebrat."
+          },
+          {
+            "q": "Musíme umět SQL?",
+            "a": "Ne. Pro běžnou práci připravíme reportovací tabulky a dashboard, ve kterém filtrujete a třídíte klikáním. Analytikovi, který chce jít do detailu, předáme dokumentaci tabulek a příklady dotazů."
+          }
+        ],
+        "contact": {
+          "title": "Propojíme data do jednoho modelu a reportu",
+          "lead": "Na úvodní konzultaci projdeme zdroje dat a současný reporting a řekneme, jestli BigQuery potřebujete už teď, nebo stačí dashboard nad přímými konektory.",
+          "placeholder": "Adresa webu a co řešíte, např. „Report z GA4, Google Ads a ERP dnes skládáme ručně v Excelu“"
+        },
+        "schema": {
+          "name": "BigQuery a dashboardy pro marketing",
+          "serviceType": "Implementace BigQuery, datového skladu a marketingových dashboardů v Data Studiu a Power BI",
+          "description": "Export GA4 do Google BigQuery, napojení nákladů z Google Ads, Mety a Skliku a dat z e-shopu, CRM a ERP, datový model pro marketing s relacemi, atribucí, maržemi a vratkami, kontrola nákladů a manažerské, marketingové, e-commerce a B2B dashboardy v Data Studiu (dříve Looker Studio) nebo Power BI, které sedí s účetnictvím.",
+          "audience": "E-shopy, velké firmy, B2B firmy"
+        }
+      }
+    },
+    {
+      "url": "/sluzby/audit-mereni",
+      "druh": "služba",
+      "pocet_slov": 634,
+      "obsah": {
+        "navTitle": "Audit měření",
+        "tagline": "zjistíme, kde data utíkají",
+        "seo": {
+          "title": "Audit měření – GA4, GTM, souhlas a konverze | datalayer.cz",
+          "description": "Nevěříte číslům v GA4? Audit měření prověří GA4, GTM, souhlas i konverze v Google Ads a Metě a porovná je s e-shopem. Nálezy s prioritou A, B a C."
+        },
+        "hero": {
+          "h1": "Audit měření GA4, GTM, souhlasu a konverzí",
+          "subtitle": "Audit měření je nezávislá kontrola, jestli analytická a reklamní data odpovídají skutečnosti. Prověříme GA4, Google Tag Manager (GTM), souhlas návštěvníků a konverze v Google Ads, Metě a Skliku a porovnáme je s objednávkami v administraci nebo poptávkami v CRM. Nálezy seřadíme podle dopadu a navrhneme plán oprav.",
+          "primaryCta": {
+            "label": "Objednat audit měření",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "symptomy",
+            "title": "Poznáváte se?",
+            "lead": "Audit se vyplatí, když čísla přestanou sedět nebo když chystáte velkou změnu.",
+            "blocks": [
+              {
+                "type": "cards",
+                "variant": "symptoms",
+                "items": [
+                  {
+                    "title": "Čísla nesedí",
+                    "text": "GA4, Google Ads, Meta a administrace ukazují čtyři různá čísla a nikdo neumí vysvětlit proč."
+                  },
+                  {
+                    "title": "Po nové cookie liště spadly konverze",
+                    "text": "Propad o desítky procent přišel hned po nasazení lišty nebo po změně jejího nastavení."
+                  },
+                  {
+                    "title": "Měníte agenturu nebo přebíráte web",
+                    "text": "Potřebujete vědět, co přebíráte: kdo má přístupy, jak vypadá nastavení a co nefunguje."
+                  },
+                  {
+                    "title": "Chystáte redesign, migraci nebo server-side měření",
+                    "text": "Než postavíte nové měření, je dobré vědět, které chyby nepřenést."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "vystupy",
+            "title": "Co od nás dostanete",
+            "lead": "Report vlastníte vy a poslouží i při jednání s agenturou nebo dodavatelem webu.",
+            "blocks": [
+              {
+                "type": "cards",
+                "items": [
+                  {
+                    "title": "Report z auditu",
+                    "text": "Manažerské shrnutí na jedné straně a nálezy s důkazem, dopadem, prioritou a pracností."
+                  },
+                  {
+                    "title": "Plán oprav",
+                    "text": "Pořadí podle priorit A, B a C, závislosti a kdo co opraví – třeba „nejdřív datová vrstva, pak tagy“."
+                  },
+                  {
+                    "title": "Porovnání čísel",
+                    "text": "GA4 vs. administrace nebo CRM vs. reklamní systémy, s vysvětlením každého rozdílu."
+                  },
+                  {
+                    "title": "Inventura GTM a protokol testů",
+                    "text": "Všechny tagy s doporučením ponechat, upravit, nebo smazat a výsledky testovacích scénářů se snímky obrazovky."
+                  },
+                  {
+                    "title": "Prezentace výsledků",
+                    "text": "Nálezy projdeme s marketingem, vývojem a vedením."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ukazka-reportu",
+            "title": "Jak vypadá report z auditu",
+            "lead": "Výřez z tabulky nálezů, data jsou fiktivní. U každého nálezu v reportu najdete prioritu A, B, nebo C, důkaz, doporučení, pracnost a to, kdo ho opraví.",
+            "blocks": [
+              {
+                "type": "cards",
+                "items": [
+                  {
+                    "title": "Web po návratu z brány neodešle nákup",
+                    "text": "GA4 nevidí šestnáct procent plateb kartou a kampaně vypadají hůř."
+                  },
+                  {
+                    "title": "Meta Pixel běží před volbou v cookie liště",
+                    "text": "Data bez souhlasu a možný rozpor s § 89 odst. 3 zákona o elektronických komunikacích – ten by měl posoudit právník."
+                  },
+                  {
+                    "title": "Google Ads počítá nákup dvakrát",
+                    "text": "Import z GA4 i tag Google Ads jako primární akce nadhodnotí konverze a zkreslí optimalizaci nabídek."
+                  },
+                  {
+                    "title": "Platební brány jako referral",
+                    "text": "GA4 přepíše zdroj nákupu na platební bránu."
+                  },
+                  {
+                    "title": "Sedmatřicet nepoužívaných tagů a chybějící pravidla pojmenování",
+                    "text": "Pomalejší správa kontejneru a vyšší riziko chyb."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Kolik audit měření stojí?",
+            "a": "Cenu ovlivňuje počet systémů, jako jsou GA4, GTM, Google Ads, Meta, Sklik nebo srovnávače, dále počet webů a domén, typ webu a to, jestli chcete i porovnání s CRM. Po úvodním hovoru dostanete nabídku s pevným rozsahem. Rychlá kontrola zvenku je zdarma."
+          },
+          {
+            "q": "Jaké přístupy potřebujete a je to bezpečné?",
+            "a": "Stačí přístupy pro čtení: role Čtenář v GA4, oprávnění Číst v GTM, přístup Jen pro čtení v Google Ads a obdobně v Metě a Skliku. Nic neměníme a od e-shopu potřebujeme export objednávek <strong>bez osobních údajů zákazníků</strong> a možnost testovacího nákupu. Na požádání podepíšeme dohodu o mlčenlivosti (NDA) a po auditu doporučíme přístupy odebrat."
+          },
+          {
+            "q": "Posoudíte i právní stránku cookie lišty?",
+            "a": "Ne, nejsme advokátní kancelář. Ověřujeme technickou stránku: co web spustí před souhlasem a po něm a jestli tagy respektují volbu návštěvníka. Pro orientaci: § 89 odst. 3 zákona č. 127/2005 Sb. vyžaduje k ukládání údajů, které nejsou nezbytné pro poskytnutí služby, předchozí souhlas. Texty lišty a zásady by měl posoudit váš právník."
+          },
+          {
+            "q": "Kdo nálezy opraví – vy, nebo naši vývojáři?",
+            "a": "Jak chcete. Report píšeme tak, aby podle něj mohl opravy udělat kdokoli: váš vývojář, agentura, nebo my. Nálezy v GTM, GA4 a nastavení souhlasu většinou opravujeme sami, úpravy datové vrstvy připravíme jako zadání pro vývojáře a jejich práci zkontrolujeme."
+          }
+        ],
+        "contact": {
+          "title": "Zjistíme, kde utíkají data",
+          "lead": "Nevíte, jestli audit potřebujete? Pošlete adresu webu a do zprávy napište „Rychlá kontrola měření“. Podíváme se na web zvenku a tři až pět nejvýraznějších nálezů vám pošleme e-mailem, nebo je probereme v krátkém hovoru.",
+          "placeholder": "Adresa webu a co řešíte, např. „nevěříme číslům v GA4 a chceme vědět, kde je chyba“"
+        },
+        "schema": {
+          "name": "Audit měření",
+          "serviceType": "Audit webové analytiky a měření konverzí",
+          "description": "Nezávislá kontrola GA4, Google Tag Manageru, souhlasu návštěvníků v Consent Mode v2 a konverzí v Google Ads, Metě a Skliku; čísla porovnáme s administrací e-shopu nebo CRM. Výsledek tvoří report s nálezy podle priority A, B a C a plán oprav.",
+          "audience": "E-shopy, B2B firmy, velké firmy"
+        }
+      }
+    },
+    {
+      "url": "/reseni/e-shopy",
+      "druh": "řešení pro segment",
+      "pocet_slov": 1007,
+      "obsah": {
+        "navTitle": "E-shopy",
+        "tagline": "tržby, které sedí s administrací",
+        "seo": {
+          "title": "Měření e-shopu – GA4, GTM, souhlas a konverze | datalayer.cz",
+          "description": "Měření e-shopu na Shoptetu, Shopify, WooCommerce i vlastním řešení: GA4, cookie lišta, server-side měření a konverze pro Google Ads, Metu, Sklik a Heureku."
+        },
+        "hero": {
+          "h1": "Měření e-shopu od datové vrstvy po marži v reportu",
+          "subtitle": "Kompletní měření e-shopu tvoří datová vrstva, GA4 s událostmi e-commerce, cookie lišta s Consent Mode v2 a konverze pro Google Ads, Metu, Sklik i Heureku. Podle velikosti e-shopu přidáme server-side měření, marži a BigQuery. Navážeme na to, co platforma změří sama, a doplníme zbytek tak, aby objednávky v reportech odpovídaly administraci.",
+          "primaryCta": {
+            "label": "Konzultovat měření e-shopu",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "symptomy",
+            "title": "Poznáváte se?",
+            "lead": "Většina e-shopů, které k nám přijdou, nemá rozbité měření. Má měření, kterému nikdo nevěří, a přesto podle něj rozhoduje o reklamě.",
+            "blocks": [
+              {
+                "type": "cards",
+                "variant": "symptoms",
+                "items": [
+                  {
+                    "title": "GA4 ukazuje méně objednávek než administrace",
+                    "text": "Rozdíl se mění měsíc od měsíce a nikdo neumí říct, kolik z něj tvoří souhlas, kolik platební brána a kolik chyba měření."
+                  },
+                  {
+                    "title": "GA4 počítá jeden nákup dvakrát",
+                    "text": "Nativní integrace platformy a k tomu vlastní tag v Google Tag Manageru (GTM): tržby rostou jen na papíře a kampaně vypadají lépe, než jsou."
+                  },
+                  {
+                    "title": "Meta hlásí jiný počet nákupů než e-shop",
+                    "text": "Pixel běží bez Conversions API, bez deduplikace přes <code>event_id</code> nebo s nízkou kvalitou párování."
+                  },
+                  {
+                    "title": "Řídíte reklamu podle obratu, ne podle zisku",
+                    "text": "ROAS a PNO vypadají dobře, ale po odečtení marže, dopravy a vratek některé kampaně prodělávají."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "stack",
+            "title": "Z čeho se skládá kompletní měření e-shopu",
+            "lead": "Sedm vrstev, které na sebe navazují. Chyba ve spodní vrstvě zkreslí všechny nad ní, proto začínáme vždy odspodu.",
+            "blocks": [
+              {
+                "type": "cards",
+                "items": [
+                  {
+                    "title": "Datová vrstva",
+                    "text": "Události od zobrazení produktu po nákup ve stejném formátu – z platformy, nebo jako zadání pro vývojáře."
+                  },
+                  {
+                    "title": "GA4 e-commerce",
+                    "text": "Doporučené události od <code>view_item_list</code> po <code>refund</code> a tržby, které sedí s administrací.",
+                    "link": {
+                      "label": "GA4 a Google Tag Manager",
+                      "href": "/sluzby/implementace-ga4"
+                    }
+                  },
+                  {
+                    "title": "Cookie lišta a Consent Mode v2",
+                    "text": "Rovnocenné odmítnutí, čtyři signály souhlasu, které odejdou dřív, než web spustí první tag, a protokol z testu.",
+                    "link": {
+                      "label": "Cookie lišta a Consent Mode",
+                      "href": "/sluzby/cookie-lista-consent-mode"
+                    }
+                  },
+                  {
+                    "title": "Server-side měření",
+                    "text": "Server-side GTM na subdoméně e-shopu a ve vašem Google Cloudu, vždy v souladu se souhlasem.",
+                    "link": {
+                      "label": "Server-side tracking",
+                      "href": "/sluzby/server-side-tracking"
+                    }
+                  },
+                  {
+                    "title": "Konverze pro reklamní systémy",
+                    "text": "Google Ads, Meta s Conversions API, Sklik, Heureka a Seznam Nákupy vidí stejný nákup se stejnou hodnotou.",
+                    "link": {
+                      "label": "Měření konverzí",
+                      "href": "/sluzby/mereni-konverzi"
+                    }
+                  },
+                  {
+                    "title": "Marže a zisk",
+                    "text": "Hodnota konverze podle marže, kterou doplní server těsně před odesláním do Google Ads nebo Mety. Do prohlížeče posíláme jen prodejní cenu, takže nákupní ceny zůstanou u vás."
+                  },
+                  {
+                    "title": "BigQuery a dashboard",
+                    "text": "Export GA4 spojíme s objednávkami, vratkami a náklady na reklamu a nad nimi postavíme report pro vedení: tržby, marže, PNO a POAS podle kanálů.",
+                    "link": {
+                      "label": "BigQuery a dashboardy",
+                      "href": "/sluzby/bigquery"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "platformy",
+            "title": "Co vaše platforma změří sama – a co chybí",
+            "lead": "Většina platforem umí napojení na GA4 a reklamní systémy, ale jen v rozsahu, který si sama určila. Co chybí, doplníme: datovou vrstvu, server-side měření, české služby jako Sklik a Heureku i marži. Stav podle dokumentace k říjnu 2026, při auditu ověříme, co platí dnes.",
+            "blocks": [
+              {
+                "type": "tabs",
+                "group": "eshop_platforma",
+                "items": [
+                  {
+                    "id": "shoptet",
+                    "label": "Shoptet",
+                    "paragraphs": [
+                      "<strong>Umí:</strong> GA4 s událostmi e-commerce, vlastní dataLayer, cookie lištu s Consent Mode v2 a napojení Mety, Google Ads i Skliku z administrace.",
+                      "<strong>Chybí:</strong> formát GA4 <code>items</code> v dataLayeru, marže a vlastní parametry. Nativní události mají stejné názvy jako tagy v GTM, takže hrozí, že se nákup započítá dvakrát."
+                    ]
+                  },
+                  {
+                    "id": "upgates",
+                    "label": "Upgates",
+                    "paragraphs": [
+                      "<strong>Umí:</strong> GA4 přes doplněk Google Site Tag, GTM se systémovým dataLayerem pro produkt, košík a objednávku a cookie lištu s volbou kategorií.",
+                      "<strong>Chybí:</strong> server-side měření a události ze seznamů produktů a z kroků pokladny. Souběh GTM a Google Site Tag může zdvojit konverze."
+                    ]
+                  },
+                  {
+                    "id": "shopify",
+                    "label": "Shopify",
+                    "paragraphs": [
+                      "<strong>Umí:</strong> GA4 a Google Ads přes aplikaci Google & YouTube, cookie lištu s Consent Mode v2 a Metu přes aplikaci Facebook & Instagram.",
+                      "<strong>Chybí:</strong> plnohodnotný GTM v pokladně – běží jen jako vlastní pixel v sandboxu a Consent Mode v2 k němu musíte přidat ručně. Skripty na děkovací stránce skončily u plánu Plus 28. srpna 2025, u ostatních 26. srpna 2026.",
+                      "Postavíme vlastní pixel a ohlídáme, aby aplikace a pixel neposílaly stejný nákup dvakrát."
+                    ]
+                  },
+                  {
+                    "id": "woocommerce",
+                    "label": "WooCommerce",
+                    "paragraphs": [
+                      "<strong>Umí:</strong> bez pluginů nic. Rozšíření Google Analytics for WooCommerce pokryje hlavní události e-commerce a Consent Mode přes WP Consent API, plugin Meta přidá pixel a katalog.",
+                      "<strong>Chybí:</strong> nákup bez návratu z platební brány na děkovací stránku a pořádek v pluginech, které posílají stejné události vícekrát. Nákup proto odešleme ze serveru po zaplacení."
+                    ]
+                  },
+                  {
+                    "id": "prestashop",
+                    "label": "PrestaShop",
+                    "paragraphs": [
+                      "<strong>Umí:</strong> GA4 s měřením e-commerce přes oficiální modul Google Analytics.",
+                      "<strong>Chybí:</strong> GTM, Consent Mode a české služby jako Sklik nebo Heureka – řeší je moduly třetích stran různé kvality, které se mohou překrývat."
+                    ]
+                  },
+                  {
+                    "id": "vlastni-reseni",
+                    "label": "Vlastní řešení",
+                    "paragraphs": [
+                      "<strong>Umí:</strong> nic – měření je přesně tak dobré, jak dobré bylo zadání, i u platforem Magento, Adobe Commerce nebo Shopsys.",
+                      "<strong>Chybí:</strong> specifikace. Dodáme měřicí plán, datovou vrstvu ve formátu GA4 a automatický test pro každý release. Více u služby <a href=\"/sluzby/implementace-ga4\">GA4 a Google Tag Manager</a>."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Nestačí nativní integrace GA4, kterou má Shoptet, Upgates nebo Shopify?",
+            "a": "Pro menší e-shop s jedním reklamním kanálem často stačí – nastavíte ji vyplněním ID. Limity se ukážou, když potřebujete vlastní parametry, marži nebo server-side měření, nebo když se nativní integrace potká s tagy z GTM a GA4 započítá nákup dvakrát. Při auditu proto nejdřív zjistíme, co platforma skutečně posílá, a pak navrhneme, co nechat nativně a co převzít do GTM."
+          },
+          {
+            "q": "Proč GA4 nikdy neukáže všechny objednávky z administrace?",
+            "a": "GA4 měří chování v prohlížeči, administrace účtuje objednávky. Část návštěvníků odmítne analytické cookies, někdo blokuje skripty nebo se z platební brány nevrátí a v administraci jsou i telefonické a testovací objednávky. Univerzální „normální“ rozdíl neexistuje – důležité je, aby byl stabilní a abyste ho uměli vysvětlit."
+          },
+          {
+            "q": "Kolik měření e-shopu stojí?",
+            "a": "Dva e-shopy na stejné platformě mohou potřebovat jiný rozsah, cenu proto určuje hlavně platforma, stav současného měření, počet reklamních systémů a trhů a to, jestli přidáte server-side měření, marži nebo BigQuery. Provoz server-side GTM platíte přímo Googlu, který uvádí zhruba 45 dolarů měsíčně za server a doporučuje aspoň dva. Nabídku s pevným rozsahem dostanete po úvodní konzultaci a krátkém auditu."
+          },
+          {
+            "q": "Musí do implementace zasahovat náš vývojář?",
+            "a": "Na Shoptetu, Upgates a Shopify se většinou obejdeme bez vývojáře, u WooCommerce, PrestaShopu a vlastních řešení obvykle potřebujeme úpravu šablony nebo kód. Vývojářům dodáme přesnou specifikaci a výsledek otestujeme. Pracujeme ve vašich účtech a kontejnery předáme s dokumentací."
+          }
+        ],
+        "contact": {
+          "title": "Zjistíme, kde vašemu e-shopu utíkají objednávky",
+          "lead": "Na úvodní konzultaci projdeme měření, platformu a reklamní kanály a řekneme, co opravit jako první.",
+          "placeholder": "Adresa webu a co řešíte, např. „Jsme na Shoptetu a GA4 ukazuje o patnáct procent méně objednávek než administrace“"
+        },
+        "schema": {
+          "name": "Měření pro e-shopy",
+          "serviceType": "Implementace měření e-shopu: GA4, Google Tag Manager, Consent Mode v2, server-side měření a konverze",
+          "description": "Kompletní měření e-shopu: datová vrstva, GA4 e-commerce, cookie lišta s Consent Mode v2, server-side měření, konverze pro Google Ads, Metu, Sklik, Heureku a Seznam Nákupy, marže, BigQuery a dashboard.",
+          "audience": "E-shopy"
+        }
+      }
+    },
+    {
+      "url": "/reseni/b2b-a-lead-generation",
+      "druh": "řešení pro segment",
+      "pocet_slov": 713,
+      "obsah": {
+        "navTitle": "B2B a lead generation",
+        "tagline": "od formuláře po zakázku v CRM",
+        "seo": {
+          "title": "Měření leadů a offline konverze z CRM | datalayer.cz",
+          "description": "Měříme leady od formuláře po zakázku v CRM a vracíme je do Google Ads, Mety a LinkedInu: offline konverze, měření telefonátů, cena leadu i zakázky."
+        },
+        "hero": {
+          "h1": "Měření leadů od formuláře až po zakázku v CRM",
+          "subtitle": "Lead je poptávka potenciálního zákazníka – z formuláře na webu nebo z telefonu. Měření leadů propojí web, kde poptávka vznikne, CRM, kde obchod zjistí její kvalitu a hodnotu, a reklamní systémy, které podle výsledku optimalizují kampaně. Formulář uloží do CRM zdroj a ID kliknutí a fáze obchodu putují zpět do Google Ads, Mety a LinkedInu jako offline konverze. Reklama se pak neučí z počtu formulářů, ale z poptávek, které obchod opravdu uzavřel.",
+          "primaryCta": {
+            "label": "Probrat měření leadů",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "symptomy",
+            "title": "Poznáváte se?",
+            "lead": "Měření až do CRM má smysl, když reklama přivádí poptávky, ale nikdo neví, které z nich končí zakázkou.",
+            "blocks": [
+              {
+                "type": "cards",
+                "variant": "symptoms",
+                "items": [
+                  {
+                    "title": "Hodně poptávek, málo zakázek",
+                    "text": "Kampaně hlásí rekordní počet poptávek a obchod tvrdí, že polovinu tvoří studenti, konkurence a spam."
+                  },
+                  {
+                    "title": "Google Ads se řídí počtem formulářů",
+                    "text": "Chytré nabídky se učí, že dobrá poptávka je jakákoli poptávka, a přivádějí jich víc – levnějších, ale horších."
+                  },
+                  {
+                    "title": "V CRM chybí zdroj",
+                    "text": "Obchodník vidí jméno a telefon, ale ne kampaň, klíčové slovo ani to, že zákazník přišel z LinkedInu."
+                  },
+                  {
+                    "title": "Obchodní cyklus trvá měsíce",
+                    "text": "Obchod uzavře zakázku po třech měsících a reklamní systém se o ní nikdy nedozví."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "vystupy",
+            "title": "Co uděláme a co dostanete",
+            "lead": "Uzavřený okruh od kliknutí po zakázku a zpět stojí na šesti částech – od měření formulářů přes CRM po dashboard.",
+            "blocks": [
+              {
+                "type": "cards",
+                "items": [
+                  {
+                    "title": "Měřicí plán a formuláře",
+                    "text": "Měříme začátek vyplňování, chyby i odeslání formuláře, takže uvidíte, na kterém poli lidé odcházejí."
+                  },
+                  {
+                    "title": "Zdroj a ID kliknutí v CRM",
+                    "text": "Formulář automaticky vyplní v CRM zdroj, kampaň, ID kliknutí a ID poptávky. Pole nastavíme sami, nebo je připravíme pro správce CRM."
+                  },
+                  {
+                    "title": "Mapa fází poptávky",
+                    "text": "S obchodem dohodneme fáze, jejich hodnoty a pravidla pro změnu fáze; obchodníky krátce zaškolíme."
+                  },
+                  {
+                    "title": "Konverze zpět do reklamních systémů",
+                    "text": "Kvalifikované poptávky a zakázky s hodnotou pošleme do Google Ads přes Data Manager a do Mety a LinkedInu přes Conversions API. Google Ads přiřadí offline konverzi jen do devadesáti dní od kliknutí, u delších obchodů proto jako primární konverzi nastavíme kvalifikovanou poptávku."
+                  },
+                  {
+                    "title": "Měření telefonátů",
+                    "text": "Úroveň měření zvolíme podle toho, kolik poptávek přichází telefonem – od kliknutí na číslo po dynamická čísla, která hovor zapíšou do CRM."
+                  },
+                  {
+                    "title": "Dashboard od poptávky po zakázku",
+                    "text": "Náklady, poptávky a fáze z CRM spojíme v BigQuery a dashboard ukáže cenu poptávky, kvalifikované poptávky i zakázky podle kanálů."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "faq": [
+          {
+            "q": "Jak dostaneme zakázky z CRM zpět do Google Ads?",
+            "a": "U každé poptávky formulář do CRM uloží ID kliknutí a hash e-mailu nebo telefonu. Fáze s hodnotou pak jednou denně posíláme přes Google Ads Data Manager – z HubSpotu a Salesforce přímo, z ostatních CRM přes BigQuery nebo tabulku. Kombinaci ID kliknutí a hashe Google nazývá „rozšířené konverze pro potenciální zákazníky“ a pro nové implementace ji doporučuje, protože konverzi spáruje, i když ID kliknutí cestou zmizí. Od 15. června 2026 Google směruje nahrávání offline konverzí do Data Manager API, starší skripty proto převedeme."
+          },
+          {
+            "q": "Kolik to stojí a z čeho se cena skládá?",
+            "a": "Cenu určuje počet formulářů a vstupních kanálů, třeba webu, telefonu nebo Lead Ads, dále CRM a jeho možnosti exportu, počet reklamních systémů, úroveň měření telefonátů a dashboard. Po úvodní konzultaci a krátkém auditu dostanete nabídku s pevným rozsahem a výstupy. Poplatky za call tracking nebo licence CRM platíte přímo poskytovatelům."
+          },
+          {
+            "q": "Co od nás budete potřebovat?",
+            "a": "Přístupy do GTM, GA4 a reklamních účtů, součinnost správce CRM a případně vývojáře webu pro úpravu formulářů. Hlavně ale krátký workshop s obchodem: bez dohody, co znamená „kvalifikovaná poptávka“ a kdy obchodník mění fázi, žádné měření fungovat nebude. Pracujeme přímo ve vašich účtech, přístupy po skončení projektu odeberete a mapu fází s dokumentací vám předáme."
+          },
+          {
+            "q": "Je posílání dat z CRM do Googlu a Mety v souladu s GDPR?",
+            "a": "Technicky to nastavujeme konzervativně: kontaktní údaje jen jako hash, jen se souhlasem <code>ad_user_data</code>, žádné osobní údaje v GA4 a jen nezbytná pole. Vy jste správce osobních údajů z CRM, Google u rozšířených konverzí vystupuje jako zpracovatel podle smluvních podmínek Google Ads Data Processing Terms a my jako zpracovatel podle zpracovatelské smlouvy. Právní titul pro předání údajů posoudí váš právník – nejsme advokátní kancelář, ale dodáme mu přesný popis datových toků."
+          }
+        ],
+        "contact": {
+          "title": "Zjistíme, kolik vás doopravdy stojí jedna zakázka",
+          "lead": "Na úvodní konzultaci projdeme formuláře, CRM a kampaně a řekneme, co propojit jako první.",
+          "placeholder": "Adresa webu a co řešíte, např. „Máme HubSpot a obchod říká, že polovina poptávek z Google Ads je nekvalitní“"
+        },
+        "schema": {
+          "name": "Měření leadů a offline konverze pro B2B",
+          "serviceType": "Měření formulářů, napojení CRM, offline a rozšířené konverze pro potenciální zákazníky, měření telefonátů, reporting od poptávky po zakázku",
+          "description": "Měření leadů od formuláře po zakázku v CRM a jejich návrat do Google Ads, Mety a LinkedInu: offline konverze, rozšířené konverze pro potenciální zákazníky, měření telefonátů a reporting ceny poptávky, ceny zakázky a poměru poptávek k zakázkám.",
+          "audience": "B2B firmy a firmy, které získávají zákazníky přes poptávky"
+        }
+      }
+    },
+    {
+      "url": "/o-nas",
+      "druh": "stránka",
+      "pocet_slov": 299,
+      "obsah": {
+        "navTitle": "O nás",
+        "tagline": "jak pracujeme s daty a pro koho",
+        "seo": {
+          "title": "O nás – jak pracujeme s daty | datalayer.cz",
+          "description": "Jak datalayer.cz pracuje s daty klientů a pro koho stavíme měření. Technický tým pro GA4, GTM, server-side měření, souhlas (Consent Mode) a BigQuery."
+        },
+        "hero": {
+          "h1": "Jak pracujeme s daty a pro koho",
+          "subtitle": "Stavíme a ověřujeme měření pro e-shopy, B2B firmy a velké firmy – od datové vrstvy přes Google Tag Manager (GTM), GA4 a souhlasy po server-side tracking a BigQuery. Pracujeme ve vašich účtech a každou implementaci předáme s dokumentací.",
+          "primaryCta": {
+            "label": "Napsat nám",
+            "href": "#kontakt"
+          }
+        },
+        "sections": [
+          {
+            "id": "provozovatel",
+            "title": "Kdo web provozuje",
+            "blocks": [
+              {
+                "type": "operator"
+              }
+            ]
+          },
+          {
+            "id": "pristup",
+            "title": "Proč začínáme u datové vrstvy",
+            "lead": "Když firma rozhoduje o reklamě podle dat, kterým nikdo nevěří, problém většinou není v nástroji.",
+            "blocks": [
+              {
+                "type": "paragraphs",
+                "items": [
+                  "Problém bývá ve spodní vrstvě: v tom, jak web data sbírá, jestli respektuje souhlas a jestli někdo ověřil, že čísla sedí. Proto začínáme u datové vrstvy, podle které nese jméno i datalayer.cz.",
+                  "Nasadit kód pro nás neznamená konec projektu. Končíme až ve chvíli, kdy čísla sedí s tržbami nebo s CRM a rozdíly umíme vysvětlit.",
+                  "Neprodáváme krabicové nástroje. Měření stavíme ve vašich účtech a předáváme ho s dokumentací."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "principy",
+            "title": "Jak zacházíme s daty – vašimi i vašich zákazníků",
+            "lead": "Čtyři pravidla, která platí pro každý projekt.",
+            "blocks": [
+              {
+                "type": "list",
+                "style": "check",
+                "items": [
+                  "<strong>Data patří vám.</strong> Účty, kontejnery, projekty v Google Cloudu i data zakládáme na vaši firmu. My máme jen přístup, který můžete kdykoli odebrat.",
+                  "<strong>Souhlas je podmínka, ne překážka.</strong> Měření nastavujeme podle § 89 odst. 3 zákona o elektronických komunikacích a doporučení ÚOOÚ. Odmítnutí musí být stejně snadné jako přijetí.",
+                  "<strong>Osobní údaje nikdy v čitelné podobě.</strong> Do GA4 neposíláme e-maily ani telefony, do reklamních systémů jen hash a jen se souhlasem.",
+                  "<strong>Žádné černé skříňky.</strong> Stavíme na standardních nástrojích jako GTM, GA4 a BigQuery, takže po nás může pokračovat kdokoli."
+                ]
+              },
+              {
+                "type": "paragraphs",
+                "items": [
+                  "Nejsme advokátní kancelář – právní posouzení konkrétního zpracování zajišťuje váš právník."
+                ]
+              }
+            ]
+          }
+        ],
+        "contact": {
+          "title": "Napište nám, co řešíte",
+          "lead": "Napište nám e-mail nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první.",
+          "placeholder": "Adresa webu a co řešíte, např. „Měření nám nastavila agentura a nemáme k němu dokumentaci“"
+        }
+      }
+    },
+    {
+      "url": "/kontakt",
+      "druh": "stránka",
+      "pocet_slov": 52,
+      "obsah": {
+        "navTitle": "Kontakt",
+        "tagline": "e-mail, telefon a formulář",
+        "seo": {
+          "title": "Kontakt – konzultace měření zdarma | datalayer.cz",
+          "description": "Napište nám, zavolejte nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první."
+        },
+        "hero": {
+          "h1": "Napište nám nebo rovnou zavolejte",
+          "subtitle": "Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první. Konzultace je zdarma a nezávazná."
+        },
+        "contact": {
+          "placeholder": "Adresa webu a co řešíte, např. „Po nasazení cookie lišty spadly konverze v Google Ads“"
+        }
+      }
+    },
+    {
+      "url": "/zpracovani-osobnich-udaju",
+      "druh": "právní stránka",
+      "pocet_slov": 418,
+      "obsah": {
+        "navTitle": "Zpracování osobních údajů",
+        "tagline": "jak zacházíme s osobními údaji",
+        "seo": {
+          "title": "Zpracování osobních údajů | datalayer.cz",
+          "description": "Jaké osobní údaje web datalayer.cz zpracovává, proč a jak dlouho je uchováváme, kdo k nim má přístup a jaká máte práva podle GDPR."
+        },
+        "hero": {
+          "h1": "Zpracování osobních údajů",
+          "subtitle": "Popisujeme tu, jaké osobní údaje web datalayer.cz zpracovává, proč je potřebujeme, jak dlouho je uchováváme a jaká máte práva."
+        },
+        "sections": [
+          {
+            "id": "zasady",
+            "blocks": [
+              {
+                "type": "html",
+                "html": "<h2>Kdo údaje zpracovává</h2>\n<p>Správce osobních údajů je provozovatel webu datalayer.cz. S čímkoli, co se týká osobních údajů, nám napište na <a href=\"mailto:one@datalayer.cz\">one@datalayer.cz</a>.</p>"
+              },
+              {
+                "type": "operator"
+              },
+              {
+                "type": "html",
+                "html": "<h2>Kontaktní formulář</h2>\n<p>Když nám pošlete zprávu, zpracujeme jméno, e-mail a text zprávy. Pokud ho vyplníte, zpracujeme také telefon. Údaje potřebujeme, abychom mohli odpovědět na poptávku a případně připravit nabídku. Právní základ je jednání o smlouvě na vaši žádost podle čl. 6 odst. 1 písm. b) GDPR, proto ve formuláři nežádáme o souhlas.</p>\n<p>Zprávu uložíme do databáze Google Cloud Firestore a pošleme ji e-mailem lidem, kteří poptávky vyřizují. Do analytiky ani reklamních systémů jméno, e-mail ani telefon v čitelné podobě neposíláme. Při odeslání formuláře web vytvoří jen jednosměrný otisk e-mailu a telefonu (SHA-256), a to jen pokud jste souhlasili s marketingovými cookies.</p>\n<h2>Ochrana proti spamu</h2>\n<p>Formulář chrání služba Cloudflare Turnstile. Ověří, že formulář vyplňuje člověk, a pracuje přitom s technickými údaji o prohlížeči a s IP adresou. IP adresu krátce používáme i k omezení počtu zpráv odeslaných za sebou. Právní základ je náš oprávněný zájem na ochraně webu před zneužitím podle čl. 6 odst. 1 písm. f) GDPR.</p>\n<h2>Cookies a měření návštěvnosti</h2>\n<p>Analytické a marketingové cookies používáme jen se souhlasem podle § 89 odst. 3 zákona č. 127/2005 Sb. a čl. 6 odst. 1 písm. a) GDPR. Souhlas můžete kdykoli odvolat. Podrobnosti najdete v <a href=\"/cookies\">zásadách cookies</a>.</p>\n<h2>Jak dlouho údaje uchováváme</h2>\n<p>Zprávy z formuláře uchováváme po dobu, kterou potřebujeme k vyřízení poptávky. Pokud spolupráce nevznikne, smažeme je nejpozději do dvanácti měsíců od poslední komunikace. Pokud spolupráce vznikne, uchováváme údaje po dobu trvání smlouvy a dál jen tak dlouho, jak to vyžadují právní předpisy.</p>\n<h2>Kdo má k údajům přístup</h2>\n<ul>\n<li>Google Cloud – provoz webu a databáze se zprávami.</li>\n<li>Cloudflare – ochrana formuláře proti spamu.</li>\n<li>Poskytovatel e-mailových služeb, přes kterého odchází upozornění na novou zprávu.</li>\n<li>Se souhlasem s cookies také Google (Google Analytics, Google Ads), Meta Platforms a Seznam.cz.</li>\n</ul>\n<p>Některé z těchto společností mohou údaje předávat mimo EU. V takovém případě je chrání standardní smluvní doložky Evropské komise nebo rámec EU–USA pro ochranu údajů (Data Privacy Framework).</p>\n<h2>Vaše práva</h2>\n<p>Máte právo na přístup k údajům, jejich opravu nebo výmaz, omezení zpracování a přenositelnost. Proti zpracování na základě oprávněného zájmu můžete vznést námitku a udělený souhlas můžete kdykoli odvolat. Stačí napsat na <a href=\"mailto:one@datalayer.cz\">one@datalayer.cz</a>. Pokud nebudete spokojeni s tím, jak s údaji zacházíme, můžete podat stížnost u Úřadu pro ochranu osobních údajů (<a href=\"https://uoou.gov.cz\">uoou.gov.cz</a>).</p>"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "/cookies",
+      "druh": "právní stránka",
+      "pocet_slov": 205,
+      "obsah": {
+        "navTitle": "Zásady cookies",
+        "tagline": "které cookies web používá",
+        "seo": {
+          "title": "Zásady cookies | datalayer.cz",
+          "description": "Které cookies web datalayer.cz používá, k čemu slouží a jak dlouho platí. Analytické a marketingové cookies jen se souhlasem, volbu můžete kdykoli změnit."
+        },
+        "hero": {
+          "h1": "Zásady cookies",
+          "subtitle": "Cookies jsou malé soubory, které web ukládá do prohlížeče. Nezbytné cookies drží web v chodu; analytické a marketingové používáme jen se souhlasem."
+        },
+        "sections": [
+          {
+            "id": "nastaveni",
+            "blocks": [
+              {
+                "type": "consentSettings",
+                "label": "Změnit nastavení cookies"
+              }
+            ]
+          },
+          {
+            "id": "jak-souhlas-funguje",
+            "title": "Jak souhlas funguje",
+            "blocks": [
+              {
+                "type": "paragraphs",
+                "items": [
+                  "Dokud si v cookie liště nic nevyberete, web neukládá žádné analytické ani marketingové cookies. Měřicí nástroje Googlu v tu chvíli dostávají jen signál, že souhlas chybí (Google Consent Mode v2, výchozí stav „denied“). Odmítnout jde stejně snadno jako přijmout a volbu můžete kdykoli změnit tlačítkem Nastavení cookies v patičce. Postupujeme podle § 89 odst. 3 zákona č. 127/2005 Sb. a GDPR."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "prehled-cookies",
+            "title": "Přehled cookies",
+            "blocks": [
+              {
+                "type": "table",
+                "caption": "Přehled cookies",
+                "head": [
+                  "Název",
+                  "K čemu slouží",
+                  "Platnost",
+                  "Kategorie"
+                ],
+                "rows": [
+                  [
+                    "<code>dl_consent</code>",
+                    "Uloží vaši volbu v cookie liště.",
+                    "180 dní",
+                    "Nezbytné"
+                  ],
+                  [
+                    "<code>dl_admin_session</code>",
+                    "Přihlášení do administrace webu, týká se jen správců.",
+                    "sedm dní",
+                    "Nezbytné"
+                  ],
+                  [
+                    "<code>_ga</code>, <code>_ga_&lt;ID&gt;</code>",
+                    "Google Analytics 4 rozlišuje návštěvníky a jejich návštěvy.",
+                    "dva roky",
+                    "Analytické"
+                  ],
+                  [
+                    "<code>_gcl_au</code>, <code>_gcl_aw</code>",
+                    "Google Ads měří konverze z reklam.",
+                    "devadesát dní",
+                    "Marketingové"
+                  ],
+                  [
+                    "<code>_fbp</code>",
+                    "Meta Pixel měří konverze a publikum pro reklamy na Facebooku a Instagramu.",
+                    "devadesát dní",
+                    "Marketingové"
+                  ]
+                ]
+              },
+              {
+                "type": "paragraphs",
+                "items": [
+                  "Analytické a marketingové cookies vznikají jen tehdy, když jste s nimi souhlasili a když je na webu zapnutý příslušný nástroj. Ochrana formuláře Cloudflare Turnstile pracuje s technickými údaji o prohlížeči a podle dokumentace Cloudflaru vydává místo cookie jednorázový ověřovací kód (token)."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "sdilene_texty": {
+    "menu": {
+      "polozky": [
+        {
+          "label": "Služby",
+          "podmenu": [
+            {
+              "label": "Audit měření",
+              "href": "/sluzby/audit-mereni"
+            },
+            {
+              "label": "GA4 a Google Tag Manager",
+              "href": "/sluzby/implementace-ga4"
+            },
+            {
+              "label": "Server-side tracking",
+              "href": "/sluzby/server-side-tracking"
+            },
+            {
+              "label": "Cookie lišta a Consent Mode",
+              "href": "/sluzby/cookie-lista-consent-mode"
+            },
+            {
+              "label": "Měření konverzí",
+              "href": "/sluzby/mereni-konverzi"
+            },
+            {
+              "label": "BigQuery a dashboardy",
+              "href": "/sluzby/bigquery"
+            }
+          ]
+        },
+        {
+          "label": "E-shopy",
+          "href": "/reseni/e-shopy"
+        },
+        {
+          "label": "B2B",
+          "href": "/reseni/b2b-a-lead-generation"
+        },
+        {
+          "label": "O nás",
+          "href": "/o-nas"
+        }
+      ],
+      "tlacitko": "Konzultovat projekt",
+      "mobilni_lista": {
+        "callLabel": "Zavolat",
+        "writeLabel": "Napsat"
+      }
+    },
+    "paticka": {
+      "sloupce": [
+        {
+          "title": "Služby",
+          "links": "(odkazy z menu Služby)"
+        },
+        {
+          "title": "Pro koho",
+          "links": [
+            {
+              "label": "E-shopy",
+              "href": "/reseni/e-shopy"
+            },
+            {
+              "label": "B2B a lead generation",
+              "href": "/reseni/b2b-a-lead-generation"
+            }
+          ]
+        },
+        {
+          "title": "O nás",
+          "links": [
+            {
+              "label": "O nás",
+              "href": "/o-nas"
+            },
+            {
+              "label": "Kontakt",
+              "href": "/kontakt"
+            }
+          ]
+        }
+      ],
+      "contactTitle": "Kontakt",
+      "bottomLinks": [
+        {
+          "label": "Zpracování osobních údajů",
+          "href": "/zpracovani-osobnich-udaju"
+        },
+        {
+          "label": "Cookies",
+          "href": "/cookies"
+        }
+      ],
+      "cookieSettingsLabel": "Nastavení cookies"
+    },
+    "formular": {
+      "_poznamka": "Kontaktní blok na konci stránek. Nadpis, úvod a nápovědu ve zprávě mají stránky vlastní (obsah.contact); tyto texty platí, když je stránka nemá. leadWithPhone se ukáže, když je v nastavení telefon (je).",
+      "defaultTitle": "Napište nám, co řešíte",
+      "leadWithPhone": "Napište nám, zavolejte nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první – nezávazně a zdarma.",
+      "leadWithoutPhone": "Napište nám e-mail nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první – nezávazně a zdarma.",
+      "defaultPlaceholder": "Adresa webu a co řešíte, např. „GA4 ukazuje o pětinu méně objednávek než e-shop“",
+      "pole": [
+        "Jméno a příjmení",
+        "E-mail",
+        "Telefon (nepovinné)",
+        "S čím vám můžeme pomoci?"
+      ],
+      "legal": "Údaje použijeme jen k odpovědi. <a href=\"/zpracovani-osobnich-udaju\">Jak s nimi zacházíme</a>",
+      "submit": "Odeslat zprávu",
+      "successTitle": "Děkujeme, zpráva dorazila",
+      "successText": "Ozveme se vám na {email}.",
+      "successPhone": "Pokud to spěchá, zavolejte na {phone}."
+    },
+    "cookie_lista": {
+      "title": "Cookies na tomto webu",
+      "text": "Analytické a marketingové cookies k měření návštěvnosti a kampaní použijeme jen s vaším souhlasem. Volbu změníte kdykoli v patičce. Podrobnosti najdete v <a href=\"/cookies\">zásadách cookies</a>.",
+      "necessary": "<strong>Nezbytné</strong> – základní chod webu a ochrana formuláře proti spamu. Vždy aktivní.",
+      "analytics": "<strong>Analytické</strong> – měření návštěvnosti přes Google Analytics 4.",
+      "marketing": "<strong>Marketingové</strong> – měření kampaní a remarketing v Google Ads, Metě a Skliku.",
+      "reject": "Odmítnout vše",
+      "settings": "Nastavení",
+      "save": "Uložit volbu",
+      "accept": "Přijmout vše"
+    },
+    "dekujeme": {
+      "_poznamka": "Stránka po odeslání formuláře bez JavaScriptu.",
+      "title": "Děkujeme, zpráva dorazila",
+      "text": "Ozveme se vám e-mailem.",
+      "errorTitle": "Zprávu se nepodařilo odeslat",
+      "back": "Zpět na úvod"
+    },
+    "stranka_404": {
+      "title": "Stránka neexistuje",
+      "text": "Tuto stránku jsme nenašli. Možná jsme ji přesunuli.",
+      "home": "Zpět na úvod"
+    },
+    "popis_firmy": {
+      "_poznamka": "Popis firmy pro vyhledávače (schema.org Organization) a llms.txt.",
+      "description": "Webová analytika a měření pro e-shopy a B2B firmy: GA4 a Google Tag Manager, server-side tracking, cookie lišta a Consent Mode v2, měření konverzí, BigQuery a dashboardy."
+    },
+    "nadpis_faq": "Časté otázky"
+  }
+}

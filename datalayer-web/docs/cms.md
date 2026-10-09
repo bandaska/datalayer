@@ -157,6 +157,10 @@ v tlačítkách a odkazech kreslí CSS, do textů je nepište.
   (`app/components/landing/Blocks.tsx`), editor (`app/components/admin/BlockEditor.tsx` – popis,
   výchozí hodnota, formulář), čištění HTML (`app/lib/cms/sanitize.server.ts`), texty pro kontrolu
   (`app/lib/textRules.ts`) a test.
+- **Export textů** pro revizi jinými nástroji: `npm run export:content` uloží všechny stránky
+  a sdílené texty (menu, patička, formulář, cookie lišta) z výchozího obsahu do jednoho JSON
+  v `../seo-analyza/2026-10-09_export-textu/obsah-webu.json`, i se zadáním a pravidly textů.
+  Úpravy z administrace v něm nejsou.
 - **Lokálně** proti emulátoru Firestore: `npm run db:seed`, `npm run admin:create -- …`, potom
   v administraci Migrace → Nasadit čekající. Bez importu web jede z výchozího obsahu.
 - Testy: `tests/content.test.ts` (výchozí obsah, odkazy, kotvy, pravidla textů) a
