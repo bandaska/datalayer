@@ -74,6 +74,7 @@ const { migration: noPersonMigration } = await import('~/migrations/scripts/2026
 const { migration: auditMigration } = await import('~/migrations/scripts/20261009_jazykovy_audit');
 const { migration: uxMigration, REMOVED_PAGES } = await import('~/migrations/scripts/20261009_ux_redukce');
 const { migration: revisionMigration } = await import('~/migrations/scripts/20261102_revize_textu');
+const { migration: finishMigration } = await import('~/migrations/scripts/20261102_audit_dokonceni');
 const { importPage } = await import('~/migrations/helpers');
 type MigrationContext = import('~/migrations/types').MigrationContext;
 
@@ -571,6 +572,33 @@ describe('migrace 20261102_revize_textu', () => {
     const snapshot = JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')));
     const second = await revisionMigration.run(ctx);
     expect(second).toBe(`stránky: 0 přepsaných, ${DEFAULT_PAGES.length} beze změny; menu a patička: beze změny; texty webu: beze změny`);
+    expect(JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')))).toBe(snapshot);
+  });
+});
+
+describe('migrace 20261102_audit_dokonceni', () => {
+  it('přepíše stránky se zálohou, cookie lištu a 404 změní jen s výchozím zněním', async () => {
+    await migration.run(ctx);
+    const kontaktDoc = stored('kontakt')!;
+    docs.set('pages/kontakt', { ...kontaktDoc, hero: { ...(kontaktDoc.hero as object), h1: 'Napište nám nebo rovnou zavolejte' } });
+    const texts = decodeNested(docs.get('content/texts')) as Record<string, Record<string, unknown>>;
+    texts.cookieBar = { ...texts.cookieBar, title: 'Cookies na tomto webu', reject: 'Odmítnout vše', accept: 'Vlastní text z administrace' };
+    const { contact: _c, ...notFound } = texts.notFound;
+    texts.notFound = { ...notFound, title: 'Stránka neexistuje' };
+    docs.set('content/texts', encodeNested(texts) as Doc);
+
+    const summary = await finishMigration.run(ctx);
+    expect(summary).toContain('stránky: 1 přepsaných');
+    expect(summary).toContain('cookieBar.title');
+    expect((stored('kontakt')?.hero as { h1: string }).h1).toBe('Kontakt');
+    expect((docs.get('pages_backup/kontakt@20261102_audit_dokonceni')?.hero as { h1: string }).h1).toBe('Napište nám nebo rovnou zavolejte');
+    const after = decodeNested(docs.get('content/texts')) as Record<string, Record<string, unknown>>;
+    expect(after.cookieBar).toMatchObject({ title: 'Nastavení cookies', reject: 'Odmítnout volitelné', accept: 'Vlastní text z administrace' });
+    expect(after.notFound).toMatchObject({ title: 'Tuto stránku jsme nenašli', contact: 'Kontakt' });
+    expect(textsSchema.safeParse(after).success).toBe(true);
+
+    const snapshot = JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')));
+    expect(await finishMigration.run(ctx)).toBe(`stránky: 0 přepsaných, ${DEFAULT_PAGES.length} beze změny; texty webu: beze změny`);
     expect(JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')))).toBe(snapshot);
   });
 });

@@ -5,9 +5,6 @@
 **Účel:** podklad pro úpravu obsahu a rozvržení před ostrým spuštěním.  
 **Neměnit:** úvodní hero obrázek s diagramem na homepage. Jeho obsah, vzhled ani animaci tento návrh neupravuje. Text vedle něj upravit lze.
 
-> Poznámka k uložení: dokument dodal klient 2. listopadu 2026 ve zprávě. Dorazily kapitoly 1–10;
-> kapitoly ke stránkám E-shopy, B2B, O nás, Kontakt a právním stránkám v podkladu chybí.
-
 ## 1. Hlavní závěr
 
 Web má dobrý odborný základ a rozumně zvolená témata služeb. Slabší je způsob, jakým nabídku vysvětluje: dlouhé technické úvody, opakované problémové scénáře, chybějící konkrétní lidé a několik příliš silných slibů. Návštěvník se dozví hodně o nástrojích, méně o tom, co si přesně objednává, kdo za práci odpovídá a jak bude spolupráce probíhat.
@@ -637,3 +634,508 @@ Pro běžné používání připravíme přehledy s filtry a vysvětlením metri
 Kontakt H2 **„Proberme vaše reporty a zdroje dat“**; text **„Napište, jaké přehledy dnes připravujete a která data spojujete ručně. Navrhneme, zda stačí upravit reporting, nebo má smysl datový sklad.“**
 
 Související odkazy: **Nastavení GA4 a GTM**, **Řešení pro e-shopy**, **Řešení pro B2B firmy**.
+
+## 11. Řešení pro e-shopy — `/reseni/e-shopy`
+
+**Úloha:** ukázat vhodný rozsah pro e-shop a navést na konkrétní služby; nepůsobit jako povinný balík sedmi technologií. **P1.**
+
+### E01 — Hero
+
+H1 **„Webová analytika a měření pro e-shopy“**.
+
+> Nastavíme měření nákupů a reklamních konverzí podle vaší platformy a používaných nástrojů. Navážeme na funkční integrace, odstraníme zjištěné duplicity a porovnáme data s objednávkami. Serverové měření nebo reporting marže doplníme tam, kde mají konkrétní využití.
+
+CTA **„Probrat měření e-shopu“**.
+
+### E02 — Nahradit „Poznáváte se?“
+
+H2 **„Co má měření e-shopu zodpovědět“**. Smazat nedoložené tvrzení o „většině e-shopů, které k nám přijdou“. Karty:
+
+- **Co se zapisuje do analytiky.** „Zda události odpovídají nákupnímu procesu a zda se objednávky neposílají opakovaně.“
+- **Jak se vyhodnocuje reklama.** „Které konverze a hodnoty reklamní systémy dostávají a podle čeho je porovnáváte.“
+- **Co se děje po změně webu.** „Zda nová šablona, platební brána nebo plugin neovlivnily měření.“
+- **Jak souvisí reklama s hospodařením e-shopu.** „Jak do reportingu zahrnout náklady, storna, vratky a dohodnutou marži.“
+
+Dnešní formulace „po odečtení marže“ je ekonomicky matoucí. Návrh ji odstraňuje; v reportu musí být jasné, jak se marže počítá a které další náklady se od ní odečítají.
+
+### E03 — Nahradit „Sedm vrstev“ třemi úrovněmi podle potřeby
+
+H2 **„Rozsah podle potřeb e-shopu“**. Úvod **„Ne každý e-shop potřebuje všechny nástroje. Navrhneme návaznost podle současného stavu a toho, jak budete data používat.“**
+
+| Úroveň | Přesná textace | Navazující odkazy |
+|---|---|---|
+| Základní měření | „Datová vrstva nebo funkční integrace platformy, GA4, měření nákupů a správné předávání souhlasů.“ | GA4 a GTM; Cookie lišta |
+| Konverze pro reklamu | „Definice konverzí, jejich hodnoty a předání reklamním systémům. Serverová rozhraní doplníme podle potřeby.“ | Měření konverzí; Server-side měření |
+| Reporting hospodaření a marketingu | „Propojení nákladů, objednávek, storen a marže do společného přehledu.“ | BigQuery a reporting |
+
+Pod úrovněmi krátký výstupový blok:
+
+> **Co při předání získáte**  
+> Přehled nastavení, výsledky testovacích nákupů, popis zjištěných rozdílů a dokumentaci pro další správu. Konkrétní rozsah uvedeme předem v nabídce.
+
+### E04 — Platformy: přepsat všech šest panelů
+
+H2 místo „Co vaše platforma změří sama – a co chybí“: **„Měření podle e-shopové platformy“**.
+
+> Nejprve ověříme konkrétní verzi platformy, doplňky a současné nastavení. Funkční integrace zachováme a doplníme to, co vyžaduje měřicí plán.
+
+Záložky jsou funkční a na kontrolovaném mobilu se zalamují; zachovat. V každé nahradit „Umí / Chybí“ dvěma popisky **„Co prověříme“** a **„Co lze doplnit“**:
+
+| Panel | Co prověříme | Co lze doplnit |
+|---|---|---|
+| Shoptet | „Vestavěné integrace, předávání souhlasů a případný souběh s GTM. Ověříme události i hodnoty testovací objednávky.“ | „Další události, parametry a napojení podle možností používaného řešení.“ |
+| Upgates | „Nastavení analytiky, reklamních nástrojů a dat předávaných během nákupu.“ | „Chybějící části měřicího plánu a návaznost na reporting.“ |
+| Shopify | „Použité aplikace, pixely a možnosti měření nákupního procesu v konkrétním tarifu a konfiguraci.“ | „Vlastní události a návazná napojení v mezích aktuálních možností platformy.“ |
+| WooCommerce | „Pluginy, šablonu, měření objednávek a chování při platbě. Zkontrolujeme souběh více integrací.“ | „Úpravy událostí nebo serverové napojení podle potřeb e-shopu.“ |
+| PrestaShop | „Použité moduly, verzi platformy, souhlasy a měření objednávek.“ | „Úpravy datové vrstvy a napojení nástrojů podle konkrétní sestavy modulů.“ |
+| Vlastní řešení | „Současnou datovou vrstvu, integrace a dostupné události v nákupním procesu.“ | „Specifikaci pro vývojáře, doplnění událostí a testovací scénáře pro další změny webu.“ |
+
+Tento přepis neprohlašuje dnešní tabulku za technicky chybnou ve všech detailech. Odstraňuje nepodložené univerzální soudy a zastarávající termíny z obchodní stránky. Podrobná srovnání ponechat jen s verzí, datem a zdrojem, který se průběžně udržuje.
+
+### E05 — FAQ a kontakt
+
+**Může stačit vestavěná integrace platformy?**  
+Ano, pokud pokrývá potřebné události a funguje správně. Nejdřív ji ověříme; vlastní řešení navrhujeme podle skutečných potřeb.
+
+**Proč se počet objednávek liší mezi GA4 a administrací?**  
+Systémy sledují odlišná data a rozdíly mohou souviset se souhlasy, blokováním měření, zpracováním objednávek i chybami implementace. Ověříme konkrétní příčiny a dohodneme způsob porovnávání.
+
+**Co určuje cenu měření e-shopu?**  
+Platforma, současné integrace, počet reklamních systémů a rozsah událostí. Serverové měření, datový sklad a průběžný provoz uvedeme jako samostatné části nabídky.
+
+**Kdy je potřeba vývojář e-shopu?**  
+Pokud je nutné upravit šablonu, datovou vrstvu nebo serverovou integraci. Součinnost určíme podle konkrétní platformy a zadání; nepředpokládáme ji automaticky u každého projektu.
+
+Kontakt H2 **„Proberme měření vašeho e-shopu“**; text **„Pošlete adresu e-shopu, název platformy a používané reklamní systémy. Navrhneme, které části měření mají nyní největší smysl řešit.“**
+
+## 12. Řešení pro B2B — `/reseni/b2b-a-lead-generation`
+
+**Úloha:** propojit marketing a obchod s důrazem na kvalitní poptávky a zakázky. **P1.**
+
+### L01 — Hero
+
+H1 **„Měření poptávek a zakázek pro B2B firmy“**.
+
+> Propojíme měření webových poptávek s výsledky obchodu v CRM. Uvidíte, ze kterých zdrojů přicházejí kvalifikované poptávky a zakázky. Podle možností systémů nastavíme také předávání vybraných výsledků zpět do reklamy jako offline konverze.
+
+CTA **„Probrat měření poptávek“**. Výraz „lead“ ponechat jednou v těle: **„Poptávku potenciálního zákazníka označují marketingové nástroje také jako lead.“** Nemusí být první větou celé stránky.
+
+### L02 — Místo „Poznáváte se?“
+
+H2 **„Co potřebuje marketing vědět o výsledcích obchodu“**:
+
+- **Které poptávky jsou relevantní.** „Samotný počet formulářů nevypovídá o jejich obchodní kvalitě.“
+- **Odkud poptávka přišla.** „Zdroj a dostupné identifikátory potřebujete uchovat při předání do CRM.“
+- **Jak se poptávka vyvíjí.** „Kvalifikace, nabídka a uzavřená zakázka mají odlišný význam pro vyhodnocení.“
+- **Co lze vracet do reklamy.** „Předávání konverzí závisí na dostupných údajích, souhlasech a limitech cílových systémů.“
+
+Odstranit příběh o „polovině studentů, konkurence a spamu“ a obecné tvrzení, že optimalizace vždy přivádí „levnější, ale horší“ poptávky.
+
+### L03 — Před technickými výstupy vysvětlit postup
+
+H2 **„Od formuláře k zakázce“**. Jednoduchá řada čtyř kroků:
+
+> **Poptávka z webu → záznam v CRM → vyhodnocení obchodem → reporting a vybrané konverze pro reklamu.**
+
+Pod ni text:
+
+> Nejdřív s marketingem a obchodem dohodneme, co znamená kvalifikovaná poptávka a kdo aktualizuje její stav. Potom nastavíme předávání dat. Bez používaných pravidel v CRM nebude technická integrace sama stačit.
+
+### L04 — Výstupy
+
+H2 **„Co zahrnuje řešení“**, šest položek:
+
+1. **Měření formulářů:** „Rozlišení formulářů a jejich úspěšného odeslání. Detailnější sledování chyb a jednotlivých kroků domluvíme podle potřeby.“
+2. **Předání do CRM:** „Uložení dostupného zdroje, identifikátoru poptávky a dalších dohodnutých údajů.“
+3. **Pravidla obchodních fází:** „Definice kvalifikace, nabídky a zakázky včetně odpovědnosti za aktualizaci.“
+4. **Offline konverze:** „Předávání vybraných výsledků podporovaným reklamním systémům a kontrola jejich přijetí.“
+5. **Telefonické poptávky:** „Podle rozsahu od měření kliknutí na číslo až po napojení služby pro měření hovorů. Kliknutí na číslo samo nepotvrzuje uskutečněný hovor.“
+6. **Report výsledků:** „Přehled nákladů a jednotlivých fází poptávky podle dostupných dat. Datový sklad zapojíme, pokud je pro propojení potřebný.“
+
+Nepřislibovat detekci pole, na kterém návštěvník odešel, jen na základě měření začátku a odeslání formuláře. Odstranit automatický předpoklad BigQuery v každé zakázce. Přesná API a konverzní okna patří do návrhu integrace; nelze používat jeden limit pro všechny způsoby importu.
+
+### L05 — FAQ a kontakt
+
+**Jak se propojí CRM s reklamními systémy?**  
+Podle možností konkrétního CRM a cílových platforem. Může jít o podporovaný konektor, API nebo pravidelný export. Před realizací ověříme dostupná pole, identifikátory a možnosti párování.
+
+**Co ovlivňuje cenu?**  
+Počet formulářů a zdrojů poptávek, možnosti CRM, počet reklamních systémů a rozsah reportingu. Licence CRM, měření hovorů a případný cloud jsou samostatné položky.
+
+**Koho je potřeba zapojit na straně firmy?**  
+Marketing, obchod a správce CRM; podle rozsahu také vývojáře webu. Obchod určí význam jednotlivých fází a bude jejich stav průběžně udržovat.
+
+**Jak se pracuje s kontaktními údaji?**  
+Předem určíme nezbytná pole, účely a příjemce dat. Implementaci nastavíme podle odsouhlasených pravidel a dodáme popis datových toků. Hashování není anonymizace; přípustnost předání je potřeba posoudit pro konkrétní řešení.
+
+Kontakt H2 **„Proberme propojení webu a CRM“**; text **„Napište, jaké CRM používáte, odkud přicházejí poptávky a jak je obchod vyhodnocuje. Navrhneme první krok i potřebnou součinnost.“**
+
+Související odkazy: **Měření konverzí**, **BigQuery a reporting**. Aktuální Data Manager API a datum migrace ze stávajícího textu ověřit až pro konkrétní implementaci; tento audit jejich přesný rozsah nepotvrzuje.
+
+## 13. O datalayer.cz — `/o-nas`
+
+**Úloha:** ukázat, kdo službu dodává a proč mu svěřit přístupy a data. Současná stránka popisuje metodiku, ale téměř neodpovídá na „kdo“. **P1**, identita provozovatele **P0**.
+
+### O01 — Hero
+
+H1 **„O datalayer.cz“**.
+
+> Pomáháme firmám nastavit, ověřit a používat data z webové analytiky a marketingových nástrojů. Pracujeme v účtech klienta a výsledky předáváme s dokumentací.
+
+CTA **„Domluvit konzultaci“**. Velkou obecnou síťovou ikonu nahradit skutečným portrétem nebo fotografií lidí, kteří práci dodávají. Není-li fotografie k dispozici, použít čisté textové záhlaví, nikoli ilustrační tým.
+
+### O02 — Nová sekce bezprostředně za úvodem
+
+H2 **„Kdo bude na projektu pracovat“**. Vyplnit pro každého skutečného hlavního člověka:
+
+> **[DOPLNIT: jméno a příjmení] — [DOPLNIT: role]**  
+> V projektech zajišťuji [DOPLNIT: konkrétní oblast odpovědnosti]. Zkušenosti mám zejména s [DOPLNIT: doložitelné typy projektů nebo specializace].  
+> [DOPLNIT: odkaz na ověřený profesní profil, pokud jej chce osoba zveřejnit.]
+
+Toto je jediné místo, kde je přirozené „já“ — osobní medailonek jasně označené osoby. U sólo podnikání přímo napsat, kdo je hlavní kontaktní a realizační osobou a zda některé práce zajišťují spolupracovníci. Bez podkladů netvrdit „technický tým“ v metadatech.
+
+### O03 — Nahradit „Proč začínáme u datové vrstvy“
+
+H2 **„Jak přistupujeme k zakázkám“**:
+
+> Začínáme tím, jaké otázky potřebujete z dat zodpovědět. Potom prověříme zdroje, současné nastavení a potřebnou součinnost. Rozsah, cenu a výstupy domluvíme před zahájením práce.
+>
+> Implementaci ověřujeme na dohodnutých scénářích. Při předání vysvětlíme nastavení, zjištěné rozdíly i omezení dostupných dat.
+
+„Vždy začínáme u datové vrstvy“ nahradit skutečným diagnostickým postupem. Ne každá zakázka vyžaduje její přestavbu.
+
+### O04 — Přepsat čtyři pravidla práce s daty
+
+H2 **„Účty, přístupy a předání“**:
+
+- **Účty spravuje klient.** „Pracujeme s přidělenými rolemi a potřebnými oprávněními.“
+- **Rozsah dat má svůj účel.** „Určíme, která data řešení potřebuje a kam se předávají.“
+- **Souhlasy jsou součástí návrhu.** „Technické nastavení vychází z dohodnutých pravidel pro jednotlivé nástroje.“
+- **Nastavení je zdokumentované.** „Předáme popis řešení a podklady pro další správu.“
+
+Původní „Osobní údaje nikdy v čitelné podobě“ je příliš široké — kontaktní formulář i práce s CRM logicky čitelné údaje zahrnují. Pokud je třeba samostatné technické upřesnění, použít **„Do GA4 neposíláme e-mailové adresy ani telefonní čísla. Předávání kontaktních údajů do reklamních nástrojů řešíme odděleně podle konkrétního účelu a nastavení.“**
+
+### O05 — Důkazy místo dalšího prodejního odstavce
+
+Před kontakt vložit **„Ukázky naší práce“**. Publikovat pouze skutečné podklady: klient a souhlas se zveřejněním, výchozí zadání, provedené práce, doložitelný výsledek a období. Pokud není možné klienta jmenovat, pravdivě uvést anonymizaci. Nevydávat modelový příklad za referenci a nevytvářet neověřená loga nebo citace.
+
+Do doby dodání podkladů použít krátký blok **„Jaké výstupy předáváme“** s odkazem na ukázku auditu a popisem dokumentace. Kontakt H2 **„Napište, co potřebujete vyřešit“**, text **„Společně upřesníme zadání a domluvíme, zda a v jakém rozsahu vám můžeme pomoci.“**
+
+## 14. Kontakt — `/kontakt`
+
+**Úloha:** umožnit rychlé oslovení a vysvětlit, co následuje po zprávě. **P1.**
+
+### T01 — Zrušit velký úvodní blok
+
+Současné H1 „Napište nám nebo rovnou zavolejte“ nahradit **„Kontakt“**. Pod něj jediný odstavec:
+
+> Napište, co potřebujete vyřešit, nebo zavolejte. Na úvodní konzultaci upřesníme zadání a další postup. Konzultace je nezávazná a zdarma.
+
+Hned poté kontakty a formulář, na desktopu ve dvou sloupcích; na mobilu krátké kontakty nad formulářem. Neopakovat druhé obecné „Napište nám, co řešíte“ jako další velké záhlaví.
+
+### T02 — Kontakty
+
+Viditelně zachovat **one@datalayer.cz** a **+420 704 664 774**, včetně odkazů `mailto:` a `tel:`. Před ně přidat **[DOPLNIT: jméno kontaktní osoby a role]**. Neměnit e-mailovou adresu pouze kvůli anglickému názvu schránky; důležitější je, kdo odpovídá.
+
+Formulář podle G05. Pod ním:
+
+> **Co bude následovat**  
+> Ozveme se na uvedený e-mail a upřesníme zadání. Pokud bude spolupráce dávat smysl, připravíme návrh rozsahu, ceny a potřebné součinnosti.
+
+### T03 — Identifikace provozovatele
+
+Pod kontaktní část přidat malý blok **„Fakturační údaje“**:
+
+> [DOPLNIT: obchodní jméno / jméno podnikatele]  
+> IČO: [DOPLNIT]  
+> Sídlo: [DOPLNIT]  
+> [DOPLNIT: DIČ a údaj o zápisu, pokud se vztahují na provozovatele.]
+
+Bez potvrzené provozovny nepřidávat mapu, otevírací dobu nebo LocalBusiness adresu určenou pro návštěvy.
+
+## 15. Zpracování osobních údajů — `/zpracovani-osobnich-udaju`
+
+**Úloha:** srozumitelně popsat skutečné zpracování. **P0.** Níže je redakční a strukturální návrh; chybějící provozní skutečnosti se musí doplnit a právní formulace posoudit podle reálného řešení.
+
+### P01 — Identita a úvod
+
+H1 **„Zpracování osobních údajů“** ponechat. Zkrátit výšku záhlaví. Perex:
+
+> Zde najdete informace o tom, kdo zpracovává údaje z tohoto webu, k jakým účelům a jak můžete uplatnit svá práva.
+
+H2 **„Správce a kontakt“**; nahradit neurčité „Správce je provozovatel webu“:
+
+> Správcem osobních údajů je [DOPLNIT: úplné jméno nebo název], IČO [DOPLNIT], se sídlem [DOPLNIT]. S dotazy ke zpracování údajů se můžete obrátit na one@datalayer.cz.
+
+Konkrétní identita a kontakty správce patří mezi informace podle článku 13 GDPR. [Text nařízení](https://eur-lex.europa.eu/legal-content/CS/TXT/?uri=CELEX%3A32016R0679)
+
+### P02 — Rozdělit formulář a marketing do oddělených účelů
+
+První H2 **„Vyřízení poptávky“**:
+
+> Při odeslání formuláře zpracováváme jméno, e-mail a text zprávy. Pokud je vyplníte, také telefon a adresu webu. Údaje používáme k vyřízení poptávky a domluvě případné spolupráce.
+
+Adresu webu zahrnout, pokud se nové pole skutečně přidá. Následující odstavec s právním titulem ponechat či upravit podle posouzení skutečných situací; nepoužívat automaticky jediný titul pro všechny zprávy a všechny kontaktní osoby.
+
+Samostatný H2 **„Měření úspěšnosti reklamy“** — pokud toto zpracování skutečně probíhá:
+
+> Pokud udělíte příslušný souhlas, mohou být při odeslání formuláře použity také kontaktní údaje převedené do podoby hashe pro měření reklamních konverzí. Hash umožňuje párování údajů a není anonymizací. [DOPLNIT: konkrétní příjemci, účel, předávané údaje a podmínky tohoto zpracování.]
+
+Současný popis vytvoření SHA-256 otisku nedostatečně vysvětluje, komu se předává a proč. Pokud se otisk pouze vytváří a nikam nepředává, popsat právě to; text musí vycházet z ověřené implementace. Nepublikovat navržený podmíněný odstavec jako zjištěný fakt.
+
+### P03 — Ochrana proti spamu
+
+H2 **„Ochrana formuláře“**. Nahradit technický odstavec srozumitelnější verzí:
+
+> Formulář chráníme proti automatizovanému zneužití. Používáme [DOPLNIT: skutečně aktivní službu a poskytovatele]. Při ověření se zpracovávají [DOPLNIT: ověřené kategorie technických údajů]. Podrobnosti o účelu, době uchování a příjemci uvádíme níže.
+
+Dnešní text jmenuje Cloudflare Turnstile; při realizaci potvrdit, že je na produkci aktivní a za jakých podmínek. Nepovažovat samotnou zmínku v zásadách za důkaz skutečného nasazení. Doplnit konkrétní nebo srozumitelně odvozenou retenční dobu pro omezení počtu požadavků; „krátce“ je neurčité.
+
+### P04 — Přehled účelů, příjemců a dob
+
+Za předchozí bloky vložit tabulku. Před zveřejněním vyplnit:
+
+| Účel | Údaje | Právní základ | Příjemci / poskytovatelé | Doba uchování |
+|---|---|---|---|---|
+| Vyřízení poptávky | Jméno, e-mail, zpráva a volitelné údaje | Potvrdit podle situace | Potvrzený provoz databáze a e-mailu | Současný text: nejpozději 12 měsíců od poslední komunikace bez vzniku spolupráce; potvrdit reálné mazání. |
+| Ochrana formuláře | Ověřené technické údaje | Potvrdit | Skutečně aktivní poskytovatel | Doplnit |
+| Analytika | Podle zapnuté konfigurace | Potvrdit | Skutečně aktivní analytické nástroje | Doplnit podle nastavení |
+| Reklamní měření | Podle zapnuté konfigurace, případně hash kontaktních údajů | Potvrdit | Konkrétní reklamní příjemci | Doplnit |
+
+Tabulka je zadání k doplnění, nikoli hotové informace k publikaci. Zachovat pravdivě doložené informace o Google Cloud Firestore. „Poskytovatel e-mailových služeb“ konkretizovat podle skutečného dodavatele. Přenosy mimo EU popsat podle použitých služeb a smluv; nevytvářet dojem, že se automaticky používají všechny zmiňované záruky.
+
+### P05 — Práva a správa souhlasů
+
+H2 **„Vaše práva a možnosti“**. Návrh úvodního textu:
+
+> Podle podmínek stanovených právními předpisy můžete požádat o přístup k údajům, opravu, výmaz, omezení zpracování nebo přenositelnost. U příslušných zpracování můžete vznést námitku. Napište na one@datalayer.cz.
+
+Pod něj **„Souhlas s cookies můžete změnit v nastavení cookies.“** s funkčním tlačítkem **„Nastavit cookies“**. Zachovat odkaz na ÚOOÚ a doplnit **„Poslední aktualizace: [DOPLNIT: datum skutečného schválení]“**. Do této stránky nepřidávat prodejní formulář ani reference.
+
+## 16. Cookies — `/cookies` a společný cookie panel
+
+**Úloha:** popsat volby návštěvníka a skutečný tok dat. **P0/P1.**
+
+### CK01 — Záhlaví a hlavní akce
+
+H1 **„Cookies a nastavení souhlasu“**. Perex:
+
+> Zde můžete změnit souhlas s analytickými a marketingovými cookies a zjistit, které technologie web používá.
+
+Tlačítko **„Změnit nastavení cookies“** umístit bezprostředně pod perex v kompaktním bloku. Současná funkce otevření nastavení funguje; zachovat ji a omezit velké vertikální mezery.
+
+### CK02 — „Jak souhlas funguje“
+
+Obecný úvod:
+
+> Svou volbu můžete kdykoli změnit tlačítkem na této stránce nebo odkazem Nastavení cookies v patičce. Analytické a marketingové cookies lze odmítnout. Nezbytné technologie zajišťují základní funkce webu.
+
+Za tento text vložit **pouze jednu ověřenou variantu** podle produkční implementace:
+
+- **Pokud je použit basic režim:** „Google tagy pro analytiku a reklamu spouštíme až po udělení odpovídajícího souhlasu. Bez něj tyto tagy data Googlu nepředávají.“
+- **Pokud je použit advanced režim:** „Google tagy mohou při neuděleném souhlasu odesílat požadavky bez cookies. Tyto požadavky mohou obsahovat informace o události a technickém kontextu. Přesný rozsah a účel zpracování popisujeme v informacích o osobních údajích.“
+
+Nenechávat současné „dostávají jen signál, že souhlas chybí“, pokud konfigurace posílá více informací. Sjednotit s texty na službě server-side a s cookie panelem. Tento audit neurčuje právní přípustnost konkrétního režimu a neověřil jeho kompletní síťový provoz. [Technický popis Googlu](https://developers.google.com/tag-platform/security/concepts/consent-mode)
+
+### CK03 — Přehled technologií
+
+H2 **„Používané cookies a další technologie“**. Zachovat tabulku, doplnit poskytovatele, účel a informaci, kdy se technologie aktivuje. Každý řádek založit na skutečně naměřené konfiguraci, ne na seznamu potenciálních nástrojů.
+
+Sloupce: **Název · Poskytovatel · Účel · Doba uchování · Kategorie / podmínka aktivace**. Dnešní `_ga`, `_gcl_au` a `_fbp` ověřit proti realitě; nepřebírat doby platnosti automaticky z obecných výchozích hodnot. `dl_admin_session` označit „pouze při přihlášení do administrace“, pokud tomu tak je.
+
+Text pod tabulkou:
+
+> Přehled odpovídá nastavení ověřenému dne [DOPLNIT: datum]. Způsob zpracování osobních údajů a příjemce dat uvádíme na stránce Zpracování osobních údajů.
+
+Na mobilu zachovat čitelnost buněk, případný vodorovný posun omezit na tabulku, nikoli celý web.
+
+### CK04 — Text společného cookie panelu
+
+Titulek **„Nastavení cookies“**. Základní text:
+
+> Nezbytné cookies zajišťují chod webu. S vaším souhlasem použijeme také analytické a marketingové cookies. Volbu můžete kdykoli změnit v patičce webu. Podrobnosti najdete v zásadách cookies.
+
+Při advanced režimu navíc srozumitelně zpřístupnit informaci o přenosech bez cookies; výše uvedená krátká formulace sama celý tok dat nevysvětluje.
+
+Tlačítka: **„Odmítnout volitelné“ · „Upravit nastavení“ · „Přijmout vše“**. Zachovat srovnatelnou dostupnost přijetí a odmítnutí. V podrobném nastavení **„Uložit nastavení“**. Popisky kategorií:
+
+- **Nezbytné:** „Zajišťují základní funkce webu a uložení vaší volby. Jsou vždy aktivní.“
+- **Analytické:** „Pomáhají vyhodnocovat návštěvnost a používání webu.“
+- **Marketingové:** „Slouží k měření reklamních kampaní a dalším popsaným reklamním účelům.“
+
+Poslední popisek zpřesnit podle skutečně aktivních účelů a příjemců; obecná kategorie nemá zastřít předávání kontaktních údajů. Současné odmítnutí a opětovné otevření nastavení jsou dobrý základ, nikoli nález k odstranění.
+
+## 17. SEO: konkrétní změny a produkční nastavení
+
+### S01 — Co je už nyní v pořádku
+
+Všech 13 obsahových stránek má vlastní title, meta description, canonical a právě jeden H1. Hlavní obsah i FAQ jsou v serverem vráceném HTML. Sitemap obsahuje stejných 13 URL, které byly dohledány v interních odkazech. Stránky mají `lang="cs"`. V metadatech je Open Graph a Twitter karta. Testovaný neexistující dokument vrací 404, testovaná varianta služby s lomítkem se přesměruje 301.
+
+To jsou dobré technické základy. Nejde o potvrzení úplné validity strukturovaných dat ani dostupnosti všech médií na budoucí produkci.
+
+### S02 — Předprodukce versus produkce · P0 při spuštění
+
+**Pozorovaný stav:** bez přístupu 401; po přihlášení na všech 13 stránkách `X-Robots-Tag: noindex, nofollow`. Pro tuto předprodukci je to žádoucí. Nic z toho nyní neodstraňovat. Samotné `robots.txt` s `Allow: /` za funkčním HTTP přihlášením není důkaz otevřené indexace.
+
+Canonical, `og:url`, strukturovaná data a sitemap nyní používají **https://datalayer.cz**. Návrh předpokládá, že jde o plánovanou produkční doménu; před spuštěním to potvrdit. Pokud bude jiná, změnit adresy jednotně ve všech těchto místech.
+
+Při ostrém spuštění:
+
+1. Na veřejné produkci odstranit HTTP přihlášení a zkontrolovat odpověď 200 bez přístupu.
+2. Na indexovatelných produkčních stránkách odstranit `noindex` z HTTP hlaviček i HTML. Ochranu předprodukce zachovat odděleně.
+3. Ověřit self-canonical všech produkčních obsahových URL a jednotnou preferovanou doménu včetně HTTPS.
+4. Ověřit přesměrování HTTP/HTTPS, www/bez www a lomítek na skutečné produkci. Tento audit testoval pouze jednu variantu lomítka na předprodukci.
+5. Zkontrolovat produkční robots.txt, sitemapu a nepřítomnost předprodukčních adres v odkazech a metadatech.
+6. Založit nebo ověřit správnou Search Console, odeslat sitemapu a zkontrolovat vzorek URL nástrojem kontroly adresy.
+
+`robots.txt` ani canonical nejsou náhradou ochrany neveřejného webu. Pokud má Google vyhodnotit `noindex`, potřebuje mít možnost stránku načíst; neplést blokaci procházení s odstraněním z indexu. [Google: robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/intro), [Google: noindex](https://developers.google.com/search/docs/crawling-indexing/block-indexing), [Google: canonical](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)
+
+### S03 — Mapa témat a nové titulky · P1
+
+Nejde o výsledek výzkumu hledanosti; je to doporučené přiřazení témat podle obsahu a záměru stránek. Před další tvorbou obsahu ověřit reálnou poptávku. Stávající tematické URL není nutné měnit.
+
+| URL | Hlavní téma a záměr | Navržený title |
+|---|---|---|
+| `/` | Webová analytika; výběr dodavatele a služby | Webová analytika pro e-shopy a firmy — datalayer.cz |
+| `/sluzby/audit-mereni` | Audit měření, kontrola GA4 a GTM | Audit měření GA4, GTM a konverzí — datalayer.cz |
+| `/sluzby/implementace-ga4` | Nastavení GA4, implementace GTM | Nastavení GA4 a Google Tag Manageru — datalayer.cz |
+| `/sluzby/server-side-tracking` | Server-side tracking, sGTM | Server-side tracking a GTM — datalayer.cz |
+| `/sluzby/cookie-lista-consent-mode` | Nastavení cookie lišty a Consent Mode | Cookie lišta a Consent Mode v2 — datalayer.cz |
+| `/sluzby/mereni-konverzi` | Měření reklamních konverzí | Měření konverzí: Google Ads, Meta a Sklik — datalayer.cz |
+| `/sluzby/bigquery` | BigQuery, datový sklad, marketingový reporting | BigQuery a marketingový reporting — datalayer.cz |
+| `/reseni/e-shopy` | Řešení analytiky e-shopu podle platformy | Webová analytika a měření e-shopu — datalayer.cz |
+| `/reseni/b2b-a-lead-generation` | Poptávky, CRM, offline konverze | Měření B2B poptávek a offline konverzí — datalayer.cz |
+| `/o-nas` | Kdo službu poskytuje; důvěryhodnost | O datalayer.cz — přístup a spolupráce |
+| `/kontakt` | Kontakt a poptávka | Kontakt a úvodní konzultace — datalayer.cz |
+| `/zpracovani-osobnich-udaju` | Informace o osobních údajích | Zpracování osobních údajů — datalayer.cz |
+| `/cookies` | Přehled cookies a správa souhlasu | Cookies a nastavení souhlasu — datalayer.cz |
+
+Stejné hlavní téma má být patrné v title, H1 a úvodu; nemusí být mechanicky totožné. Google může výsledný titulek změnit podle dalších signálů stránky. Délku posuzovat v náhledu výsledku, nikoli jako pevný počet znaků zaručující zobrazení. [Doporučení Googlu pro titulky](https://developers.google.com/search/docs/appearance/title-link)
+
+### S04 — Nové meta descriptions · P1
+
+| URL | Přesný návrh description |
+|---|---|
+| `/` | Nastavení a audit webové analytiky pro e-shopy a B2B firmy. GA4, GTM, měření konverzí a propojení dat. S testy a dokumentací. |
+| `/sluzby/audit-mereni` | Prověříme GA4, GTM, cookie lištu a reklamní konverze. Dostanete přehled zjištění, priority a plán oprav měření. |
+| `/sluzby/implementace-ga4` | Nastavíme GA4 a Google Tag Manager, připravíme měřicí plán a zadání datové vrstvy. Výsledek otestujeme a předáme s dokumentací. |
+| `/sluzby/server-side-tracking` | Navrhneme server-side měření, předávání událostí a souhlasů. Posoudíme vhodnost řešení, potřebnou správu a náklady na provoz. |
+| `/sluzby/cookie-lista-consent-mode` | Nastavíme cookie lištu a Consent Mode v2. Ověříme měřicí nástroje před volbou návštěvníka, po souhlasu, odmítnutí i změně nastavení. |
+| `/sluzby/mereni-konverzi` | Nastavíme konverze pro Google Ads, Metu, Sklik a Heureku. Ověříme události, hodnoty i duplicity a vysvětlíme rozdíly mezi reporty. |
+| `/sluzby/bigquery` | Propojíme data z GA4, reklamy, e-shopu a CRM v BigQuery. Připravíme datový model a reporty s definicemi metrik a dokumentací. |
+| `/reseni/e-shopy` | Měření e-shopu podle platformy a potřeb firmy. GA4, reklamní konverze, souhlasy a návazný reporting s ověřením testovacích objednávek. |
+| `/reseni/b2b-a-lead-generation` | Propojíme poptávky z webu s výsledky v CRM. Nastavíme vyhodnocení kvality poptávek, reporting zakázek a vybrané offline konverze. |
+| `/o-nas` | Jak datalayer.cz přistupuje k analytice, přístupům a předání práce. Seznamte se s principy spolupráce a odpovědností za projekt. |
+| `/kontakt` | Napište na one@datalayer.cz nebo zavolejte na +420 704 664 774. Na nezávazné úvodní konzultaci upřesníme zadání a další postup. |
+| `/zpracovani-osobnich-udaju` | Informace o správci, účelech zpracování, příjemcích a uchování osobních údajů z webu datalayer.cz. Kontakty a možnosti uplatnění práv. |
+| `/cookies` | Přehled cookies a dalších technologií na datalayer.cz. Zjistěte jejich účel a změňte souhlas s analytickými a marketingovými cookies. |
+
+Meta description má odpovídat skutečně publikovanému obsahu. Google ji nemusí použít a může sestavit úryvek z textu stránky; nehodnotit úpravu podle garantovaného zobrazení. [Google: popisy a úryvky](https://developers.google.com/search/docs/appearance/snippet)
+
+### S05 — Strukturovaná data · P1/P2
+
+**Pozorovaný stav:** homepage používá Organization/ProfessionalService, WebSite a FAQPage; osm stránek služeb a řešení BreadcrumbList, Service a FAQPage; ostatní stránky BreadcrumbList. Devět FAQ sekcí obsahuje celkem 36 otázek.
+
+- Po přepisu upravit vedle viditelného obsahu také JSON-LD, aby neobsahoval staré sliby, otázky a názvy služeb.
+- U identifikačních dat doplnit pouze ověřené jméno, kontakty a další odpovídající údaje. Profesní profily `sameAs` pouze skutečné. Výběr typu sladit s reálným provozovatelem; schéma nemá vytvářet neexistující kancelář nebo tým.
+- BreadcrumbList sladit s viditelnou navigací. Service použít jako popis služby, ne jako příslib speciálního vzhledu ve vyhledávání.
+- FAQ zachovat kvůli návštěvníkům. **Nestavět SEO přínos na FAQ rich results:** Google oznámil jejich ukončení od 7. května 2026. Není důvod vynakládat práci na jejich získávání. Samotné FAQPage lze ponechat konzistentní s obsahem, jeho odstranění není hlavní prioritou. [Aktuální oznámení Google Search Central](https://developers.google.com/search/updates)
+- Nepřidávat hvězdičková hodnocení ani počty recenzí bez skutečného a vhodného podkladu. Syntaktickou i věcnou správnost ověřit po implementaci.
+
+### S06 — Interní odkazy, obsah a další rozvoj · P1/P2
+
+Současné služby mají přirozený překryv. Omezit opakování úplného technického výkladu na každé stránce a využít odkazy:
+
+| Zdrojová stránka | Doporučené odkazy a důvod |
+|---|---|
+| Audit | GA4/GTM pro realizaci oprav; konverze pro reklamní část. |
+| GA4/GTM | Audit při nejasném stavu; konverze pro reklamní definice; BigQuery pro reporting. |
+| Server-side | Cookies jako podmínka nastavení; konverze jako účel; audit pro nefunkční základ. |
+| Cookies | Audit širšího měření; server-side pro návazné předávání souhlasu. |
+| Konverze | GA4/GTM pro datovou vrstvu; B2B pro CRM; server-side pro zvolená API napojení. |
+| BigQuery | GA4/GTM jako zdroj; e-shopy a B2B pro konkrétní využití reportu. |
+| E-shopy | Odkazy ze tří úrovní řešení na jednotlivé služby. |
+| B2B | Konverze a BigQuery; neopakovat jejich kompletní vysvětlení. |
+| O datalayer.cz | Skutečné ukázky práce a kontakt. |
+
+Další obsah přidávat teprve po doplnění lidí a důkazů práce. Vhodné náměty: „Proč se liší objednávky v GA4 a administraci“, „Co obsahuje audit měření“, „Kdy stačí přímé konektory a kdy BigQuery“. Každý text má řešit konkrétní otázku, uvést autora, datum ověření a navázat na službu. Nevytvářet automaticky desítky městských nebo platformových stránek se stejným obsahem.
+
+### S07 — Sitemap, média, výkon a měření · P1/P2
+
+- V sitemapě mají všechny URL `lastmod` 2026-10-09. Může to být správné společné datum publikace; bez historie jej nelze označit za chybu. Při úpravách zapisovat skutečnou významnou změnu, ne automaticky aktuální datum při každém nasazení.
+- Na produkci ověřit dostupnost sdílecího obrázku `/og/default.png`, favicon a dalších médií. Dnes metadata odkazují na produkční doménu; její správnost není ověřena samotným fungováním předprodukce.
+- Po změně textů synchronizovat Open Graph a Twitter titulky a popisy. Na službách lze vytvořit samostatné sdílecí karty s názvem služby; homepage hero diagram tím není dotčen.
+- Změřit výkon až na reprezentativním hostingu. Z auditu nevychází tvrzení, že je web pomalý. Ověřit načtení fontů, posuny rozvržení a dopad měřicích skriptů; neprovádět plošné „optimalizace“ bez výsledků měření.
+- U odkazů měřit kliknutí na konzultaci, telefon a e-mail. Odeslání formuláře měřit jako úspěch až po potvrzení serverem. Kliknutí na telefon neoznačovat za uskutečněný hovor a rozbalení FAQ za obchodní konverzi.
+- Do analytických událostí neposílat obsah zprávy ani kontaktní údaje. Předprodukční návštěvy a testy oddělit od produkčního vyhodnocení.
+- Vyhodnocovat především kvalifikované poptávky podle vstupní stránky, ne pouze počet kliknutí na hlavní tlačítko.
+
+## 18. Chybová stránka 404
+
+Při testu náhodné neexistující adresy server správně vrátil 404. Zachovat tento stavový kód.
+
+H1 **„Tuto stránku jsme nenašli“**. Text:
+
+> Adresa může být chybná nebo už stránka není dostupná. Pokračujte na úvod, nebo nám napište, co hledáte.
+
+CTA **„Přejít na úvod“** → `/`; sekundární **„Kontakt“** → `/kontakt`. Pokud je k dispozici skutečná náhradní stránka pro přestěhovanou URL, použít konkrétní přesměrování; nepřesměrovávat všechny neexistující adresy automaticky na homepage.
+
+## 19. Pořadí realizace a převzetí
+
+### První etapa — před spuštěním
+
+| Pořadí | Úkol | Kdo dodá podklad | Jak poznat dokončení |
+|---|---|---|---|
+| 1 | Identita značky, kontaktní osoby a provozovatele | Provozovatel | Shodné skutečné údaje na O datalayer.cz, Kontakt, v patičce a ochraně údajů. |
+| 2 | Sjednocení příslibů a popisu souhlasů | Obsah + technik; právní texty posoudit | Žádné rozpory „stejná čísla“ versus FAQ; popis odpovídá ověřené implementaci. |
+| 3 | Přepis homepage, osmi služeb/řešení a všech FAQ | Obsah | Zapracované kapitoly 4–12 a celkem 36 přepsaných odpovědí. |
+| 4 | Společná navigace, formulář a kontakt | Design + vývoj | CTA popisují skutečnou akci, URL pole je dostupné, formulář není odsunut velkým hero. |
+| 5 | Metadata a JSON-LD | Vývoj + obsah | Odpovídají novým textům a produkční doméně. |
+| 6 | Kontrola veřejné produkce | Vývoj + správce SEO | Přístup bez hesla, správná indexace, canonical, sitemap a stavové kódy. |
+
+### Druhá etapa — důkazy a zlepšování podle dat
+
+- Dodat skutečné fotografie, profesní medailonky a jednu kvalitní případovou studii.
+- Připravit reálnou anonymizovanou ukázku výstupu auditu a reportingu, pokud to smlouvy dovolují.
+- Změřit výkon a ověřit přístupnost, včetně klávesnice, kontrastu a mobilních formulářů.
+- Po nasbírání dostatečných dat vyhodnotit návštěvnost a kvalitu poptávek; podle výsledku upravit pořadí služeb a obsah.
+
+### Kontrolní seznam pro převzetí úprav
+
+- [ ] Úvodní hero diagram zůstal beze změny.
+- [ ] Každá z 13 obsahových stránek má jednoznačnou roli, vlastní H1, title a description.
+- [ ] Na osmi službách a řešeních se nevyskytuje původní univerzální „Poznáváte se?“.
+- [ ] Ve FAQ se nemění perspektiva zákazníka a dodavatele; odpovědi jsou krátké a navazují na otázky.
+- [ ] Na webu nejsou nepodmíněné přísliby shodných čísel, úplnosti měření nebo automatického právního souladu.
+- [ ] Zástupné údaje nejsou publikované; lidé, zkušenosti a reference odpovídají realitě.
+- [ ] Všechny CTA a kotvy vedou na správný cíl a nejsou zakryté pevnou hlavičkou.
+- [ ] Přidání skutečného URL pole nenarušilo skrytou ochranu formuláře proti spamu.
+- [ ] Je ověřeno doručení testovací poptávky, zachování dat při chybě a správné oznámení úspěchu.
+- [ ] Ukládání a předávání údajů z formuláře odpovídá zveřejněným informacím.
+- [ ] Cookie volby odpovídají síťovému chování před přijetím, po odmítnutí, po přijetí i po odvolání souhlasu.
+- [ ] Mobilní menu, záložky, FAQ a formulář jsou ovladatelné dotykem i klávesnicí.
+- [ ] Na produkci jsou správné hlavičky, canonical, sitemap a strukturovaná data; předprodukce zůstává chráněná.
+- [ ] Neexistující URL vracejí 404, nikoli úspěšnou odpověď s chybovým textem.
+- [ ] Průběžné náklady, dodatečná správa a součinnost vývoje nejsou skryté v obecném příslibu služby.
+
+## 20. Inventář prošlých stránek
+
+Odkazy níže vedou na auditovanou předprodukci a mohou vyžadovat přihlášení. Přístupové údaje nejsou součástí dokumentu.
+
+| Stránka | Auditovaná adresa | Kapitola návrhu |
+|---|---|---|
+| Úvod | [Homepage](https://datalayer.vitnovotny.cz/) | 4 |
+| Audit měření | [Audit](https://datalayer.vitnovotny.cz/sluzby/audit-mereni) | 5 |
+| GA4 a GTM | [Implementace](https://datalayer.vitnovotny.cz/sluzby/implementace-ga4) | 6 |
+| Server-side | [Server-side tracking](https://datalayer.vitnovotny.cz/sluzby/server-side-tracking) | 7 |
+| Cookie lišta | [Consent Mode](https://datalayer.vitnovotny.cz/sluzby/cookie-lista-consent-mode) | 8 |
+| Konverze | [Měření konverzí](https://datalayer.vitnovotny.cz/sluzby/mereni-konverzi) | 9 |
+| BigQuery | [BigQuery a dashboardy](https://datalayer.vitnovotny.cz/sluzby/bigquery) | 10 |
+| E-shopy | [Řešení pro e-shopy](https://datalayer.vitnovotny.cz/reseni/e-shopy) | 11 |
+| B2B | [Řešení pro B2B](https://datalayer.vitnovotny.cz/reseni/b2b-a-lead-generation) | 12 |
+| O nás | [O nás](https://datalayer.vitnovotny.cz/o-nas) | 13 |
+| Kontakt | [Kontakt](https://datalayer.vitnovotny.cz/kontakt) | 14 |
+| Osobní údaje | [Zpracování osobních údajů](https://datalayer.vitnovotny.cz/zpracovani-osobnich-udaju) | 15 |
+| Cookies | [Zásady cookies](https://datalayer.vitnovotny.cz/cookies) | 16 |
+
+Technické podklady: [robots.txt](https://datalayer.vitnovotny.cz/robots.txt), [sitemap.xml](https://datalayer.vitnovotny.cz/sitemap.xml). Návrhy vycházejí ze stavu načteného 2. listopadu 2026; pozdější změny webu v nich nejsou zahrnuty.

@@ -20,9 +20,9 @@ export const page: PageInput = {
   menuGroup: 'sber',
 
   seo: {
-    title: 'Nastavení cookie lišty a Consent Mode v2 | datalayer.cz',
+    title: 'Cookie lišta a Consent Mode v2 – datalayer.cz',
     description:
-      'Propojíme cookie lištu s GA4, GTM a reklamními nástroji. Ověříme chování před volbou, po souhlasu, odmítnutí i změně nastavení a předáme testovací protokol.',
+      'Nastavíme cookie lištu a Consent Mode v2. Ověříme měřicí nástroje před volbou návštěvníka, po souhlasu, odmítnutí i změně nastavení.',
   },
 
   hero: {
@@ -199,7 +199,7 @@ export const page: PageInput = {
   },
 
   schema: {
-    name: 'Nastavení cookie lišty a Google Consent Mode v2',
+    name: 'Cookie lišta a Consent Mode',
     serviceType: 'Nastavení a kontrola cookie lišty, Consent Mode v2 a Google Tag Manageru',
     description:
       'Technické nastavení a ověření cookie lišty, Google Consent Mode v2 a navazujících měřicích a reklamních nástrojů: kontrola stávajícího nastavení nebo nové nastavení lišty, inventura nástrojů, mapa souhlasů, testy chování před volbou, po přijetí, odmítnutí a změně souhlasu a dokumentace pro právní posouzení.',
