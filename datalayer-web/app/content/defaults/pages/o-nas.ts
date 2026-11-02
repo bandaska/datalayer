@@ -1,37 +1,87 @@
 import type { PageInput } from '../../schema';
 
-// Stránka odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty).
-// Kapitola k O nás v podkladu chybí, platí jen společná pravidla G01–G07: v menu
-// „O datalayer.cz“ (G02), bez absolutních tvrzení („nikdo nevěří“, „čísla sedí
-// s tržbami“, „pokračovat může kdokoli“) a bez „technického týmu“, který web nedokládá
-// (G01), kontakt „Proberme vaše měření“ bez slibu, co konzultace zjistí. Zůstal hero
-// s jedním tlačítkem, „Kdo web provozuje“, „Proč začínáme u datové vrstvy“ a pravidla
-// práce s daty. Lidi, role a reference, které audit chce (kap. 1), web zatím nemá
-// (rozhodnutí klienta, žádná kontaktní osoba) – stránka je nevymýšlí. Sekce „Kdo web
-// provozuje“ ukáže identifikaci provozovatele z Nastavení, až ji klient vyplní, do té
-// doby se nevykreslí.
+// O datalayer.cz podle auditu z 2. listopadu 2026, kap. 13 (seo-analyza/2026-11-02_seo-ux-texty):
+// textové záhlaví bez obecné ikony (O01), „Jak přistupujeme k zakázkám“ (O03), „Účty, přístupy
+// a předání“ (O04) a do dodání skutečných ukázek práce blok „Jaké výstupy předáváme“ (O05).
+// Sekce „Kdo bude na projektu pracovat“ (O02) a „Ukázky naší práce“ čekají na podklady klienta
+// (jména, role, reference) – zástupné údaje se nepublikují. „Kdo web provozuje“ ukáže
+// identifikaci provozovatele z Nastavení, až ji klient vyplní; do té doby se nevykreslí.
 
 export const page: PageInput = {
   path: 'o-nas',
   kind: 'page',
   navTitle: 'O datalayer.cz',
-  tagline: 'jak pracujeme s daty a pro koho',
+  tagline: 'přístup a spolupráce',
   pictogram: 'gov',
 
   seo: {
-    title: 'O datalayer.cz – jak pracujeme s daty a pro koho',
+    title: 'O datalayer.cz – přístup a spolupráce',
     description:
-      'Jak datalayer.cz pracuje s daty klientů a pro koho stavíme měření: GA4, GTM, server-side měření, souhlasy s Consent Mode a BigQuery v účtech vaší firmy.',
+      'Jak datalayer.cz přistupuje k analytice, přístupům a předání práce. Seznamte se s principy spolupráce a odpovědností za projekt.',
   },
 
   hero: {
-    h1: 'Jak pracujeme s daty a pro koho',
+    // čisté textové záhlaví – bez fotografie lidí nemá smysl ilustrační ikona (O01)
+    variant: 'simple',
+    h1: 'O datalayer.cz',
     subtitle:
-      'Stavíme a ověřujeme měření pro e-shopy, B2B firmy a velké firmy – od datové vrstvy přes Google Tag Manager (GTM), GA4 a souhlasy po server-side měření a BigQuery. Pracujeme ve vašich účtech a každou implementaci předáme s dokumentací.',
-    primaryCta: { label: 'Napsat nám', href: '#kontakt' },
+      'Pomáháme firmám nastavit, ověřit a používat data z webové analytiky a marketingových nástrojů. Pracujeme v účtech klienta a výsledky předáváme s dokumentací.',
+    primaryCta: { label: 'Domluvit konzultaci', href: '#kontakt' },
   },
 
   sections: [
+    {
+      id: 'pristup',
+      title: 'Jak přistupujeme k zakázkám',
+      tone: 'light',
+      blocks: [
+        {
+          type: 'paragraphs',
+          items: [
+            'Začínáme tím, jaké otázky potřebujete z dat zodpovědět. Potom prověříme zdroje, současné nastavení a potřebnou součinnost. Rozsah, cenu a výstupy domluvíme před zahájením práce.',
+            'Implementaci ověřujeme na dohodnutých scénářích. Při předání vysvětlíme nastavení, zjištěné rozdíly i omezení dostupných dat.',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'ucty',
+      title: 'Účty, přístupy a předání',
+      tone: 'white',
+      blocks: [
+        {
+          type: 'list',
+          style: 'check',
+          items: [
+            '<strong>Účty spravuje klient.</strong> Pracujeme s přidělenými rolemi a potřebnými oprávněními.',
+            '<strong>Rozsah dat má svůj účel.</strong> Určíme, která data řešení potřebuje a kam je předáváme.',
+            '<strong>Souhlasy jsou součástí návrhu.</strong> Technické nastavení vychází z dohodnutých pravidel pro jednotlivé nástroje.',
+            '<strong>Nastavení je zdokumentované.</strong> Předáme popis řešení a podklady pro další správu.',
+          ],
+        },
+        {
+          type: 'paragraphs',
+          items: [
+            'Do GA4 neposíláme e-mailové adresy ani telefonní čísla. Předávání kontaktních údajů do reklamních nástrojů řešíme odděleně podle konkrétního účelu a nastavení.',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'vystupy',
+      title: 'Jaké výstupy předáváme',
+      tone: 'light',
+      lead: 'Ke každé zakázce patří dokumentace, na kterou může navázat váš tým nebo další dodavatel.',
+      blocks: [
+        {
+          type: 'paragraphs',
+          items: [
+            'Podle rozsahu práce předáváme měřicí plán nebo zadání datové vrstvy, popis nastavení a změn, výsledky dohodnutých testovacích scénářů a vysvětlení zjištěných rozdílů v datech. Formát výstupu auditu ukazuje modelová ukázka se smyšlenými nálezy. Nejde o výsledky konkrétního klienta.',
+          ],
+        },
+        { type: 'links', items: [{ label: 'Prohlédnout modelovou ukázku auditu', href: '/sluzby/audit-mereni#ukazka-reportu' }] },
+      ],
+    },
     {
       id: 'provozovatel',
       title: 'Kdo web provozuje',
@@ -39,49 +89,14 @@ export const page: PageInput = {
       // bez údajů v Nastavení (Provozovatel webu) web sekci nevykreslí
       blocks: [{ type: 'operator' }],
     },
-    {
-      id: 'pristup',
-      title: 'Proč začínáme u datové vrstvy',
-      lead: 'Když se čísla v nástrojích rozcházejí, problém většinou není v samotném nástroji.',
-      tone: 'light',
-      blocks: [
-        {
-          type: 'paragraphs',
-          items: [
-            'Problém bývá ve spodní vrstvě: v tom, jak web data sbírá, jestli respektuje souhlas a jestli někdo porovnal data se zdrojovými záznamy. Proto začínáme u datové vrstvy, podle které nese jméno i datalayer.cz.',
-            'Nasadit kód pro nás neznamená konec projektu. Data porovnáme s objednávkami nebo s CRM a rozdíly vysvětlíme.',
-            'Neprodáváme krabicové nástroje. Měření stavíme ve vašich účtech a předáváme ho s dokumentací.',
-          ],
-        },
-      ],
-    },
-    {
-      id: 'principy',
-      title: 'Jak zacházíme s daty – vašimi i vašich zákazníků',
-      lead: 'Čtyři pravidla, která platí pro každý projekt.',
-      tone: 'white',
-      blocks: [
-        {
-          type: 'list',
-          style: 'check',
-          items: [
-            '<strong>Data patří vám.</strong> Účty, kontejnery, projekty v Google Cloudu i data zakládáme na vaši firmu. My máme jen přístup, který můžete kdykoli odebrat.',
-            '<strong>Souhlas je podmínka, ne překážka.</strong> Měření nastavujeme podle § 89 odst. 3 zákona o elektronických komunikacích a doporučení ÚOOÚ. Odmítnutí musí být stejně snadné jako přijetí.',
-            '<strong>Osobní údaje neposíláme v čitelné podobě.</strong> Do GA4 neposíláme e-maily ani telefony, do reklamních systémů jen hash a jen se souhlasem.',
-            '<strong>Žádné černé skříňky.</strong> Stavíme na standardních nástrojích jako GTM, GA4 a BigQuery, takže na nás může navázat váš tým nebo další dodavatel.',
-          ],
-        },
-        { type: 'paragraphs', items: ['Nejsme advokátní kancelář – právní posouzení konkrétního zpracování zajišťuje váš právník.'] },
-      ],
-    },
   ],
 
   faq: [],
 
   contact: {
     formId: 'o-nas',
-    title: 'Proberme vaše měření',
-    lead: 'Napište adresu webu a stručně popište, co potřebujete vyřešit. Na úvodní konzultaci upřesníme zadání a navrhneme další postup.',
+    title: 'Napište, co potřebujete vyřešit',
+    lead: 'Společně upřesníme zadání a domluvíme, zda a v jakém rozsahu vám můžeme pomoci.',
     placeholder: '',
     leadType: 'consultation',
   },

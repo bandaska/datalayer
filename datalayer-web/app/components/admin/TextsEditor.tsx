@@ -95,6 +95,7 @@ const GROUPS: Group[] = [
       { key: 'title', label: 'Nadpis' },
       { key: 'text', label: 'Text', type: 'area' },
       { key: 'home', label: 'Tlačítko na úvod' },
+      { key: 'contact', label: 'Odkaz na kontakt' },
     ],
   },
   {

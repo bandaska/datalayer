@@ -1,14 +1,15 @@
 import type { PageInput } from '../../schema';
 
-// Stránka odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty).
-// Kapitola k e-shopům v podkladu chybí, platí jen společná pravidla G01–G07 a závěr
-// z kap. 1 (stránka je rozcestník podle typu firmy). Zůstaly: hero s jedním tlačítkem,
-// „Z čeho se skládá kompletní měření e-shopu“ se sedmi kartami a odkazy na služby,
-// záložky platforem s kotvami #shoptet, #upgates, #shopify, #woocommerce, #prestashop
-// a #vlastni-reseni a čtyři otázky. Sekce se situacemi má konkrétní nadpis a kotvu
-// #kdy, úvod se zkrátil. Zmizely sliby shody s administrací, „umí nic“, „release“
-// a cena provozu serveru v dolarech (nesladěná se službou Server-side měření, kap. 7).
-// Přibyly související služby před kontaktem.
+// Stránka odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty,
+// kap. 3 a 11, E01–E05; SEO podle kap. 17, S03 a S04). Zůstaly: hero s jedním tlačítkem,
+// nově s kotvami, záložky platforem se stejnými kotvami (#shoptet, #upgates, #shopify,
+// #woocommerce, #prestashop, #vlastni-reseni), čtyři otázky a související služby.
+// Karty situací mají nadpis „Co má měření e-shopu zodpovědět“, místo „sedmi vrstev“
+// jsou tři úrovně rozsahu s odkazy na služby a blok „Co při předání získáte“. Záložky
+// popisují „Co prověříme“ a „Co lze doplnit“ místo „Umí / Chybí“; vypadly termíny
+// platforem, univerzální soudy o pluginech a modulech, „po odečtení marže“ a výčet
+// všech technologií v úvodu. Zvratný trpný rod z auditu je přepsaný na činný
+// („Co web zapisuje do analytiky“, „Jak vyhodnocovat reklamu“).
 
 export const page: PageInput = {
   path: 'reseni/e-shopy',
@@ -18,23 +19,28 @@ export const page: PageInput = {
   pictogram: 'eshop',
 
   seo: {
-    title: 'Měření e-shopu – GA4, GTM, souhlasy a konverze | datalayer.cz',
+    title: 'Webová analytika a měření e-shopu – datalayer.cz',
     description:
-      'Měření e-shopu na Shoptetu, Shopify, WooCommerce i vlastním řešení: GA4, cookie lišta, konverze pro Google Ads, Metu, Sklik a Heureku a porovnání s objednávkami.',
+      'Měření e-shopu podle platformy a potřeb firmy. GA4, reklamní konverze, souhlasy a návazný reporting s ověřením testovacích objednávek.',
   },
 
   hero: {
-    h1: 'Měření e-shopu od datové vrstvy po marži v reportu',
+    h1: 'Webová analytika a měření pro e-shopy',
     subtitle:
-      'Pro e-shopy nastavíme a ověříme měření objednávek v Google Analytics 4 (GA4), cookie lištu se souhlasy a konverze pro reklamní systémy a srovnávače. Navážeme na to, co platforma změří sama, a chybějící části doplníme. Data porovnáme s objednávkami v administraci a vysvětlíme rozdíly. Podle potřeby přidáme server-side měření, marži a BigQuery.',
+      'Nastavíme měření nákupů a reklamních konverzí podle vaší platformy a používaných nástrojů. Navážeme na funkční integrace, odstraníme zjištěné duplicity a porovnáme data s objednávkami. Serverové měření nebo reporting marže doplníme tam, kde mají konkrétní využití.',
     primaryCta: { label: 'Probrat měření e-shopu', href: '#kontakt' },
+    anchors: [
+      { label: 'Co řešíme', href: '#kdy' },
+      { label: 'Rozsah', href: '#rozsah' },
+      { label: 'Platformy', href: '#platformy' },
+      { label: 'Cena a dotazy', href: '#faq' },
+    ],
   },
 
   sections: [
     {
       id: 'kdy',
-      title: 'Kdy řešit měření e-shopu',
-      lead: 'Když se čísla v GA4, reklamních systémech a administraci rozcházejí a není jasné proč, nebo když chcete řídit reklamu podle marže.',
+      title: 'Co má měření e-shopu zodpovědět',
       tone: 'light',
       blocks: [
         {
@@ -43,23 +49,23 @@ export const page: PageInput = {
           variant: 'symptoms',
           items: [
             {
-              title: 'GA4 ukazuje méně objednávek než administrace',
-              text: 'Rozdíl se mění měsíc od měsíce a není jasné, kolik z něj připadá na odmítnuté cookies, platební bránu a chybu v nastavení.',
+              title: 'Co web zapisuje do analytiky',
+              text: 'Zda události odpovídají nákupnímu procesu a zda web neposílá objednávky opakovaně.',
               pictogram: 'ga4',
             },
             {
-              title: 'GA4 počítá jeden nákup dvakrát',
-              text: 'Vedle nativní integrace platformy běží vlastní tag v Google Tag Manageru (GTM). Tržby pak rostou jen na papíře a kampaně vypadají lépe, než jsou.',
-              pictogram: 'warn',
-            },
-            {
-              title: 'Meta hlásí jiný počet nákupů než e-shop',
-              text: 'Pixel může běžet bez Conversions API, bez deduplikace přes <code>event_id</code> nebo s nízkou kvalitou párování. Ověříme, která z možností platí.',
+              title: 'Jak vyhodnocovat reklamu',
+              text: 'Které konverze a hodnoty reklamní systémy dostávají a podle čeho je porovnáváte.',
               pictogram: 'conversion',
             },
             {
-              title: 'Řídíte reklamu podle obratu, ne podle zisku',
-              text: 'ROAS a PNO vypadají dobře, ale po odečtení marže, dopravy a vratek může část kampaní prodělávat.',
+              title: 'Co se děje po změně webu',
+              text: 'Zda nová šablona, platební brána nebo plugin neovlivnily měření.',
+              pictogram: 'warn',
+            },
+            {
+              title: 'Jak souvisí reklama s hospodařením e-shopu',
+              text: 'Jak do reportingu zahrnout náklady, storna, vratky a dohodnutou marži.',
               pictogram: 'dashboard',
             },
           ],
@@ -68,57 +74,42 @@ export const page: PageInput = {
     },
 
     {
-      id: 'stack',
-      title: 'Z čeho se skládá kompletní měření e-shopu',
-      lead: 'Sedm částí, které na sebe navazují. Chyba ve spodní vrstvě zkreslí ty nad ní, proto kontrolu začínáme u datové vrstvy.',
+      id: 'rozsah',
+      title: 'Rozsah podle potřeb e-shopu',
+      lead: 'Ne každý e-shop potřebuje všechny nástroje. Navrhneme návaznost podle současného stavu a toho, jak budete data používat.',
       tone: 'white',
       blocks: [
         {
           type: 'cards',
-          columns: 4,
+          columns: 3,
           items: [
             {
-              title: 'Datová vrstva',
-              text: 'Události od zobrazení produktu po nákup ve stejném formátu – z platformy, nebo jako zadání pro vývojáře.',
+              title: 'Základní měření',
+              text: 'Datová vrstva nebo funkční integrace platformy, GA4, měření nákupů a správné předávání souhlasů.<br>Související služby: <a href="/sluzby/implementace-ga4">Nastavení GA4 a GTM</a>, <a href="/sluzby/cookie-lista-consent-mode">Cookie lišta a Consent Mode</a>',
             },
             {
-              title: 'GA4 e-commerce',
-              text: 'Doporučené události od <code>view_item_list</code> po <code>refund</code>. Tržby porovnáme s objednávkami v administraci a vysvětlíme rozdíly.',
-              link: { label: 'Nastavení GA4 a GTM', href: '/sluzby/implementace-ga4' },
+              title: 'Konverze pro reklamu',
+              text: 'Definice konverzí, jejich hodnoty a předání reklamním systémům. Serverová rozhraní doplníme podle potřeby.<br>Související služby: <a href="/sluzby/mereni-konverzi">Měření konverzí</a>, <a href="/sluzby/server-side-tracking">Server-side měření</a>',
             },
             {
-              title: 'Cookie lišta a Consent Mode v2',
-              text: 'Rovnocenné odmítnutí, čtyři signály souhlasu, které odejdou dřív, než web spustí první tag, a protokol z testu.',
-              link: { label: 'Cookie lišta a Consent Mode', href: '/sluzby/cookie-lista-consent-mode' },
-            },
-            {
-              title: 'Server-side měření',
-              text: 'Server-side GTM na subdoméně e-shopu a ve vašem Google Cloudu. Předávání dat nastavíme podle volby návštěvníka a otestujeme.',
-              link: { label: 'Server-side měření', href: '/sluzby/server-side-tracking' },
-            },
-            {
-              title: 'Konverze pro reklamní systémy',
-              text: 'Google Ads, Meta s Conversions API, Sklik, Heureka a Seznam Nákupy dostanou nákup se stejným ID a hodnotou. Předání ověříme testovací objednávkou.',
-              link: { label: 'Měření konverzí', href: '/sluzby/mereni-konverzi' },
-            },
-            {
-              title: 'Marže a zisk',
-              text: 'Hodnota konverze podle marže, kterou doplní server těsně před odesláním do Google Ads nebo Mety. Do prohlížeče posíláme jen prodejní cenu, takže nákupní ceny zůstanou u vás.',
-            },
-            {
-              title: 'BigQuery a reporting',
-              text: 'Export GA4 spojíme s objednávkami, vratkami a náklady na reklamu a nad nimi postavíme report pro vedení: tržby, marže, PNO a POAS podle kanálů.',
-              link: { label: 'BigQuery a reporting', href: '/sluzby/bigquery' },
+              title: 'Reporting hospodaření a marketingu',
+              text: 'Propojení nákladů, objednávek, storen a marže do společného přehledu.<br>Související služba: <a href="/sluzby/bigquery">BigQuery a reporting</a>',
             },
           ],
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          title: 'Co při předání získáte',
+          text: 'Přehled nastavení, výsledky testovacích nákupů, popis zjištěných rozdílů a dokumentaci pro další správu. Konkrétní rozsah uvedeme předem v nabídce.',
         },
       ],
     },
 
     {
       id: 'platformy',
-      title: 'Co vaše platforma změří sama – a co chybí',
-      lead: 'Většina platforem umí napojení na GA4 a reklamní systémy, ale jen v rozsahu, který si sama určila. Co chybí, doplníme: datovou vrstvu, server-side měření, české služby jako Sklik a Heureku i marži. Stav podle dokumentace k říjnu 2026, při auditu ověříme, co platí dnes.',
+      title: 'Měření podle e-shopové platformy',
+      lead: 'Nejprve ověříme konkrétní verzi platformy, doplňky a současné nastavení. Funkční integrace zachováme a doplníme to, co vyžaduje měřicí plán.',
       tone: 'light',
       blocks: [
         {
@@ -129,49 +120,48 @@ export const page: PageInput = {
               id: 'shoptet',
               label: 'Shoptet',
               paragraphs: [
-                '<strong>Umí:</strong> GA4 s událostmi e-commerce, vlastní dataLayer, cookie lištu s Consent Mode v2 a napojení Mety, Google Ads i Skliku z administrace.',
-                '<strong>Chybí:</strong> formát GA4 <code>items</code> v dataLayeru, marže a vlastní parametry. Nativní události mají stejné názvy jako tagy v GTM, takže hrozí, že se nákup započítá dvakrát.',
+                '<strong>Co prověříme:</strong> vestavěné integrace, předávání souhlasů a případný souběh s GTM. Ověříme události i hodnoty testovací objednávky.',
+                '<strong>Co lze doplnit:</strong> další události, parametry a napojení podle možností používaného řešení.',
               ],
             },
             {
               id: 'upgates',
               label: 'Upgates',
               paragraphs: [
-                '<strong>Umí:</strong> GA4 přes doplněk Google Site Tag, GTM se systémovým dataLayerem pro produkt, košík a objednávku a cookie lištu s volbou kategorií.',
-                '<strong>Chybí:</strong> server-side měření a události ze seznamů produktů a z kroků pokladny. Souběh GTM a Google Site Tag může zdvojit konverze.',
+                '<strong>Co prověříme:</strong> nastavení analytiky, reklamních nástrojů a dat předávaných během nákupu.',
+                '<strong>Co lze doplnit:</strong> chybějící části měřicího plánu a návaznost na reporting.',
               ],
             },
             {
               id: 'shopify',
               label: 'Shopify',
               paragraphs: [
-                '<strong>Umí:</strong> GA4 a Google Ads přes aplikaci Google & YouTube, cookie lištu s Consent Mode v2 a Metu přes aplikaci Facebook & Instagram.',
-                '<strong>Chybí:</strong> plnohodnotný GTM v pokladně – běží jen jako vlastní pixel v sandboxu a Consent Mode v2 k němu musíte přidat ručně. Skripty na děkovací stránce skončily u plánu Plus 28. srpna 2025, u ostatních 26. srpna 2026.',
-                'Postavíme vlastní pixel a testem ověříme, že aplikace a pixel neposílají stejný nákup dvakrát.',
+                '<strong>Co prověříme:</strong> použité aplikace, pixely a možnosti měření nákupního procesu v konkrétním tarifu a konfiguraci.',
+                '<strong>Co lze doplnit:</strong> vlastní události a návazná napojení v mezích aktuálních možností platformy.',
               ],
             },
             {
               id: 'woocommerce',
               label: 'WooCommerce',
               paragraphs: [
-                '<strong>Umí:</strong> měření až s pluginy. Rozšíření Google Analytics for WooCommerce pokryje hlavní události e-commerce a Consent Mode přes WP Consent API, plugin Meta přidá pixel a katalog.',
-                '<strong>Chybí:</strong> nákup bez návratu z platební brány na děkovací stránku a pořádek v pluginech, které posílají stejné události vícekrát. Nákup proto odešleme ze serveru po zaplacení.',
+                '<strong>Co prověříme:</strong> pluginy, šablonu, měření objednávek a chování při platbě. Zkontrolujeme souběh více integrací.',
+                '<strong>Co lze doplnit:</strong> úpravy událostí nebo serverové napojení podle potřeb e-shopu.',
               ],
             },
             {
               id: 'prestashop',
               label: 'PrestaShop',
               paragraphs: [
-                '<strong>Umí:</strong> GA4 s měřením e-commerce přes oficiální modul Google Analytics.',
-                '<strong>Chybí:</strong> GTM, Consent Mode a české služby jako Sklik nebo Heureka – řeší je moduly třetích stran různé kvality, které se mohou překrývat.',
+                '<strong>Co prověříme:</strong> použité moduly, verzi platformy, souhlasy a měření objednávek.',
+                '<strong>Co lze doplnit:</strong> úpravy datové vrstvy a napojení nástrojů podle konkrétní sestavy modulů.',
               ],
             },
             {
               id: 'vlastni-reseni',
               label: 'Vlastní řešení',
               paragraphs: [
-                '<strong>Umí:</strong> měření v rozsahu, který určí zadání pro vývojáře. Totéž platí pro platformy Magento, Adobe Commerce nebo Shopsys.',
-                '<strong>Chybí:</strong> obvykle specifikace. Dodáme měřicí plán, datovou vrstvu ve formátu GA4 a automatický test, který měření ověří po každém nasazení změn. Více u služby <a href="/sluzby/implementace-ga4">Nastavení GA4 a GTM</a>.',
+                '<strong>Co prověříme:</strong> současnou datovou vrstvu, integrace a dostupné události v nákupním procesu.',
+                '<strong>Co lze doplnit:</strong> specifikaci pro vývojáře, doplnění událostí a testovací scénáře pro další změny webu.',
               ],
             },
           ],
@@ -182,34 +172,34 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Stačí nativní integrace GA4, kterou má Shoptet, Upgates nebo Shopify?',
-      a: 'U menšího e-shopu s jedním reklamním kanálem často ano, stačí vyplnit ID. Limity se ukážou, když potřebujete vlastní parametry, marži nebo server-side měření, nebo když nativní integrace běží souběžně s tagy z GTM a GA4 započítá nákup dvakrát. Proto nejdřív zjistíme, co platforma skutečně posílá, a pak navrhneme, co nechat nativně a co převzít do GTM.',
+      q: 'Může stačit vestavěná integrace platformy?',
+      a: 'Ano, pokud pokrývá potřebné události a funguje správně. Nejdřív ji ověříme; vlastní řešení navrhujeme podle skutečných potřeb.',
     },
     {
-      q: 'Proč GA4 ukazuje méně objednávek než administrace?',
-      a: 'GA4 měří chování v prohlížeči, administrace eviduje objednávky. Část návštěvníků odmítne analytické cookies, někdo blokuje skripty nebo se z platební brány nevrátí a v administraci jsou i telefonické a testovací objednávky. Univerzální „normální“ rozdíl neexistuje, důležité je, aby byl stabilní a vysvětlitelný. Data proto porovnáme s objednávkami a rozdíly vysvětlíme.',
+      q: 'Proč se počet objednávek liší mezi GA4 a administrací?',
+      a: 'Systémy sledují odlišná data a rozdíly mohou souviset se souhlasy, blokováním měření, zpracováním objednávek i chybami implementace. Ověříme konkrétní příčiny a dohodneme způsob porovnávání.',
     },
     {
-      q: 'Co ovlivňuje cenu měření e-shopu?',
-      a: 'Cenu určuje hlavně platforma, stav současného měření, počet reklamních systémů a trhů a to, jestli přidáte server-side měření, marži nebo BigQuery. Provoz server-side měření platíte přímo poskytovateli cloudu, odhad nákladů připravíme podle objemu událostí. Nabídku s pevným rozsahem dostanete po úvodní konzultaci a krátkém auditu.',
+      q: 'Co určuje cenu měření e-shopu?',
+      a: 'Platforma, současné integrace, počet reklamních systémů a rozsah událostí. Serverové měření, datový sklad a průběžný provoz uvedeme jako samostatné části nabídky.',
     },
     {
-      q: 'Je potřeba zapojit vývojáře?',
-      a: 'Záleží na platformě. Na Shoptetu, Upgates a Shopify se většinou obejdeme bez vývojáře, u WooCommerce, PrestaShopu a vlastních řešení obvykle potřebujeme úpravu šablony nebo kód. Vývojářům dodáme přesnou specifikaci a výsledek otestujeme. Pracujeme ve vašich účtech a kontejnery předáme s dokumentací.',
+      q: 'Kdy je potřeba vývojář e-shopu?',
+      a: 'Pokud je nutné upravit šablonu, datovou vrstvu nebo serverovou integraci. Součinnost určíme podle konkrétní platformy a zadání; nepředpokládáme ji automaticky u každého projektu.',
     },
   ],
 
   related: {
     items: [
       {
-        label: 'Měření konverzí',
-        href: '/sluzby/mereni-konverzi',
-        text: 'Navazuje na datovou vrstvu e-shopu a předá objednávky reklamním systémům a srovnávačům.',
-      },
-      {
         label: 'Nastavení GA4 a GTM',
         href: '/sluzby/implementace-ga4',
         text: 'Připraví měřicí plán, události e-commerce v GA4 a zadání datové vrstvy, na kterých stojí ostatní části měření.',
+      },
+      {
+        label: 'Měření konverzí',
+        href: '/sluzby/mereni-konverzi',
+        text: 'Navazuje na datovou vrstvu e-shopu a předá objednávky reklamním systémům a srovnávačům.',
       },
       {
         label: 'BigQuery a reporting',
@@ -222,16 +212,16 @@ export const page: PageInput = {
   contact: {
     formId: 'lp-eshopy',
     title: 'Proberme měření vašeho e-shopu',
-    lead: 'Napište, na jaké platformě e-shop běží a ve kterých reklamních systémech inzerujete. Na úvodní konzultaci upřesníme zadání a navrhneme další postup.',
+    lead: 'Pošlete adresu e-shopu, název platformy a používané reklamní systémy. Navrhneme, které části měření mají nyní největší smysl řešit.',
     placeholder: '',
     leadType: 'consultation',
   },
 
   schema: {
-    name: 'Měření pro e-shopy',
-    serviceType: 'Implementace měření e-shopu: GA4, Google Tag Manager, Consent Mode v2, server-side měření a konverze',
+    name: 'Webová analytika a měření pro e-shopy',
+    serviceType: 'Měření e-shopu: GA4, Google Tag Manager, souhlasy, reklamní konverze a reporting',
     description:
-      'Kompletní měření e-shopu: datová vrstva, GA4 e-commerce, cookie lišta s Consent Mode v2, server-side měření, konverze pro Google Ads, Metu, Sklik, Heureku a Seznam Nákupy, marže, BigQuery a report pro vedení.',
+      'Měření e-shopu podle platformy a potřeb firmy: měření nákupů a reklamních konverzí, předávání souhlasů, porovnání dat s objednávkami a podle potřeby serverové měření nebo reporting marže.',
     audience: 'E-shopy',
   },
 };

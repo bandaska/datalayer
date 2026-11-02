@@ -17,9 +17,9 @@ export const page: PageInput = {
   ogImage: '/og/default.png',
 
   seo: {
-    title: 'Webová analytika pro e-shopy a B2B firmy | datalayer.cz',
+    title: 'Webová analytika pro e-shopy a firmy – datalayer.cz',
     description:
-      'Nastavíme a ověříme měření návštěvnosti, objednávek a poptávek v GA4, GTM a reklamních systémech. Dostanete funkční nastavení, testy a dokumentaci.',
+      'Nastavení a audit webové analytiky pro e-shopy a B2B firmy. GA4, GTM, měření konverzí a propojení dat. S testy a dokumentací.',
   },
 
   hero: {

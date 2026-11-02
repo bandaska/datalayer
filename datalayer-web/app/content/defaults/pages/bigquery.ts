@@ -21,9 +21,9 @@ export const page: PageInput = {
   menuGroup: 'data',
 
   seo: {
-    title: 'BigQuery a reporting pro marketing a vedení firmy | datalayer.cz',
+    title: 'BigQuery a marketingový reporting – datalayer.cz',
     description:
-      'Propojíme data z GA4, reklamních systémů, e-shopu a CRM. V BigQuery připravíme společný datový model a reporty v Data Studiu nebo Power BI.',
+      'Propojíme data z GA4, reklamy, e-shopu a CRM v BigQuery. Připravíme datový model a reporty s definicemi metrik a dokumentací.',
   },
 
   hero: {
@@ -238,6 +238,6 @@ export const page: PageInput = {
     serviceType: 'Datový sklad v BigQuery a reporting pro marketing a vedení firmy',
     description:
       'Propojení dat z GA4, reklamních systémů, e-shopu, ERP a CRM v Google BigQuery, společný datový model se slovníkem metrik, reporty v Data Studiu nebo Power BI, porovnání vybraných výsledků se zdrojovými systémy, dokumentace a kontrola nákladů na provoz.',
-    audience: 'E-shopy, velké firmy, B2B firmy',
+    audience: 'E-shopy a B2B firmy',
   },
 };

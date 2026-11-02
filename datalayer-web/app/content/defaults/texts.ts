@@ -27,15 +27,18 @@ export const DEFAULT_TEXTS: SiteTexts = {
     personName: '',
     personNote: '',
   },
+  // texty společného cookie panelu podle auditu z 2. listopadu 2026 (CK04); web načítá GTM
+  // s výchozím odmítnutým souhlasem, proto lišta zmiňuje požadavky bez cookies
   cookieBar: {
-    title: 'Cookies na tomto webu',
-    text: 'Analytické a marketingové cookies k měření návštěvnosti a kampaní použijeme jen s vaším souhlasem. Volbu změníte kdykoli v patičce. Podrobnosti najdete v <a href="/cookies">zásadách cookies</a>.',
-    necessary: '<strong>Nezbytné</strong> – základní chod webu a ochrana formuláře proti spamu. Vždy aktivní.',
-    analytics: '<strong>Analytické</strong> – měření návštěvnosti přes Google Analytics 4.',
-    marketing: '<strong>Marketingové</strong> – měření kampaní a remarketing v Google Ads, Metě a Skliku.',
-    reject: 'Odmítnout vše',
-    settings: 'Nastavení',
-    save: 'Uložit volbu',
+    title: 'Nastavení cookies',
+    text: 'Nezbytné cookies zajišťují chod webu. S vaším souhlasem použijeme také analytické a marketingové cookies. Bez souhlasu mohou Google tagy odesílat jen požadavky bez cookies. Volbu můžete kdykoli změnit v patičce webu. Podrobnosti najdete v <a href="/cookies">zásadách cookies</a>.',
+    necessary: '<strong>Nezbytné</strong> – zajišťují základní funkce webu a uložení vaší volby. Jsou vždy aktivní.',
+    analytics: '<strong>Analytické</strong> – pomáhají vyhodnocovat návštěvnost a používání webu.',
+    marketing:
+      '<strong>Marketingové</strong> – slouží k měření reklamních kampaní v Google Ads, Metě a Skliku. S tímto souhlasem web při odeslání formuláře předá pro měření konverzí také hash e-mailu a telefonu.',
+    reject: 'Odmítnout volitelné',
+    settings: 'Upravit nastavení',
+    save: 'Uložit nastavení',
     accept: 'Přijmout vše',
   },
   blog: {
@@ -59,10 +62,12 @@ export const DEFAULT_TEXTS: SiteTexts = {
     back: 'Zpět na úvod',
     links: DEFAULT_THANK_YOU_LINKS,
   },
+  // stránka 404 podle auditu z 2. listopadu 2026 (kap. 18)
   notFound: {
-    title: 'Stránka neexistuje',
-    text: 'Tuto stránku jsme nenašli. Možná jsme ji přesunuli.',
-    home: 'Zpět na úvod',
+    title: 'Tuto stránku jsme nenašli',
+    text: 'Adresa může být chybná nebo už stránka není dostupná. Pokračujte na úvod, nebo nám napište, co hledáte.',
+    home: 'Přejít na úvod',
+    contact: 'Kontakt',
   },
   organization: {
     description:

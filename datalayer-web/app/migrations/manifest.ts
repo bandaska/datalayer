@@ -19,6 +19,7 @@ import { migration as m20261009BezKontaktniOsoby } from './scripts/20261009_bez_
 import { migration as m20261009JazykovyAudit } from './scripts/20261009_jazykovy_audit';
 import { migration as m20261009UxRedukce } from './scripts/20261009_ux_redukce';
 import { migration as m20261102RevizeTextu } from './scripts/20261102_revize_textu';
+import { migration as m20261102AuditDokonceni } from './scripts/20261102_audit_dokonceni';
 
 export const MIGRATIONS: Migration[] = [
   m20261009SettingsDefaults, // výchozí příjemce formuláře v settings/site
@@ -29,4 +30,5 @@ export const MIGRATIONS: Migration[] = [
   m20261009JazykovyAudit, // jazykový audit: stránky, texty, menu, telefon, články
   m20261009UxRedukce, // UX redukce: třináct stránek, kratší menu, patička a formulář
   m20261102RevizeTextu, // revize textů podle auditu z 2. listopadu: stránky, menu, formulář
+  m20261102AuditDokonceni, // audit z 2. listopadu, kap. 11–18: zbylé stránky, cookie lišta, 404
 ];

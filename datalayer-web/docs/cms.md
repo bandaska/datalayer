@@ -154,7 +154,11 @@ formulářem a odstraní pole, která šablona nemá.
 Revizi textů a rozvržení podle auditu z 2. listopadu 2026 přináší migrace
 **`20261102_revize_textu`**: stránky přepíše se zálohou v `pages_backup`, menu a patičku nahradí
 (původní v `content_backup/navigation@20261102_revize_textu`) a texty formuláře, potvrzení
-a nadpis FAQ změní jen tam, kde zůstalo dřívější výchozí znění.
+a nadpis FAQ změní jen tam, kde zůstalo dřívější výchozí znění. Kapitoly 11–18 auditu (E-shopy, B2B,
+O datalayer.cz, Kontakt, zásady, cookies, cookie lišta, stránka 404 a titulky a popisy pro
+vyhledávače) přináší migrace **`20261102_audit_dokonceni`** stejným způsobem. Údaje, které audit
+označuje `[DOPLNIT]` (lidé a role, fakturační údaje, tabulka účelů zpracování, datum ověření
+cookies), web nepublikuje – identifikace provozovatele se ukáže z Nastavení, až ji klient vyplní.
 
 Kontaktní formulář má na tmavém pozadí vždy světlou kartu, nad poli větu z Textů webu a pole
 v pořadí jméno, pracovní e-mail, nepovinná adresa webu (`web_url` – `website` je skrytá past

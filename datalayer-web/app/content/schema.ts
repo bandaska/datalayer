@@ -473,7 +473,7 @@ export const textsSchema = z.object({
     /** Další odkazy pod tlačítkem zpět. */
     links: z.array(linkSchema).max(4).default(DEFAULT_THANK_YOU_LINKS),
   }),
-  notFound: z.object({ title: req(80), text: req(300), home: req(60) }),
+  notFound: z.object({ title: req(80), text: req(300), home: req(60), contact: req(60).default('Kontakt') }),
   organization: z.object({ description: req(500) }),
   /** Jednotný postup spolupráce (blok „Postup“ na stránkách). */
   process: z.object({ steps: z.array(processStepSchema).length(5, 'Postup má přesně pět kroků') }).default(DEFAULT_PROCESS),

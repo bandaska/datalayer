@@ -20,9 +20,9 @@ export const page: PageInput = {
   menuGroup: 'audity',
 
   seo: {
-    title: 'Audit měření – GA4, GTM, souhlas a konverze | datalayer.cz',
+    title: 'Audit měření GA4, GTM a konverzí – datalayer.cz',
     description:
-      'Audit měření prověří GA4, Google Tag Manager, cookie lištu a reklamní konverze a porovná data s objednávkami nebo CRM. Nálezy s prioritami a plán oprav.',
+      'Prověříme GA4, GTM, cookie lištu a reklamní konverze. Dostanete přehled zjištění, priority a plán oprav měření.',
   },
 
   hero: {
@@ -224,6 +224,6 @@ export const page: PageInput = {
     serviceType: 'Audit webové analytiky a měření konverzí',
     description:
       'Kontrola GA4, Google Tag Manageru, cookie lišty a měření reklamních konverzí. Porovnání dostupných dat s objednávkami nebo CRM, nálezy s prioritami a plán oprav.',
-    audience: 'E-shopy, B2B firmy, velké firmy',
+    audience: 'E-shopy a B2B firmy',
   },
 };

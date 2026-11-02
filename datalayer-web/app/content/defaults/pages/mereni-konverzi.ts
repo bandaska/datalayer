@@ -20,9 +20,9 @@ export const page: PageInput = {
   menuGroup: 'sber',
 
   seo: {
-    title: 'Měření konverzí – Google Ads, Meta, Sklik, Heureka | datalayer.cz',
+    title: 'Měření konverzí: Google Ads, Meta a Sklik – datalayer.cz',
     description:
-      'Měření konverzí pro Google Ads, Metu, Sklik a Heureku: definice, hodnoty a identifikátory konverzí, test jejich předání a vysvětlení rozdílů mezi systémy.',
+      'Nastavíme konverze pro Google Ads, Metu, Sklik a Heureku. Ověříme události, hodnoty i duplicity a vysvětlíme rozdíly mezi reporty.',
   },
 
   hero: {
@@ -198,10 +198,10 @@ export const page: PageInput = {
   },
 
   schema: {
-    name: 'Měření konverzí pro Google Ads, Metu, Sklik a Heureku',
+    name: 'Měření konverzí',
     serviceType: 'Nastavení a sjednocení měření konverzí v reklamních systémech',
     description:
       'Nastavení měření konverzí pro Google Ads, Metu, Sklik, Heureku a další reklamní systémy: konverzní mapa, sjednocení hodnot a identifikátorů, testovací protokol předání, porovnání se zdrojovými daty za domluvené období a dokumentace. Podle zadání také serverová API, offline konverze a Ověřeno zákazníky.',
-    audience: 'E-shopy, B2B firmy a velké firmy',
+    audience: 'E-shopy a B2B firmy',
   },
 };

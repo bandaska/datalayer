@@ -21,9 +21,9 @@ export const page: PageInput = {
   menuGroup: 'sber',
 
   seo: {
-    title: 'Nastavení GA4 a Google Tag Manageru – měřicí plán | datalayer.cz',
+    title: 'Nastavení GA4 a Google Tag Manageru – datalayer.cz',
     description:
-      'Měřicí plán, události v GA4, uspořádaný Google Tag Manager a zadání datové vrstvy pro vývojáře. Ověříme nákupy a formuláře a předáme dokumentaci.',
+      'Nastavíme GA4 a Google Tag Manager, připravíme měřicí plán a zadání datové vrstvy. Výsledek otestujeme a předáme s dokumentací.',
   },
 
   hero: {
@@ -203,6 +203,6 @@ export const page: PageInput = {
     serviceType: 'Nastavení Google Analytics 4 a Google Tag Manageru',
     description:
       'Měřicí plán, zadání datové vrstvy pro vývojáře, nastavení událostí, klíčových akcí a souhlasů v GA4 a Google Tag Manageru, testy nákupních a formulářových scénářů, porovnání se zdrojovými záznamy a dokumentace k předání.',
-    audience: 'E-shopy, B2B firmy, velké firmy',
+    audience: 'E-shopy a B2B firmy',
   },
 };

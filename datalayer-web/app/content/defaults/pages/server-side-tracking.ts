@@ -20,9 +20,9 @@ export const page: PageInput = {
   menuGroup: 'sber',
 
   seo: {
-    title: 'Server-side tracking a měření přes vlastní server | datalayer.cz',
+    title: 'Server-side tracking a GTM – datalayer.cz',
     description:
-      'Server-side GTM pro analytiku a reklamu: návrh, nastavení prostředí, pravidla pro události a souhlasy, testy a dokumentace. Posoudíme přínos i náklady.',
+      'Navrhneme server-side měření, předávání událostí a souhlasů. Posoudíme vhodnost řešení, potřebnou správu a náklady na provoz.',
   },
 
   hero: {
@@ -206,7 +206,7 @@ export const page: PageInput = {
   },
 
   schema: {
-    name: 'Server-side měření se serverovým Google Tag Managerem',
+    name: 'Server-side měření',
     serviceType: 'Server-side tracking a měření přes vlastní server',
     description:
       'Návrh a nastavení předávání měřicích událostí přes server-side Google Tag Manager: rozdělení měření mezi prohlížeč a server, hosting a kontejnery podle dohodnutého provozního modelu, pravidla pro identifikátory, hodnoty a deduplikaci, předávání souhlasů, testy a provozní dokumentace.',
