@@ -25,12 +25,14 @@ export const BLOCK_LABELS: Record<BlockType, string> = {
   process: 'Postup spolupráce',
   operator: 'Provozovatel webu',
   person: 'Osoba za webem',
+  details: 'Rozbalovací technická poznámka',
+  links: 'Řada odkazů',
 };
 
 export const BLOCK_HELP: Record<BlockType, string> = {
   paragraphs: 'Běžný text v odstavcích.',
   list: 'Odrážky, fajfky (co uděláme) nebo křížky (co neděláme).',
-  cards: 'Mřížka karet s nadpisem, textem, piktogramem, „konzolí“, odrážkami, štítky a odkazem.',
+  cards: 'Mřížka karet s nadpisem, textem, piktogramem, odrážkami a odkazem. U delších textů dvě nebo tři karty v řádku.',
   steps: 'Postup krok za krokem s výstupem a tím, co potřebujeme od klienta.',
   table: 'Tabulka se záhlavím; jeden sloupec lze zvýraznit.',
   flow: 'Schéma toku dat zleva doprava (na mobilu pod sebou).',
@@ -47,6 +49,8 @@ export const BLOCK_HELP: Record<BlockType, string> = {
   process: 'Jednotný postup spolupráce – pět kroků z Textů webu. U služby jde upravit popis kroku 3 (implementace).',
   operator: 'Jméno nebo firma, IČO a sídlo z Nastavení. Dokud nejsou vyplněné, blok se nezobrazí.',
   person: 'Jméno, role, praxe a nástroje tady, fotka z Textů webu (Kontakt), LinkedIn z Nastavení. Bez jména, nebo bez fotky i textu o praxi se blok nezobrazí.',
+  details: 'Sbalený detail pro odborníky (názvy vrstev, API, technické poznámky) pod hlavním textem. Obsah zůstává v HTML i pro vyhledávače.',
+  links: 'Několik textových odkazů vedle sebe, např. volba „Řešení pro e-shopy / pro B2B firmy“ pod kartami.',
 };
 
 export function newBlock(type: BlockType): Block {
@@ -89,6 +93,10 @@ export function newBlock(type: BlockType): Block {
       return { type, title: 'Provozovatel' };
     case 'person':
       return { type };
+    case 'details':
+      return { type, summary: 'Technické detaily', items: [''] };
+    case 'links':
+      return { type, items: [{ label: 'Nový odkaz', href: '/' }] };
   }
 }
 
@@ -133,6 +141,10 @@ export function blockSummary(b: Block): string {
       return 'z Nastavení';
     case 'person':
       return b.paragraphs?.length ? short(b.paragraphs[0]) : 'čeká na fotku nebo text o praxi';
+    case 'details':
+      return short(b.summary);
+    case 'links':
+      return short(b.items.map((l) => l.label).join(', '));
   }
 }
 
@@ -427,6 +439,26 @@ export function BlockEditor({ block, onChange, options }: { block: Block; onChan
 
     case 'consentSettings':
       return <TextInput label="Text tlačítka" value={block.label} onChange={(label) => onChange({ ...block, label })} />;
+
+    case 'details':
+      return (
+        <>
+          <TextInput label="Text rozbalovacího odkazu" value={block.summary} onChange={(summary) => onChange({ ...block, summary })} required />
+          <ParagraphsInput label="Obsah" value={block.items} onChange={(items) => onChange({ ...block, items: items.length ? items : [''] })} />
+        </>
+      );
+
+    case 'links':
+      return (
+        <ListEditor
+          nested
+          items={block.items}
+          onChange={(items) => onChange({ ...block, items: items.length ? items : block.items })}
+          itemTitle={(l) => l.label || 'Odkaz'}
+          addOptions={[{ label: 'Odkaz', create: () => ({ label: 'Nový odkaz', href: '/' }) }]}
+          renderItem={(l, set) => <LinkInput label="Odkaz" value={l} onChange={(v) => v && set(v)} />}
+        />
+      );
 
     case 'proscons':
       return (

@@ -1,47 +1,51 @@
 import type { PageInput } from '../../schema';
 
-// Stránka prošla UX redukcí z 9. října 2026 (seo-analyza/2026-10-09_ux-redukce,
-// kap. 5.2). Zůstaly: hero s jedním tlačítkem, „Poznáváte se?“, „Co uděláme
-// a co dostanete“ bez štítků (pravidlo devadesáti dní z mapy fází je v kartě
-// offline konverzí) a čtyři otázky. Schéma okruhu, fáze poptávky, srovnání
-// s běžným měřením, postup, kontrolní seznam a technické detaily zmizely.
-// „Lead“ zůstává jen v názvu služby (H1, SEO, tlačítko, menu), jinak „poptávka“.
+// Stránka odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty).
+// Kapitola k B2B v podkladu chybí, platí jen společná pravidla G01–G07 a závěr
+// z kap. 1 (stránka je rozcestník podle typu firmy). Zůstaly: hero s jedním tlačítkem,
+// „Co uděláme a co dostanete“ se šesti kartami (pravidlo devadesáti dní je v kartě
+// offline konverzí) a čtyři otázky. Sekce se situacemi má konkrétní nadpis a kotvu
+// #kdy. Úvod jen vysvětlí nabídku, definice poptávky a okruh web – CRM – reklamní
+// systémy jsou v sekci #jak-to-funguje (G06), podrobnosti o rozšířených konverzích
+// a Data Manager API z FAQ v technické poznámce pod ní (G04). „Lead“ zůstal jen jako
+// odborný název v definici a v SEO popisu, jinak „poptávka“; cesta stránky se nemění.
+// Přibyly související služby před kontaktem.
 
 export const page: PageInput = {
   path: 'reseni/b2b-a-lead-generation',
   kind: 'solution',
-  navTitle: 'B2B a lead generation',
+  navTitle: 'Pro B2B firmy',
   tagline: 'od formuláře po zakázku v CRM',
   pictogram: 'lead',
 
   seo: {
-    title: 'Měření leadů a offline konverze z CRM | datalayer.cz',
+    title: 'Měření poptávek a offline konverze z CRM | datalayer.cz',
     description:
-      'Měříme leady od formuláře po zakázku v CRM a vracíme je do Google Ads, Mety a LinkedInu: offline konverze, měření telefonátů, cena leadu i zakázky.',
+      'Měření poptávek a leadů od formuláře po zakázku v CRM a jejich návrat do Google Ads, Mety a LinkedInu: offline konverze, měření telefonátů a cena zakázky.',
   },
 
   hero: {
-    h1: 'Měření leadů od formuláře až po zakázku v CRM',
+    h1: 'Měření poptávek od formuláře až po zakázku v CRM',
     subtitle:
-      'Lead je poptávka potenciálního zákazníka – z formuláře na webu nebo z telefonu. Měření leadů propojí web, kde poptávka vznikne, CRM, kde obchod zjistí její kvalitu a hodnotu, a reklamní systémy, které podle výsledku optimalizují kampaně. Formulář uloží do CRM zdroj a ID kliknutí a fáze obchodu putují zpět do Google Ads, Mety a LinkedInu jako offline konverze. Reklama se pak neučí z počtu formulářů, ale z poptávek, které obchod opravdu uzavřel.',
-    primaryCta: { label: 'Probrat měření leadů', href: '#kontakt' },
+      'Propojíme web, reklamní systémy a CRM, tedy systém, ve kterém obchod eviduje poptávky a zákazníky. Nastavíme měření formulářů a telefonátů, ukládání zdroje poptávky do CRM a předání výsledků obchodu zpět do Google Ads, Mety a LinkedInu. Kampaně pak jde vyhodnotit podle kvalifikovaných poptávek a zakázek, nejen podle počtu formulářů.',
+    primaryCta: { label: 'Probrat měření poptávek', href: '#kontakt' },
   },
 
   sections: [
     {
-      id: 'symptomy',
-      title: 'Poznáváte se?',
-      lead: 'Měření až do CRM má smysl, když reklama přivádí poptávky, ale nikdo neví, které z nich končí zakázkou.',
+      id: 'kdy',
+      title: 'Kdy propojit měření poptávek s CRM',
+      lead: 'Měření až do CRM má smysl, když reklama přivádí poptávky, ale není jasné, které z nich končí zakázkou.',
       tone: 'light',
       blocks: [
         {
           type: 'cards',
-          columns: 4,
+          columns: 2,
           variant: 'symptoms',
           items: [
             {
               title: 'Hodně poptávek, málo zakázek',
-              text: 'Kampaně hlásí rekordní počet poptávek a obchod tvrdí, že polovinu tvoří studenti, konkurence a spam.',
+              text: 'Kampaně hlásí hodně poptávek a obchod upozorňuje, že velkou část z nich tvoří studenti, konkurence nebo spam.',
               pictogram: 'lead',
             },
             {
@@ -56,7 +60,7 @@ export const page: PageInput = {
             },
             {
               title: 'Obchodní cyklus trvá měsíce',
-              text: 'Obchod uzavře zakázku po třech měsících a reklamní systém se o ní nikdy nedozví.',
+              text: 'Obchod uzavře zakázku po třech měsících a bez napojení CRM se o ní reklamní systém nedozví.',
               pictogram: 'monitor',
             },
           ],
@@ -65,9 +69,9 @@ export const page: PageInput = {
     },
 
     {
-      id: 'vystupy',
-      title: 'Co uděláme a co dostanete',
-      lead: 'Uzavřený okruh od kliknutí po zakázku a zpět stojí na šesti částech – od měření formulářů přes CRM po dashboard.',
+      id: 'jak-to-funguje',
+      title: 'Jak měření poptávek funguje',
+      lead: 'Poptávka, v reklamních systémech lead, je zájem potenciálního zákazníka z formuláře na webu nebo z telefonu. Měření ji sleduje ve třech místech.',
       tone: 'white',
       blocks: [
         {
@@ -75,8 +79,43 @@ export const page: PageInput = {
           columns: 3,
           items: [
             {
+              title: 'Web',
+              text: 'Tady poptávka vznikne. Formulář uloží do CRM zdroj, kampaň a ID kliknutí.',
+            },
+            {
+              title: 'CRM',
+              text: 'Obchod tu zjistí kvalitu a hodnotu poptávky a podle dohodnutých pravidel mění její fáze.',
+            },
+            {
+              title: 'Reklamní systémy',
+              text: 'Fáze obchodu pošleme zpět do Google Ads, Mety a LinkedInu jako offline konverze. Kampaně se pak učí z poptávek, které obchod uzavřel, ne z počtu formulářů.',
+            },
+          ],
+        },
+        {
+          type: 'details',
+          summary: 'Technická poznámka: rozšířené konverze a Data Manager API',
+          items: [
+            'Kombinaci ID kliknutí a hashe e-mailu nebo telefonu Google nazývá „rozšířené konverze pro potenciální zákazníky“ a pro nové implementace ji doporučuje, protože konverzi spáruje, i když ID kliknutí cestou zmizí.',
+            'Od 15. června 2026 Google směruje nahrávání offline konverzí do Data Manager API, starší skripty proto převedeme.',
+          ],
+        },
+      ],
+    },
+
+    {
+      id: 'vystupy',
+      title: 'Co uděláme a co dostanete',
+      lead: 'Uzavřený okruh od kliknutí po zakázku a zpět stojí na šesti částech – od měření formulářů přes CRM po report.',
+      tone: 'light',
+      blocks: [
+        {
+          type: 'cards',
+          columns: 3,
+          items: [
+            {
               title: 'Měřicí plán a formuláře',
-              text: 'Měříme začátek vyplňování, chyby i odeslání formuláře, takže uvidíte, na kterém poli lidé odcházejí.',
+              text: 'Měříme začátek vyplňování, chyby i odeslání formuláře, takže je vidět, na kterém poli lidé formulář opouštějí.',
             },
             {
               title: 'Zdroj a ID kliknutí v CRM',
@@ -95,8 +134,8 @@ export const page: PageInput = {
               text: 'Úroveň měření zvolíme podle toho, kolik poptávek přichází telefonem – od kliknutí na číslo po dynamická čísla, která hovor zapíšou do CRM.',
             },
             {
-              title: 'Dashboard od poptávky po zakázku',
-              text: 'Náklady, poptávky a fáze z CRM spojíme v BigQuery a dashboard ukáže cenu poptávky, kvalifikované poptávky i zakázky podle kanálů.',
+              title: 'Report od poptávky po zakázku',
+              text: 'Náklady, poptávky a fáze z CRM spojíme v BigQuery a report ukáže cenu poptávky, kvalifikované poptávky i zakázky podle kanálů.',
             },
           ],
         },
@@ -106,37 +145,57 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Jak dostaneme zakázky z CRM zpět do Google Ads?',
-      a: 'U každé poptávky formulář do CRM uloží ID kliknutí a hash e-mailu nebo telefonu. Fáze s hodnotou pak jednou denně posíláme přes Google Ads Data Manager – z HubSpotu a Salesforce přímo, z ostatních CRM přes BigQuery nebo tabulku. Kombinaci ID kliknutí a hashe Google nazývá „rozšířené konverze pro potenciální zákazníky“ a pro nové implementace ji doporučuje, protože konverzi spáruje, i když ID kliknutí cestou zmizí. Od 15. června 2026 Google směruje nahrávání offline konverzí do Data Manager API, starší skripty proto převedeme.',
+      q: 'Jak se zakázky z CRM dostanou zpět do Google Ads?',
+      a: 'Zakázky posíláme do Google Ads jako offline konverze. U každé poptávky formulář uloží do CRM ID kliknutí a hash e-mailu nebo telefonu. Fáze s hodnotou pak jednou denně posíláme přes Google Ads Data Manager – z HubSpotu a Salesforce přímo, z ostatních CRM přes BigQuery nebo tabulku.',
     },
     {
-      q: 'Kolik to stojí a z čeho se cena skládá?',
-      a: 'Cenu určuje počet formulářů a vstupních kanálů, třeba webu, telefonu nebo Lead Ads, dále CRM a jeho možnosti exportu, počet reklamních systémů, úroveň měření telefonátů a dashboard. Po úvodní konzultaci a krátkém auditu dostanete nabídku s pevným rozsahem a výstupy. Poplatky za call tracking nebo licence CRM platíte přímo poskytovatelům.',
+      q: 'Co ovlivňuje cenu?',
+      a: 'Cenu určuje počet formulářů a vstupních kanálů, třeba webu, telefonu nebo formulářů přímo v reklamách, dále CRM a jeho možnosti exportu, počet reklamních systémů, úroveň měření telefonátů a report. Po úvodní konzultaci a krátkém auditu dostanete nabídku s pevným rozsahem a výstupy. Poplatky za call tracking nebo licence CRM platíte přímo poskytovatelům.',
     },
     {
-      q: 'Co od nás budete potřebovat?',
-      a: 'Přístupy do GTM, GA4 a reklamních účtů, součinnost správce CRM a případně vývojáře webu pro úpravu formulářů. Hlavně ale krátký workshop s obchodem: bez dohody, co znamená „kvalifikovaná poptávka“ a kdy obchodník mění fázi, žádné měření fungovat nebude. Pracujeme přímo ve vašich účtech, přístupy po skončení projektu odeberete a mapu fází s dokumentací vám předáme.',
+      q: 'Jaká součinnost je potřeba?',
+      a: 'Přístupy do Google Tag Manageru, Google Analytics 4 a reklamních účtů, součinnost správce CRM a případně vývojáře webu pro úpravu formulářů. Důležitý je i krátký workshop s obchodem, na kterém dohodneme, co znamená „kvalifikovaná poptávka“ a kdy obchodník mění fázi. Pracujeme přímo ve vašich účtech, přístupy po skončení projektu odeberete a mapu fází s dokumentací předáme.',
     },
     {
       q: 'Je posílání dat z CRM do Googlu a Mety v souladu s GDPR?',
-      a: 'Technicky to nastavujeme konzervativně: kontaktní údaje jen jako hash, jen se souhlasem <code>ad_user_data</code>, žádné osobní údaje v GA4 a jen nezbytná pole. Vy jste správce osobních údajů z CRM, Google u rozšířených konverzí vystupuje jako zpracovatel podle smluvních podmínek Google Ads Data Processing Terms a my jako zpracovatel podle zpracovatelské smlouvy. Právní titul pro předání údajů posoudí váš právník – nejsme advokátní kancelář, ale dodáme mu přesný popis datových toků.',
+      a: 'Technické nastavení připravíme konzervativně, právní titul pro předání údajů ale posoudí váš právník. Kontaktní údaje posíláme jen jako hash a jen se souhlasem <code>ad_user_data</code>, do GA4 žádné osobní údaje nejdou a předáváme jen nezbytná pole. Správce osobních údajů z CRM je vaše firma, Google u rozšířených konverzí vystupuje jako zpracovatel podle smluvních podmínek Google Ads Data Processing Terms a my jako zpracovatel podle zpracovatelské smlouvy. Nejsme advokátní kancelář, právníkovi ale dodáme přesný popis datových toků.',
     },
   ],
 
+  related: {
+    items: [
+      {
+        label: 'Měření konverzí',
+        href: '/sluzby/mereni-konverzi',
+        text: 'Určí, které poptávky jsou konverze a jakou mají hodnotu, a nastaví jejich předání reklamním systémům.',
+      },
+      {
+        label: 'BigQuery a reporting',
+        href: '/sluzby/bigquery',
+        text: 'Spojí náklady na reklamu s poptávkami a fázemi obchodu z CRM do společného reportu.',
+      },
+      {
+        label: 'Server-side měření',
+        href: '/sluzby/server-side-tracking',
+        text: 'Předá události ze serveru a CRM, například změny stavu poptávky, reklamním systémům podle nastavených pravidel.',
+      },
+    ],
+  },
+
   contact: {
     formId: 'lp-b2b',
-    title: 'Zjistíme, kolik vás doopravdy stojí jedna zakázka',
-    lead: 'Na úvodní konzultaci projdeme formuláře, CRM a kampaně a řekneme, co propojit jako první.',
-    placeholder: 'Adresa webu a co řešíte, např. „Máme HubSpot a obchod říká, že polovina poptávek z Google Ads je nekvalitní“',
+    title: 'Proberme měření poptávek',
+    lead: 'Napište, jaké CRM používáte a odkud poptávky přicházejí. Na úvodní konzultaci upřesníme zadání a navrhneme další postup.',
+    placeholder: '',
     leadType: 'consultation',
   },
 
   schema: {
-    name: 'Měření leadů a offline konverze pro B2B',
+    name: 'Měření poptávek a offline konverze pro B2B',
     serviceType:
       'Měření formulářů, napojení CRM, offline a rozšířené konverze pro potenciální zákazníky, měření telefonátů, reporting od poptávky po zakázku',
     description:
-      'Měření leadů od formuláře po zakázku v CRM a jejich návrat do Google Ads, Mety a LinkedInu: offline konverze, rozšířené konverze pro potenciální zákazníky, měření telefonátů a reporting ceny poptávky, ceny zakázky a poměru poptávek k zakázkám.',
+      'Měření poptávek od formuláře po zakázku v CRM a jejich návrat do Google Ads, Mety a LinkedInu: offline konverze, rozšířené konverze pro potenciální zákazníky, měření telefonátů a reporting ceny poptávky, ceny zakázky a poměru poptávek k zakázkám.',
     audience: 'B2B firmy a firmy, které získávají zákazníky přes poptávky',
   },
 };

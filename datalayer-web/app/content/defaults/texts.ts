@@ -1,24 +1,27 @@
 import type { SiteTexts } from '../schema';
-import { DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from '../textDefaults';
+import { DEFAULT_FORM_INTRO, DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from '../textDefaults';
 
 // Výchozí texty webu mimo stránky (kontaktní formulář, cookie lišta, blog,
 // děkovací a chybová stránka) – po migraci se editují v administraci (Texty webu).
 
 export const DEFAULT_TEXTS: SiteTexts = {
+  // formulář a hlášky podle auditu z 2. listopadu 2026 (G05)
   contact: {
-    defaultTitle: 'Napište nám, co řešíte',
+    formIntro: DEFAULT_FORM_INTRO,
+    defaultTitle: 'Proberme vaše měření',
     leadWithPhone:
-      'Napište nám, zavolejte nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první – nezávazně a zdarma.',
+      'Napište adresu webu a stručně popište, co potřebujete vyřešit. Na úvodní konzultaci upřesníme zadání a navrhneme další postup. Konzultace je nezávazná a zdarma.',
     leadWithoutPhone:
-      'Napište nám e-mail nebo vyplňte formulář. Na úvodní konzultaci projdeme vaše měření a řekneme, co opravit jako první – nezávazně a zdarma.',
-    // pole Web formulář nemá – adresu webu připomene nápověda ve zprávě (UX redukce)
-    defaultPlaceholder: 'Adresa webu a co řešíte, např. „GA4 ukazuje o pětinu méně objednávek než e-shop“',
-    legal: 'Údaje použijeme jen k odpovědi. <a href="/zpracovani-osobnich-udaju">Jak s nimi zacházíme</a>',
+      'Napište adresu webu a stručně popište, co potřebujete vyřešit. Na úvodní konzultaci upřesníme zadání a navrhneme další postup. Konzultace je nezávazná a zdarma.',
+    // nápověda pod popiskem zprávy (ne placeholder)
+    defaultPlaceholder: 'Například rozdíly v objednávkách, nové měření nebo propojení s CRM.',
+    legal:
+      'Údaje z formuláře použijeme k vyřízení vaší poptávky. Informace o dalším zpracování najdete na stránce <a href="/zpracovani-osobnich-udaju">Zpracování osobních údajů</a>.',
     // žádné sliby lhůt (rozhodnutí klienta) – prázdná poznámka se nezobrazí
     note: '',
-    submit: 'Odeslat zprávu',
-    successTitle: 'Děkujeme, zpráva dorazila',
-    successText: 'Ozveme se vám na {email}.',
+    submit: 'Odeslat poptávku',
+    successTitle: 'Děkujeme, poptávku jsme přijali',
+    successText: 'Ozveme se na uvedený e-mail.',
     successPhone: 'Pokud to spěchá, zavolejte na {phone}.',
     // web zatím nemá kontaktní osobu – s prázdným jménem se karta u formuláře nezobrazí
     personName: '',
@@ -50,9 +53,9 @@ export const DEFAULT_TEXTS: SiteTexts = {
     ctaPlaceholder: 'Napište, s čím si nevíte rady…',
   },
   thankYou: {
-    title: 'Děkujeme, zpráva dorazila',
-    text: 'Ozveme se vám e-mailem.',
-    errorTitle: 'Zprávu se nepodařilo odeslat',
+    title: 'Děkujeme, poptávku jsme přijali',
+    text: 'Ozveme se na uvedený e-mail.',
+    errorTitle: 'Poptávku se nepodařilo odeslat',
     back: 'Zpět na úvod',
     links: DEFAULT_THANK_YOU_LINKS,
   },

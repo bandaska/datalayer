@@ -46,6 +46,8 @@ function cleanBlock(b: Block): Block {
       };
     case 'person':
       return { ...b, paragraphs: inlArr(b.paragraphs) };
+    case 'details':
+      return { ...b, items: b.items.map(cleanInline) };
     default:
       return b;
   }

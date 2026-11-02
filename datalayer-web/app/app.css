@@ -187,6 +187,17 @@ body {
   border-bottom: 1px solid var(--border-color);
   background: linear-gradient(180deg, rgba(2, 13, 30, 1) 0%, rgba(11, 26, 48, 1) 100%);
 }
+/* kompaktní záhlaví kontaktu a právních stránek (audit G06) */
+.article-hero--compact {
+  padding: 32px 0 28px;
+}
+.article-hero--compact .article-title {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 0.75rem;
+}
+.article-hero--compact .article-perex {
+  margin-bottom: 0;
+}
 .article-meta {
   font-size: 0.9rem;
   color: var(--brand-cyan);
@@ -952,8 +963,18 @@ footer .highlight {
 }
 
 /* --- Landing page --- */
-.lp-container {
-  max-width: 1140px;
+/* Stránky používají stejný kontejner jako hlavička a homepage (šířky Bootstrapu), jen s
+   vnitřním odsazením 24 px, na telefonu 20 px – obsah podstránek tak nesahá k okraji
+   (audit z 2. listopadu 2026, G06). */
+.container {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (max-width: 575px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .lp-hero {
   padding: 40px 0 72px;
@@ -1012,7 +1033,7 @@ footer .highlight {
 }
 .lp-hero__frame {
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   aspect-ratio: 1;
   border: 1px solid rgba(0, 255, 255, 0.25);
   border-radius: 24px;
@@ -1025,8 +1046,8 @@ footer .highlight {
   box-shadow: 0 0 60px rgba(0, 255, 255, 0.07) inset;
 }
 .lp-hero__frame .pi {
-  width: 130px;
-  height: 130px;
+  width: 84px;
+  height: 84px;
   filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.35));
 }
 .lp-hero__tag {
@@ -2101,6 +2122,7 @@ footer .highlight {
 .dl-form input[type='text'],
 .dl-form input[type='email'],
 .dl-form input[type='tel'],
+.dl-form input[type='url'],
 .dl-form textarea {
   width: 100%;
   margin-top: 6px;
@@ -2339,7 +2361,7 @@ footer .highlight {
 }
 @media (max-width: 991px) {
   .cc {
-    bottom: 76px;
+    bottom: 16px;
   }
 }
 @media (max-width: 640px) {
@@ -3070,6 +3092,7 @@ img.dl-person__photo {
 .dl-form input[type='text'],
 .dl-form input[type='email'],
 .dl-form input[type='tel'],
+.dl-form input[type='url'],
 .dl-form textarea {
   background: #f6f8fb;
   color: var(--light-text);
@@ -3118,20 +3141,9 @@ img.dl-person__photo {
   color: var(--light-accent);
 }
 
-/* hranaté závorky u tlačítek a šipky u odkazů jako grafika značky – v CSS, ne v textu
-   (čtečky je nečtou, text je čistý; jazykový audit S27 a S28) */
-.btn-cta::before,
-.btn-outline-custom::before,
-.dl-btn::before {
-  content: '[ ';
-  content: '[ ' / '';
-}
-.btn-cta::after,
-.btn-outline-custom::after,
-.dl-btn::after {
-  content: ' ]';
-  content: ' ]' / '';
-}
+/* šipky u textových odkazů jako grafika značky – v CSS, ne v textu (čtečky je nečtou;
+   jazykový audit S28). Hranaté závorky kolem tlačítek audit z 2. listopadu 2026 (G05)
+   zrušil – návštěvníkovi nic neříkaly. */
 .lp-card__link::after,
 .btn-link-cyan::after,
 .thanks-links a::after,
@@ -3144,4 +3156,124 @@ img.dl-person__photo {
 
 .lp-process__label {
   font-weight: 600;
+}
+
+/* --- Audit z 2. listopadu 2026: orientace a nové prvky šablony --- */
+/* drobečková navigace nad H1 podstránek (G02) */
+.lp-hero .crumbs ol,
+.article-hero .crumbs ol {
+  margin-bottom: 16px;
+}
+.crumbs li + li::before {
+  content: '/';
+}
+/* textový odkaz vedle tlačítka v úvodu */
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
+  color: var(--brand-cyan);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.hero-link:hover {
+  color: #fff;
+}
+.lp-hero__ctas,
+.hero-ctas {
+  align-items: center;
+}
+/* kotvy na sekce pod úvodem služby */
+.lp-anchors ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 24px 0 0;
+  padding: 0;
+  font-size: 15px;
+}
+.lp-anchors a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  color: #c9d1d9;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.35);
+}
+.lp-anchors a:hover,
+.lp-anchors a:focus-visible {
+  color: var(--brand-cyan);
+}
+/* související služby před kontaktem */
+.lp-related-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 32px;
+}
+.lp-related-links p {
+  margin: 0;
+  color: var(--light-muted, #4a5568);
+}
+@media (max-width: 767px) {
+  .lp-related-links {
+    grid-template-columns: 1fr;
+  }
+}
+/* řada textových odkazů (volby pod kartami) */
+.lp-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 32px;
+  margin: 8px 0 0;
+  padding: 0;
+}
+/* rozbalovací technická poznámka */
+.lp-details {
+  margin: 16px 0 0;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0 18px;
+}
+.lp-section--light .lp-details {
+  border-color: #d5dde6;
+}
+.lp-details summary {
+  cursor: pointer;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.lp-details__in {
+  padding: 0 0 16px;
+}
+.lp-details__in p:last-child {
+  margin-bottom: 0;
+}
+/* formulář: věta nad poli a nápověda pod popiskem zprávy (G05) */
+.dl-form__intro {
+  margin: 0 0 18px;
+  font-size: 15px;
+  color: var(--light-text, #1a2433);
+}
+.dl-form__hint {
+  display: block;
+  margin: 4px 0 6px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #4a5568;
+}
+/* spodní lišta na mobilu: schovaná při otevřeném cookie panelu a při psaní do formuláře (G06) */
+@media (max-width: 991px) {
+  .cc-open .mobile-bar,
+  .is-typing .mobile-bar {
+    transform: translateY(110%);
+  }
 }

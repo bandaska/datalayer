@@ -139,4 +139,14 @@ describe('kontaktní formulář – pomocné funkce', () => {
     expect(f.temata).toEqual(['bigquery']);
     expect(validateContact({ jmeno: 'A', email: 'a@b.cz', zprava: 'x' })).toEqual({});
   });
+
+  it('adresa webu z viditelného pole web_url, ne ze skryté pasti website', () => {
+    const fd = new FormData();
+    fd.append('web_url', ' https://www.example.cz ');
+    fd.append('website', 'http://spam.example');
+    expect(readContactFields(fd).web).toBe('https://www.example.cz');
+    const old = new FormData();
+    old.append('web', 'www.starsi-formular.cz');
+    expect(readContactFields(old).web).toBe('www.starsi-formular.cz');
+  });
 });

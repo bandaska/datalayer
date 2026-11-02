@@ -38,9 +38,14 @@ export const DEFAULT_PROCESS = {
   ],
 };
 
+// nadpisy podle auditu z 2. listopadu 2026 (G02, G04); úvodní stránka má vlastní nadpis FAQ
 export const DEFAULT_PAGE_TEXTS = {
-  faqTitle: 'Časté otázky',
+  faqTitle: 'Cena a praktické dotazy',
+  relatedTitle: 'Související služby',
 };
+
+/** Věta nad poli kontaktního formuláře (audit z 2. listopadu 2026, G05). */
+export const DEFAULT_FORM_INTRO = 'Stačí stručně popsat situaci. Přístupy k účtům domluvíme až podle rozsahu práce.';
 
 // Děkovací stránka jen s tlačítkem zpět – rozcestník služeb a Jak pracujeme web nemá (UX redukce).
 export const DEFAULT_THANK_YOU_LINKS: { label: string; href: string }[] = [];

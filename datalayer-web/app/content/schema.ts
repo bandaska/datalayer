@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
+import { DEFAULT_FORM_INTRO, DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
 import { LEGACY_TOPICS, TOPIC_VALUES } from './topics';
 
 // Schéma veškerého obsahu webu, který se edituje v administraci a ukládá do
@@ -216,6 +216,17 @@ export const blockSchema = z.discriminatedUnion('type', [
   }),
   /** Tlačítko, které otevře nastavení cookies. */
   z.object({ type: z.literal('consentSettings'), label: str(80).optional() }),
+  /** Rozbalovací technická poznámka (např. uspořádání datového skladu) – detail pro odborníky pod hlavním textem. */
+  z.object({
+    type: z.literal('details'),
+    summary: req(200),
+    items: z.array(str(4000)).min(1, 'Aspoň jeden odstavec'), // HTML
+  }),
+  /** Řada textových odkazů, např. volba „Řešení pro e-shopy / pro B2B firmy“ pod kartami. */
+  z.object({
+    type: z.literal('links'),
+    items: z.array(linkSchema).min(1, 'Aspoň jeden odkaz').max(6, 'Nejvýš šest odkazů'),
+  }),
 ]);
 
 export const BLOCK_TYPES = blockSchema.options.map((o) => o.shape.type.value);
@@ -243,9 +254,14 @@ export const pathSchema = z
   .trim()
   .regex(/^(?:[a-z0-9]+(?:-[a-z0-9]+)*(?:\/[a-z0-9]+(?:-[a-z0-9]+)*)*)?$/, 'Cesta: malá písmena, číslice, pomlčky a lomítka (např. sluzby/nova-sluzba)');
 
-/** Kotvy, které na stránku vkládá šablona: kontaktní blok, FAQ a menu. */
-export function templateAnchors(page: { contact: { enabled?: boolean }; faq: unknown[] }): string[] {
-  return ['site-menu', ...(page.contact.enabled !== false ? ['kontakt', 'contact-form'] : []), ...(page.faq.length ? ['faq'] : [])];
+/** Kotvy, které na stránku vkládá šablona: kontaktní blok, FAQ, související služby a menu. */
+export function templateAnchors(page: { contact: { enabled?: boolean }; faq: unknown[]; related?: { items: unknown[] } }): string[] {
+  return [
+    'site-menu',
+    ...(page.contact.enabled !== false ? ['kontakt', 'contact-form'] : []),
+    ...(page.faq.length ? ['faq'] : []),
+    ...(page.related?.items.length ? ['souvisejici'] : []),
+  ];
 }
 
 export const pageSchema = z
@@ -265,8 +281,9 @@ export const pageSchema = z
     seo: z.object({ title: req(90), description: req(220) }),
     /** Obrázek pro sdílení (1200×630), cesta nebo https URL. */
     ogImage: z.string().trim().max(500).optional(),
-    // Hero jen s nadpisem, podtitulem a jedním tlačítkem – bez nadtitulku, druhého tlačítka,
-    // mikrotextu a bodů důvěry (UX redukce 9. října 2026). Starší pole v databázi schéma zahodí.
+    // Hero s nadpisem, podtitulem a jedním tlačítkem – bez nadtitulku, mikrotextu a bodů
+    // důvěry (UX redukce 9. října 2026). Vedle tlačítka smí být jeden textový odkaz a pod
+    // ním krátké kotvy na sekce (audit 2. listopadu 2026, G02). Starší pole schéma zahodí.
     hero: z.object({
       /** pictogram = rámeček s piktogramem, diagram = schéma z homepage, simple = jen text. */
       variant: z.enum(['pictogram', 'diagram', 'simple']).optional(),
@@ -275,10 +292,24 @@ export const pageSchema = z
       h1Highlight: str(80).optional(),
       subtitle: str(1200),
       primaryCta: linkSchema.optional(),
+      /** Textový odkaz vedle tlačítka (ne druhé tlačítko), např. „Ukázka výstupu auditu“. */
+      secondaryLink: linkSchema.optional(),
+      /** Kotvy na sekce pod úvodem, např. Rozsah služby, Výstupy, Průběh, Cena a dotazy. */
+      anchors: z.array(linkSchema).max(5, 'Nejvýš pět kotev').optional(),
     }),
     sections: z.array(sectionSchema),
     faq: z.array(faqSchema),
     faqTitle: str(120).optional(),
+    /** Související služby před kontaktem: nejvýš tři odkazy, každý s větou o návaznosti. */
+    related: z
+      .object({
+        title: str(120).optional(),
+        items: z
+          .array(z.object({ label: req(80), href, text: str(300) }))
+          .min(1, 'Aspoň jeden odkaz')
+          .max(3, 'Nejvýš tři související odkazy'),
+      })
+      .optional(),
     contact: z.object({
       /** Vypnutý kontaktní blok se na stránce nezobrazí (např. zásady). */
       enabled: z.boolean().optional(),
@@ -287,6 +318,7 @@ export const pageSchema = z
       formId: slug,
       title: str(200),
       lead: str(1000).optional(),
+      /** Nápověda pod popiskem zprávy; prázdná = výchozí z Textů webu. */
       placeholder: str(300),
       leadType: z.enum(['consultation', 'audit', 'quick_check']).optional(),
     }),
@@ -383,12 +415,14 @@ export type NavLink = z.infer<typeof navLinkSchema>;
 // Nová pole mají výchozí hodnotu, aby prošel i dokument content/texts uložený
 // před jejich zavedením.
 
-export { DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
+export { DEFAULT_FORM_INTRO, DEFAULT_PAGE_TEXTS, DEFAULT_PROCESS, DEFAULT_THANK_YOU_LINKS } from './textDefaults';
 
 const processStepSchema = z.object({ title: req(120), text: req(400), output: str(200).optional(), fromClient: str(200).optional() });
 
 export const textsSchema = z.object({
   contact: z.object({
+    /** Krátká věta nad poli formuláře. */
+    formIntro: str(300).default(DEFAULT_FORM_INTRO),
     defaultTitle: req(200),
     leadWithPhone: req(600),
     leadWithoutPhone: req(600),
@@ -443,8 +477,10 @@ export const textsSchema = z.object({
   organization: z.object({ description: req(500) }),
   /** Jednotný postup spolupráce (blok „Postup“ na stránkách). */
   process: z.object({ steps: z.array(processStepSchema).length(5, 'Postup má přesně pět kroků') }).default(DEFAULT_PROCESS),
-  /** Společné texty šablony stránek: nadpis FAQ. */
-  page: z.object({ faqTitle: req(120) }).default(DEFAULT_PAGE_TEXTS),
+  /** Společné texty šablony stránek: nadpis FAQ a bloku souvisejících služeb. */
+  page: z
+    .object({ faqTitle: req(120), relatedTitle: req(120).default(DEFAULT_PAGE_TEXTS.relatedTitle) })
+    .default(DEFAULT_PAGE_TEXTS),
 });
 
 export type SiteTexts = z.infer<typeof textsSchema>;

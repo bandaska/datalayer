@@ -216,6 +216,32 @@ function BlockView({ block, sectionId, index, ctx }: { block: Block; sectionId: 
           </button>
         </p>
       );
+
+    case 'details':
+      // technická poznámka sbalená pod hlavním textem; obsah zůstává v HTML
+      return (
+        <details className="lp-details">
+          <summary>{block.summary}</summary>
+          <div className="lp-details__in">
+            {block.items.map((p, i) => (
+              <Html as="p" key={i} html={p} />
+            ))}
+          </div>
+        </details>
+      );
+
+    case 'links':
+      return (
+        <ul className="lp-links">
+          {block.items.map((l, i) => (
+            <li key={i}>
+              <a className="lp-card__link" href={l.href} onClick={() => pushEvent('cta_click', { cta_id: `${sectionId}_link_${i}`, cta_text: l.label, section: sectionId })}>
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      );
   }
 }
 

@@ -1,65 +1,74 @@
 import type { PageInput } from '../../schema';
 
-// Stránka prošla UX redukcí z 9. října 2026 (seo-analyza/2026-10-09_ux-redukce,
-// kap. 3.2 a 5.2) a pohltila zrušenou stránku Dashboardy a reporting: dashboardy
-// jsou výstup ve „Co uděláme“ a otázka „BigQuery, nebo přímé konektory“ ve FAQ.
-// Zůstaly: hero s jedním tlačítkem, „Poznáváte se?“, výstupy, schéma architektury,
-// rozhodnutí ano/ne bez čísel v boxech a čtyři otázky. Postup, kontrolní seznam,
-// technické detaily a ceny Google Cloudu z boxů zmizely, kurzy ani školení Power BI
-// stránka nenabízí.
+// Stránka odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty,
+// kap. 3 a 10, BQ01–BQ06). Služba se jmenuje BigQuery a reporting. Zůstal hero
+// s jedním tlačítkem, nově s kotvami, karty situací pod nadpisem „Kdy propojit data do
+// společného reportingu“ místo dřívější obecné výzvy, šest výstupů s blokem „Provoz a správa“,
+// schéma ve třech uzlech s technickou poznámkou o vrstvách raw, staging a marts
+// a modelovým přehledem pro vedení bez čísel, sekce „Kdy stačí jednodušší řešení“ na místě
+// dřívějšího rozhodování ano/ne, vlastní průběh spolupráce z BQ05, FAQ a kontakt z BQ06
+// a související služby. Vypadly rozhodovací boxy ano/ne, strom KPI, modelový výpočet
+// ceny provozu, jména tabulek a nástrojů v hlavním textu (jsou v rozbalovací poznámce) a sliby
+// „úplná data“, „přesné počty uživatelů“, „každé číslo až ke zdrojové události“
+// i tvrzení, že veškerá historie GA4 končí po čtrnácti měsících.
 
 export const page: PageInput = {
   path: 'sluzby/bigquery',
   kind: 'service',
-  navTitle: 'BigQuery a dashboardy',
-  tagline: 'surová data bez limitů GA4 a reporty',
+  navTitle: 'BigQuery a reporting',
+  tagline: 'společný datový model a reporty',
   pictogram: 'bigquery',
   menuGroup: 'data',
 
   seo: {
-    title: 'BigQuery, datový sklad a dashboardy pro marketing | datalayer.cz',
+    title: 'BigQuery a reporting pro marketing a vedení firmy | datalayer.cz',
     description:
-      'GA4 v BigQuery spojíme s náklady z Google Ads, Mety a Skliku i s daty e-shopu a CRM. Datový model a dashboard v Data Studiu nebo Power BI, který sedí s účetnictvím.',
+      'Propojíme data z GA4, reklamních systémů, e-shopu a CRM. V BigQuery připravíme společný datový model a reporty v Data Studiu nebo Power BI.',
   },
 
   hero: {
-    h1: 'BigQuery a dashboardy pro marketing',
+    h1: 'BigQuery a reporting pro marketing a vedení firmy',
     subtitle:
-      'BigQuery je datový sklad Googlu, do kterého GA4 umí exportovat všechny události bez vzorkování. Surová data z GA4 v něm spojíme s náklady z Google Ads, Mety a Skliku a s objednávkami, maržemi a vratkami z e-shopu, CRM nebo ERP. Nad nimi postavíme dashboard v Data Studiu (dříve Looker Studio) nebo Power BI, kterému věří i finanční ředitel. Vše běží ve vašem Google Cloudu, s hlídanými náklady.',
-    primaryCta: { label: 'Konzultovat BigQuery', href: '#kontakt' },
+      'Propojíme data z GA4, reklamních systémů, e-shopu a CRM. V BigQuery připravíme společný datový model a reporty v Data Studiu nebo Power BI. Dohodneme definice metrik, způsob aktualizace a kontrolu nákladů na provoz.',
+    primaryCta: { label: 'Probrat firemní reporting', href: '#kontakt' },
+    anchors: [
+      { label: 'Rozsah služby', href: '#kdy' },
+      { label: 'Výstupy', href: '#vystupy' },
+      { label: 'Průběh', href: '#prubeh' },
+      { label: 'Cena a dotazy', href: '#faq' },
+    ],
   },
 
   sections: [
     {
-      id: 'symptomy',
-      title: 'Poznáváte se?',
-      lead: 'GA4 je dobrý nástroj na sběr dat. Na řízení marketingu podle peněz mu ale chybí data, která firma drží jinde.',
+      id: 'kdy',
+      title: 'Kdy propojit data do společného reportingu',
       tone: 'light',
       blocks: [
         {
           type: 'cards',
-          columns: 4,
+          columns: 2,
           variant: 'symptoms',
           items: [
             {
-              title: 'Meziroční srovnání končí na čtrnácti měsících',
-              text: 'V Průzkumech ve standardní verzi GA4 vidíte událostní data nejvýš čtrnáct měsíců zpět, takže sezónnost a kohorty porovnáte jen obtížně.',
-              pictogram: 'monitor',
-            },
-            {
-              title: 'ROAS počítáte z obratu, ne z marže',
-              text: 'GA4 nezná nákupní ceny, storna ani vratky. Kampaň, která „vydělává“, může po odečtení vratek prodělávat.',
-              pictogram: 'eshop',
-            },
-            {
-              title: 'Náklady sčítá někdo ručně',
-              text: 'Každé pondělí někdo stahuje náklady z Google Ads, Mety a Skliku do Excelu. Chyba v jednom řádku a porada řeší špatná čísla.',
+              title: 'Více zdrojů a ruční příprava',
+              text: 'Report vzniká skládáním exportů z reklamy, e-shopu a firemních systémů.',
               pictogram: 'conversion',
             },
             {
-              title: 'Poptávku z webu nikdo nespojí se zakázkou',
-              text: 'Marketing vykazuje poptávky, obchod zakázky v CRM. Kolik tržeb přinesla která kampaň, neví nikdo.',
+              title: 'Náklady, marže a vratky',
+              text: 'Pro vyhodnocení potřebujete údaje, které samotná webová analytika neobsahuje.',
+              pictogram: 'eshop',
+            },
+            {
+              title: 'Poptávky a zakázky',
+              text: 'Chcete spojit výdaje na marketing s výsledky obchodu v CRM.',
               pictogram: 'lead',
+            },
+            {
+              title: 'Vlastní historie a výpočty',
+              text: 'Potřebujete dlouhodobě uchovávat exportovaná data a používat vlastní definice metrik.',
+              pictogram: 'monitor',
             },
           ],
         },
@@ -68,118 +77,110 @@ export const page: PageInput = {
 
     {
       id: 'vystupy',
-      title: 'Co uděláme a co dostanete',
-      lead: 'Nejdřív se domluvíme, jaká rozhodnutí mají data podpořit, teprve pak stavíme tabulky a grafy.',
+      title: 'Co dostanete',
       tone: 'white',
       blocks: [
         {
           type: 'cards',
-          columns: 4,
+          columns: 3,
           items: [
-            {
-              title: 'Měřicí plán pro data',
-              text: 'Otázky, na které má sklad odpovídat, s metrikami, zdroji, klíči pro propojení a vlastníky v jednom dokumentu.',
-            },
-            {
-              title: 'Export GA4 do BigQuery',
-              text: 'Denní, případně průběžný export v projektu na vašem účtu, s regionem dat a filtrem událostí. Zapneme ho hned na začátku, protože data zpětně Google nedoplní.',
-            },
-            {
-              title: 'Náklady a data firmy',
-              text: 'Náklady z Google Ads, Mety a Skliku, data ze Search Console a objednávky, marže a vratky z e-shopu, ERP nebo CRM.',
-            },
-            {
-              title: 'Datový model ve třech vrstvách',
-              text: 'Reportovací tabulky pro konkrétní otázky a zdrojový kód transformací v Gitu – v Dataformu, dbt nebo plánovaných dotazech.',
-            },
-            {
-              title: 'Kontrola nákladů a přístupů',
-              text: 'Dělení tabulek na oddíly a clustering, limity zpracovaných bajtů, rozpočtová upozornění a role pro každý přístup.',
-            },
-            {
-              title: 'Strom KPI a slovník metrik',
-              text: 'Tři až pět hlavních ukazatelů výkonu (KPI) pro vedení, pod nimi metriky pro marketing a obchod. U každé, třeba marže nebo POAS, definice, výpočet, zdroj a vlastník.',
-            },
-            {
-              title: 'Dashboardy pro vedení i marketing',
-              text: 'Manažerský přehled, marketingový a e-commerce dashboard nebo B2B pipeline v Data Studiu nebo Power BI. Nejdřív klikací prototyp na vašich datech, pak automatická aktualizace a týdenní přehled e-mailem.',
-            },
-            {
-              title: 'Sladění s účetnictvím a školení',
-              text: 'Vybraný měsíc porovnáme s účetnictvím řádek po řádku a každý rozdíl vysvětlíme. Předáme návod ke čtení dashboardu a proškolíme tým.',
-            },
+            { title: 'Zadání reportingu', text: 'Otázky pro vedení a marketing, seznam metrik a zdrojů dat.' },
+            { title: 'Datové integrace', text: 'Napojení dohodnutých zdrojů a popis intervalů jejich aktualizace.' },
+            { title: 'Datový model', text: 'Pravidla pro propojení záznamů, měny, DPH a zpracování storen nebo vratek.' },
+            { title: 'Slovník metrik', text: 'Definice výpočtů, zdroj a odpovědnost za každou hlavní metriku.' },
+            { title: 'Reporty', text: 'Přehledy podle potřeb uživatelů s filtrováním a informací o poslední aktualizaci.' },
+            { title: 'Kontrola a předání', text: 'Porovnání vybraných výsledků se zdrojovými systémy, dokumentace a zaškolení.' },
           ],
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          title: 'Provoz a správa',
+          text: 'Nastavíme přístupy a kontrolu nákladů podle dohodnutého provozního modelu. V nabídce oddělíme implementaci, cloud, konektory, licence a případnou průběžnou správu.',
         },
       ],
     },
 
     {
       id: 'architektura',
-      title: 'Jak data tečou z webu a firemních systémů do reportu',
-      lead: 'Data držíme ve třech vrstvách: surová beze změn; očištěná se sjednocenými názvy, měnami a časovými pásmy; reportovací s tabulkami pro konkrétní otázky.',
+      title: 'Jak se data dostanou do reportu',
+      lead: 'U reportovaných metrik zdokumentujeme zdroje a výpočty. Kvalita výsledku závisí také na dostupnosti a kvalitě vstupních dat.',
       tone: 'dark',
       blocks: [
         {
           type: 'flow',
           caption:
-            'Schéma architektury: GA4, reklamní systémy, Search Console, e-shop, ERP a CRM plní BigQuery, kde data držíme ve vrstvách raw, staging a marts. Z reportovacích tabulek čerpají dashboardy v Data Studiu nebo Power BI.',
+            'Schéma: BigQuery sjednotí data z GA4, reklamních systémů, Search Console, e-shopu, ERP a CRM. Z připravených tabulek pak čerpají reporty a exporty do dalších systémů.',
           columns: [
-            { label: 'zdroje', items: ['web: Google Tag Manager a GA4', 'Google Ads, Meta, Sklik', 'Search Console', 'e-shop, ERP a CRM'] },
+            { label: 'Zdroje dat', items: ['web: Google Tag Manager a GA4', 'Google Ads, Meta a Sklik', 'Search Console', 'e-shop, ERP a CRM'] },
             {
-              label: 'BigQuery – raw',
-              items: ['events_YYYYMMDD', 'ads_*, meta_* a sklik_*', 'erp_orders a crm_deals'],
-              note: 'Data beze změn, model kdykoli přepočítáme.',
+              label: 'Sjednocení v BigQuery',
+              items: ['sjednocené typy, měny, DPH a časová pásma', 'odstranění duplicit', 'propojení záznamů z různých zdrojů', 'tabulky pro konkrétní otázky'],
             },
             {
-              label: 'BigQuery – staging',
-              items: ['sjednocené typy a měny', 'DPH a časová pásma', 'odstranění duplicit'],
-              note: 'Transformace v Dataformu, dbt nebo plánovaných dotazech.',
+              label: 'Reporty a další využití',
+              items: ['reporty v Power BI nebo v Data Studiu, dříve Looker Studio', 'exporty zpět do reklamních systémů, třeba marže do Google Ads nebo offline konverze'],
             },
-            {
-              label: 'BigQuery – marts',
-              items: ['sessions', 'channel_daily', 'orders_margin', 'leads_to_deals'],
-              note: 'Tabulky pro konkrétní otázky, nad nimi běží dashboardy.',
-            },
-            { label: 'výstupy', items: ['Data Studio', 'Power BI', 'exporty zpět: marže do Google Ads, offline konverze'] },
           ],
         },
         {
-          type: 'list',
-          style: 'check',
+          type: 'details',
+          summary: 'Technické uspořádání datového skladu',
           items: [
-            '<strong>Všechna data na jednom místě.</strong> Chování na webu, náklady kampaní a data e-shopu či CRM v jednom modelu.',
-            '<strong>Každé číslo dohledáte</strong> v dashboardu až ke zdrojové události.',
+            '<strong>Tři vrstvy.</strong> Vrstva <code>raw</code> drží data beze změn, takže model jde kdykoli přepočítat. Vrstva <code>staging</code> sjednocuje typy, měny, DPH a časová pásma a odstraňuje duplicity. Vrstva <code>marts</code> obsahuje tabulky pro konkrétní otázky, nad kterými běží reporty.',
+            '<strong>Tabulky.</strong> Například <code>events_YYYYMMDD</code> z exportu GA4, <code>ads_*</code>, <code>meta_*</code> a <code>sklik_*</code> s náklady kampaní, <code>erp_orders</code> a <code>crm_deals</code> s daty firmy a reportovací <code>sessions</code>, <code>channel_daily</code>, <code>orders_margin</code> a <code>leads_to_deals</code>.',
+            '<strong>Transformace.</strong> Dataform, dbt nebo plánované dotazy, zdrojový kód transformací v Gitu.',
+            '<strong>Export GA4.</strong> Denní, případně průběžný export v projektu Google Cloudu na účtu vaší firmy, s regionem dat a filtrem událostí. Zapínáme ho hned na začátku, protože data zpětně Google nedoplní. Export neobsahuje automaticky všechny údaje a modelování z rozhraní GA4, proto se jeho výsledky od přehledů v GA4 mohou lišit, viz nápověda Googlu k <a href="https://support.google.com/analytics/answer/9358801?hl=en">omezení exportu</a>.',
+            '<strong>Kontrola nákladů.</strong> Dělení tabulek na oddíly a clustering, limity zpracovaných bajtů, rozpočtová upozornění a role pro každý přístup.',
+          ],
+        },
+        {
+          type: 'table',
+          caption: 'Modelový přehled pro vedení: ukázka sloupců a jejich definic, nejde o skutečná data',
+          // sloupce přehledu jako řádky – šest úzkých sloupců by se na tabletu a mobilu špatně četlo
+          head: ['Sloupec přehledu', 'Co obsahuje'],
+          rows: [
+            ['Období', 'Týden nebo měsíc, za který report sčítá údaje.'],
+            ['Náklady na reklamu', 'Výdaje v Google Ads, Metě a Skliku za období podle definice ve slovníku metrik, například bez DPH.'],
+            ['Tržby po stornu', 'Tržby z objednávek po odečtení storen a vratek ve společné měně.'],
+            [
+              'Příspěvková marže',
+              'Tržby po stornu minus variabilní náklady podle slovníku metrik, třeba nákupní cena zboží a náklady na reklamu. Nejde o zisk, fixní náklady firmy v ní nejsou.',
+            ],
+            ['Zdroj dat', 'Systém, ze kterého údaj pochází, třeba e-shop, ERP nebo reklamní systém.'],
+            ['Poslední aktualizace', 'Datum a čas posledního úspěšného načtení dat ze zdroje.'],
           ],
         },
       ],
     },
 
     {
-      id: 'rozhodnuti',
-      title: 'Co v rozhraní GA4 nejde – a kdy BigQuery zatím nepotřebujete',
-      lead: 'BigQuery rozhraní GA4 nenahrazuje. Doplňuje ho o delší historii, úplná data a spojení s daty firmy.',
+      id: 'jednodussi-reseni',
+      title: 'Kdy stačí jednodušší řešení',
       tone: 'light',
       blocks: [
         {
-          type: 'proscons',
-          yes: {
-            title: 'Co v rozhraní GA4 nejde, v BigQuery ano',
-            items: [
-              { text: 'historie delší než čtrnáct měsíců, expiraci určujete vy' },
-              { text: 'surové události bez „(other)“ a přesné počty uživatelů a relací' },
-              { text: 'marže, storna a vratky z e-shopu nebo ERP' },
-              { text: 'automatické načítání nákladů z Mety a Skliku každý den' },
-              { text: 'spojení poptávky se zakázkou v CRM, vlastní atribuce, kohorty a LTV' },
-            ],
-          },
-          no: {
-            title: 'Doporučíme počkat, když…',
-            items: [
-              { text: 'máte jednotky až nízké desítky objednávek nebo poptávek týdně', note: 'stačí GA4 a dashboard nad přímými konektory' },
-              { text: 'GA4 nesedí s e-shopem o desítky procent', note: 'nejdřív <a href="/sluzby/audit-mereni">audit měření</a>' },
-              { text: 'podle dat ve firmě nikdo nebude rozhodovat', note: 'začneme jedním reportem pro vedení' },
-            ],
-          },
+          type: 'paragraphs',
+          items: [
+            'Pro jednoduchý přehled nad několika dostupnými zdroji může stačit report s přímými konektory. BigQuery doporučíme, pokud potřebujete vlastní datový model, spojení firemních dat nebo náročnější historii a výpočty. Rozhoduje využití reportu, nejen velikost firmy.',
+          ],
+        },
+      ],
+    },
+
+    {
+      id: 'prubeh',
+      title: 'Jak probíhá spolupráce',
+      tone: 'white',
+      blocks: [
+        {
+          type: 'steps',
+          items: [
+            { title: 'Zadání a metriky', text: 'Domluvíme otázky, zdroje a kontrolní údaje.' },
+            { title: 'Návrh přehledu', text: 'Připravíme strukturu reportu a ověříme ji s budoucími uživateli.' },
+            { title: 'Napojení a kontrola', text: 'Zprovozníme datové toky a porovnáme výsledky se zdrojovými systémy.' },
+            { title: 'Předání a provoz', text: 'Předáme dokumentaci, vysvětlíme používání a domluvíme odpovědnost za údržbu.' },
+          ],
         },
       ],
     },
@@ -187,36 +188,56 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Kolik stojí projekt a provoz?',
-      a: 'Cenu projektu stanovíme po úvodní konzultaci jako pevnou částku – rozhoduje počet a typ zdrojů, rozsah modelu, stav měření a počet dashboardů. Provoz BigQuery a případné licence Data Studia Pro nebo Power BI platíte přímo Googlu nebo Microsoftu. V našem modelovém výpočtu pro e-shop se 100 000 událostmi v GA4 denně vyjde provoz BigQuery na jednotky dolarů měsíčně.',
+      q: 'Co ovlivňuje cenu projektu a provozu?',
+      a: 'Počet zdrojů, způsob jejich napojení, objem dat, složitost výpočtů a počet reportů. Cloud, konektory a případné licence uvedeme samostatně. Odhad provozu připravíme pro konkrétní řešení.',
     },
     {
-      q: 'Potřebujeme BigQuery, nebo stačí dashboard nad přímými konektory?',
-      a: 'Pro jednoduchý report nad GA4 a Google Ads stačí přímé konektory. BigQuery doporučujeme, když spojujete víc zdrojů, třeba Metu, Sklik, ERP a CRM, když potřebujete marži, vratky nebo delší historii, než dovolí GA4, nebo když report otevírá hodně lidí. Konektor GA4 v Data Studiu totiž při velkém provozu naráží na kvóty Google Analytics Data API.',
+      q: 'Je vždy potřeba BigQuery?',
+      a: 'Ne. Nejdřív posoudíme otázky a dostupné zdroje. Pokud stačí report nad přímým propojením nástrojů, navrhneme jednodušší variantu.',
     },
     {
-      q: 'Co od nás budete potřebovat?',
-      a: 'Projekt v Google Cloudu s platebním účtem nebo souhlas ho založit, roli Editor v GA4, přístupy pro čtení do reklamních systémů a export nebo API k e-shopu, ERP či CRM. Od týmu pak jednu až dvě hodiny na úvodní workshop a kontrolní čísla z účetnictví za jeden měsíc. Projekt i reporty patří vaší organizaci, my dostaneme jen potřebné role, které můžete kdykoli odebrat.',
+      q: 'Jakou součinnost potřebuje realizační tým?',
+      a: 'Přístupy k dohodnutým zdrojům, odpovědnou osobu za definice metrik a kontrolní údaje. Potřebné role a exporty upřesníme před zahájením.',
     },
     {
-      q: 'Musíme umět SQL?',
-      a: 'Ne. Pro běžnou práci připravíme reportovací tabulky a dashboard, ve kterém filtrujete a třídíte klikáním. Analytikovi, který chce jít do detailu, předáme dokumentaci tabulek a příklady dotazů.',
+      q: 'Je pro práci s reporty potřeba SQL?',
+      a: 'Pro běžné používání připravíme přehledy s filtry a vysvětlením metrik. Analytikům můžeme předat také datový model a příklady dotazů.',
     },
   ],
 
+  related: {
+    items: [
+      {
+        label: 'Nastavení GA4 a GTM',
+        href: '/sluzby/implementace-ga4',
+        text: 'Události a parametry v GA4, ze kterých vychází export do BigQuery.',
+      },
+      {
+        label: 'Řešení pro e-shopy',
+        href: '/reseni/e-shopy',
+        text: 'Měření objednávek podle e-shopové platformy, ze kterého vychází reporting tržeb a marže.',
+      },
+      {
+        label: 'Řešení pro B2B firmy',
+        href: '/reseni/b2b-a-lead-generation',
+        text: 'Propojení poptávek z webu se zakázkami v CRM, ze kterého vychází reporting obchodních výsledků.',
+      },
+    ],
+  },
+
   contact: {
     formId: 'lp-bigquery',
-    title: 'Propojíme data do jednoho modelu a reportu',
-    lead: 'Na úvodní konzultaci projdeme zdroje dat a současný reporting a řekneme, jestli BigQuery potřebujete už teď, nebo stačí dashboard nad přímými konektory.',
-    placeholder: 'Adresa webu a co řešíte, např. „Report z GA4, Google Ads a ERP dnes skládáme ručně v Excelu“',
+    title: 'Proberme vaše reporty a zdroje dat',
+    lead: 'Napište, jaké přehledy dnes připravujete a která data spojujete ručně. Navrhneme, zda stačí upravit reporting, nebo má smysl datový sklad.',
+    placeholder: '',
     leadType: 'consultation',
   },
 
   schema: {
-    name: 'BigQuery a dashboardy pro marketing',
-    serviceType: 'Implementace BigQuery, datového skladu a marketingových dashboardů v Data Studiu a Power BI',
+    name: 'BigQuery a reporting',
+    serviceType: 'Datový sklad v BigQuery a reporting pro marketing a vedení firmy',
     description:
-      'Export GA4 do Google BigQuery, napojení nákladů z Google Ads, Mety a Skliku a dat z e-shopu, CRM a ERP, datový model pro marketing s relacemi, atribucí, maržemi a vratkami, kontrola nákladů a manažerské, marketingové, e-commerce a B2B dashboardy v Data Studiu (dříve Looker Studio) nebo Power BI, které sedí s účetnictvím.',
+      'Propojení dat z GA4, reklamních systémů, e-shopu, ERP a CRM v Google BigQuery, společný datový model se slovníkem metrik, reporty v Data Studiu nebo Power BI, porovnání vybraných výsledků se zdrojovými systémy, dokumentace a kontrola nákladů na provoz.',
     audience: 'E-shopy, velké firmy, B2B firmy',
   },
 };

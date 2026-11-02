@@ -35,6 +35,12 @@ export function CookieBar() {
     if (open) titleRef.current?.focus();
   }, [open]);
 
+  // spodní lišta Zavolat / Napsat se na mobilu schová, dokud je panel otevřený (nekříží se s ním)
+  useEffect(() => {
+    document.body.classList.toggle('cc-open', open);
+    return () => document.body.classList.remove('cc-open');
+  }, [open]);
+
   if (!open) return null;
 
   const decide = (a: boolean, m: boolean) => {
