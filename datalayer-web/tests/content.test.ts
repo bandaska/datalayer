@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { DEFAULT_NAVIGATION, DEFAULT_PAGES, DEFAULT_TEXTS } from '~/content/defaults';
 import { navigationSchema, pageSchema, templateAnchors, textsSchema, type Link, type NavLink, type PageContent } from '~/content/schema';
 import { checkPage, checkText, pageTexts, plainText } from '~/lib/textRules';
+import { typo, typoHtml } from '~/lib/typo';
 
 // Kontrola výchozího obsahu webu (app/content/defaults) – z něj migrace
 // (20261009_cms_content_import, 20261009_lp_stihla_sablona, 20261009_ux_redukce…)
@@ -326,10 +327,34 @@ describe('audit z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty)', () =
     }
   });
 
+  it('titulky a popisy pro vyhledávače podle S03 a S04, bez dlouhé pomlčky', () => {
+    for (const p of DEFAULT_PAGES) {
+      expect(p.seo.title, `/${p.path}`).toMatch(/datalayer\.cz/);
+      expect(p.seo.title, `/${p.path}`).not.toMatch(/\||—/);
+    }
+    expect(JSON.stringify([DEFAULT_PAGES, DEFAULT_TEXTS, DEFAULT_NAVIGATION])).not.toContain('—');
+  });
+
+  it('O datalayer.cz, Kontakt, cookie lišta a 404 podle kap. 13, 14, 16 a 18', () => {
+    expect(DEFAULT_PAGES.find((p) => p.path === 'o-nas')!.hero.h1).toBe('O datalayer.cz');
+    expect(DEFAULT_PAGES.find((p) => p.path === 'kontakt')!.hero.h1).toBe('Kontakt');
+    expect(DEFAULT_PAGES.find((p) => p.path === 'cookies')!.hero.h1).toBe('Cookies a nastavení souhlasu');
+    expect(DEFAULT_TEXTS.cookieBar).toMatchObject({ title: 'Nastavení cookies', reject: 'Odmítnout volitelné', settings: 'Upravit nastavení', accept: 'Přijmout vše', save: 'Uložit nastavení' });
+    expect(DEFAULT_TEXTS.notFound).toMatchObject({ title: 'Tuto stránku jsme nenašli', home: 'Přejít na úvod', contact: 'Kontakt' });
+  });
+
   it('formulář: texty podle G05', () => {
     expect(DEFAULT_TEXTS.contact.submit).toBe('Odeslat poptávku');
     expect(DEFAULT_TEXTS.contact.formIntro).toBe('Stačí stručně popsat situaci. Přístupy k účtům domluvíme až podle rozsahu práce.');
     expect(DEFAULT_TEXTS.contact.successTitle).toBe('Děkujeme, poptávku jsme přijali');
+  });
+});
+
+describe('typografie při vykreslení', () => {
+  it('nedělitelné mezery a nezlomitelný spojovník v „e-shop“, odkazy beze změny', () => {
+    expect(typo('Měření pro e-shopy a B2B')).toBe('Měření pro e\u2011shopy a\u00a0B2B');
+    expect(typo('E-shop v Shoptetu')).toBe('E\u2011shop v\u00a0Shoptetu');
+    expect(typoHtml('<a href="/reseni/e-shopy">Řešení pro e-shopy</a>')).toBe('<a href="/reseni/e-shopy">Řešení pro e\u2011shopy</a>');
   });
 });
 
