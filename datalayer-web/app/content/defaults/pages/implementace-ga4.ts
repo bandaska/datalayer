@@ -1,78 +1,87 @@
 import type { PageInput } from '../../schema';
 
-// Stránka prošla UX redukcí z 9. října 2026 (seo-analyza/2026-10-09_ux-redukce,
-// kap. 3.2 a 5.2): sloučená služba „GA4 a Google Tag Manager“, H1, title
-// i description cílí na nastavení GA4 i GTM. Zůstal hero s jedním tlačítkem,
-// „Poznáváte se?“ (symptom „Desítky tagů, které nikdo nezná“ ze zrušené stránky
-// Google Tag Manager) a „Co uděláme a co dostanete“ (specifikace datové vrstvy
-// ze zrušené stránky Datová vrstva, inventura kontejneru ze stránky GTM a karta
-// Monitoring ze zrušené Správy webu a měření). Rozhodnutí „stará, nebo nová
-// property“ je otázka FAQ. Schéma, postup, kontrolní seznam, Technické detaily
-// a pás Pokračujte zmizely. Dokud klient nedodá podklady, stránka neobsahuje
-// případovou studii, počty implementací, délky kroků ani lhůty u monitoringu.
+// Stránka odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty,
+// kap. 6, GA01–GA04, a společná struktura G03): služba „Nastavení GA4 a GTM“, hero
+// s tlačítkem „Probrat nastavení GA4 a GTM“ a kotvami, sekce „Kdy upravit nastavení
+// GA4 a GTM“ (místo dřívější sekce se symptomy) s odkazem na audit měření, pět výstupů „Co zahrnuje
+// implementace“, menší sekce „Navazující služby“ (školení, kontrola po změnách webu,
+// export do BigQuery), průběh spolupráce, nové FAQ, související služby a kontakt.
+// Vypadlo tvrzení, že vložení kódu rozbije čísla, „tři až osm klíčových událostí“,
+// diagnóza „(not set) způsobuje platební brána“, karty monitoringu a dashboardu
+// s automatickými testy, souběh dvou služeb GA4 a slib čísel shodných s tržbami.
+// Dokud klient nedodá podklady, stránka neobsahuje případovou studii, počty
+// implementací, délky kroků ani lhůty.
 
 export const page: PageInput = {
   path: 'sluzby/implementace-ga4',
   kind: 'service',
-  navTitle: 'GA4 a Google Tag Manager',
-  tagline: 'čísla, která sedí, a tagy v pořádku',
+  navTitle: 'Nastavení GA4 a GTM',
+  tagline: 'měřicí plán, události a datová vrstva',
   pictogram: 'ga4',
   menuGroup: 'sber',
 
   seo: {
-    title: 'Nastavení GA4 a Google Tag Manageru | datalayer.cz',
+    title: 'Nastavení GA4 a Google Tag Manageru – měřicí plán | datalayer.cz',
     description:
-      'Nastavíme Google Analytics 4 a Google Tag Manager od nuly, nebo opravíme a uklidíme ty stávající. E-commerce, poptávky, tagy a souhlas. Čísla porovnáme s e-shopem.',
+      'Měřicí plán, události v GA4, uspořádaný Google Tag Manager a zadání datové vrstvy pro vývojáře. Ověříme nákupy a formuláře a předáme dokumentaci.',
   },
 
   hero: {
-    h1: 'Nastavení GA4 a Google Tag Manageru, které sedí s vašimi tržbami',
+    h1: 'Nastavení Google Analytics 4 a Google Tag Manageru',
     subtitle:
-      'Implementace GA4 neznamená jen vložit měřicí kód. Nastavíme Google Analytics 4 a Google Tag Manager (GTM) od nuly, nebo opravíme a uklidíme to, co už máte: měřicí plán, datovou vrstvu, e-commerce, poptávky, Consent Mode v2 a propojení s Google Ads, Search Console a BigQuery. V GTM zavedeme pravidla pro názvy, verze a oprávnění. Výsledek ověříme testovacími scénáři a porovnáním s administrací e-shopu nebo s CRM.',
-    primaryCta: { label: 'Konzultovat GA4 a GTM', href: '#kontakt' },
+      'Navrhneme měřicí plán, nastavíme události v GA4 a uspořádáme Google Tag Manager. Připravíme zadání datové vrstvy pro vývojáře, ověříme nákupy a formuláře a předáme dokumentaci. Můžeme navázat na stávající měření i připravit nové.',
+    primaryCta: { label: 'Probrat nastavení GA4 a GTM', href: '#kontakt' },
+    anchors: [
+      { label: 'Rozsah služby', href: '#kdy' },
+      { label: 'Výstupy', href: '#vystupy' },
+      { label: 'Průběh', href: '#prubeh' },
+      { label: 'Cena a dotazy', href: '#faq' },
+    ],
   },
 
   sections: [
     {
-      id: 'symptomy',
-      title: 'Poznáváte se?',
-      lead: 'Když někdo GA4 a GTM jen „vloží“ na web, čísla obvykle během prvních měsíců přestanou odpovídat skutečnosti. Pokud nevíte, co z toho platí u vás, začněte <a href="/sluzby/audit-mereni">auditem měření</a>.',
+      id: 'kdy',
+      title: 'Kdy upravit nastavení GA4 a GTM',
       tone: 'light',
       blocks: [
         {
           type: 'cards',
-          columns: 4,
+          columns: 2,
           variant: 'symptoms',
           items: [
             {
-              title: 'GA4 ukazuje jiné tržby než e-shop',
-              text: 'Čísla se liší, nikdo neví, které platí, a vedení pak nevěří ani reportům z reklam.',
+              title: 'Nový web nebo změna platformy',
+              text: 'Připravíme měření před spuštěním a ověříme ho po nasazení.',
               pictogram: 'ga4',
             },
             {
-              title: 'Desítky tagů, které nikdo nezná',
-              text: 'Agentury se střídaly, tagy s názvy jako „New Tag (3)“ zůstaly a nikdo neví, které z nich jsou potřeba.',
-              pictogram: 'gtm',
-            },
-            {
-              title: 'Návštěvy z reklam padají do (not set)',
-              text: 'GA4 ztratí zdroj návštěvy na platební bráně nebo mezi doménami a kampaně pak vypadají hůř, než jsou.',
+              title: 'Neúplné nebo duplicitní události',
+              text: 'Prověříme, které akce web odesílá a zda odpovídají měřicímu plánu.',
               pictogram: 'warn',
             },
             {
-              title: 'Poptávky jen jako „děkovací stránka“',
-              text: 'Nevíte, který formulář a která kampaň přinesly zakázku, protože data končí v GA4 a do CRM se nedostanou.',
+              title: 'Nepřehledný Tag Manager',
+              text: 'Zkontrolujeme účel tagů, spouštěče, proměnné a oprávnění.',
+              pictogram: 'gtm',
+            },
+            {
+              title: 'Chybějící měření formulářů',
+              text: 'Nastavíme rozlišení formulářů a záznam jejich úspěšného odeslání.',
               pictogram: 'lead',
             },
           ],
+        },
+        {
+          type: 'paragraphs',
+          items: ['Není jasné, co změnit? <a href="/sluzby/audit-mereni">Začněte auditem měření.</a>'],
         },
       ],
     },
 
     {
       id: 'vystupy',
-      title: 'Co uděláme a co dostanete',
-      lead: 'Kromě „hotového GA4“ a kontejneru GTM dostanete i dokumenty, podle kterých může měření převzít kdokoli jiný.',
+      title: 'Co zahrnuje implementace',
       tone: 'white',
       blocks: [
         {
@@ -81,36 +90,61 @@ export const page: PageInput = {
           items: [
             {
               title: 'Měřicí plán',
-              text: 'Jaké otázky mají data zodpovědět, jaké události k tomu potřebujeme a kde je v GA4 najdete.',
+              text: 'Události, jejich parametry a vazba na otázky, které potřebujete vyhodnocovat.',
             },
             {
-              title: 'Specifikace datové vrstvy',
-              text: 'Zadání pro vývojáře: kontext stránky, e-commerce podle schématu GA4, poptávky, uživatelské atributy a pravidla zápisu s ukázkami kódu.',
+              title: 'Zadání datové vrstvy',
+              text: 'Specifikace pro vývojáře s příklady dat a pravidly pro odesílání událostí.',
             },
             {
-              title: 'GA4 a Google Tag Manager (GTM) podle plánu',
-              text: 'E-commerce, poptávky, tři až osm klíčových událostí, filtry, Consent Mode v2 a propojení. Kontejner GTM má verze s popisem změn.',
+              title: 'Nastavení GA4 a GTM',
+              text: 'Události, klíčové akce, souhlasy a propojení podle dohodnutého rozsahu. Změny v GTM mají popis a verzi.',
             },
             {
-              title: 'Inventura a úklid kontejneru',
-              text: 'Tabulka všech tagů s doporučením ponechat, upravit, nebo smazat. Po dohodě s vámi kontejner uklidíme a zavedeme jednotné názvy, složky a oprávnění, aby se v něm vyznal i další člověk.',
+              title: 'Testy a porovnání dat',
+              text: 'Ověření dohodnutých nákupních a formulářových scénářů a kontrola proti zdrojovým záznamům.',
             },
             {
-              title: 'Testovací protokol',
-              text: 'Kontrola v Tag Assistantu a scénáře: nákup kartou, převodem i s kupónem, návrat z platební brány a obnovení děkovací stránky.',
+              title: 'Dokumentace a předání',
+              text: 'Přehled účtů, událostí a nastavení pro správce webu a marketing.',
             },
+          ],
+        },
+      ],
+    },
+
+    // dřívější karty „Monitoring po releasech“ a „Školení, BigQuery nebo dashboard“ (GA03)
+    {
+      id: 'navazujici-sluzby',
+      title: 'Navazující služby',
+      tone: 'light',
+      blocks: [
+        {
+          type: 'paragraphs',
+          items: ['Po dohodě doplníme školení, kontrolu měření po změnách webu nebo export do BigQuery. Rozsah a cenu těchto prací uvedeme samostatně.'],
+        },
+        {
+          type: 'links',
+          items: [{ label: 'BigQuery a reporting', href: '/sluzby/bigquery' }],
+        },
+      ],
+    },
+
+    {
+      id: 'prubeh',
+      title: 'Jak probíhá spolupráce',
+      tone: 'dark',
+      blocks: [
+        {
+          type: 'steps',
+          items: [
+            { title: 'Upřesnění zadání', text: 'Projdeme web, používané nástroje a otázky, které potřebujete vyřešit.' },
             {
-              title: 'Porovnání s administrací nebo CRM',
-              text: 'GA4 porovnáme s objednávkami či poptávkami za stejné období a vysvětlíme rozdíly.',
+              title: 'Nabídka a součinnost',
+              text: 'Dostanete rozsah práce, cenu, výstupy a seznam potřebných přístupů. Domluvíme také zapojení vývojáře nebo agentury.',
             },
-            {
-              title: 'Monitoring po releasech',
-              text: 'Na přání hlídáme měření i po předání: po releasu webu automatický test projde nákup nebo formulář a kontrola dat porovná události s průměrem a s objednávkami. Když něco nesedí, přijde upozornění.',
-            },
-            {
-              title: 'Školení, BigQuery nebo dashboard',
-              text: 'Volitelně firemní školení na vašich datech, export do BigQuery nebo dashboard v Data Studiu (dříve Looker Studio).',
-            },
+            { title: 'Realizace a kontrola', text: 'Provedeme dohodnuté práce a ověříme je na testovacích scénářích.' },
+            { title: 'Předání', text: 'Projdeme výsledky a předáme dokumentaci. Další správu nebo monitoring sjednáme samostatně.' },
           ],
         },
       ],
@@ -119,36 +153,56 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Kolik stojí nastavení GA4 a GTM?',
-      a: 'Cenu určuje rozsah, ne balíček: hlavně jestli web už má datovou vrstvu, kolik typů konverzí, platforem a domén měříme, jak velký je kontejner GTM a jestli chcete i BigQuery, dashboardy nebo školení. Po úvodní konzultaci a krátké analýze dostanete nabídku s pevným rozsahem a seznamem výstupů. Samotné GA4 i GTM nic nestojí, platíte jen BigQuery nad rámec bezplatných limitů, případně licenci GA4 360 nebo Tag Manager 360.',
+      q: 'Na čem závisí cena implementace?',
+      a: 'Na stavu datové vrstvy, počtu webů a událostí a rozsahu úprav. Nabídka oddělí naši práci, součinnost vývoje a případné licence nebo provoz dalších nástrojů.',
     },
     {
-      q: 'Kdy opravit stávající GA4 a kdy založit novou property?',
-      a: 'Většinou opravujeme property, kterou už máte, protože v ní zůstane historie, a opravy označíme v GA4 anotací s datem. Novou založíme, když property patří agentuře nebo bývalému dodavateli a převod nejde, když je historie tak chybná, že by spíš škodila, nebo když jedna property míchá nesouvisející weby či testovací a produkční data. Při přechodu necháme obě property jeden až tři měsíce běžet souběžně a pak přepneme reporty. U GTM zakládáme nový kontejner, jen když je stávající tak chaotický, že vyjde levněji začít znovu.',
+      q: 'Je nutné zakládat novou službu GA4?',
+      a: 'Ne vždy. Nejprve posoudíme stávající nastavení, vlastnictví a použitelnost historie. Pokud je vhodné pokračovat v současné službě, opravíme ji a změny zdokumentujeme.',
     },
     {
-      q: 'Budeme potřebovat vývojáře?',
-      a: 'Obvykle ano, ale jen na začátku: vloží kód kontejneru, nasadí datovou vrstvu podle naší specifikace a připraví testovací prostředí. GA4 a GTM nastavíme my a práci vývojářů otestujeme. U Shoptetu, Shopify nebo WooCommerce zkontrolujeme vestavěnou integraci a rozhodneme, jestli ji použít, rozšířit, nebo nahradit vlastní datovou vrstvou.',
+      q: 'Je potřeba zapojit vývojáře?',
+      a: 'Záleží na platformě a dostupných integracích. Vývojář bývá potřeba pro datovou vrstvu a úpravy webu. Dostane konkrétní zadání; nastavení GA4 a GTM a kontrolu výsledku zajistíme my.',
     },
     {
-      q: 'Komu budou patřit účty a data?',
-      a: 'Vám. Property GA4, kontejner GTM i projekt BigQuery zakládáme na firemních účtech, administrátor jste vy a my v nich máme jen oprávnění, která nám přidělíte. Po skončení spolupráce nám je jednoduše odeberete. Pokud dnes účty patří agentuře nebo bývalému dodavateli, pomůžeme s převodem administrátorských práv, nebo s bezpečným přechodem na nové účty.',
+      q: 'Kdo spravuje účty po předání?',
+      a: 'Vaše firma. Přístupy, dokumentaci a správu můžete ponechat internímu týmu nebo je svěřit dalšímu dodavateli. Průběžnou podporu lze domluvit samostatně.',
     },
   ],
 
+  related: {
+    items: [
+      {
+        label: 'Audit měření',
+        href: '/sluzby/audit-mereni',
+        text: 'Kontrola současného stavu a plán oprav, když není jasné, co v měření změnit.',
+      },
+      {
+        label: 'Měření konverzí',
+        href: '/sluzby/mereni-konverzi',
+        text: 'Nastavení objednávek a poptávek pro Google Ads, Metu, Sklik a další reklamní systémy.',
+      },
+      {
+        label: 'BigQuery a reporting',
+        href: '/sluzby/bigquery',
+        text: 'Export dat z GA4 do BigQuery a přehledy s dohodnutými metrikami.',
+      },
+    ],
+  },
+
   contact: {
     formId: 'lp-ga4',
-    title: 'Nastavíme GA4 a GTM tak, aby čísla seděla s tržbami',
-    lead: 'Na úvodní konzultaci projdeme GA4 a kontejner GTM a řekneme, co opravit jako první.',
-    placeholder: 'Adresa webu a co řešíte, např. „GA4 ukazuje jiné tržby než e-shop a v GTM máme desítky neznámých tagů“',
+    title: 'Proberme nastavení analytiky',
+    lead: 'Napište, jaký web provozujete a co nyní měříte. Upřesníme potřebné události, zapojení vývojáře a rozsah práce.',
+    placeholder: '',
     leadType: 'consultation',
   },
 
   schema: {
-    name: 'GA4 a Google Tag Manager',
+    name: 'Nastavení GA4 a GTM',
     serviceType: 'Nastavení Google Analytics 4 a Google Tag Manageru',
     description:
-      'Nastavení Google Analytics 4 a Google Tag Manageru od nuly i oprava a úklid stávajících: měřicí plán, specifikace datové vrstvy, e-commerce a klíčové události, Consent Mode v2, názvosloví, verze a oprávnění v GTM, propojení s Google Ads, Search Console a BigQuery a porovnání s administrací e-shopu nebo CRM.',
-    audience: 'E-shopy, B2B a lead generation, velké firmy',
+      'Měřicí plán, zadání datové vrstvy pro vývojáře, nastavení událostí, klíčových akcí a souhlasů v GA4 a Google Tag Manageru, testy nákupních a formulářových scénářů, porovnání se zdrojovými záznamy a dokumentace k předání.',
+    audience: 'E-shopy, B2B firmy, velké firmy',
   },
 };

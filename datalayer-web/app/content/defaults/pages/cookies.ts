@@ -1,7 +1,10 @@
 import type { PageInput } from '../../schema';
 
 // Zásady cookies – výchozí znění. Tlačítko „Změnit nastavení cookies“ je blok
-// consentSettings, který otevře cookie lištu. Věta o Turnstile podle dokumentace
+// consentSettings, který otevře cookie lištu. Podle auditu z 2. listopadu 2026
+// (seo-analyza/2026-11-02_seo-ux-texty, G06) je tlačítko prvním blokem sekce „Jak
+// souhlas funguje“ – samostatná sekce bez nadpisu dělala velkou mezeru mezi tlačítkem
+// a prvním odstavcem; texty zásad se nezměnily. Věta o Turnstile podle dokumentace
 // Cloudflaru (výchozí je jednorázový token, cookie cf_clearance jen se zapnutou
 // pre-clearance, kterou web nepoužívá). Cookies Seznamu (sid, udid) doplnit, až
 // v GTM poběží Sklik (vyhodnocení webu, kap. 5.15 a 8). Texty prošly jazykovým auditem
@@ -28,14 +31,10 @@ export const page: PageInput = {
   },
   sections: [
     {
-      id: 'nastaveni',
-      title: '',
-      blocks: [{ type: 'consentSettings', label: 'Změnit nastavení cookies' }],
-    },
-    {
       id: 'jak-souhlas-funguje',
       title: 'Jak souhlas funguje',
       blocks: [
+        { type: 'consentSettings', label: 'Změnit nastavení cookies' },
         {
           type: 'paragraphs',
           items: [

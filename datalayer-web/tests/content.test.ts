@@ -86,8 +86,8 @@ describe('výchozí stránky', () => {
         // UX redukce: nejvýš čtyři otázky na stránku
         expect(page.faq.length, 'otázek ve FAQ').toBeLessThanOrEqual(4);
         expect(page.contact.formId).toMatch(/^[a-z0-9-]+$/);
-        // formulář nemá pole Web – adresu webu připomene nápověda ve zprávě
-        if (page.contact.enabled !== false) expect(page.contact.placeholder, 'nápověda ve zprávě').toMatch(/^Adresa webu a co řešíte/);
+        // formulář má vlastní pole Adresa webu – nápověda ve zprávě ho neopakuje (audit 2. 11. 2026, G05)
+        expect(page.contact.placeholder, 'nápověda ve zprávě').not.toMatch(/^Adresa webu/);
       });
 
       it('kotvy se neopakují a nekříží se šablonou', () => {
@@ -105,6 +105,10 @@ describe('výchozí stránky', () => {
         }
         const links = [
           page.hero.primaryCta,
+          page.hero.secondaryLink,
+          ...(page.hero.anchors ?? []),
+          ...(page.related?.items ?? []),
+          ...page.sections.flatMap((s) => s.blocks.flatMap((b) => (b.type === 'links' ? b.items : []))),
           ...page.sections.flatMap((s) => s.blocks.flatMap((b) => (b.type === 'cards' ? b.items.map((c) => c.link) : []))),
           ...page.sections.flatMap((s) => s.blocks.flatMap((b) => (b.type === 'tags' ? b.items.map((t) => (t.href ? { label: t.label, href: t.href } : undefined)) : []))),
         ].filter((l): l is Link => Boolean(l));
@@ -122,16 +126,16 @@ describe('výchozí stránky', () => {
       });
 
       if (page.kind !== 'legal') {
-        // UX redukce (seo-analyza/2026-10-09_ux-redukce, kap. 5.1): jen bloky, které vedou
-        // k formuláři – žádné tabulky, čísla v boxech, kód, postup ani přehledy z menu
-        it('UX redukce: povolené bloky', () => {
-          const allowed = new Set(['paragraphs', 'list', 'cards', 'proscons', 'flow', 'tabs', 'operator']);
+        // UX redukce a audit z 2. listopadu 2026: bloky, které vedou k formuláři nebo vysvětlují službu
+        it('šablona: povolené bloky', () => {
+          const allowed = new Set(['paragraphs', 'list', 'cards', 'proscons', 'flow', 'tabs', 'operator', 'steps', 'table', 'callout', 'details', 'links']);
           for (const s of page.sections)
             for (const b of s.blocks) {
               expect(allowed.has(b.type), `sekce ${s.id}: blok ${b.type}`).toBe(true);
               // záložky zůstaly jen u platforem na stránce E-shopy
               if (b.type === 'tabs') expect(`${page.path}#${s.id}`).toBe('reseni/e-shopy#platformy');
               if (b.type === 'cards') expect(b.items.length, 'karet v bloku').toBeLessThanOrEqual(8);
+              if (b.type === 'steps') expect(b.items.length, 'kroků průběhu').toBeLessThanOrEqual(4);
             }
           const flows = page.sections.flatMap((s) => s.blocks).filter((b) => b.type === 'flow');
           expect(flows.length, 'schémat toku dat').toBeLessThanOrEqual(1);
@@ -139,22 +143,34 @@ describe('výchozí stránky', () => {
       }
 
       if (page.kind === 'service' || page.kind === 'solution') {
-        it('UX redukce: sekce a symptomy', () => {
-          // pod hero nejvýš čtyři sekce – šablona sama přidá FAQ a kontakt
-          expect(page.sections.length, 'sekcí z obsahu').toBeLessThanOrEqual(4);
+        it('šablona služeb: sekce, situace, souvislosti', () => {
+          // pod hero nejvýš sedm sekcí – šablona sama přidá FAQ, související služby a kontakt
+          expect(page.sections.length, 'sekcí z obsahu').toBeLessThanOrEqual(7);
+          // místo opakovaného „Poznáváte se?“ konkrétní nadpis podle služby (G01)
           const first = page.sections[0];
-          expect(first?.title, 'první sekce').toBe('Poznáváte se?');
-          const symptoms = first?.blocks.find((b) => b.type === 'cards' && b.variant === 'symptoms');
-          expect(symptoms, 'blok symptomů').toBeDefined();
-          if (symptoms?.type === 'cards') expect(symptoms.items.length, 'karet „Poznáváte se?“').toBeLessThanOrEqual(4);
+          const situations = first?.blocks.find((b) => b.type === 'cards');
+          expect(situations, 'karty situací v první sekci').toBeDefined();
+          if (situations?.type === 'cards') expect(situations.items.length, 'karet situací').toBeLessThanOrEqual(4);
+          expect(page.related?.items.length ?? 0, 'související odkazy').toBeGreaterThanOrEqual(1);
         });
 
-        it('UX redukce: rozsah textu', () => {
+        it('šablona služeb: rozsah textu', () => {
           const words = pageTexts(page)
             .filter((t) => !t.where.startsWith('Schema') && !t.where.startsWith('SEO'))
             .reduce((n, t) => n + plainText(t.text).split(/\s+/).filter(Boolean).length, 0);
-          // včetně odpovědí ve FAQ a kontaktního bloku
-          expect(words, 'slov na stránce').toBeLessThanOrEqual(1200);
+          // včetně odpovědí ve FAQ, průběhu, souvisejících služeb a kontaktního bloku
+          expect(words, 'slov na stránce').toBeLessThanOrEqual(1400);
+        });
+      }
+
+      if (page.kind === 'service') {
+        it('šablona služeb: úvod, kotvy, průběh a FAQ (G02–G04, G06)', () => {
+          const intro = plainText(page.hero.subtitle).split(/\s+/).filter(Boolean).length;
+          expect(intro, 'slov v úvodu').toBeLessThanOrEqual(75);
+          expect(page.hero.anchors?.length ?? 0, 'kotvy pod úvodem').toBeGreaterThanOrEqual(3);
+          const steps = page.sections.find((s) => s.blocks.some((b) => b.type === 'steps'));
+          expect(steps?.title, 'sekce průběhu').toBe('Jak probíhá spolupráce');
+          expect(page.faqTitle ?? DEFAULT_TEXTS.page.faqTitle, 'nadpis FAQ').toBe('Cena a praktické dotazy');
         });
       }
 
@@ -275,9 +291,45 @@ describe('UX redukce webu', () => {
     expect(DEFAULT_NAVIGATION.footer.description).toBe('');
   });
 
-  it('kontaktní formulář bez kroků po odeslání, s krátkým právním textem', () => {
+  it('kontaktní formulář bez kroků po odeslání, s právním textem podle auditu', () => {
     expect(DEFAULT_TEXTS.contact).not.toHaveProperty('nextSteps');
-    expect(DEFAULT_TEXTS.contact.legal).toMatch(/^Údaje použijeme jen k odpovědi\./);
+    expect(DEFAULT_TEXTS.contact.legal).toMatch(/^Údaje z formuláře použijeme k vyřízení vaší poptávky\./);
+  });
+});
+
+describe('audit z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty)', () => {
+  const visibleText = (p: (typeof DEFAULT_PAGES)[number]) =>
+    pageTexts(p)
+      .filter((t) => !t.where.startsWith('SEO') && !t.where.startsWith('Schema'))
+      .map((t) => plainText(t.text))
+      .join(' ');
+
+  it('klidný a věcný jazyk bez opakovaných šablon a přehnaných slibů (G01)', () => {
+    const BANNED = /Poznáváte se\?|neprůstřeln|utíkají|nikdo neví|kterému věří|lead generation|sedí s (vašimi )?tržbami/i;
+    for (const p of DEFAULT_PAGES) expect(visibleText(p), `/${p.path}`).not.toMatch(BANNED);
+    expect(JSON.stringify(DEFAULT_NAVIGATION)).not.toMatch(/lead generation/i);
+  });
+
+  it('úvodní stránka: hero, rozcestník služeb a vlastní nadpis FAQ (H01–H04)', () => {
+    const home = DEFAULT_PAGES.find((p) => p.path === '')!;
+    expect(home.hero.h1).toBe('Webová analytika pro e-shopy a B2B firmy');
+    expect(home.hero.primaryCta).toEqual({ label: 'Domluvit konzultaci', href: '#kontakt' });
+    expect(home.hero.secondaryLink).toEqual({ label: 'Vybrat službu', href: '#sluzby' });
+    expect(home.sections[0]?.id).toBe('sluzby');
+    expect(home.faqTitle).toBe('Praktické informace o spolupráci');
+  });
+
+  it('tlačítka nesvádějí k automatické kontrole ani objednávce (G05)', () => {
+    for (const p of DEFAULT_PAGES) {
+      const label = p.hero.primaryCta?.label ?? '';
+      expect(label, `/${p.path}`).not.toMatch(/^(Objednat|Zkontrolovat)/);
+    }
+  });
+
+  it('formulář: texty podle G05', () => {
+    expect(DEFAULT_TEXTS.contact.submit).toBe('Odeslat poptávku');
+    expect(DEFAULT_TEXTS.contact.formIntro).toBe('Stačí stručně popsat situaci. Přístupy k účtům domluvíme až podle rozsahu práce.');
+    expect(DEFAULT_TEXTS.contact.successTitle).toBe('Děkujeme, poptávku jsme přijali');
   });
 });
 
@@ -349,7 +401,6 @@ describe('výchozí texty webu', () => {
   });
 
   it('zástupné symboly v hláškách formuláře', () => {
-    expect(DEFAULT_TEXTS.contact.successText).toContain('{email}');
     expect(DEFAULT_TEXTS.contact.successPhone).toContain('{phone}');
   });
 });

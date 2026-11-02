@@ -209,7 +209,7 @@ export function NavigationEditor({
       </Card>
 
       <Card title="Tlačítko v menu" desc="Vede na kontaktní formulář na stránce, nebo na /kontakt.">
-        <TextInput label="Text tlačítka" value={nav.cta.label} onChange={(label) => setNav({ ...nav, cta: { label } })} help="Hranaté závorky doplní web sám." />
+        <TextInput label="Text tlačítka" value={nav.cta.label} onChange={(label) => setNav({ ...nav, cta: { label } })} />
       </Card>
 
       <Card title="Patička">

@@ -1,10 +1,12 @@
 import type { PageInput } from '../../schema';
 
-// Homepage – výchozí obsah, po migraci se edituje v administraci (Stránky → Úvod).
-// Prošla UX redukcí z 9. října 2026 (seo-analyza/2026-10-09_ux-redukce, kap. 4):
-// zůstal hero s diagramem a jedním tlačítkem (H1 beze změny, publikum v podtitulu),
-// šest situací bez úvodu, poznámky a konzolí, čtyři otázky a kontaktní blok.
-// Segmenty, přehled služeb, postup spolupráce, nástroje a články vypadly.
+// Homepage – výchozí obsah, po migraci se edituje v administraci (Stránky, stránka Úvod).
+// Odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty, kap. 4, H01–H05):
+// zůstal hero s diagramem (diagram beze změny) a kontaktní blok. Nové jsou H1 a podtitul,
+// textový odkaz „Vybrat službu“, rozcestník šesti služeb s volbou E-shopy / B2B, blok
+// „Co je součástí naší práce“ s odkazem na modelovou ukázku auditu, průběh spolupráce (G03)
+// a FAQ „Praktické informace o spolupráci“. Vypadlo „Šest situací…“ s nedoloženými počty,
+// původní claim v H1 a nápověda ve zprávě (formulář má vlastní pole webu).
 
 export const page: PageInput = {
   path: '',
@@ -15,91 +17,153 @@ export const page: PageInput = {
   ogImage: '/og/default.png',
 
   seo: {
-    title: 'Webová analytika a měření pro e-shopy a firmy | datalayer.cz',
+    title: 'Webová analytika pro e-shopy a B2B firmy | datalayer.cz',
     description:
-      'Implementace GA4, Google Tag Manager, server-side tracking a Consent Mode v2. Měření, které sedí s tržbami – s dokumentací. Konzultace zdarma.',
+      'Nastavíme a ověříme měření návštěvnosti, objednávek a poptávek v GA4, GTM a reklamních systémech. Dostanete funkční nastavení, testy a dokumentaci.',
   },
 
   hero: {
     variant: 'diagram',
-    h1: 'Stavíme neprůstřelné datové základy pro váš růst.',
-    h1Highlight: 'datové základy',
+    h1: 'Webová analytika pro e-shopy a B2B firmy',
+    h1Highlight: 'Webová analytika',
     subtitle:
-      'Navrhneme, nasadíme a ověříme měření pro e-shopy a B2B firmy – od datové vrstvy po BigQuery. S dokumentací a s daty, která vlastníte vy.',
-    primaryCta: { label: 'Konzultovat projekt', href: '#kontakt' },
+      'Nastavíme a ověříme měření návštěvnosti, objednávek a poptávek. Propojíme data z webu, reklamních systémů a firemních nástrojů, abyste měli podklady pro vyhodnocení marketingu. Dostanete funkční nastavení, testy a dokumentaci.',
+    primaryCta: { label: 'Domluvit konzultaci', href: '#kontakt' },
+    secondaryLink: { label: 'Vybrat službu', href: '#sluzby' },
   },
 
   sections: [
     {
-      id: 'symptomy',
-      title: 'Šest situací, se kterými za námi klienti chodí nejčastěji',
+      id: 'sluzby',
+      title: 'S čím vám pomůžeme',
       tone: 'dark',
       blocks: [
         {
           type: 'cards',
           columns: 3,
-          // na mobilu kompaktní seznam, všech šest karet hned
-          variant: 'symptoms',
           items: [
             {
-              title: 'GA4 ukazuje o pětinu méně objednávek než e-shop',
-              text: 'Obvykle chybí měření u některých plateb, cookie lišta špatně ukládá souhlas nebo web posílá nákup dvakrát a GA4 ho zahodí.',
-              link: { label: 'Audit měření', href: '/sluzby/audit-mereni' },
+              title: 'Audit měření',
+              text: 'Prověříme současné nastavení, popíšeme chyby a připravíme pořadí oprav.',
+              link: { label: 'Co zahrnuje audit', href: '/sluzby/audit-mereni' },
             },
             {
-              title: 'Po nasazení cookie lišty spadly konverze v Google Ads',
-              text: 'Lišta blokuje tagy, ale Consent Mode v2 neposílá signály, takže Google nemá z čeho modelovat.',
-              link: { label: 'Cookie lišta a Consent Mode', href: '/sluzby/cookie-lista-consent-mode' },
+              title: 'Nastavení GA4 a GTM',
+              text: 'Navrhneme měřicí plán, nastavíme události a otestujeme předávání dat.',
+              link: { label: 'Nastavení analytiky', href: '/sluzby/implementace-ga4' },
             },
             {
-              title: 'Meta, Google a Sklik – každý hlásí jiná čísla',
-              text: 'Část rozdílů způsobuje atribuce a je normální. Zbytek tvoří chyby: chybí Conversions API nebo deduplikace, případně každý systém dostává jinou hodnotu objednávky.',
-              link: { label: 'Měření konverzí', href: '/sluzby/mereni-konverzi' },
+              title: 'Cookie lišta a Consent Mode',
+              text: 'Propojíme volbu návštěvníka s měřicími nástroji a ověříme jejich chování.',
+              link: { label: 'Nastavení souhlasů', href: '/sluzby/cookie-lista-consent-mode' },
             },
             {
-              title: 'V Tag Manageru je 140 tagů a nikdo neví, které jsou potřeba',
-              text: 'Nánosy po agenturách zpomalují web a posílají data tam, kam nemají. Uklidíme a nastavíme pravidla, aby to vydrželo.',
-              link: { label: 'GA4 a Google Tag Manager', href: '/sluzby/implementace-ga4' },
+              title: 'Měření konverzí',
+              text: 'Nastavíme objednávky a poptávky pro Google Ads, Metu, Sklik a další systémy.',
+              link: { label: 'Měření reklamních konverzí', href: '/sluzby/mereni-konverzi' },
             },
             {
-              title: 'Poptávky končí v e-mailu, ne v CRM ani v Google Ads',
-              text: 'Reklamní systémy se pak učí z počtu formulářů, ne ze zakázek. Propojíme web, CRM a reklamní systémy.',
-              link: { label: 'Měření pro B2B', href: '/reseni/b2b-a-lead-generation' },
+              title: 'Server-side měření',
+              text: 'Navrhneme předávání událostí přes server včetně správy souhlasů a provozu.',
+              link: { label: 'Možnosti server-side měření', href: '/sluzby/server-side-tracking' },
             },
             {
-              title: 'Report pro vedení každé pondělí někdo skládá ručně',
-              text: 'Data z GA4, reklam a e-shopu spojíme v BigQuery a postavíme dashboard, který obnovuje data sám a sedí s účetnictvím.',
-              link: { label: 'BigQuery a dashboardy', href: '/sluzby/bigquery' },
+              title: 'BigQuery a reporting',
+              text: 'Spojíme marketingová a firemní data do přehledů s dohodnutými metrikami.',
+              link: { label: 'Datový sklad a reporty', href: '/sluzby/bigquery' },
             },
+          ],
+        },
+        {
+          type: 'links',
+          items: [
+            { label: 'Řešení pro e-shopy', href: '/reseni/e-shopy' },
+            { label: 'Řešení pro B2B firmy', href: '/reseni/b2b-a-lead-generation' },
+          ],
+        },
+      ],
+    },
+
+    {
+      id: 'pristup',
+      title: 'Co je součástí naší práce',
+      tone: 'light',
+      blocks: [
+        {
+          type: 'cards',
+          columns: 3,
+          items: [
+            {
+              title: 'Účty pod vaší správou',
+              text: 'Měření nastavujeme v účtech vaší firmy. Přístupy nám přidělujete podle rozsahu práce.',
+            },
+            {
+              title: 'Ověřené scénáře',
+              text: 'Kontrolujeme nákup, formuláře a souhlasy podle dohodnutého testovacího plánu.',
+            },
+            {
+              title: 'Dokumentace k předání',
+              text: 'Získáte popis nastavení a změn, na který může navázat váš tým nebo další dodavatel.',
+            },
+          ],
+        },
+        // případová studie zatím není doložená – odkaz na modelovou ukázku (H03)
+        {
+          type: 'paragraphs',
+          items: ['Formát výstupu auditu ukazuje modelová ukázka se smyšlenými nálezy. Nejde o výsledky konkrétního klienta.'],
+        },
+        {
+          type: 'links',
+          items: [{ label: 'Prohlédnout modelovou ukázku auditu', href: '/sluzby/audit-mereni#ukazka-reportu' }],
+        },
+      ],
+    },
+
+    {
+      id: 'prubeh',
+      title: 'Jak probíhá spolupráce',
+      tone: 'white',
+      blocks: [
+        {
+          type: 'steps',
+          items: [
+            { title: 'Upřesnění zadání', text: 'Projdeme web, používané nástroje a otázky, které potřebujete vyřešit.' },
+            {
+              title: 'Nabídka a součinnost',
+              text: 'Dostanete rozsah práce, cenu, výstupy a seznam potřebných přístupů. Domluvíme také zapojení vývojáře nebo agentury.',
+            },
+            { title: 'Realizace a kontrola', text: 'Provedeme dohodnuté práce a ověříme je na testovacích scénářích.' },
+            { title: 'Předání', text: 'Projdeme výsledky a předáme dokumentaci. Další správu nebo monitoring sjednáme samostatně.' },
           ],
         },
       ],
     },
   ],
 
-  faqTitle: 'Než se ozvete',
+  faqTitle: 'Praktické informace o spolupráci',
   faq: [
     {
-      q: 'Pracujete i s menšími e-shopy, nebo jen s velkými firmami?',
-      a: 'S obojím. U menších e-shopů obvykle začínáme auditem a opravou základního měření: GA4, souhlasu a konverzí. Server-side měření a BigQuery doporučujeme až tam, kde se vyplatí – a řekneme vám to rovnou.',
+      q: 'Je spolupráce vhodná i pro menší e-shop?',
+      a: 'Ano. Rozsah navrhneme podle používaných nástrojů a potřeb e-shopu. Často stačí upravit základní měření; server-side řešení nebo datový sklad mají smysl až při konkrétním využití.',
     },
     {
-      q: 'Komu patří účty a data?',
-      a: 'Vždy vám. GA4, GTM, Google Cloud i reklamní účty běží pod vaší firmou, my dostáváme přístup. Po skončení spolupráce nic nemigrujete a dostanete dokumentaci, podle které může pokračovat kdokoli jiný.',
+      q: 'Komu zůstávají účty a data?',
+      a: 'Účty a projekty zůstávají pod správou vaší firmy. My pracujeme s přidělenými oprávněními. Součástí předání je dokumentace nastavení.',
     },
     {
-      q: 'Jak se tvoří cena?',
-      a: 'Podle rozsahu: počet webů a domén, platforma e-shopu, počet napojených reklamních systémů a to, jestli stavíme server-side měření nebo BigQuery. Po úvodní konzultaci dostanete nabídku s pevným rozsahem a výstupy. Provoz Google Cloudu platíte přímo Googlu.',
+      q: 'Na čem závisí cena?',
+      a: 'Na rozsahu práce, počtu systémů a stavu současného nastavení. Před zahájením dostanete nabídku s cenou a seznamem výstupů. Případný provoz cloudu a licence uvádíme zvlášť.',
     },
     {
-      q: 'Spolupracujete s naším vývojářem nebo agenturou?',
-      a: 'Ano, je to běžné. Vývojářům dodáme specifikaci datové vrstvy a testovací scénáře; s PPC agenturou se domluvíme na konverzích a jejich hodnotách.',
+      q: 'Lze zapojit stávajícího vývojáře nebo agenturu?',
+      a: 'Ano. Domluvíme rozdělení práce, připravíme potřebné zadání a společně ověříme výsledek.',
     },
   ],
 
   contact: {
     formId: 'home',
-    title: 'Zjistíme, kde vám utíkají data',
-    placeholder: 'Adresa webu a co řešíte, např. „GA4 ukazuje o třicet procent méně objednávek než e-shop“',
+    title: 'Proberme vaše měření',
+    lead: 'Napište adresu webu a stručně popište, co potřebujete vyřešit. Na úvodní konzultaci upřesníme zadání a navrhneme další postup. Konzultace je nezávazná a zdarma.',
+    placeholder: '',
   },
 };

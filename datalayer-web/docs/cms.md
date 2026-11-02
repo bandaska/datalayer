@@ -32,8 +32,9 @@ a drobečkovou navigaci ve strukturovaných datech, piktogram a stav:
 - **zveřejněná** – web ji zobrazí a sitemapa ji uvede,
 - **noindex** – web ji zobrazí, ale vyhledávačům ji zakáže a sitemapa ji vynechá.
 
-Obsah tvoří **hero** (nadpis H1, jeden úvodní odstavec a jedno tlačítko – bez nadtitulku,
-druhého tlačítka, mikrotextu a bodů důvěry), **sekce** a v nich **bloky**. Sekce má kotvu
+Obsah tvoří **hero** (nadpis H1, jeden úvodní odstavec, jedno tlačítko, případně textový odkaz
+vedle něj a kotvy na sekce pod ním – bez nadtitulku, mikrotextu a bodů důvěry), **sekce**
+a v nich **bloky**. Sekce má kotvu
 (`/stranka#kotva`), nadpis, úvod, pozadí (světle
 šedé, bílé, tmavé, tmavě modré) a rozvržení (nadpis nahoře, nebo vlevo a bloky vpravo). Skrytá
 sekce zůstane v administraci, web ji ale nevykreslí – hodí se pro obsah, který čeká na nasazení
@@ -58,28 +59,35 @@ sekce zůstane v administraci, web ji ale nevykreslí – hodí se pro obsah, kt
 | Nejnovější články | výpis posledních článků z blogu; dokud jich blog nemá aspoň minimální počet (výchozí tři), web blok i celou sekci skryje |
 | Přehled z menu | dlaždice služeb nebo řešení podle menu (rozcestník, homepage) |
 | Nastavení cookies | tlačítko, které otevře volbu souhlasu |
+| Rozbalovací technická poznámka | sbalený detail pro odborníky (vrstvy datového skladu, API) pod hlavním textem |
+| Řada odkazů | několik textových odkazů vedle sebe, např. „Řešení pro e-shopy / pro B2B firmy“ |
 | Provozovatel webu | jméno nebo firma, IČO, sídlo a e-mail z Nastavení; bez vyplněného jména se nezobrazí |
 | Osoba za webem | jméno, role, praxe a nástroje z bloku, fotka z Textů webu (Kontakt), LinkedIn z Nastavení; bez jména, nebo bez fotky i textu o praxi se nezobrazí. Web ho zatím nepoužívá – nemá kontaktní osobu |
 
 Sekci, ve které by žádný blok nic neukázal (osoba bez podkladů, provozovatel bez údajů, články
 pod minimálním počtem), web vynechá celou.
 
-Pod sekcemi šablona sama přidá **FAQ** a **kontaktní blok** – na konci stránky, nebo hned pod
-úvodem (stránka Kontakt; tam bez vlastního nadpisu a úvodu, které by opakovaly H1 a perex).
-Nadtitulky, viditelnou drobečkovou navigaci, Technické detaily ani pruh Pokračujte šablona nemá.
+Nad H1 podstránek šablona vykreslí drobečkovou navigaci **Úvod / název stránky**. Pod sekcemi
+přidá **FAQ** (nadpis z Textů webu „Cena a praktické dotazy“, stránka ho může přepsat),
+**Související služby** (dva až tři odkazy s větou o návaznosti) a **kontaktní blok** – na konci
+stránky, nebo hned pod úvodem (stránka Kontakt; tam bez vlastního nadpisu a úvodu, které by
+opakovaly H1 a perex). Nadtitulky šablona nemá, tlačítka jsou bez hranatých závorek.
 
-### Šablona služeb a řešení po UX redukci
+### Šablona služeb podle auditu z 2. listopadu 2026
 
-Podle UX auditu (kap. 5.1) má stránka služby nebo řešení pořadí: hero → **Poznáváte se?**
-(nejvýš čtyři karty) → **Co uděláme a co dostanete** (pět až osm karet) → u server-side
-a BigQuery jedno schéma a rozhodnutí ano/ne → FAQ → kontakt. U výchozího obsahu to hlídá
-`tests/content.test.ts`:
+Audit `seo-analyza/2026-11-02_seo-ux-texty/audit.md` (G03) určuje stránce služby pořadí:
+krátký úvod (nejvýš 70 slov, jedno tlačítko, kotvy Rozsah služby, Výstupy, Průběh, Cena
+a dotazy) → **kdy je služba vhodná** (konkrétní nadpis, ne „Poznáváte se?“) → **výstupy** →
+ukázka nebo vysvětlení řešení → **Jak probíhá spolupráce** (čtyři kroky) → **Cena a praktické
+dotazy** → související služby a kontakt. U výchozího obsahu to hlídá `tests/content.test.ts`:
 
-- nejvýš čtyři sekce z obsahu, první s nadpisem „Poznáváte se?“ a blokem symptomů,
+- nejvýš sedm sekcí z obsahu, v první karty situací (nejvýš čtyři), související odkazy,
 - FAQ tři až čtyři otázky (na všech stránkách nejvýš čtyři),
-- jen bloky Odstavce, Seznam, Karty, Rozhodnutí, nejvýš jedno Schéma toku a Záložky jen
-  u platforem na stránce E-shopy – žádné tabulky, čísla v boxech, kód ani Postup,
-- do 1 200 slov včetně FAQ a kontaktu, nápověda ve zprávě začíná „Adresa webu a co řešíte“.
+- bloky Odstavce, Seznam, Karty, Rozhodnutí, Kroky (nejvýš čtyři), Tabulka, Upozornění,
+  rozbalovací poznámka, řada odkazů, nejvýš jedno Schéma toku a Záložky jen u platforem
+  na stránce E-shopy,
+- do 1 400 slov včetně FAQ, průběhu a kontaktu; bez formulací, které audit ruší
+  („Poznáváte se?“, „neprůstřelné“, „utíkají data“, „nikdo neví“, „lead generation“…).
 
 Editor hlídá:
 
@@ -143,11 +151,17 @@ zněním, zrušené stránky smaže (obojí se zálohou v `pages_backup`), menu 
 (původní v `content_backup/navigation@20261009_ux_redukce`) a v textech webu zkrátí text pod
 formulářem a odstraní pole, která šablona nemá.
 
-Kontaktní formulář má na tmavém pozadí vždy světlou kartu a čtyři pole: jméno, e-mail,
-nepovinný telefon a zprávu (adresu webu připomene nápověda). Téma poptávky nese skryté pole
-`form_id` – jde do e-mailu i do události `generate_lead`. Šablona sama doplní nedělitelné mezery po jednopísmenných
-předložkách a mezi číslem a jednotkou (`app/lib/typo.ts`), hranaté závorky a šipky
-v tlačítkách a odkazech kreslí CSS, do textů je nepište.
+Revizi textů a rozvržení podle auditu z 2. listopadu 2026 přináší migrace
+**`20261102_revize_textu`**: stránky přepíše se zálohou v `pages_backup`, menu a patičku nahradí
+(původní v `content_backup/navigation@20261102_revize_textu`) a texty formuláře, potvrzení
+a nadpis FAQ změní jen tam, kde zůstalo dřívější výchozí znění.
+
+Kontaktní formulář má na tmavém pozadí vždy světlou kartu, nad poli větu z Textů webu a pole
+v pořadí jméno, pracovní e-mail, nepovinná adresa webu (`web_url` – `website` je skrytá past
+na roboty), nepovinný telefon a zpráva s nápovědou pod popiskem. Téma poptávky nese skryté
+pole `form_id` – jde do e-mailu i do události `generate_lead`. Šablona sama doplní nedělitelné
+mezery po jednopísmenných předložkách a mezi číslem a jednotkou (`app/lib/typo.ts`), šipky
+u textových odkazů kreslí CSS, do textů je nepište.
 
 ## Pro vývoj
 

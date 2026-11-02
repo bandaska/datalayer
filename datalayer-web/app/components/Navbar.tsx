@@ -61,6 +61,19 @@ export function Navbar() {
     setMobile(false);
   }, [location.pathname]);
 
+  // při psaní do formuláře se spodní lišta schová – na telefonu by překážela nad klávesnicí
+  useEffect(() => {
+    const field = (t: EventTarget | null) => t instanceof HTMLElement && t.matches('input, textarea, select');
+    const onIn = (e: FocusEvent) => field(e.target) && document.body.classList.add('is-typing');
+    const onOut = (e: FocusEvent) => field(e.target) && document.body.classList.remove('is-typing');
+    document.addEventListener('focusin', onIn);
+    document.addEventListener('focusout', onOut);
+    return () => {
+      document.removeEventListener('focusin', onIn);
+      document.removeEventListener('focusout', onOut);
+    };
+  }, []);
+
   // spodní lišta až za úvodem stránky; stránka bez úvodu ji má hned
   const [barHidden, setBarHidden] = useState(true);
   useEffect(() => {

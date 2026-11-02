@@ -73,6 +73,7 @@ const { migration: slimMigration } = await import('~/migrations/scripts/20261009
 const { migration: noPersonMigration } = await import('~/migrations/scripts/20261009_bez_kontaktni_osoby');
 const { migration: auditMigration } = await import('~/migrations/scripts/20261009_jazykovy_audit');
 const { migration: uxMigration, REMOVED_PAGES } = await import('~/migrations/scripts/20261009_ux_redukce');
+const { migration: revisionMigration } = await import('~/migrations/scripts/20261102_revize_textu');
 const { importPage } = await import('~/migrations/helpers');
 type MigrationContext = import('~/migrations/types').MigrationContext;
 
@@ -532,6 +533,44 @@ describe('migrace 20261009_ux_redukce', () => {
     const snapshot = JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')));
     const second = await uxMigration.run(ctx);
     expect(second).toBe(`stránky: 0 přepsaných, ${DEFAULT_PAGES.length} beze změny; zrušené stránky: žádné; menu a patička: beze změny; texty webu: beze změny`);
+    expect(JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')))).toBe(snapshot);
+  });
+});
+
+describe('migrace 20261102_revize_textu', () => {
+  it('přepíše stránky a menu se zálohou, texty formuláře změní jen s výchozím zněním', async () => {
+    await migration.run(ctx);
+    // stav před revizí: starší úvod, staré menu a texty formuláře, jeden vlastní text
+    const home = stored('')!;
+    docs.set('pages/home', { ...home, hero: { ...(home.hero as object), h1: 'Stavíme neprůstřelné datové základy pro váš růst.' } });
+    const oldNav = { ...DEFAULT_NAVIGATION, cta: { label: 'Konzultovat projekt' } };
+    docs.set('content/navigation', encodeNested(oldNav) as Doc);
+    const texts = decodeNested(docs.get('content/texts')) as Record<string, Record<string, unknown>>;
+    const { formIntro: _intro, ...contact } = texts.contact;
+    texts.contact = { ...contact, submit: 'Odeslat zprávu', legal: 'Údaje použijeme jen k odpovědi. <a href="/zpracovani-osobnich-udaju">Jak s nimi zacházíme</a>', defaultTitle: 'Vlastní nadpis z administrace' };
+    texts.page = { faqTitle: 'Časté otázky' };
+    docs.set('content/texts', encodeNested(texts) as Doc);
+
+    const summary = await revisionMigration.run(ctx);
+    expect(summary).toContain('stránky: 1 přepsaných');
+    expect(summary).toContain('menu a patička: nové');
+    expect(summary).toContain('contact.submit');
+    expect((stored('')?.hero as { h1: string }).h1).toBe('Webová analytika pro e-shopy a B2B firmy');
+    expect((docs.get('pages_backup/home@20261102_revize_textu')?.hero as { h1: string }).h1).toContain('neprůstřelné');
+    expect(decodeNested(docs.get('content/navigation'))).toMatchObject({ cta: { label: 'Domluvit konzultaci' } });
+    expect(JSON.stringify(docs.get('content_backup/navigation@20261102_revize_textu'))).toContain('Konzultovat projekt');
+
+    const after = decodeNested(docs.get('content/texts')) as Record<string, Record<string, unknown>>;
+    expect(after.contact.submit).toBe('Odeslat poptávku');
+    expect(after.contact.legal).toBe(DEFAULT_TEXTS.contact.legal);
+    expect(after.contact.defaultTitle).toBe('Vlastní nadpis z administrace');
+    expect(after.contact.formIntro).toBe(DEFAULT_TEXTS.contact.formIntro);
+    expect(after.page).toEqual({ faqTitle: 'Cena a praktické dotazy', relatedTitle: 'Související služby' });
+    expect(textsSchema.safeParse(after).success).toBe(true);
+
+    const snapshot = JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')));
+    const second = await revisionMigration.run(ctx);
+    expect(second).toBe(`stránky: 0 přepsaných, ${DEFAULT_PAGES.length} beze změny; menu a patička: beze změny; texty webu: beze změny`);
     expect(JSON.stringify([...docs.entries()].filter(([k]) => !k.startsWith('migrations')))).toBe(snapshot);
   });
 });

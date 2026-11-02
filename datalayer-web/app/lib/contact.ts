@@ -1,4 +1,5 @@
 import { LEGACY_TOPICS } from '~/content/topics';
+import { CONTACT_EMAIL } from './site';
 import type { Topic } from '~/content/types';
 
 // Kontaktní formulář – sdílené definice (klient i server).
@@ -40,15 +41,16 @@ export type ContactFields = {
 
 export type ContactErrors = Partial<Record<'jmeno' | 'email' | 'zprava', string>>;
 
+// hlášky podle auditu z 2. listopadu 2026 (G05)
 export const CONTACT_MESSAGES = {
-  jmeno: 'Vyplňte prosím jméno a příjmení.',
-  email: 'Zkontrolujte prosím e-mail – bez něj se vám nemůžeme ozvat.',
-  zprava: 'Napište prosím pár slov o tom, co řešíte.',
+  jmeno: 'Vyplňte prosím jméno.',
+  email: 'Zadejte prosím platný e-mail, na který vám můžeme odpovědět.',
+  zprava: 'Napište prosím stručně, co potřebujete vyřešit.',
   invalid: 'Zkontrolujte prosím zvýrazněná pole.',
   spam: 'Ověření proti spamu selhalo. Zkuste to prosím znovu.',
   rate: 'Odeslali jste několik zpráv za sebou. Zkuste to prosím za chvíli.',
-  failed: 'Zprávu se teď nepodařilo zpracovat. Zkuste to prosím později, nebo nám napište e-mail.',
-  ok: 'Děkujeme, zpráva dorazila. Ozveme se vám.',
+  failed: `Poptávku se nepodařilo odeslat. Zkuste to prosím znovu, nebo nám napište na ${CONTACT_EMAIL}.`,
+  ok: 'Děkujeme, poptávku jsme přijali. Ozveme se na uvedený e-mail.',
 } as const;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -61,7 +63,8 @@ export function readContactFields(fd: FormData): ContactFields {
     jmeno: get('jmeno', 120),
     email: get('email', 200),
     telefon: get('telefon', 40),
-    web: get('web', 200),
+    // viditelné pole „Adresa webu“ (web_url); `web` posílaly starší formuláře, `website` je past na roboty
+    web: get('web_url', 200) || get('web', 200),
     zprava: get('zprava', 5000),
     temata: fd
       .getAll('tema')

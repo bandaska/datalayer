@@ -18,12 +18,13 @@ const GROUPS: Group[] = [
     title: 'Kontaktní formulář',
     desc: 'Výchozí texty bloku s formulářem. Nadpis, úvod a nápovědu v poli zprávy jde nastavit i u každé stránky zvlášť.',
     fields: [
+      { key: 'formIntro', label: 'Věta nad poli formuláře' },
       { key: 'defaultTitle', label: 'Výchozí nadpis' },
       { key: 'leadWithPhone', label: 'Úvod, když je vyplněný telefon', type: 'area' },
       { key: 'leadWithoutPhone', label: 'Úvod bez telefonu', type: 'area' },
-      { key: 'defaultPlaceholder', label: 'Nápověda v poli zprávy' },
+      { key: 'defaultPlaceholder', label: 'Nápověda pod popiskem zprávy', help: 'Platí, když ji stránka nemá vlastní.' },
       { key: 'legal', label: 'Text o zpracování údajů pod formulářem', type: 'html' },
-      { key: 'submit', label: 'Tlačítko odeslání', help: 'Hranaté závorky doplní web sám.' },
+      { key: 'submit', label: 'Tlačítko odeslání' },
       { key: 'note', label: 'Poznámka pod tlačítkem' },
       { key: 'successTitle', label: 'Nadpis po odeslání' },
       { key: 'successText', label: 'Text po odeslání', help: '{email} nahradí adresa návštěvníka.' },
@@ -39,6 +40,7 @@ const GROUPS: Group[] = [
     desc: 'Společné texty všech stránek.',
     fields: [
       { key: 'faqTitle', label: 'Výchozí nadpis FAQ' },
+      { key: 'relatedTitle', label: 'Nadpis bloku souvisejících služeb' },
     ],
   },
   {

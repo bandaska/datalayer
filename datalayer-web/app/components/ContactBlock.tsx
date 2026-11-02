@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import { useLocation, useRouteLoaderData } from 'react-router';
 import { DEFAULT_TEXTS } from '~/content/defaults/texts';
-import { normalizeEmail, normalizePhone, validateContact } from '~/lib/contact';
+import { CONTACT_MESSAGES, normalizeEmail, normalizePhone, validateContact } from '~/lib/contact';
 import type { ContactErrors, LeadType } from '~/lib/contact';
 import { readConsent } from '~/lib/consent';
 import { pushEvent, sha256Hex } from '~/lib/dataLayer';
@@ -10,10 +10,11 @@ import type { RootData } from '~/lib/rootData';
 import { CONTACT_EMAIL, SITE_NAME } from '~/lib/site';
 import { phoneHref } from '~/lib/settings';
 
-// Nativní kontaktní blok (náhrada HubSpotu) podle vzoru annanovotna.cz, po UX redukci
-// (seo-analyza/2026-10-09_ux-redukce, kap. 6.3): vlevo nadpis, jedna až dvě věty
-// a kanály (e-mail, telefon), vpravo formulář jako světlá karta se čtyřmi poli –
-// jméno, e-mail, nepovinný telefon a zpráva. Téma poptávky nese skryté pole form_id.
+// Nativní kontaktní blok (náhrada HubSpotu) podle vzoru annanovotna.cz: vlevo nadpis,
+// jedna až dvě věty a kanály (e-mail, telefon), vpravo formulář jako světlá karta.
+// Pole a hlášky podle auditu z 2. listopadu 2026 (G05): jméno, pracovní e-mail,
+// nepovinná adresa webu (`web_url` – `website` je skrytá past na roboty) a telefon,
+// zpráva s nápovědou pod popiskem. Téma poptávky nese skryté pole form_id.
 // Bez JS funguje klasický POST na /api/kontakt (→ /dekujeme), s JS odešle
 // fetch, ukáže stav a pošle do dataLayeru lead_form_start / lead_form_error /
 // generate_lead (s SHA-256 hashi e-mailu a telefonu, nikdy čitelné údaje).
@@ -133,7 +134,7 @@ export function ContactBlock({
     }
 
     setSending(true);
-    setNote({ text: 'Odesíláme…', error: false });
+    setNote({ text: 'Odesíláme poptávku…', error: false });
     const phoneValue = String(fd.get('telefon') ?? '');
     try {
       const res = await fetch(form.action, {
@@ -174,15 +175,13 @@ export function ContactBlock({
         setSuccess(fields.email);
       } else {
         if (data.errors) setErrors(data.errors);
-        setNote({
-          text: data.message || 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo nám napište e-mail.',
-          error: true,
-        });
+        // vyplněný obsah formuláře zůstává, návštěvník jen zkusí odeslat znovu
+        setNote({ text: data.message || CONTACT_MESSAGES.failed, error: true });
         resetTurnstile();
         pushEvent('lead_form_error', { form_id: formId, error_fields: 'server' });
       }
     } catch {
-      setNote({ text: 'Spojení selhalo. Zkuste to prosím znovu.', error: true });
+      setNote({ text: CONTACT_MESSAGES.failed, error: true });
       resetTurnstile();
     } finally {
       setSending(false);
@@ -202,6 +201,7 @@ export function ContactBlock({
   });
 
   const defaultLead = phone ? t.leadWithPhone : t.leadWithoutPhone;
+  const hint = placeholder || t.defaultPlaceholder;
   const successMessage =
     t.successText.replace('{email}', success ?? '').replace(/ na \.$/, '.') + (phone && t.successPhone ? ` ${t.successPhone.replace('{phone}', phone)}` : '');
 
@@ -298,6 +298,7 @@ export function ContactBlock({
           <input type="hidden" name="form_id" value={formId} />
           <input type="hidden" name="lead_type" value={leadType} />
           <input type="hidden" name="page" value={location.pathname} />
+          {t.formIntro ? <p className="dl-form__intro">{t.formIntro}</p> : null}
           <div className="dl-form__hp" aria-hidden="true">
             <label>
               Web firmy
@@ -316,7 +317,7 @@ export function ContactBlock({
               ) : null}
             </label>
             <label>
-              E-mail
+              Pracovní e-mail
               <input type="email" name="email" autoComplete="email" required maxLength={200} {...fieldProps('email')} />
               {errors.email ? (
                 <span className="dl-form__fielderr" id={`${formId}-email-err`}>
@@ -325,8 +326,11 @@ export function ContactBlock({
               ) : null}
             </label>
           </div>
-          {/* telefon sám v řádku, v polovině šířky jako pole nad ním */}
           <div className="dl-form__row">
+            <label>
+              Adresa webu <span className="opt">(nepovinné)</span>
+              <input type="url" name="web_url" inputMode="url" autoComplete="url" placeholder="https://www.vasweb.cz" maxLength={200} />
+            </label>
             <label>
               Telefon <span className="opt">(nepovinné)</span>
               <input type="tel" name="telefon" autoComplete="tel" placeholder="+420" maxLength={40} />
@@ -334,8 +338,19 @@ export function ContactBlock({
           </div>
 
           <label>
-            S čím vám můžeme pomoci?
-            <textarea name="zprava" required maxLength={5000} placeholder={placeholder || t.defaultPlaceholder} {...fieldProps('zprava')} />
+            Co potřebujete vyřešit?
+            {hint ? (
+              <span className="dl-form__hint" id={`${formId}-zprava-hint`}>
+                {hint}
+              </span>
+            ) : null}
+            <textarea
+              name="zprava"
+              required
+              maxLength={5000}
+              {...fieldProps('zprava')}
+              aria-describedby={[hint ? `${formId}-zprava-hint` : '', errors.zprava ? `${formId}-zprava-err` : ''].filter(Boolean).join(' ') || undefined}
+            />
             {errors.zprava ? (
               <span className="dl-form__fielderr" id={`${formId}-zprava-err`}>
                 {errors.zprava}
@@ -355,7 +370,7 @@ export function ContactBlock({
           </p>
 
           {success !== null ? (
-            <div className="dl-form__success">
+            <div className="dl-form__success" role="status" aria-live="polite">
               <div>
                 <div className="dl-form__success-icon" aria-hidden="true">
                   <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

@@ -39,8 +39,8 @@ export const page: PageInput = {
         {
           type: 'html',
           html: `<h2>Kontaktní formulář</h2>
-<p>Když nám pošlete zprávu, zpracujeme jméno, e-mail a text zprávy. Pokud ho vyplníte, zpracujeme také telefon. Údaje potřebujeme, abychom mohli odpovědět na poptávku a případně připravit nabídku. Právní základ je jednání o smlouvě na vaši žádost podle čl. 6 odst. 1 písm. b) GDPR, proto ve formuláři nežádáme o souhlas.</p>
-<p>Zprávu uložíme do databáze Google Cloud Firestore a pošleme ji e-mailem lidem, kteří poptávky vyřizují. Do analytiky ani reklamních systémů jméno, e-mail ani telefon v čitelné podobě neposíláme. Při odeslání formuláře web vytvoří jen jednosměrný otisk e-mailu a telefonu (SHA-256), a to jen pokud jste souhlasili s marketingovými cookies.</p>
+<p>Když nám pošlete poptávku, zpracujeme jméno, e-mail a text zprávy. Pokud je vyplníte, zpracujeme také adresu webu a telefon. Údaje potřebujeme, abychom mohli odpovědět na poptávku a případně připravit nabídku. Právní základ je jednání o smlouvě na vaši žádost podle čl. 6 odst. 1 písm. b) GDPR, proto ve formuláři nežádáme o souhlas.</p>
+<p>Zprávu uložíme do databáze Google Cloud Firestore a pošleme ji e-mailem lidem, kteří poptávky vyřizují. Do analytiky ani reklamních systémů jméno, e-mail ani telefon v čitelné podobě neposíláme. Jen pokud jste souhlasili s marketingovými cookies, web při odeslání formuláře vytvoří jednosměrný otisk e-mailu a telefonu (SHA-256). Otisk slouží reklamním systémům, například rozšířeným konverzím Google Ads, k přiřazení poptávky ke kampani. Otisk zůstává osobním údajem, jen v pseudonymizované podobě. Právní základ je váš souhlas, který odvoláte v nastavení cookies v patičce.</p>
 <h2>Ochrana proti spamu</h2>
 <p>Formulář chrání služba Cloudflare Turnstile. Ověří, že formulář vyplňuje člověk, a pracuje přitom s technickými údaji o prohlížeči a s IP adresou. IP adresu krátce používáme i k omezení počtu zpráv odeslaných za sebou. Právní základ je náš oprávněný zájem na ochraně webu před zneužitím podle čl. 6 odst. 1 písm. f) GDPR.</p>
 <h2>Cookies a měření návštěvnosti</h2>

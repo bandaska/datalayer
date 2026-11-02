@@ -1,66 +1,97 @@
 import type { PageInput } from '../../schema';
 
-// Stránka prošla UX redukcí z 9. října 2026 (seo-analyza/2026-10-09_ux-redukce,
-// kap. 5.2). Zůstal hero s jedním tlačítkem, Poznáváte se? a Co uděláme a co
-// dostanete. Schéma toku souhlasu, režim basic nebo advanced s výběrem lišty,
-// právní rámec, postup, ověření, Technické detaily a odkazy na další stránky
-// a články zmizely. FAQ má čtyři otázky: právní minimum (zákon, ÚOOÚ, Google
-// a role právníka) a basic vs. advanced shrnují rušené sekce, odpověď o ceně
-// převzala větu, že žádnou CMP neprodáváme. Texty prošly jazykovým auditem
-// z 9. října 2026.
+// Stránka odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty,
+// kap. 3 a 8, C01–C04). Hero má nový nadpis, úvod, tlačítko „Probrat nastavení
+// cookies“ a kotvy na sekce. Dřívější karty se symptomy nahradila sekce Co je potřeba ověřit
+// se čtyřmi kartami bez hodnocení režimu basic jako chyby. Dlouhou mřížku Co uděláme
+// a co dostanete nahradily dvě varianty služby a čtyři výstupy; Seznam Event
+// Measurement zůstal jen v rozbalovací technické poznámce, osm scénářů se záznamem
+// HAR vypadlo. Přibyl průběh spolupráce (G03) a související služby, FAQ a kontakt
+// mají znění ze C04. Odpověď o povinnosti lišty odkazuje na otázky a odpovědi
+// ÚOOÚ; paragrafy zákona, slib „nastavíme kteroukoli CMP“ a slogan o legálním
+// souhlasu vypadly.
 
 export const page: PageInput = {
   path: 'sluzby/cookie-lista-consent-mode',
   kind: 'service',
-  navTitle: 'Cookie lišta a Consent Mode v2',
-  tagline: 'souhlas legálně a bez zbytečné ztráty dat',
+  navTitle: 'Cookie lišta a Consent Mode',
+  tagline: 'nastavení a ověření souhlasů',
   pictogram: 'consent',
   menuGroup: 'sber',
 
   seo: {
-    title: 'Cookie lišta a Consent Mode v2 – nastavení | datalayer.cz',
+    title: 'Nastavení cookie lišty a Consent Mode v2 | datalayer.cz',
     description:
-      'Vybereme a nastavíme cookie lištu, Consent Mode v2 a GTM. Ověříme, co web posílá před souhlasem, a vysvětlíme dopad na data. Konzultace zdarma.',
+      'Propojíme cookie lištu s GA4, GTM a reklamními nástroji. Ověříme chování před volbou, po souhlasu, odmítnutí i změně nastavení a předáme testovací protokol.',
   },
 
   hero: {
-    h1: 'Cookie lišta a Consent Mode v2 nastavené a ověřené',
+    h1: 'Nastavení cookie lišty a Consent Mode v2',
     subtitle:
-      'Cookie lišta sbírá souhlas návštěvníka, Consent Mode v2 ho předává tagům Googlu a Google Tag Manager (GTM) podle něj spouští ostatní tagy, třeba Mety nebo Skliku. Lištu vybereme a nastavíme tak, aby tagy souhlas respektovaly od prvního načtení stránky. Pak ověříme, co web posílá před souhlasem a po něm, a vysvětlíme dopad na data.',
-    primaryCta: { label: 'Zkontrolovat můj web', href: '#kontakt' },
+      'Propojíme cookie lištu s GA4, Google Tag Managerem a reklamními nástroji. Ověříme jejich chování před volbou návštěvníka, po souhlasu, odmítnutí i změně nastavení. Dostanete testovací protokol a popis předávání dat.',
+    primaryCta: { label: 'Probrat nastavení cookies', href: '#kontakt' },
+    anchors: [
+      { label: 'Rozsah služby', href: '#kdy' },
+      { label: 'Výstupy', href: '#vystupy' },
+      { label: 'Průběh', href: '#prubeh' },
+      { label: 'Cena a dotazy', href: '#faq' },
+    ],
   },
 
   sections: [
     {
-      id: 'symptomy',
-      title: 'Poznáváte se?',
-      lead: 'To, že web lištu zobrazí, ještě neznamená, že tagy souhlas respektují. Ani platforma pro správu souhlasů (CMP) s certifikací od Googlu sama soulad nezaručí – rozhoduje, jak ji nasadíte.',
+      id: 'kdy',
+      title: 'Co je potřeba ověřit',
+      lead: 'To, že web lištu zobrazí, ještě neznamená, že nástroje volbu návštěvníka respektují. Ani platforma pro správu souhlasů neboli CMP s certifikací od Googlu to sama nezaručí. Rozhoduje způsob nasazení.',
       tone: 'light',
       blocks: [
         {
           type: 'cards',
-          columns: 4,
+          columns: 2,
           variant: 'symptoms',
           items: [
             {
-              title: 'Tagy běží bez ohledu na lištu',
-              text: 'Meta Pixel, Sklik nebo chatovací widget odešlou data ještě před kliknutím, nebo dokonce po odmítnutí.',
+              title: 'Chování před volbou návštěvníka',
+              text: 'Které nástroje web načítá a jaké požadavky odesílá.',
               pictogram: 'warn',
             },
             {
-              title: 'Consent Mode startuje pozdě',
-              text: 'Výchozí stav přichází až po načtení GTM, chybí nové reklamní signály a v GA4 roste podíl „Unassigned“.',
+              title: 'Přijetí a odmítnutí cookies',
+              text: 'Zda měřicí nástroje správně reagují na udělení i neudělení souhlasu.',
               pictogram: 'ga4',
             },
             {
-              title: 'Po nasazení lišty spadly konverze',
-              text: 'Tagy naběhnou až na další stránce nebo web zbytečně běží v režimu basic bez modelování a data mizí i u lidí, kteří souhlasili.',
-              pictogram: 'conversion',
+              title: 'Změna a uložení volby',
+              text: 'Zda lze nastavení snadno změnit a zda web volbu respektuje i při dalších návštěvách.',
+              pictogram: 'gov',
             },
             {
-              title: 'Lišta neodpovídá doporučení ÚOOÚ',
-              text: 'Chybí „Odmítnout“ v první vrstvě, tlačítka nejsou rovnocenná nebo lišta jen informuje tlačítkem „Rozumím“.',
-              pictogram: 'gov',
+              title: 'Kódy mimo Tag Manager',
+              text: 'Zda pravidla respektují i pluginy, vložená videa, chaty a přímé integrace.',
+              pictogram: 'gtm',
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      id: 'varianty',
+      title: 'Dvě varianty služby',
+      lead: 'Nejprve ověříme možnosti zvolené CMP nebo lišty e-shopové platformy.',
+      tone: 'white',
+      blocks: [
+        {
+          type: 'cards',
+          columns: 2,
+          items: [
+            {
+              title: 'Kontrola stávajícího nastavení',
+              text: 'Prověříme lištu, nástroje a datové požadavky v dohodnutých scénářích. Dostanete nálezy a plán oprav.',
+            },
+            {
+              title: 'Nové nastavení nebo změna lišty',
+              text: 'Posoudíme vhodné řešení, nastavíme předávání souhlasů a otestujeme navazující měřicí nástroje.',
             },
           ],
         },
@@ -69,38 +100,56 @@ export const page: PageInput = {
 
     {
       id: 'vystupy',
-      title: 'Co uděláme a co dostanete',
-      lead: 'Službu nabízíme ve dvou variantách: audit, když lištu máte, a nastavení na klíč, když ji zavádíte nebo měníte.',
-      tone: 'white',
+      title: 'Výstupy služby',
+      tone: 'dark',
       blocks: [
         {
           type: 'cards',
-          columns: 3,
+          columns: 2,
           items: [
             {
-              title: 'Inventura cookies a tagů',
-              text: 'Všechny cookies, tagy a skripty včetně kódů mimo GTM – v šabloně, pluginech, chatu nebo videu.',
+              title: 'Inventura nástrojů',
+              text: 'Přehled prověřených cookies, tagů a kódů včetně integrací mimo GTM.',
             },
             {
-              title: 'Lišta a podklady pro texty',
-              text: 'Doporučíme CMP nebo navrhneme vlastní lištu a připravíme technické podklady, ze kterých právník sestaví texty lišty.',
+              title: 'Mapa souhlasů',
+              text: 'Přiřazení nástrojů k účelům a pravidlům spuštění.',
             },
             {
-              title: 'Consent Mode v2',
-              text: 'Výchozí stav před načtením tagů, aktualizace po volbě, všechny čtyři reklamní a analytické signály a režim podle rozhodnutí s právníkem.',
+              title: 'Nastavení a testy',
+              text: 'Výsledky scénářů před volbou, po přijetí, odmítnutí a změně souhlasu.',
             },
             {
-              title: 'Napojení všech tagů',
-              text: 'Tagy Mety, TikToku nebo LinkedInu naběhnou hned po souhlasu. Stav souhlasu předáme i do <a href="/sluzby/server-side-tracking">server-side GTM</a> a backendu, pokud je máte.',
+              title: 'Dokumentace',
+              text: 'Popis implementace, zjištěných datových toků a podklady pro právní texty.',
             },
+          ],
+        },
+        {
+          type: 'details',
+          summary: 'Technická poznámka: souhlas pro měření Seznamu',
+          items: [
+            'Pokud zakázka zahrnuje Sklik, předáme souhlas i měření Seznam Event Measurement – přes standard IAB TCF, tedy Transparency and Consent Framework, nebo ve formátu Google Consent Mode.',
+          ],
+        },
+      ],
+    },
+
+    {
+      id: 'prubeh',
+      title: 'Jak probíhá spolupráce',
+      tone: 'light',
+      blocks: [
+        {
+          type: 'steps',
+          items: [
+            { title: 'Upřesnění zadání', text: 'Projdeme web, používané nástroje a otázky, které potřebujete vyřešit.' },
             {
-              title: 'Sklik a Seznam Event Measurement',
-              text: 'Souhlas předáme i novému měření Seznamu – přes standard IAB TCF (Transparency and Consent Framework), nebo ve formátu Google Consent Mode.',
+              title: 'Nabídka a součinnost',
+              text: 'Dostanete rozsah práce, cenu, výstupy a seznam potřebných přístupů. Domluvíme také zapojení vývojáře nebo agentury.',
             },
-            {
-              title: 'Protokol a dokumentace',
-              text: 'Osm testovacích scénářů se záznamem síťového provozu ve formátu HAR, matice tagů a souhlasů, popis verzí GTM a seznam oprav pro vývojáře.',
-            },
+            { title: 'Realizace a kontrola', text: 'Provedeme dohodnuté práce a ověříme je na testovacích scénářích.' },
+            { title: 'Předání', text: 'Projdeme výsledky a předáme dokumentaci. Další správu nebo monitoring sjednáme samostatně.' },
           ],
         },
       ],
@@ -109,36 +158,51 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Je cookie lišta povinná a co k ní říkají ÚOOÚ a Google?',
-      a: 'Lištu se souhlasem potřebuje každý web s analytikou, reklamními pixely nebo remarketingem, i jen s GA4: § 89 odst. 3 zákona o elektronických komunikacích vyžaduje předchozí prokazatelný souhlas a výjimku má jen technicky nezbytné ukládání. ÚOOÚ chce „Odmítnout“ už v první vrstvě, rovnocenná tlačítka a odvolání souhlasu stejně snadné jako jeho udělení. Google u uživatelů z EHP chce souhlas i s personalizací reklam a po inzerentech fakticky vyžaduje Consent Mode – při nesouladu může pozastavit publika a měření konverzí. Nejsme advokátní kancelář – texty lišty a zásady cookies sestaví z našich technických podkladů váš právník.',
+      q: 'Kdy je potřeba cookie lišta se souhlasem?',
+      a: 'Rozhoduje, jaké technologie web používá a k jakým účelům. Prověříme technické chování webu a připravíme přehled pro právní posouzení. Samotná přítomnost lišty správné nastavení nezaručuje. Výklad Úřadu pro ochranu osobních údajů shrnují jeho <a href="https://uoou.gov.cz/verejnost/qa-otazky-a-odpovedi/cookies">otázky a odpovědi k cookies</a>.',
     },
     {
-      q: 'Režim basic, nebo advanced?',
-      a: 'V režimu basic tagy Googlu čekají na souhlas a před volbou neodejde nic; Google Ads pak modeluje konverze jen obecným modelem a GA4 chování bez souhlasu nemodeluje. V režimu advanced odejdou bez souhlasu jen pingy bez cookies, Google Ads modeluje konverze modelem pro váš účet a GA4 chování, pokud web překročí prahy, které stanovil Google. Basic se hodí pro přísný právní výklad, regulované obory a malou návštěvnost, advanced pro inzerenty v Google Ads s dostatkem návštěv, když právník souhlasí s přenosem pingů. Režim volíme spolu s vámi a s právníkem nebo pověřencem pro ochranu osobních údajů.',
+      q: 'Jaký je rozdíl mezi režimy basic a advanced?',
+      a: 'V režimu basic se Google tagy bez souhlasu nespouštějí. V režimu advanced mohou předávat požadavky bez cookies i při neuděleném souhlasu. Vhodný režim zvolíme podle požadavků projektu a jeho právního posouzení.',
     },
     {
-      q: 'Proč po nasazení lišty klesly konverze?',
-      a: 'Část poklesu je očekávaná, protože nástroje dřív měřily i lidi bez souhlasu. Často jde ale o chybu: režim basic bez modelování; tagy, které naběhnou až po znovunačtení stránky; výchozí stav až po GTM; nebo nastavení bez signálu <code>ad_user_data</code>, které blokuje rozšířené konverze. Audit proto obsahuje i odhad dopadu na data.',
+      q: 'Proč se po změně lišty změnila data?',
+      a: 'Část změny může souviset s volbou návštěvníků, část s implementací. Ověříme načasování výchozího stavu, aktualizaci souhlasu a chování jednotlivých nástrojů. Samotný pokles konverzí neprokazuje chybu.',
     },
     {
-      q: 'Kolik to stojí?',
-      a: 'Cenu skládáme podle rozsahu: počet domén a jazyků, tagů a nástrojů, jestli lištu vybíráme, nebo vyvíjíme, a kolik kódů běží mimo GTM. Licenci CMP platíte přímo poskytovateli. Žádnou CMP neprodáváme – nastavíme kteroukoli a ověříme i lištu e-shopové platformy, třeba Shoptetu.',
+      q: 'Co ovlivňuje cenu?',
+      a: 'Počet domén, jazyků a nástrojů, stav současné lišty a rozsah úprav. Licenci poskytovatele lišty a naši práci uvedeme odděleně.',
     },
   ],
 
+  related: {
+    items: [
+      {
+        label: 'Audit měření',
+        href: '/sluzby/audit-mereni',
+        text: 'Kromě cookie lišty prověří i GA4, Google Tag Manager a měření reklamních konverzí.',
+      },
+      {
+        label: 'Server-side měření',
+        href: '/sluzby/server-side-tracking',
+        text: 'Pokud měření běží přes vlastní server, stav souhlasu z lišty potřebuje i server-side GTM.',
+      },
+    ],
+  },
+
   contact: {
     formId: 'lp-consent',
-    title: 'Nastavíme sběr souhlasu podle pravidel – a bez zbytečné ztráty dat',
-    lead: 'Na úvodní konzultaci se podíváme, co web posílá před souhlasem, a řekneme, jestli stačí oprava, nebo je potřeba nové nastavení.',
-    placeholder: 'Adresa webu a co řešíte, např. „Po nasazení lišty nám spadly konverze v Google Ads“',
+    title: 'Proberme cookie lištu a měření',
+    lead: 'Pošlete adresu webu a informaci, jakou lištu používáte. Upřesníme, zda potřebujete kontrolu současného stavu, opravu nebo nové nastavení.',
+    placeholder: '',
     leadType: 'consultation',
   },
 
   schema: {
-    name: 'Cookie lišta a Google Consent Mode v2',
-    serviceType: 'Nastavení a audit cookie lišty, Consent Mode v2 a Google Tag Manageru',
+    name: 'Nastavení cookie lišty a Google Consent Mode v2',
+    serviceType: 'Nastavení a kontrola cookie lišty, Consent Mode v2 a Google Tag Manageru',
     description:
-      'Výběr a nastavení cookie lišty, Google Consent Mode v2 v režimu basic nebo advanced a napojení všech tagů v GTM na souhlas. Audit, co web posílá před souhlasem, testovací protokol a vysvětlení dopadu na data. Technické nastavení podle § 89 odst. 3 zákona č. 127/2005 Sb. a doporučení ÚOOÚ; právní posouzení zajišťuje právník klienta.',
-    audience: 'E-shopy, B2B firmy a velké firmy',
+      'Technické nastavení a ověření cookie lišty, Google Consent Mode v2 a navazujících měřicích a reklamních nástrojů: kontrola stávajícího nastavení nebo nové nastavení lišty, inventura nástrojů, mapa souhlasů, testy chování před volbou, po přijetí, odmítnutí a změně souhlasu a dokumentace pro právní posouzení.',
+    audience: 'E-shopy a B2B firmy',
   },
 };

@@ -1,66 +1,83 @@
 import type { PageInput } from '../../schema';
 
-// Stránka prošla UX redukcí z 9. října 2026 (seo-analyza/2026-10-09_ux-redukce,
-// kap. 5.2). Zůstal hero s jedním tlačítkem, Poznáváte se?, Co uděláme a co
-// dostanete (monitoring jako karta), schéma toku dat a rozhodnutí ano/ne bez
-// tabulky hostingu a cen. Postup, sekce o monitoringu, Technické detaily a odkazy
-// na další stránky a články zmizely. FAQ má čtyři otázky: vlastnictví účtů
-// převzala odpověď o tom, co od klienta potřebujeme, a cenu provozu zmiňuje jediná
-// věta v odpovědi o ceně. Texty prošly jazykovým auditem z 9. října 2026.
+// Stránka odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty,
+// kap. 3 a 7, SS01–SS05). Hero má nový nadpis, kratší úvod, tlačítko „Probrat
+// server-side měření“ a kotvy na sekce. Dřívější karty se symptomy a rozhodnutí
+// ano/ne nahradila jedna sekce Kdy má server-side měření smysl se třemi kartami a blokem Kdy začít
+// jinak s odkazy na audit a cookie lištu. Výstupy mají pět položek bez Cloud Run
+// s nejméně dvěma servery, schéma toku dat tři uzly a větu, že server-side řešení
+// samo nezaručuje úplnost dat. Přibyl průběh spolupráce (G03) a související služby,
+// FAQ a kontakt mají znění ze SS05. Vypadla tvrzení o Safari a sedmi dnech,
+// o doložení odchozích dat bez prostředníka, o měření po odmítnutí cookies,
+// hashování jako ochraně údajů, cenové rozpětí provozu a odkaz na paragraf zákona.
 
 export const page: PageInput = {
   path: 'sluzby/server-side-tracking',
   kind: 'service',
-  navTitle: 'Server-side tracking',
-  tagline: 'měření na vaší doméně',
+  navTitle: 'Server-side měření',
+  tagline: 'měření přes vlastní server',
   pictogram: 'serverside',
   menuGroup: 'sber',
 
   seo: {
-    title: 'Server-side tracking – měření na vaší doméně | datalayer.cz',
+    title: 'Server-side tracking a měření přes vlastní server | datalayer.cz',
     description:
-      'Server-side GTM na vaší doméně a ve vašem Google Cloudu. Meta Conversions API, Google Ads, GA4 i Sklik přes server, v souladu se souhlasem. Konzultace zdarma.',
+      'Server-side GTM pro analytiku a reklamu: návrh, nastavení prostředí, pravidla pro události a souhlasy, testy a dokumentace. Posoudíme přínos i náklady.',
   },
 
   hero: {
-    h1: 'Server-side tracking na vaší doméně a ve vašem cloudu',
+    h1: 'Server-side tracking a měření přes vlastní server',
     subtitle:
-      'Prohlížeč pošle každou událost jen jednou – na server-side Google Tag Manager (GTM) na vaší doméně. Ten ji podle souhlasu návštěvníka předá do GA4, Google Ads, Meta Conversions API (CAPI) nebo Skliku. Máte pod kontrolou, co a komu odchází; povinnost získat souhlas se nemění.',
-    primaryCta: { label: 'Konzultovat architekturu', href: '#kontakt' },
+      'Navrhneme a nastavíme předávání měřicích událostí přes server-side Google Tag Manager. Určíme, která data mají odcházet do jednotlivých nástrojů, jak předávat souhlas a kdo zajišťuje provoz. Předem posoudíme přínos i průběžné náklady.',
+    primaryCta: { label: 'Probrat server-side měření', href: '#kontakt' },
+    anchors: [
+      { label: 'Rozsah služby', href: '#kdy' },
+      { label: 'Výstupy', href: '#vystupy' },
+      { label: 'Průběh', href: '#prubeh' },
+      { label: 'Cena a dotazy', href: '#faq' },
+    ],
   },
 
   sections: [
     {
-      id: 'symptomy',
-      title: 'Poznáváte se?',
-      lead: 'Server-side měření má smysl, když základní měření funguje, ale naráží na limity prohlížeče, na požadavky IT na rychlost nebo na kontrolu nad daty.',
+      id: 'kdy',
+      title: 'Kdy má server-side měření smysl',
+      lead: 'Především tehdy, když potřebujete řídit předávání dat více systémům nebo doplnit události ze serveru a CRM. Není automatická náhrada správně nastaveného měření v prohlížeči.',
       tone: 'light',
       blocks: [
         {
           type: 'cards',
-          columns: 4,
+          columns: 3,
           variant: 'symptoms',
           items: [
             {
-              title: 'Meta vidí méně nákupů než e-shop',
-              text: 'Pixel zachytí jen část objednávek a kampaně se učí z neúplných dat.',
-              pictogram: 'conversion',
+              title: 'Data z webu i firemních systémů',
+              text: 'Potřebujete předávat například dokončené platby nebo změny stavu poptávky.',
+              pictogram: 'datalayer',
             },
             {
-              title: 'Zákazníci ze Safari se „rozpadají“',
-              text: 'Safari zkracuje cookies z JavaScriptu na sedm dní a vracející se zákazník vypadá jako nový.',
-              pictogram: 'warn',
-            },
-            {
-              title: 'IT tlačí na rychlost a bezpečnost',
-              text: 'Desítka cizích skriptů zpomaluje web a komplikuje bezpečnostní politiku.',
-              pictogram: 'perf',
-            },
-            {
-              title: 'Pověřenec pro ochranu osobních údajů chce vědět, co komu odchází',
-              text: 'Bez prostředníka nemáte jak doložit ani omezit, co skripty posílají.',
+              title: 'Kontrola předávaných údajů',
+              text: 'Chcete sjednotit pravidla, podle kterých data odcházejí jednotlivým příjemcům.',
               pictogram: 'gov',
             },
+            {
+              title: 'Napojení reklamních rozhraní',
+              text: 'Potřebujete doplnit serverové konverze a ověřit jejich souběh s měřením v prohlížeči.',
+              pictogram: 'conversion',
+            },
+          ],
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          title: 'Kdy začít jinak',
+          text: 'Pokud chybí měřicí plán, datová vrstva nebo správné předávání souhlasu, doporučíme nejdřív opravit tento základ. U jednoduššího zadání může stačit stávající integrace.',
+        },
+        {
+          type: 'links',
+          items: [
+            { label: 'Audit měření', href: '/sluzby/audit-mereni' },
+            { label: 'Cookie lišta a Consent Mode', href: '/sluzby/cookie-lista-consent-mode' },
           ],
         },
       ],
@@ -68,8 +85,8 @@ export const page: PageInput = {
 
     {
       id: 'vystupy',
-      title: 'Co uděláme a co dostanete',
-      lead: 'Dostanete zdokumentovanou architekturu, kterou převezme váš tým nebo kdokoli jiný.',
+      title: 'Co dostanete',
+      lead: 'Kapacitu, region, monitoring a odpovědnost za provoz upřesníme v nabídce. Odděleně v ní uvedeme technické zprovoznění upozornění a placenou průběžnou správu.',
       tone: 'white',
       blocks: [
         {
@@ -77,28 +94,24 @@ export const page: PageInput = {
           columns: 3,
           items: [
             {
-              title: 'Návrh architektury',
-              text: 'Co jde přes server, co zůstává v prohlížeči a kde se rozhoduje o souhlasu.',
+              title: 'Návrh řešení',
+              text: 'Popis zdrojů dat, cílových systémů a rozdělení měření mezi prohlížeč a server.',
             },
             {
-              title: 'Server ve vašem Google Cloudu',
-              text: 'Cloud Run s nejméně dvěma servery, doména, certifikát a upozornění na rozpočet.',
+              title: 'Nastavené prostředí',
+              text: 'Hosting, doménu a kontejnery podle dohodnutého provozního modelu. Kapacitu navrhneme podle zátěže.',
             },
             {
-              title: 'Kontejnery GTM',
-              text: 'Webový i serverový kontejner s verzemi a jednotnými názvy.',
+              title: 'Pravidla pro události',
+              text: 'Identifikátory, hodnoty a deduplikaci podle požadavků jednotlivých systémů.',
             },
             {
-              title: 'Mapa událostí a deduplikace',
-              text: 'Stejné ID objednávky pro všechny platformy, žádná konverze dvakrát.',
+              title: 'Předávání souhlasů',
+              text: 'Mapu podmínek, za kterých se jednotlivé události a údaje smějí předat.',
             },
             {
-              title: 'Matice souhlasu',
-              text: 'Který tag smí běžet při jakém souhlasu – podklad pro pověřence.',
-            },
-            {
-              title: 'Monitoring a provozní příručka',
-              text: 'Upozornění na výpadek a pokles událostí, postup při výpadku i plán pro odchod k jinému dodavateli.',
+              title: 'Testy a provozní dokumentaci',
+              text: 'Ověření zpracování událostí, postup při chybě a rozdělení odpovědnosti za další provoz.',
             },
           ],
         },
@@ -108,59 +121,38 @@ export const page: PageInput = {
     {
       id: 'jak-to-funguje',
       title: 'Jak server-side měření funguje',
-      lead: 'Místo pěti skriptů, které posílají data každý zvlášť, odejde z prohlížeče jedna událost na váš server. Ten ji rozešle dál.',
+      lead: 'Vybrané události z webu nebo firemního systému odešleme do server-side GTM. Ten je zpracuje a podle nastavených pravidel předá cílovým nástrojům. Část měření může dál zůstat v prohlížeči.',
       tone: 'dark',
       blocks: [
         {
           type: 'flow',
           caption:
-            'Prohlížeč a backend posílají události na server-side GTM na vaší doméně. Server je podle souhlasu návštěvníka předá platformám.',
+            'Server-side řešení samo nezaručuje úplnost dat ani shodu reportů. Způsob předání údajů a respektování volby návštěvníka je nutné nastavit a otestovat.',
           columns: [
-            { label: 'zdroje', items: ['prohlížeč: dataLayer a souhlas', 'backend nebo CRM: platby, storna, poptávky'] },
-            { label: 'sgtm.vasweb.cz', items: ['server-side GTM', 'Cloud Run ve vašem cloudu', 'rozhodnutí podle souhlasu'] },
-            { label: 'platformy', items: ['GA4 a Google Ads', 'Meta CAPI', 'Sklik a TikTok'] },
-          ],
-        },
-        {
-          type: 'list',
-          style: 'check',
-          items: [
-            '<strong>Kontrola nad daty.</strong> Osobní údaje před odesláním odstraníte nebo zahashujete.',
-            '<strong>Spolehlivější konverze.</strong> Meta CAPI, rozšířené konverze Google Ads a platby z backendu.',
-            '<strong>Souhlas platí dál.</strong> Kdo cookies odmítne, toho neměříme ani touto cestou.',
+            { label: 'Web a firemní systémy', items: ['události z prohlížeče', 'platby a změny stavu poptávek'] },
+            { label: 'server-side GTM', items: ['zpracování událostí', 'pravidla předání a souhlasu'] },
+            { label: 'analytika a reklama', items: ['Google Analytics 4 a Google Ads', 'Meta, Sklik a další nástroje'] },
           ],
         },
       ],
     },
 
     {
-      id: 'rozhodnuti',
-      title: 'Kdy se server-side měření vyplatí',
-      lead: 'Server-side měření není první krok. Když se vám nevyplatí, řekneme to rovnou.',
+      id: 'prubeh',
+      title: 'Jak probíhá spolupráce',
       tone: 'light',
       blocks: [
         {
-          type: 'proscons',
-          yes: {
-            title: 'Má smysl, když…',
-            items: [
-              { text: 'reklama tvoří velkou část objednávek nebo poptávek' },
-              { text: 'potřebujete Meta CAPI, Sklik nebo TikTok s deduplikací' },
-              { text: 'chcete posílat události z backendu – platby, storna, CRM' },
-              { text: 'IT nebo pověřenec požaduje kontrolu nad odchozími daty' },
-              { text: 'někdo bude mít server na starosti a bude ho hlídat' },
-            ],
-          },
-          no: {
-            title: 'Doporučíme počkat, když…',
-            items: [
-              { text: 'nesedí základní měření', note: 'nejdřív <a href="/sluzby/audit-mereni">audit měření</a>' },
-              { text: 'chybí funkční cookie lišta', note: 'nejdřív <a href="/sluzby/cookie-lista-consent-mode">Consent Mode v2</a>' },
-              { text: 'inzerujete jen v Google Ads', note: 'často stačí Google Tag Gateway' },
-              { text: 'máte malý rozpočet a návštěvnost' },
-              { text: 'čekáte měření bez souhlasu – to server-side GTM nedělá' },
-            ],
-          },
+          type: 'steps',
+          items: [
+            { title: 'Upřesnění zadání', text: 'Projdeme web, používané nástroje a otázky, které potřebujete vyřešit.' },
+            {
+              title: 'Nabídka a součinnost',
+              text: 'Dostanete rozsah práce, cenu, výstupy a seznam potřebných přístupů. Domluvíme také zapojení vývojáře nebo agentury.',
+            },
+            { title: 'Realizace a kontrola', text: 'Provedeme dohodnuté práce a ověříme je na testovacích scénářích.' },
+            { title: 'Předání', text: 'Projdeme výsledky a předáme dokumentaci. Další správu nebo monitoring sjednáme samostatně.' },
+          ],
         },
       ],
     },
@@ -168,36 +160,56 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Je server-side měření legální? Potřebuji pořád cookie lištu?',
-      a: 'Lištu potřebujete dál. Server-side měření je jen jiná technická cesta: ukládání a čtení netechnických údajů dál vyžaduje předchozí souhlas podle § 89 odst. 3 zákona o elektronických komunikacích. Server proto s každou událostí dostane stav souhlasu a podle něj data pošle, nebo ne. Nejsme advokátní kancelář – právní posouzení zajistí váš právník.',
+      q: 'Nahrazuje server-side řešení cookie lištu?',
+      a: 'Ne. Změna technické cesty sama neřeší oprávnění k práci s údaji. Předávání dat nastavíme podle dohodnutých pravidel a volby návštěvníka; popis řešení dodáme i pro právní posouzení.',
     },
     {
-      q: 'Kolik stojí implementace a provoz serveru?',
-      a: 'Cena implementace se odvíjí od rozsahu – rozhoduje počet platforem a domén, stav datové vrstvy a požadavky IT. Fakturu za provoz dostáváte přímo od Googlu nebo poskytovatele hostingu: u Cloud Run realisticky 110–150 dolarů měsíčně, spravovaný hosting stojí od stovek korun. Odhad pro vaši návštěvnost připravíme ještě před spuštěním.',
+      q: 'Z čeho se skládá cena?',
+      a: 'Z návrhu a implementace, provozu hostingu a případné průběžné správy. Odhad provozu připravíme podle objemu událostí, kapacity a poskytovatele. Tyto položky uvedeme v nabídce odděleně.',
     },
     {
-      q: 'Co od nás budete potřebovat?',
-      a: 'Potřebujeme přístupy do GTM, GA4 a reklamních účtů přes role, fakturační účet Google Cloud, úpravu DNS a vývojáře pro případné úpravy datové vrstvy. Server běží ve vašem Google Cloudu, kontejnery i reklamní účty zůstávají vaše a my dostáváme jen role. Po skončení spolupráce své přístupy odebereme podle provozní příručky a měření běží dál beze změny.',
+      q: 'Jaká součinnost je potřeba?',
+      a: 'Přístupy do měřicích a reklamních účtů, správa domény a podle řešení také cloudový projekt a vývojář. Před zahájením upřesníme potřebné role i odpovědnost za provoz.',
     },
     {
-      q: 'Google Tag Gateway, nebo server-side GTM?',
-      a: 'Gateway načítá Google tag z vaší domény přes síť pro doručování obsahu (CDN). Je jednodušší a levnější, ale jen pro tagy Google a bez úprav dat. Pokud chcete Metu, Sklik, kontrolu nad osobními údaji nebo události z backendu, potřebujete server-side GTM. Obojí lze kombinovat.',
+      q: 'Kdy stačí Google Tag Gateway?',
+      a: 'Když zadání odpovídá jeho podporovaným možnostem pro Google tagy. Pokud potřebujete složitější řízení událostí, jiné příjemce nebo napojení firemních systémů, posoudíme server-side GTM či další integrační cestu. Výběr vychází z konkrétního zadání.',
     },
   ],
 
+  related: {
+    items: [
+      {
+        label: 'Audit měření',
+        href: '/sluzby/audit-mereni',
+        text: 'Prověří současné měření a cookie lištu, na kterých server-side řešení staví.',
+      },
+      {
+        label: 'Cookie lišta a Consent Mode',
+        href: '/sluzby/cookie-lista-consent-mode',
+        text: 'Řeší sběr a předávání souhlasu, podle kterého se řídí i server-side GTM.',
+      },
+      {
+        label: 'Měření konverzí',
+        href: '/sluzby/mereni-konverzi',
+        text: 'Sjednotí definice, hodnoty a identifikátory konverzí, které server předává reklamním systémům.',
+      },
+    ],
+  },
+
   contact: {
     formId: 'lp-server-side',
-    title: 'Probereme, jestli se vám server-side měření vyplatí',
-    lead: 'Na úvodní konzultaci projdeme vaše měření a řekneme, jestli je server-side GTM další krok, nebo je potřeba nejdřív opravit základ.',
-    placeholder: 'Adresa webu a co řešíte, např. „Meta vidí o třetinu méně nákupů než e-shop“',
+    title: 'Posoudíme vhodnost server-side měření',
+    lead: 'Napište, které nástroje používáte a co potřebujete propojit. Projdeme možnosti, potřebnou součinnost a provozní náklady.',
+    placeholder: '',
     leadType: 'consultation',
   },
 
   schema: {
-    name: 'Server-side tracking se serverovým Google Tag Managerem',
-    serviceType: 'Server-side tracking a měření konverzí',
+    name: 'Server-side měření se serverovým Google Tag Managerem',
+    serviceType: 'Server-side tracking a měření přes vlastní server',
     description:
-      'Návrh a nasazení server-side Google Tag Manageru na doméně a v Google Cloudu klienta: GA4, Google Ads, Meta Conversions API, Seznam Event Measurement a TikTok Events API přes server, deduplikace, monitoring a dokumentace. Vždy v souladu se souhlasem návštěvníka.',
-    audience: 'E-shopy, B2B firmy a velké firmy',
+      'Návrh a nastavení předávání měřicích událostí přes server-side Google Tag Manager: rozdělení měření mezi prohlížeč a server, hosting a kontejnery podle dohodnutého provozního modelu, pravidla pro identifikátory, hodnoty a deduplikaci, předávání souhlasů, testy a provozní dokumentace.',
+    audience: 'E-shopy a B2B firmy',
   },
 };

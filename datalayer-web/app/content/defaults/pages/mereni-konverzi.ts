@@ -1,65 +1,72 @@
 import type { PageInput } from '../../schema';
 
-// Stránka prošla UX redukcí z 9. října 2026 (seo-analyza/2026-10-09_ux-redukce,
-// kap. 5.2). Zůstal hero s jedním tlačítkem, Poznáváte se? a Co uděláme a co
-// dostanete. Schéma toku konverzí, nastavení po reklamních systémech, sekce
-// o deduplikaci a rozdílech, postup, ověření, Technické detaily a odkazy na další
-// stránky a články zmizely. FAQ má čtyři otázky: proč se čísla liší i po nastavení
-// (zkrácená rušená sekce), Seznam Event Measurement, co potřebujeme od vývojářů
-// a jaké přístupy, a z čeho se skládá cena. Čísla v prvním symptomu jsou
-// ilustrační. Texty prošly jazykovým auditem z 9. října 2026.
+// Stránka odpovídá auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty,
+// kap. 3 a 9, K01–K05). Zůstal hero s jedním tlačítkem, nově s kotvami, karty situací
+// pod nadpisem „Co při nastavení konverzí řešíme“ místo dřívější obecné výzvy, čtyři výstupy
+// s menším blokem „Podle konkrétního zadání“ (serverová API, offline konverze, Heureka
+// odděleně od Ověřeno zákazníky, další integrace), vysvětlení „Proč reporty nemusí
+// ukazovat stejné číslo“, společný průběh spolupráce (G03), FAQ a kontakt z K05
+// a související služby. Vypadly sliby shody čísel ve všech systémech a porovnání
+// po čtrnácti dnech (nově za domluvené období). Termín ukončení kódů Seznamu v roce
+// 2027, tvrzení o modelování konverzí a o dni přiřazení konverzí stránka neuvádí:
+// v dosavadním obsahu neměly oficiální zdroj.
 
 export const page: PageInput = {
   path: 'sluzby/mereni-konverzi',
   kind: 'service',
   navTitle: 'Měření konverzí',
-  tagline: 'Google Ads, Meta, Sklik i Heureka vidí totéž',
+  tagline: 'konverze pro reklamní systémy a srovnávače',
   pictogram: 'conversion',
   menuGroup: 'sber',
 
   seo: {
     title: 'Měření konverzí – Google Ads, Meta, Sklik, Heureka | datalayer.cz',
     description:
-      'Nastavíme měření konverzí pro Google Ads, Metu (pixel a Conversions API), Sklik, Heureku i TikTok z jedné datové vrstvy, bez dvojího počítání. Konzultace zdarma.',
+      'Měření konverzí pro Google Ads, Metu, Sklik a Heureku: definice, hodnoty a identifikátory konverzí, test jejich předání a vysvětlení rozdílů mezi systémy.',
   },
 
   hero: {
-    h1: 'Měření konverzí pro Google Ads, Metu, Sklik i Heureku',
+    h1: 'Měření konverzí pro Google Ads, Metu a Sklik',
     subtitle:
-      'Měření konverzí předává reklamním systémům informaci, že návštěvník z reklamy nakoupil nebo poslal poptávku. Stavíme ho z jedné datové vrstvy, aby každá objednávka dorazila do Google Ads, Mety, Skliku i Heureky jednou, se stejným ID a hodnotou – a jen podle souhlasu návštěvníka. Reklamní systémy se pak učí z čísel, která sedí s administrací.',
-    primaryCta: { label: 'Zkontrolovat moje konverze', href: '#kontakt' },
+      'Nastavíme měření objednávek a poptávek pro reklamní systémy a srovnávače včetně Heureky. Sjednotíme definice konverzí, hodnoty a identifikátory a otestujeme jejich předání. Vysvětlíme, proč se výsledky jednotlivých platforem mohou lišit.',
+    primaryCta: { label: 'Probrat měření konverzí', href: '#kontakt' },
+    anchors: [
+      { label: 'Rozsah služby', href: '#kdy' },
+      { label: 'Výstupy', href: '#vystupy' },
+      { label: 'Průběh', href: '#prubeh' },
+      { label: 'Cena a dotazy', href: '#faq' },
+    ],
   },
 
   sections: [
     {
-      id: 'symptomy',
-      title: 'Poznáváte se?',
-      lead: 'Část rozdílů mezi systémy je přirozená, část je chyba v nastavení.',
+      id: 'kdy',
+      title: 'Co při nastavení konverzí řešíme',
       tone: 'light',
       blocks: [
         {
           type: 'cards',
-          columns: 4,
+          columns: 2,
           variant: 'symptoms',
           items: [
             {
-              title: 'Každý systém hlásí jiné číslo',
-              text: 'Administrace třeba ukáže 412 objednávek, GA4 371 a Meta 388 – a nevíte, který rozdíl je chyba.',
+              title: 'Význam konverze',
+              text: 'Která akce je hlavním výsledkem kampaně a které události slouží pouze jako doplňující informace.',
               pictogram: 'dashboard',
             },
             {
-              title: 'Systémy počítají nákup dvakrát',
-              text: 'Pixel i Conversions API bez společného ID nebo import z GA4 vedle konverzního tagu – a k tomu jednou cena s DPH, jednou bez.',
+              title: 'Hodnota objednávky',
+              text: 'Zda předávat tržbu, nebo jinou dohodnutou hodnotu, v jaké měně a jak pracovat s DPH.',
               pictogram: 'eshop',
             },
             {
-              title: 'Sklik měří jen část',
-              text: 'Starý konverzní kód bez předání souhlasu, retargeting zvlášť – a Seznam mezitím spouští nové měření Seznam Event Measurement (SEM).',
+              title: 'Duplicitní záznamy',
+              text: 'Zda souběh integrací nebo opakované načtení stránky nezpůsobuje nesprávné započítání.',
               pictogram: 'warn',
             },
             {
-              title: 'Google Ads se učí z formulářů, ne ze zakázek',
-              text: 'Reklama počítá každý odeslaný formulář, i když obchod v CRM ví, které poptávky jsou dobré.',
+              title: 'Kvalita poptávek',
+              text: 'Jak doplnit výsledek z CRM, aby bylo možné vyhodnotit i další fáze obchodu.',
               pictogram: 'lead',
             },
           ],
@@ -69,38 +76,74 @@ export const page: PageInput = {
 
     {
       id: 'vystupy',
-      title: 'Co uděláme a co dostanete',
-      lead: 'Než nastavíme první tag, dohodneme s vámi, co je konverze a jaká je její hodnota. Pravidla zapíšeme do konverzní mapy, aby platila i pro agentury a budoucí dodavatele.',
+      title: 'Co bude výsledkem',
       tone: 'white',
       blocks: [
         {
           type: 'cards',
-          columns: 3,
+          columns: 2,
           items: [
             {
               title: 'Konverzní mapa',
-              text: 'Které akce jsou konverze, primární a sekundární akce, hodnoty, ID a konverzní okna – pro každý systém.',
+              text: 'Seznam akcí, jejich významu, hodnot, zdrojů a použití v jednotlivých reklamních systémech.',
             },
             {
-              title: 'Zadání datové vrstvy',
-              text: 'Pokud chybí nebo je neúplná: specifikace pro vývojáře s událostmi nákupu a poptávky. Navazuje na službu <a href="/sluzby/implementace-ga4">GA4 a Google Tag Manager</a>.',
+              title: 'Nastavení a potřebné zadání',
+              text: 'Úpravy měřicích nástrojů a specifikace pro vývojáře, pokud je třeba doplnit web nebo serverovou integraci.',
             },
             {
-              title: 'Nastavený Google Tag Manager (GTM)',
-              text: 'Tagy, spouštěče a podmínky souhlasu s popisem verzí, volitelně Conversions API a Events API přes server-side GTM.',
+              title: 'Ověření předávání',
+              text: 'Testovací protokol pro dohodnuté systémy včetně identifikátorů, hodnot a souhlasů.',
             },
             {
-              title: 'Backendové napojení',
-              text: 'Zadání pro vývojáře: Ověřeno zákazníky, Seznam Nákupy a offline konverze přes Data Manager API.',
+              title: 'Porovnání a předání',
+              text: 'Kontrola dostupných výsledků za domluvené období, vysvětlení rozdílů a dokumentace pro správu kampaní.',
             },
+          ],
+        },
+        {
+          type: 'list',
+          style: 'bullet',
+          title: 'Podle konkrétního zadání',
+          items: [
+            '<strong>Serverová API.</strong> Předání konverzí ze serveru, například přes Conversions API Mety a serverový kontejner Google Tag Manageru, zkráceně GTM.',
+            '<strong>Offline konverze.</strong> Nahrání výsledků, které vznikají mimo web, třeba uzavřených zakázek z CRM, do Google Ads přes Data Manager API.',
+            '<strong>Heureka.</strong> Měření konverzí pro Heureku a službu Ověřeno zákazníky řešíme odděleně. Nemají stejný účel ani rozsah a nemusí pro ně platit stejná pravidla práce s údaji zákazníků.',
+            '<strong>Další integrace.</strong> Seznam Nákupy, TikTok, LinkedIn, Microsoft Ads a další systémy podle toho, kde inzerujete.',
+          ],
+        },
+      ],
+    },
+
+    {
+      id: 'rozdily',
+      title: 'Proč reporty nemusí ukazovat stejné číslo',
+      tone: 'dark',
+      blocks: [
+        {
+          type: 'paragraphs',
+          items: [
+            'Administrace eviduje objednávky, reklamní platformy si připisují konverze podle vlastních pravidel a nastavení. Rozdíly ovlivňuje také časové období, souhlasy a způsob zpracování dat. Cílem je správné předání událostí a srozumitelné vyhodnocení, nikoli vynucená shoda všech reportů.',
+          ],
+        },
+      ],
+    },
+
+    {
+      id: 'prubeh',
+      title: 'Jak probíhá spolupráce',
+      tone: 'light',
+      blocks: [
+        {
+          type: 'steps',
+          items: [
+            { title: 'Upřesnění zadání', text: 'Projdeme web, používané nástroje a otázky, které potřebujete vyřešit.' },
             {
-              title: 'Testovací protokol a porovnání s backendem',
-              text: 'Výsledky testovacích objednávek pro každý systém. Po čtrnácti dnech srovnání backendu s reklamními systémy a vysvětlení rozdílů.',
+              title: 'Nabídka a součinnost',
+              text: 'Dostanete rozsah práce, cenu, výstupy a seznam potřebných přístupů. Domluvíme také zapojení vývojáře nebo agentury.',
             },
-            {
-              title: 'Přístupy a předání',
-              text: 'Přehled rolí ve všech účtech a krátké zaškolení pro marketing a agentury, jak konverze číst.',
-            },
+            { title: 'Realizace a kontrola', text: 'Provedeme dohodnuté práce a ověříme je na testovacích scénářích.' },
+            { title: 'Předání', text: 'Projdeme výsledky a předáme dokumentaci. Další správu nebo monitoring sjednáme samostatně.' },
           ],
         },
       ],
@@ -109,28 +152,48 @@ export const page: PageInput = {
 
   faq: [
     {
-      q: 'Proč se čísla v reklamních systémech a v administraci liší i po nastavení?',
-      a: 'Stejné ID objednávky zajistí, že ji každý systém započítá jen jednou, stejné číslo ale všechny ukazovat nebudou. Meta i Google Ads si připíšou stejný nákup, na kterém se podílely, Google Ads ho připisuje ke dni prokliku a GA4 ke dni nákupu a storno odečte backend, reklamní systém ne. Google Ads navíc ukazuje i modelované konverze, kdežto Meta a Sklik vidí jen lidi se souhlasem. Cíl je vysvětlitelný a stabilní rozdíl – jeho náhlá změna pak spustí kontrolu.',
+      q: 'Budou všechny systémy ukazovat stejné počty?',
+      a: 'Ne nutně. Každý systém pracuje s jinou atribucí a může konverze zobrazovat za jiné období. Ověříme správnost předávání a vysvětlíme zjištěné rozdíly vůči zdrojovým datům.',
     },
     {
-      q: 'Co je Seznam Event Measurement a musím přejít?',
-      a: 'Seznam Event Measurement, zkráceně SEM, je nové měření Seznamu: jeden skript <code>sul.js</code> nahrazuje kódy Skliku i měření pro Seznam Nákupy. Přechod budou podle Seznamu potřebovat všechny účty a podporu původních kódů Seznam ukončí v průběhu roku 2027. SEM je zatím v betě a přepnutí účtu je nevratné, proto ho nasazujeme souběžně a přepínáme až po ověření. Stav k říjnu 2026.',
+      q: 'Je potřeba upravit současné měření Skliku a Seznamu?',
+      a: 'Nejprve ověříme používanou integraci a aktuální možnosti daného účtu. Pokud je potřeba přechod na jiné řešení, připravíme postup a testy před přepnutím.',
     },
     {
-      q: 'Co budete potřebovat od nás a od našich vývojářů?',
-      a: 'Od vás potřebujeme role s oprávněním k úpravám konverzí a tagů, nikdy hesla – účty Google Ads, Meta Business, Sklik, Heureka i GTM zůstávají vaše. Pokud datová vrstva chybí nebo je neúplná, připravíme vývojářům zadání s událostmi nákupu a poptávky, nebo upravíme nastavení e-shopové platformy. Pro backendová napojení – Ověřeno zákazníky, Seznam Nákupy a offline konverze – dostanou vývojáři zadání od nás.',
+      q: 'Jaké přístupy a součinnost jsou potřeba?',
+      a: 'Role v reklamních účtech a GTM a podle stavu webu také spolupráce vývojáře. Rozsah oprávnění stanovíme podle práce. Hesla si nepředáváme.',
     },
     {
-      q: 'Z čeho se skládá cena?',
-      a: 'Cena se odvíjí od počtu systémů, stavu datové vrstvy, platformy e-shopu, zapojení serveru nebo CRM a počtu domén a zemí. Provoz serveru, pokud ho využijete, platíte přímo poskytovateli.',
+      q: 'Co ovlivňuje cenu?',
+      a: 'Počet reklamních systémů, typy konverzí, stav datové vrstvy a napojení serveru nebo CRM. Případné provozní náklady jsou v nabídce zvlášť.',
     },
   ],
 
+  related: {
+    items: [
+      {
+        label: 'Nastavení GA4 a GTM',
+        href: '/sluzby/implementace-ga4',
+        text: 'Datová vrstva a události nákupu a poptávky, ze kterých konverze pro reklamní systémy vycházejí.',
+      },
+      {
+        label: 'Měření pro B2B firmy',
+        href: '/reseni/b2b-a-lead-generation',
+        text: 'Měření poptávek z webu a jejich propojení s výsledkem obchodu v CRM.',
+      },
+      {
+        label: 'Server-side měření',
+        href: '/sluzby/server-side-tracking',
+        text: 'Serverový kontejner GTM, přes který jde konverze předávat serverovým API reklamních systémů.',
+      },
+    ],
+  },
+
   contact: {
     formId: 'lp-konverze',
-    title: 'Nastavíme, aby reklamní systémy viděly stejné konverze jako vy',
-    lead: 'Na úvodní konzultaci projdeme, jak objednávky nebo poptávky putují do reklamních systémů, a řekneme, kde je systémy počítají dvakrát a kde je nevidí vůbec.',
-    placeholder: 'Adresa webu a co řešíte, např. „Meta hlásí víc nákupů, než jich máme v administraci“',
+    title: 'Proberme nastavení konverzí',
+    lead: 'Napište, ve kterých systémech inzerujete a co má být hlavním výsledkem kampaní. Navrhneme rozsah kontroly nebo implementace.',
+    placeholder: '',
     leadType: 'consultation',
   },
 
@@ -138,7 +201,7 @@ export const page: PageInput = {
     name: 'Měření konverzí pro Google Ads, Metu, Sklik a Heureku',
     serviceType: 'Nastavení a sjednocení měření konverzí v reklamních systémech',
     description:
-      'Nastavení konverzí z jedné datové vrstvy pro Google Ads včetně rozšířených konverzí, Meta Pixel a Conversions API, Seznam Event Measurement pro Sklik a Seznam Nákupy, Heureku s měřením konverzí a Ověřeno zákazníky, TikTok, LinkedIn a Microsoft Ads. Sjednocení hodnot, deduplikace, testovací objednávky a porovnání s backendem.',
+      'Nastavení měření konverzí pro Google Ads, Metu, Sklik, Heureku a další reklamní systémy: konverzní mapa, sjednocení hodnot a identifikátorů, testovací protokol předání, porovnání se zdrojovými daty za domluvené období a dokumentace. Podle zadání také serverová API, offline konverze a Ověřeno zákazníky.',
     audience: 'E-shopy, B2B firmy a velké firmy',
   },
 };

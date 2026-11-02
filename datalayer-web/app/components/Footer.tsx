@@ -90,7 +90,7 @@ export function Footer() {
           {op?.name ? (
             // identifikace provozovatele (§ 435 občanského zákoníku) z Nastavení
             <span className="site-footer__operator">
-              {[op.name, op.id ? `IČO ${op.id}` : '', op.address, op.registry].filter(Boolean).join(' · ')}
+              Provozovatel: {[op.name, op.id ? `IČO ${op.id}` : '', op.address, op.registry].filter(Boolean).join(', ')}
             </span>
           ) : null}
         </div>

@@ -264,7 +264,25 @@ export function PageEditor({
                   rows={3}
                   help="Dvě až tři věty, které rovnou odpoví, co služba řeší – slouží i jako odpověď pro AI přehledy."
                 />
-                <LinkInput label="Tlačítko" value={page.hero.primaryCta} onChange={(primaryCta) => setHero({ primaryCta })} optional hrefList={hrefList} help="Obvykle #kontakt. Hranaté závorky doplní web sám." />
+                <LinkInput label="Tlačítko" value={page.hero.primaryCta} onChange={(primaryCta) => setHero({ primaryCta })} optional hrefList={hrefList} help="Obvykle #kontakt." />
+                <LinkInput
+                  label="Textový odkaz vedle tlačítka"
+                  value={page.hero.secondaryLink}
+                  onChange={(secondaryLink) => setHero({ secondaryLink })}
+                  optional
+                  hrefList={hrefList}
+                  help="Odkaz, ne druhé tlačítko – např. „Ukázka výstupu auditu“ na kotvu sekce."
+                />
+                <div className="form-label mt-2">Kotvy pod úvodem</div>
+                <ListEditor
+                  nested
+                  items={page.hero.anchors ?? []}
+                  onChange={(anchors) => setHero({ anchors: anchors.length ? anchors : undefined })}
+                  itemTitle={(a) => a.label || 'Kotva'}
+                  addOptions={[{ label: 'Kotva', create: () => ({ label: 'Cena a dotazy', href: '#faq' }) }]}
+                  emptyText="Bez kotev. Na stránkách služeb: Rozsah služby, Výstupy, Průběh, Cena a dotazy."
+                  renderItem={(a, update) => <LinkInput label="Kotva" value={a} onChange={(v) => v && update(v)} hrefList={hrefList} />}
+                />
               </Card>
 
               <Card title={`Sekce (${page.sections.length})`} desc="Obsah stránky po sekcích. Každá sekce má nadpis H2 a libovolné bloky.">
@@ -343,6 +361,26 @@ export function PageEditor({
 
           {tab === 'propojeni' ? (
             <>
+              <Card title="Související služby" desc="Dva až tři odkazy před kontaktem, každý s větou, proč na stránku navazuje. Prázdné = blok se nezobrazí.">
+                <TextInput
+                  label="Nadpis bloku"
+                  value={page.related?.title}
+                  onChange={(title) => page.related && set('related', { ...page.related, title: title || undefined })}
+                  placeholder="Související služby"
+                />
+                <ListEditor
+                  items={page.related?.items ?? []}
+                  onChange={(items) => set('related', items.length ? { ...(page.related ?? {}), items } : undefined)}
+                  itemTitle={(r) => r.label || 'Odkaz'}
+                  addOptions={[{ label: 'Odkaz', create: () => ({ label: 'Nová služba', href: '/', text: '' }) }]}
+                  renderItem={(r, update) => (
+                    <>
+                      <LinkInput label="Odkaz" value={{ label: r.label, href: r.href }} onChange={(v) => v && update({ ...r, ...v })} hrefList={hrefList} />
+                      <TextInput label="Věta o návaznosti" value={r.text} onChange={(text) => update({ ...r, text })} />
+                    </>
+                  )}
+                />
+              </Card>
               <Card title="Kontaktní blok" desc="Formulář na konci stránky. Texty, které necháte prázdné, převezme z Textů webu.">
                 <Toggle label="Zobrazit kontaktní blok" checked={page.contact.enabled !== false} onChange={(on) => setContact({ enabled: on })} />
                 {page.contact.enabled !== false ? (
@@ -369,7 +407,7 @@ export function PageEditor({
                       label="Nápověda v poli zprávy"
                       value={page.contact.placeholder}
                       onChange={(placeholder) => setContact({ placeholder })}
-                      help="Formulář nemá pole Web – začněte „Adresa webu a co řešíte, např. …“."
+                      help="Zobrazí se pod popiskem zprávy. Prázdné = společná nápověda z Textů webu."
                     />
                     <Select
                       label="Typ poptávky (měření)"

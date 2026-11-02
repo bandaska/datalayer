@@ -9,15 +9,16 @@ import { ContactBlock } from '../ContactBlock';
 import { HeroDiagram } from '../HeroDiagram';
 import { Pi } from '../Pictograms';
 import { Blocks, personReady, type BlockContext } from './Blocks';
+import { crumbsFor } from './crumbs';
 import { typo, typoHtml } from '~/lib/typo';
 
-// Šablona stránky z administrace po UX redukci (seo-analyza/2026-10-09_ux-redukce):
-// hero s nadpisem, podtitulem a jedním tlačítkem → sekce s bloky → FAQ → kontakt.
-// Bez nadtitulků, drobečkové navigace (zůstává ve strukturovaných datech),
-// Technických detailů a pruhu „Pokračujte“. Všechen obsah přichází z dat
-// (kolekce `pages` ve Firestore).
+// Šablona stránky z administrace po UX redukci (seo-analyza/2026-10-09_ux-redukce)
+// a auditu z 2. listopadu 2026 (seo-analyza/2026-11-02_seo-ux-texty): drobečková
+// navigace Úvod / stránka → hero s nadpisem, podtitulem, jedním tlačítkem, případně
+// textovým odkazem a kotvami na sekce → sekce s bloky → FAQ → související služby →
+// kontakt. Bez nadtitulků. Všechen obsah přichází z dat (kolekce `pages` ve Firestore).
 
-/** Drobečková navigace – na stránkách z administrace se nezobrazuje, používá ji blog. */
+/** Drobečková navigace: Úvod / název stránky (podstránky z administrace i blog). */
 export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
   if (!crumbs.length) return null;
   return (
@@ -48,6 +49,29 @@ function FaqItems({ items }: { items: Faq[] }) {
         </details>
       ))}
     </div>
+  );
+}
+
+/** Související služby před kontaktem: dva až tři odkazy, každý s větou o návaznosti (audit G02). */
+function RelatedSection({ page, texts }: { page: PageContent; texts: SiteTexts['page'] }) {
+  const related = page.related;
+  if (!related?.items.length) return null;
+  return (
+    <section className="lp-section lp-section--light lp-section--white" id="souvisejici">
+      <div className="container lp-container">
+        <h2 className="lp-h2">{related.title || texts.relatedTitle}</h2>
+        <ul className="lp-related-links">
+          {related.items.map((r) => (
+            <li key={r.href}>
+              <Link to={r.href} className="lp-card__link" onClick={() => pushEvent('cta_click', { cta_id: `related_${r.href}`, cta_text: r.label, section: 'souvisejici' })}>
+                {r.label}
+              </Link>
+              {r.text ? <p>{typo(r.text)}</p> : null}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 
@@ -93,14 +117,47 @@ function Headline({ text, highlight }: { text: string; highlight?: string }) {
   );
 }
 
+/** Textový odkaz vedle tlačítka v hero (ne druhé tlačítko). */
+function HeroLink({ link, id }: { link: { label: string; href: string }; id: string }) {
+  const onClick = () => pushEvent('cta_click', { cta_id: id, cta_text: link.label, section: 'hero' });
+  return link.href.startsWith('/') ? (
+    <Link to={link.href} className="hero-link" onClick={onClick}>
+      {link.label}
+    </Link>
+  ) : (
+    <a href={link.href} className="hero-link" onClick={onClick}>
+      {link.label}
+    </a>
+  );
+}
+
+/** Kotvy na sekce pod úvodem stránky služby. */
+function Anchors({ items }: { items: { label: string; href: string }[] }) {
+  return (
+    <nav className="lp-anchors" aria-label="Obsah stránky">
+      <ul>
+        {items.map((a) => (
+          <li key={a.href}>
+            <a href={a.href}>{a.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
 function Hero({ page }: { page: PageContent }) {
   const { hero } = page;
   const variant = hero.variant ?? 'pictogram';
-  const cta = hero.primaryCta ? (
-    <div className={variant === 'diagram' ? 'hero-ctas' : 'lp-hero__ctas'}>
-      <Cta href={hero.primaryCta.href} label={hero.primaryCta.label} id={`${page.contact.formId}_hero_primary`} />
-    </div>
-  ) : null;
+  const cta =
+    hero.primaryCta || hero.secondaryLink ? (
+      <div className={variant === 'diagram' ? 'hero-ctas' : 'lp-hero__ctas'}>
+        {hero.primaryCta ? <Cta href={hero.primaryCta.href} label={hero.primaryCta.label} id={`${page.contact.formId}_hero_primary`} /> : null}
+        {hero.secondaryLink ? <HeroLink link={hero.secondaryLink} id={`${page.contact.formId}_hero_link`} /> : null}
+      </div>
+    ) : null;
+  const anchors = hero.anchors?.length ? <Anchors items={hero.anchors} /> : null;
+  const crumbs = <Breadcrumbs crumbs={crumbsFor(page)} />;
 
   if (variant === 'diagram') {
     return (
@@ -125,12 +182,15 @@ function Hero({ page }: { page: PageContent }) {
 
   if (variant === 'simple') {
     return (
-      <header className="article-hero">
+      // kompaktní záhlaví kontaktu a právních stránek (audit G06)
+      <header className="article-hero article-hero--compact">
         <div className="container">
           <div className="article-container">
+            {crumbs}
             <h1 className="article-title">{typo(hero.h1)}</h1>
             {hero.subtitle ? <p className="article-perex">{typo(hero.subtitle)}</p> : null}
             {cta}
+            {anchors}
           </div>
         </div>
       </header>
@@ -140,11 +200,13 @@ function Hero({ page }: { page: PageContent }) {
   return (
     <header className="lp-hero">
       <div className="container lp-container">
+        {crumbs}
         <div className="lp-hero__grid">
           <div>
             <h1 className="lp-hero__h1">{typo(hero.h1)}</h1>
             {hero.subtitle ? <p className="lp-hero__sub">{typo(hero.subtitle)}</p> : null}
             {cta}
+            {anchors}
           </div>
           <div className="lp-hero__visual" aria-hidden="true">
             <div className="lp-hero__frame">
@@ -253,6 +315,7 @@ export function LandingPage({
       ))}
 
       <FaqSection page={page} texts={texts} />
+      <RelatedSection page={page} texts={texts} />
 
       {contactTop ? null : contact}
     </>

@@ -103,6 +103,13 @@ function blockTexts(b: Block, where: string, add: (where: string, text: string |
     case 'consentSettings':
       add(`${where} › tlačítko`, b.label);
       break;
+    case 'details':
+      add(`${where} › rozbalovací odkaz`, b.summary);
+      b.items.forEach((t, i) => add(`${where} › odstavec ${i + 1}`, t));
+      break;
+    case 'links':
+      b.items.forEach((l, i) => add(`${where} › odkaz ${i + 1}`, l.label));
+      break;
     case 'proscons':
       for (const k of ['yes', 'no'] as const) {
         add(`${where} › ${k === 'yes' ? 'sloupec ✓' : 'sloupec ✕'}`, b[k].title);
@@ -154,6 +161,8 @@ export function pageTexts(page: PageContent): PageText[] {
   add('Hero › H1', h.h1, page.kind === 'home');
   add('Hero › podtitul', h.subtitle);
   add('Hero › tlačítko', h.primaryCta?.label);
+  add('Hero › textový odkaz', h.secondaryLink?.label);
+  h.anchors?.forEach((l, i) => add(`Hero › kotva ${i + 1}`, l.label));
   page.sections.forEach((s, i) => {
     const w = `Sekce ${i + 1} (${s.title || s.id})`;
     add(`${w} › nadpis`, s.title);
@@ -164,6 +173,11 @@ export function pageTexts(page: PageContent): PageText[] {
   page.faq.forEach((f, i) => {
     add(`FAQ ${i + 1} › otázka`, f.q);
     add(`FAQ ${i + 1} › odpověď`, f.a);
+  });
+  add('Související služby › nadpis', page.related?.title);
+  page.related?.items.forEach((r, i) => {
+    add(`Související služby › odkaz ${i + 1}`, r.label);
+    add(`Související služby › odkaz ${i + 1} › text`, r.text);
   });
   add('Kontakt › nadpis', page.contact.title);
   add('Kontakt › úvod', page.contact.lead);
